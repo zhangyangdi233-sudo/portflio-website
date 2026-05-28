@@ -1,0 +1,50 @@
+---
+import Header from "../components/Header.astro";
+import { siteProfile } from "../lib/site-data";
+import type { Language } from "../lib/types";
+import "../styles/global.css";
+
+interface Props {
+  lang: Language;
+  title: string;
+  description: string;
+  pageClass?: string;
+  theme?: Record<string, string>;
+  bare?: boolean;
+}
+
+const { lang, title, description, pageClass = "", theme = {}, bare = false } = Astro.props;
+const themeStyle = Object.entries(theme)
+  .map(([key, value]) => `${key}:${value}`)
+  .join(";");
+---
+
+<!doctype html>
+<html lang={lang} style={themeStyle}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0f1115" />
+    <title>{title}</title>
+  </head>
+  <body class={pageClass}>
+    {!bare && <div class="ambient-grid" aria-hidden="true"></div>}
+    {!bare && <Header lang={lang} />}
+    <main id="content">
+      <slot />
+    </main>
+    {
+      !bare && (
+        <footer class="site-footer">
+          <span>{siteProfile.artistName}</span>
+          <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+          <span>{siteProfile.location}</span>
+        </footer>
+      )
+    }
+    <script>
+      import "../scripts/portfolio-motion";
+    </script>
+  </body>
+</html>

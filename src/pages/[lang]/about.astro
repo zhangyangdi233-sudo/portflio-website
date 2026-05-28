@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { assertLanguage, languages, ui } from "../../lib/i18n";
+import { getLocalizedProfile, siteProfile } from "../../lib/site-data";
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+
+const lang = assertLanguage(Astro.params.lang);
+const labels = ui[lang];
+const profile = getLocalizedProfile(lang);
+---
+
+<BaseLayout lang={lang} title={`${labels.about} | ${siteProfile.artistName}`} description={profile.statement[0]} pageClass="about-page">
+  <section class="page-hero compact">
+    <p class="eyebrow">{profile.role}</p>
+    <h1 class="split-heading">{siteProfile.artistName}</h1>
+  </section>
+
+  <section class="about-layout">
+    <div class="about-statement" data-reveal>
+      <p class="eyebrow">{labels.statement}</p>
+      {profile.statement.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
+    <aside class="about-cv" data-reveal>
+      <p class="eyebrow">{labels.cv}</p>
+      <ul>
+        {profile.cv.map((item) => <li>{item}</li>)}
+      </ul>
+      <a class="button is-primary" href={siteProfile.cvUrl}>{labels.downloadCv}</a>
+      <div class="contact-list">
+        <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+        {siteProfile.socials.map((social) => <a href={social.href} target="_blank" rel="noreferrer">{social.label}</a>)}
+      </div>
+    </aside>
+  </section>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../../../components/ProjectCard.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { assertLanguage, languages, ui } from "../../../lib/i18n";
+import { sortProjects } from "../../../lib/projects";
+import { getLocalizedProfile, siteProfile } from "../../../lib/site-data";
+import type { Project } from "../../../lib/types";
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+
+const lang = assertLanguage(Astro.params.lang);
+const labels = ui[lang];
+const profile = getLocalizedProfile(lang);
+const projectEntries = await getCollection("projects");
+const projects = sortProjects(projectEntries.map((entry) => entry.data as Project));
+---
+
+<BaseLayout lang={lang} title={`${labels.works} | ${siteProfile.artistName}`} description={profile.statement[0]} pageClass="works-page">
+  <section class="page-hero compact">
+    <p class="eyebrow">{labels.index}</p>
+    <h1 class="split-heading">{labels.works}</h1>
+    <p>{profile.statement[1]}</p>
+  </section>
+
+  <section class="work-controls" aria-label="Work filters">
+    <button class="filter-button is-active" type="button" data-filter="all">{labels.all}</button>
+    <button class="filter-button" type="button" data-filter="featured">{labels.featured}</button>
+    <button class="filter-button" type="button" data-filter="archive">{labels.archive}</button>
+  </section>
+
+  <section class="project-grid" data-project-grid>
+    {projects.map((project) => <ProjectCard project={project} lang={lang} />)}
+  </section>
+</BaseLayout>

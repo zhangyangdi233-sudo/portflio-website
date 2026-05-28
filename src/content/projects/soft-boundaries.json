@@ -1,0 +1,50 @@
+{
+  "slug": "soft-boundaries",
+  "year": "2023",
+  "medium": "Moving image, object study",
+  "status": "Selected work",
+  "priority": 3,
+  "featured": false,
+  "tags": ["video", "object", "threshold"],
+  "palette": {
+    "primary": "#ffb4a2",
+    "secondary": "#2a9d8f",
+    "ink": "#1b1716",
+    "paper": "#fff2eb"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/soft-boundaries.svg",
+      "alt": "Abstract placeholder poster for Soft Boundaries",
+      "caption": "A soft threshold between object and surface."
+    }
+  ],
+  "links": {},
+  "i18n": {
+    "zh": {
+      "title": "Soft Boundaries",
+      "summary": "关于物、皮肤和边界如何被感知的影像研究。",
+      "body": [
+        "这个项目作为精选作品保留，用来连接游戏、装置和图像实践之间的身体感。",
+        "详情页会在收到素材后替换为真实影像、展览照片和简短说明。"
+      ]
+    },
+    "en": {
+      "title": "Soft Boundaries",
+      "summary": "A moving-image study of objects, skin, and the perception of borders.",
+      "body": [
+        "This selected work connects the body-sense shared by the game, installation, and image-based practices.",
+        "The detail page is prepared for real video stills, exhibition images, and a concise description once the asset pack arrives."
+      ]
+    },
+    "ja": {
+      "title": "Soft Boundaries",
+      "summary": "物、皮膚、境界の知覚を扱う映像的なスタディ。",
+      "body": [
+        "この選抜作品は、ゲーム、インスタレーション、イメージ制作に共通する身体感覚をつなぐ位置づけです。",
+        "素材が届いたら、実際の映像スチル、展示写真、短い説明へ差し替えます。"
+      ]
+    }
+  }
+}

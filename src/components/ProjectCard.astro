@@ -1,0 +1,37 @@
+---
+import ProjectMedia from "./ProjectMedia.astro";
+import { getLocalizedProject, getProjectThemeVars } from "../lib/projects";
+import type { Language, Project } from "../lib/types";
+
+interface Props {
+  project: Project;
+  lang: Language;
+  prominent?: boolean;
+}
+
+const { project, lang, prominent = false } = Astro.props;
+const localized = getLocalizedProject(project, lang);
+const vars = Object.entries(getProjectThemeVars(project))
+  .map(([key, value]) => `${key}:${value}`)
+  .join(";");
+---
+
+<article
+  class:list={["project-card", { "is-prominent": prominent }]}
+  style={vars}
+  data-project-card
+  data-featured={project.featured ? "true" : "false"}
+  data-tags={project.tags.join(" ")}
+>
+  <a href={`/${lang}/works/${project.slug}/`} aria-label={`${localized.title} project page`}>
+    <ProjectMedia media={project.media[0]} />
+    <div class="project-card__body">
+      <div class="project-card__meta">
+        <span>{project.year}</span>
+        <span>{project.medium}</span>
+      </div>
+      <h3>{localized.title}</h3>
+      <p>{localized.summary}</p>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,7 @@
+{
+  "name": "CIBA Portfolio Import",
+  "id": "ciba-portfolio-import",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}

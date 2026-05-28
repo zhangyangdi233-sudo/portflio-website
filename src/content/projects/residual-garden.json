@@ -1,0 +1,50 @@
+{
+  "slug": "residual-garden",
+  "year": "2023",
+  "medium": "Digital garden, generative image notes",
+  "status": "Selected work",
+  "priority": 4,
+  "featured": false,
+  "tags": ["generative", "drawing", "ecology"],
+  "palette": {
+    "primary": "#c7efcf",
+    "secondary": "#ff6b6b",
+    "ink": "#102217",
+    "paper": "#f4fff1"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/residual-garden.svg",
+      "alt": "Abstract placeholder poster for Residual Garden",
+      "caption": "Generated marks arranged as a digital garden."
+    }
+  ],
+  "links": {},
+  "i18n": {
+    "zh": {
+      "title": "Residual Garden",
+      "summary": "由残留图像、生成笔记和日常观察组成的数字花园。",
+      "body": [
+        "Residual Garden 将较轻的图像实验组织成一个可浏览的生态系统。",
+        "它在新版站点中作为节奏变化，提供比重点项目更开放的阅读空间。"
+      ]
+    },
+    "en": {
+      "title": "Residual Garden",
+      "summary": "A digital garden of residual images, generative notes, and everyday observations.",
+      "body": [
+        "Residual Garden organizes lighter image experiments into a browsable ecology.",
+        "It gives the portfolio a more open rhythm beside the two heavier featured works."
+      ]
+    },
+    "ja": {
+      "title": "Residual Garden",
+      "summary": "残されたイメージ、生成的なメモ、日常観察からなるデジタルガーデン。",
+      "body": [
+        "Residual Garden は軽やかなイメージ実験を、閲覧可能な生態系として整理します。",
+        "二つの重点作品の横に、より開かれたリズムを与える作品です。"
+      ]
+    }
+  }
+}

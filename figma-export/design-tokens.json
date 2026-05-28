@@ -1,0 +1,34 @@
+{
+  "name": "CIBA Portfolio",
+  "colors": {
+    "paper": "#f3ead6",
+    "ink": "#111111",
+    "muted": "#736b5e",
+    "line": "#cfc3aa",
+    "blue": "#006eb8",
+    "red": "#f04423",
+    "green": "#007a4d",
+    "black": "#050505",
+    "cream": "#fff7ea",
+    "cyan": "#5fe7d1"
+  },
+  "typography": {
+    "ui": "Inter / Helvetica / Noto Sans",
+    "brand": "Small bold header mark: 糍粑 CIBA",
+    "heroTitle": "Current project name, 100px desktop, 62px mobile",
+    "workTitle": "Project title as main row typography",
+    "body": "Regular, 16-20px, 1.35-1.5 line height"
+  },
+  "layout": {
+    "desktopFrame": "1440px wide",
+    "mobileFrame": "390px wide",
+    "background": "warm paper solid field",
+    "grid": "thin Swiss-style vertical and horizontal guide lines",
+    "hero": "left title and text, right media card",
+    "workRows": "large current project title, right media placeholder, pale oversized index number"
+  },
+  "animationNotes": {
+    "GSAP": ["SplitText title entrance", "ScrollTrigger row reveal", "Flip hover/filter", "ScrollToPlugin smooth navigation"],
+    "reducedMotion": "Keep all content readable, reduce transform animation"
+  }
+}

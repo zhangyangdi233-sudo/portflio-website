@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Signal Room placeholder poster</title>
+  <desc id="desc">Yellow signal bars and blue screen blocks arranged as a quiet interface.</desc>
+  <rect width="1600" height="1000" fill="#fff9df"/>
+  <rect x="180" y="176" width="1240" height="640" fill="#12100e"/>
+  <rect x="270" y="260" width="380" height="410" fill="#1f7a8c"/>
+  <rect x="720" y="260" width="610" height="92" fill="#f9dc5c"/>
+  <rect x="720" y="410" width="480" height="92" fill="#f9dc5c" opacity=".75"/>
+  <rect x="720" y="560" width="550" height="92" fill="#f9dc5c" opacity=".55"/>
+  <path d="M180 816 L1420 176" stroke="#f9dc5c" stroke-width="10" opacity=".45"/>
+  <text x="84" y="920" fill="#12100e" font-family="Arial, sans-serif" font-size="64" font-weight="700">SIGNAL ROOM</text>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "slug": "x-wheel",
+  "year": "2026",
+  "medium": "Interactive game, web demo link, moving image",
+  "status": "Primary work",
+  "priority": 1,
+  "featured": true,
+  "tags": ["game", "interactive", "system", "body"],
+  "palette": {
+    "primary": "#fb4d3d",
+    "secondary": "#5fe7d1",
+    "ink": "#fff7ea",
+    "paper": "#140f12"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel.svg",
+      "alt": "Abstract placeholder poster for X.WHEEL with a rotating wheel interface",
+      "caption": "Rotating interface study for the playable build."
+    }
+  ],
+  "links": {
+    "play": "https://example.com/x-wheel-play"
+  },
+  "i18n": {
+    "zh": {
+      "title": "X.WHEEL",
+      "summary": "一个围绕循环、身体反应与规则错位展开的互动游戏作品。",
+      "body": [
+        "X.WHEEL 被设置为一个可以试玩的重点项目。它不是把游戏当作展示物，而是把玩家的迟疑、重复和误操作变成作品的一部分。",
+        "页面会以外部试玩链接连接到正式构建；当前站点保留清晰的作品信息、视频/截图区域和制作语境，方便教授与策展人快速理解作品的机制和艺术意图。"
+      ]
+    },
+    "en": {
+      "title": "X.WHEEL",
+      "summary": "An interactive game work about loops, bodily response, and rules that never quite stay still.",
+      "body": [
+        "X.WHEEL is treated as the primary work of the portfolio. The game is not framed as a passive object; hesitation, repetition, and misreading become part of the piece.",
+        "The page links to an external playable build while keeping the project information, media area, and production context readable for professors and curators."
+      ]
+    },
+    "ja": {
+      "title": "X.WHEEL",
+      "summary": "循環、身体反応、ずれ続けるルールを扱うインタラクティブなゲーム作品。",
+      "body": [
+        "X.WHEEL はこのポートフォリオの中心作品として扱います。ゲームを単なる展示物ではなく、ためらい、反復、読み違いそのものを作品の一部として提示します。",
+        "ページは外部の試遊リンクにつなげながら、教授やキュレーターが仕組みと制作意図を読み取れるように、作品情報、メディア、制作背景を整理します。"
+      ]
+    }
+  }
+}

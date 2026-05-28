@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Soft Boundaries placeholder poster</title>
+  <desc id="desc">Soft coral shapes folding into green threshold lines.</desc>
+  <rect width="1600" height="1000" fill="#fff2eb"/>
+  <path d="M0 620 C230 470 392 512 582 322 C810 95 1054 144 1600 270 L1600 1000 L0 1000 Z" fill="#ffb4a2"/>
+  <path d="M150 760 C365 660 620 710 815 548 C980 410 1198 386 1460 420" fill="none" stroke="#2a9d8f" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="1110" cy="365" r="118" fill="#1b1716" opacity=".86"/>
+  <g fill="#1b1716" font-family="Arial, sans-serif" font-weight="700">
+    <text x="86" y="140" font-size="60">SOFT BOUNDARIES</text>
+  </g>
+</svg>

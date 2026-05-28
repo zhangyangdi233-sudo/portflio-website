@@ -1,0 +1,25 @@
+---
+import { languageLabels, languages, switchLocalePath } from "../lib/i18n";
+import type { Language } from "../lib/types";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<div class="language-switcher" aria-label="Language switcher">
+  {
+    languages.map((candidate) => (
+      <a
+        class:list={["language-link", { "is-active": candidate === lang }]}
+        href={switchLocalePath(currentPath, candidate)}
+        aria-current={candidate === lang ? "page" : undefined}
+      >
+        {languageLabels[candidate]}
+      </a>
+    ))
+  }
+</div>

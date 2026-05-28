@@ -1,0 +1,144 @@
+---
+import type { Language, LocalizedText, Project, ProjectMedia } from "../lib/types";
+
+interface Props {
+  project: Project;
+  localized: LocalizedText;
+  lang: Language;
+}
+
+const { project, localized, lang } = Astro.props;
+const media = (name: string): ProjectMedia =>
+  project.media.find((item) => item.src.includes(`/${name}.`)) ?? project.media[0];
+
+const bedAlarm = media("bed-alarm");
+const grid = media("grid");
+const pixelSunset = media("pixel-sunset");
+const runner = media("runner");
+const corridor = media("corridor");
+const halftoneBand = media("halftone-band");
+const intercomPlainA = media("intercom-plain-a");
+const dreamQuestionBlack = media("dream-question-black");
+const dreamQuestionBlackB = media("dream-question-black-b");
+const tvGirl = media("tv-girl");
+const whiteScrollBlank = media("white-scroll-blank");
+const floodedTitle = media("flooded-title");
+const wakeScriptCollage = media("wake-script-collage");
+const glitchGirlCollage = media("glitch-girl-collage");
+const intercomLineArt = media("intercom-line-art");
+const intercomPlainB = media("intercom-plain-b");
+const floodedRoomSquare = media("flooded-room-square");
+const questionColumn = media("question-column");
+const quoteColumn = media("quote-column");
+const sayingColumn = media("saying-column");
+const disappearedColumn = media("disappeared-column");
+const dreamQuestionColumn = media("dream-question-column");
+const logoFlood = media("wake-logo-flood");
+const pointingHandPhoto = media("pointing-hand-photo");
+const pointingHandLine = media("pointing-hand-line");
+const vaporIntercom = media("vapor-intercom");
+const disappearedBlack = media("disappeared-black");
+const intercomPhotoFull = media("intercom-photo-full");
+const statementLarge = media("statement-large");
+const statementWide = media("statement-wide");
+const statementClean = media("statement-clean");
+const bioText = media("bio-text");
+const logoColor = media("wake-logo-color");
+const logoBlue = media("wake-logo-blue");
+const logoYellow = media("wake-logo-yellow");
+const cityStrips = [
+  media("city-strip-night"),
+  media("city-strip-sunset"),
+  media("city-strip-day"),
+  media("city-strip-amber")
+];
+const verticalColumns = [questionColumn, sayingColumn, disappearedColumn, dreamQuestionColumn, quoteColumn];
+const blackTextPanels = [dreamQuestionBlack, disappearedBlack, dreamQuestionBlackB];
+---
+
+<article class="wake-replica" data-wake-page>
+  <a class="wake-back" href={`/${lang}/works/`} aria-label="Back to works">WORKS</a>
+
+  <section class="wake-panel wake-opening wake-old-cover" data-wake-panel>
+    <img class="wake-cover-image" src={floodedTitle.src} alt={floodedTitle.alt} loading="eager" decoding="async" data-wake-image />
+    <p class="wake-kicker" data-wake-copy>{localized.title} / {project.year}</p>
+  </section>
+
+  <section class="wake-panel wake-black-questions" data-wake-panel>
+    {blackTextPanels.map((panel, index) => <img class:list={["wake-black-copy", `is-${index + 1}`]} src={panel.src} alt={panel.alt} loading="lazy" decoding="async" data-wake-image />)}
+  </section>
+
+  <section class="wake-panel wake-opening wake-bed-panel" data-wake-panel>
+    <img class="wake-bed" src={bedAlarm.src} alt={bedAlarm.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-grid-panel is-light" data-wake-panel>
+    <img class="wake-grid-bg" src={grid.src} alt={grid.alt} loading="lazy" decoding="async" />
+    <img class="wake-runner is-left" src={runner.src} alt="" loading="lazy" decoding="async" aria-hidden="true" data-wake-image />
+    <img class="wake-intercom-line" src={intercomLineArt.src} alt={intercomLineArt.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-logo is-blue" src={logoBlue.src} alt={logoBlue.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-corridor-panel" data-wake-panel>
+    <img class="wake-corridor" src={corridor.src} alt={corridor.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-flood-square" src={floodedRoomSquare.src} alt={floodedRoomSquare.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-sunset-panel" data-wake-panel>
+    <img class="wake-sunset" src={pixelSunset.src} alt={pixelSunset.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-logo is-yellow" src={logoYellow.src} alt={logoYellow.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-hand-panel" data-wake-panel>
+    <img class="wake-hand-photo" src={pointingHandPhoto.src} alt={pointingHandPhoto.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-hand-line" src={pointingHandLine.src} alt={pointingHandLine.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-columns-panel is-light" data-wake-panel>
+    <img class="wake-blank-scroll" src={whiteScrollBlank.src} alt={whiteScrollBlank.alt} loading="lazy" decoding="async" data-wake-image />
+    <div class="wake-column-grid">
+      {verticalColumns.map((column) => <img src={column.src} alt={column.alt} loading="lazy" decoding="async" data-wake-image />)}
+    </div>
+  </section>
+
+  <section class="wake-panel wake-intercom-panel" data-wake-panel>
+    <img class="wake-intercom-photo is-a" src={intercomPlainA.src} alt={intercomPlainA.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-intercom-photo is-b" src={intercomPlainB.src} alt={intercomPlainB.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-intercom-photo is-c" src={intercomPhotoFull.src} alt={intercomPhotoFull.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-collage-panel" data-wake-panel>
+    <img class="wake-vapor" src={vaporIntercom.src} alt={vaporIntercom.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-tv-girl" src={tvGirl.src} alt={tvGirl.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-script" src={wakeScriptCollage.src} alt={wakeScriptCollage.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-glitch" src={glitchGirlCollage.src} alt={glitchGirlCollage.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-halftone" src={halftoneBand.src} alt={halftoneBand.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-city-panel" data-wake-panel>
+    <div class="wake-city-track" data-wake-city-track>
+      {cityStrips.map((strip) => <img src={strip.src} alt={strip.alt} loading="lazy" decoding="async" data-wake-image />)}
+    </div>
+  </section>
+
+  <section class="wake-panel wake-text-panel is-light" data-wake-panel>
+    <img src={statementWide.src} alt={statementWide.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-text-panel is-light is-large" data-wake-panel>
+    <img src={statementLarge.src} alt={statementLarge.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-text-panel is-light is-clean" data-wake-panel>
+    <img src={statementClean.src} alt={statementClean.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-bio-panel is-light" data-wake-panel>
+    <img src={bioText.src} alt={bioText.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+
+  <section class="wake-panel wake-logo-panel" data-wake-panel>
+    <img class="wake-logo-color" src={logoColor.src} alt={logoColor.alt} loading="lazy" decoding="async" data-wake-image />
+    <img class="wake-logo-flood" src={logoFlood.src} alt={logoFlood.alt} loading="lazy" decoding="async" data-wake-image />
+  </section>
+</article>

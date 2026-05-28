@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Threshold Archive placeholder poster</title>
+  <desc id="desc">A warm archive grid with one dark blue threshold opening.</desc>
+  <rect width="1600" height="1000" fill="#f8ede3"/>
+  <g fill="#d0b8ac">
+    <rect x="120" y="140" width="300" height="220"/>
+    <rect x="470" y="140" width="300" height="220"/>
+    <rect x="820" y="140" width="300" height="220"/>
+    <rect x="1170" y="140" width="300" height="220"/>
+    <rect x="120" y="410" width="300" height="220"/>
+    <rect x="470" y="410" width="300" height="220"/>
+    <rect x="820" y="410" width="300" height="220"/>
+    <rect x="1170" y="410" width="300" height="220"/>
+  </g>
+  <rect x="470" y="410" width="300" height="220" fill="#3d405b"/>
+  <path d="M535 520 L704 520 M620 438 L620 602" stroke="#f8ede3" stroke-width="18" stroke-linecap="round"/>
+  <text x="84" y="900" fill="#141111" font-family="Arial, sans-serif" font-size="56" font-weight="700">THRESHOLD ARCHIVE</text>
+</svg>

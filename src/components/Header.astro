@@ -1,0 +1,26 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { ui } from "../lib/i18n";
+import { siteProfile } from "../lib/site-data";
+import type { Language } from "../lib/types";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const labels = ui[lang];
+---
+
+<header class="site-header">
+  <a class="brand-mark" href={`/${lang}/`} aria-label="糍粑 CIBA home">
+    <span>糍粑</span>
+    <span>CIBA</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href={`/${lang}/works/`}>{labels.works}</a>
+    <a href={`/${lang}/about/`}>{labels.about}</a>
+    <a href={`mailto:${siteProfile.email}`}>{labels.contact}</a>
+  </nav>
+  <LanguageSwitcher lang={lang} />
+</header>

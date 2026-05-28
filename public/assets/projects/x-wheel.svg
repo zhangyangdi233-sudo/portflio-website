@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">X.WHEEL placeholder poster</title>
+  <desc id="desc">A rotating wheel interface with cyan and red tracks on a dark field.</desc>
+  <rect width="1600" height="1000" fill="#140f12"/>
+  <path d="M100 830 C420 600 470 210 805 164 C1114 122 1340 305 1500 72" fill="none" stroke="#5fe7d1" stroke-width="18" opacity=".75"/>
+  <circle cx="800" cy="500" r="278" fill="none" stroke="#fff7ea" stroke-width="2" opacity=".45"/>
+  <circle cx="800" cy="500" r="212" fill="none" stroke="#fb4d3d" stroke-width="34" stroke-dasharray="150 60"/>
+  <circle cx="800" cy="500" r="84" fill="#fb4d3d"/>
+  <path d="M735 377 L865 623 M865 377 L735 623" stroke="#140f12" stroke-width="42" stroke-linecap="round"/>
+  <g fill="#fff7ea" font-family="Arial, sans-serif" font-weight="700">
+    <text x="88" y="126" font-size="64">X.WHEEL</text>
+    <text x="88" y="190" font-size="24" opacity=".75">PLAYABLE EXTERNAL BUILD</text>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+import ProjectMedia from "../../../components/ProjectMedia.astro";
+import WakeUpReplica from "../../../components/WakeUpReplica.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { assertLanguage, languages, ui } from "../../../lib/i18n";
+import { getLocalizedProject, getProjectThemeVars, sortProjects } from "../../../lib/projects";
+import { siteProfile } from "../../../lib/site-data";
+import type { Project } from "../../../lib/types";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("projects");
+  return languages.flatMap((lang) =>
+    entries.map((entry) => ({
+      params: { lang, slug: entry.data.slug }
+    }))
+  );
+}
+
+const lang = assertLanguage(Astro.params.lang);
+const labels = ui[lang];
+const entries = await getCollection("projects");
+const projects = sortProjects(entries.map((entry) => entry.data as Project));
+const project = projects.find((item) => item.slug === Astro.params.slug) ?? projects[0];
+const localized = getLocalizedProject(project, lang);
+const theme = getProjectThemeVars(project);
+const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
+const nextLocalized = getLocalizedProject(nextProject, lang);
+const isWakeUpReplica = project.pageMode === "wake-up-replica";
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${localized.title} | ${siteProfile.artistName}`}
+  description={localized.summary}
+  pageClass={isWakeUpReplica ? "project-page wake-page" : "project-page"}
+  theme={theme}
+  bare={isWakeUpReplica}
+>
+  {
+    isWakeUpReplica ? (
+      <WakeUpReplica project={project} localized={localized} lang={lang} />
+    ) : (
+      <article class="project-detail">
+        <header class="project-hero">
+          <div class="project-hero__copy">
+            <p class="eyebrow">{project.status}</p>
+            <h1 class="split-heading">{localized.title}</h1>
+            <p>{localized.summary}</p>
+            <dl class="project-meta">
+              <div>
+                <dt>Year</dt>
+                <dd>{project.year}</dd>
+              </div>
+              <div>
+                <dt>Medium</dt>
+                <dd>{project.medium}</dd>
+              </div>
+              <div>
+                <dt>Tags</dt>
+                <dd>{project.tags.join(" / ")}</dd>
+              </div>
+            </dl>
+            {
+              project.links.play && (
+                <a class="button is-primary" href={project.links.play} target="_blank" rel="noreferrer">
+                  {labels.play}
+                </a>
+              )
+            }
+          </div>
+          <ProjectMedia media={project.media[0]} eager />
+        </header>
+
+        <section class="project-text" data-reveal>
+          {localized.body.map((paragraph) => <p>{paragraph}</p>)}
+        </section>
+
+        <nav class="next-project" aria-label="Next project">
+          <a href={`/${lang}/works/${nextProject.slug}/`}>
+            <span>Next</span>
+            <strong>{nextLocalized.title}</strong>
+          </a>
+        </nav>
+      </article>
+    )
+  }
+</BaseLayout>

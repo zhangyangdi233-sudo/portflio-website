@@ -1,0 +1,52 @@
+{
+  "slug": "emida",
+  "year": "2024",
+  "medium": "Installation, image system, narrative interface",
+  "status": "Secondary focus",
+  "priority": 2,
+  "featured": true,
+  "tags": ["installation", "archive", "interface"],
+  "palette": {
+    "primary": "#7dd3fc",
+    "secondary": "#f6d365",
+    "ink": "#06131b",
+    "paper": "#eaf7f9"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/emida.svg",
+      "alt": "Abstract placeholder poster for EMIDA with layered archive panels",
+      "caption": "Layered archive structure for image and memory."
+    }
+  ],
+  "links": {
+    "archive": "https://readymag.website/u668535135/4450942/"
+  },
+  "i18n": {
+    "zh": {
+      "title": "EMIDA",
+      "summary": "一个关于图像、记忆和界面距离的第二重点项目。",
+      "body": [
+        "EMIDA 来自旧站的核心内容，将在新版中被重新整理为可阅读的项目档案。",
+        "新版页面会保留作品事实与视觉材料，但将文字改写得更短、更准确，让它适合教授与策展人在有限时间内阅读。"
+      ]
+    },
+    "en": {
+      "title": "EMIDA",
+      "summary": "A second-focus project on image, memory, and the distance created by interfaces.",
+      "body": [
+        "EMIDA is carried over from the previous site as a major work and reframed as a clear project archive.",
+        "The new page preserves factual and visual material while rewriting the text into a shorter, sharper curatorial voice."
+      ]
+    },
+    "ja": {
+      "title": "EMIDA",
+      "summary": "イメージ、記憶、インターフェースが生む距離を扱う第二の重点作品。",
+      "body": [
+        "EMIDA は旧サイトから引き継ぐ主要作品であり、新しいサイトでは読みやすいプロジェクト・アーカイブとして再構成します。",
+        "作品の事実と視覚資料を保ちながら、文章は短く明確なキュレーション向けの語りに整えます。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "slug": "wake-up",
+  "year": "2023",
+  "medium": "Web-based visual essay, image archive, scrolling composition",
+  "status": "Old-site replica",
+  "priority": 3,
+  "featured": false,
+  "pageMode": "wake-up-replica",
+  "tags": ["web", "visual-essay", "archive", "old-site-replica"],
+  "palette": {
+    "primary": "#f8f8f2",
+    "secondary": "#0a3b78",
+    "ink": "#050505",
+    "paper": "#ffffff"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/bed-alarm.jpg",
+      "alt": "Black field with a white figure waking in bed beside a ringing alarm clock"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/grid.jpg",
+      "alt": "Pale gray square grid background from the original Wake Up page"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/pixel-sunset.png",
+      "alt": "Pixelated sunset landscape used in the Wake Up web page"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/runner.png",
+      "alt": "Dark running human icon from the Wake Up sequence"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/corridor.png",
+      "alt": "Wide black scene with small figures, blue linear marks, and arrows"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/halftone-band.png",
+      "alt": "Horizontal blue and black halftone image band"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/city-strip-night.png",
+      "alt": "Long vertical strip of night city photographs"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/city-strip-sunset.png",
+      "alt": "Long vertical strip of sunset city photographs"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/city-strip-day.png",
+      "alt": "Long vertical strip of daytime city photographs"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/city-strip-amber.png",
+      "alt": "Long vertical strip of amber evening city photographs"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/statement-large.png",
+      "alt": "Original Japanese statement image with a black human icon and handwritten loop"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/statement-wide.png",
+      "alt": "Wide original Japanese statement panel with Hegel quotation"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/statement-clean.png",
+      "alt": "Clean original Japanese statement panel with Hegel quotation"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/bio-text.png",
+      "alt": "Original Japanese biography text panel"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/wake-logo-color.png",
+      "alt": "Blue and yellow distorted Wake Up word mark"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/wake-logo-blue.png",
+      "alt": "Blue distorted Wake Up word mark"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/wake-logo-yellow.png",
+      "alt": "Yellow repeated Wake Up shadow shape"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/intercom-plain-a.jpg",
+      "alt": "Photograph of a Japanese apartment intercom on a wall"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/dream-question-black.jpg",
+      "alt": "Black field with vertical Japanese text asking whether the previous moment was a dream"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/tv-girl.png",
+      "alt": "Colorful television-like collage with a pink-haired figure looking away"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/white-scroll-blank.png",
+      "alt": "Tall blank white scroll image from the original Wake Up layout"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/flooded-title.jpg",
+      "alt": "Dark flooded corridor with distorted Wake Up title reflected in water"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/wake-script-collage.png",
+      "alt": "Colorful Wake Up collage with handwritten lettering over an intercom screen"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/glitch-girl-collage.png",
+      "alt": "Glitched colorful collage with television frame, arrows, and handwritten marks"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/intercom-line-art.png",
+      "alt": "Black line drawing of an intercom device on a transparent field"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/intercom-plain-b.png",
+      "alt": "Cut-out intercom photograph on transparent background"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/flooded-room-square.jpeg",
+      "alt": "Square image of a flooded corridor with bright ceiling lights"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/question-column.png",
+      "alt": "Vertical Japanese question text in white from the old Wake Up page"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/quote-column.png",
+      "alt": "Tall vertical Japanese quotation column by Carl Gustav Jung"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/saying-column.png",
+      "alt": "Tall vertical Japanese text saying that something is speaking"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/disappeared-column.png",
+      "alt": "Vertical Japanese text saying disappeared"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/dream-question-column.png",
+      "alt": "Vertical Japanese text asking whether the previous moment was a dream"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/wake-logo-flood.png",
+      "alt": "Large distorted Wake Up title with red and black reflected water"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/pointing-hand-photo.png",
+      "alt": "Photographic pointing hand cut out on a transparent background"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/pointing-hand-line.png",
+      "alt": "Line drawing of a pointing hand on a transparent background"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/dream-question-black-b.jpg",
+      "alt": "Second black field with vertical Japanese dream question"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/vapor-intercom.png",
+      "alt": "Colorful vaporwave-like background with an intercom photograph"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/disappeared-black.jpg",
+      "alt": "Black field with vertical Japanese text saying disappeared"
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/wake-up/intercom-photo-full.png",
+      "alt": "Full intercom photograph floating on black"
+    }
+  ],
+  "links": {
+    "archive": "https://readymag.website/u668535135/4450942/"
+  },
+  "i18n": {
+    "zh": {
+      "title": "Wake Up",
+      "summary": "一件以旧网站原始素材复刻的网页视觉叙事，关于清醒、城市和典型的人。",
+      "body": [
+        "Wake Up 在新版中保留旧网站的黑白、网格、日文文本图和城市长条影像，以长滚动方式复刻原始网页体验。",
+        "作品围绕现代社会中典型的人、重复的日常与自我介绍展开，图像和文字像档案一样被重新排布。"
+      ]
+    },
+    "en": {
+      "title": "Wake Up",
+      "summary": "A recreated web visual essay from the old site, tracing awakening, city time, and the idea of an ordinary person.",
+      "body": [
+        "Wake Up keeps the black fields, grids, Japanese statement images, city photo strips, and word marks from the previous site, rebuilt here as a long scrolling page.",
+        "The work turns self-introduction into a visual archive of ordinary life, social repetition, and the strange pressure of waking inside a city."
+      ]
+    },
+    "ja": {
+      "title": "Wake Up",
+      "summary": "旧サイトの素材を用いて再構成した、目覚め、都市、典型的な人間についてのウェブ・ビジュアルエッセイ。",
+      "body": [
+        "Wake Up は旧サイトの黒い画面、グリッド、都市写真の縦長ストリップ、日本語のステートメント画像、歪んだロゴを長いスクロール体験として復刻します。",
+        "自己紹介、典型的な人間、現代社会の鉄筋コンクリートの森という旧作の語りを、画像の連なりとして再配置します。"
+      ]
+    }
+  }
+}

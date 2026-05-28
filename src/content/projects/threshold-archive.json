@@ -1,0 +1,50 @@
+{
+  "slug": "threshold-archive",
+  "year": "2021",
+  "medium": "Web archive, still image sequence",
+  "status": "Selected work",
+  "priority": 6,
+  "featured": false,
+  "tags": ["archive", "web", "sequence"],
+  "palette": {
+    "primary": "#d0b8ac",
+    "secondary": "#3d405b",
+    "ink": "#141111",
+    "paper": "#f8ede3"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/threshold-archive.svg",
+      "alt": "Abstract placeholder poster for Threshold Archive",
+      "caption": "A grid of entrances, frames, and archive thresholds."
+    }
+  ],
+  "links": {},
+  "i18n": {
+    "zh": {
+      "title": "Threshold Archive",
+      "summary": "以网页、静帧和入口结构组织的早期档案项目。",
+      "body": [
+        "Threshold Archive 作为较早的项目，帮助观众理解糍粑实践中对入口、界面和观看顺序的持续兴趣。",
+        "它在新版中保持精简，只保留能支撑整体脉络的材料。"
+      ]
+    },
+    "en": {
+      "title": "Threshold Archive",
+      "summary": "An early archive project organized through web pages, still frames, and entry structures.",
+      "body": [
+        "Threshold Archive helps viewers understand the continuing interest in entrances, interfaces, and viewing order within Ciba's practice.",
+        "In this version it stays concise, keeping only the material that supports the broader trajectory."
+      ]
+    },
+    "ja": {
+      "title": "Threshold Archive",
+      "summary": "ウェブページ、静止フレーム、入口構造によって組織された初期のアーカイブ作品。",
+      "body": [
+        "Threshold Archive は、糍粑の実践における入口、インターフェース、見る順序への継続的な関心を示します。",
+        "新版では全体の流れを支える素材に絞って、簡潔に提示します。"
+      ]
+    }
+  }
+}

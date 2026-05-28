@@ -1,0 +1,50 @@
+{
+  "artistName": "糍粑",
+  "email": "hello@example.com",
+  "location": "Tokyo / Online",
+  "cvUrl": "/downloads/ciba-cv-placeholder.pdf",
+  "socials": [
+    {
+      "label": "Readymag archive",
+      "href": "https://readymag.website/u668535135/4450942/"
+    }
+  ],
+  "i18n": {
+    "zh": {
+      "role": "艺术家 / 游戏与界面实践",
+      "statement": [
+        "糍粑的实践从游戏、界面、影像和装置之间展开，关注规则如何塑造身体反应，以及图像如何在系统中获得新的距离。",
+        "新版作品集把作品整理为可以快速阅读的策展档案，同时保留网页作为作品入口的沉浸感。"
+      ],
+      "cv": [
+        "2026 X.WHEEL, interactive game work",
+        "2024 EMIDA, installation and image system",
+        "Selected projects and full CV to be updated from the supplied asset pack"
+      ]
+    },
+    "en": {
+      "role": "Artist / Game and interface practice",
+      "statement": [
+        "Ciba works across games, interfaces, moving images, and installation, focusing on how rules shape bodily response and how images gain distance inside systems.",
+        "The new portfolio is structured as a curator-readable archive while preserving the immersive feeling of a web-based entry point."
+      ],
+      "cv": [
+        "2026 X.WHEEL, interactive game work",
+        "2024 EMIDA, installation and image system",
+        "Selected projects and full CV to be updated from the supplied asset pack"
+      ]
+    },
+    "ja": {
+      "role": "アーティスト / ゲームとインターフェースの実践",
+      "statement": [
+        "糍粑はゲーム、インターフェース、映像、インスタレーションを横断し、ルールが身体反応をどう形づくるか、イメージがシステムの中でどのような距離を得るかに関心を持っています。",
+        "新しいポートフォリオは、キュレーターが読みやすいアーカイブとして構成しながら、ウェブ上の入口としての没入感も保ちます。"
+      ],
+      "cv": [
+        "2026 X.WHEEL, interactive game work",
+        "2024 EMIDA, installation and image system",
+        "Selected projects and full CV to be updated from the supplied asset pack"
+      ]
+    }
+  }
+}

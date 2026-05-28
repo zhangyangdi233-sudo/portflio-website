@@ -1,0 +1,50 @@
+{
+  "slug": "signal-room",
+  "year": "2022",
+  "medium": "Soundless interface, screen study",
+  "status": "Selected work",
+  "priority": 5,
+  "featured": false,
+  "tags": ["screen", "signal", "interface"],
+  "palette": {
+    "primary": "#f9dc5c",
+    "secondary": "#1f7a8c",
+    "ink": "#12100e",
+    "paper": "#fff9df"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/signal-room.svg",
+      "alt": "Abstract placeholder poster for Signal Room",
+      "caption": "Screen blocks arranged around silent signals."
+    }
+  ],
+  "links": {},
+  "i18n": {
+    "zh": {
+      "title": "Signal Room",
+      "summary": "一个以屏幕、延迟和无声信号为材料的界面研究。",
+      "body": [
+        "Signal Room 关注信息抵达之前的等待状态，以及界面如何组织注意力。",
+        "它会以较短的档案形式呈现，补充作品集中的系统性思考。"
+      ]
+    },
+    "en": {
+      "title": "Signal Room",
+      "summary": "An interface study using screens, delay, and silent signals as material.",
+      "body": [
+        "Signal Room looks at the waiting state before information arrives and how interfaces organize attention.",
+        "It appears as a concise archive entry that supports the portfolio's interest in systems."
+      ]
+    },
+    "ja": {
+      "title": "Signal Room",
+      "summary": "スクリーン、遅延、無音の信号を素材にしたインターフェース研究。",
+      "body": [
+        "Signal Room は情報が届く前の待機状態と、インターフェースが注意をどう組織するかを扱います。",
+        "システムへの関心を補足する、短いアーカイブ項目として提示します。"
+      ]
+    }
+  }
+}
