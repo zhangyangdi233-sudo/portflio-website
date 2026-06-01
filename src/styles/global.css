@@ -4031,6 +4031,10 @@ body.international-home {
   will-change: transform, opacity;
 }
 
+.home-work-card:focus-visible {
+  outline-color: var(--home-ink);
+}
+
 .home-work-card img,
 .home-work-card video {
   aspect-ratio: 16 / 10;

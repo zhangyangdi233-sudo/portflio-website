@@ -111,5 +111,7 @@ describe("internationalist homepage redesign", () => {
     expect(styles).toContain(".home-work-scene");
     expect(styles).toContain("scroll-snap-type: x mandatory");
     expect(styles).toContain(".international-home :focus-visible");
+    expect(styles).toContain(".home-work-card:focus-visible");
+    expect(styles).toContain("outline-color: var(--home-ink)");
   });
 });
