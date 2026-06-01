@@ -94,4 +94,10 @@ describe("internationalist homepage redesign", () => {
     expect(wall).toContain('as="h2"');
     expect(scene).toContain('as="h2"');
   });
+
+  it("uses preview media inside linked project cards", () => {
+    const projectCard = read("../src/components/ProjectCard.astro");
+
+    expect(projectCard).toContain("<ProjectMedia media={project.media[0]} preview />");
+  });
 });

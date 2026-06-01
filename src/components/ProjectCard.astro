@@ -24,7 +24,7 @@ const vars = Object.entries(getProjectThemeVars(project))
   data-tags={project.tags.join(" ")}
 >
   <a href={`/${lang}/works/${project.slug}/`} aria-label={`${localized.title} project page`}>
-    <ProjectMedia media={project.media[0]} />
+    <ProjectMedia media={project.media[0]} preview />
     <div class="project-card__body">
       <div class="project-card__meta">
         <span>{project.year}</span>
