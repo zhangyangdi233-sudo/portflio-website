@@ -110,6 +110,7 @@ describe("internationalist homepage redesign", () => {
     expect(styles).toContain("--home-acid: #b7ff00");
     expect(styles).toContain(".home-work-scene");
     expect(styles).toContain("scroll-snap-type: x mandatory");
+    expect(styles).toMatch(/scroll-snap-align: center;\r?\n    transform: none;/);
     expect(styles).toContain(".international-home :focus-visible");
     expect(styles).toContain(".home-work-card:focus-visible");
     expect(styles).toContain("outline-color: var(--home-ink)");

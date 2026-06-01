@@ -4223,6 +4223,7 @@ body.international-home {
     flex: 0 0 82vw;
     width: auto;
     scroll-snap-align: center;
+    transform: none;
   }
 
   .minimal-index__list a {
