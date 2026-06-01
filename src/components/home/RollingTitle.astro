@@ -1,0 +1,29 @@
+---
+interface Props {
+  as: "h1" | "h2";
+  text: string;
+  id?: string;
+  class?: string;
+  hero?: boolean;
+}
+
+const { as: Tag, text, id, class: className = "", hero = false }: Props = Astro.props;
+const words = text.toUpperCase().split(" ");
+---
+
+<Tag id={id} class:list={["rolling-title", className]} data-rolling-title data-rolling-hero={hero ? "" : undefined} aria-label={text}>
+  {
+    words.map((word) => (
+      <span class="rolling-title__word">
+        {Array.from(word).map((letter) => (
+          <span class="rolling-title__mask">
+            <span class="rolling-title__track">
+              <span>{letter}</span>
+              <span aria-hidden="true">{letter}</span>
+            </span>
+          </span>
+        ))}
+      </span>
+    ))
+  }
+</Tag>

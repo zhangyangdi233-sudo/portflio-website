@@ -31,4 +31,35 @@ describe("internationalist homepage redesign", () => {
     expect(layout).toContain("siteProfile.socials.map");
     expect(styles).toContain(".skip-link:focus-visible");
   });
+
+  it("uses one semantic homepage h1 and dedicated immersive sections", () => {
+    const home = read("../src/pages/[lang]/index.astro");
+
+    expect(home.match(/as="h1"/g) ?? []).toHaveLength(1);
+    expect(home).toContain("<HomeMediaWall");
+    expect(home).toContain("<HomeWorkScene");
+    expect(home).toContain('id="project-index"');
+  });
+
+  it("removes the obsolete draggable windows and file-folder stack", () => {
+    const home = read("../src/pages/[lang]/index.astro");
+
+    expect(home).not.toContain("data-work-window");
+    expect(home).not.toContain("data-window-handle");
+    expect(home).not.toContain("data-file-extract");
+    expect(home).not.toContain("data-file-card");
+  });
+
+  it("renders stable hooks for the scattered wall and experimental work scene", () => {
+    const wall = read("../src/components/home/HomeMediaWall.astro");
+    const scene = read("../src/components/home/HomeWorkScene.astro");
+
+    expect(wall).toContain("data-home-media-wall");
+    expect(wall).toContain("data-home-media-pin");
+    expect(wall).toContain("data-home-media");
+    expect(scene).toContain("data-home-work-scene");
+    expect(scene).toContain("data-home-work-scene-pin");
+    expect(scene).toContain("data-home-work-card");
+    expect(scene).toContain("WORK");
+  });
 });

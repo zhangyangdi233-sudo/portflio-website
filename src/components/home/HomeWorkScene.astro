@@ -1,0 +1,62 @@
+---
+import { getLocalizedProject } from "../../lib/projects";
+import type { Language, Project } from "../../lib/types";
+import RollingTitle from "./RollingTitle.astro";
+
+interface Props {
+  lang: Language;
+  projects: Project[];
+  heading: string;
+  body: string;
+}
+
+const { lang, projects, heading, body } = Astro.props;
+const settings = [
+  [-92, 88, -24, 0.88, -8],
+  [96, -82, 22, 1.02, 7],
+  [-104, 94, 12, 0.74, -5],
+  [88, -96, -14, 1.1, 9],
+  [-84, 102, 28, 0.82, -7],
+  [108, -90, -30, 0.96, 6],
+  [-98, 86, 4, 0.9, -4]
+] as const;
+---
+
+<section class="home-work-scene" data-home-work-scene aria-labelledby="home-work-scene-title">
+  <div class="home-work-scene__pin" data-home-work-scene-pin>
+    <div class="home-work-scene__letters" aria-hidden="true">
+      {Array.from("WORK").map((letter) => <span>{letter}</span>)}
+    </div>
+    <div class="home-work-scene__copy">
+      <p class="home-kicker">02 / WORK SCENE</p>
+      <RollingTitle as="h2" text={heading} id="home-work-scene-title" class="home-section-title" />
+      <p>{body}</p>
+    </div>
+    <div class="home-work-scene__cards">
+      {
+        projects.slice(0, settings.length).map((project, index) => {
+          const localized = getLocalizedProject(project, lang);
+          const [startX, endX, y, scale, rotation] = settings[index];
+          return (
+            <a
+              class="home-work-card"
+              href={`/${lang}/works/${project.slug}/`}
+              data-home-work-card
+              data-start-x={startX}
+              data-end-x={endX}
+              data-card-y={y}
+              data-card-scale={scale}
+              data-card-rotation={rotation}
+            >
+              <img src={project.media[0].src} alt={project.media[0].alt} loading="lazy" decoding="async" />
+              <span class="home-work-card__caption">
+                <strong>{localized.title}</strong>
+                <span>{project.year} / #{String(index + 1).padStart(4, "0")}</span>
+              </span>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
