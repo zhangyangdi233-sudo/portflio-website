@@ -29,6 +29,7 @@ const themeStyle = Object.entries(theme)
     <title>{title}</title>
   </head>
   <body class={pageClass}>
+    <a class="skip-link" href="#content">Skip to content</a>
     {!bare && <div class="ambient-grid" aria-hidden="true"></div>}
     {!bare && <Header lang={lang} />}
     <main id="content">
@@ -39,6 +40,7 @@ const themeStyle = Object.entries(theme)
         <footer class="site-footer">
           <span>{siteProfile.artistName}</span>
           <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+          {siteProfile.socials.map((social) => <a href={social.href}>{social.label}</a>)}
           <span>{siteProfile.location}</span>
         </footer>
       )

@@ -21,4 +21,14 @@ describe("internationalist homepage redesign", () => {
       }
     }
   });
+
+  it("provides a shared skip link for keyboard users", () => {
+    const layout = read("../src/layouts/BaseLayout.astro");
+    const styles = read("../src/styles/global.css");
+
+    expect(layout).toContain('class="skip-link"');
+    expect(layout).toContain('href="#content"');
+    expect(layout).toContain("siteProfile.socials.map");
+    expect(styles).toContain(".skip-link:focus-visible");
+  });
 });
