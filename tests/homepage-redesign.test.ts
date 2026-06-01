@@ -115,4 +115,25 @@ describe("internationalist homepage redesign", () => {
     expect(styles).toContain(".home-work-card:focus-visible");
     expect(styles).toContain("outline-color: var(--home-ink)");
   });
+
+  it("uses scoped GSAP scenes without the obsolete draggable homepage", () => {
+    const motion = read("../src/scripts/portfolio-motion.ts");
+
+    expect(motion).toContain('[data-international-home]');
+    expect(motion).toContain('[data-home-media-wall]');
+    expect(motion).toContain('[data-home-work-scene]');
+    expect(motion).toContain("gsap.context");
+    expect(motion).not.toContain('from "gsap/Draggable"');
+    expect(motion).not.toContain("[data-work-window]");
+    expect(motion).not.toContain("[data-file-extract]");
+  });
+
+  it("uses native anchor scrolling when motion is reduced", () => {
+    const motion = read("../src/scripts/portfolio-motion.ts");
+
+    expect(motion).toContain('const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;');
+    expect(motion).toContain("if (motionReduced) {");
+    expect(motion).toContain("element.scrollIntoView();");
+    expect(motion).toMatch(/if \(motionReduced\) {\s*element\.scrollIntoView\(\);\s*return;\s*}\s*gsap\.to\(window,/);
+  });
 });

@@ -1,12 +1,11 @@
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
-import { Draggable } from "gsap/Draggable";
 import { Flip } from "gsap/Flip";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(CustomEase, Draggable, Flip, ScrollToPlugin, ScrollTrigger, SplitText);
+gsap.registerPlugin(CustomEase, Flip, ScrollToPlugin, ScrollTrigger, SplitText);
 
 CustomEase.create("cibaEase", "M0,0 C0.2,0 0.05,1 1,1");
 gsap.defaults({ duration: 0.72, ease: "cibaEase", overwrite: "auto" });
@@ -22,9 +21,10 @@ motion.add(
     const { reduceMotion, isDesktop } = context.conditions ?? {};
 
     if (reduceMotion) {
-      gsap.set("[data-reveal], .project-card, .hero-visual, .work-form, [data-wake-page] img, [data-cinema-media], [data-file-card], [data-work-window]", {
-        clearProps: "all"
-      });
+      gsap.set(
+        "[data-reveal], .project-card, .hero-visual, .work-form, [data-wake-page] img, [data-home-media], [data-home-work-card], .rolling-title__track",
+        { clearProps: "all" }
+      );
       return;
     }
 
@@ -86,172 +86,111 @@ motion.add(
       }
     }
 
-    const cinemaScroll = document.querySelector<HTMLElement>("[data-cinema-scroll]");
-    if (cinemaScroll) {
-      const stage = cinemaScroll.querySelector<HTMLElement>(".cinema-stage");
-      const mediaField = cinemaScroll.querySelector<HTMLElement>(".cinema-media-field");
-      const medias = gsap.utils.toArray<HTMLElement>(cinemaScroll.querySelectorAll("[data-cinema-media]"));
-      const titles = gsap.utils.toArray<HTMLElement>(cinemaScroll.querySelectorAll("[data-cinema-title]"));
-      const descriptions = gsap.utils.toArray<HTMLElement>(cinemaScroll.querySelectorAll("[data-cinema-description]"));
-      let activeTitleIndex = -1;
+    const internationalHome = document.querySelector<HTMLElement>("[data-international-home]");
+    if (internationalHome) {
+      gsap.context(() => {
+        const rollingTitles = gsap.utils.toArray<HTMLElement>("[data-rolling-title]");
 
-      const activateTitle = (index: number) => {
-        if (activeTitleIndex === index || !titles[index]) return;
+        rollingTitles.forEach((rollingTitle) => {
+          const tracks = rollingTitle.querySelectorAll<HTMLElement>(".rolling-title__track");
+          const isHero = rollingTitle.hasAttribute("data-rolling-hero");
 
-        const previousTitle = activeTitleIndex >= 0 ? titles[activeTitleIndex] : undefined;
-        const previousDescription = activeTitleIndex >= 0 ? descriptions[activeTitleIndex] : undefined;
-        const nextTitle = titles[index];
-        const nextDescription = descriptions[index];
+          gsap.fromTo(
+            tracks,
+            { yPercent: 100 },
+            {
+              yPercent: 0,
+              stagger: { amount: isHero ? 0.48 : 0.28, from: "start" },
+              duration: isHero ? 0.86 : 0.58,
+              scrollTrigger: isHero
+                ? undefined
+                : {
+                    trigger: rollingTitle,
+                    start: "top 82%",
+                    toggleActions: "play none none reverse"
+                  }
+            }
+          );
+        });
 
-        if (previousTitle) {
-          gsap.to(previousTitle.querySelectorAll(".cinema-letter-roll"), {
-            yPercent: -100,
-            duration: 0.28,
-            stagger: { amount: 0.08, from: "start" }
-          });
-          gsap.to(previousTitle, { autoAlpha: 0, duration: 0.22, delay: 0.08 });
-        }
-
-        if (previousDescription) {
-          gsap.to(previousDescription, { y: -14, autoAlpha: 0, duration: 0.24 });
-        }
-
-        gsap.set(nextTitle, { autoAlpha: 1 });
-        gsap.fromTo(
-          nextTitle.querySelectorAll(".cinema-letter-roll"),
-          { yPercent: 100 },
-          { yPercent: 0, duration: 0.46, stagger: { amount: 0.22, from: "start" } }
+        const mediaWall = internationalHome.querySelector<HTMLElement>("[data-home-media-wall]");
+        const mediaPin = internationalHome.querySelector<HTMLElement>("[data-home-media-pin]");
+        const mediaItems = gsap.utils.toArray<HTMLElement>(
+          internationalHome.querySelectorAll("[data-home-media]")
         );
 
-        if (nextDescription) {
-          gsap.fromTo(nextDescription, { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.42, delay: 0.08 });
+        if (isDesktop && mediaWall && mediaPin && mediaItems.length > 0) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: mediaWall,
+                start: "top top",
+                end: "+=3000",
+                pin: mediaPin,
+                scrub: 1,
+                anticipatePin: 1
+              }
+            })
+            .fromTo(
+              mediaItems,
+              { x: 0, y: 0, rotation: 0, scale: 0.72, autoAlpha: 0.28 },
+              {
+                x: (_, element) => Number((element as HTMLElement).dataset.mediaX ?? 0),
+                y: (_, element) => Number((element as HTMLElement).dataset.mediaY ?? 0),
+                rotation: (_, element) => Number((element as HTMLElement).dataset.mediaRotation ?? 0),
+                scale: 1,
+                autoAlpha: 1,
+                stagger: 0.04,
+                ease: "none"
+              },
+              0
+            );
         }
 
-        activeTitleIndex = index;
-      };
+        const workScene = internationalHome.querySelector<HTMLElement>("[data-home-work-scene]");
+        const workScenePin = internationalHome.querySelector<HTMLElement>("[data-home-work-scene-pin]");
+        const workCards = gsap.utils.toArray<HTMLElement>(
+          internationalHome.querySelectorAll("[data-home-work-card]")
+        );
+        const workLetters = gsap.utils.toArray<HTMLElement>(
+          internationalHome.querySelectorAll(".home-work-scene__letters span")
+        );
 
-      gsap.set(titles, { autoAlpha: 0 });
-      gsap.set(descriptions, { autoAlpha: 0 });
-      activateTitle(0);
-
-      gsap.from(".cinema-nav a", {
-        y: -18,
-        autoAlpha: 0,
-        stagger: 0.08,
-        duration: 0.58
-      });
-
-      if (isDesktop && stage && mediaField && medias.length > 0) {
-        const scrollDistance = Math.max(3600, titles.length * 820);
-
-        const cinemaTimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: cinemaScroll,
-            start: "top top",
-            end: `+=${scrollDistance}`,
-            pin: stage,
-            scrub: 1,
-            anticipatePin: 1,
-            onUpdate: (self) => {
-              const nextIndex = Math.min(titles.length - 1, Math.floor(self.progress * titles.length));
-              activateTitle(nextIndex);
+        if (isDesktop && workScene && workScenePin && workCards.length > 0) {
+          const workTimeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: workScene,
+              start: "top top",
+              end: "+=4200",
+              pin: workScenePin,
+              scrub: 1.1,
+              anticipatePin: 1
             }
-          }
-        });
+          });
 
-        cinemaTimeline
-          .to(document.body, { "--cinema-green-alpha": 0, ease: "none", duration: 0.36 }, 0)
-          .to(mediaField, { xPercent: -58, ease: "none", duration: 1 }, 0)
-          .to(
-            medias,
-            {
-              rotation: (index) => (index % 2 === 0 ? -2 : 2),
-              y: (index) => (index % 3 === 0 ? -38 : index % 3 === 1 ? 22 : -10),
-              ease: "none",
-              duration: 1
-            },
+          workTimeline.fromTo(
+            workLetters,
+            { xPercent: (index) => (index % 2 === 0 ? -10 : 10) },
+            { xPercent: (index) => (index % 2 === 0 ? 8 : -8), stagger: 0.04, ease: "none" },
             0
           );
-      } else if (mediaField && medias.length > 0) {
-        gsap.set(document.body, { "--cinema-green-alpha": 0.52 });
-        gsap.set(medias, { clearProps: "transform" });
-      }
-    }
 
-    const workWindows = gsap.utils.toArray<HTMLElement>("[data-work-window]");
-    if (workWindows.length > 0) {
-      gsap.from(workWindows, {
-        y: 18,
-        scale: 0.94,
-        autoAlpha: 0,
-        stagger: 0.1,
-        delay: 0.35,
-        duration: 0.52
-      });
+          workCards.forEach((card, index) => {
+            const startX = Number(card.dataset.startX ?? 0);
+            const endX = Number(card.dataset.endX ?? 0);
+            const y = Number(card.dataset.cardY ?? 0);
+            const scale = Number(card.dataset.cardScale ?? 1);
+            const rotation = Number(card.dataset.cardRotation ?? 0);
 
-      workWindows.forEach((windowElement) => {
-        windowElement.querySelectorAll<HTMLElement>("[data-window-close]").forEach((button) => {
-          button.addEventListener("click", (event) => {
-            event.preventDefault();
-            gsap.to(windowElement, { scale: 0.92, autoAlpha: 0, duration: 0.22, pointerEvents: "none" });
-          });
-        });
-
-        if (isDesktop) {
-          Draggable.create(windowElement, {
-            type: "x,y",
-            trigger: windowElement.querySelector<HTMLElement>("[data-window-handle]") ?? windowElement,
-            bounds: window,
-            zIndexBoost: true,
-            edgeResistance: 0.72
+            workTimeline.fromTo(
+              card,
+              { x: () => (window.innerWidth * startX) / 100, yPercent: y, rotation: -rotation, scale, autoAlpha: 0.42 },
+              { x: () => (window.innerWidth * endX) / 100, yPercent: -y, rotation, scale: Math.min(scale + 0.08, 1.16), autoAlpha: 1, ease: "none" },
+              index * 0.1
+            );
           });
         }
-      });
-
-      const statementSection = document.querySelector<HTMLElement>(".cinema-statement");
-      if (statementSection) {
-        gsap.to(workWindows, {
-          autoAlpha: 0,
-          pointerEvents: "none",
-          ease: "none",
-          scrollTrigger: {
-            trigger: statementSection,
-            start: "top 42%",
-            end: "bottom top",
-            scrub: 0.8
-          }
-        });
-      }
-    }
-
-    const fileExtract = document.querySelector<HTMLElement>("[data-file-extract]");
-    if (fileExtract) {
-      const cards = gsap.utils.toArray<HTMLElement>(fileExtract.querySelectorAll("[data-file-card]"));
-
-      if (cards.length > 0) {
-        gsap.set(cards, {
-          x: (index) => index * 12,
-          y: (index) => index * 16,
-          rotation: (index) => (index % 2 === 0 ? -0.4 : 0.4)
-        });
-
-        if (isDesktop) {
-          cards.forEach((card, index) => {
-            gsap.to(card, {
-              x: -index * 34,
-              y: -index * 72,
-              rotation: 0,
-              ease: "none",
-              scrollTrigger: {
-                trigger: fileExtract,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1.1
-              }
-            });
-          });
-        }
-      }
+      }, internationalHome);
     }
 
     const workRows = gsap.utils.toArray<HTMLElement>("[data-work-row]");
@@ -408,6 +347,8 @@ motion.add(
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
 
+const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 document.querySelectorAll<HTMLAnchorElement>("a[href^='#']").forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
     const target = anchor.getAttribute("href");
@@ -416,6 +357,11 @@ document.querySelectorAll<HTMLAnchorElement>("a[href^='#']").forEach((anchor) =>
     if (!element) return;
 
     event.preventDefault();
+    if (motionReduced) {
+      element.scrollIntoView();
+      return;
+    }
+
     gsap.to(window, { duration: 0.7, scrollTo: { y: element, offsetY: 80 } });
   });
 });
