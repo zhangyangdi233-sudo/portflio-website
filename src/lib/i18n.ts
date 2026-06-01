@@ -95,3 +95,46 @@ export function switchLocalePath(currentPath: string, targetLang: Language): str
 
   return `/${targetLang}${normalized.endsWith("/") ? normalized : `${normalized}/`}`;
 }
+
+export const homeCopy = {
+  zh: {
+    heroIntro: "糍粑以游戏、界面、影像与装置作为持续实践的场域。这里收录近期作品与仍在变化中的图像系统。",
+    mediaHeading: "返回表面的图像",
+    mediaBody: "作品并不按时间线沉睡。它们以片段、界面和残留物的形式重新出现，在滚动中建立彼此之间的距离。",
+    mediaAside: "被抽取、错置，并重新看见。",
+    experimentHeading: "作品场景",
+    experimentBody: "一次短暂越界：作品离开档案秩序，以更直接的尺寸、速度和位置穿过屏幕。"
+  },
+  en: {
+    heroIntro:
+      "CIBA works across games, interfaces, moving images, and installation. This archive gathers recent works and image systems that remain in motion.",
+    mediaHeading: "Images Returning",
+    mediaBody:
+      "Works do not sleep in chronological order. They return as fragments, interfaces, and residues, forming new distances through scroll.",
+    mediaAside: "Extracted, displaced, and made visible again.",
+    experimentHeading: "Work Scene",
+    experimentBody:
+      "A brief departure from archival order: works cross the screen through direct changes in scale, speed, and position."
+  },
+  ja: {
+    heroIntro:
+      "糍粑はゲーム、インターフェース、映像、インスタレーションを横断して制作しています。ここでは、変化し続ける近作とイメージシステムを収録します。",
+    mediaHeading: "表面へ戻るイメージ",
+    mediaBody:
+      "作品は時系列の中で眠りません。断片、インターフェース、残留物として再び現れ、スクロールの中で新しい距離をつくります。",
+    mediaAside: "抽出され、置き換えられ、もう一度見えるもの。",
+    experimentHeading: "作品の場面",
+    experimentBody:
+      "アーカイブの秩序から一時的に外れ、作品がサイズ、速度、位置を変えながら画面を横切ります。"
+  }
+} satisfies Record<
+  Language,
+  {
+    heroIntro: string;
+    mediaHeading: string;
+    mediaBody: string;
+    mediaAside: string;
+    experimentHeading: string;
+    experimentBody: string;
+  }
+>;
