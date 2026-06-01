@@ -31,8 +31,7 @@ const positions = [
 const items = projects
   .flatMap((project, projectIndex) => {
     const localized = getLocalizedProject(project, lang);
-    const imageMedia = project.media.filter((item) => item.type === "image");
-    const media = project.slug === "wake-up" ? imageMedia.slice(0, 4) : imageMedia.slice(0, 2);
+    const media = project.slug === "wake-up" ? project.media.slice(0, 4) : project.media.slice(0, 2);
     return media.map((item) => ({ project, projectIndex, localized, media: item }));
   })
   .slice(0, positions.length);
@@ -60,7 +59,7 @@ const items = projects
               data-media-y={y}
               data-media-rotation={rotation}
             >
-              <ProjectMedia media={item.media} />
+              <ProjectMedia media={item.media} preview />
               <span>{String(item.projectIndex + 1).padStart(2, "0")} / {item.localized.title}</span>
             </a>
           );
