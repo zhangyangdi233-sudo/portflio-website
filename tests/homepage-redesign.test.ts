@@ -100,4 +100,16 @@ describe("internationalist homepage redesign", () => {
 
     expect(projectCard).toContain("<ProjectMedia media={project.media[0]} preview />");
   });
+
+  it("defines an internationalist ivory black and acid-green style system", () => {
+    const styles = read("../src/styles/global.css");
+
+    expect(styles).toContain("body.international-home");
+    expect(styles).toContain("--home-paper: #f3ead6");
+    expect(styles).toContain("--home-ink: #10100d");
+    expect(styles).toContain("--home-acid: #b7ff00");
+    expect(styles).toContain(".home-work-scene");
+    expect(styles).toContain("scroll-snap-type: x mandatory");
+    expect(styles).toContain(".international-home :focus-visible");
+  });
 });
