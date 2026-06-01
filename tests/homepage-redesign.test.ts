@@ -62,4 +62,31 @@ describe("internationalist homepage redesign", () => {
     expect(scene).toContain("data-home-work-card");
     expect(scene).toContain("WORK");
   });
+
+  it("preserves homepage identity, rolling title, and language metadata hooks", () => {
+    const home = read("../src/pages/[lang]/index.astro");
+    const rollingTitle = read("../src/components/home/RollingTitle.astro");
+
+    expect(home).toContain("data-international-home");
+    expect(rollingTitle).toContain("data-rolling-title");
+    expect(rollingTitle).toContain("data-rolling-hero");
+    expect(home).toContain("lang={targetLang}");
+    expect(home).toContain("hreflang={targetLang}");
+  });
+
+  it("uses non-empty shared media previews for immersive homepage sections", () => {
+    const contentConfig = read("../src/content.config.ts");
+    const wall = read("../src/components/home/HomeMediaWall.astro");
+    const scene = read("../src/components/home/HomeWorkScene.astro");
+
+    expect(contentConfig).toMatch(/media: z\.array\([\s\S]*?\)\.min\(1\)/);
+    expect(wall).toContain('import ProjectMedia from "../ProjectMedia.astro"');
+    expect(scene).toContain('import ProjectMedia from "../ProjectMedia.astro"');
+    expect(wall).toContain('filter((item) => item.type === "image")');
+    expect(wall).toContain("<ProjectMedia media={item.media} />");
+    expect(scene).toContain('find((item) => item.type === "image") ?? project.media[0]');
+    expect(scene).toContain("<ProjectMedia media={preview} />");
+    expect(wall).toContain('as="h2"');
+    expect(scene).toContain('as="h2"');
+  });
 });

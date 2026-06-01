@@ -1,4 +1,5 @@
 ---
+import ProjectMedia from "../ProjectMedia.astro";
 import { getLocalizedProject } from "../../lib/projects";
 import type { Language, Project } from "../../lib/types";
 import RollingTitle from "./RollingTitle.astro";
@@ -37,6 +38,7 @@ const settings = [
         projects.slice(0, settings.length).map((project, index) => {
           const localized = getLocalizedProject(project, lang);
           const [startX, endX, y, scale, rotation] = settings[index];
+          const preview = project.media.find((item) => item.type === "image") ?? project.media[0];
           return (
             <a
               class="home-work-card"
@@ -48,7 +50,7 @@ const settings = [
               data-card-scale={scale}
               data-card-rotation={rotation}
             >
-              <img src={project.media[0].src} alt={project.media[0].alt} loading="lazy" decoding="async" />
+              <ProjectMedia media={preview} />
               <span class="home-work-card__caption">
                 <strong>{localized.title}</strong>
                 <span>{project.year} / #{String(index + 1).padStart(4, "0")}</span>

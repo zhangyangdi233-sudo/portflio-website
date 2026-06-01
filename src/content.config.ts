@@ -32,7 +32,7 @@ const projects = defineCollection({
         alt: z.string(),
         caption: z.string().optional()
       })
-    ),
+    ).min(1),
     links: z.object({
       play: z.url().optional(),
       archive: z.url().optional()

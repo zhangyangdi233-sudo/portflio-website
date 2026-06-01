@@ -42,6 +42,8 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
           <a
             class:list={{ "is-active": targetLang === lang }}
             href={`/${targetLang}/`}
+            lang={targetLang}
+            hreflang={targetLang}
             aria-current={targetLang === lang ? "page" : undefined}
           >
             {languageLabels[targetLang]}
