@@ -178,7 +178,7 @@ describe("internationalist homepage redesign", () => {
     expect(styles).toContain("@media (max-width: 420px)");
     expect(styles).toContain("font-size: clamp(3.6rem, 17vw, 7rem)");
     expect(styles).toMatch(
-      /\.home-nav a,\r?\n  \.home-language a \{[\s\S]*?min-height: 2\.75rem;/
+      /^\.home-nav a,\r?\n\.home-language a \{[^}]*min-height: 2\.75rem;[^}]*min-width: 2\.75rem;[^}]*\}/m
     );
     expect(styles).toMatch(
       /@media \(max-width: 420px\) \{[\s\S]*?\.home-nav \{[\s\S]*?gap: 0\.35rem;[\s\S]*?font-size: 0\.68rem;[\s\S]*?\.home-nav a \{[\s\S]*?padding-right: 0\.3rem;[\s\S]*?padding-left: 0\.3rem;/
