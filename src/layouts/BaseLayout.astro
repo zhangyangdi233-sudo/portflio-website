@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import { ui } from "../lib/i18n";
 import { siteProfile } from "../lib/site-data";
 import type { Language } from "../lib/types";
 import "../styles/global.css";
@@ -29,7 +30,7 @@ const themeStyle = Object.entries(theme)
     <title>{title}</title>
   </head>
   <body class={pageClass}>
-    <a class="skip-link" href="#content">Skip to content</a>
+    <a class="skip-link" href="#content">{ui[lang].skipToContent}</a>
     {!bare && <div class="ambient-grid" aria-hidden="true"></div>}
     {!bare && <Header lang={lang} />}
     <main id="content">

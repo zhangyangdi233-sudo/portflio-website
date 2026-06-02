@@ -23,7 +23,11 @@ export const ui = {
     downloadCv: "下载 CV",
     external: "外部链接",
     all: "全部",
-    archive: "档案"
+    archive: "档案",
+    skipToContent: "跳到主要内容",
+    homepageNavigation: "主页导航",
+    languageSwitcher: "语言切换",
+    scroll: "滚动"
   },
   en: {
     works: "Works",
@@ -38,7 +42,11 @@ export const ui = {
     downloadCv: "Download CV",
     external: "External link",
     all: "All",
-    archive: "Archive"
+    archive: "Archive",
+    skipToContent: "Skip to content",
+    homepageNavigation: "Homepage navigation",
+    languageSwitcher: "Language switcher",
+    scroll: "Scroll"
   },
   ja: {
     works: "作品",
@@ -53,7 +61,11 @@ export const ui = {
     downloadCv: "CV をダウンロード",
     external: "外部リンク",
     all: "すべて",
-    archive: "アーカイブ"
+    archive: "アーカイブ",
+    skipToContent: "本文へ移動",
+    homepageNavigation: "ホームページのナビゲーション",
+    languageSwitcher: "言語切り替え",
+    scroll: "スクロール"
   }
 } satisfies Record<Language, Record<string, string>>;
 

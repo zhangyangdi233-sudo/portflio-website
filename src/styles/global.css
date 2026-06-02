@@ -4232,6 +4232,7 @@ body.international-home {
     transform: none;
   }
 
+  .rolling-title__track,
   .home-media-wall__item,
   .home-work-card {
     will-change: auto;

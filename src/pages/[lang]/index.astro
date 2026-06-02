@@ -27,16 +27,16 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
 
 <BaseLayout lang={lang} title={title} description={profile.statement[0]} pageClass="home-page international-home">
   <div data-international-home>
-    <nav class="home-nav" aria-label="Homepage navigation">
+    <nav class="home-nav" aria-label={labels.homepageNavigation}>
       <a class="home-nav__brand" href={`/${lang}/`}>CIBA</a>
       <div class="home-nav__links">
         <a href={`/${lang}/works/`}>{labels.works}</a>
         <a href={`/${lang}/about/`}>{labels.about}</a>
-        <a href="#project-index">INDEX</a>
+        <a href="#project-index">{labels.index}</a>
       </div>
     </nav>
 
-    <div class="home-language" aria-label="Language switcher">
+    <div class="home-language" aria-label={labels.languageSwitcher}>
       {
         languages.map((targetLang) => (
           <a
@@ -56,7 +56,7 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
       <p class="home-kicker">CIBA / PORTFOLIO / 2026</p>
       <RollingTitle as="h1" text="CIBA / SELECTED WORKS" class="home-hero__title" hero />
       <p class="home-hero__intro">{copy.heroIntro}</p>
-      <p class="home-hero__scroll">(SCROLL)</p>
+      <p class="home-hero__scroll">({labels.scroll})</p>
     </section>
 
     <HomeMediaWall
@@ -65,13 +65,20 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
       heading={copy.mediaHeading}
       body={copy.mediaBody}
       aside={copy.mediaAside}
+      kicker={labels.archive}
     />
 
     <section class="home-statement" data-reveal>
       <p>{profile.statement[1]}</p>
     </section>
 
-    <HomeWorkScene lang={lang} projects={compositionRows} heading={copy.experimentHeading} body={copy.experimentBody} />
+    <HomeWorkScene
+      lang={lang}
+      projects={compositionRows}
+      heading={copy.experimentHeading}
+      body={copy.experimentBody}
+      kicker={copy.experimentHeading}
+    />
 
     <section class="minimal-index" id="project-index" aria-labelledby="minimal-index-title">
       <p class="home-kicker">{labels.index}</p>

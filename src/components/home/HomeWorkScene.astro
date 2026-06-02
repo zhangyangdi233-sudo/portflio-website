@@ -9,9 +9,10 @@ interface Props {
   projects: Project[];
   heading: string;
   body: string;
+  kicker: string;
 }
 
-const { lang, projects, heading, body } = Astro.props;
+const { lang, projects, heading, body, kicker } = Astro.props;
 const settings = [
   [-92, 88, -24, 0.88, -8],
   [96, -82, 22, 1.02, 7],
@@ -29,7 +30,7 @@ const settings = [
       {Array.from("WORK").map((letter) => <span>{letter}</span>)}
     </div>
     <div class="home-work-scene__copy">
-      <p class="home-kicker">02 / WORK SCENE</p>
+      <p class="home-kicker">02 / {kicker}</p>
       <RollingTitle as="h2" text={heading} id="home-work-scene-title" class="home-section-title" />
       <p>{body}</p>
     </div>

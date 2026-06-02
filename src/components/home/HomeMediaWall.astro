@@ -10,9 +10,10 @@ interface Props {
   heading: string;
   body: string;
   aside: string;
+  kicker: string;
 }
 
-const { lang, projects, heading, body, aside } = Astro.props;
+const { lang, projects, heading, body, aside, kicker } = Astro.props;
 const positions = [
   ["10%", "20%", -160, 84, -5],
   ["28%", "54%", -96, -46, 4],
@@ -39,7 +40,7 @@ const items = projects
 
 <section class="home-media-wall" data-home-media-wall aria-labelledby="home-media-wall-title">
   <div class="home-section-copy">
-    <p class="home-kicker">01 / ARCHIVE</p>
+    <p class="home-kicker">01 / {kicker}</p>
     <RollingTitle as="h2" text={heading} id="home-media-wall-title" class="home-section-title" />
     <p>{body}</p>
     <p class="home-section-copy__aside">{aside}</p>

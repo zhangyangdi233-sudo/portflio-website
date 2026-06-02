@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { homeCopy, languages } from "../src/lib/i18n";
+import { homeCopy, languages, ui } from "../src/lib/i18n";
 
 const read = (path: string) => readFileSync(new URL(path, import.meta.url), "utf8");
 
@@ -19,6 +19,13 @@ describe("internationalist homepage redesign", () => {
       for (const value of Object.values(homeCopy[lang])) {
         expect(value.length).toBeGreaterThan(0);
       }
+
+      expect(ui[lang]).toMatchObject({
+        skipToContent: expect.any(String),
+        homepageNavigation: expect.any(String),
+        languageSwitcher: expect.any(String),
+        scroll: expect.any(String)
+      });
     }
   });
 
@@ -28,6 +35,7 @@ describe("internationalist homepage redesign", () => {
 
     expect(layout).toContain('class="skip-link"');
     expect(layout).toContain('href="#content"');
+    expect(layout).toContain("{ui[lang].skipToContent}");
     expect(layout).toContain("siteProfile.socials.map");
     expect(styles).toContain(".skip-link:focus-visible");
   });
@@ -39,6 +47,12 @@ describe("internationalist homepage redesign", () => {
     expect(home).toContain("<HomeMediaWall");
     expect(home).toContain("<HomeWorkScene");
     expect(home).toContain('id="project-index"');
+    expect(home).toContain('aria-label={labels.homepageNavigation}');
+    expect(home).toContain('aria-label={labels.languageSwitcher}');
+    expect(home).toContain("{labels.index}");
+    expect(home).toContain("({labels.scroll})");
+    expect(home).toContain("kicker={labels.archive}");
+    expect(home).toContain("kicker={copy.experimentHeading}");
   });
 
   it("removes the obsolete draggable windows and file-folder stack", () => {
@@ -57,9 +71,13 @@ describe("internationalist homepage redesign", () => {
     expect(wall).toContain("data-home-media-wall");
     expect(wall).toContain("data-home-media-pin");
     expect(wall).toContain("data-home-media");
+    expect(wall).toContain("kicker: string;");
+    expect(wall).toContain("01 / {kicker}");
     expect(scene).toContain("data-home-work-scene");
     expect(scene).toContain("data-home-work-scene-pin");
     expect(scene).toContain("data-home-work-card");
+    expect(scene).toContain("kicker: string;");
+    expect(scene).toContain("02 / {kicker}");
     expect(scene).toContain("WORK");
   });
 
@@ -133,6 +151,10 @@ describe("internationalist homepage redesign", () => {
     expect(motion).toContain('[data-home-media-wall]');
     expect(motion).toContain('[data-home-work-scene]');
     expect(motion).toContain("gsap.context");
+    expect(motion).toContain("trigger: mediaPin");
+    expect(motion).toMatch(
+      /if \(isDesktop && workScene && workScenePin && workCards\.length > 0\) \{\s*gsap\.set\(workCards, \{ attr: \{ tabindex: "-1" \} \}\);/
+    );
     expect(motion).not.toContain('from "gsap/Draggable"');
     expect(motion).not.toContain("[data-work-window]");
     expect(motion).not.toContain("[data-file-extract]");
@@ -184,7 +206,7 @@ describe("internationalist homepage redesign", () => {
       /@media \(max-width: 420px\) \{[\s\S]*?\.home-nav \{[\s\S]*?gap: 0\.35rem;[\s\S]*?font-size: 0\.68rem;[\s\S]*?\.home-nav a \{[\s\S]*?padding-right: 0\.3rem;[\s\S]*?padding-left: 0\.3rem;/
     );
     expect(styles).toMatch(
-      /@media \(max-width: 899px\) \{[\s\S]*?\.home-media-wall__item,\r?\n  \.home-work-card \{[\s\S]*?will-change: auto;/
+      /@media \(max-width: 899px\) \{[\s\S]*?\.rolling-title__track,\r?\n  \.home-media-wall__item,\r?\n  \.home-work-card \{[\s\S]*?will-change: auto;/
     );
     expect(styles).toMatch(
       /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.rolling-title__track,\r?\n  \.home-media-wall__item,\r?\n  \.home-work-card \{[\s\S]*?will-change: auto;/

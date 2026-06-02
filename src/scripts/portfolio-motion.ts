@@ -125,7 +125,7 @@ motion.add(
           gsap
             .timeline({
               scrollTrigger: {
-                trigger: mediaWall,
+                trigger: mediaPin,
                 start: "top top",
                 end: "+=3000",
                 pin: mediaPin,
@@ -159,6 +159,8 @@ motion.add(
         );
 
         if (isDesktop && workScene && workScenePin && workCards.length > 0) {
+          gsap.set(workCards, { attr: { tabindex: "-1" } });
+
           const workTimeline = gsap.timeline({
             scrollTrigger: {
               trigger: workScene,
