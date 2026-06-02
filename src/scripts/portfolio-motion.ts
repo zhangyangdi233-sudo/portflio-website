@@ -1,11 +1,10 @@
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { Flip } from "gsap/Flip";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(CustomEase, Flip, ScrollToPlugin, ScrollTrigger, SplitText);
+gsap.registerPlugin(CustomEase, Flip, ScrollTrigger, SplitText);
 
 CustomEase.create("cibaEase", "M0,0 C0.2,0 0.05,1 1,1");
 gsap.defaults({ duration: 0.72, ease: "cibaEase", overwrite: "auto" });
@@ -17,7 +16,7 @@ motion.add(
     reduceMotion: "(prefers-reduced-motion: reduce)",
     isDesktop: "(min-width: 900px)"
   },
-  (context) => {
+  (context, contextSafe) => {
     const { reduceMotion, isDesktop } = context.conditions ?? {};
 
     if (reduceMotion) {
@@ -32,7 +31,7 @@ motion.add(
     if (hero) {
       const heading = hero.querySelector<HTMLElement>(".split-heading");
       if (heading) {
-        const runSplit = () => {
+        const createSplit = () => {
           SplitText.create(heading, {
             type: "words, chars",
             aria: "auto",
@@ -45,9 +44,12 @@ motion.add(
             }
           });
         };
+        const runSplit = contextSafe ? contextSafe(createSplit) : createSplit;
 
         if ("fonts" in document) {
-          document.fonts.ready.then(runSplit);
+          document.fonts.ready.then(() => {
+            if (!context.isReverted) runSplit();
+          });
         } else {
           runSplit();
         }
@@ -349,19 +351,6 @@ motion.add(
 window.addEventListener("load", () => ScrollTrigger.refresh());
 
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-document.querySelectorAll<HTMLAnchorElement>("a[href^='#']").forEach((anchor) => {
-  anchor.addEventListener("click", (event) => {
-    const target = anchor.getAttribute("href");
-    if (!target || target === "#") return;
-    const element = document.querySelector(target);
-    if (!element) return;
-
-    if (reduceMotionQuery.matches) return;
-    event.preventDefault();
-    gsap.to(window, { duration: 0.7, scrollTo: { y: element, offsetY: 80 } });
-  });
-});
 
 const grid = document.querySelector<HTMLElement>("[data-project-grid]");
 const filterButtons = document.querySelectorAll<HTMLButtonElement>("[data-filter]");

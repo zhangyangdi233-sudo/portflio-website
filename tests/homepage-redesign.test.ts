@@ -128,23 +128,30 @@ describe("internationalist homepage redesign", () => {
     expect(motion).not.toContain("[data-file-extract]");
   });
 
-  it("uses native anchor scrolling when motion is reduced", () => {
+  it("preserves native browser semantics for fragment links", () => {
+    const motion = read("../src/scripts/portfolio-motion.ts");
+    const styles = read("../src/styles/global.css");
+
+    expect(motion).not.toContain("a[href^='#']");
+    expect(motion).not.toContain("ScrollToPlugin");
+    expect(motion).not.toContain("scrollTo:");
+    expect(styles).toContain("scroll-behavior: smooth");
+    expect(styles).toContain("scroll-behavior: auto !important");
+  });
+
+  it("guards deferred SplitText setup against reverted GSAP contexts", () => {
     const motion = read("../src/scripts/portfolio-motion.ts");
 
-    expect(motion).toContain('const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");');
-    expect(motion).toContain("if (reduceMotionQuery.matches) return;");
-    expect(motion).not.toContain("element.scrollIntoView();");
-    expect(motion).not.toContain(
-      'const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;'
-    );
-    expect(motion).toMatch(
-      /const element = document\.querySelector\(target\);\s*if \(!element\) return;\s*if \(reduceMotionQuery\.matches\) return;\s*event\.preventDefault\(\);\s*gsap\.to\(window,/
-    );
+    expect(motion).toContain("(context, contextSafe) =>");
+    expect(motion).toContain("contextSafe(");
+    expect(motion).toContain("context.isReverted");
+    expect(motion).toContain("document.fonts.ready.then");
   });
 
   it("skips Flip animation for reduced motion and recalculates width-based scenes on refresh", () => {
     const motion = read("../src/scripts/portfolio-motion.ts");
 
+    expect(motion).toContain('const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");');
     expect(motion).toContain("invalidateOnRefresh: true");
     expect(motion).toContain("const shouldAnimate = !reduceMotionQuery.matches;");
     expect(motion).toContain("const state = shouldAnimate ? Flip.getState(cards) : undefined;");
