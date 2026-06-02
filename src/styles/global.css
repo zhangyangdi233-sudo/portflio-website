@@ -4119,6 +4119,10 @@ body.international-home {
     padding: 0 0.55rem;
   }
 
+  .rolling-title__word.is-unbroken {
+    display: contents;
+  }
+
   .home-hero {
     display: block;
     min-height: 100svh;
