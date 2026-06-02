@@ -164,7 +164,8 @@ motion.add(
               end: "+=4200",
               pin: workScenePin,
               scrub: 1.1,
-              anticipatePin: 1
+              anticipatePin: 1,
+              invalidateOnRefresh: true
             }
           });
 
@@ -347,7 +348,7 @@ motion.add(
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
 
-const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 document.querySelectorAll<HTMLAnchorElement>("a[href^='#']").forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
@@ -356,12 +357,8 @@ document.querySelectorAll<HTMLAnchorElement>("a[href^='#']").forEach((anchor) =>
     const element = document.querySelector(target);
     if (!element) return;
 
+    if (reduceMotionQuery.matches) return;
     event.preventDefault();
-    if (motionReduced) {
-      element.scrollIntoView();
-      return;
-    }
-
     gsap.to(window, { duration: 0.7, scrollTo: { y: element, offsetY: 80 } });
   });
 });
@@ -375,7 +372,8 @@ if (grid && filterButtons.length > 0) {
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const filter = button.dataset.filter ?? "all";
-      const state = Flip.getState(cards);
+      const shouldAnimate = !reduceMotionQuery.matches;
+      const state = shouldAnimate ? Flip.getState(cards) : undefined;
 
       filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
       cards.forEach((card) => {
@@ -384,6 +382,11 @@ if (grid && filterButtons.length > 0) {
           filter === "all" || (filter === "featured" && isFeatured) || (filter === "archive" && !isFeatured);
         card.hidden = !shouldShow;
       });
+
+      if (!state) {
+        ScrollTrigger.refresh();
+        return;
+      }
 
       Flip.from(state, {
         absolute: true,

@@ -131,9 +131,25 @@ describe("internationalist homepage redesign", () => {
   it("uses native anchor scrolling when motion is reduced", () => {
     const motion = read("../src/scripts/portfolio-motion.ts");
 
-    expect(motion).toContain('const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;');
-    expect(motion).toContain("if (motionReduced) {");
-    expect(motion).toContain("element.scrollIntoView();");
-    expect(motion).toMatch(/if \(motionReduced\) {\s*element\.scrollIntoView\(\);\s*return;\s*}\s*gsap\.to\(window,/);
+    expect(motion).toContain('const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");');
+    expect(motion).toContain("if (reduceMotionQuery.matches) return;");
+    expect(motion).not.toContain("element.scrollIntoView();");
+    expect(motion).not.toContain(
+      'const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;'
+    );
+    expect(motion).toMatch(
+      /const element = document\.querySelector\(target\);\s*if \(!element\) return;\s*if \(reduceMotionQuery\.matches\) return;\s*event\.preventDefault\(\);\s*gsap\.to\(window,/
+    );
+  });
+
+  it("skips Flip animation for reduced motion and recalculates width-based scenes on refresh", () => {
+    const motion = read("../src/scripts/portfolio-motion.ts");
+
+    expect(motion).toContain("invalidateOnRefresh: true");
+    expect(motion).toContain("const shouldAnimate = !reduceMotionQuery.matches;");
+    expect(motion).toContain("const state = shouldAnimate ? Flip.getState(cards) : undefined;");
+    expect(motion).toMatch(
+      /card\.hidden = !shouldShow;\s*}\);\s*if \(!state\) {\s*ScrollTrigger\.refresh\(\);\s*return;\s*}\s*Flip\.from\(state,/
+    );
   });
 });
