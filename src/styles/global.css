@@ -4102,7 +4102,7 @@ body.international-home {
   line-height: 0.86;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 899px) {
   .home-nav {
     padding-right: 0.55rem;
     padding-left: 0.55rem;
@@ -4126,7 +4126,7 @@ body.international-home {
 
   .home-hero__title {
     margin-top: 1rem;
-    font-size: clamp(4.2rem, 20vw, 7rem);
+    font-size: clamp(3.6rem, 17vw, 7rem);
   }
 
   .home-hero__intro,
@@ -4226,12 +4226,31 @@ body.international-home {
     transform: none;
   }
 
+  .home-media-wall__item,
+  .home-work-card {
+    will-change: auto;
+  }
+
   .minimal-index__list a {
     grid-template-columns: 2.8rem 1fr;
   }
 
   .minimal-index__list a span:last-child {
     grid-column: 2;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-nav {
+    gap: 0.35rem;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    font-size: 0.68rem;
+  }
+
+  .home-nav a {
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
   }
 }
 
@@ -4260,6 +4279,12 @@ body.international-home {
     left: auto;
     transform: none !important;
     opacity: 1 !important;
+  }
+
+  .rolling-title__track,
+  .home-media-wall__item,
+  .home-work-card {
+    will-change: auto;
   }
 
   .home-work-scene {

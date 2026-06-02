@@ -159,4 +159,19 @@ describe("internationalist homepage redesign", () => {
       /card\.hidden = !shouldShow;\s*}\);\s*if \(!state\) {\s*ScrollTrigger\.refresh\(\);\s*return;\s*}\s*Flip\.from\(state,/
     );
   });
+
+  it("aligns the responsive fallback with desktop motion and resets static compositing hints", () => {
+    const styles = read("../src/styles/global.css");
+
+    expect(styles).toContain("@media (max-width: 899px)");
+    expect(styles).not.toContain("@media (max-width: 767px)");
+    expect(styles).toContain("@media (max-width: 420px)");
+    expect(styles).toContain("font-size: clamp(3.6rem, 17vw, 7rem)");
+    expect(styles).toMatch(
+      /@media \(max-width: 899px\) \{[\s\S]*?\.home-media-wall__item,\r?\n  \.home-work-card \{[\s\S]*?will-change: auto;/
+    );
+    expect(styles).toMatch(
+      /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.rolling-title__track,\r?\n  \.home-media-wall__item,\r?\n  \.home-work-card \{[\s\S]*?will-change: auto;/
+    );
+  });
 });
