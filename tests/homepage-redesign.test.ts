@@ -92,6 +92,13 @@ describe("internationalist homepage redesign", () => {
     expect(home).toContain("hreflang={targetLang}");
   });
 
+  it("exposes localized semantics for the language switcher and project index", () => {
+    const home = read("../src/pages/[lang]/index.astro");
+
+    expect(home).toContain('<nav class="home-language" aria-label={labels.languageSwitcher}>');
+    expect(home).toContain('<h2 id="minimal-index-title" aria-label={labels.index}>PORTFOLIO / CIBA</h2>');
+  });
+
   it("allows unbroken CJK rolling titles to wrap in the narrow static fallback", () => {
     const rollingTitle = read("../src/components/home/RollingTitle.astro");
     const styles = read("../src/styles/global.css");

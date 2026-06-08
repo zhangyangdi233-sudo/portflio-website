@@ -36,7 +36,7 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
       </div>
     </nav>
 
-    <div class="home-language" aria-label={labels.languageSwitcher}>
+    <nav class="home-language" aria-label={labels.languageSwitcher}>
       {
         languages.map((targetLang) => (
           <a
@@ -50,7 +50,7 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
           </a>
         ))
       }
-    </div>
+    </nav>
 
     <section class="home-hero">
       <p class="home-kicker">CIBA / PORTFOLIO / 2026</p>
@@ -82,7 +82,7 @@ const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.le
 
     <section class="minimal-index" id="project-index" aria-labelledby="minimal-index-title">
       <p class="home-kicker">{labels.index}</p>
-      <h2 id="minimal-index-title">PORTFOLIO / CIBA</h2>
+      <h2 id="minimal-index-title" aria-label={labels.index}>PORTFOLIO / CIBA</h2>
       <div class="minimal-index__list">
         {
           compositionRows.map((project, index) => {
