@@ -20,7 +20,7 @@ const labels = ui[lang];
   <nav class="site-nav" aria-label="Primary navigation">
     <a href={`/${lang}/works/`}>{labels.works}</a>
     <a href={`/${lang}/about/`}>{labels.about}</a>
-    <a href={`mailto:${siteProfile.email}`}>{labels.contact}</a>
+    <a href={siteProfile.email ? `mailto:${siteProfile.email}` : `/${lang}/about/#contact`}>{labels.contact}</a>
   </nav>
   <LanguageSwitcher lang={lang} />
 </header>

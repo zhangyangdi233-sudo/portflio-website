@@ -1,12 +1,14 @@
 {
   "artistName": "糍粑",
-  "email": "hello@example.com",
   "location": "Tokyo / Online",
-  "cvUrl": "/downloads/ciba-cv-placeholder.pdf",
   "socials": [
     {
       "label": "Readymag archive",
       "href": "https://readymag.website/u668535135/4450942/"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/zhangyangdi233-sudo"
     }
   ],
   "i18n": {
@@ -18,8 +20,7 @@
       ],
       "cv": [
         "2026 X.WHEEL, interactive game work",
-        "2024 EMIDA, installation and image system",
-        "Selected projects and full CV to be updated from the supplied asset pack"
+        "2024 EMIDA, installation and image system"
       ]
     },
     "en": {
@@ -30,8 +31,7 @@
       ],
       "cv": [
         "2026 X.WHEEL, interactive game work",
-        "2024 EMIDA, installation and image system",
-        "Selected projects and full CV to be updated from the supplied asset pack"
+        "2024 EMIDA, installation and image system"
       ]
     },
     "ja": {
@@ -42,8 +42,7 @@
       ],
       "cv": [
         "2026 X.WHEEL, interactive game work",
-        "2024 EMIDA, installation and image system",
-        "Selected projects and full CV to be updated from the supplied asset pack"
+        "2024 EMIDA, installation and image system"
       ]
     }
   }

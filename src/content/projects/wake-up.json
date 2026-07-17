@@ -218,24 +218,24 @@
       "title": "Wake Up",
       "summary": "一件以旧网站原始素材复刻的网页视觉叙事，关于清醒、城市和典型的人。",
       "body": [
-        "Wake Up 在新版中保留旧网站的黑白、网格、日文文本图和城市长条影像，以长滚动方式复刻原始网页体验。",
-        "作品围绕现代社会中典型的人、重复的日常与自我介绍展开，图像和文字像档案一样被重新排布。"
+        "Wake Up 在新版中保留旧网站的黑色文字场、床铺影像、纵向文字片段、对讲机拼贴和城市长条影像，以精简后的长滚动方式重组原始网页体验。",
+        "作品围绕清醒、重复的日常与城市感知展开；被移除的旧段落仍安全保存在素材档案和旧站链接中。"
       ]
     },
     "en": {
       "title": "Wake Up",
       "summary": "A recreated web visual essay from the old site, tracing awakening, city time, and the idea of an ordinary person.",
       "body": [
-        "Wake Up keeps the black fields, grids, Japanese statement images, city photo strips, and word marks from the previous site, rebuilt here as a long scrolling page.",
-        "The work turns self-introduction into a visual archive of ordinary life, social repetition, and the strange pressure of waking inside a city."
+        "Wake Up retains the old site's black text fields, bed image, vertical text fragments, intercom collage, and city photo strips in a shortened long-scroll sequence.",
+        "The work follows awakening, ordinary repetition, and city perception; removed legacy passages remain safely available in the source archive and previous-site link."
       ]
     },
     "ja": {
       "title": "Wake Up",
       "summary": "旧サイトの素材を用いて再構成した、目覚め、都市、典型的な人間についてのウェブ・ビジュアルエッセイ。",
       "body": [
-        "Wake Up は旧サイトの黒い画面、グリッド、都市写真の縦長ストリップ、日本語のステートメント画像、歪んだロゴを長いスクロール体験として復刻します。",
-        "自己紹介、典型的な人間、現代社会の鉄筋コンクリートの森という旧作の語りを、画像の連なりとして再配置します。"
+        "Wake Up は旧サイトの黒い文字画面、ベッドのイメージ、縦組みの断片、インターホンのコラージュ、都市写真のストリップを、短く整理したスクロールとして再構成します。",
+        "目覚め、反復する日常、都市の知覚をたどります。削除した旧セクションは素材アーカイブと旧サイトのリンクに安全に残しています。"
       ]
     }
   }

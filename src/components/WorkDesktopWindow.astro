@@ -1,0 +1,105 @@
+---
+import ProjectMedia from "./ProjectMedia.astro";
+import { getLocalizedProject } from "../lib/projects";
+import type { Language, Project } from "../lib/types";
+
+interface Props {
+  project: Project;
+  lang: Language;
+  index: number;
+  position: {
+    x: number;
+    y: number;
+    width: number;
+    rotation: number;
+    z: number;
+  };
+}
+
+const { project, lang, index, position } = Astro.props;
+const localized = getLocalizedProject(project, lang);
+const copy = {
+  zh: { drag: "拖动作品窗口", instruction: "桌面端可拖动标题栏。方向键移动 16 像素，按住 Shift 移动 48 像素，Home 返回起点，Escape 最小化。", status: "状态", minimize: "最小化", view: "查看", year: "年份", medium: "媒介", tags: "项目标签", open: "打开项目" },
+  en: { drag: "Move project window", instruction: "On desktop, drag the title bar. Arrow keys move 16 pixels, Shift plus Arrow moves 48 pixels, Home returns to origin, and Escape minimizes.", status: "Status", minimize: "Minimize", view: "View", year: "Year", medium: "Medium", tags: "Project tags", open: "Open project" },
+  ja: { drag: "作品ウィンドウを移動", instruction: "デスクトップではタイトルバーをドラッグできます。矢印キーで16px、Shiftと矢印で48px移動し、Homeで原点、Escapeで最小化します。", status: "状態", minimize: "最小化", view: "見る", year: "年", medium: "メディア", tags: "作品タグ", open: "作品を開く" }
+}[lang];
+const sequence = String(index + 1).padStart(2, "0");
+const titleId = `work-desktop-window-${project.slug}-${index}-title`;
+const instructionId = `work-desktop-window-${project.slug}-${index}-instruction`;
+const projectHref = `/${lang}/works/${project.slug}/`;
+const windowStyle = [
+  `--window-x:${position.x}%`,
+  `--window-y:${position.y}px`,
+  `--window-width:${position.width}px`,
+  `--window-rotation:${position.rotation}deg`,
+  `--window-z:${position.z}`
+].join(";");
+---
+
+<article
+  class:list={["work-desktop-window", { "is-active-window": index === 0 }]}
+  aria-labelledby={titleId}
+  data-workspace-window
+  data-project-card
+  data-work-window
+  data-slug={project.slug}
+  data-featured={project.featured ? "true" : "false"}
+  data-tags={project.tags.join(" ")}
+  style={windowStyle}
+>
+  <header class="work-desktop-window__bar">
+    <button
+      class="work-desktop-window__drag-area"
+      type="button"
+      data-window-handle
+      aria-label={`${copy.drag}: ${localized.title}`}
+      aria-describedby={instructionId}
+      aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home Escape"
+    ></button>
+    <span class="work-desktop-window__index">{sequence}</span>
+    <h3 class="work-desktop-window__title" id={titleId}>{localized.title}</h3>
+    <span class="work-desktop-window__status" aria-label={`${copy.status}: ${project.status}`}>
+      {project.status}
+    </span>
+    <button
+      class="work-desktop-window__minimize"
+      type="button"
+      data-window-minimize
+      aria-label={`${copy.minimize} ${localized.title}`}
+    >
+      <span aria-hidden="true">&minus;</span>
+    </button>
+  </header>
+  <p class="sr-only" id={instructionId}>{copy.instruction}</p>
+
+  <a
+    class="work-desktop-window__media-link"
+    href={projectHref}
+    aria-label={`${copy.view} ${localized.title}`}
+  >
+    <ProjectMedia media={project.media[0]} />
+  </a>
+
+  <div class="work-desktop-window__body">
+    <dl class="work-desktop-window__meta">
+      <div>
+        <dt>{copy.year}</dt>
+        <dd>{project.year}</dd>
+      </div>
+      <div>
+        <dt>{copy.medium}</dt>
+        <dd>{project.medium}</dd>
+      </div>
+    </dl>
+
+    <p class="work-desktop-window__summary">{localized.summary}</p>
+
+    <ul class="work-desktop-window__tags" aria-label={copy.tags}>
+      {project.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+
+    <a class="work-desktop-window__open" href={projectHref}>
+      {copy.open} <span class="sr-only">{localized.title}</span>
+    </a>
+  </div>
+</article>

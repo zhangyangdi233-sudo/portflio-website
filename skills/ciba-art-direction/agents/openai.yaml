@@ -1,0 +1,4 @@
+interface:
+  display_name: "CIBA Art Direction"
+  short_description: "Original art-portfolio aesthetics that evolve with feedback"
+  default_prompt: "Use $ciba-art-direction to shape this portfolio into an original, curator-readable Signal Index / Acid Proof experience."

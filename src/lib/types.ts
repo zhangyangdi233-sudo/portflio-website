@@ -29,6 +29,13 @@ export type Project = {
     paper: string;
   };
   media: ProjectMedia[];
+  details?: {
+    role?: string;
+    scale?: string;
+    duration?: string;
+    platform?: string;
+    credits?: string[];
+  };
   links: {
     play?: string;
     archive?: string;
@@ -38,9 +45,9 @@ export type Project = {
 
 export type SiteProfile = {
   artistName: string;
-  email: string;
+  email?: string;
   location: string;
-  cvUrl: string;
+  cvUrl?: string;
   socials: Array<{
     label: string;
     href: string;

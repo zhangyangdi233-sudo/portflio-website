@@ -1,34 +1,137 @@
 {
   "name": "CIBA Portfolio",
+  "direction": "Signal Index / Acid Proof",
+  "philosophy": {
+    "statement": "A strict Internationalist index in black and warm paper, interrupted by one acid-green system signal.",
+    "originality": "Combine disciplined grids, multilingual sans-serif hierarchy, cinematic pacing, and semantic desktop windows into an original CIBA system. References are research inputs only; do not copy assets, text, raster chrome, code, or exact compositions.",
+    "principles": [
+      "Use a rational asymmetric grid and whitespace as structure.",
+      "Limit interface color to black, warm paper, and one acid-green signal.",
+      "Prefer explicit metadata and typographic hierarchy over decorative atmosphere.",
+      "Keep project content readable before, during, and after motion."
+    ]
+  },
   "colors": {
-    "paper": "#f3ead6",
-    "ink": "#111111",
-    "muted": "#736b5e",
-    "line": "#cfc3aa",
-    "blue": "#006eb8",
-    "red": "#f04423",
-    "green": "#007a4d",
-    "black": "#050505",
-    "cream": "#fff7ea",
-    "cyan": "#5fe7d1"
+    "night": "#090a08",
+    "surface": "#090a08",
+    "ink": "#f4f0dd",
+    "plum": "#f4f0dd",
+    "oxide": "#c6ff00",
+    "cyan": "#c6ff00",
+    "sodium": "#f4f0dd",
+    "fog": "#f4f0dd",
+    "rule": "#f4f0dd"
+  },
+  "colorProvenance": {
+    "canonicalSource": "../src/content/art-direction.json",
+    "explicitFeedback": "Black and warm off-white plus one high-saturation vivid color; maximum three interface colors.",
+    "researchSources": [
+      "Cooper Hewitt — A Harmony of Contrasts",
+      "Letterform Archive — Legacies of Swiss Style",
+      "W3C Japanese Layout Requirements"
+    ],
+    "sampledOn": "2026-07-17",
+    "note": "The palette is an active user-directed design decision, not a color extraction from any named reference."
   },
   "typography": {
+    "canonical": {
+      "display": "Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP, sans-serif",
+      "editorial": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
+      "ui": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
+      "mono": "SFMono-Regular, Menlo, Consolas, Noto Sans Mono CJK JP, monospace"
+    },
+    "figmaUiApproximation": "Inter",
     "ui": "Inter / Helvetica / Noto Sans",
-    "brand": "Small bold header mark: 糍粑 CIBA",
-    "heroTitle": "Current project name, 100px desktop, 62px mobile",
-    "workTitle": "Project title as main row typography",
-    "body": "Regular, 16-20px, 1.35-1.5 line height"
+    "brand": "Small bold bilingual mark: 糍粑 CIBA",
+    "display": "Bold fitted project titles with one accessible text label per heading",
+    "windowTitle": "11–12px uppercase UI text with approximately 0.08em tracking",
+    "body": "14–20px regular text with 1.35–1.5 line height",
+    "metadata": "10–12px uppercase or tabular UI text"
   },
   "layout": {
     "desktopFrame": "1440px wide",
     "mobileFrame": "390px wide",
-    "background": "warm paper solid field",
-    "grid": "thin Swiss-style vertical and horizontal guide lines",
-    "hero": "left title and text, right media card",
-    "workRows": "large current project title, right media placeholder, pale oversized index number"
+    "background": "flat black field with warm-paper hairlines",
+    "grid": "disciplined asymmetric Internationalist grid; whitespace is structural",
+    "hero": "compact readable title and summary separated by a single acid signal rule",
+    "works": "seven independent project windows arranged on a desktop Scatter canvas"
   },
-  "animationNotes": {
-    "GSAP": ["SplitText title entrance", "ScrollTrigger row reveal", "Flip hover/filter", "ScrollToPlugin smooth navigation"],
-    "reducedMotion": "Keep all content readable, reduce transform animation"
+  "motion": {
+    "tokens": {
+      "microMs": 180,
+      "stateMs": 260,
+      "enterMs": 460,
+      "titleMs": 440,
+      "dragKeyboardStep": 16,
+      "dragKeyboardStepLarge": 48
+    },
+    "principle": "Controlled instability: motion signals state and editing rhythm, then settles.",
+    "entrance": {
+      "durationMs": "360–520",
+      "properties": [
+        "transform",
+        "opacity"
+      ],
+      "notes": "Use a restrained stagger; keep destination content legible."
+    },
+    "stateChange": {
+      "durationMs": "180–280",
+      "properties": [
+        "transform",
+        "opacity",
+        "color"
+      ]
+    },
+    "worksDrag": {
+      "handle": "title bar only",
+      "bounds": "Works workspace",
+      "feedback": "raise the active window and update its transform immediately",
+      "authoredRotation": "-0.4deg to 0.3deg in Scatter mode; cleared in Scan mode"
+    },
+    "reducedMotion": "Disable scatter entrances, authored rotation, per-letter rolling, and scroll scrubbing. Keep state changes instantaneous or crossfaded under 120ms."
+  },
+  "accessibility": {
+    "contrast": "Use warm paper or acid green only on black; use black on acid green or warm paper. Never set acid green text on warm paper.",
+    "minimumControlSize": "44px × 44px",
+    "focus": "Visible 2px acid-green outline with 2px offset on title bars, controls, filters, dock buttons, and links.",
+    "worksKeyboard": "Focusable title bar; Arrow moves 16px, Shift + Arrow moves 48px, Escape minimizes, and dock buttons restore and focus.",
+    "semanticFallback": "Every project remains reachable through a normal anchor URL; mobile and Scan mode preserve document order.",
+    "motionText": "Hide duplicate motion glyphs from assistive technology and retain one readable heading label.",
+    "media": "Preserve meaningful alt text from the website JSON source.",
+    "announcements": "Filters and minimize/restore changes use a polite live region."
+  },
+  "worksWindowSystem": {
+    "projectCount": 7,
+    "breakpoint": 900,
+    "stageHeight": 980,
+    "positions": {
+      "x-wheel": { "x": 3, "y": 72, "width": 300, "rotation": -0.4, "z": 7 },
+      "emida": { "x": 28, "y": 42, "width": 286, "rotation": 0.3, "z": 6 },
+      "soft-boundaries": { "x": 53, "y": 86, "width": 292, "rotation": -0.25, "z": 5 },
+      "wake-up": { "x": 8, "y": 485, "width": 305, "rotation": 0.2, "z": 4 },
+      "residual-garden": { "x": 34, "y": 445, "width": 278, "rotation": -0.35, "z": 3 },
+      "signal-room": { "x": 59, "y": 492, "width": 292, "rotation": 0.3, "z": 2 },
+      "threshold-archive": { "x": 76, "y": 298, "width": 252, "rotation": -0.2, "z": 1 }
+    },
+    "windowWidth": "252–305px",
+    "structure": [
+      "editable window frame",
+      "44px minimum title bar / drag handle",
+      "media placeholder or linked figure",
+      "project metadata",
+      "localized summary",
+      "OPEN action"
+    ],
+    "scatter": "Desktop default: absolute authored positions, slight rotations, intentional overlap, bring-to-front, minimize/restore, filters, and reset.",
+    "scan": "Ordered responsive grid with transforms and rotations cleared; all visible summaries remain readable.",
+    "mobile": "Single-column semantic cards in source order; precision dragging and drag controls are removed.",
+    "windowStyle": {
+      "background": "surface",
+      "border": "1px warm-paper hairline; acid only for active state",
+      "radius": "0px",
+      "shadow": "8px 8px 0 rgba(0, 0, 0, 0.34)",
+      "mediaAspectRatio": "16 / 9"
+    },
+    "editableHandoff": "The plugin generates seven independent overlapping Figma frames. Text, title bars, media placeholders, and OPEN labels remain editable; move the whole frames to explore alternate Scatter compositions."
   }
 }

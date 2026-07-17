@@ -27,6 +27,11 @@ const theme = getProjectThemeVars(project);
 const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
 const nextLocalized = getLocalizedProject(nextProject, lang);
 const isWakeUpReplica = project.pageMode === "wake-up-replica";
+const detailCopy = {
+  zh: { year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "尺度", duration: "时长", platform: "平台", credits: "协作与署名", archive: "查看档案", gallery: "项目媒体", next: "下一个项目" },
+  en: { year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Scale", duration: "Duration", platform: "Platform", credits: "Credits", archive: "View archive", gallery: "Project media", next: "Next project" },
+  ja: { year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "規模", duration: "時間", platform: "プラットフォーム", credits: "クレジット", archive: "アーカイブを見る", gallery: "作品メディア", next: "次の作品" }
+}[lang];
 ---
 
 <BaseLayout
@@ -49,25 +54,60 @@ const isWakeUpReplica = project.pageMode === "wake-up-replica";
             <p>{localized.summary}</p>
             <dl class="project-meta">
               <div>
-                <dt>Year</dt>
+                <dt>{detailCopy.year}</dt>
                 <dd>{project.year}</dd>
               </div>
               <div>
-                <dt>Medium</dt>
+                <dt>{detailCopy.medium}</dt>
                 <dd>{project.medium}</dd>
               </div>
               <div>
-                <dt>Tags</dt>
+                <dt>{detailCopy.tags}</dt>
                 <dd>{project.tags.join(" / ")}</dd>
               </div>
+              {project.details?.role && (
+                <div>
+                  <dt>{detailCopy.role}</dt>
+                  <dd>{project.details.role}</dd>
+                </div>
+              )}
+              {project.details?.scale && (
+                <div>
+                  <dt>{detailCopy.scale}</dt>
+                  <dd>{project.details.scale}</dd>
+                </div>
+              )}
+              {project.details?.duration && (
+                <div>
+                  <dt>{detailCopy.duration}</dt>
+                  <dd>{project.details.duration}</dd>
+                </div>
+              )}
+              {project.details?.platform && (
+                <div>
+                  <dt>{detailCopy.platform}</dt>
+                  <dd>{project.details.platform}</dd>
+                </div>
+              )}
+              {project.details?.credits && project.details.credits.length > 0 && (
+                <div>
+                  <dt>{detailCopy.credits}</dt>
+                  <dd>{project.details.credits.join(" / ")}</dd>
+                </div>
+              )}
             </dl>
-            {
-              project.links.play && (
+            <div class="project-actions">
+              {project.links.play && (
                 <a class="button is-primary" href={project.links.play} target="_blank" rel="noreferrer">
                   {labels.play}
                 </a>
-              )
-            }
+              )}
+              {project.links.archive && (
+                <a class="button is-ghost" href={project.links.archive} target="_blank" rel="noreferrer">
+                  {detailCopy.archive}
+                </a>
+              )}
+            </div>
           </div>
           <ProjectMedia media={project.media[0]} eager />
         </header>
@@ -76,9 +116,17 @@ const isWakeUpReplica = project.pageMode === "wake-up-replica";
           {localized.body.map((paragraph) => <p>{paragraph}</p>)}
         </section>
 
-        <nav class="next-project" aria-label="Next project">
+        {
+          project.media.length > 1 && (
+            <section class="project-gallery" aria-label={detailCopy.gallery}>
+              {project.media.slice(1).map((media) => <ProjectMedia media={media} />)}
+            </section>
+          )
+        }
+
+        <nav class="next-project" aria-label={detailCopy.next}>
           <a href={`/${lang}/works/${nextProject.slug}/`}>
-            <span>Next</span>
+            <span>{detailCopy.next}</span>
             <strong>{nextLocalized.title}</strong>
           </a>
         </nav>

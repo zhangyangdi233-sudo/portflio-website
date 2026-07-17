@@ -1,5 +1,6 @@
 ---
 import type { ProjectMedia as Media } from "../lib/types";
+import ProjectImage from "./ProjectImage.astro";
 
 interface Props {
   media: Media;
@@ -12,7 +13,7 @@ const { media, eager = false } = Astro.props;
 <figure class="project-media" data-reveal>
   {
     media.type === "image" ? (
-      <img src={media.src} alt={media.alt} loading={eager ? "eager" : "lazy"} decoding="async" />
+      <ProjectImage media={media} eager={eager} sizes="(max-width: 899px) calc(100vw - 2rem), 50vw" />
     ) : (
       <video src={media.src} muted playsinline controls preload="metadata" aria-label={media.alt} />
     )

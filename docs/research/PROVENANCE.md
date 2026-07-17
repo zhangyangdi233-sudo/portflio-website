@@ -1,0 +1,46 @@
+# Research provenance manifest
+
+Observation date: 2026-07-17. Facts, direct observations, design inferences, and active decisions
+are separate evidence classes. A link supports only the claim named in its row.
+
+| Source or artifact | Evidence class | Observation context | Local record | Supported claim |
+| --- | --- | --- | --- | --- |
+| [RCA portfolio advice](https://www.rca.ac.uk/study/apply-to-study/portfolio-advice/) and [UAL portfolio advice](https://www.arts.ac.uk/study-at-ual/apply/portfolio-advice) | Source-supported fact | Current guidance reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Selection, clarity, context, and applicant contribution matter; exact requirements remain programme-specific |
+| [Yale School of Art](https://www.art.yale.edu/apply/graduate-admission/portfolio-requirements) and [RISD](https://www.risd.edu/admissions/graduate/apply-risd) | Source-supported fact | Admissions pages reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Portfolio is primary evidence in the cited graduate-application contexts |
+| [ZUTOMAYO](https://zutomayo.net/) | Direct observation | 1440×900 browser study; one card drag measured | `BEHAVIORS.md`, `components/work-desktop-window.spec.md` | Independent absolute cards, overlap, move feedback, focus order, and close/choice behavior; exact surface is not reused |
+| [The Art of Cinema](https://www.theartofcinema.xyz/?ref=onepagelove) | Direct observation | 1440×900 and 390×844 browser study | `BEHAVIORS.md`, `components/kinetic-heading.spec.md` | Clipped duplicated-glyph roll, monumental type, scroll pacing, and a later scattered-media field |
+| User-authorized local *Milk outside…* install | Direct observation | Read-only inspection of local Ren'Py files | `BEHAVIORS.md` | Stable text plane versus selective perceptual instability; extracted assets and colors do not ship |
+| CIBA `WAKE UP` media | Artist-work evidence | Original files inspected and sampled locally | `public/assets/projects/wake-up/` | Source for a superseded flood-palette experiment and continuing spatial-memory research; not the active shell palette |
+| [*Milk outside…* developer page](https://nikita-kryukov.itch.io/milk-outside-a-bag-of-milk-outside-a-bag-of-milk) and [Z.A.T.O. developer page](https://nopanamaman.itch.io/z-a-t-o-i-love-the-world-and-everything-in-it) | Source-supported fact | Developer pages reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Narrow description, format, and warning claims only; no expression is licensed or reused |
+| [Persona 5 CEDEC report](https://www.famitsu.com/news/201711/13145540.html) and [developer interview translation](https://personacentral.com/persona-5-interview-ui-design-sound-music/) | Source-supported fact | Report and interview reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Restricted dominant color, eye-guiding hierarchy, and immediate menu response informed behavior-level evaluation only |
+| [Arknights official video archive](https://ak.hypergryph.com/archive/video) | Source-supported fact | Archive shell reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Persistent categories unify varied official media; no scene-level PV grammar is claimed |
+| [Backrooms study](https://journals.sagepub.com/doi/abs/10.1177/14614448241238395) and [MIT Press essay](https://thereader.mitpress.mit.edu/backrooms-and-the-rise-of-the-institutional-gothic/) | Source-supported fact | Scholarship reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Liminal institutional spaces, thin source information, games, nostalgia, and participatory reinterpretation are relevant mechanisms |
+| [Dreamcore study](https://journals.sagepub.com/doi/10.1177/02762374251356955) | Source-supported fact | Empirical paper reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Dreamcore can include both uncanny and comforting dimensions; it is not one fixed visual recipe |
+| [Vitsœ / Rams principles](https://www.vitsoe.com/eu/about/good-design) and [Gary Hustwit / *Rams*](https://www.hustwit.com/rams/) | Source-supported fact | Institutional/design-film sources reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Usefulness, legibility, honesty, restraint, thoroughness, and longevity are operating constraints, not a visual skin |
+| [Bauhaus typography](https://www.bauhaus.de/en/research/publications/bauhaus-typography/) and [MoMA Constructivist book design](https://www.moma.org/interactives/exhibitions/2002/russian/5_pdfs/rowell.pdf) | Source-supported fact | Institutional publications reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Typography-as-structure and asymmetric/diagonal book-design mechanisms respectively |
+| [Cooper Hewitt — A Harmony of Contrasts](https://www.cooperhewitt.org/2018/08/05/aharmonyofcontrasts/) and [Gridnik](https://www.cooperhewitt.org/2013/11/26/gridnik/) | Museum interpretation | Reviewed 2026-07-17 after visual-direction feedback | `DEEP_RESEARCH_REPORT.md`, custom Skill | Swiss/International style uses sans typography, asymmetry, grid, contrast; grid can organize visual order |
+| [Letterform Archive — Legacies of Swiss Style, Part 1](https://letterformarchive.org/news/legacies-of-swiss-style-tyografische-monatsblatter/) | Collection research | Reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md`, custom Skill | Clear hierarchy, asymmetry, consistent strokes, and disciplined grids; later practice also tests modernist limits |
+| [W3C JLREQ](https://www.w3.org/TR/jlreq/) | Internationalization guidance | Reviewed 2026-07-17 after Japanese rendering feedback | `DEEP_RESEARCH_REPORT.md`, CSS guardrails | Japanese composition has language-specific layout requirements and should not inherit Latin display assumptions blindly |
+| [W3C Understanding Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color) | Accessibility guidance | Reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md`, CSS guardrails | Color cannot be the only means of conveying state; contrast must be checked against actual adjacent backgrounds |
+| [Kodak on *Asteroid City*](https://www.kodak.com/en/motion/blog-post/asteroid-city/) | Source-supported fact | Production article reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Narrow evidence for deliberate framing and graphic continuity in that production, not all Wes Anderson films |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [W3C images](https://www.w3.org/WAI/tutorials/images/), and [W3C media](https://www.w3.org/WAI/media/av/) | Normative/institutional guidance | Accessibility guidance reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md`, component specs | Keyboard, motion, image, and media access constraints used by the implementation |
+| [WIPO copyright FAQ](https://www.wipo.int/en/web/copyright/faq-copyright) | Institutional guidance | Copyright guidance reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md`, custom Skill | Expression/assets require rights; abstract mechanisms are independently reimplemented and distance-audited |
+| Signal Index / Acid Proof | Active design decision | Re-synthesized from explicit feedback and research on 2026-07-17 | `src/content/art-direction.json`, custom Skill | Three-color Internationalist CIBA system; project requirement pending long-term taste confirmation |
+
+## Superseded CIBA palette sampling experiment
+
+- `flooded-room-square.jpeg` SHA-256:
+  `3be85013d9e04296e8ae32a7d021bddee431c1e2470a4f1a61b7a89f5552be58`
+- `wake-logo-color.png` SHA-256:
+  `d02d016e7c1e55598fa160504ebf5b978450fc34693b0c2310e8ee311c8cef79`
+- Method: inspect a 6×6 visual downsample, then a 96px sRGB downsample grouped into coarse RGB
+  buckets; choose semantic candidates from recurring artist-image regions; verify foreground/control
+  pair contrast before promotion to `src/content/art-direction.json`.
+- Sampling date: 2026-07-17. No third-party reference image contributed a shipped color value.
+- Status: superseded after explicit artist feedback. The active shell now uses `#090a08`,
+  `#f4f0dd`, and `#c6ff00`; these values are a project design decision, not a claim of extraction
+  from either the artist media or a reference website.
+
+Third-party reference screenshots used during local comparison are ignored by Git and excluded from
+delivery. The runtime and Figma handoff contain only CIBA media, editable primitives, and
+independently implemented interaction code.

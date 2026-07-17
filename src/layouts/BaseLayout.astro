@@ -1,8 +1,10 @@
 ---
 import Header from "../components/Header.astro";
+import { getArtDirectionVars } from "../lib/art-direction";
 import { siteProfile } from "../lib/site-data";
 import type { Language } from "../lib/types";
 import "../styles/global.css";
+import "../styles/art-direction.css";
 
 interface Props {
   lang: Language;
@@ -14,7 +16,8 @@ interface Props {
 }
 
 const { lang, title, description, pageClass = "", theme = {}, bare = false } = Astro.props;
-const themeStyle = Object.entries(theme)
+const skipCopy = { zh: "跳到主要内容", en: "Skip to main content", ja: "本文へ移動" }[lang];
+const themeStyle = Object.entries({ ...getArtDirectionVars(), ...theme })
   .map(([key, value]) => `${key}:${value}`)
   .join(";");
 ---
@@ -25,10 +28,11 @@ const themeStyle = Object.entries(theme)
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0f1115" />
+    <meta name="theme-color" content="#090a08" />
     <title>{title}</title>
   </head>
   <body class={pageClass}>
+    <a class="skip-link" href="#content">{skipCopy}</a>
     {!bare && <div class="ambient-grid" aria-hidden="true"></div>}
     {!bare && <Header lang={lang} />}
     <main id="content">
@@ -38,7 +42,13 @@ const themeStyle = Object.entries(theme)
       !bare && (
         <footer class="site-footer">
           <span>{siteProfile.artistName}</span>
-          <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+          {
+            siteProfile.email ? (
+              <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+            ) : siteProfile.socials[0] ? (
+              <a href={siteProfile.socials[0].href} target="_blank" rel="noreferrer">{siteProfile.socials[0].label}</a>
+            ) : null
+          }
           <span>{siteProfile.location}</span>
         </footer>
       )

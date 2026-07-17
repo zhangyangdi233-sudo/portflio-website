@@ -5,7 +5,7 @@ import { z } from "astro/zod";
 const localizedText = z.object({
   title: z.string(),
   summary: z.string(),
-  body: z.array(z.string())
+  body: z.array(z.string()).min(1)
 });
 
 const projects = defineCollection({
@@ -32,7 +32,14 @@ const projects = defineCollection({
         alt: z.string(),
         caption: z.string().optional()
       })
-    ),
+    ).min(1),
+    details: z.object({
+      role: z.string().optional(),
+      scale: z.string().optional(),
+      duration: z.string().optional(),
+      platform: z.string().optional(),
+      credits: z.array(z.string()).optional()
+    }).optional(),
     links: z.object({
       play: z.url().optional(),
       archive: z.url().optional()
@@ -49,9 +56,9 @@ const site = defineCollection({
   loader: glob({ base: "./src/content/site", pattern: "**/*.json" }),
   schema: z.object({
     artistName: z.string(),
-    email: z.email(),
+    email: z.email().optional(),
     location: z.string(),
-    cvUrl: z.string(),
+    cvUrl: z.string().optional(),
     socials: z.array(
       z.object({
         label: z.string(),
@@ -61,17 +68,17 @@ const site = defineCollection({
     i18n: z.object({
       zh: z.object({
         role: z.string(),
-        statement: z.array(z.string()),
+        statement: z.array(z.string()).min(2),
         cv: z.array(z.string())
       }),
       en: z.object({
         role: z.string(),
-        statement: z.array(z.string()),
+        statement: z.array(z.string()).min(2),
         cv: z.array(z.string())
       }),
       ja: z.object({
         role: z.string(),
-        statement: z.array(z.string()),
+        statement: z.array(z.string()).min(2),
         cv: z.array(z.string())
       })
     })

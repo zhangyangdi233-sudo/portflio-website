@@ -12,6 +12,7 @@ import {
   sortProjects
 } from "../src/lib/projects";
 import { projects } from "../src/lib/project-data";
+import { artDirection } from "../src/lib/art-direction";
 
 describe("localized portfolio behavior", () => {
   it("detects supported browser languages and falls back to English", () => {
@@ -30,11 +31,11 @@ describe("localized portfolio behavior", () => {
     expect(ordered.slice(0, 2)).toEqual(["x-wheel", "emida"]);
   });
 
-  it("exposes a focused featured set and the X.WHEEL play link", () => {
+  it("exposes a focused featured set without publishing a placeholder play link", () => {
     const featured = getFeaturedProjects(projects);
     expect(featured).toHaveLength(2);
     expect(featured[0].slug).toBe("x-wheel");
-    expect(featured[0].links.play).toMatch(/^https?:\/\//);
+    expect(featured[0].links.play).toBeUndefined();
   });
 
   it("provides complete translations and page theme variables", () => {
@@ -46,8 +47,10 @@ describe("localized portfolio behavior", () => {
       }
 
       expect(getProjectThemeVars(project)).toMatchObject({
-        "--project-primary": project.palette.primary,
-        "--project-secondary": project.palette.secondary
+        "--project-primary": artDirection.colors.oxide,
+        "--project-secondary": artDirection.colors.ink,
+        "--project-ink": artDirection.colors.ink,
+        "--project-paper": artDirection.colors.night
       });
     }
   });

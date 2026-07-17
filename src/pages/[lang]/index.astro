@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import ProjectImage from "../../components/ProjectImage.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { buildHomeComposition } from "../../lib/home-composition";
 import { assertLanguage, languageLabels, languages, ui } from "../../lib/i18n";
@@ -20,9 +21,38 @@ const compositionRows = buildHomeComposition(projects);
 const title = `${siteProfile.artistName} | ${profile.role}`;
 const projectCount = String(projects.length).padStart(2, "0");
 const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.length));
-const popupProjects = ["x-wheel", "emida", "wake-up"]
-  .map((slug) => projects.find((project) => project.slug === slug))
-  .filter((project): project is Project => Boolean(project));
+const homeCopy = {
+  zh: {
+    navigation: "首页导航",
+    languages: "语言切换",
+    sideNote: "精选作品像重新浮上水面的文件：被提取、错放，并在滚动中重新显现。",
+    mediaField: "可滚动的精选作品",
+    extractedTitle: "提取作品 / EXTRACTED WORKS",
+    extractedBody: "由文件、研究、游戏与图像系统构成的克制索引。滚动抽出每件作品，再打开项目页面阅读完整记录。",
+    fileStack: "项目文件堆叠",
+    portfolioTitle: "作品档案 / CIBA"
+  },
+  en: {
+    navigation: "Homepage navigation",
+    languages: "Language switcher",
+    sideNote: "Selected works are treated as files returning to the surface: extracted, misplaced, and made visible through scroll.",
+    mediaField: "Scrollable featured works",
+    extractedTitle: "EXTRACTED WORKS",
+    extractedBody: "A restrained index of files, studies, games, and image systems. Scroll to pull each work out of the archive, then open the project page for the full record.",
+    fileStack: "Project file stack",
+    portfolioTitle: "PORTFOLIO / CIBA"
+  },
+  ja: {
+    navigation: "ホームページのナビゲーション",
+    languages: "言語切り替え",
+    sideNote: "選ばれた作品は、水面へ戻るファイルのように、抽出され、置き違えられ、スクロールによって再び見えるものとして扱います。",
+    mediaField: "スクロールできる選抜作品",
+    extractedTitle: "抽出作品 / EXTRACTED WORKS",
+    extractedBody: "ファイル、スタディ、ゲーム、イメージ・システムを抑制された索引としてまとめています。スクロールで作品をアーカイブから引き出し、各ページで完全な記録を開きます。",
+    fileStack: "作品ファイルのスタック",
+    portfolioTitle: "作品アーカイブ / CIBA"
+  }
+}[lang];
 
 const scatterPositions = [
   ["-30vw", "20vh", -15],
@@ -58,12 +88,12 @@ const mediaPool = featuredProjects
 ---
 
 <BaseLayout lang={lang} title={title} description={profile.statement[0]} pageClass="home-page composition-home">
-  <nav class="cinema-nav" aria-label="Homepage navigation" data-cinema-nav>
+  <nav class="cinema-nav" aria-label={homeCopy.navigation} data-cinema-nav>
     <a href={`/${lang}/works/`}>PORTFOLIO</a>
     <a href={`/${lang}/about/`}>CIBA</a>
   </nav>
 
-  <div class="cinema-language" aria-label="Language switcher">
+  <div class="cinema-language" aria-label={homeCopy.languages}>
     {
       languages.map((targetLang) => (
         <a class:list={{ "is-active": targetLang === lang }} href={`/${targetLang}/`}>
@@ -122,11 +152,11 @@ const mediaPool = featuredProjects
         </div>
 
         <p class="cinema-side-note">
-          Selected works are treated as files returning to the surface: extracted, misplaced, and made visible through scroll.
+          {homeCopy.sideNote}
         </p>
       </div>
 
-      <div class="cinema-media-field" aria-label="Scrollable featured works">
+      <div class="cinema-media-field" aria-label={homeCopy.mediaField}>
         {
           mediaPool.map((item, index) => {
             const [x, y, rotation] = scatterPositions[index];
@@ -139,12 +169,17 @@ const mediaPool = featuredProjects
                 data-work-index={item.projectIndex}
                 style={`--scatter-x:${x};--scatter-y:${y};--scatter-r:${rotation}deg;--media-order:${index};`}
               >
-                <img
-                  src={item.media.src}
-                  alt={item.media.alt}
-                  loading={item.projectIndex === 0 && item.mediaIndex === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                />
+                {
+                  item.media.type === "image" ? (
+                    <ProjectImage
+                      media={item.media}
+                      eager={item.projectIndex === 0 && item.mediaIndex === 0}
+                      sizes="(max-width: 899px) calc(100vw - 2rem), 14vw"
+                    />
+                  ) : (
+                    <video src={item.media.src} muted playsinline controls preload="metadata" aria-label={item.media.alt} />
+                  )
+                }
                 <span>{String(item.projectIndex + 1).padStart(2, "0")} / {item.localized.title}</span>
               </a>
             );
@@ -158,44 +193,15 @@ const mediaPool = featuredProjects
     <p>{profile.statement[1]}</p>
   </section>
 
-  <section class="floating-window-layer" aria-label="Highlighted project windows">
-    {
-      popupProjects.map((project, index) => {
-        const localized = getLocalizedProject(project, lang);
-
-        return (
-          <article class="work-window" data-work-window style={`--window-index:${index};`}>
-            <div class="work-window__bar" data-window-handle>
-              <span>{localized.title}</span>
-              <button type="button" aria-label={`Close ${localized.title}`} data-window-close>CLOSE</button>
-            </div>
-            <figure>
-              <a href={`/${lang}/works/${project.slug}/`}>
-                <img src={project.media[0].src} alt={project.media[0].alt} loading="lazy" decoding="async" />
-              </a>
-            </figure>
-            <div class="work-window__actions">
-              <a href={`/${lang}/works/${project.slug}/`}>OPEN</a>
-              <button type="button" data-window-close>NO</button>
-            </div>
-          </article>
-        );
-      })
-    }
-  </section>
-
   <section class="file-extract" aria-labelledby="file-extract-title" data-file-extract>
     <div class="file-extract__sticky">
       <div class="file-extract__copy" data-reveal>
         <p class="file-extract__meta">02 / {projectCount} {labels.works}</p>
-        <h2 id="file-extract-title">EXTRACTED WORKS</h2>
-        <p>
-          A restrained index of files, studies, games, and image systems. Scroll to pull each work out of the archive,
-          then open the project page for the full record.
-        </p>
+        <h2 id="file-extract-title">{homeCopy.extractedTitle}</h2>
+        <p>{homeCopy.extractedBody}</p>
       </div>
 
-      <div class="file-stack" aria-label="Project file stack">
+      <div class="file-stack" aria-label={homeCopy.fileStack}>
         {
           featuredProjects.map((project, index) => {
             const localized = getLocalizedProject(project, lang);
@@ -213,7 +219,13 @@ const mediaPool = featuredProjects
                 </div>
                 <p>{localized.summary}</p>
                 <figure>
-                  <img src={project.media[0].src} alt={project.media[0].alt} loading="lazy" decoding="async" />
+                  {
+                    project.media[0].type === "image" ? (
+                      <ProjectImage media={project.media[0]} sizes="(max-width: 899px) calc(100vw - 3rem), 32vw" />
+                    ) : (
+                      <video src={project.media[0].src} muted playsinline controls preload="metadata" aria-label={project.media[0].alt} />
+                    )
+                  }
                 </figure>
               </a>
             );
@@ -225,7 +237,7 @@ const mediaPool = featuredProjects
 
   <section class="minimal-index" aria-labelledby="minimal-index-title">
     <p class="file-extract__meta">{labels.index}</p>
-    <h2 id="minimal-index-title">PORTFOLIO / CIBA</h2>
+    <h2 id="minimal-index-title">{homeCopy.portfolioTitle}</h2>
     <div class="minimal-index__list">
       {
         compositionRows.map((project, index) => {

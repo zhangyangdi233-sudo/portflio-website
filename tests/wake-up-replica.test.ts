@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { projects } from "../src/lib/project-data";
 
 describe("Wake Up replica project", () => {
@@ -40,5 +41,23 @@ describe("Wake Up replica project", () => {
     expect(wakeUp?.tags).toContain("old-site-replica");
     expect(wakeUp?.media.length).toBeGreaterThanOrEqual(28);
     expect(wakeUp?.media.map((item) => item.src.split("/").at(-1))).toEqual(expect.arrayContaining(expectedAssets));
+  });
+
+  it("keeps removed legacy panels in the source archive without rendering them", () => {
+    const component = readFileSync(new URL("../src/components/WakeUpReplica.astro", import.meta.url), "utf8");
+
+    [
+      "wake-grid-panel",
+      "wake-corridor-panel",
+      "wake-sunset-panel",
+      "wake-hand-panel",
+      "wake-text-panel",
+      "wake-bio-panel",
+      "wake-logo-panel"
+    ].forEach((className) => expect(component).not.toContain(`class=\"wake-panel ${className}`));
+
+    expect(component).toContain("wake-columns-panel");
+    expect(component).toContain("wake-city-panel");
+    expect(component).toContain("displayedMedia.map");
   });
 });
