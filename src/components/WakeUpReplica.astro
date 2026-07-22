@@ -1,5 +1,6 @@
 ---
 import ProjectImage from "./ProjectImage.astro";
+import { getLocalizedMedia, getLocalizedString, getLocalizedStringList } from "../lib/projects";
 import type { Language, LocalizedText, Project, ProjectMedia } from "../lib/types";
 
 interface Props {
@@ -11,123 +12,60 @@ interface Props {
 const { project, localized, lang } = Astro.props;
 const media = (name: string): ProjectMedia =>
   project.media.find((item) => item.src.includes(`/${name}.`)) ?? project.media[0];
-
 const bedAlarm = media("bed-alarm");
-const halftoneBand = media("halftone-band");
-const intercomPlainA = media("intercom-plain-a");
-const dreamQuestionBlack = media("dream-question-black");
-const dreamQuestionBlackB = media("dream-question-black-b");
-const tvGirl = media("tv-girl");
-const whiteScrollBlank = media("white-scroll-blank");
 const floodedTitle = media("flooded-title");
-const wakeScriptCollage = media("wake-script-collage");
-const glitchGirlCollage = media("glitch-girl-collage");
-const intercomPlainB = media("intercom-plain-b");
-const questionColumn = media("question-column");
-const quoteColumn = media("quote-column");
-const sayingColumn = media("saying-column");
-const disappearedColumn = media("disappeared-column");
-const dreamQuestionColumn = media("dream-question-column");
-const vaporIntercom = media("vapor-intercom");
-const disappearedBlack = media("disappeared-black");
-const intercomPhotoFull = media("intercom-photo-full");
-const cityStrips = [
-  media("city-strip-night"),
-  media("city-strip-sunset"),
-  media("city-strip-day"),
-  media("city-strip-amber")
-];
-const verticalColumns = [questionColumn, sayingColumn, disappearedColumn, dreamQuestionColumn, quoteColumn];
-const blackTextPanels = [dreamQuestionBlack, disappearedBlack, dreamQuestionBlackB];
-const displayedMedia = [
-  floodedTitle,
-  ...blackTextPanels,
-  bedAlarm,
-  whiteScrollBlank,
-  ...verticalColumns,
-  intercomPlainA,
-  intercomPlainB,
-  intercomPhotoFull,
-  vaporIntercom,
-  tvGirl,
-  wakeScriptCollage,
-  glitchGirlCollage,
-  halftoneBand,
-  ...cityStrips
-];
+const displayedMedia = [bedAlarm, floodedTitle];
+const localizedTags = getLocalizedStringList(project.tags, lang);
+const localizedDetails = project.details ? {
+  role: getLocalizedString(project.details.role, lang),
+  scale: getLocalizedString(project.details.scale, lang),
+  platform: getLocalizedString(project.details.platform, lang),
+  credits: getLocalizedStringList(project.details.credits, lang)
+} : undefined;
 const copy = {
-  zh: { back: "返回作品", record: "项目记录", year: "年份", medium: "媒介", tags: "标签", descriptions: "图像描述索引", descriptionsIntro: "以下文字描述对应长页面中的视觉与文字图像，便于不观看动效时理解其顺序。", archive: "查看旧站档案" },
-  en: { back: "Back to works", record: "Project record", year: "Year", medium: "Medium", tags: "Tags", descriptions: "Image description index", descriptionsIntro: "These descriptions follow the long page sequence so the visual and text-image material remains understandable without watching the motion.", archive: "View previous-site archive" },
-  ja: { back: "作品一覧へ戻る", record: "作品記録", year: "年", medium: "メディア", tags: "タグ", descriptions: "画像説明インデックス", descriptionsIntro: "動きを見なくても順序と内容が分かるよう、長いページ内の視覚資料と文字画像を説明します。", archive: "旧サイトのアーカイブを見る" }
+  zh: { back: "返回作品", record: "项目记录", year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "形式", platform: "平台", credits: "协作与署名", descriptions: "图像描述索引", descriptionsIntro: "两张公开图像按页面顺序列出；其他源素材保存在非公开归档中。", archive: "查看旧站档案" },
+  en: { back: "Back to works", record: "Project record", year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Format", platform: "Platform", credits: "Credits", descriptions: "Image description index", descriptionsIntro: "The two public images are listed in page order; other source media is preserved in a non-deployable archive.", archive: "View previous-site archive" },
+  ja: { back: "作品一覧へ戻る", record: "作品記録", year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "形式", platform: "プラットフォーム", credits: "クレジット", descriptions: "画像説明インデックス", descriptionsIntro: "公開する2点をページ順に示します。その他の素材は非公開アーカイブに保存しています。", archive: "旧サイトのアーカイブを見る" }
 }[lang];
 ---
 
 <article class="wake-replica" data-wake-page>
   <header class="wake-record-intro">
-    <a class="wake-back" href={`/${lang}/works/`} aria-label={copy.back}>WORKS</a>
+    <a class="wake-back" href={`/${lang}/works/`} aria-label={copy.back}>← WORKS</a>
     <div class="wake-record-intro__grid">
       <div>
-        <p class="wake-record-intro__eyebrow">{project.status} / {copy.record}</p>
+        <p class="wake-record-intro__eyebrow">{localized.status ?? project.status} / {copy.record}</p>
         <h1>{localized.title}</h1>
         <p class="wake-record-intro__summary">{localized.summary}</p>
       </div>
       <div class="wake-record-intro__record">
         <dl>
           <div><dt>{copy.year}</dt><dd>{project.year}</dd></div>
-          <div><dt>{copy.medium}</dt><dd>{project.medium}</dd></div>
-          <div><dt>{copy.tags}</dt><dd>{project.tags.join(" / ")}</dd></div>
+          <div><dt>{copy.medium}</dt><dd>{localized.medium ?? project.medium}</dd></div>
+          <div><dt>{copy.tags}</dt><dd>{localizedTags.join(" / ")}</dd></div>
+          {localizedDetails?.role && <div><dt>{copy.role}</dt><dd>{localizedDetails.role}</dd></div>}
+          {localizedDetails?.scale && <div><dt>{copy.scale}</dt><dd>{localizedDetails.scale}</dd></div>}
+          {localizedDetails?.platform && <div><dt>{copy.platform}</dt><dd>{localizedDetails.platform}</dd></div>}
+          {localizedDetails && localizedDetails.credits.length > 0 && <div><dt>{copy.credits}</dt><dd>{localizedDetails.credits.join(" / ")}</dd></div>}
         </dl>
         {localized.body.map((paragraph) => <p>{paragraph}</p>)}
-        {project.links.archive && <a href={project.links.archive} target="_blank" rel="noreferrer">{copy.archive}</a>}
+        {project.links.archive && <a href={project.links.archive} target="_blank" rel="noreferrer">{copy.archive} ↗</a>}
       </div>
     </div>
     <details class="wake-record-intro__descriptions">
       <summary>{copy.descriptions}</summary>
       <p>{copy.descriptionsIntro}</p>
-      <ol>
-        {displayedMedia.map((item) => <li>{item.alt}{item.caption ? ` — ${item.caption}` : ""}</li>)}
-      </ol>
+      <ol>{displayedMedia.map((item) => <li>{getLocalizedMedia(item, lang).alt}</li>)}</ol>
     </details>
   </header>
 
-  <section class="wake-panel wake-opening wake-old-cover" data-wake-panel>
-    <ProjectImage class="wake-cover-image" media={floodedTitle} eager wake sizes="100vw" />
-    <p class="wake-kicker" data-wake-copy>{localized.title} / {project.year}</p>
-  </section>
-
-  <section class="wake-panel wake-black-questions" data-wake-panel>
-    {blackTextPanels.map((panel, index) => <ProjectImage class={`wake-black-copy is-${index + 1}`} media={panel} wake sizes="33vw" />)}
-  </section>
-
   <section class="wake-panel wake-opening wake-bed-panel" data-wake-panel>
-    <ProjectImage class="wake-bed" media={bedAlarm} wake sizes="74vw" />
+    <ProjectImage class="wake-bed" media={bedAlarm} lang={lang} eager wake sizes="74vw" />
+    <p class="wake-kicker">01 / {localized.title} / {project.year}</p>
   </section>
 
-  <section class="wake-panel wake-columns-panel is-light" data-wake-panel>
-    <ProjectImage class="wake-blank-scroll" media={whiteScrollBlank} wake sizes="100vw" />
-    <div class="wake-column-grid">
-      {verticalColumns.map((column) => <ProjectImage media={column} wake sizes="20vw" />)}
-    </div>
+  <section class="wake-panel wake-opening wake-old-cover" data-wake-panel>
+    <ProjectImage class="wake-cover-image" media={floodedTitle} lang={lang} wake sizes="100vw" />
+    <p class="wake-kicker">02 / END</p>
   </section>
-
-  <section class="wake-panel wake-intercom-panel" data-wake-panel>
-    <ProjectImage class="wake-intercom-photo is-a" media={intercomPlainA} wake sizes="40vw" />
-    <ProjectImage class="wake-intercom-photo is-b" media={intercomPlainB} wake sizes="40vw" />
-    <ProjectImage class="wake-intercom-photo is-c" media={intercomPhotoFull} wake sizes="40vw" />
-  </section>
-
-  <section class="wake-panel wake-collage-panel" data-wake-panel>
-    <ProjectImage class="wake-vapor" media={vaporIntercom} wake sizes="55vw" />
-    <ProjectImage class="wake-tv-girl" media={tvGirl} wake sizes="38vw" />
-    <ProjectImage class="wake-script" media={wakeScriptCollage} wake sizes="48vw" />
-    <ProjectImage class="wake-glitch" media={glitchGirlCollage} wake sizes="46vw" />
-    <ProjectImage class="wake-halftone" media={halftoneBand} wake sizes="80vw" />
-  </section>
-
-  <section class="wake-city-panel" data-wake-panel>
-    <div class="wake-city-track" data-wake-city-track>
-      {cityStrips.map((strip) => <ProjectImage media={strip} wake sizes="25vw" />)}
-    </div>
-  </section>
-
 </article>

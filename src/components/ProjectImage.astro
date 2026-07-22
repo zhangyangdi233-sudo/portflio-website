@@ -1,9 +1,11 @@
 ---
 import { getPublicImageMetadata } from "../lib/public-image-metadata";
-import type { ProjectMedia } from "../lib/types";
+import { getLocalizedMedia } from "../lib/projects";
+import type { Language, ProjectMedia } from "../lib/types";
 
 interface Props {
   media: ProjectMedia;
+  lang: Language;
   eager?: boolean;
   decorative?: boolean;
   wake?: boolean;
@@ -13,6 +15,7 @@ interface Props {
 
 const {
   media,
+  lang,
   eager = false,
   decorative = false,
   wake = false,
@@ -20,13 +23,14 @@ const {
   sizes
 } = Astro.props;
 const { width, height } = await getPublicImageMetadata(media.src);
+const localized = getLocalizedMedia(media, lang);
 const wakeAttribute = wake ? { "data-wake-image": "" } : {};
 ---
 
 <img
   class={className}
   src={media.src}
-  alt={decorative ? "" : media.alt}
+  alt={decorative ? "" : localized.alt}
   width={width}
   height={height}
   sizes={sizes}

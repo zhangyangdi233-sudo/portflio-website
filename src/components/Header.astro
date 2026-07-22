@@ -10,16 +10,25 @@ interface Props {
 
 const { lang } = Astro.props;
 const labels = ui[lang];
+const currentPath = Astro.url.pathname;
+const worksIsCurrent = currentPath.startsWith(`/${lang}/works/`);
+const aboutIsCurrent = currentPath.startsWith(`/${lang}/about/`);
+const homeIsCurrent = currentPath === `/${lang}/`;
+const navigationCopy = {
+  zh: { home: "糍粑 CIBA 首页", primary: "主要导航" },
+  en: { home: "CIBA home", primary: "Primary navigation" },
+  ja: { home: "糍粑 CIBA ホーム", primary: "メインナビゲーション" }
+}[lang];
 ---
 
 <header class="site-header">
-  <a class="brand-mark" href={`/${lang}/`} aria-label="糍粑 CIBA home">
+  <a class="brand-mark" href={`/${lang}/`} aria-label={navigationCopy.home} aria-current={homeIsCurrent ? "page" : undefined} translate="no">
     <span>糍粑</span>
     <span>CIBA</span>
   </a>
-  <nav class="site-nav" aria-label="Primary navigation">
-    <a href={`/${lang}/works/`}>{labels.works}</a>
-    <a href={`/${lang}/about/`}>{labels.about}</a>
+  <nav class="site-nav" aria-label={navigationCopy.primary}>
+    <a href={`/${lang}/works/`} aria-current={worksIsCurrent ? "page" : undefined}>{labels.works}</a>
+    <a href={`/${lang}/about/`} aria-current={aboutIsCurrent ? "page" : undefined}>{labels.about}</a>
     <a href={siteProfile.email ? `mailto:${siteProfile.email}` : `/${lang}/about/#contact`}>{labels.contact}</a>
   </nav>
   <LanguageSwitcher lang={lang} />

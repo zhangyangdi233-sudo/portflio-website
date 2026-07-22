@@ -29,9 +29,9 @@ creates editable Home desktop/mobile, Works windows, project detail, WAKE UP map
 Text, shapes, title bars, media placeholders, metadata, and each Works window remain independent
 Figma layers. Website drag/filter/routing behavior stays in code.
 
-The generated page is `CIBA / Signal Index / Acid Proof`. In the Works frame, only the selected
-window uses acid green; inactive window bars use warm paper with black text. This mirrors the
-website's compact 252–305px desktop windows and 980px bounded stage.
+The generated page is `CIBA / Signal Index / Acid Proof`. The Works frame mirrors the website's
+four large 410–460px windows, acid title bars, and 760px bounded stage. The Home frames expose the
+monumental CIBA title and the low-opacity draggable image field as editable primitives.
 
 After changing website tokens, mirror the values in `figma-export/design-tokens.json` and the
 plugin color block, then run:

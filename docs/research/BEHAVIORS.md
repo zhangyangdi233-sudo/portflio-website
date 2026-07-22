@@ -27,10 +27,10 @@ none of the observations grants permission to copy another work's assets or sour
 Raster chrome, 10px text, 14px targets, a fixed canvas, whole-card drag, and absent keyboard fallback
 are unsuitable for a professor-facing portfolio.
 
-**Active implementation decision:** independently build semantic HTML/CSS windows with existing
-GSAP Draggable. Use title-bar drag, 44px controls, keyboard movement, Esc minimize, dock restore,
-filters, reset, Scan, mobile order, and reduced-motion behavior. Do not reuse frame images, icons,
-scripts, text, or layout values.
+**Active implementation decision:** independently build semantic HTML/CSS windows with native
+pointer events. Use title-bar drag, 44px controls, keyboard movement, Esc minimize, dock restore,
+filters, reset, Order mode, mobile order, and reduced-motion behavior. Do not reuse frame images,
+icons, scripts, text, or layout values.
 
 ## The Art of Cinema reference — https://www.theartofcinema.xyz/
 
@@ -68,10 +68,10 @@ and independent motion. No game color, image, font, character, dialogue, audio, 
 **Active implementation decision:**
 
 - Global shell: exactly three canonical interface values—near-black, warm paper, and acid green—organized by an asymmetric Internationalist grid.
-- Home: a cinematic index with fitted rolling titles, monochrome index media, truthful archive markers, and no blocking floating-window layer.
-- Works desktop (≥900px): compact 252–305px authored draggable project windows in a 980px stage, bring-to-front, minimize/restore, filters, reset, and ordered Scan.
+- Home: one active rolling project title with enlarged 10%-opacity grayscale evidence images; images reveal source colour on hover/focus and are draggable on a desktop fine pointer.
+- Works desktop (≥900px): four large 410–460px authored draggable project windows in a 760px stage, bring-to-front, minimize/restore, filters, reset, and ordered fallback.
 - Works below 900px: ordered semantic window cards; precision drag is removed.
 - Keyboard: focusable title-bar control; Arrow moves, Shift + Arrow moves farther, Home resets transform, Escape minimizes, and dock buttons restore/focus.
-- Motion: entrance 360–520ms; state changes 180–280ms; transform/opacity first; reduced motion disables scatter entrances and scroll scrubbing.
+- Motion: state changes use transform/opacity first; reduced motion disables title rolls and forces a linear Home plus ordered Works layout.
 - Japanese: language-specific sans fallbacks, weight, line-height, and line-breaking; no acid overlay behind the title or intro copy.
 - Accessibility: 44px controls, visible focus, meaningful alt text, hidden duplicate glyphs, a skip link, non-color state cues, and polite filter/minimize announcements.

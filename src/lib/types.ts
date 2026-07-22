@@ -1,16 +1,21 @@
 export type Language = "zh" | "en" | "ja";
 
+export type LocalizedString = string | Record<Language, string>;
+export type LocalizedStringList = string[] | Record<Language, string[]>;
+
 export type LocalizedText = {
   title: string;
   summary: string;
+  medium?: string;
+  status?: string;
   body: string[];
 };
 
 export type ProjectMedia = {
   type: "image" | "video";
   src: string;
-  alt: string;
-  caption?: string;
+  alt: LocalizedString;
+  caption?: LocalizedString;
 };
 
 export type Project = {
@@ -19,9 +24,10 @@ export type Project = {
   medium: string;
   status: string;
   priority: number;
+  published: boolean;
   featured: boolean;
   pageMode?: "standard" | "wake-up-replica";
-  tags: string[];
+  tags: LocalizedStringList;
   palette: {
     primary: string;
     secondary: string;
@@ -30,11 +36,11 @@ export type Project = {
   };
   media: ProjectMedia[];
   details?: {
-    role?: string;
-    scale?: string;
-    duration?: string;
-    platform?: string;
-    credits?: string[];
+    role?: LocalizedString;
+    scale?: LocalizedString;
+    duration?: LocalizedString;
+    platform?: LocalizedString;
+    credits?: LocalizedStringList;
   };
   links: {
     play?: string;

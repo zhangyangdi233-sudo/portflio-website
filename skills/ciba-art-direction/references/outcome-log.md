@@ -19,3 +19,31 @@ feedback captured through the taste inbox and confirmed before promotion.
   the requested grid/corridor/sunset/hand/statement/bio/logo sections rendered zero elements.
 - Automated checks: design drift, 16 unit/guardrail tests, Astro diagnostics, and a 31-route static
   build passed.
+
+## 2026-07-18 — Black-header / cinematic-stage / large-window verification
+
+- Japanese desktop header computed to black `rgb(9, 10, 8)` with warm-paper
+  `rgb(244, 240, 221)` text; it remained 64px high with 44px language targets.
+- Home desktop exposed exactly one active work layer. Scrolling changed the active title from
+  X.WHEEL to EMIDA; the duplicate glyphs settled without static overlap after the 720ms roll.
+- Home evidence images computed to `opacity: 0.1` and `grayscale(1)` at rest. Keyboard movement
+  changed x by 16px; pointer drag changed x by 110px and y by 55px; focus restored source colour.
+- Works desktop rendered four windows approximately 410–464px wide. Pointer drag and keyboard
+  movement changed the X.WHEEL window transform; Escape/minimize and restore remain explicit.
+- Works at 390×844 had no horizontal overflow, used a one-column ordered layout, and every drag
+  handle was disabled, `tabIndex=-1`, and `aria-hidden=true`. The header remained pure black and
+  compacted to 62px.
+- `?motion=reduce` forced the two-column ordered desktop layout and removed all drag handles from
+  the focus order.
+- Wake Up rendered exactly two public images: `bed-alarm.png` and `flooded-title.jpg`.
+- Post-review deployment audit: `public/` and `dist/assets/` each contain exactly ten
+  allowlisted files. Wake Up contributes only its two approved images; unpublished placeholder
+  SVGs, the placeholder CV, and roughly 45MB of legacy Wake Up media now live under the
+  non-deployable `source-archive/`. The production build fell from about 55MB to 3.7MB.
+- Chinese, English, and Japanese builds now render localized media alternative text, captions,
+  tags, role/scale/credits evidence notes, and project-detail labels. Unknown role and collaborator
+  facts are visibly marked as awaiting artist verification rather than invented.
+- Figma drift checks now cover the Home project stage, Works filters/layouts/visible count,
+  62px mobile header, 3px focus outline, and the absence of stale PNGs in live handoff folders.
+- Browser checks are implementation outcomes only; they do not promote pending colour or header
+  feedback into the taste ledger.

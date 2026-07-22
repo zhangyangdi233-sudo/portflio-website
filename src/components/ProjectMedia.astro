@@ -1,22 +1,36 @@
 ---
-import type { ProjectMedia as Media } from "../lib/types";
+import { getLocalizedMedia } from "../lib/projects";
+import type { Language, ProjectMedia as Media } from "../lib/types";
 import ProjectImage from "./ProjectImage.astro";
 
 interface Props {
   media: Media;
+  lang: Language;
   eager?: boolean;
 }
 
-const { media, eager = false } = Astro.props;
+const { media, lang, eager = false } = Astro.props;
+const localized = getLocalizedMedia(media, lang);
+const focusCopy = {
+  zh: "聚焦时显示图像原色",
+  en: "Focus to reveal the image in source colour",
+  ja: "フォーカスすると画像を元の色で表示"
+}[lang];
 ---
 
-<figure class="project-media" data-reveal>
+<figure
+  class="project-media"
+  data-reveal
+  data-project-media-focus
+  tabindex="0"
+  aria-label={`${focusCopy}: ${localized.caption ?? localized.alt}`}
+>
   {
     media.type === "image" ? (
-      <ProjectImage media={media} eager={eager} sizes="(max-width: 899px) calc(100vw - 2rem), 50vw" />
+      <ProjectImage media={media} lang={lang} eager={eager} sizes="(max-width: 899px) calc(100vw - 2rem), 50vw" />
     ) : (
-      <video src={media.src} muted playsinline controls preload="metadata" aria-label={media.alt} />
+      <video src={media.src} muted playsinline controls preload="metadata" aria-label={localized.alt} />
     )
   }
-  {media.caption && <figcaption>{media.caption}</figcaption>}
+  {localized.caption && <figcaption>{localized.caption}</figcaption>}
 </figure>

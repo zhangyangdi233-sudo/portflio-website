@@ -1,18 +1,21 @@
 import { describe, expect, it } from "vitest";
 import { artDirection, getArtDirectionVars, getWorkspacePosition } from "../src/lib/art-direction";
+import { projects } from "../src/lib/project-data";
 
 describe("art direction configuration", () => {
-  it("provides a configured workspace position for every current project", () => {
-    const slugs = ["x-wheel", "emida", "soft-boundaries", "wake-up", "residual-garden", "signal-room", "threshold-archive"];
+  it("provides one large authored window position for every public project", () => {
+    const slugs = projects.map((project) => project.slug);
 
     expect(Object.keys(artDirection.workspace.positions).sort()).toEqual([...slugs].sort());
+    expect(artDirection.workspace).toMatchObject({ breakpoint: 900, stageHeight: 760 });
     slugs.forEach((slug, index) => {
       const position = getWorkspacePosition(slug, index);
-      expect(position.width).toBeGreaterThanOrEqual(240);
-      expect(position.width).toBeLessThanOrEqual(320);
+      expect(position.width).toBeGreaterThanOrEqual(410);
+      expect(position.width).toBeLessThanOrEqual(460);
       expect(position.x).toBeGreaterThanOrEqual(0);
       expect(position.x).toBeLessThan(100);
-      expect(position.y).toBeGreaterThanOrEqual(0);
+      expect(position.y).toBeGreaterThanOrEqual(38);
+      expect(position.y).toBeLessThanOrEqual(152);
     });
   });
 

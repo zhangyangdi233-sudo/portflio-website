@@ -4,15 +4,22 @@ import ProjectMedia from "../../../components/ProjectMedia.astro";
 import WakeUpReplica from "../../../components/WakeUpReplica.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { assertLanguage, languages, ui } from "../../../lib/i18n";
-import { getLocalizedProject, getProjectThemeVars, sortProjects } from "../../../lib/projects";
+import {
+  getLocalizedProject,
+  getLocalizedString,
+  getLocalizedStringList,
+  getProjectThemeVars,
+  getPublishedProjects
+} from "../../../lib/projects";
 import { siteProfile } from "../../../lib/site-data";
 import type { Project } from "../../../lib/types";
 
 export async function getStaticPaths() {
   const entries = await getCollection("projects");
+  const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
   return languages.flatMap((lang) =>
-    entries.map((entry) => ({
-      params: { lang, slug: entry.data.slug }
+    projects.map((project) => ({
+      params: { lang, slug: project.slug }
     }))
   );
 }
@@ -20,13 +27,21 @@ export async function getStaticPaths() {
 const lang = assertLanguage(Astro.params.lang);
 const labels = ui[lang];
 const entries = await getCollection("projects");
-const projects = sortProjects(entries.map((entry) => entry.data as Project));
+const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
 const project = projects.find((item) => item.slug === Astro.params.slug) ?? projects[0];
 const localized = getLocalizedProject(project, lang);
 const theme = getProjectThemeVars(project);
 const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
 const nextLocalized = getLocalizedProject(nextProject, lang);
 const isWakeUpReplica = project.pageMode === "wake-up-replica";
+const localizedTags = getLocalizedStringList(project.tags, lang);
+const localizedDetails = project.details ? {
+  role: getLocalizedString(project.details.role, lang),
+  scale: getLocalizedString(project.details.scale, lang),
+  duration: getLocalizedString(project.details.duration, lang),
+  platform: getLocalizedString(project.details.platform, lang),
+  credits: getLocalizedStringList(project.details.credits, lang)
+} : undefined;
 const detailCopy = {
   zh: { year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "尺度", duration: "时长", platform: "平台", credits: "协作与署名", archive: "查看档案", gallery: "项目媒体", next: "下一个项目" },
   en: { year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Scale", duration: "Duration", platform: "Platform", credits: "Credits", archive: "View archive", gallery: "Project media", next: "Next project" },
@@ -40,7 +55,6 @@ const detailCopy = {
   description={localized.summary}
   pageClass={isWakeUpReplica ? "project-page wake-page" : "project-page"}
   theme={theme}
-  bare={isWakeUpReplica}
 >
   {
     isWakeUpReplica ? (
@@ -49,7 +63,7 @@ const detailCopy = {
       <article class="project-detail">
         <header class="project-hero">
           <div class="project-hero__copy">
-            <p class="eyebrow">{project.status}</p>
+            <p class="eyebrow">{localized.status ?? project.status}</p>
             <h1 class="split-heading">{localized.title}</h1>
             <p>{localized.summary}</p>
             <dl class="project-meta">
@@ -59,40 +73,40 @@ const detailCopy = {
               </div>
               <div>
                 <dt>{detailCopy.medium}</dt>
-                <dd>{project.medium}</dd>
+                <dd>{localized.medium ?? project.medium}</dd>
               </div>
               <div>
                 <dt>{detailCopy.tags}</dt>
-                <dd>{project.tags.join(" / ")}</dd>
+                <dd>{localizedTags.join(" / ")}</dd>
               </div>
-              {project.details?.role && (
+              {localizedDetails?.role && (
                 <div>
                   <dt>{detailCopy.role}</dt>
-                  <dd>{project.details.role}</dd>
+                  <dd>{localizedDetails.role}</dd>
                 </div>
               )}
-              {project.details?.scale && (
+              {localizedDetails?.scale && (
                 <div>
                   <dt>{detailCopy.scale}</dt>
-                  <dd>{project.details.scale}</dd>
+                  <dd>{localizedDetails.scale}</dd>
                 </div>
               )}
-              {project.details?.duration && (
+              {localizedDetails?.duration && (
                 <div>
                   <dt>{detailCopy.duration}</dt>
-                  <dd>{project.details.duration}</dd>
+                  <dd>{localizedDetails.duration}</dd>
                 </div>
               )}
-              {project.details?.platform && (
+              {localizedDetails?.platform && (
                 <div>
                   <dt>{detailCopy.platform}</dt>
-                  <dd>{project.details.platform}</dd>
+                  <dd>{localizedDetails.platform}</dd>
                 </div>
               )}
-              {project.details?.credits && project.details.credits.length > 0 && (
+              {localizedDetails && localizedDetails.credits.length > 0 && (
                 <div>
                   <dt>{detailCopy.credits}</dt>
-                  <dd>{project.details.credits.join(" / ")}</dd>
+                  <dd>{localizedDetails.credits.join(" / ")}</dd>
                 </div>
               )}
             </dl>
@@ -109,7 +123,7 @@ const detailCopy = {
               )}
             </div>
           </div>
-          <ProjectMedia media={project.media[0]} eager />
+          <ProjectMedia media={project.media[0]} lang={lang} eager />
         </header>
 
         <section class="project-text" data-reveal>
@@ -119,7 +133,7 @@ const detailCopy = {
         {
           project.media.length > 1 && (
             <section class="project-gallery" aria-label={detailCopy.gallery}>
-              {project.media.slice(1).map((media) => <ProjectMedia media={media} />)}
+              {project.media.slice(1).map((media) => <ProjectMedia media={media} lang={lang} />)}
             </section>
           )
         }

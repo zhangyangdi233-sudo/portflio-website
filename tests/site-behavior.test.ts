@@ -7,11 +7,15 @@ import {
 } from "../src/lib/i18n";
 import {
   getFeaturedProjects,
+  getLocalizedMedia,
   getLocalizedProject,
+  getLocalizedString,
+  getLocalizedStringList,
+  getPublishedProjects,
   getProjectThemeVars,
   sortProjects
 } from "../src/lib/projects";
-import { projects } from "../src/lib/project-data";
+import { allProjects, projects } from "../src/lib/project-data";
 import { artDirection } from "../src/lib/art-direction";
 
 describe("localized portfolio behavior", () => {
@@ -31,6 +35,17 @@ describe("localized portfolio behavior", () => {
     expect(ordered.slice(0, 2)).toEqual(["x-wheel", "emida"]);
   });
 
+  it("keeps placeholders editable without publishing them as portfolio evidence", () => {
+    expect(allProjects).toHaveLength(8);
+    expect(getPublishedProjects(allProjects).map((project) => project.slug)).toEqual([
+      "x-wheel",
+      "emida",
+      "wake-up",
+      "escape-project"
+    ]);
+    expect(allProjects.filter((project) => project.published === false)).toHaveLength(4);
+  });
+
   it("exposes a focused featured set without publishing a placeholder play link", () => {
     const featured = getFeaturedProjects(projects);
     expect(featured).toHaveLength(2);
@@ -44,6 +59,16 @@ describe("localized portfolio behavior", () => {
         const localized = getLocalizedProject(project, lang);
         expect(localized.title.length).toBeGreaterThan(0);
         expect(localized.summary.length).toBeGreaterThan(0);
+        expect(getLocalizedStringList(project.tags, lang).length).toBeGreaterThan(0);
+
+        for (const media of project.media) {
+          expect(getLocalizedMedia(media, lang).alt.length).toBeGreaterThan(0);
+          if (media.caption) expect(getLocalizedMedia(media, lang).caption?.length).toBeGreaterThan(0);
+        }
+
+        expect(getLocalizedString(project.details?.role, lang)?.length).toBeGreaterThan(0);
+        expect(getLocalizedString(project.details?.scale, lang)?.length).toBeGreaterThan(0);
+        expect(getLocalizedStringList(project.details?.credits, lang).length).toBeGreaterThan(0);
       }
 
       expect(getProjectThemeVars(project)).toMatchObject({

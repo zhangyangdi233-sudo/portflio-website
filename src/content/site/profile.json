@@ -13,36 +13,42 @@
   ],
   "i18n": {
     "zh": {
-      "role": "艺术家 / 游戏与界面实践",
+      "role": "艺术家 / 游戏与网页作品",
       "statement": [
-        "糍粑的实践从游戏、界面、影像和装置之间展开，关注规则如何塑造身体反应，以及图像如何在系统中获得新的距离。",
-        "新版作品集把作品整理为可以快速阅读的策展档案，同时保留网页作为作品入口的沉浸感。"
+        "糍粑（CIBA）目前在东京制作游戏与网页作品。本网站收录四个项目：开发中的 Godot 游戏 X.WHEEL、视觉小说 EMIDA，以及网页作品 Wake Up 和 Escape Project。",
+        "这些项目使用游戏规则、对话、滚动页面与图像构成，分别讨论循环与身体反应、社会规范与个体性、清醒与城市感知，以及自我意识与逃离。"
       ],
       "cv": [
-        "2026 X.WHEEL, interactive game work",
-        "2024 EMIDA, installation and image system"
+        "2026– X.WHEEL，Godot 游戏（开发中）",
+        "2024– EMIDA，Ren'Py 视觉小说（开发中）",
+        "2023 Wake Up，网页视觉随笔",
+        "2023 Escape Project，网页视觉作品"
       ]
     },
     "en": {
-      "role": "Artist / Game and interface practice",
+      "role": "Artist / Games and web-based works",
       "statement": [
-        "Ciba works across games, interfaces, moving images, and installation, focusing on how rules shape bodily response and how images gain distance inside systems.",
-        "The new portfolio is structured as a curator-readable archive while preserving the immersive feeling of a web-based entry point."
+        "CIBA is an artist currently making games and web-based works in Tokyo. This site records four projects: the Godot game X.WHEEL and visual novel EMIDA, both in development, alongside the web works Wake Up and Escape Project.",
+        "The projects use game rules, dialogue, scrolling pages, and image composition to examine loops and bodily response, social norms and individuality, waking and urban perception, and the question of escape."
       ],
       "cv": [
-        "2026 X.WHEEL, interactive game work",
-        "2024 EMIDA, installation and image system"
+        "2026– X.WHEEL, Godot game (in development)",
+        "2024– EMIDA, Ren'Py visual novel (in development)",
+        "2023 Wake Up, web-based visual essay",
+        "2023 Escape Project, web-based visual work"
       ]
     },
     "ja": {
-      "role": "アーティスト / ゲームとインターフェースの実践",
+      "role": "アーティスト / ゲームとウェブ作品",
       "statement": [
-        "糍粑はゲーム、インターフェース、映像、インスタレーションを横断し、ルールが身体反応をどう形づくるか、イメージがシステムの中でどのような距離を得るかに関心を持っています。",
-        "新しいポートフォリオは、キュレーターが読みやすいアーカイブとして構成しながら、ウェブ上の入口としての没入感も保ちます。"
+        "糍粑（CIBA）は現在、東京でゲームとウェブ作品を制作しています。本サイトには、開発中のGodotゲーム『X.WHEEL』とビジュアルノベル『EMIDA』、ウェブ作品『Wake Up』と『Escape Project』の4点を収録しています。",
+        "各作品では、ゲームのルール、対話、スクロールページ、イメージ構成を用い、反復と身体反応、社会規範と個人性、目覚めと都市知覚、自己意識と逃走という主題を扱います。"
       ],
       "cv": [
-        "2026 X.WHEEL, interactive game work",
-        "2024 EMIDA, installation and image system"
+        "2026– X.WHEEL、Godotゲーム（開発中）",
+        "2024– EMIDA、Ren'Pyビジュアルノベル（開発中）",
+        "2023 Wake Up、ウェブ・ビジュアルエッセイ",
+        "2023 Escape Project、ウェブ・ビジュアル作品"
       ]
     }
   }

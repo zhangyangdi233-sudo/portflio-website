@@ -1,51 +1,92 @@
 {
   "slug": "emida",
   "year": "2024",
-  "medium": "Installation, image system, narrative interface",
-  "status": "Secondary focus",
+  "medium": "Visual novel game, Ren'Py, Procreate",
+  "status": "In development",
   "priority": 2,
+  "published": true,
   "featured": true,
-  "tags": ["installation", "archive", "interface"],
+  "tags": {
+    "zh": ["游戏", "视觉小说", "Ren'Py", "Procreate"],
+    "en": ["game", "visual novel", "Ren'Py", "Procreate"],
+    "ja": ["ゲーム", "ビジュアルノベル", "Ren'Py", "Procreate"]
+  },
   "palette": {
-    "primary": "#7dd3fc",
-    "secondary": "#f6d365",
-    "ink": "#06131b",
-    "paper": "#eaf7f9"
+    "primary": "#c6ff00",
+    "secondary": "#f4f0dd",
+    "ink": "#f4f0dd",
+    "paper": "#090a08"
   },
   "media": [
     {
       "type": "image",
-      "src": "/assets/projects/emida.svg",
-      "alt": "Abstract placeholder poster for EMIDA with layered archive panels",
-      "caption": "Layered archive structure for image and memory."
+      "src": "/assets/projects/emida/emida-doctor.webp",
+      "alt": {
+        "zh": "蓝色与橙色绘制的纵向 EMIDA 角色与项目页，包含列车隧道般的场景和日文项目文字",
+        "en": "Tall EMIDA character and project sheet drawn in blue and orange, with a train-like tunnel and Japanese project text",
+        "ja": "青とオレンジで描かれた縦長のEMIDAキャラクター／プロジェクトシート。列車トンネルのような場面と日本語の作品テキストを含む"
+      },
+      "caption": {
+        "zh": "艺术家旧网站保存的 EMIDA_THE_DOCTOR? 项目页。",
+        "en": "EMIDA_THE_DOCTOR? project sheet preserved from the artist's previous site.",
+        "ja": "作家の旧サイトから保存したEMIDA_THE_DOCTOR?のプロジェクトシート。"
+      }
     }
   ],
+  "details": {
+    "role": {
+      "zh": "待艺术家补充并核实",
+      "en": "To be supplied and verified by the artist",
+      "ja": "作家による追記・確認待ち"
+    },
+    "scale": {
+      "zh": "1920 × 1080 视觉小说画面",
+      "en": "1920 × 1080 visual-novel frame",
+      "ja": "1920 × 1080のビジュアルノベル画面"
+    },
+    "platform": {
+      "zh": "Ren'Py",
+      "en": "Ren'Py",
+      "ja": "Ren'Py"
+    },
+    "credits": {
+      "zh": ["协作者与具体分工待艺术家核实"],
+      "en": ["Collaborators and production roles await artist verification"],
+      "ja": ["共同制作者と制作分担は作家による確認待ち"]
+    }
+  },
   "links": {
-    "archive": "https://readymag.website/u668535135/4450942/"
+    "archive": "https://readymag.website/u668535135/4450942/project3/"
   },
   "i18n": {
     "zh": {
       "title": "EMIDA",
-      "summary": "一个关于图像、记忆和界面距离的第二重点项目。",
+      "summary": "一件开发中的视觉小说游戏，通过玩家与角色的对话讨论社会规范、压迫与个体性。",
+      "medium": "视觉小说游戏、Ren'Py、Procreate",
+      "status": "开发中",
       "body": [
-        "EMIDA 来自旧站的核心内容，将在新版中被重新整理为可阅读的项目档案。",
-        "新版页面会保留作品事实与视觉材料，但将文字改写得更短、更准确，让它适合教授与策展人在有限时间内阅读。"
+        "EMIDA_THE_DOCTOR? 被旧站记录为一件使用 Ren'Py 与 Procreate 制作、画面规格为 1920 × 1080 的开发中视觉小说。",
+        "作品通过玩家与角色的对话，让玩家面对高压社会中的规范与压迫，并围绕“个体性”是否能够改变展开选择。"
       ]
     },
     "en": {
       "title": "EMIDA",
-      "summary": "A second-focus project on image, memory, and the distance created by interfaces.",
+      "summary": "A visual novel in development that uses player–character dialogue to examine social rules, oppression, and individuality.",
+      "medium": "Visual novel game, Ren'Py, Procreate",
+      "status": "In development",
       "body": [
-        "EMIDA is carried over from the previous site as a major work and reframed as a clear project archive.",
-        "The new page preserves factual and visual material while rewriting the text into a shorter, sharper curatorial voice."
+        "The previous site documents EMIDA_THE_DOCTOR? as a 1920 × 1080 visual novel in development, made with Ren'Py and Procreate.",
+        "Through dialogue between the player and a character, the work places social rules and oppression in a high-pressure society against a series of choices about whether individuality can change."
       ]
     },
     "ja": {
       "title": "EMIDA",
-      "summary": "イメージ、記憶、インターフェースが生む距離を扱う第二の重点作品。",
+      "summary": "プレイヤーとキャラクターの対話を通して、社会的規範、抑圧、個人性を扱う開発中のビジュアルノベル。",
+      "medium": "ビジュアルノベル、Ren'Py、Procreate",
+      "status": "開発中",
       "body": [
-        "EMIDA は旧サイトから引き継ぐ主要作品であり、新しいサイトでは読みやすいプロジェクト・アーカイブとして再構成します。",
-        "作品の事実と視覚資料を保ちながら、文章は短く明確なキュレーション向けの語りに整えます。"
+        "旧サイトでは、EMIDA_THE_DOCTOR? はRen'PyとProcreateを用いた、1920 × 1080の開発中ビジュアルノベルとして記録されています。",
+        "プレイヤーとキャラクターの対話を通して、高圧的な社会における規範と抑圧を体験し、「個人性」が変わり得るのかを選択によって問いかけます。"
       ]
     }
   }

@@ -29,9 +29,10 @@ disciplined grids in the Swiss tradition, while also documenting later pressure 
 modernist limits.
 
 **Design inference:** use the grid and whitespace as the stable evidence layer, not as nostalgic
-Swiss cosplay. The acid color marks selected/focused state and one structural interruption. Works
-windows stay small enough to compare spatially, while Scan mode and mobile keep a conventional
-order. Artwork is monochrome only in the index; detail pages retain native color.
+Swiss cosplay. The acid color marks selected/focused state and one structural interruption. Four
+large Works windows make the operating-system metaphor immediately legible, while Order mode,
+mobile, and reduced motion keep a conventional sequence. Artwork is monochrome in index states and
+returns to source colour on hover or focus.
 
 **Japanese implementation decision:** W3C JLREQ documents Japanese layout as its own set of
 requirements rather than a Latin-text substitution problem. The website therefore uses explicit
@@ -140,9 +141,9 @@ Sources: [Vitsœ / Rams principles](https://www.vitsoe.com/eu/about/good-design)
 ordering, and close/choice controls. A sample card was dragged to verify that spatial rearrangement
 is real interaction.
 
-**Active decision:** semantic project windows implemented independently with GSAP Draggable,
-keyboard arrows, Esc minimize, dock restore, filters, reset, a non-drag Scan mode, and automatic
-mobile ordering.
+**Active decision:** semantic project windows implemented independently with native pointer events,
+keyboard arrows, Esc minimize, dock restore, filters, reset, a non-drag Order mode, and automatic
+mobile/reduced-motion ordering. The four authored windows are 410–460px wide inside a 760px stage.
 
 Source: [zutomayo.net](https://zutomayo.net/).
 
@@ -160,7 +161,7 @@ Source: [The Art of Cinema](https://www.theartofcinema.xyz/?ref=onepagelove).
 ## Accessibility and originality constraints
 
 - Everything remains reachable without drag, hover, or animation.
-- Mobile defaults to ordered reading; desktop offers Scatter and Scan.
+- Mobile and reduced motion default to ordered reading; desktop offers Windows and Order.
 - Reduced motion removes nonessential transforms, parallax, smooth scroll, and animated layout changes while preserving controls.
 - Japanese headings receive language-specific font and line-breaking rules rather than inheriting Latin display compression.
 - Acid green is paired with black, not warm paper; selection also has labels, borders, or position so color is never the only cue.

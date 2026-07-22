@@ -5,8 +5,24 @@ import { z } from "astro/zod";
 const localizedText = z.object({
   title: z.string(),
   summary: z.string(),
+  medium: z.string().optional(),
+  status: z.string().optional(),
   body: z.array(z.string()).min(1)
 });
+
+const localizedString = z.union([
+  z.string(),
+  z.object({ zh: z.string(), en: z.string(), ja: z.string() })
+]);
+
+const localizedStringList = z.union([
+  z.array(z.string()),
+  z.object({
+    zh: z.array(z.string()),
+    en: z.array(z.string()),
+    ja: z.array(z.string())
+  })
+]);
 
 const projects = defineCollection({
   loader: glob({ base: "./src/content/projects", pattern: "**/*.json" }),
@@ -16,9 +32,10 @@ const projects = defineCollection({
     medium: z.string(),
     status: z.string(),
     priority: z.number(),
+    published: z.boolean().default(true),
     featured: z.boolean().default(false),
     pageMode: z.enum(["standard", "wake-up-replica"]).default("standard"),
-    tags: z.array(z.string()),
+    tags: localizedStringList,
     palette: z.object({
       primary: z.string(),
       secondary: z.string(),
@@ -29,16 +46,16 @@ const projects = defineCollection({
       z.object({
         type: z.enum(["image", "video"]),
         src: z.string(),
-        alt: z.string(),
-        caption: z.string().optional()
+        alt: localizedString,
+        caption: localizedString.optional()
       })
     ).min(1),
     details: z.object({
-      role: z.string().optional(),
-      scale: z.string().optional(),
-      duration: z.string().optional(),
-      platform: z.string().optional(),
-      credits: z.array(z.string()).optional()
+      role: localizedString.optional(),
+      scale: localizedString.optional(),
+      duration: localizedString.optional(),
+      platform: localizedString.optional(),
+      credits: localizedStringList.optional()
     }).optional(),
     links: z.object({
       play: z.url().optional(),

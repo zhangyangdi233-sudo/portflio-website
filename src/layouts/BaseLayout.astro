@@ -5,6 +5,7 @@ import { siteProfile } from "../lib/site-data";
 import type { Language } from "../lib/types";
 import "../styles/global.css";
 import "../styles/art-direction.css";
+import "../styles/ciba-v3.css";
 
 interface Props {
   lang: Language;
@@ -31,7 +32,7 @@ const themeStyle = Object.entries({ ...getArtDirectionVars(), ...theme })
     <meta name="theme-color" content="#090a08" />
     <title>{title}</title>
   </head>
-  <body class={pageClass}>
+  <body class:list={["ciba-v3", pageClass]}>
     <a class="skip-link" href="#content">{skipCopy}</a>
     {!bare && <div class="ambient-grid" aria-hidden="true"></div>}
     {!bare && <Header lang={lang} />}

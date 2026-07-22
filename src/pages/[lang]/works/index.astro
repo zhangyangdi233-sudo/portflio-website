@@ -4,7 +4,7 @@ import WorkDesktopWindow from "../../../components/WorkDesktopWindow.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { artDirection, getWorkspacePosition } from "../../../lib/art-direction";
 import { assertLanguage, languages, ui } from "../../../lib/i18n";
-import { getLocalizedProject, sortProjects } from "../../../lib/projects";
+import { getLocalizedProject, getPublishedProjects } from "../../../lib/projects";
 import { getLocalizedProfile, siteProfile } from "../../../lib/site-data";
 import type { Project } from "../../../lib/types";
 
@@ -15,44 +15,47 @@ export function getStaticPaths() {
 const lang = assertLanguage(Astro.params.lang);
 const labels = ui[lang];
 const profile = getLocalizedProfile(lang);
-const projectEntries = await getCollection("projects");
-const projects = sortProjects(projectEntries.map((entry) => entry.data as Project));
+const entries = await getCollection("projects");
+const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
 const projectCount = String(projects.length).padStart(2, "0");
-const workspaceCopy = {
+const copy = {
   zh: {
-    title: "作品桌面",
-    intro: "这些项目像暂时浮出档案的窗口。拖动它们寻找关系，或切换到扫描模式按顺序阅读。",
-    hint: "桌面：拖拽标题栏 / 方向键移动 / Esc 最小化。移动端自动使用顺序阅读。",
-    workspace: "作品窗口工作区",
+    title: "作品窗口",
+    intro: "四个项目以文件窗口显示。标题、年份、媒介、状态、概念与图像均来自各项目记录。",
+    hint: "桌面端可拖动标题栏，并用方向键移动、Esc 收起。移动端与减少动态模式自动按顺序显示。",
+    workspace: "可移动作品窗口工作区",
     filters: "作品筛选",
-    scatter: "散布",
-    scan: "扫描",
-    reset: "重置",
-    dock: "项目窗口恢复栏",
-    visible: "可见"
+    layouts: "窗口排列",
+    scatter: "窗口",
+    list: "顺序",
+    reset: "复位",
+    dock: "已收起窗口",
+    visible: "显示"
   },
   en: {
-    title: "Works desktop",
-    intro: "Projects surface as movable archive windows. Drag them to discover relationships, or switch to Scan for an ordered reading.",
-    hint: "Desktop: drag the title bar / move with arrow keys / press Escape to minimize. Mobile uses ordered reading.",
-    workspace: "Project window workspace",
-    filters: "Work filters",
-    scatter: "Scatter",
-    scan: "Scan",
+    title: "Work windows",
+    intro: "Four projects are presented as file windows. Titles, dates, media, status, concepts, and images come from each project record.",
+    hint: "On desktop, drag a title bar; use arrow keys to move and Escape to minimize. Mobile and reduced-motion modes use ordered reading.",
+    workspace: "Movable project-window workspace",
+    filters: "Filter works",
+    layouts: "Arrange windows",
+    scatter: "Windows",
+    list: "Order",
     reset: "Reset",
-    dock: "Project window restore bar",
+    dock: "Minimized windows",
     visible: "visible"
   },
   ja: {
-    title: "作品デスクトップ",
-    intro: "作品はアーカイブから浮上する可動ウィンドウとして現れます。関係を探すように動かすか、スキャン表示で順番に読めます。",
-    hint: "デスクトップ：タイトルバーをドラッグ / 矢印キーで移動 / Escで最小化。モバイルは順序表示です。",
-    workspace: "作品ウィンドウ・ワークスペース",
+    title: "作品ウィンドウ",
+    intro: "4つの作品をファイル・ウィンドウとして表示します。題名、年、メディア、状態、コンセプト、画像は各作品記録に基づいています。",
+    hint: "デスクトップではタイトルバーをドラッグし、矢印キーで移動、Escで最小化できます。モバイルと視差軽減設定では順序表示になります。",
+    workspace: "移動できる作品ウィンドウ",
     filters: "作品フィルター",
-    scatter: "散布",
-    scan: "スキャン",
+    layouts: "ウィンドウ配置",
+    scatter: "ウィンドウ",
+    list: "順序",
     reset: "リセット",
-    dock: "作品ウィンドウ復元バー",
+    dock: "最小化したウィンドウ",
     visible: "表示"
   }
 }[lang];
@@ -62,51 +65,45 @@ const workspaceCopy = {
   lang={lang}
   title={`${labels.works} | ${siteProfile.artistName}`}
   description={profile.statement[0]}
-  pageClass="works-page works-workspace-page"
+  pageClass="works-page works-workspace-page ciba-works-v3"
 >
-  <section class="workspace-intro" data-motion="hero">
-    <div class="workspace-intro__title">
-      <p class="workspace-intro__eyebrow">01 / {projectCount} / {labels.index}</p>
-      <h1 class="split-heading">{workspaceCopy.title}</h1>
+  <section class="v3-works-intro" aria-labelledby="v3-works-title">
+    <div>
+      <p>01 / {projectCount} / INDEX</p>
+      <h1 id="v3-works-title">{copy.title}</h1>
     </div>
-    <div class="workspace-intro__copy">
-      <p>{workspaceCopy.intro}</p>
-      <p class="workspace-intro__hint">{workspaceCopy.hint}</p>
+    <div>
+      <p>{copy.intro}</p>
+      <p class="v3-works-intro__hint" data-workspace-hint>{copy.hint}</p>
     </div>
   </section>
 
   <section
-    class="workspace-shell"
-    aria-label={workspaceCopy.workspace}
+    class="v3-workspace"
+    aria-label={copy.workspace}
     data-workspace-root
+    data-default-layout="scatter"
     style={`--workspace-height:${artDirection.workspace.stageHeight}px;`}
   >
-    <div class="workspace-toolbar">
-      <div class="workspace-toolbar__group" role="group" aria-label={workspaceCopy.filters}>
+    <div class="v3-workspace-toolbar">
+      <div class="v3-toolbar-group" role="group" aria-label={copy.filters}>
         <button type="button" data-workspace-filter="all" aria-pressed="true">{labels.all}</button>
         <button type="button" data-workspace-filter="featured" aria-pressed="false">{labels.featured}</button>
         <button type="button" data-workspace-filter="archive" aria-pressed="false">{labels.archive}</button>
       </div>
 
-      <span class="workspace-toolbar__spacer" aria-hidden="true"></span>
-
-      <div class="workspace-toolbar__group" role="group" aria-label="Workspace layout">
-        <button type="button" data-layout="scatter" aria-pressed="true">{workspaceCopy.scatter}</button>
-        <button type="button" data-layout="scan" aria-pressed="false">{workspaceCopy.scan}</button>
-        <button type="button" data-workspace-reset>{workspaceCopy.reset}</button>
+      <div class="v3-toolbar-group v3-toolbar-group--layout" role="group" aria-label={copy.layouts}>
+        <button type="button" data-layout="scatter" aria-pressed="true">{copy.scatter}</button>
+        <button type="button" data-layout="list" aria-pressed="false">{copy.list}</button>
+        <button type="button" data-workspace-reset>{copy.reset}</button>
       </div>
 
-      <p
-        class="workspace-toolbar__status"
-        data-workspace-status
-        data-visible-label={workspaceCopy.visible}
-        aria-live="polite"
-      >
-        {projectCount} / {projectCount} {workspaceCopy.visible}
+      <p class="v3-workspace-status" data-workspace-status data-visible-label={copy.visible} aria-live="polite">
+        {projectCount} / {projectCount} {copy.visible}
       </p>
     </div>
 
-    <div class="workspace-stage" data-workspace-stage>
+    <div class="v3-workspace-stage" data-workspace-stage>
       {
         projects.map((project, index) => (
           <WorkDesktopWindow
@@ -119,17 +116,12 @@ const workspaceCopy = {
       }
     </div>
 
-    <nav class="workspace-dock" aria-label={workspaceCopy.dock}>
+    <nav class="v3-workspace-dock" aria-label={copy.dock}>
       {
         projects.map((project, index) => {
           const localized = getLocalizedProject(project, lang);
           return (
-            <button
-              type="button"
-              data-window-restore={project.slug}
-              aria-pressed="true"
-              title={localized.title}
-            >
+            <button type="button" data-window-restore={project.slug} aria-pressed="true" title={localized.title}>
               {String(index + 1).padStart(2, "0")} / {localized.title}
             </button>
           );

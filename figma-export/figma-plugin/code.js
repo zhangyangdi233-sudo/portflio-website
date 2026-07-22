@@ -12,16 +12,23 @@ const colors = {
 
 const workspace = {
   breakpoint: 900,
-  stageHeight: 980,
+  stageHeight: 760,
   positions: {
-    "x-wheel": { x: 3, y: 72, width: 300, rotation: -0.4, z: 7 },
-    emida: { x: 28, y: 42, width: 286, rotation: 0.3, z: 6 },
-    "soft-boundaries": { x: 53, y: 86, width: 292, rotation: -0.25, z: 5 },
-    "wake-up": { x: 8, y: 485, width: 305, rotation: 0.2, z: 4 },
-    "residual-garden": { x: 34, y: 445, width: 278, rotation: -0.35, z: 3 },
-    "signal-room": { x: 59, y: 492, width: 292, rotation: 0.3, z: 2 },
-    "threshold-archive": { x: 76, y: 298, width: 252, rotation: -0.2, z: 1 }
+    "x-wheel": { x: 2, y: 38, width: 460, rotation: -0.45, z: 4 },
+    emida: { x: 27, y: 112, width: 430, rotation: 0.35, z: 3 },
+    "wake-up": { x: 54, y: 46, width: 440, rotation: -0.3, z: 2 },
+    "escape-project": { x: 71, y: 152, width: 410, rotation: 0.4, z: 1 }
   }
+};
+
+const handoffFacts = {
+  homeIncludesProjectStage: true,
+  homeProjectCount: 4,
+  worksFilters: ["ALL", "FEATURED", "ARCHIVE"],
+  worksLayouts: ["WINDOWS", "ORDER", "RESET"],
+  worksVisibleCount: "04 / 04",
+  mobileHeaderHeight: 62,
+  focusOutlineWidth: 3
 };
 
 const projects = [
@@ -29,10 +36,10 @@ const projects = [
     slug: "x-wheel",
     index: "01",
     title: "X.WHEEL",
-    medium: "Interactive game, interface study, moving image",
+    medium: "Godot game prototype, 3D asset and interface study",
     year: "2026",
-    status: "Primary work",
-    summary: "An interactive game work about loops, bodily response, and rules that never quite stay still.",
+    status: "In development",
+    summary: "A Godot game in development, currently documented through its room, CRT, console, and poster assets.",
     color: colors.oxide,
     onColor: colors.night
   },
@@ -40,66 +47,33 @@ const projects = [
     slug: "emida",
     index: "02",
     title: "EMIDA",
-    medium: "Installation, image system, narrative interface",
+    medium: "Visual novel game, Ren'Py, Procreate",
     year: "2024",
-    status: "Secondary focus",
-    summary: "A second-focus project on image, memory, and the distance created by interfaces.",
-    color: colors.ink,
-    onColor: colors.night
-  },
-  {
-    slug: "soft-boundaries",
-    index: "03",
-    title: "Soft Boundaries",
-    medium: "Moving image, object study",
-    year: "2023",
-    status: "Selected work",
-    summary: "A moving-image study of objects, skin, and the perception of borders.",
-    color: colors.ink,
+    status: "In development",
+    summary: "A visual novel in development that uses player–character dialogue to examine social rules, oppression, and individuality.",
+    color: colors.oxide,
     onColor: colors.night
   },
   {
     slug: "wake-up",
-    index: "04",
+    index: "03",
     title: "Wake Up",
-    medium: "Web-based visual essay, image archive, scrolling composition",
+    medium: "Web-based visual essay, scrolling composition",
     year: "2023",
-    status: "Old-site replica",
-    summary: "A recreated web visual essay from the old site, tracing awakening, city time, and the idea of an ordinary person.",
-    color: colors.ink,
+    status: "Archived work",
+    summary: "A web-based visual essay about awakening, repeated daily life, and the perception of a city.",
+    color: colors.oxide,
     onColor: colors.night
   },
   {
-    slug: "residual-garden",
-    index: "05",
-    title: "Residual Garden",
-    medium: "Digital garden, generative image notes",
+    slug: "escape-project",
+    index: "04",
+    title: "Escape Project",
+    medium: "Web-based visual work, image composition",
     year: "2023",
-    status: "Selected work",
-    summary: "A digital garden of residual images, generative notes, and everyday observations.",
-    color: colors.ink,
-    onColor: colors.night
-  },
-  {
-    slug: "signal-room",
-    index: "06",
-    title: "Signal Room",
-    medium: "Soundless interface, screen study",
-    year: "2022",
-    status: "Selected work",
-    summary: "An interface study using screens, delay, and silent signals as material.",
-    color: colors.ink,
-    onColor: colors.night
-  },
-  {
-    slug: "threshold-archive",
-    index: "07",
-    title: "Threshold Archive",
-    medium: "Web archive, still image sequence",
-    year: "2021",
-    status: "Selected work",
-    summary: "An early archive project organized through web pages, still frames, and entry structures.",
-    color: colors.ink,
+    status: "Archived work",
+    summary: "A web-based visual work about self-consciousness, social constraint, and the question of escape.",
+    color: colors.oxide,
     onColor: colors.night
   }
 ];
@@ -198,11 +172,10 @@ function addHeader(parent, w, lang = "EN") {
 }
 
 function addMobileHeader(parent, w, lang = "EN") {
-  rect(parent, "Mobile header line", 0, 80, w, 1, colors.plum);
-  text(parent, "Brand / Chinese", "糍粑", 16, 16, 42, 14, bold);
-  text(parent, "Brand / English", "CIBA", 54, 17, 44, 12, bold);
-  text(parent, "Languages", `中    ${lang}    日`, w - 142, 17, 126, 11, regular, colors.fog);
-  text(parent, "Mobile nav", "Works        About", 16, 50, 170, 12, regular, colors.fog);
+  rect(parent, "Mobile header line", 0, handoffFacts.mobileHeaderHeight, w, 1, colors.plum);
+  text(parent, "Brand", "糍粑 CIBA", 12, 22, 76, 11, bold);
+  text(parent, "Mobile nav", "Works   About   Contact", 104, 22, 174, 10, regular, colors.fog);
+  text(parent, "Languages", `中  ${lang}  日`, w - 100, 22, 88, 10, regular, colors.fog);
 }
 
 function addSwissGrid(parent, w, h) {
@@ -238,31 +211,59 @@ function addWheelGraphic(parent, x, y, w, h) {
   text(parent, "Media label", "X.WHEEL / SOFT ALARM", x + 18, y + h - 34, 220, 14, bold, colors.ink);
 }
 
+function addHomeProjectStage(parent, y, w, mobile = false) {
+  const inset = mobile ? 16 : 40;
+  const stageWidth = w - inset * 2;
+  const stageHeight = mobile ? 620 : 780;
+  rect(parent, "Home project stage / current work", inset, y, stageWidth, stageHeight, colors.night, colors.plum);
+  text(parent, "Home stage label", "CURRENT WORK / 01 OF 04", inset + 18, y + 20, mobile ? 210 : 320, mobile ? 10 : 12, bold, colors.oxide);
+  text(parent, "Home stage title / clipped roll source", "X.WHEEL", inset + 18, y + (mobile ? 74 : 68), stageWidth - 36, mobile ? 58 : 152, black, colors.ink, 0.82);
+
+  const media = rect(
+    parent,
+    "Low-opacity draggable media placeholder / 10%",
+    mobile ? inset + 18 : inset + stageWidth * 0.48,
+    y + (mobile ? 210 : 228),
+    mobile ? stageWidth - 36 : stageWidth * 0.46,
+    mobile ? 260 : 390,
+    colors.ink,
+    colors.ink,
+    0.1
+  );
+  media.setPluginData("interaction", "Drag on desktop; reveal source colour on hover/focus in website");
+  text(parent, "Media interaction note", "10% / GRAYSCALE / DRAG / HOVER→SOURCE COLOUR", mobile ? inset + 28 : inset + stageWidth * 0.5, y + (mobile ? 230 : 248), mobile ? stageWidth - 56 : stageWidth * 0.42, mobile ? 9 : 11, bold, colors.oxide);
+
+  text(parent, "Home stage concept label", "CONCEPT", inset + 18, y + (mobile ? 500 : 590), 120, 10, bold, colors.oxide);
+  text(parent, "Home stage concept", projects[0].summary, inset + 18, y + (mobile ? 526 : 618), mobile ? stageWidth - 36 : stageWidth * 0.42, mobile ? 15 : 20, regular, colors.ink, 1.35);
+  text(parent, "Home stage scroll order", "01 X.WHEEL   02 EMIDA   03 WAKE UP   04 ESCAPE PROJECT", inset + 18, y + stageHeight - 34, stageWidth - 36, mobile ? 8 : 10, regular, colors.fog);
+}
+
 function homeDesktop() {
-  const f = frame("01 Home / Desktop", 0, 0, 1440, 900);
+  const f = frame("01 Home / Desktop", 0, 0, 1440, 1740);
   addHeader(f, 1440);
-  addSwissGrid(f, 1440, 900);
-  text(f, "Direction label", "SIGNAL INDEX / ACID PROOF", 72, 350, 360, 12, bold, colors.sodium);
-  text(f, "Hero eyebrow", "01 / INTERACTIVE GAME, INTERFACE STUDY, MOVING IMAGE", 72, 392, 520, 12, bold, colors.cyan);
-  text(f, "Hero title / current work", "X.WHEEL", 72, 430, 540, 100, black);
-  text(f, "Hero summary", projects[0].summary, 72, 522, 560, 20, regular, colors.fog, 1.35);
-  addWheelGraphic(f, 968, 280, 385, 430);
-  text(f, "Background number", "01", 1010, 140, 300, 220, black, colors.plum, 0.8).opacity = 0.3;
-  text(f, "Ledger", "00    07    WORKS INDEX", 72, 842, 260, 13, regular, colors.oxide);
-  text(f, "Binary texture", "1 0 0 1 1 0 1 0 1 1 1 0 0 1 0 1 1 0 1 0", 684, 806, 360, 10, regular, colors.fog);
+  addSwissGrid(f, 1440, 1740);
+  text(f, "Archive label", "ARTIST ARCHIVE / TOKYO", 40, 92, 360, 12, bold, colors.oxide);
+  text(f, "Hero title", "CIBA", 40, 185, 1050, 260, black, colors.ink, 0.8);
+  text(f, "Practice", "GAMES AND WEB-BASED WORKS", 40, 650, 420, 12, bold, colors.oxide);
+  text(f, "Practice record", "Four public projects: two games in development and two web-based works from 2023.", 40, 684, 650, 22, regular, colors.ink, 1.35);
+  rect(f, "Acid chapter signal", 1366, 220, 42, 360, colors.oxide);
+  text(f, "Chapter count", "01\n\n04", 1378, 238, 24, 12, bold, colors.night, 1.4);
+  rect(f, "Enter works action", 930, 744, 430, 56, colors.oxide);
+  text(f, "Enter works label", "ENTER WORKS DESKTOP                         ↘", 950, 764, 390, 12, bold, colors.night);
+  addHomeProjectStage(f, 900, 1440);
 }
 
 function homeMobile() {
-  const f = frame("02 Home / Mobile", 1510, 0, 390, 900);
+  const f = frame("02 Home / Mobile", 1510, 0, 390, 1580);
   addMobileHeader(f, 390);
-  addSwissGrid(f, 390, 900);
-  text(f, "Direction label", "SIGNAL INDEX / ACID PROOF", 16, 178, 320, 10, bold, colors.sodium);
-  text(f, "Hero eyebrow", "01 / INTERACTIVE GAME, INTERFACE STUDY,\nMOVING IMAGE", 16, 210, 320, 12, bold, colors.cyan, 1.35);
-  text(f, "Hero title / current work", "X.WHEEL", 16, 260, 350, 62, black);
-  text(f, "Hero summary", projects[0].summary, 16, 338, 330, 16, regular, colors.fog, 1.45);
-  addWheelGraphic(f, 16, 412, 358, 290);
-  text(f, "Ledger", "00                 07                 WORKS", 16, 730, 360, 12, regular, colors.oxide);
-  text(f, "Statement label", "statement / archive", 24, 844, 220, 14, regular, colors.cyan);
+  addSwissGrid(f, 390, 1580);
+  text(f, "Archive label", "ARTIST ARCHIVE / TOKYO", 16, 128, 300, 10, bold, colors.oxide);
+  text(f, "Hero title", "CIBA", 16, 225, 350, 78, black, colors.ink, 0.82);
+  text(f, "Practice", "GAMES AND WEB-BASED WORKS", 16, 515, 320, 10, bold, colors.oxide);
+  text(f, "Practice record", "Four public projects: two games in development and two web-based works from 2023.", 16, 548, 340, 17, regular, colors.ink, 1.4);
+  rect(f, "Enter works action", 16, 720, 358, 52, colors.oxide);
+  text(f, "Enter works label", "ENTER WORKS DESKTOP                         ↘", 28, 738, 330, 10, bold, colors.night);
+  addHomeProjectStage(f, 840, 390, true);
 }
 
 function workWindow(parent, project, placement) {
@@ -300,21 +301,31 @@ function workWindow(parent, project, placement) {
 }
 
 function worksSystem() {
-  const f = frame("03 Works / Draggable Window System", 0, 980, 1440, 1400);
+  const f = frame("03 Works / Draggable Window System", 0, 1840, 1440, 1400);
   addHeader(f, 1440);
   text(f, "Page label", "WORKS / WINDOW SYSTEM", 64, 132, 240, 12, bold, colors.cyan);
   text(f, "Works heading", "Works", 1080, 112, 260, 64, black);
-  text(f, "System note", `7 EDITABLE WINDOWS / ${workspace.breakpoint}px BREAKPOINT / TITLE-BAR DRAG`, 64, 168, 620, 11, regular, colors.fog);
+  text(f, "System note", `4 EDITABLE WINDOWS / ${workspace.breakpoint}px BREAKPOINT / TITLE-BAR DRAG`, 64, 168, 620, 11, regular, colors.fog);
 
-  rect(f, "Scatter active", 64, 202, 126, 44, colors.cyan);
-  text(f, "Scatter label", "SCATTER", 82, 217, 90, 11, bold, colors.night);
-  rect(f, "Scan control", 198, 202, 96, 44, colors.surface, colors.plum);
-  text(f, "Scan label", "SCAN", 220, 217, 60, 11, bold, colors.ink);
-  rect(f, "Reset control", 302, 202, 96, 44, colors.surface, colors.plum);
-  text(f, "Reset label", "RESET", 320, 217, 64, 11, bold, colors.ink);
+  const focusRing = rect(f, "Focus outline / 3px acid / 3px offset", 61, 199, 94, 50, null, colors.oxide);
+  focusRing.strokeWeight = handoffFacts.focusOutlineWidth;
+  rect(f, "Filter / ALL / active", 64, 202, 88, 44, colors.cyan);
+  text(f, "Filter label / ALL", handoffFacts.worksFilters[0], 82, 217, 56, 11, bold, colors.night);
+  rect(f, "Filter / FEATURED", 160, 202, 120, 44, colors.surface, colors.plum);
+  text(f, "Filter label / FEATURED", handoffFacts.worksFilters[1], 176, 217, 92, 11, bold, colors.ink);
+  rect(f, "Filter / ARCHIVE", 288, 202, 104, 44, colors.surface, colors.plum);
+  text(f, "Filter label / ARCHIVE", handoffFacts.worksFilters[2], 304, 217, 76, 11, bold, colors.ink);
+
+  rect(f, "Layout / WINDOWS / active", 792, 202, 112, 44, colors.cyan);
+  text(f, "Layout label / WINDOWS", handoffFacts.worksLayouts[0], 808, 217, 82, 11, bold, colors.night);
+  rect(f, "Layout / ORDER", 912, 202, 96, 44, colors.surface, colors.plum);
+  text(f, "Layout label / ORDER", handoffFacts.worksLayouts[1], 930, 217, 64, 11, bold, colors.ink);
+  rect(f, "Layout / RESET", 1016, 202, 96, 44, colors.surface, colors.plum);
+  text(f, "Layout label / RESET", handoffFacts.worksLayouts[2], 1034, 217, 64, 11, bold, colors.ink);
+  text(f, "Visible project status", `${handoffFacts.worksVisibleCount} VISIBLE`, 1170, 217, 180, 11, bold, colors.ink);
 
   const stageX = 40;
-  const stageY = 264;
+  const stageY = 282;
   const stageWidth = 1360;
   rect(f, "Works workspace / Scatter canvas", stageX, stageY, stageWidth, workspace.stageHeight, colors.surface, colors.plum, 0.32);
   line(f, "Workspace guide / vertical", stageX + stageWidth / 2, stageY, stageX + stageWidth / 2, stageY + workspace.stageHeight, colors.plum);
@@ -328,7 +339,7 @@ function worksSystem() {
         x: stageX + stageWidth * (position.x / 100),
         y: stageY + position.y,
         w: position.width,
-        h: 360,
+        h: 440,
         rotation: position.rotation
       });
     });
@@ -345,7 +356,7 @@ function worksSystem() {
 
 function projectDetail() {
   const project = projects[0];
-  const f = frame("04 Project Detail / X.WHEEL", 1510, 980, 1440, 1100);
+  const f = frame("04 Project Detail / X.WHEEL", 1510, 1680, 1440, 1100);
   addHeader(f, 1440);
   text(f, "Project index", `${project.index} / ${project.status.toUpperCase()}`, 72, 150, 300, 12, bold, colors.cyan);
   text(f, "Project title", project.title, 72, 188, 620, 112, black);
@@ -353,37 +364,42 @@ function projectDetail() {
   addWheelGraphic(f, 690, 150, 600, 620);
   rect(f, "Optional build-link slot", 72, 465, 270, 46, colors.surface, colors.plum);
   text(f, "Optional build-link status", "BUILD LINK / NOT PUBLISHED", 93, 480, 230, 12, bold, colors.fog);
-  rect(f, "Meta block", 72, 680, 520, 190, null, colors.plum);
-  text(f, "Meta", `YEAR\n${project.year}\n\nMEDIUM\n${project.medium}`, 96, 708, 420, 16, regular, colors.ink, 1.4);
+  rect(f, "Meta block", 72, 620, 520, 340, null, colors.plum);
+  text(
+    f,
+    "Meta",
+    `YEAR\n${project.year}\n\nMEDIUM\n${project.medium}\n\nROLE / CREDITS\nARTIST VERIFICATION PENDING`,
+    96,
+    648,
+    420,
+    15,
+    regular,
+    colors.ink,
+    1.35
+  );
 }
 
 function wakeUpMap() {
-  const f = frame("05 Wake Up / Replica Map", 0, 2720, 1440, 1600, colors.night);
-  text(f, "Wake label", "WAKE UP / OLD-SITE REPLICA", 64, 64, 360, 14, bold, colors.sodium);
+  const f = frame("05 Wake Up / Two-Image Record", 0, 3340, 1440, 1600, colors.night);
+  text(f, "Wake label", "WAKE UP / TWO-IMAGE PUBLIC RECORD", 64, 64, 420, 14, bold, colors.oxide);
   text(f, "Wake title", "Wake Up", 64, 110, 540, 88, black, colors.ink);
-  rect(f, "Black intro field", 64, 260, 500, 330, colors.night, colors.plum);
-  text(f, "Dream question", "さっきのは夢?", 270, 315, 130, 54, regular, colors.ink, 1.6);
-  rect(f, "Intercom collage field", 660, 210, 620, 420, colors.plum, colors.ink);
-  rect(f, "Intercom device", 840, 310, 260, 280, colors.fog, colors.ink);
-  rect(f, "Intercom screen", 885, 360, 175, 90, colors.cyan, colors.night);
-  text(f, "Wake vertical quote", "君は誰ですか?\nここはどこですか?", 1120, 720, 160, 42, regular, colors.ink, 1.6);
-  rect(f, "Flood title block", 64, 760, 780, 420, colors.surface, colors.plum);
-  text(f, "Flood word", "WAKE UP", 115, 900, 650, 120, black, colors.oxide);
-  rect(f, "City strip 1", 930, 790, 92, 520, colors.plum, colors.ink);
-  rect(f, "City strip 2", 1045, 735, 92, 590, colors.sodium, colors.ink);
-  rect(f, "City strip 3", 1160, 805, 92, 470, colors.cyan, colors.ink);
-  text(f, "Replica note", "Use the screenshot wake-up-detail.png as the structural reference layer for the long-scroll composition.", 64, 1375, 660, 18, regular, colors.fog, 1.45);
+  text(f, "Concept", projects[2].summary, 64, 220, 640, 22, regular, colors.ink, 1.4);
+  rect(f, "01 Bed and alarm image", 64, 390, 620, 460, colors.surface, colors.plum);
+  text(f, "01 Image label", "01 / BED + ALARM", 88, 418, 220, 13, bold, colors.oxide);
+  rect(f, "02 Flooded title image", 756, 650, 620, 460, colors.surface, colors.plum);
+  text(f, "02 Image label", "02 / FLOODED TITLE", 780, 678, 260, 13, bold, colors.oxide);
+  text(f, "Record note", "Only these two source images appear in the public record. Legacy source files remain preserved outside the generated frame.", 64, 1270, 760, 18, regular, colors.fog, 1.45);
 }
 
 function aboutPage() {
-  const f = frame("06 About / Statement CV Contact", 1510, 2160, 1440, 980);
+  const f = frame("06 About / Statement CV Contact", 1510, 2880, 1440, 980);
   addHeader(f, 1440);
   text(f, "About title", "About", 72, 150, 360, 92, black);
-  text(f, "Statement", "Signal Index / Acid Proof combines an Internationalist grid, a three-color interface, and semantic window UI into an original professor-facing portfolio system.", 72, 290, 680, 28, regular, colors.ink, 1.25);
-  text(f, "Originality note", "References inform behavior only. No borrowed assets, text, raster chrome, code, or exact composition.", 72, 430, 620, 15, regular, colors.fog, 1.45);
+  text(f, "Statement", "CIBA is an artist currently making games and web-based works in Tokyo. The site records two games in development and two web works from 2023.", 72, 290, 680, 28, regular, colors.ink, 1.25);
+  text(f, "Practice note", "The projects use rules, dialogue, scrolling pages, and image composition to examine bodily response, social norms, waking, and escape.", 72, 430, 620, 15, regular, colors.fog, 1.45);
   rect(f, "CV column", 840, 150, 430, 560, null, colors.plum);
   text(f, "CV title", "CV", 872, 185, 120, 40, black);
-  text(f, "CV items", "2026  X.WHEEL\n2024  EMIDA\n2023  Wake Up\n2023  Residual Garden\n2022  Signal Room\n2021  Threshold Archive", 872, 255, 320, 18, regular, colors.ink, 1.55);
+  text(f, "CV items", "2026–  X.WHEEL\n2024–  EMIDA\n2023   Wake Up\n2023   Escape Project", 872, 255, 320, 18, regular, colors.ink, 1.55);
   rect(f, "Contact field / unpublished", 72, 570, 340, 48, colors.surface, colors.plum);
   text(f, "Contact field status", "CONTACT ROUTE / ADD VERIFIED EMAIL OR URL", 92, 586, 300, 11, bold, colors.fog);
 }
@@ -413,7 +429,7 @@ async function main() {
   figma.viewport.scrollAndZoomIntoView(page.children);
   figma.closePlugin(existingPage
     ? "CIBA generated frames updated in place; manually added untagged layers were preserved."
-    : "Signal Index / Acid Proof frames created, including seven editable Works windows.");
+    : "Signal Index / Acid Proof frames created, including four editable Works windows.");
 }
 
 main().catch((error) => {

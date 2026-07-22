@@ -1,49 +1,22 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { projects } from "../src/lib/project-data";
+import { getLocalizedStringList } from "../src/lib/projects";
 
 describe("Wake Up replica project", () => {
-  it("is available as a custom old-site replica with the complete source asset set", () => {
+  it("publishes only the two approved Wake Up images", () => {
     const wakeUp = projects.find((project) => project.slug === "wake-up");
-    const expectedAssets = [
-      "bed-alarm.jpg",
-      "grid.jpg",
-      "pixel-sunset.png",
-      "corridor.png",
-      "statement-wide.png",
-      "wake-logo-color.png",
-      "intercom-plain-a.jpg",
-      "dream-question-black.jpg",
-      "tv-girl.png",
-      "white-scroll-blank.png",
-      "flooded-title.jpg",
-      "wake-script-collage.png",
-      "glitch-girl-collage.png",
-      "intercom-line-art.png",
-      "intercom-plain-b.png",
-      "flooded-room-square.jpeg",
-      "question-column.png",
-      "quote-column.png",
-      "saying-column.png",
-      "disappeared-column.png",
-      "dream-question-column.png",
-      "wake-logo-flood.png",
-      "pointing-hand-photo.png",
-      "pointing-hand-line.png",
-      "dream-question-black-b.jpg",
-      "vapor-intercom.png",
-      "disappeared-black.jpg",
-      "intercom-photo-full.png"
-    ];
 
     expect(wakeUp).toBeDefined();
     expect(wakeUp?.pageMode).toBe("wake-up-replica");
-    expect(wakeUp?.tags).toContain("old-site-replica");
-    expect(wakeUp?.media.length).toBeGreaterThanOrEqual(28);
-    expect(wakeUp?.media.map((item) => item.src.split("/").at(-1))).toEqual(expect.arrayContaining(expectedAssets));
+    expect(wakeUp && getLocalizedStringList(wakeUp.tags, "en")).not.toContain("old-site-replica");
+    expect(wakeUp?.media.map((item) => item.src.split("/").at(-1))).toEqual([
+      "bed-alarm.png",
+      "flooded-title.jpg"
+    ]);
   });
 
-  it("keeps removed legacy panels in the source archive without rendering them", () => {
+  it("renders exactly two visual panels and no removed legacy panel", () => {
     const component = readFileSync(new URL("../src/components/WakeUpReplica.astro", import.meta.url), "utf8");
 
     [
@@ -56,8 +29,9 @@ describe("Wake Up replica project", () => {
       "wake-logo-panel"
     ].forEach((className) => expect(component).not.toContain(`class=\"wake-panel ${className}`));
 
-    expect(component).toContain("wake-columns-panel");
-    expect(component).toContain("wake-city-panel");
-    expect(component).toContain("displayedMedia.map");
+    expect(component.match(/<ProjectImage/g)).toHaveLength(2);
+    expect(component.match(/<section class="wake-panel/g)).toHaveLength(2);
+    expect(component).toContain('class="wake-panel wake-opening wake-bed-panel"');
+    expect(component).toContain('class="wake-panel wake-opening wake-old-cover"');
   });
 });

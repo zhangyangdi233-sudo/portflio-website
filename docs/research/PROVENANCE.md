@@ -10,7 +10,7 @@ are separate evidence classes. A link supports only the claim named in its row.
 | [ZUTOMAYO](https://zutomayo.net/) | Direct observation | 1440×900 browser study; one card drag measured | `BEHAVIORS.md`, `components/work-desktop-window.spec.md` | Independent absolute cards, overlap, move feedback, focus order, and close/choice behavior; exact surface is not reused |
 | [The Art of Cinema](https://www.theartofcinema.xyz/?ref=onepagelove) | Direct observation | 1440×900 and 390×844 browser study | `BEHAVIORS.md`, `components/kinetic-heading.spec.md` | Clipped duplicated-glyph roll, monumental type, scroll pacing, and a later scattered-media field |
 | User-authorized local *Milk outside…* install | Direct observation | Read-only inspection of local Ren'Py files | `BEHAVIORS.md` | Stable text plane versus selective perceptual instability; extracted assets and colors do not ship |
-| CIBA `WAKE UP` media | Artist-work evidence | Original files inspected and sampled locally | `public/assets/projects/wake-up/` | Source for a superseded flood-palette experiment and continuing spatial-memory research; not the active shell palette |
+| CIBA `WAKE UP` media | Artist-work evidence | Original files inspected and sampled locally | `source-archive/wake-up-legacy/`; approved public pair in `public/assets/projects/wake-up/` | Source for a superseded flood-palette experiment and continuing spatial-memory research; only the approved bed/alarm and flooded-title images deploy, and the sample does not define the active shell palette |
 | [*Milk outside…* developer page](https://nikita-kryukov.itch.io/milk-outside-a-bag-of-milk-outside-a-bag-of-milk) and [Z.A.T.O. developer page](https://nopanamaman.itch.io/z-a-t-o-i-love-the-world-and-everything-in-it) | Source-supported fact | Developer pages reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Narrow description, format, and warning claims only; no expression is licensed or reused |
 | [Persona 5 CEDEC report](https://www.famitsu.com/news/201711/13145540.html) and [developer interview translation](https://personacentral.com/persona-5-interview-ui-design-sound-music/) | Source-supported fact | Report and interview reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Restricted dominant color, eye-guiding hierarchy, and immediate menu response informed behavior-level evaluation only |
 | [Arknights official video archive](https://ak.hypergryph.com/archive/video) | Source-supported fact | Archive shell reviewed 2026-07-17 | `DEEP_RESEARCH_REPORT.md` | Persistent categories unify varied official media; no scene-level PV grammar is claimed |
@@ -29,9 +29,9 @@ are separate evidence classes. A link supports only the claim named in its row.
 
 ## Superseded CIBA palette sampling experiment
 
-- `flooded-room-square.jpeg` SHA-256:
+- `source-archive/wake-up-legacy/flooded-room-square.jpeg` SHA-256:
   `3be85013d9e04296e8ae32a7d021bddee431c1e2470a4f1a61b7a89f5552be58`
-- `wake-logo-color.png` SHA-256:
+- `source-archive/wake-up-legacy/wake-logo-color.png` SHA-256:
   `d02d016e7c1e55598fa160504ebf5b978450fc34693b0c2310e8ee311c8cef79`
 - Method: inspect a 6×6 visual downsample, then a 96px sRGB downsample grouped into coarse RGB
   buckets; choose semantic candidates from recurring artist-image regions; verify foreground/control

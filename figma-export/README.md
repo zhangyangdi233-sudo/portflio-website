@@ -22,7 +22,11 @@ The plugin creates editable frames for:
 - Wake Up / Replica Map
 - About / Statement CV Contact
 
-The Works frame contains seven separate project-window frames. Their title bars, media placeholders, summaries, metadata, and `OPEN` labels remain editable. Move each whole window frame in Figma to test alternate overlaps; the authored overlap is intentional and mirrors the website's desktop Scatter mode. The drawn controls document interface states but are not interactive inside the Figma canvas.
+The Works frame contains four separate, large project-window frames. Their title bars, media
+placeholders, concepts, metadata, and `OPEN` labels remain editable. Move each whole window frame
+in Figma to test alternate overlaps; the authored overlap mirrors the website's desktop window
+mode. The drawn controls document interface states but are not interactive inside the Figma
+canvas.
 
 Running the plugin again updates the generated frames on the existing `CIBA / Signal Index / Acid
 Proof` page instead of creating duplicates. Untagged top-level layers that you add manually
@@ -46,8 +50,12 @@ website motion source, CSS boundary, token handoff, Figma workspace, and every p
 uses Inter as a portable editable approximation of the website's canonical multilingual system
 stack.
 
-The files in `screenshots/` are captures of this CIBA site and can be placed in Figma as locked
-structural comparison layers. Third-party reference captures under `docs/design-references/` are
-local-only and ignored by Git. When a screenshot and the generated editable frames differ, use
-`src/content/art-direction.json`, `design-tokens.json`, and the generated frames as the current
-art-direction source, in that order.
+No current PNG capture is bundled: the previous screenshots described a superseded prototype and
+were moved to `../source-archive/historical-captures/`. The small README in `screenshots/`
+defines the acceptance rule for any future capture. Third-party research captures under
+`docs/design-references/` remain local-only and ignored by Git.
+
+Use `src/content/art-direction.json`, `design-tokens.json`, and the generated editable frames as
+the current art-direction source, in that order. The drift check also verifies the Home project
+stage, Works filter/layout controls, visible count, mobile-header height, focus outline, and the
+absence of stale PNG captures in the live handoff folders.

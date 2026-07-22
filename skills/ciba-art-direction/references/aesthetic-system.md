@@ -84,7 +84,7 @@ Older work remains reachable but must not dilute the selected sequence. Filters 
 
 - Archive: choose when comparison, chronology, provenance, or a large body of records is the main task. Use numbered files, metadata, and progressive disclosure.
 - Cinematic: choose when a single project's temporal or emotional progression is the main task. Use large titles, pacing, an image field, and carefully timed transitions.
-- Spatial: choose when rearranging several works exposes relationships. Use movable windows or cards, and always supply Scan mode and keyboard movement.
+- Spatial: choose when rearranging several works exposes relationships. Use large, visibly window-like frames and always supply ordered mode, keyboard movement, and a mobile source-order fallback.
 - Editorial: choose when argument, statement, or research text leads the experience. Use disciplined typography and image rhythm.
 
 If two modes seem plausible, select the one that best serves the page's primary evidence task. The other may influence small details but cannot become a second shell.
