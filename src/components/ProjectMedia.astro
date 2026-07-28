@@ -29,7 +29,9 @@ const focusCopy = {
     media.type === "image" ? (
       <ProjectImage media={media} lang={lang} eager={eager} sizes="(max-width: 899px) calc(100vw - 2rem), 50vw" />
     ) : (
-      <video src={media.src} muted playsinline controls preload="metadata" aria-label={localized.alt} />
+      <video playsinline controls preload="metadata" aria-label={localized.alt}>
+        <source src={media.src} type="video/mp4" />
+      </video>
     )
   }
   {localized.caption && <figcaption>{localized.caption}</figcaption>}

@@ -47,3 +47,34 @@ feedback captured through the taste inbox and confirmed before promotion.
   62px mobile header, 3px focus outline, and the absence of stale PNGs in live handoff folders.
 - Browser checks are implementation outcomes only; they do not promote pending colour or header
   feedback into the taste ledger.
+
+## 2026-07-28 — Nested coursework desktops and editorial distillation
+
+- The public project count increased from four to five through one verified University Coursework
+  record; no placeholder project was made public.
+- The coursework detail page renders three large bordered desktops containing 10 Blender, 2 Maya,
+  and 2 After Effects / Premiere Pro evidence windows. Desktop title bars support bounded pointer
+  dragging, 16/48px keyboard movement, stacking, Home reset, and section reset.
+- On a fresh 1440×900 load and after section reset, all fourteen small windows remain fully inside
+  their parent stages; lower-edge authored positions are minimally clamped instead of clipped.
+- Native video bodies remain independent from drag initiation. All five supplied H.264 MP4 files
+  loaded with metadata and reported `readyState=4` without browser errors.
+- At 390×844 and in reduced motion, the interface changes to source-order evidence cards, hides
+  reset controls, and removes all movement buttons/instructions from the accessibility tree.
+- The nine supplied images remain exact canonical copies while 18 WebP derivatives supply
+  responsive 480px/960px presentation. Desktop and mobile selected the intended derivative sizes.
+- Section copy now states only visible practice scope and method. It does not invent course names,
+  briefs, collaborators, production roles, grades, or dates. The unknown coursework date is
+  omitted from visible website and Figma records.
+- The publication manifest distinguishes the 14 explicitly attached and assigned files from 13
+  unrelated or unassigned files found in the same source folder. Only the explicit allowlist ships.
+- Figma parity is checked at item level across code, caption, media kind, source path, geometry,
+  and z-order, rather than by counts alone.
+- The ZUTOMAYO reference informed bounded overlapping-window behavior only. CIBA retains its own
+  black, warm-paper, and acid-green system, type, captions, controls, and mobile model.
+- Home display typography now uses semantic word groups, restrained Latin tracking, zero CJK
+  tracking, and independent glyph-row clipping. `ESCAPE / PROJECT` is an authored two-line title.
+- Verification passed 33 tests, Astro diagnostics, a 25-route static build, built/design drift
+  contracts, browser reflow checks, and zero console errors.
+- These outcomes do not promote `TASTE-20260728-EDITORIAL-TYPE-DISTILLATION` or
+  `TASTE-20260728-NESTED-DESKTOP-WINDOWS`; both remain pending explicit artist confirmation.

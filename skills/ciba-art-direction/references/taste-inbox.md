@@ -81,3 +81,23 @@ project reasoning, not a confirmed personal-preference rule.
 - Current implementation decision: use 10% grayscale draggable imagery behind the active title;
   restore source colour on hover/focus; change the title at each work trigger; use the factual
   Title / Year / Medium / Status / Concept hierarchy.
+
+## TASTE-20260728-EDITORIAL-TYPE-DISTILLATION
+
+- Captured: 2026-07-28 UTC
+- Context: Home title spacing, line break, and metadata review
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 字间距有点问题 稍微调整一下 并且escape project可以换行 escape换行project 这样。图2的这些文字我觉得没有必要，遵从少即是多（less is more）的原则。在页面设计以及排版上面，一些细微的字体调整以及图片、中宫等排版，可以参考一些时尚杂志或者设计类杂志的文字排版。
+
+## TASTE-20260728-NESTED-DESKTOP-WINDOWS
+
+- Captured: 2026-07-28 UTC
+- Context: University Coursework page interaction request
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 我希望分区是三个大的窗口，每个窗口里面是无数个小的模拟电脑窗口一样的界面，并且在这个大的窗口内，所有展示的作品可以通过鼠标拖拽。这里可以查看并且完全模仿 https://zutomayo.net 这个网站中的窗口。

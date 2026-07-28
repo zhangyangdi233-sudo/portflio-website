@@ -19,12 +19,10 @@ const projects = buildHomeComposition(entries.map((entry) => entry.data as Proje
 const projectCount = String(projects.length).padStart(2, "0");
 const copy = {
   zh: {
-    eyebrow: "艺术家作品档案 / 东京",
-    edition: "数字作品集 / 2026",
-    role: "游戏与网页作品",
-    enter: "进入作品桌面",
+    role: "游戏 / 网页 / 影像",
+    enter: "查看作品",
     selected: "作品",
-    selectedNote: "当前公开四件作品：两件开发中游戏，以及两件 2023 年的网页作品。",
+    selectedNote: "五项公开记录：两件开发中的游戏、两件 2023 年网页作品，以及一组大学课题练习。",
     concept: "概念 / CONCEPT",
     record: "打开项目记录",
     imageHint: "桌面端可拖动图像；方向键移动，Home 复位。悬浮或键盘聚焦时显示彩色。",
@@ -32,12 +30,10 @@ const copy = {
     indexNote: "标题 / 年份 / 媒介 / 状态"
   },
   en: {
-    eyebrow: "ARTIST ARCHIVE / TOKYO",
-    edition: "DIGITAL PORTFOLIO / 2026",
-    role: "Games and web-based works",
-    enter: "Enter works desktop",
+    role: "Games / Web / Moving image",
+    enter: "View works",
     selected: "Works",
-    selectedNote: "Four works are currently public: two games in development and two web-based works from 2023.",
+    selectedNote: "Five records are public: two games in development, two web-based works from 2023, and one university coursework archive.",
     concept: "CONCEPT",
     record: "Open project record",
     imageHint: "On desktop, drag images; use arrow keys to move and Home to reset. Hover or focus to reveal colour.",
@@ -45,12 +41,10 @@ const copy = {
     indexNote: "Title / year / medium / status"
   },
   ja: {
-    eyebrow: "アーティスト・アーカイブ / 東京",
-    edition: "デジタル・ポートフォリオ / 2026",
-    role: "ゲームとウェブ作品",
-    enter: "作品デスクトップへ",
+    role: "ゲーム / ウェブ / 映像",
+    enter: "作品を見る",
     selected: "作品",
-    selectedNote: "現在公開しているのは、開発中のゲーム2点と2023年のウェブ作品2点です。",
+    selectedNote: "開発中のゲーム2点、2023年のウェブ作品2点、大学課題の記録1点を公開しています。",
     concept: "コンセプト",
     record: "作品記録を開く",
     imageHint: "デスクトップでは画像をドラッグでき、矢印キーで移動、Homeで復位します。ホバーまたはフォーカスでカラー表示になります。",
@@ -60,6 +54,13 @@ const copy = {
 }[lang];
 
 const letters = (value: string) => Array.from(value);
+const composeTitleWords = (value: string) => {
+  let letterIndex = 0;
+  return value.trim().split(/\s+/).filter(Boolean).map((word) => ({
+    word,
+    letters: Array.from(word).map((letter) => ({ letter, index: letterIndex++ }))
+  }));
+};
 ---
 
 <BaseLayout
@@ -69,11 +70,6 @@ const letters = (value: string) => Array.from(value);
   pageClass="home-page ciba-home-v3"
 >
   <section class="v3-home-hero" aria-labelledby="v3-home-title" data-v3-hero>
-    <div class="v3-home-hero__meta">
-      <p>{copy.eyebrow}</p>
-      <p>{copy.edition}</p>
-    </div>
-
     <h1 class="v3-monument" id="v3-home-title" aria-label="CIBA" data-v3-letter-title>
       {
         letters("CIBA").map((letter, index) => (
@@ -87,7 +83,6 @@ const letters = (value: string) => Array.from(value);
     <div class="v3-home-hero__footer">
       <div>
         <p class="v3-home-hero__role">{copy.role}</p>
-        <p class="v3-home-hero__statement">{profile.statement[0]}</p>
       </div>
       <a class="v3-action-link" href={`/${lang}/works/`}>
         <span>{copy.enter}</span><span aria-hidden="true">↘</span>
@@ -113,6 +108,10 @@ const letters = (value: string) => Array.from(value);
             projects.map((project, index) => {
               const localized = getLocalizedProject(project, lang);
               const number = String(index + 1).padStart(2, "0");
+              const titleWords = composeTitleWords(localized.title.toUpperCase());
+              const hasEditorialBreak =
+                titleWords.length > 1 &&
+                (project.slug === "escape-project" || project.slug === "university-coursework");
               return (
                 <article
                   class:list={["v3-cinema-layer", { "is-active": index === 0 }]}
@@ -122,22 +121,34 @@ const letters = (value: string) => Array.from(value);
                 >
                   <div class="v3-cinema-layer__meta">
                     <span>{number} / {projectCount}</span>
-                    <span>{project.year}</span>
+                    {project.year !== "—" && <span>{project.year}</span>}
                     <span>{localized.medium ?? project.medium}</span>
                     <span>{localized.status ?? project.status}</span>
                   </div>
 
-                  <h3 class="v3-cinema-layer__title" aria-label={localized.title} data-v3-letter-title>
+                  <h3
+                    class:list={["v3-cinema-layer__title", { "has-editorial-break": hasEditorialBreak }]}
+                    aria-label={localized.title}
+                    data-v3-letter-title
+                    data-title-slug={project.slug}
+                  >
                     {
-                      letters(localized.title.toUpperCase()).map((letter, letterIndex) =>
-                        letter === " " ? (
-                          <span class="v3-letter-space" aria-hidden="true">&nbsp;</span>
-                        ) : (
-                          <span class="v3-letter-mask" aria-hidden="true" style={`--letter-index:${letterIndex}`}>
-                            <span class="v3-letter-track"><span>{letter}</span><span>{letter}</span></span>
-                          </span>
-                        )
-                      )
+                      titleWords.map(({ word, letters: wordLetters }, wordIndex) => (
+                        <span
+                          class="v3-title-word"
+                          data-title-word={wordIndex + 1}
+                          data-word={word}
+                          aria-hidden="true"
+                        >
+                          {
+                            wordLetters.map(({ letter, index: glyphIndex }) => (
+                              <span class="v3-letter-mask" style={`--letter-index:${glyphIndex}`}>
+                                <span class="v3-letter-track"><span>{letter}</span><span>{letter}</span></span>
+                              </span>
+                            ))
+                          }
+                        </span>
+                      ))
                     }
                   </h3>
 
@@ -208,7 +219,7 @@ const letters = (value: string) => Array.from(value);
             <a href={`/${lang}/works/${project.slug}/`}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{localized.title}</strong>
-              <span>{project.year}</span>
+              <span>{project.year === "—" ? "" : project.year}</span>
               <span>{localized.medium ?? project.medium}</span>
               <span>{localized.status ?? project.status}</span>
             </a>

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import CourseworkDesktop from "../../../components/CourseworkDesktop.astro";
 import ProjectMedia from "../../../components/ProjectMedia.astro";
 import WakeUpReplica from "../../../components/WakeUpReplica.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
@@ -34,6 +35,7 @@ const theme = getProjectThemeVars(project);
 const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
 const nextLocalized = getLocalizedProject(nextProject, lang);
 const isWakeUpReplica = project.pageMode === "wake-up-replica";
+const isCourseworkDesktop = project.pageMode === "coursework-desktop";
 const localizedTags = getLocalizedStringList(project.tags, lang);
 const localizedDetails = project.details ? {
   role: getLocalizedString(project.details.role, lang),
@@ -53,12 +55,20 @@ const detailCopy = {
   lang={lang}
   title={`${localized.title} | ${siteProfile.artistName}`}
   description={localized.summary}
-  pageClass={isWakeUpReplica ? "project-page wake-page" : "project-page"}
+  pageClass={isWakeUpReplica ? "project-page wake-page" : isCourseworkDesktop ? "project-page coursework-page" : "project-page"}
   theme={theme}
 >
   {
     isWakeUpReplica ? (
       <WakeUpReplica project={project} localized={localized} lang={lang} />
+    ) : isCourseworkDesktop ? (
+      <CourseworkDesktop
+        project={project}
+        localized={localized}
+        lang={lang}
+        nextProject={nextProject}
+        nextLocalized={nextLocalized}
+      />
     ) : (
       <article class="project-detail">
         <header class="project-hero">

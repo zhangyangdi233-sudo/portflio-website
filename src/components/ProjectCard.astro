@@ -28,7 +28,7 @@ const vars = Object.entries(getProjectThemeVars(project))
     <ProjectMedia media={project.media[0]} lang={lang} />
     <div class="project-card__body">
       <div class="project-card__meta">
-        <span>{project.year}</span>
+        {project.year !== "—" && <span>{project.year}</span>}
         <span>{project.medium}</span>
       </div>
       <h3>{localized.title}</h3>

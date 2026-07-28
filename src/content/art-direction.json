@@ -33,7 +33,8 @@
       "x-wheel": { "x": 2, "y": 38, "width": 460, "rotation": -0.45, "z": 4 },
       "emida": { "x": 27, "y": 112, "width": 430, "rotation": 0.35, "z": 3 },
       "wake-up": { "x": 54, "y": 46, "width": 440, "rotation": -0.3, "z": 2 },
-      "escape-project": { "x": 71, "y": 152, "width": 410, "rotation": 0.4, "z": 1 }
+      "escape-project": { "x": 71, "y": 152, "width": 410, "rotation": 0.4, "z": 1 },
+      "university-coursework": { "x": 18, "y": 344, "width": 455, "rotation": -0.15, "z": 5 }
     }
   }
 }

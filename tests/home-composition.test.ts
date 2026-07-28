@@ -6,9 +6,9 @@ describe("home composition", () => {
   it("turns only verified public projects into the scroll-linked sequence", () => {
     const rows = buildHomeComposition(allProjects);
 
-    expect(rows).toHaveLength(4);
+    expect(rows).toHaveLength(5);
     expect(rows.map((row) => row.slug)).toEqual(projects.map((project) => project.slug));
-    expect(rows.map((row) => row.indexLabel)).toEqual(["01", "02", "03", "04"]);
+    expect(rows.map((row) => row.indexLabel)).toEqual(["01", "02", "03", "04", "05"]);
     expect(rows.every((row) => row.published !== false)).toBe(true);
   });
 

@@ -34,7 +34,7 @@ const projects = defineCollection({
     priority: z.number(),
     published: z.boolean().default(true),
     featured: z.boolean().default(false),
-    pageMode: z.enum(["standard", "wake-up-replica"]).default("standard"),
+    pageMode: z.enum(["standard", "wake-up-replica", "coursework-desktop"]).default("standard"),
     tags: localizedStringList,
     palette: z.object({
       primary: z.string(),
@@ -47,7 +47,14 @@ const projects = defineCollection({
         type: z.enum(["image", "video"]),
         src: z.string(),
         alt: localizedString,
-        caption: localizedString.optional()
+        caption: localizedString.optional(),
+        group: z.enum(["blender", "maya", "ae-pr"]).optional(),
+        window: z.object({
+          x: z.number().min(0).max(100),
+          y: z.number().min(0).max(100),
+          w: z.number().min(20).max(70),
+          z: z.number().int().min(1)
+        }).optional()
       })
     ).min(1),
     details: z.object({

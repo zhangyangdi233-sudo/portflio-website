@@ -43,18 +43,23 @@
     "figmaUiApproximation": "Inter",
     "ui": "Inter / Helvetica / Noto Sans",
     "brand": "Small bold bilingual mark: 糍粑 CIBA",
-    "display": "Bold fitted project titles with one accessible text label per heading",
+    "display": "Live semantic word groups. Latin display tracking starts between normal and -0.03em; Chinese and Japanese remain at 0. ESCAPE / PROJECT and UNIVERSITY / COURSEWORK use authored phrase breaks.",
     "windowTitle": "11–12px uppercase UI text with approximately 0.08em tracking",
     "body": "14–20px regular text with 1.35–1.5 line height",
-    "metadata": "10–12px uppercase or tabular UI text"
+    "metadata": "10–12px uppercase or tabular UI text; one compact verified record only",
+    "semanticBreaks": {
+      "escape-project": ["ESCAPE", "PROJECT"],
+      "university-coursework": ["UNIVERSITY", "COURSEWORK"]
+    }
   },
   "layout": {
     "desktopFrame": "1440px wide",
     "mobileFrame": "390px wide",
     "background": "flat black field with warm-paper hairlines",
     "grid": "disciplined asymmetric Internationalist grid; whitespace is structural",
-    "hero": "monumental CIBA title followed by one scroll-linked work stage with low-opacity draggable evidence images",
-    "works": "four large independent project windows arranged on a desktop window canvas"
+    "hero": "monumental CIBA title without redundant archive or edition labels, followed by one scroll-linked work stage with low-opacity draggable evidence images",
+    "works": "five large independent project windows arranged on a desktop window canvas",
+    "coursework": "three large bounded desktop sections containing fourteen smaller editable evidence windows"
   },
   "motion": {
     "tokens": {
@@ -102,22 +107,23 @@
   },
   "handoffFacts": {
     "homeIncludesProjectStage": true,
-    "homeProjectCount": 4,
+    "homeProjectCount": 5,
     "worksFilters": ["ALL", "FEATURED", "ARCHIVE"],
     "worksLayouts": ["WINDOWS", "ORDER", "RESET"],
-    "worksVisibleCount": "04 / 04",
+    "worksVisibleCount": "05 / 05",
     "mobileHeaderHeight": 62,
     "focusOutlineWidth": 3
   },
   "worksWindowSystem": {
-    "projectCount": 4,
+    "projectCount": 5,
     "breakpoint": 900,
     "stageHeight": 760,
     "positions": {
       "x-wheel": { "x": 2, "y": 38, "width": 460, "rotation": -0.45, "z": 4 },
       "emida": { "x": 27, "y": 112, "width": 430, "rotation": 0.35, "z": 3 },
       "wake-up": { "x": 54, "y": 46, "width": 440, "rotation": -0.3, "z": 2 },
-      "escape-project": { "x": 71, "y": 152, "width": 410, "rotation": 0.4, "z": 1 }
+      "escape-project": { "x": 71, "y": 152, "width": 410, "rotation": 0.4, "z": 1 },
+      "university-coursework": { "x": 18, "y": 344, "width": 455, "rotation": -0.15, "z": 5 }
     },
     "windowWidth": "410–460px",
     "structure": [
@@ -138,6 +144,42 @@
       "shadow": "12px 12px 0 acid green; active window swaps to warm paper",
       "mediaAspectRatio": "16 / 10"
     },
-    "editableHandoff": "The plugin generates four independent overlapping Figma frames. Text, title bars, media placeholders, and OPEN labels remain editable; move whole frames to explore alternate compositions."
+    "editableHandoff": "The plugin generates five independent overlapping Figma frames. Text, title bars, media placeholders, and OPEN labels remain editable; move whole frames to explore alternate compositions."
+  },
+  "courseworkDesktopSystem": {
+    "canonicalSource": "src/content/projects/university-coursework.json",
+    "snapshotContract": "Each Figma item mirrors the canonical code, English caption, media type, public source path, x/y/w position, and z-order; npm run check:design fails on drift.",
+    "frameName": "07 Coursework / Three Desktop Sections",
+    "sectionCount": 3,
+    "mediaWindowCount": 14,
+    "sections": {
+      "blender": {
+        "label": "Blender",
+        "itemCount": 10,
+        "imageCount": 8,
+        "videoCount": 2
+      },
+      "maya": {
+        "label": "Maya",
+        "itemCount": 2,
+        "imageCount": 1,
+        "videoCount": 1
+      },
+      "ae-pr": {
+        "label": "After Effects / Premiere Pro",
+        "itemCount": 2,
+        "imageCount": 0,
+        "videoCount": 2
+      }
+    },
+    "outerWindow": "One large square-corner chapter window per section, with a black title bar, warm-paper rules, one acid focus/reset signal, and a clipped inner stage.",
+    "innerWindow": "Editable vector/text chrome with a factual item code, media-kind label, abstract media placeholder, and visible caption line. Video windows include play and progress-control markers.",
+    "interaction": {
+      "pointer": "Title-bar drag only; active item rises and remains clamped to its section.",
+      "keyboard": "Arrow 16px; Shift + Arrow 48px; Home resets one item; section RESET restores every authored position.",
+      "compact": "Ordered, non-overlapping source sequence with drag handles removed.",
+      "video": "Native controls remain independent from dragging in the website; Figma represents them as editable control markers."
+    },
+    "originalityBoundary": "Retain independent overlapping-window mechanics only. Exclude ZUTOMAYO purple/pink skin, pixel type, imagery, branding, buttons, code, and proportions."
   }
 }

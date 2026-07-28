@@ -15,7 +15,7 @@ describe("art direction configuration", () => {
       expect(position.x).toBeGreaterThanOrEqual(0);
       expect(position.x).toBeLessThan(100);
       expect(position.y).toBeGreaterThanOrEqual(38);
-      expect(position.y).toBeLessThanOrEqual(152);
+      expect(position.y).toBeLessThanOrEqual(344);
     });
   });
 

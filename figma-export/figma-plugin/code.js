@@ -17,16 +17,17 @@ const workspace = {
     "x-wheel": { x: 2, y: 38, width: 460, rotation: -0.45, z: 4 },
     emida: { x: 27, y: 112, width: 430, rotation: 0.35, z: 3 },
     "wake-up": { x: 54, y: 46, width: 440, rotation: -0.3, z: 2 },
-    "escape-project": { x: 71, y: 152, width: 410, rotation: 0.4, z: 1 }
+    "escape-project": { x: 71, y: 152, width: 410, rotation: 0.4, z: 1 },
+    "university-coursework": { x: 18, y: 344, width: 455, rotation: -0.15, z: 5 }
   }
 };
 
 const handoffFacts = {
   homeIncludesProjectStage: true,
-  homeProjectCount: 4,
+  homeProjectCount: 5,
   worksFilters: ["ALL", "FEATURED", "ARCHIVE"],
   worksLayouts: ["WINDOWS", "ORDER", "RESET"],
-  worksVisibleCount: "04 / 04",
+  worksVisibleCount: "05 / 05",
   mobileHeaderHeight: 62,
   focusOutlineWidth: 3
 };
@@ -75,6 +76,17 @@ const projects = [
     summary: "A web-based visual work about self-consciousness, social constraint, and the question of escape.",
     color: colors.oxide,
     onColor: colors.night
+  },
+  {
+    slug: "university-coursework",
+    index: "05",
+    title: "University Coursework",
+    medium: "3D practice, motion graphics, video editing",
+    year: "—",
+    status: "Practice record",
+    summary: "A record of Blender, Maya, and After Effects / Premiere Pro practice, containing 14 still and moving-image items.",
+    color: colors.oxide,
+    onColor: colors.night
   }
 ];
 
@@ -82,6 +94,173 @@ const regular = { family: "Inter", style: "Regular" };
 const bold = { family: "Inter", style: "Bold" };
 const black = bold;
 const PAGE_NAME = "CIBA / Signal Index / Acid Proof";
+
+const courseworkSections = [
+  {
+    slug: "blender",
+    index: "01",
+    title: "BLENDER",
+    count: 10,
+    items: [
+      {
+        code: "01.01",
+        title: "Blender object, material, and lighting study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-01-object-study.png",
+        x: 2,
+        y: 4,
+        w: 38,
+        z: 10
+      },
+      {
+        code: "01.02",
+        title: "Blender character, form, and colour study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-02-character-render.jpg",
+        x: 43,
+        y: 5,
+        w: 34,
+        z: 9
+      },
+      {
+        code: "01.03",
+        title: "Blender environment, reflection, and red-light study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+        x: 21,
+        y: 27,
+        w: 36,
+        z: 8
+      },
+      {
+        code: "01.04",
+        title: "Blender architectural-form and image-composition study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-04-house-study.png",
+        x: 60,
+        y: 29,
+        w: 34,
+        z: 7
+      },
+      {
+        code: "01.05",
+        title: "Blender low-poly plant and shadow study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+        x: 3,
+        y: 56,
+        w: 31,
+        z: 6
+      },
+      {
+        code: "01.06",
+        title: "Blender render combined with a graphic diagram study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-06-week06-composition.png",
+        x: 35,
+        y: 57,
+        w: 38,
+        z: 5
+      },
+      {
+        code: "01.07",
+        title: "Blender modelling-process view.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+        x: 69,
+        y: 58,
+        w: 28,
+        z: 4
+      },
+      {
+        code: "01.08",
+        title: "Blender nodes and workspace record for the red corridor scene.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+        x: 53,
+        y: 17,
+        w: 32,
+        z: 3
+      },
+      {
+        code: "01.09",
+        title: "Blender animation study 01.",
+        type: "VIDEO",
+        src: "/assets/projects/university-coursework/blender-09-motion.mp4",
+        x: 8,
+        y: 18,
+        w: 29,
+        z: 2
+      },
+      {
+        code: "01.10",
+        title: "Blender animation study for the red corridor scene.",
+        type: "VIDEO",
+        src: "/assets/projects/university-coursework/blender-10-motion.mp4",
+        x: 67,
+        y: 4,
+        w: 30,
+        z: 1
+      }
+    ]
+  },
+  {
+    slug: "maya",
+    index: "02",
+    title: "MAYA",
+    count: 2,
+    items: [
+      {
+        code: "02.01",
+        title: "Maya vault, column, and architectural-space study.",
+        type: "IMAGE",
+        src: "/assets/projects/university-coursework/maya-01-architecture-still.png",
+        x: 4,
+        y: 8,
+        w: 48,
+        z: 2
+      },
+      {
+        code: "02.02",
+        title: "Maya architectural-environment animation study.",
+        type: "VIDEO",
+        src: "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+        x: 48,
+        y: 34,
+        w: 48,
+        z: 1
+      }
+    ]
+  },
+  {
+    slug: "ae-pr",
+    index: "03",
+    title: "AFTER EFFECTS / PREMIERE PRO",
+    count: 2,
+    items: [
+      {
+        code: "03.01",
+        title: "After Effects / Premiere Pro motion and editing study 01.",
+        type: "VIDEO",
+        src: "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+        x: 3,
+        y: 7,
+        w: 54,
+        z: 2
+      },
+      {
+        code: "03.02",
+        title: "After Effects / Premiere Pro motion and editing study 02.",
+        type: "VIDEO",
+        src: "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+        x: 43,
+        y: 42,
+        w: 54,
+        z: 1
+      }
+    ]
+  }
+];
 
 function rgb(hex) {
   const clean = hex.replace("#", "");
@@ -216,7 +395,7 @@ function addHomeProjectStage(parent, y, w, mobile = false) {
   const stageWidth = w - inset * 2;
   const stageHeight = mobile ? 620 : 780;
   rect(parent, "Home project stage / current work", inset, y, stageWidth, stageHeight, colors.night, colors.plum);
-  text(parent, "Home stage label", "CURRENT WORK / 01 OF 04", inset + 18, y + 20, mobile ? 210 : 320, mobile ? 10 : 12, bold, colors.oxide);
+  text(parent, "Home stage label", "CURRENT WORK / 01 OF 05", inset + 18, y + 20, mobile ? 210 : 320, mobile ? 10 : 12, bold, colors.oxide);
   text(parent, "Home stage title / clipped roll source", "X.WHEEL", inset + 18, y + (mobile ? 74 : 68), stageWidth - 36, mobile ? 58 : 152, black, colors.ink, 0.82);
 
   const media = rect(
@@ -235,21 +414,32 @@ function addHomeProjectStage(parent, y, w, mobile = false) {
 
   text(parent, "Home stage concept label", "CONCEPT", inset + 18, y + (mobile ? 500 : 590), 120, 10, bold, colors.oxide);
   text(parent, "Home stage concept", projects[0].summary, inset + 18, y + (mobile ? 526 : 618), mobile ? stageWidth - 36 : stageWidth * 0.42, mobile ? 15 : 20, regular, colors.ink, 1.35);
-  text(parent, "Home stage scroll order", "01 X.WHEEL   02 EMIDA   03 WAKE UP   04 ESCAPE PROJECT", inset + 18, y + stageHeight - 34, stageWidth - 36, mobile ? 8 : 10, regular, colors.fog);
+  const orderText = mobile
+    ? "01 X.WHEEL   02 EMIDA   03 WAKE UP\n04 ESCAPE / PROJECT   05 COURSEWORK"
+    : "01 X.WHEEL   02 EMIDA   03 WAKE UP   04 ESCAPE / PROJECT   05 UNIVERSITY COURSEWORK";
+  text(
+    parent,
+    "Home stage scroll order",
+    orderText,
+    inset + 18,
+    y + stageHeight - (mobile ? 52 : 34),
+    stageWidth - 36,
+    mobile ? 8 : 10,
+    regular,
+    colors.fog
+  );
 }
 
 function homeDesktop() {
   const f = frame("01 Home / Desktop", 0, 0, 1440, 1740);
   addHeader(f, 1440);
   addSwissGrid(f, 1440, 1740);
-  text(f, "Archive label", "ARTIST ARCHIVE / TOKYO", 40, 92, 360, 12, bold, colors.oxide);
-  text(f, "Hero title", "CIBA", 40, 185, 1050, 260, black, colors.ink, 0.8);
-  text(f, "Practice", "GAMES AND WEB-BASED WORKS", 40, 650, 420, 12, bold, colors.oxide);
-  text(f, "Practice record", "Four public projects: two games in development and two web-based works from 2023.", 40, 684, 650, 22, regular, colors.ink, 1.35);
+  text(f, "Hero title", "CIBA", 40, 142, 1050, 260, black, colors.ink, 0.8);
+  text(f, "Practice", "GAMES / WEB / MOVING IMAGE", 40, 614, 420, 12, bold, colors.oxide);
   rect(f, "Acid chapter signal", 1366, 220, 42, 360, colors.oxide);
-  text(f, "Chapter count", "01\n\n04", 1378, 238, 24, 12, bold, colors.night, 1.4);
+  text(f, "Chapter count", "01\n\n05", 1378, 238, 24, 12, bold, colors.night, 1.4);
   rect(f, "Enter works action", 930, 744, 430, 56, colors.oxide);
-  text(f, "Enter works label", "ENTER WORKS DESKTOP                         ↘", 950, 764, 390, 12, bold, colors.night);
+  text(f, "Enter works label", "VIEW WORKS                                  ↘", 950, 764, 390, 12, bold, colors.night);
   addHomeProjectStage(f, 900, 1440);
 }
 
@@ -257,12 +447,10 @@ function homeMobile() {
   const f = frame("02 Home / Mobile", 1510, 0, 390, 1580);
   addMobileHeader(f, 390);
   addSwissGrid(f, 390, 1580);
-  text(f, "Archive label", "ARTIST ARCHIVE / TOKYO", 16, 128, 300, 10, bold, colors.oxide);
-  text(f, "Hero title", "CIBA", 16, 225, 350, 78, black, colors.ink, 0.82);
-  text(f, "Practice", "GAMES AND WEB-BASED WORKS", 16, 515, 320, 10, bold, colors.oxide);
-  text(f, "Practice record", "Four public projects: two games in development and two web-based works from 2023.", 16, 548, 340, 17, regular, colors.ink, 1.4);
+  text(f, "Hero title", "CIBA", 16, 174, 350, 78, black, colors.ink, 0.82);
+  text(f, "Practice", "GAMES / WEB / MOVING IMAGE", 16, 470, 320, 10, bold, colors.oxide);
   rect(f, "Enter works action", 16, 720, 358, 52, colors.oxide);
-  text(f, "Enter works label", "ENTER WORKS DESKTOP                         ↘", 28, 738, 330, 10, bold, colors.night);
+  text(f, "Enter works label", "VIEW WORKS                                  ↘", 28, 738, 330, 10, bold, colors.night);
   addHomeProjectStage(f, 840, 390, true);
 }
 
@@ -282,7 +470,19 @@ function workWindow(parent, project, placement) {
 
   rect(windowFrame, "Title bar / drag handle", 0, 0, w, 44, project.color);
   text(windowFrame, "Title bar index", project.index, 12, 14, 30, 11, bold, project.onColor);
-  text(windowFrame, "Title bar title", project.title.toUpperCase(), 46, 14, w - 100, 11, bold, project.onColor);
+  const titleValue = project.slug === "escape-project" ? "ESCAPE\nPROJECT" : project.title.toUpperCase();
+  text(
+    windowFrame,
+    project.slug === "escape-project" ? "Title bar title / semantic ESCAPE + PROJECT" : "Title bar title",
+    titleValue,
+    46,
+    project.slug === "escape-project" ? 7 : 14,
+    w - 100,
+    11,
+    bold,
+    project.onColor,
+    project.slug === "escape-project" ? 1 : 1.1
+  );
   rect(windowFrame, "Minimize control / 44px target", w - 44, 0, 44, 44, project.onColor, project.onColor, 0.12);
   line(windowFrame, "Minimize glyph", w - 30, 22, w - 14, 22, project.onColor);
 
@@ -292,7 +492,10 @@ function workWindow(parent, project, placement) {
   text(windowFrame, "Media index", project.index, w - 104, 78, 78, 62, black, project.color, 0.9).opacity = 0.42;
   text(windowFrame, "Media label", "MEDIA / EDITABLE PLACEHOLDER", 48, 174, w - 82, 9, bold, colors.fog);
 
-  text(windowFrame, "Project metadata", `${project.year}  /  ${project.medium.toUpperCase()}`, 14, 220, w - 28, 9, bold, project.color);
+  const projectMetadata = project.year === "—"
+    ? project.medium.toUpperCase()
+    : `${project.year}  /  ${project.medium.toUpperCase()}`;
+  text(windowFrame, "Project metadata", projectMetadata, 14, 220, w - 28, 9, bold, project.color);
   text(windowFrame, "Project summary", project.summary, 14, 242, w - 28, 13, regular, colors.ink, 1.4);
 
   rect(windowFrame, "OPEN action / 44px target", 14, h - 58, w - 28, 44, project.color);
@@ -305,7 +508,7 @@ function worksSystem() {
   addHeader(f, 1440);
   text(f, "Page label", "WORKS / WINDOW SYSTEM", 64, 132, 240, 12, bold, colors.cyan);
   text(f, "Works heading", "Works", 1080, 112, 260, 64, black);
-  text(f, "System note", `4 EDITABLE WINDOWS / ${workspace.breakpoint}px BREAKPOINT / TITLE-BAR DRAG`, 64, 168, 620, 11, regular, colors.fog);
+  text(f, "System note", `5 EDITABLE WINDOWS / ${workspace.breakpoint}px BREAKPOINT / TITLE-BAR DRAG`, 64, 168, 620, 11, regular, colors.fog);
 
   const focusRing = rect(f, "Focus outline / 3px acid / 3px offset", 61, 199, 94, 50, null, colors.oxide);
   focusRing.strokeWeight = handoffFacts.focusOutlineWidth;
@@ -395,13 +598,145 @@ function aboutPage() {
   const f = frame("06 About / Statement CV Contact", 1510, 2880, 1440, 980);
   addHeader(f, 1440);
   text(f, "About title", "About", 72, 150, 360, 92, black);
-  text(f, "Statement", "CIBA is an artist currently making games and web-based works in Tokyo. The site records two games in development and two web works from 2023.", 72, 290, 680, 28, regular, colors.ink, 1.25);
-  text(f, "Practice note", "The projects use rules, dialogue, scrolling pages, and image composition to examine bodily response, social norms, waking, and escape.", 72, 430, 620, 15, regular, colors.fog, 1.45);
+  text(f, "Statement", "CIBA is an artist currently making games, web-based works, and university coursework in Tokyo. Five public records present current projects and practice evidence.", 72, 290, 680, 28, regular, colors.ink, 1.25);
+  text(f, "Practice note", "The records use rules, dialogue, scrolling pages, image composition, 3D practice, motion graphics, and video editing to document the work directly.", 72, 430, 620, 15, regular, colors.fog, 1.45);
   rect(f, "CV column", 840, 150, 430, 560, null, colors.plum);
   text(f, "CV title", "CV", 872, 185, 120, 40, black);
-  text(f, "CV items", "2026–  X.WHEEL\n2024–  EMIDA\n2023   Wake Up\n2023   Escape Project", 872, 255, 320, 18, regular, colors.ink, 1.55);
+  text(f, "CV items", "2026–  X.WHEEL\n2024–  EMIDA\n2023   Wake Up\n2023   Escape Project\nUniversity Coursework", 872, 255, 360, 18, regular, colors.ink, 1.55);
   rect(f, "Contact field / unpublished", 72, 570, 340, 48, colors.surface, colors.plum);
   text(f, "Contact field status", "CONTACT ROUTE / ADD VERIFIED EMAIL OR URL", 92, 586, 300, 11, bold, colors.fog);
+}
+
+function courseworkMediaWindow(parent, item, stageWidth, stageHeight) {
+  const width = Math.round(stageWidth * (item.w / 100));
+  const height = Math.round(Math.max(174, Math.min(260, width * (item.type === "VIDEO" ? 0.46 : 0.42))));
+  const x = Math.round(stageWidth * (item.x / 100));
+  const y = Math.round(stageHeight * (item.y / 100));
+  const mediaWindow = embeddedFrame(
+    parent,
+    `Media Window ${item.code} / ${item.type} / ${item.title}`,
+    x,
+    y,
+    width,
+    height,
+    colors.night,
+    colors.ink
+  );
+  mediaWindow.setPluginData("interaction", "Website: drag by title bar; clamp to this section; raise on focus.");
+  mediaWindow.setPluginData("initialZ", String(item.z));
+  mediaWindow.setPluginData("source", item.src);
+
+  rect(mediaWindow, "Title bar / drag handle / 44px website target", 0, 0, width, 30, colors.night, colors.ink);
+  rect(mediaWindow, "Active stack marker", 0, 0, 6, 30, colors.oxide);
+  text(mediaWindow, "Item code", item.code, 12, 9, 42, 9, bold, colors.oxide);
+  text(mediaWindow, "Media kind", item.type, 58, 9, 52, 8, bold, colors.ink);
+  text(mediaWindow, "Window title", item.title, 112, 9, width - 126, 8, bold, colors.ink);
+
+  const bodyY = 30;
+  const captionHeight = 34;
+  const mediaHeight = height - bodyY - captionHeight;
+  rect(mediaWindow, "Editable media field", 0, bodyY, width, mediaHeight, colors.night, colors.ink);
+  rect(mediaWindow, "Warm-paper evidence plane", 14, bodyY + 14, width - 28, Math.max(54, mediaHeight - 28), colors.ink, null, 0.14);
+  rect(mediaWindow, "Acid crop marker / vertical", 28, bodyY + 28, 5, Math.max(28, mediaHeight - 56), colors.oxide);
+  rect(mediaWindow, "Acid crop marker / horizontal", 44, bodyY + mediaHeight - 42, Math.max(48, width - 88), 5, colors.oxide, null, 0.45);
+
+  if (item.type === "VIDEO") {
+    rect(mediaWindow, "Video play control marker", 44, bodyY + 38, 44, 44, colors.oxide);
+    text(mediaWindow, "Video play label", "PLAY", 53, bodyY + 54, 28, 9, bold, colors.night);
+    rect(mediaWindow, "Video control track", 100, bodyY + 57, width - 132, 3, colors.ink);
+    rect(mediaWindow, "Video control progress", 100, bodyY + 57, Math.max(24, (width - 132) * 0.32), 3, colors.oxide);
+    text(mediaWindow, "Video controls note", "VIDEO / NATIVE CONTROLS IN WEBSITE", 44, bodyY + mediaHeight - 24, width - 72, 8, bold, colors.ink);
+  } else {
+    text(mediaWindow, "Image slot note", "IMAGE / EDITABLE EVIDENCE SLOT", 44, bodyY + mediaHeight - 24, width - 72, 8, bold, colors.ink);
+  }
+
+  rect(mediaWindow, "Caption rule", 0, height - captionHeight, width, 1, colors.ink);
+  text(mediaWindow, "Factual caption", `${item.code} — ${item.title}`, 12, height - 23, width - 24, 8, regular, colors.ink);
+  return mediaWindow;
+}
+
+function courseworkSectionWindow(parent, section, y) {
+  const x = 64;
+  const width = 1312;
+  const height = 820;
+  const sectionWindow = embeddedFrame(
+    parent,
+    `Coursework Section ${section.index} / ${section.title} / ${section.count} items`,
+    x,
+    y,
+    width,
+    height,
+    colors.night,
+    colors.ink
+  );
+  sectionWindow.strokeWeight = 2;
+  sectionWindow.setPluginData("interaction", "Large bounded desktop; child media windows stay inside this stage.");
+
+  rect(sectionWindow, "Section title bar", 0, 0, width, 58, colors.night, colors.ink);
+  rect(sectionWindow, "Section active marker", 0, 0, 10, 58, colors.oxide);
+  text(sectionWindow, "Section index", section.index, 28, 19, 36, 12, bold, colors.oxide);
+  text(sectionWindow, "Section title", section.title, 78, 17, 640, 18, bold, colors.ink);
+  text(sectionWindow, "Section evidence count", `${String(section.count).padStart(2, "0")} ITEMS`, 830, 20, 150, 10, bold, colors.ink);
+  rect(sectionWindow, "RESET section / 44px target", width - 148, 7, 132, 44, colors.oxide);
+  text(sectionWindow, "RESET label", "RESET", width - 118, 22, 80, 11, bold, colors.night);
+
+  const stageX = 18;
+  const stageY = 76;
+  const stageWidth = width - 36;
+  const stageHeight = height - 94;
+  const stage = embeddedFrame(
+    sectionWindow,
+    `Bounded inner stage / ${section.title}`,
+    stageX,
+    stageY,
+    stageWidth,
+    stageHeight,
+    colors.night,
+    colors.ink
+  );
+  stage.setPluginData("bounds", "overflow clipped; title-bar drag only; authored positions reset per section");
+  text(stage, "Stage interaction note", "DRAG TITLE BARS / ACTIVE WINDOW RISES / SECTION-BOUNDED", 18, 14, 500, 9, bold, colors.oxide);
+  text(stage, "Stage item count", `${section.index} / ${String(section.count).padStart(2, "0")}`, stageWidth - 92, 14, 72, 9, bold, colors.ink);
+
+  section.items
+    .slice()
+    .sort((left, right) => left.z - right.z)
+    .forEach((item) => courseworkMediaWindow(stage, item, stageWidth, stageHeight));
+}
+
+function courseworkHandoff() {
+  const f = frame("07 Coursework / Three Desktop Sections", 1510, 3960, 1440, 3100);
+  addHeader(f, 1440);
+  text(f, "Coursework record label", "05 / PRACTICE RECORD / 14 ITEMS", 64, 116, 360, 12, bold, colors.oxide);
+  text(f, "Coursework title / semantic line break", "UNIVERSITY\nCOURSEWORK", 64, 146, 720, 112, black, colors.ink, 0.86);
+  text(
+    f,
+    "Coursework summary",
+    "Three bounded evidence desktops: Blender, Maya, and After Effects / Premiere Pro. Images and videos remain distinct records; unknown course facts stay unstated.",
+    850,
+    168,
+    500,
+    18,
+    regular,
+    colors.ink,
+    1.4
+  );
+  text(
+    f,
+    "Coursework interaction contract",
+    "TITLE-BAR DRAG / SECTION RESET / ORDERED COMPACT FALLBACK / VIDEO CONTROLS REMAIN INDEPENDENT",
+    850,
+    284,
+    500,
+    10,
+    bold,
+    colors.oxide,
+    1.3
+  );
+
+  courseworkSections.forEach((section, index) => {
+    courseworkSectionWindow(f, section, 410 + index * 880);
+  });
 }
 
 async function loadFonts() {
@@ -426,10 +761,11 @@ async function main() {
   projectDetail();
   wakeUpMap();
   aboutPage();
+  courseworkHandoff();
   figma.viewport.scrollAndZoomIntoView(page.children);
   figma.closePlugin(existingPage
     ? "CIBA generated frames updated in place; manually added untagged layers were preserved."
-    : "Signal Index / Acid Proof frames created, including four editable Works windows.");
+    : "Signal Index / Acid Proof frames created, including five Works windows and three coursework desktops.");
 }
 
 main().catch((error) => {

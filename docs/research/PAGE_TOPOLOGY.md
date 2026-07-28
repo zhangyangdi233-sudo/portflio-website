@@ -3,7 +3,7 @@
 ## Home
 
 1. Black utility navigation: CIBA, Works, About, Contact, and three language links.
-2. Monumental CIBA opening with a plain current-practice statement.
+2. Monumental CIBA opening with one compact media line and one Works action.
 3. Pinned cinematic stage: one active project title, concept, and low-opacity draggable image field.
 4. Scroll triggers change the current title and evidence set.
 5. Minimal ordered index: reliable scan and deep-link fallback.

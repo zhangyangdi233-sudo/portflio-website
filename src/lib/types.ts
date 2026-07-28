@@ -11,11 +11,20 @@ export type LocalizedText = {
   body: string[];
 };
 
+export type CourseworkMediaGroup = "blender" | "maya" | "ae-pr";
+
 export type ProjectMedia = {
   type: "image" | "video";
   src: string;
   alt: LocalizedString;
   caption?: LocalizedString;
+  group?: CourseworkMediaGroup;
+  window?: {
+    x: number;
+    y: number;
+    w: number;
+    z: number;
+  };
 };
 
 export type Project = {
@@ -26,7 +35,7 @@ export type Project = {
   priority: number;
   published: boolean;
   featured: boolean;
-  pageMode?: "standard" | "wake-up-replica";
+  pageMode?: "standard" | "wake-up-replica" | "coursework-desktop";
   tags: LocalizedStringList;
   palette: {
     primary: string;

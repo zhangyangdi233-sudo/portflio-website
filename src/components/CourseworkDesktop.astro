@@ -1,0 +1,419 @@
+---
+import ProjectImage from "./ProjectImage.astro";
+import { getPublicImageMetadata } from "../lib/public-image-metadata";
+import { getLocalizedMedia } from "../lib/projects";
+import type { Language, LocalizedText, Project, ProjectMedia } from "../lib/types";
+import "../styles/coursework-desktop.css";
+
+type CourseworkGroup = "blender" | "maya" | "ae-pr";
+
+type WindowPlacement = {
+  x: number;
+  y: number;
+  w: number;
+  z: number;
+};
+
+type CourseworkMedia = ProjectMedia & {
+  group?: CourseworkGroup;
+  window?: WindowPlacement;
+};
+
+interface Props {
+  project: Project;
+  localized: LocalizedText;
+  lang: Language;
+  nextProject: Project;
+  nextLocalized: LocalizedText;
+}
+
+const { project, localized, lang, nextProject, nextLocalized } = Astro.props;
+const media = project.media as CourseworkMedia[];
+
+const copy = {
+  zh: {
+    sections: "分区",
+    evidence: "展示素材",
+    index: "课程练习分区",
+    workspace: "可移动作品桌面",
+    orderedWorkspace: "按原始顺序排列的作品资料",
+    items: "项素材",
+    reset: "重置本分区",
+    resetItem: "恢复素材初始位置",
+    move: "移动素材窗口",
+    moveInstruction: "仅拖动标题栏。方向键移动 16 像素，Shift 加方向键移动 48 像素，Home 恢复初始位置。",
+    image: "图像",
+    video: "视频",
+    videoFallback: "当前浏览器无法播放此 MP4 视频。",
+    fallbackCaption: "课程练习素材",
+    recordNote: "记录说明",
+    next: "下一个作品",
+    moved: "已移动至",
+    itemReset: "已恢复初始位置",
+    sectionReset: "本分区的全部窗口已恢复初始位置"
+  },
+  en: {
+    sections: "Sections",
+    evidence: "Evidence items",
+    index: "Coursework sections",
+    workspace: "Movable evidence desktop",
+    orderedWorkspace: "Evidence in source order",
+    items: "items",
+    reset: "Reset this section",
+    resetItem: "Restore the item's initial position",
+    move: "Move media window",
+    moveInstruction: "Drag only the title bar. Arrow keys move 16 pixels, Shift plus an arrow moves 48 pixels, and Home restores the initial position.",
+    image: "Image",
+    video: "Video",
+    videoFallback: "This browser cannot play the MP4 video.",
+    fallbackCaption: "Coursework evidence",
+    recordNote: "Record note",
+    next: "Next project",
+    moved: "Moved to",
+    itemReset: "Initial position restored",
+    sectionReset: "All windows in this section were restored"
+  },
+  ja: {
+    sections: "区分",
+    evidence: "展示資料",
+    index: "大学課題の区分",
+    workspace: "移動可能な作品デスクトップ",
+    orderedWorkspace: "制作資料の順序表示",
+    items: "点",
+    reset: "この区分をリセット",
+    resetItem: "資料を初期位置に戻す",
+    move: "資料ウィンドウを移動",
+    moveInstruction: "タイトルバーのみをドラッグします。矢印キーで 16px、Shift と矢印キーで 48px 移動し、Home で初期位置に戻します。",
+    image: "画像",
+    video: "動画",
+    videoFallback: "このブラウザでは MP4 動画を再生できません。",
+    fallbackCaption: "授業課題の展示資料",
+    recordNote: "記録について",
+    next: "次の作品",
+    moved: "移動位置",
+    itemReset: "初期位置に戻しました",
+    sectionReset: "この区分の全ウィンドウを初期位置に戻しました"
+  }
+}[lang];
+
+const sectionNames: Record<Language, Record<CourseworkGroup, string>> = {
+  zh: {
+    blender: "Blender 练习作品",
+    maya: "Maya 练习作品",
+    "ae-pr": "After Effects / Premiere Pro 视频练习"
+  },
+  en: {
+    blender: "Blender Studies",
+    maya: "Maya Studies",
+    "ae-pr": "After Effects / Premiere Pro Studies"
+  },
+  ja: {
+    blender: "Blender 練習作品",
+    maya: "Maya 練習作品",
+    "ae-pr": "After Effects / Premiere Pro 映像練習"
+  }
+};
+
+const sectionDescriptions: Record<Language, Record<CourseworkGroup, string>> = {
+  zh: {
+    blender: "从基础物体、材质与灯光，到角色、建筑、环境动画与节点工作过程，记录形体、空间和渲染方法的练习。",
+    maya: "以拱顶、柱列与积水回廊为对象，记录建筑空间建模、灯光和镜头运动的练习。",
+    "ae-pr": "两段视频以几何图形、运动节奏和剪辑关系为中心，记录动态图形与时间组织的练习。"
+  },
+  en: {
+    blender: "Studies progress from basic objects, materials, and lighting to characters, architecture, environment animation, and node-based process.",
+    maya: "Vaults, colonnades, and a flooded passage are used to record architectural modelling, lighting, and camera-movement studies.",
+    "ae-pr": "Two videos record motion-graphics and editing studies through geometric form, movement rhythm, and temporal relationships."
+  },
+  ja: {
+    blender: "基本形体、マテリアル、照明から、キャラクター、建築、環境アニメーション、ノード工程まで、形・空間・レンダリング方法の練習を記録しています。",
+    maya: "ヴォールト、柱列、水没回廊を対象に、建築空間のモデリング、照明、カメラ移動の練習を記録しています。",
+    "ae-pr": "二本の映像を通して、幾何学形体、動きのリズム、編集関係を中心としたモーショングラフィックスと時間構成の練習を記録しています。"
+  }
+};
+
+const fallbackPlacements: Record<CourseworkGroup, WindowPlacement[]> = {
+  blender: [
+    { x: 2, y: 4, w: 43, z: 10 },
+    { x: 43, y: 6, w: 43, z: 20 },
+    { x: 18, y: 20, w: 38, z: 30 },
+    { x: 58, y: 24, w: 38, z: 40 },
+    { x: 3, y: 39, w: 40, z: 50 },
+    { x: 35, y: 43, w: 42, z: 60 },
+    { x: 63, y: 49, w: 34, z: 70 },
+    { x: 8, y: 61, w: 39, z: 80 },
+    { x: 39, y: 65, w: 40, z: 90 },
+    { x: 64, y: 72, w: 33, z: 100 }
+  ],
+  maya: [
+    { x: 4, y: 8, w: 58, z: 10 },
+    { x: 38, y: 43, w: 58, z: 20 }
+  ],
+  "ae-pr": [
+    { x: 4, y: 8, w: 62, z: 10 },
+    { x: 34, y: 43, w: 62, z: 20 }
+  ]
+};
+
+const groups = (["blender", "maya", "ae-pr"] as const).map((id, index) => ({
+  id,
+  number: String(index + 1).padStart(2, "0"),
+  title: sectionNames[lang][id],
+  description: sectionDescriptions[lang][id],
+  media: media.filter((item) => item.group === id)
+}));
+
+const imageSrcsets = new Map<string, string>();
+await Promise.all(
+  media
+    .filter((item) => item.type === "image")
+    .map(async (item) => {
+      const base = item.src.replace(/\.(?:png|jpe?g)$/i, "");
+      const candidates = await Promise.all(
+        [480, 960].map(async (targetWidth) => {
+          const src = `${base}-${targetWidth}.webp`;
+          const { width } = await getPublicImageMetadata(src);
+          if (!width) throw new Error(`Missing responsive-image width for ${src}`);
+          return `${src} ${width}w`;
+        })
+      );
+      imageSrcsets.set(item.src, candidates.join(", "));
+    })
+);
+
+const totalMedia = groups.reduce((total, group) => total + group.media.length, 0);
+const titleLines =
+  lang === "en" && localized.title.trim().toLowerCase() === "university coursework"
+    ? ["University", "Coursework"]
+    : [localized.title];
+---
+
+<article
+  class="coursework-desktop"
+  data-coursework-root
+  data-coursework-layout="static"
+  data-coursework-total={totalMedia}
+  lang={lang}
+>
+  <header class="coursework-record">
+    <div class="coursework-record__title">
+      <h1>
+        {titleLines.map((line) => <span>{line}</span>)}
+      </h1>
+    </div>
+    <div class="coursework-record__copy">
+      <p class="coursework-record__summary">{localized.summary}</p>
+      <dl class="coursework-record__meta">
+        <div>
+          <dt>{copy.sections}</dt>
+          <dd>{groups.length}</dd>
+        </div>
+        <div>
+          <dt>{copy.evidence}</dt>
+          <dd>{totalMedia}</dd>
+        </div>
+        {
+          project.year !== "—" && (
+            <div>
+              <dt>{lang === "en" ? "Record" : lang === "ja" ? "記録" : "记录"}</dt>
+              <dd>{project.year}</dd>
+            </div>
+          )
+        }
+      </dl>
+    </div>
+  </header>
+
+  <nav class="coursework-index" aria-label={copy.index}>
+    <ol>
+      {
+        groups.map((group) => (
+          <li>
+            <a href={`#coursework-${group.id}`}>
+              <span class="coursework-index__number" aria-hidden="true">{group.number}</span>
+              <span>{group.title}</span>
+              <span class="coursework-index__count">
+                {String(group.media.length).padStart(2, "0")} {copy.items}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </nav>
+
+  <div class="coursework-sections">
+    {
+      groups.map((group) => {
+        const headingId = `coursework-${group.id}-title`;
+        const stageId = `coursework-${group.id}-stage`;
+
+        return (
+          <section
+            class="coursework-section"
+            id={`coursework-${group.id}`}
+            aria-labelledby={headingId}
+            data-coursework-section
+            data-coursework-group={group.id}
+            data-coursework-count={group.media.length}
+            data-section-label={group.title}
+          >
+            <header class="coursework-section__bar">
+              <span class="coursework-section__number" aria-hidden="true">{group.number}</span>
+              <h2 id={headingId} tabindex="-1" data-coursework-section-heading>{group.title}</h2>
+              <span class="coursework-section__count">
+                {String(group.media.length).padStart(2, "0")} {copy.items}
+              </span>
+              <button
+                type="button"
+                class="coursework-section__reset"
+                data-coursework-reset
+                aria-controls={stageId}
+              >
+                {copy.reset}
+              </button>
+            </header>
+
+            <p class="coursework-section__description">{group.description}</p>
+
+            <div
+              class="coursework-stage"
+              id={stageId}
+              role="group"
+              aria-label={`${group.title}: ${copy.orderedWorkspace}`}
+              data-coursework-stage
+              data-static-label={`${group.title}: ${copy.orderedWorkspace}`}
+              data-spatial-label={`${group.title}: ${copy.workspace}`}
+              data-status-moved={copy.moved}
+              data-status-item-reset={copy.itemReset}
+              data-status-section-reset={copy.sectionReset}
+            >
+              {
+                group.media.map((item, itemIndex) => {
+                  const localizedMedia = getLocalizedMedia(item, lang);
+                  const placement = item.window ?? fallbackPlacements[group.id][itemIndex] ?? {
+                    x: 4 + (itemIndex % 3) * 26,
+                    y: 5 + itemIndex * 8,
+                    w: 40,
+                    z: (itemIndex + 1) * 10
+                  };
+                  const itemCode = `${group.number}.${String(itemIndex + 1).padStart(2, "0")}`;
+                  const itemTitleId = `coursework-${group.id}-${itemIndex + 1}-title`;
+                  const instructionId = `coursework-${group.id}-${itemIndex + 1}-instruction`;
+                  const captionId = `coursework-${group.id}-${itemIndex + 1}-caption`;
+                  const mediaKind = item.type === "video" ? copy.video : copy.image;
+                  const caption = localizedMedia.caption ?? `${copy.fallbackCaption} ${itemCode}`;
+                  const imageSrcset = item.type === "image" ? imageSrcsets.get(item.src) : undefined;
+                  const windowStyle = [
+                    `--coursework-x:${placement.x}%`,
+                    `--coursework-y:${placement.y}%`,
+                    `--coursework-window-width:${placement.w}%`,
+                    `--coursework-window-z:${placement.z}`
+                  ].join(";");
+
+                  return (
+                    <figure
+                      class="coursework-media-window"
+                      style={windowStyle}
+                      aria-labelledby={captionId}
+                      data-coursework-window
+                      data-coursework-group={group.id}
+                      data-coursework-index={itemCode}
+                      data-media-type={item.type}
+                      data-initial-x={placement.x}
+                      data-initial-y={placement.y}
+                      data-initial-width={placement.w}
+                      data-initial-z={placement.z}
+                      data-window-x="0"
+                      data-window-y="0"
+                      data-item-label={itemCode}
+                    >
+                      <header class="coursework-media-window__bar">
+                        <button
+                          type="button"
+                          class="coursework-media-window__handle"
+                          data-coursework-handle
+                          disabled
+                          tabindex="-1"
+                          aria-hidden="true"
+                          aria-label={`${copy.move}: ${itemCode}, ${caption}`}
+                          aria-describedby={instructionId}
+                          aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home"
+                        >
+                          <span class="coursework-media-window__mark" aria-hidden="true"></span>
+                          <span class="coursework-media-window__code" id={itemTitleId}>{itemCode}</span>
+                          <span class="coursework-media-window__kind">{mediaKind}</span>
+                          <span class="coursework-media-window__move" aria-hidden="true">↕↔</span>
+                        </button>
+                      </header>
+                      <span class="coursework-sr-only" id={instructionId} hidden>{copy.moveInstruction}</span>
+
+                      <div class="coursework-media-window__media" data-coursework-media-body>
+                        {
+                          item.type === "image" ? (
+                            <ProjectImage
+                              media={item}
+                              lang={lang}
+                              eager={false}
+                              sizes="(max-width: 959px) calc(100vw - 3rem), 46vw"
+                              srcset={imageSrcset}
+                            />
+                          ) : (
+                            <video
+                              controls
+                              playsinline
+                              preload="metadata"
+                              aria-label={localizedMedia.alt}
+                              data-coursework-video
+                            >
+                              <source src={item.src} type="video/mp4" />
+                              {copy.videoFallback}
+                            </video>
+                          )
+                        }
+                      </div>
+                      <figcaption id={captionId}>
+                        <span aria-hidden="true">{itemCode}</span>
+                        <span>{caption}</span>
+                      </figcaption>
+                    </figure>
+                  );
+                })
+              }
+            </div>
+
+            <p
+              class="coursework-sr-only"
+              aria-live="polite"
+              aria-atomic="true"
+              data-coursework-status
+            ></p>
+          </section>
+        );
+      })
+    }
+  </div>
+
+  {
+    localized.body.length > 0 && (
+      <section class="coursework-record-note" aria-label={copy.recordNote}>
+        <h2>{copy.recordNote}</h2>
+        <div>
+          {localized.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+    )
+  }
+
+  <nav class="coursework-next" aria-label={copy.next}>
+    <a href={`/${lang}/works/${nextProject.slug}/`}>
+      <span>{copy.next}</span>
+      <strong>{nextLocalized.title}</strong>
+      <span aria-hidden="true">↗</span>
+    </a>
+  </nav>
+</article>
+
+<script>
+  import "../scripts/coursework-desktop";
+</script>

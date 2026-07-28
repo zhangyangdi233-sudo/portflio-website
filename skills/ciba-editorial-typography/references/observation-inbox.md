@@ -1,0 +1,57 @@
+# Typography observation inbox
+
+Capture exact user feedback before interpretation. An entry does not become a permanent rule until
+the user confirms the proposed keep / avoid / implementation interpretation.
+
+## TYPE-20260728-EDITORIAL-DISTILLATION
+
+- Captured: 2026-07-28
+- Context: home title and top metadata review
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 字间距有点问题 稍微调整一下 并且escape project可以换行 escape换行project 这样。图2的这些文字我觉得没有必要，遵从少即是多（less is more）的原则。在页面设计以及排版上面，一些细微的字体调整以及图片、中宫等排版，可以参考一些时尚杂志或者设计类杂志的文字排版。
+
+### Provisional interpretation — not permanent taste
+
+- Keep: monumental live type, semantic two-line titles, quiet hierarchy, and evidence-led image
+  composition.
+- Avoid: display tracking that separates letters, repeated archive/edition labels, and metadata that
+  restates the page.
+- Current implementation decision: remove the redundant home metadata row; track Latin titles no
+  tighter than `-0.03em`; compose `ESCAPE / PROJECT`; keep CJK display tracking at zero.
+
+## TYPE-20260728-NESTED-WINDOWS
+
+- Captured: 2026-07-28
+- Context: University Coursework interaction
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 我希望分区是三个大的窗口，每个窗口里面是无数个小的模拟电脑窗口一样的界面，并且在这个大的窗口内，所有展示的作品可以通过鼠标拖拽。这里可以查看并且完全模仿 https://zutomayo.net 这个网站中的窗口。
+
+### Provisional interpretation — not permanent taste
+
+- Keep: direct spatial manipulation, overlapping evidence windows, visible title bars, and active
+  stacking.
+- Avoid: copying the reference site's purple skin, typeface, art, buttons, branding, or code.
+- Current implementation decision: three bounded CIBA desktop chapters, dedicated drag handles,
+  videos with independent controls, and a semantic mobile fallback.
+
+
+## TYPE-20260728-HOME-HERO-COPY-DISTILLATION
+
+- Captured: 2026-07-28 UTC
+- Context: Japanese home hero footer copy review, screenshot 2026-07-28 22.10.55
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 这个文案可以稍微改一下或者直接去除掉 以你的ui审美排版来
+
+### Provisional interpretation — not permanent taste
+
+- Keep: one quiet practice line and one clear route into the work.
+- Avoid: listing every project inside the hero or explaining what the portfolio already shows.
+- Current implementation decision: remove the hero paragraph; retain only
+  `游戏 / 网页 / 影像`, its English/Japanese equivalents, and a shortened View Works action.

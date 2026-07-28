@@ -1,0 +1,4 @@
+interface:
+  display_name: "CIBA Editorial Typography"
+  short_description: "Multilingual editorial type for CIBA portfolios"
+  default_prompt: "Apply $ciba-editorial-typography to compose locale-specific titles, distil metadata, organise evidence, and record explicit feedback without inventing taste."

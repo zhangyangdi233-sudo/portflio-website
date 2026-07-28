@@ -11,6 +11,7 @@ interface Props {
   wake?: boolean;
   class?: string;
   sizes?: string;
+  srcset?: string;
 }
 
 const {
@@ -20,7 +21,8 @@ const {
   decorative = false,
   wake = false,
   class: className,
-  sizes
+  sizes,
+  srcset
 } = Astro.props;
 const { width, height } = await getPublicImageMetadata(media.src);
 const localized = getLocalizedMedia(media, lang);
@@ -34,6 +36,7 @@ const wakeAttribute = wake ? { "data-wake-image": "" } : {};
   width={width}
   height={height}
   sizes={sizes}
+  srcset={srcset}
   loading={eager ? "eager" : "lazy"}
   fetchpriority={eager ? "high" : undefined}
   decoding="async"

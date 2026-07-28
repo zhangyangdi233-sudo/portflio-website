@@ -71,7 +71,7 @@ const windowStyle = [
   <div class="v3-work-window__body">
     <div class="v3-work-window__record">
       <dl>
-        <div><dt>{copy.year}</dt><dd>{project.year}</dd></div>
+        {project.year !== "—" && <div><dt>{copy.year}</dt><dd>{project.year}</dd></div>}
         <div><dt>{copy.medium}</dt><dd>{localized.medium ?? project.medium}</dd></div>
         <div><dt>{copy.status}</dt><dd>{localized.status ?? project.status}</dd></div>
       </dl>

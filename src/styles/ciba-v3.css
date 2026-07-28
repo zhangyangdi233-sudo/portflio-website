@@ -10,6 +10,9 @@
   --ciba-acid: #c6ff00;
   --ciba-rule: rgba(244, 240, 221, 0.42);
   --ciba-rule-soft: rgba(244, 240, 221, 0.14);
+  --ciba-muted-soft: rgba(244, 240, 221, 0.68);
+  --ciba-muted: rgba(244, 240, 221, 0.72);
+  --ciba-caption: rgba(244, 240, 221, 0.86);
   --ciba-header-height: 64px;
   --ciba-sans: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
   --ciba-mono: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
@@ -176,7 +179,7 @@ body.ciba-v3 .site-footer a:hover {
   position: relative;
   display: grid;
   min-height: calc(100svh - var(--ciba-header-height));
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto;
   gap: 1rem;
   padding: 1.2rem clamp(1rem, 2.8vw, 2.5rem) 1.5rem;
   overflow: hidden;
@@ -184,7 +187,6 @@ body.ciba-v3 .site-footer a:hover {
   background: var(--ciba-night);
 }
 
-.v3-home-hero__meta,
 .v3-home-hero__footer,
 .v3-section-heading,
 .v3-cinema-layer__meta,
@@ -195,17 +197,6 @@ body.ciba-v3 .site-footer a:hover {
   font-family: var(--ciba-mono);
 }
 
-.v3-home-hero__meta {
-  display: flex;
-  justify-content: space-between;
-  color: var(--ciba-acid);
-  font-size: clamp(0.65rem, 0.8vw, 0.78rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.v3-home-hero__meta p,
 .v3-home-hero__footer p {
   margin: 0;
 }
@@ -221,7 +212,9 @@ body.ciba-v3 .site-footer a:hover {
   font-size: clamp(7rem, 25.5vw, 26rem);
   font-weight: 900;
   line-height: 0.75;
-  letter-spacing: -0.095em;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  letter-spacing: -0.03em;
   white-space: nowrap;
 }
 
@@ -245,16 +238,12 @@ body.ciba-v3 .site-footer a:hover {
   display: flex;
   height: 0.82em;
   align-items: center;
+  overflow: hidden;
   line-height: 0.82;
 }
 
 [data-v3-letter-title].is-letter-active .v3-letter-track {
   transform: translateY(-50%);
-}
-
-.v3-letter-space {
-  display: inline-block;
-  width: 0.24em;
 }
 
 .v3-home-hero__footer {
@@ -270,14 +259,6 @@ body.ciba-v3 .site-footer a:hover {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-
-.v3-home-hero__statement {
-  max-width: 54rem;
-  margin-top: 0.55rem !important;
-  font-family: var(--ciba-sans);
-  font-size: clamp(1rem, 1.45vw, 1.35rem);
-  line-height: 1.45;
 }
 
 .v3-action-link,
@@ -367,7 +348,7 @@ body.ciba-v3 .site-footer a:hover {
   font-size: clamp(2.6rem, 6vw, 6.5rem);
   font-weight: 850;
   line-height: 0.86;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
@@ -464,24 +445,40 @@ body.ciba-v3 .site-footer a:hover {
   left: clamp(1rem, 2.8vw, 2.5rem);
   z-index: 30;
   display: flex;
-  width: min(94vw, 13ch);
+  width: min(94vw, 16ch);
   margin: 0;
   flex-wrap: wrap;
+  gap: 0.08em 0.2em;
   align-items: flex-start;
   color: var(--ciba-paper);
   font-family: var(--ciba-sans);
   font-size: clamp(4.8rem, 12.5vw, 12.5rem);
   font-weight: 900;
-  line-height: 0.77;
-  letter-spacing: -0.08em;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
   overflow-wrap: normal;
   pointer-events: none;
+  word-break: keep-all;
 }
 
 html:lang(ja) .v3-cinema-layer__title,
 html:lang(zh) .v3-cinema-layer__title {
-  line-height: 0.82;
-  letter-spacing: -0.07em;
+  line-height: 1;
+  letter-spacing: 0;
+  line-break: strict;
+  word-break: normal;
+}
+
+.v3-title-word {
+  display: inline-flex;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.v3-cinema-layer__title.has-editorial-break .v3-title-word:nth-child(2) {
+  flex-basis: 100%;
 }
 
 .v3-cinema-layer__media {
@@ -685,12 +682,13 @@ body.ciba-v3.ciba-works-v3 {
   font-size: clamp(3.6rem, 8vw, 8rem);
   font-weight: 900;
   line-height: 0.84;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.03em;
 }
 
 html:lang(ja) .v3-works-intro h1,
 html:lang(zh) .v3-works-intro h1 {
   font-size: clamp(3.2rem, 6.4vw, 6.5rem);
+  letter-spacing: 0;
   word-break: keep-all;
   overflow-wrap: normal;
 }
@@ -1020,7 +1018,14 @@ body.ciba-v3.project-page:not(.wake-page) .project-hero h1 {
   font-size: clamp(4rem, 9vw, 9rem);
   font-weight: 900;
   line-height: 0.82;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.03em;
+}
+
+html:lang(ja) .v3-section-heading h2,
+html:lang(zh) .v3-section-heading h2,
+html:lang(ja) body.ciba-v3.project-page:not(.wake-page) .project-hero h1,
+html:lang(zh) body.ciba-v3.project-page:not(.wake-page) .project-hero h1 {
+  letter-spacing: 0;
 }
 
 body.ciba-v3.project-page:not(.wake-page) .eyebrow,

@@ -36,12 +36,13 @@ describe("localized portfolio behavior", () => {
   });
 
   it("keeps placeholders editable without publishing them as portfolio evidence", () => {
-    expect(allProjects).toHaveLength(8);
+    expect(allProjects).toHaveLength(9);
     expect(getPublishedProjects(allProjects).map((project) => project.slug)).toEqual([
       "x-wheel",
       "emida",
       "wake-up",
-      "escape-project"
+      "escape-project",
+      "university-coursework"
     ]);
     expect(allProjects.filter((project) => project.published === false)).toHaveLength(4);
   });

@@ -9,6 +9,7 @@ const failures = [];
 
 const canonical = readJson("src/content/art-direction.json");
 const handoff = readJson("figma-export/design-tokens.json");
+const courseworkProject = readJson("src/content/projects/university-coursework.json");
 const pluginCode = readFileSync(join(root, "figma-export/figma-plugin/code.js"), "utf8");
 const motionCode = readFileSync(join(root, "src/scripts/portfolio-motion.ts"), "utf8");
 const artCss = readFileSync(join(root, "src/styles/ciba-v3.css"), "utf8");
@@ -17,8 +18,9 @@ const pluginColorBlock = pluginCode.match(/const colors = \{([\s\S]*?)\};/);
 const pluginWorkspaceBlock = pluginCode.match(/const workspace = (\{[\s\S]*?\n\});\n\nconst handoffFacts/);
 const pluginHandoffBlock = pluginCode.match(/const handoffFacts = (\{[\s\S]*?\n\});\n\nconst projects/);
 const pluginProjectsBlock = pluginCode.match(/const projects = \[([\s\S]*?)\n\];\n\nconst regular/);
+const pluginCourseworkBlock = pluginCode.match(/const courseworkSections = (\[[\s\S]*?\n\]);\n\nfunction rgb/);
 
-if (!pluginColorBlock || !pluginWorkspaceBlock || !pluginHandoffBlock || !pluginProjectsBlock) {
+if (!pluginColorBlock || !pluginWorkspaceBlock || !pluginHandoffBlock || !pluginProjectsBlock || !pluginCourseworkBlock) {
   throw new Error("Could not find canonical snapshot blocks in the Figma plugin.");
 }
 
@@ -27,6 +29,7 @@ const pluginColors = Object.fromEntries(
 );
 const pluginWorkspace = Function(`"use strict"; return (${pluginWorkspaceBlock[1]});`)();
 const pluginHandoffFacts = Function(`"use strict"; return (${pluginHandoffBlock[1]});`)();
+const pluginCourseworkSections = Function(`"use strict"; return (${pluginCourseworkBlock[1]});`)();
 const pluginProjects = [...pluginProjectsBlock[1].matchAll(/\{\s*slug:\s*"([^"]+)"([\s\S]*?)\n\s*\}/g)].map((match) => {
   const block = match[2];
   const field = (name) => block.match(new RegExp(`${name}:\\s*"([^"]*)"`))?.[1];
@@ -117,6 +120,89 @@ if (!same(pluginHandoffFacts, expectedHandoffFacts)) {
   failures.push("Figma plugin handoffFacts drifted from the accepted Home/Works/header/focus structure");
 }
 
+const groupOrder = ["blender", "maya", "ae-pr"];
+const courseworkSectionTitles = {
+  blender: "BLENDER",
+  maya: "MAYA",
+  "ae-pr": "AFTER EFFECTS / PREMIERE PRO"
+};
+const expectedCourseworkSections = Object.fromEntries(
+  groupOrder.map((group) => {
+    const media = courseworkProject.media.filter((item) => item.group === group);
+    return [
+      group,
+      {
+        itemCount: media.length,
+        imageCount: media.filter((item) => item.type === "image").length,
+        videoCount: media.filter((item) => item.type === "video").length
+      }
+    ];
+  })
+);
+const expectedPluginCourseworkSections = groupOrder.map((group, groupIndex) => {
+  const media = courseworkProject.media.filter((item) => item.group === group);
+  return {
+    slug: group,
+    index: String(groupIndex + 1).padStart(2, "0"),
+    title: courseworkSectionTitles[group],
+    count: media.length,
+    items: media.map((item, itemIndex) => ({
+      code: `${String(groupIndex + 1).padStart(2, "0")}.${String(itemIndex + 1).padStart(2, "0")}`,
+      title: item.caption.en,
+      type: item.type.toUpperCase(),
+      src: item.src,
+      x: item.window.x,
+      y: item.window.y,
+      w: item.window.w,
+      z: item.window.z
+    }))
+  };
+});
+const tokenCoursework = handoff.courseworkDesktopSystem;
+
+if (
+  courseworkProject.pageMode !== "coursework-desktop" ||
+  tokenCoursework?.frameName !== "07 Coursework / Three Desktop Sections" ||
+  tokenCoursework?.canonicalSource !== "src/content/projects/university-coursework.json" ||
+  tokenCoursework?.sectionCount !== groupOrder.length ||
+  tokenCoursework?.mediaWindowCount !== courseworkProject.media.length
+) {
+  failures.push(
+    "design-tokens coursework source, frame, section count, media count, or project mode drifted from canonical content"
+  );
+}
+
+if (!same(pluginCourseworkSections, expectedPluginCourseworkSections)) {
+  failures.push(
+    "Figma coursework identities, captions, types, source paths, positions, widths, or z-order drifted from the canonical project media"
+  );
+}
+
+for (const group of groupOrder) {
+  const tokenGroup = tokenCoursework?.sections?.[group];
+  const expected = expectedCourseworkSections[group];
+  const pluginGroup = pluginCourseworkSections.find((section) => section.slug === group);
+  const pluginCounts = pluginGroup
+    ? {
+        itemCount: pluginGroup.items.length,
+        imageCount: pluginGroup.items.filter((item) => item.type === "IMAGE").length,
+        videoCount: pluginGroup.items.filter((item) => item.type === "VIDEO").length
+      }
+    : null;
+
+  if (
+    !tokenGroup ||
+    !pluginGroup ||
+    tokenGroup.itemCount !== expected.itemCount ||
+    tokenGroup.imageCount !== expected.imageCount ||
+    tokenGroup.videoCount !== expected.videoCount ||
+    pluginGroup.count !== expected.itemCount ||
+    !same(pluginCounts, expected)
+  ) {
+    failures.push(`Figma coursework ${group} counts drifted from the canonical project media`);
+  }
+}
+
 for (const marker of [
   "function addHomeProjectStage",
   "Home project stage / current work",
@@ -127,9 +213,20 @@ for (const marker of [
   "Layout / WINDOWS / active",
   "Visible project status",
   "Focus outline / 3px acid / 3px offset",
-  "focusRing.strokeWeight = handoffFacts.focusOutlineWidth"
+  "focusRing.strokeWeight = handoffFacts.focusOutlineWidth",
+  "function courseworkHandoff",
+  "function courseworkSectionWindow",
+  "function courseworkMediaWindow",
+  "07 Coursework / Three Desktop Sections",
+  "Bounded inner stage",
+  "Title bar / drag handle / 44px website target",
+  "Video play control marker"
 ]) {
   if (!pluginCode.includes(marker)) failures.push(`Figma plugin is missing structural marker: ${marker}`);
+}
+
+for (const removedHomeLabel of ["ARTIST ARCHIVE / TOKYO", "DIGITAL PORTFOLIO / 2026"]) {
+  if (pluginCode.includes(removedHomeLabel)) failures.push(`Figma plugin still contains removed Home label: ${removedHomeLabel}`);
 }
 
 const pluginFrames = [...pluginCode.matchAll(
@@ -142,8 +239,8 @@ const pluginFrames = [...pluginCode.matchAll(
   height: Number(match[5])
 }));
 
-if (pluginFrames.length !== 6) {
-  failures.push(`Figma plugin must expose six literal top-level frame geometries; received ${pluginFrames.length}`);
+if (pluginFrames.length !== 7) {
+  failures.push(`Figma plugin must expose seven literal top-level frame geometries; received ${pluginFrames.length}`);
 }
 
 for (let index = 0; index < pluginFrames.length; index += 1) {
