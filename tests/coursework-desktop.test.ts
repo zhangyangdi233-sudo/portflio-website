@@ -16,7 +16,7 @@ describe("Coursework desktop interaction contract", () => {
     expect(component).toContain("data-coursework-handle");
     expect(component).toContain("data-coursework-reset");
     expect(component).toContain('aria-live="polite"');
-    expect(component).toContain('aria-keyshortcuts="ArrowLeft ArrowRight');
+    expect(component).toContain('aria-keyshortcuts="Enter Space ArrowLeft ArrowRight');
     expect(component).toContain("coursework-section__description");
     expect(component).toContain("data-static-label");
     expect(component).toContain("data-spatial-label");
@@ -44,6 +44,7 @@ describe("Coursework desktop interaction contract", () => {
 
     expect(script).toContain("const KEYBOARD_STEP = 16");
     expect(script).toContain("const KEYBOARD_STEP_LARGE = 48");
+    expect(script).toContain("const POINTER_SNAP_OFFSETS");
     expect(script).toContain("clampWindowPosition");
     expect(script).toContain("handle.setPointerCapture(event.pointerId)");
     expect(script).toContain("requestAnimationFrame(applyPendingPosition)");
@@ -54,6 +55,8 @@ describe("Coursework desktop interaction contract", () => {
     expect(script).toContain("clampSectionWindows()");
     expect(script).toContain("const syncAndClamp = () =>");
     expect(script).toContain("syncAndClamp();");
+    expect(script).toContain('event.type === "pointerup" && !drag.moved');
+    expect(script).toContain("if (event.detail === 0) cycleWindowPosition()");
   });
 
   it("uses spatial desktop layout and a static mobile/coarse-pointer fallback", () => {

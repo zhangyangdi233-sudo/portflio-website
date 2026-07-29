@@ -13,6 +13,14 @@ Use these as evidence anchors, then prefer current primary or institutional sour
 - W3C Understanding Use of Color: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color
 - W3C image accessibility: https://www.w3.org/WAI/tutorials/images/
 - W3C accessible audio/video: https://www.w3.org/WAI/media/av/
+- W3C Understanding Dragging Movements: https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html
+
+## Official artist-site information architecture
+
+- Hito Steyerl: https://www.hitosteyerl.net/
+- Atelier Lozano-Hemmer projects: https://www.lozano-hemmer.com/projects.php?order=title
+- Ryoji Ikeda projects: https://www.ryojiikeda.com/project/new/
+- Ian Cheng: https://iancheng.com/shows
 
 ## Design history and cinema
 
@@ -40,6 +48,12 @@ Use these as evidence anchors, then prefer current primary or institutional sour
 
 - ZUTOMAYO: https://zutomayo.net/
 - The Art of Cinema: https://www.theartofcinema.xyz/?ref=onepagelove
+
+## Open-source implementation comparison
+
+- Astro blog example: https://github.com/withastro/astro/tree/main/examples/blog
+- Accessible Astro Starter: https://github.com/incluud/accessible-astro-starter
+- Bigger Picture: https://github.com/henrygd/bigger-picture
 
 Facts from sources must be separated from visual inference. Do not treat source availability as permission to copy its expression or assets.
 

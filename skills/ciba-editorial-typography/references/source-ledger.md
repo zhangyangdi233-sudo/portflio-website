@@ -33,9 +33,9 @@ CIBA implementation decisions.
 - [WCAG 2.2 — Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
 - [WCAG 2.2 — Contrast minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
 - [WCAG 2.2 — Text spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html)
+- [WCAG 2.2 — Dragging movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html)
 
 ## Installed implementation reference
 
 - [Impeccable](https://github.com/pbakaus/impeccable), Apache-2.0. Used for its type, layout,
   distillation, and detector workflows. It does not define CIBA's visual direction.
-

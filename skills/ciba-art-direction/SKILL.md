@@ -14,6 +14,7 @@ Read these before making visual decisions:
 - `references/aesthetic-system.md` for the active design grammar and review gates.
 - `references/taste-ledger.md` for explicit user preferences and prior decisions.
 - `references/taste-inbox.md` when new feedback has been captured but not confirmed.
+- `references/evaluation-rubric.md` before a delivery or independent review.
 
 Read `references/originality-audit.md` before translating a named reference. Read
 `references/sources.md` when claims, provenance, or additional research are needed.
@@ -25,9 +26,13 @@ Read `references/originality-audit.md` before translating a named reference. Rea
 3. Choose exactly one narrative mode for the page using the selection rubric in `references/aesthetic-system.md`: `archive`, `cinematic`, `spatial`, or `editorial`.
 4. Choose at most one anomaly mechanism: a scroll-linked letter roll, a movable window field, one impossible spatial break, or one controlled signal interruption. A mechanism may recur at defined content changes, but do not introduce a second anomaly type on the same page.
 5. Apply the 70/20/10 balance: 70% conventional legibility, 20% narrative shell, 10% anomaly. Treat this as a review discipline, not a pixel quota.
-6. Implement interaction state before decorative animation. Every drag, close, filter, and route must work with reduced motion and keyboard input.
+6. Implement interaction state before decorative animation. Every drag, close, filter, and route
+   must work with reduced motion and keyboard input. Dragging also needs an equivalent
+   simple-pointer action that does not require a dragging gesture.
 7. Complete the palette/geometry/type/texture/motion/metaphor comparison in `references/originality-audit.md`. Name at least three materially changed axes for every named reference used in the delivered expression.
-8. Review with the gates in `references/aesthetic-system.md`. Remove any element that cannot explain its content or interaction role.
+8. Run the evidence-based pass in `references/evaluation-rubric.md`, preferably through an
+   independent Critic / Evaluator. Remove any element that cannot explain its content or interaction
+   role. Never treat the Evaluator's opinion as taste.
 9. Keep taste and outcomes separate. Record verified implementation outcomes in `references/outcome-log.md`; record taste only through the explicit-feedback confirmation workflow below.
 
 ## Originality boundary

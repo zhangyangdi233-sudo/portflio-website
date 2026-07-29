@@ -54,3 +54,16 @@ implementation guidance, but they do not become personal taste without explicit 
   overflow at either tested mobile width.
 - These are measured implementation outcomes and do not create a new permanent typography
   preference.
+
+## 2026-07-29 — Confirmed-only typography learning
+
+- Typography feedback now follows a deterministic
+  `observation-inbox.md` → `promote_typography_observation.py` →
+  `typography-ledger.md` path.
+- The promotion command rejects unknown inbox IDs and duplicate promotions, records the exact
+  confirmation, and keeps technical/accessibility outcomes separate from personal preference.
+- An isolated test captured one synthetic observation, promoted it once, verified the ledger, and
+  rejected a duplicate. The production typography ledger remains empty because no pending
+  interpretation has been explicitly confirmed by the artist.
+- The complete 42-test suite and the Skill Creator validator passed. This measured result changes
+  workflow confidence only; it does not infer taste.

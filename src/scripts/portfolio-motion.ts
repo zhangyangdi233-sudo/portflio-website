@@ -11,6 +11,13 @@ const forceReducedMotion = params.get("motion") === "reduce";
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const workspaceTokens = artDirection.workspace;
 const desktopPointerQuery = window.matchMedia(`(min-width: ${workspaceTokens.breakpoint}px) and (pointer: fine)`);
+const POINTER_SNAP_OFFSETS = [
+  { x: 0, y: 0 },
+  { x: 48, y: 48 },
+  { x: -48, y: 48 },
+  { x: 48, y: -48 },
+  { x: -48, y: -48 }
+] as const;
 
 if (forceReducedMotion) document.documentElement.dataset.motion = "reduce";
 
@@ -34,6 +41,7 @@ type DragState = {
   startClientY: number;
   startX: number;
   startY: number;
+  moved: boolean;
 };
 
 function clampFloatingMedia(item: HTMLElement, stage: HTMLElement, desiredX: number, desiredY: number) {
@@ -63,6 +71,16 @@ function setFloatingPosition(item: HTMLElement, x: number, y: number) {
 function initializeFloatingMedia(item: HTMLElement, stage: HTMLElement) {
   let drag: DragState | null = null;
 
+  const cycleFloatingPosition = () => {
+    if (!canDrag()) return;
+    const currentIndex = Number.parseInt(item.dataset.pointerSnap ?? "0", 10) || 0;
+    const nextIndex = (currentIndex + 1) % POINTER_SNAP_OFFSETS.length;
+    const offset = POINTER_SNAP_OFFSETS[nextIndex];
+    const next = clampFloatingMedia(item, stage, offset.x, offset.y);
+    item.dataset.pointerSnap = String(nextIndex);
+    setFloatingPosition(item, next.x, next.y);
+  };
+
   item.addEventListener("pointerdown", (event) => {
     if (!canDrag() || event.button !== 0) return;
     event.preventDefault();
@@ -71,7 +89,8 @@ function initializeFloatingMedia(item: HTMLElement, stage: HTMLElement) {
       startClientX: event.clientX,
       startClientY: event.clientY,
       startX: readNumber(item.dataset.dragX),
-      startY: readNumber(item.dataset.dragY)
+      startY: readNumber(item.dataset.dragY),
+      moved: false
     };
     item.classList.add("is-dragging");
     item.setPointerCapture(event.pointerId);
@@ -79,6 +98,9 @@ function initializeFloatingMedia(item: HTMLElement, stage: HTMLElement) {
 
   item.addEventListener("pointermove", (event) => {
     if (!drag || drag.pointerId !== event.pointerId) return;
+    if (Math.hypot(event.clientX - drag.startClientX, event.clientY - drag.startClientY) > 4) {
+      drag.moved = true;
+    }
     const next = clampFloatingMedia(
       item,
       stage,
@@ -90,9 +112,11 @@ function initializeFloatingMedia(item: HTMLElement, stage: HTMLElement) {
 
   const endDrag = (event: PointerEvent) => {
     if (!drag || drag.pointerId !== event.pointerId) return;
+    const shouldCycle = event.type === "pointerup" && !drag.moved;
     item.classList.remove("is-dragging");
     if (item.hasPointerCapture(event.pointerId)) item.releasePointerCapture(event.pointerId);
     drag = null;
+    if (shouldCycle) cycleFloatingPosition();
   };
 
   item.addEventListener("pointerup", endDrag);
@@ -100,8 +124,14 @@ function initializeFloatingMedia(item: HTMLElement, stage: HTMLElement) {
 
   item.addEventListener("keydown", (event) => {
     if (!canDrag()) return;
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      cycleFloatingPosition();
+      return;
+    }
     if (event.key === "Home") {
       event.preventDefault();
+      item.dataset.pointerSnap = "0";
       setFloatingPosition(item, 0, 0);
       return;
     }
@@ -139,6 +169,11 @@ if (cinema) {
     layer.inert = !linear && !active;
     layer.querySelectorAll<HTMLElement>("[data-v3-floating-media]").forEach((item) => {
       item.tabIndex = linear || active ? 0 : -1;
+      if (linear) {
+        item.removeAttribute("role");
+      } else {
+        item.setAttribute("role", "button");
+      }
     });
   };
 
@@ -309,6 +344,17 @@ if (workspace) {
     const minimize = item.querySelector<HTMLButtonElement>("[data-window-minimize]");
     let drag: DragState | null = null;
 
+    const cycleWindowPosition = () => {
+      if (handle?.disabled) return;
+      const currentIndex = Number.parseInt(item.dataset.pointerSnap ?? "0", 10) || 0;
+      const nextIndex = (currentIndex + 1) % POINTER_SNAP_OFFSETS.length;
+      const offset = POINTER_SNAP_OFFSETS[nextIndex];
+      const next = clampWindowPosition(item, offset.x, offset.y);
+      item.dataset.pointerSnap = String(nextIndex);
+      bringToFront(item);
+      setWindowPosition(item, next.x, next.y);
+    };
+
     item.addEventListener("pointerdown", () => bringToFront(item));
     item.addEventListener("focusin", () => bringToFront(item));
     minimize?.addEventListener("click", () => minimizeWindow(item));
@@ -321,7 +367,8 @@ if (workspace) {
         startClientX: event.clientX,
         startClientY: event.clientY,
         startX: readNumber(item.dataset.windowDx),
-        startY: readNumber(item.dataset.windowDy)
+        startY: readNumber(item.dataset.windowDy),
+        moved: false
       };
       bringToFront(item);
       handle.setPointerCapture(event.pointerId);
@@ -329,6 +376,9 @@ if (workspace) {
 
     handle?.addEventListener("pointermove", (event) => {
       if (!drag || drag.pointerId !== event.pointerId) return;
+      if (Math.hypot(event.clientX - drag.startClientX, event.clientY - drag.startClientY) > 4) {
+        drag.moved = true;
+      }
       const next = clampWindowPosition(
         item,
         drag.startX + event.clientX - drag.startClientX,
@@ -339,12 +389,17 @@ if (workspace) {
 
     const endDrag = (event: PointerEvent) => {
       if (!drag || drag.pointerId !== event.pointerId || !handle) return;
+      const shouldCycle = event.type === "pointerup" && !drag.moved;
       if (handle.hasPointerCapture(event.pointerId)) handle.releasePointerCapture(event.pointerId);
       drag = null;
+      if (shouldCycle) cycleWindowPosition();
     };
 
     handle?.addEventListener("pointerup", endDrag);
     handle?.addEventListener("pointercancel", endDrag);
+    handle?.addEventListener("click", (event) => {
+      if (event.detail === 0) cycleWindowPosition();
+    });
 
     handle?.addEventListener("keydown", (event) => {
       if (handle.disabled) return;
@@ -355,6 +410,7 @@ if (workspace) {
       }
       if (event.key === "Home") {
         event.preventDefault();
+        item.dataset.pointerSnap = "0";
         setWindowPosition(item, 0, 0);
         return;
       }
@@ -411,6 +467,7 @@ if (workspace) {
     currentFilter = "all";
     windows.forEach((item) => {
       item.style.removeProperty("z-index");
+      item.dataset.pointerSnap = "0";
       setWindowPosition(item, 0, 0);
       item.classList.remove("is-active-window");
     });

@@ -25,7 +25,7 @@ const copy = {
     selectedNote: "五项公开记录：两件开发中的游戏、两件 2023 年网页作品，以及一组大学课题练习。",
     concept: "概念 / CONCEPT",
     record: "打开项目记录",
-    imageHint: "桌面端可拖动图像；方向键移动，Home 复位。悬浮或键盘聚焦时显示彩色。",
+    imageHint: "桌面端单击图像切换预设位置，也可拖动；方向键移动，Home 复位。悬浮或键盘聚焦时显示彩色。",
     index: "作品索引",
     indexNote: "标题 / 年份 / 媒介 / 状态"
   },
@@ -36,7 +36,7 @@ const copy = {
     selectedNote: "Five records are public: two games in development, two web-based works from 2023, and one university coursework archive.",
     concept: "CONCEPT",
     record: "Open project record",
-    imageHint: "On desktop, drag images; use arrow keys to move and Home to reset. Hover or focus to reveal colour.",
+    imageHint: "On desktop, click an image to cycle preset positions or drag it; use arrow keys to move and Home to reset. Hover or focus reveals colour.",
     index: "Works index",
     indexNote: "Title / year / medium / status"
   },
@@ -47,7 +47,7 @@ const copy = {
     selectedNote: "開発中のゲーム2点、2023年のウェブ作品2点、大学課題の記録1点を公開しています。",
     concept: "コンセプト",
     record: "作品記録を開く",
-    imageHint: "デスクトップでは画像をドラッグでき、矢印キーで移動、Homeで復位します。ホバーまたはフォーカスでカラー表示になります。",
+    imageHint: "デスクトップでは画像をクリックしてプリセット位置を切り替えるか、ドラッグできます。矢印キーで移動し、Homeで復位します。ホバーまたはフォーカスでカラー表示になります。",
     index: "作品索引",
     indexNote: "題名 / 年 / メディア / 状態"
   }
@@ -164,7 +164,7 @@ const composeTitleWords = (value: string) => {
                             tabindex="0"
                             aria-label={localizedMedia.alt}
                             aria-describedby="v3-media-instruction"
-                            aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home"
+                            aria-keyshortcuts="Enter Space ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home"
                             style={`--media-x:${position.x};--media-y:${position.y};--media-w:${position.w};--media-r:${position.r}deg;--media-z:${mediaIndex + 1}`}
                           >
                             <ProjectImage

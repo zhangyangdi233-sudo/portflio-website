@@ -13,9 +13,10 @@ language is composed rather than merely translated.
 Before changing a CIBA interface:
 
 1. Read `references/editorial-system.md`.
-2. Read the relevant entries in `references/observation-inbox.md`.
-3. Read `references/outcome-log.md` when revising an existing surface.
-4. Use `references/source-ledger.md` for provenance; do not substitute remembered claims.
+2. Read `references/typography-ledger.md` for confirmed preferences.
+3. Read the relevant entries in `references/observation-inbox.md`.
+4. Read `references/outcome-log.md` when revising an existing surface.
+5. Use `references/source-ledger.md` for provenance; do not substitute remembered claims.
 
 ## Workflow
 
@@ -105,8 +106,22 @@ Explicit user feedback is evidence; silence and successful builds are not taste.
 
 2. Keep status `pending interpretation and explicit confirmation`.
 3. Propose a keep / avoid / implementation interpretation to the user.
-4. Promote a rule into `references/editorial-system.md` only after the user explicitly confirms
-   that interpretation.
+4. Promote the confirmed interpretation with:
+
+   ```bash
+   python3 scripts/promote_typography_observation.py \
+     --id "TYPE-..." \
+     --signal "confirmed neutral interpretation" \
+     --keep "confirmed property to retain" \
+     --avoid "confirmed property to reduce" \
+     --decision "confirmed future rule" \
+     --confirmation "user's exact confirmation words" \
+     --context "page or artifact"
+   ```
+
+   The confirmed preference belongs in `references/typography-ledger.md`. Change
+   `references/editorial-system.md` only when a reusable technical or accessibility rule has
+   independent evidence.
 5. Record measured build, accessibility, or usability results in `references/outcome-log.md`.
    Outcomes improve implementation guidance but never become personal taste automatically.
 
@@ -122,4 +137,3 @@ A typography change is complete only when:
 - mobile is recomposed rather than uniformly shrunk;
 - keyboard, zoom, and reduced-motion checks pass;
 - the exact changed behaviour is recorded in the outcome log.
-

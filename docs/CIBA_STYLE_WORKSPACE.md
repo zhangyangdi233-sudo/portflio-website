@@ -50,7 +50,10 @@ The command fails if the website and Figma handoff palettes or website typograph
 
 ## Long-term aesthetic learning
 
-The Skill never treats silence or an agent's opinion as taste. New feedback is captured verbatim
-in `taste-inbox.md`; a design interpretation reaches `taste-ledger.md` only after explicit user
-confirmation. Verified accessibility or usability outcomes go to `outcome-log.md` and do not
-silently alter personal taste.
+The Skills never treat silence or an agent's opinion as taste. Art-direction feedback is captured
+verbatim in `taste-inbox.md`; a confirmed interpretation reaches `taste-ledger.md` through
+`promote_taste_observation.py`. Typography feedback follows the parallel
+`observation-inbox.md` → `promote_typography_observation.py` → `typography-ledger.md` path.
+Verified accessibility or usability outcomes go to `outcome-log.md` and do not silently alter
+personal taste. Before delivery, use `ciba-art-direction/references/evaluation-rubric.md` for an
+evidence-based independent review.

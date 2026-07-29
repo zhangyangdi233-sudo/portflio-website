@@ -2,6 +2,13 @@ const SPATIAL_LAYOUT_QUERY = "(min-width: 960px) and (pointer: fine)";
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 const KEYBOARD_STEP = 16;
 const KEYBOARD_STEP_LARGE = 48;
+const POINTER_SNAP_OFFSETS = [
+  { x: 0, y: 0 },
+  { x: 48, y: 48 },
+  { x: -48, y: 48 },
+  { x: 48, y: -48 },
+  { x: -48, y: -48 }
+] as const;
 
 type Point = {
   x: number;
@@ -16,6 +23,7 @@ type DragState = {
   startY: number;
   pending: Point | null;
   frame: number | null;
+  moved: boolean;
 };
 
 const clamp = (minimum: number, maximum: number, value: number) =>
@@ -110,6 +118,7 @@ function initializeCourseworkRoot(root: HTMLElement) {
 
     const resetWindow = (item: HTMLElement) => {
       const initialZ = readNumber(item.dataset.initialZ);
+      item.dataset.pointerSnap = "0";
       setWindowPosition(item, 0, 0);
       item.style.zIndex = String(initialZ);
       item.classList.remove("is-active-window", "is-dragging");
@@ -143,6 +152,18 @@ function initializeCourseworkRoot(root: HTMLElement) {
       if (!handle) return;
 
       let drag: DragState | null = null;
+
+      const cycleWindowPosition = () => {
+        if (!isSpatial() || handle.disabled) return;
+        const currentIndex = Number.parseInt(item.dataset.pointerSnap ?? "0", 10) || 0;
+        const nextIndex = (currentIndex + 1) % POINTER_SNAP_OFFSETS.length;
+        const offset = POINTER_SNAP_OFFSETS[nextIndex];
+        const next = clampWindowPosition(item, stage, offset.x, offset.y);
+        item.dataset.pointerSnap = String(nextIndex);
+        bringToFront(item);
+        setWindowPosition(item, next.x, next.y);
+        announce(section, positionMessage(item));
+      };
 
       const applyPendingPosition = () => {
         if (!drag?.pending) return;
@@ -197,7 +218,8 @@ function initializeCourseworkRoot(root: HTMLElement) {
           startX: readNumber(item.dataset.windowX),
           startY: readNumber(item.dataset.windowY),
           pending: null,
-          frame: null
+          frame: null,
+          moved: false
         };
         item.classList.add("is-dragging");
         handle.setPointerCapture(event.pointerId);
@@ -206,6 +228,9 @@ function initializeCourseworkRoot(root: HTMLElement) {
       window.addEventListener("pointermove", (event) => {
         if (!drag || drag.pointerId !== event.pointerId) return;
         event.preventDefault();
+        if (Math.hypot(event.clientX - drag.startClientX, event.clientY - drag.startClientY) > 4) {
+          drag.moved = true;
+        }
         queuePosition({
           x: drag.startX + event.clientX - drag.startClientX,
           y: drag.startY + event.clientY - drag.startClientY
@@ -214,17 +239,25 @@ function initializeCourseworkRoot(root: HTMLElement) {
 
       const finishDrag = (event: PointerEvent) => {
         if (!drag || drag.pointerId !== event.pointerId) return;
+        const shouldCycle = event.type === "pointerup" && !drag.moved;
         if (drag.pending) applyPendingPosition();
         item.classList.remove("is-dragging");
         if (handle.hasPointerCapture(event.pointerId)) {
           handle.releasePointerCapture(event.pointerId);
         }
         drag = null;
-        announce(section, positionMessage(item));
+        if (shouldCycle) {
+          cycleWindowPosition();
+        } else {
+          announce(section, positionMessage(item));
+        }
       };
 
       window.addEventListener("pointerup", finishDrag);
       window.addEventListener("pointercancel", finishDrag);
+      handle.addEventListener("click", (event) => {
+        if (event.detail === 0) cycleWindowPosition();
+      });
 
       handle.addEventListener("keydown", (event) => {
         if (!isSpatial() || handle.disabled) return;

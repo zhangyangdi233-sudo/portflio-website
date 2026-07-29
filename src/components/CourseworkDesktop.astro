@@ -41,7 +41,7 @@ const copy = {
     reset: "重置本分区",
     resetItem: "恢复素材初始位置",
     move: "移动素材窗口",
-    moveInstruction: "仅拖动标题栏。方向键移动 16 像素，Shift 加方向键移动 48 像素，Home 恢复初始位置。",
+    moveInstruction: "单击标题栏切换预设位置，也可拖动。方向键移动 16 像素，Shift 加方向键移动 48 像素，Home 恢复初始位置。",
     image: "图像",
     video: "视频",
     videoFallback: "当前浏览器无法播放此 MP4 视频。",
@@ -62,7 +62,7 @@ const copy = {
     reset: "Reset this section",
     resetItem: "Restore the item's initial position",
     move: "Move media window",
-    moveInstruction: "Drag only the title bar. Arrow keys move 16 pixels, Shift plus an arrow moves 48 pixels, and Home restores the initial position.",
+    moveInstruction: "Click the title bar to cycle preset positions or drag it. Arrow keys move 16 pixels, Shift plus an arrow moves 48 pixels, and Home restores the initial position.",
     image: "Image",
     video: "Video",
     videoFallback: "This browser cannot play the MP4 video.",
@@ -83,7 +83,7 @@ const copy = {
     reset: "この区分をリセット",
     resetItem: "資料を初期位置に戻す",
     move: "資料ウィンドウを移動",
-    moveInstruction: "タイトルバーのみをドラッグします。矢印キーで 16px、Shift と矢印キーで 48px 移動し、Home で初期位置に戻します。",
+    moveInstruction: "タイトルバーをクリックしてプリセット位置を切り替えるか、ドラッグします。矢印キーで 16px、Shift と矢印キーで 48px 移動し、Home で初期位置に戻します。",
     image: "画像",
     video: "動画",
     videoFallback: "このブラウザでは MP4 動画を再生できません。",
@@ -338,7 +338,7 @@ const titleLines =
                           aria-hidden="true"
                           aria-label={`${copy.move}: ${itemCode}, ${caption}`}
                           aria-describedby={instructionId}
-                          aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home"
+                          aria-keyshortcuts="Enter Space ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home"
                         >
                           <span class="coursework-media-window__mark" aria-hidden="true"></span>
                           <span class="coursework-media-window__code" id={itemTitleId}>{itemCode}</span>

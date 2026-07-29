@@ -18,7 +18,7 @@ describe("delivery guardrails", () => {
     expect(layout).toContain('class:list={["ciba-v3", pageClass]}');
     expect(header).toContain('aria-current={worksIsCurrent ? "page" : undefined}');
     expect(window).toMatch(/<button[\s\S]*?data-window-handle/);
-    expect(window).toContain('aria-keyshortcuts="ArrowLeft ArrowRight');
+    expect(window).toContain('aria-keyshortcuts="Enter Space ArrowLeft ArrowRight');
     expect(window).toMatch(/data-window-handle[\s\S]*?disabled[\s\S]*?tabindex="-1"[\s\S]*?aria-hidden="true"/);
     expect(window).toContain("artDirection.motion.dragKeyboardStep");
     expect(window).toContain('<h2 class="sr-only" id={titleId}>{localized.title}</h2>');
@@ -26,7 +26,7 @@ describe("delivery guardrails", () => {
     expect(home).toContain("data-v3-floating-media");
     expect(home).toContain('tabindex="0"');
     expect(home).toContain('aria-describedby="v3-media-instruction"');
-    expect(home).toContain('aria-keyshortcuts="ArrowLeft ArrowRight');
+    expect(home).toContain('aria-keyshortcuts="Enter Space ArrowLeft ArrowRight');
     expect(home).toContain("data-v3-letter-title");
     expect(projectMedia).toContain("data-project-media-focus");
     expect(projectMedia).toContain('tabindex="0"');
@@ -61,6 +61,10 @@ describe("delivery guardrails", () => {
     expect(css).toContain("--workspace-height, 760px");
     expect(motion).toContain("resolveWorkspaceLayout(layout, desktopPointerQuery.matches, isReduced())");
     expect(motion).toContain('handle.setAttribute("aria-hidden", canMove ? "false" : "true")');
+    expect(motion).toContain("const POINTER_SNAP_OFFSETS");
+    expect(motion).toContain('event.type === "pointerup" && !drag.moved');
+    expect(motion).toContain('event.key === "Enter" || event.key === " "');
+    expect(motion).toContain("if (event.detail === 0) cycleWindowPosition()");
     expect(gitignore).toContain("docs/design-references/the-art-of-cinema-*.png");
     expect(gitignore).toContain("docs/design-references/zutomayo-*.png");
     expect(readdirSync(join(root, "figma-export/screenshots")).filter((name) => name.endsWith(".png"))).toEqual([]);

@@ -123,3 +123,28 @@ feedback captured through the taste inbox and confirmed before promotion.
   built-site source assertions, desktop/mobile browser checks, and a zero-warning/error console.
 - `TASTE-20260729T064615091716Z-1ed4f14a` records the exact feedback but remains pending; this
   implementation does not infer or promote a broader permanent preference.
+
+## 2026-07-29 — Evidence refresh, evaluation gate, and simple-pointer recovery
+
+- The professor-facing evidence architecture was rechecked against 35 linked sources, including
+  current RCA guidance, four official artist sites, W3C drag guidance, and three primary
+  open-source repositories. Facts, observations, design inferences, and unknown applicant facts
+  remain separate.
+- A seven-gate delivery rubric now covers professor scan, project evidence, interaction recovery,
+  visual discipline, multilingual composition, originality/rights, and operational parity. Figma
+  Team Project import is the only partial gate and is recorded as an external P2 rather than
+  represented as complete.
+- Home images, Works title bars, and Coursework title bars now use the existing surface as a
+  simple-pointer control: one click cycles through bounded preset offsets while drag and arrow-key
+  movement remain available. No new decorative control was added.
+- Browser verification measured each click from `0,0` to `48,48`. A Home drag then moved the same
+  image to `168,98` without a duplicate click-snap; reduced motion exposed all five Home layers.
+  All five Coursework videos remained at `readyState=4` with no media error, and the browser log
+  contained no warning or error.
+- Both CIBA Skills pass the Skill Creator package validator. Isolated learning tests verify that
+  captured art-direction and typography feedback can be promoted exactly once only after an
+  explicit confirmation record.
+- Verification passed 42 tests, Astro diagnostics, design drift, the 25-route static build,
+  built-site contracts, both Skill validators, and browser interaction checks.
+- No result in this audit was promoted into a taste ledger. Two requested independent evaluator
+  agents failed to return a verdict and were closed; their silence is not evidence.

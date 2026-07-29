@@ -80,6 +80,21 @@ present admissions heuristics as curator requirements.
 
 Older work remains reachable but must not dilute the selected sequence. Filters and spatial play can reorganize the archive without hiding the ordered reading mode.
 
+## Professor-facing information architecture
+
+Use four stable layers. Do not merge them into one long promotional Home page.
+
+1. Orientation: identity, one factual practice line, selected works, and a contact route.
+2. Selected sequence: a deliberately edited group of public works with title, year when known,
+   medium, status, concept, and representative evidence.
+3. Project record: complete outcome first, then only verified process, encounter format, role,
+   collaborators, credits, and technical facts relevant to that work.
+4. Practice context: statement, CV, exhibitions, writing, press, teaching, or rights information
+   only when verified. Keep it outside the project evidence unless it explains the work.
+
+This hierarchy is informed by current RCA guidance and official sites for Hito Steyerl, Rafael
+Lozano-Hemmer, Ryoji Ikeda, and Ian Cheng. It is a CIBA structure, not a copied layout.
+
 ## Narrative mode selection
 
 - Archive: choose when comparison, chronology, provenance, or a large body of records is the main task. Use numbered files, metadata, and progressive disclosure.
@@ -96,6 +111,7 @@ If two modes seem plausible, select the one that best serves the page's primary 
 3. Is year/medium/role/scale/credit evidence present or explicitly marked as content debt?
 4. Does every visual accent have one semantic job?
 5. Does the page have one dominant narrative mode and no more than one anomaly?
-6. Are focus, keyboard, touch, 390px layout, contrast, alt text, captions, and reduced motion verified?
+6. Are focus, keyboard, a simple-pointer non-drag alternative, touch, 390px layout, contrast, alt
+   text, captions, and reduced motion verified?
 7. Are all textures, imagery, fonts, audio, and motion expressions original or appropriately licensed?
 8. Does `originality-audit.md` name at least three materially changed axes for each named reference used in the delivered expression?

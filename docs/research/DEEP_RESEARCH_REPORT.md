@@ -1,6 +1,12 @@
 # Deep research: CIBA professor-facing art portfolio
 
-Research date: 2026-07-17. This report distinguishes source-supported facts from design inference. Named works are references for mechanisms, not assets or expressions to reproduce.
+Research date: 2026-07-17; evidence refresh: 2026-07-29. This report distinguishes
+source-supported facts from design inference. Named works are references for mechanisms, not assets
+or expressions to reproduce.
+
+Evidence set: 35 linked sources. Confidence is high for the cited institutional, standards, and
+official-site observations; medium for cross-reference design inferences; and deliberately
+unassigned where the artist has not supplied programme requirements, authorship facts, or rights.
 
 ## Executive decision
 
@@ -59,6 +65,76 @@ the website uses two fast paths plus an archive:
 3. Older or secondary work: reachable through an archive without weakening the selected sequence.
 
 Sources: [RCA](https://www.rca.ac.uk/study/apply-to-study/portfolio-advice/), [UAL](https://www.arts.ac.uk/study-at-ual/apply/portfolio-advice), [Yale School of Art](https://www.art.yale.edu/apply/graduate-admission/portfolio-requirements), [RISD](https://www.risd.edu/admissions/graduate/apply-risd).
+
+## 2026-07-29 evidence-architecture refresh
+
+### Current admissions guidance
+
+**Source-supported fact:** RCA's portfolio guidance, updated 4 March 2026, says to tailor the
+portfolio to the programme, edit concisely, distinguish when finished work or process is expected,
+and state the applicant's role in collaboration. It also asks applicants to make their position,
+methods, values, and critical perspectives legible.
+
+**Design inference:** CIBA should not add a generic “process” section to every work. The project
+record should show the complete outcome first, then only the process evidence relevant to the
+actual programme. Unknown programme requirements remain content debt, not invented rules.
+
+Source: [RCA portfolio and video advice](https://www.rca.ac.uk/study/apply-to-study/portfolio-advice/).
+
+### Official artist-site comparison
+
+**Direct observations:**
+
+- Hito Steyerl's official site separates projects, dated press, multilingual publications, a
+  concise About statement, representation, and contact.
+- Rafael Lozano-Hemmer's official archive supports date/title sorting and gives each project a
+  title, year or series, encounter description, and detail route.
+- Ryoji Ikeda's official site keeps a persistent taxonomy across works, exhibitions, performances,
+  concerts, recordings, collaborations, publications, biography, and contact; project links carry
+  medium labels such as installation, sound, film, performance, or publication.
+- Ian Cheng's official site separates shows, selected documents, events, education, and rights
+  information. Its JavaScript-only shell is not an accessibility model for this project.
+
+**Design inference:** the reusable mechanism is a stable separation between work evidence and
+practice context. CIBA's Home should remain identity → selected works → ordered index; detail pages
+should explain one work; About/CV/contact should hold practice context. Press, exhibitions, or
+writing should appear only after verified records exist. None of the compared sites' surfaces,
+type, code, or navigation geometry is copied.
+
+Sources: [Hito Steyerl](https://www.hitosteyerl.net/),
+[Atelier Lozano-Hemmer projects](https://www.lozano-hemmer.com/projects.php?order=title),
+[Ryoji Ikeda projects](https://www.ryojiikeda.com/project/new/),
+[Ian Cheng](https://iancheng.com/shows).
+
+### Drag-access audit
+
+**Source-supported fact:** WCAG 2.2 SC 2.5.7 requires an operation that uses dragging to have an
+equivalent simple-pointer method without dragging. W3C explicitly separates this requirement from
+keyboard accessibility.
+
+**Active audit decision:** keyboard arrows remain necessary, but are not sufficient by themselves.
+Works supplies a click/tap Order mode, minimize/restore, and direct project links. Home and
+Coursework must be checked for an equally discoverable simple-pointer route before delivery; a
+visual-only drag affordance cannot be the sole way to reveal evidence.
+
+Source: [W3C Understanding SC 2.5.7 — Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html).
+
+### Open-source recheck
+
+The official Astro blog example still supports typed content-collection architecture. Accessible
+Astro Starter now documents Astro 6.1.1+, visible focus, landmarks, skip links, reduced-motion
+preferences, and keyboard-accessible navigation. Bigger Picture is an MIT image/video gallery with
+captions, keyboard navigation, focus management, responsive sources, and reduced-motion support,
+but its maintainer limits current work to bug fixes and points to a fork.
+
+**Architecture decision:** retain the current Astro 6 JSON content model and native video players.
+Adopt the accessibility contracts, not a theme. Do not add Bigger Picture or another lightbox until
+zooming is a verified portfolio requirement; it does not solve the bounded-window interaction and
+would add a second navigation layer.
+
+Sources: [Astro blog example](https://github.com/withastro/astro/tree/main/examples/blog),
+[Accessible Astro Starter](https://github.com/incluud/accessible-astro-starter),
+[Bigger Picture](https://github.com/henrygd/bigger-picture).
 
 ## Mechanisms extracted from the references
 
@@ -143,7 +219,8 @@ is real interaction.
 
 **Active decision:** semantic project windows implemented independently with native pointer events,
 keyboard arrows, Esc minimize, dock restore, filters, reset, a non-drag Order mode, and automatic
-mobile/reduced-motion ordering. The four authored windows are 410–460px wide inside a 760px stage.
+mobile/reduced-motion ordering. The five authored windows are approximately 410–460px wide inside
+the 760px-high stage.
 
 Source: [zutomayo.net](https://zutomayo.net/).
 
@@ -169,3 +246,20 @@ Source: [The Art of Cinema](https://www.theartofcinema.xyz/?ref=onepagelove).
 - Copyright protects expression rather than abstract design ideas. All shipped imagery, type, sound, text, and transitions must be original or licensed.
 
 Sources: [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [W3C images](https://www.w3.org/WAI/tutorials/images/), [W3C media](https://www.w3.org/WAI/media/av/), [WIPO copyright FAQ](https://www.wipo.int/en/web/copyright/faq-copyright).
+
+## Methodology and limits
+
+The research addressed four questions: what a professor needs to verify quickly; how official
+artist sites separate work evidence from practice context; which mechanisms can be abstracted from
+the named references without copying expression; and which accessibility and maintenance
+contracts apply to the implementation. The report links 35 unique institutional, official,
+academic, developer, standards, and primary repository sources. Key sources were read as full
+pages or repository documentation; observations from official sites were checked against their
+visible information architecture.
+
+The requested Firecrawl and Exa connectors were not available in this Codex environment during the
+2026-07-29 refresh. The refresh therefore used direct web search and page reading, prioritizing
+official pages, W3C guidance, and primary open-source repositories. This limits automated breadth,
+not the provenance of the claims retained here. Admissions requirements remain programme-specific,
+and collaborator roles, dates, rights, outcomes, and assignment briefs remain unknown unless the
+artist supplies them.

@@ -16,9 +16,9 @@ const localized = getLocalizedProject(project, lang);
 const keyboardStep = artDirection.motion.dragKeyboardStep;
 const keyboardStepLarge = artDirection.motion.dragKeyboardStepLarge;
 const copy = {
-  zh: { drag: "拖动作品窗口", instruction: `拖动标题栏。方向键移动${keyboardStep}像素，Shift加方向键移动${keyboardStepLarge}像素，Home返回初始位置，Escape收起窗口。`, minimize: "收起", concept: "概念", year: "年份", medium: "媒介", status: "状态", open: "打开项目记录" },
-  en: { drag: "Move project window", instruction: `Drag the title bar. Arrow keys move ${keyboardStep} pixels, Shift plus Arrow moves ${keyboardStepLarge} pixels, Home returns to the initial position, and Escape minimizes the window.`, minimize: "Minimize", concept: "Concept", year: "Year", medium: "Medium", status: "Status", open: "Open project record" },
-  ja: { drag: "作品ウィンドウを移動", instruction: `タイトルバーをドラッグ。矢印キーで${keyboardStep}px、Shiftと矢印で${keyboardStepLarge}px移動し、Homeで初期位置、Escapeで最小化します。`, minimize: "最小化", concept: "コンセプト", year: "年", medium: "メディア", status: "状態", open: "作品記録を開く" }
+  zh: { drag: "移动作品窗口", instruction: `单击标题栏切换预设位置，也可拖动。方向键移动${keyboardStep}像素，Shift加方向键移动${keyboardStepLarge}像素，Home返回初始位置，Escape收起窗口。`, minimize: "收起", concept: "概念", year: "年份", medium: "媒介", status: "状态", open: "打开项目记录" },
+  en: { drag: "Move project window", instruction: `Click the title bar to cycle preset positions or drag it. Arrow keys move ${keyboardStep} pixels, Shift plus Arrow moves ${keyboardStepLarge} pixels, Home returns to the initial position, and Escape minimizes the window.`, minimize: "Minimize", concept: "Concept", year: "Year", medium: "Medium", status: "Status", open: "Open project record" },
+  ja: { drag: "作品ウィンドウを移動", instruction: `タイトルバーをクリックしてプリセット位置を切り替えるか、ドラッグします。矢印キーで${keyboardStep}px、Shiftと矢印で${keyboardStepLarge}px移動し、Homeで初期位置、Escapeで最小化します。`, minimize: "最小化", concept: "コンセプト", year: "年", medium: "メディア", status: "状態", open: "作品記録を開く" }
 }[lang];
 const sequence = String(index + 1).padStart(2, "0");
 const titleId = `v3-window-${project.slug}-title`;
@@ -53,7 +53,7 @@ const windowStyle = [
       aria-hidden="true"
       aria-label={`${copy.drag}: ${localized.title}`}
       aria-describedby={instructionId}
-      aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home Escape"
+      aria-keyshortcuts="Enter Space ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home Escape"
     >
       <span class="v3-window-mark" aria-hidden="true">■</span>
       <span>{sequence}</span>
