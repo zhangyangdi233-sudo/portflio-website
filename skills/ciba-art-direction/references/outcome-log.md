@@ -28,8 +28,9 @@ feedback captured through the taste inbox and confirmed before promotion.
   X.WHEEL to EMIDA; the duplicate glyphs settled without static overlap after the 720ms roll.
 - Home evidence images computed to `opacity: 0.1` and `grayscale(1)` at rest. Keyboard movement
   changed x by 16px; pointer drag changed x by 110px and y by 55px; focus restored source colour.
-- Works desktop rendered four windows approximately 410–464px wide. Pointer drag and keyboard
-  movement changed the X.WHEEL window transform; Escape/minimize and restore remain explicit.
+- Works desktop rendered the four then-public windows approximately 410–464px wide. Pointer drag
+  and keyboard movement changed the X.WHEEL window transform; Escape/minimize and restore remain
+  explicit. University Coursework later became the fifth public window.
 - Works at 390×844 had no horizontal overflow, used a one-column ordered layout, and every drag
   handle was disabled, `tabIndex=-1`, and `aria-hidden=true`. The header remained pure black and
   compacted to 62px.
@@ -146,5 +147,30 @@ feedback captured through the taste inbox and confirmed before promotion.
   explicit confirmation record.
 - Verification passed 42 tests, Astro diagnostics, design drift, the 25-route static build,
   built-site contracts, both Skill validators, and browser interaction checks.
-- No result in this audit was promoted into a taste ledger. Two requested independent evaluator
-  agents failed to return a verdict and were closed; their silence is not evidence.
+- No result in this audit was promoted into a taste ledger. The two independent reviewers later
+  returned `FAIL` and `INCOMPLETE`; their concrete findings are handled in the next outcome record.
+
+## 2026-07-29 — Independent review corrections
+
+- An independent Critic and Evaluator separately inspected the clean pushed baseline and rejected
+  complete-delivery status. Their task IDs, findings, and fix dispositions are preserved in
+  `docs/research/INDEPENDENT_REVIEW_2026-07-29.md`.
+- Works now measures and clamps every visible project window after initial layout, visibility
+  changes, image/size changes, reset, restore, and viewport changes. Pure regression cases cover
+  the measured 91px lower overflow and 17px right overflow.
+- Mobile Home evidence now retains the canonical `0.1` opacity rather than overriding it to `0.3`.
+- Query-parameter reduced motion now removes transitions, and the ≤360px header uses two rows so
+  44px navigation targets remain inside the viewport.
+- The active CIBA stylesheet is checked for exactly the canonical three literal interface colours
+  and for loading after legacy/global styles. This mitigates drift without a risky unrelated
+  rewrite of the historical stylesheet.
+- A repository-local `npm run check:browser` audit now covers the high-risk geometry, opacity,
+  typography, multilingual viewport, recovery, video-playback, and console contracts without an
+  npm browser dependency. The current Codex sandbox denied local Chrome startup, so this outcome
+  records the audit's presence and syntax only, not a successful run in this environment.
+- Direct contact and Figma Team Project import remain external facts/actions. They are not
+  represented as complete.
+- Both independent reviewers were asked to recheck the fixes, but their new turns ended in
+  task-level `systemError` without a response. No post-fix independent verdict is inferred.
+- These are implementation and evaluation outcomes only. They do not promote or alter a taste
+  observation.

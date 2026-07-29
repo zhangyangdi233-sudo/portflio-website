@@ -33,9 +33,10 @@ copy rule.
    also show role, scale/encounter format, and credits. If a fact is not verified, use an explicit
    localized “artist verification pending” value instead of inventing or silently omitting it.
 3. Add a position with the same slug under `workspace.positions` in `src/content/art-direction.json`. If omitted, the site supplies a safe fallback position.
-4. Run `npm run check:design`, `npm run check`, `npm test`, `npm run build`, and
-   `npm run check:built`. The built-site check rejects any public file outside the reviewed
-   deployment allowlist.
+4. Run `npm run check:design`, `npm run check`, `npm test`, `npm run build`,
+   `npm run check:built`, and `npm run check:browser`. The built-site check rejects any public
+   file outside the reviewed deployment allowlist; the browser audit requires local Chrome or
+   Chromium and uses no npm browser dependency.
 
 The standard detail page renders the first media item as the hero and all remaining items as a gallery. `play` and `archive` links are both supported.
 
@@ -66,6 +67,7 @@ npm run check
 npm test
 npm run build
 npm run check:built
+npm run check:browser
 ```
 
 Before a formal submission, replace the visible role/credits verification notes with confirmed

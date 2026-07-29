@@ -38,6 +38,9 @@ describe("CIBA editorial typography", () => {
 
   it("uses restrained Latin tracking and independent CJK spacing", () => {
     const css = read("src/styles/ciba-v3.css");
+    const wakeCss = read("src/styles/art-direction.css");
+    const courseworkCss = read("src/styles/coursework-desktop.css");
+    const wake = read("src/components/WakeUpReplica.astro");
 
     expect(css).toMatch(/\.v3-monument \{[\s\S]*?letter-spacing: -0\.03em/);
     expect(css).toMatch(/\.v3-cinema-layer__title \{[\s\S]*?letter-spacing: -0\.025em/);
@@ -47,5 +50,14 @@ describe("CIBA editorial typography", () => {
     expect(css).not.toContain("letter-spacing: -0.095em");
     expect(css).not.toContain("letter-spacing: -0.08em");
     expect(css).not.toContain("letter-spacing: -0.07em");
+    expect(wake).toContain('const titleWords = lang === "en"');
+    expect(wake).toContain('class="wake-record-intro__title-word"');
+    expect(wakeCss).toMatch(/\.wake-record-intro h1 \{[\s\S]*?letter-spacing: -0\.03em/);
+    expect(wakeCss).toMatch(
+      /html:lang\(ja\) \.wake-record-intro h1,[\s\S]*?html:lang\(zh\) \.wake-record-intro h1 \{[\s\S]*?letter-spacing: 0/
+    );
+    expect(wakeCss).not.toContain("letter-spacing: -0.075em");
+    expect(courseworkCss).toMatch(/\.coursework-media-window__move \{[\s\S]*?letter-spacing: 0/);
+    expect(courseworkCss).not.toContain("letter-spacing: -0.12em");
   });
 });

@@ -69,9 +69,24 @@
   max-width: 8ch;
   margin: 1.25rem 0;
   color: var(--art-ink);
-  font: 900 clamp(4.5rem, 13vw, 12rem)/0.78 var(--art-font-display);
-  letter-spacing: -0.075em;
+  font: 900 clamp(4.5rem, 13vw, 12rem)/0.82 var(--art-font-display);
+  letter-spacing: -0.03em;
   text-transform: uppercase;
+}
+
+.wake-record-intro__title-word {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+html:lang(ja) .wake-record-intro h1,
+html:lang(zh) .wake-record-intro h1 {
+  line-height: 0.9;
+  letter-spacing: 0;
+  line-break: strict;
+  word-break: normal;
 }
 
 .wake-record-intro__summary {

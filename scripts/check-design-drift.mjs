@@ -14,6 +14,7 @@ const xWheelProject = readJson("src/content/projects/x-wheel.json");
 const pluginCode = readFileSync(join(root, "figma-export/figma-plugin/code.js"), "utf8");
 const motionCode = readFileSync(join(root, "src/scripts/portfolio-motion.ts"), "utf8");
 const artCss = readFileSync(join(root, "src/styles/ciba-v3.css"), "utf8");
+const baseLayout = readFileSync(join(root, "src/layouts/BaseLayout.astro"), "utf8");
 
 const pluginColorBlock = pluginCode.match(/const colors = \{([\s\S]*?)\};/);
 const pluginWorkspaceBlock = pluginCode.match(/const workspace = (\{[\s\S]*?\n\});\n\nconst handoffFacts/);
@@ -302,6 +303,24 @@ for (const variable of ["--art-motion-micro", "--art-motion-state", "--art-motio
   if (!artCss.includes(`var(${variable}`)) {
     failures.push(`ciba-v3.css must consume canonical ${variable}`);
   }
+}
+
+const canonicalInterfaceColors = [...new Set(Object.values(canonical.colors).map((value) => value.toLowerCase()))].sort();
+const activeCssColors = [...new Set(
+  [...artCss.matchAll(/#[0-9a-fA-F]{6}/g)].map((match) => match[0].toLowerCase())
+)].sort();
+
+if (!same(activeCssColors, canonicalInterfaceColors)) {
+  failures.push(
+    `active CIBA stylesheet literal colors drifted from the canonical three-color boundary: ${activeCssColors.join(", ")}`
+  );
+}
+
+const globalImport = baseLayout.indexOf('../styles/global.css');
+const artImport = baseLayout.indexOf('../styles/art-direction.css');
+const cibaImport = baseLayout.indexOf('../styles/ciba-v3.css');
+if (globalImport < 0 || artImport <= globalImport || cibaImport <= artImport) {
+  failures.push("BaseLayout must load the scoped CIBA v3 stylesheet after legacy/global styles");
 }
 
 if (failures.length > 0) {

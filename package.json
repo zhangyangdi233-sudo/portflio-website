@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "check:built": "node scripts/check-built-site.mjs",
+    "check:browser": "node scripts/check-browser.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:design": "node scripts/check-design-drift.mjs",

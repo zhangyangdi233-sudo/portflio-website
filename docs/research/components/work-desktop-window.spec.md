@@ -97,7 +97,7 @@ Year / Medium / Status record → localized Concept → open action.
 
 ## Responsive behavior
 
-- Desktop 1440px: four overlapping 410–460px windows in a 760px stage.
+- Desktop 1440px: five overlapping 410–460px windows in a 760px stage.
 - Tablet 768px and mobile 390px: single-column ordered windows; drag controls hidden; text untruncated.
 - Breakpoint: 900px.
 

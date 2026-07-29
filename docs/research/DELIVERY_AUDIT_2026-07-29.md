@@ -4,51 +4,61 @@ Scope: rendered Chinese, English, and Japanese portfolio; canonical project cont
 Works, University Coursework, X.WHEEL media; Figma handoff; custom art-direction and editorial
 typography Skills.
 
-This audit uses `skills/ciba-art-direction/references/evaluation-rubric.md`. Two isolated Critic /
-Evaluator agents were asked to return the same matrix, but both remained running after bounded
-waits and explicit stop requests. They were closed without a verdict. The matrix below is therefore
-a primary-agent evidence audit, not an independent opinion.
+This audit uses `skills/ciba-art-direction/references/evaluation-rubric.md`. Two isolated,
+read-only reviewers independently inspected commit `04ed117`: Critic task
+`019fad11-9aab-7061-9e92-8668ecaefae3` returned `FAIL`; Evaluator task
+`019fad12-15af-7103-860c-bcf2127b0cc4` returned `INCOMPLETE`. Their findings and dispositions are
+recorded in `INDEPENDENT_REVIEW_2026-07-29.md`.
 
-## Verdict
+## Current verdict
 
-The website is deliverable with no unresolved P0 or P1. Gates 1–6 pass after the simple-pointer
-movement fix. Gate 7 is partial because the editable Figma structure has not yet been imported into
-the artist's target Team Project.
+`INCOMPLETE` for the complete external delivery. The website implementation fixes are in place.
+Both reviewers were sent a post-fix read-only recheck, but their tasks entered `systemError`
+without an answer; no post-fix independent verdict is claimed. Two completion facts cannot be
+manufactured in code:
+
+1. the professor-facing contact route still needs an artist-confirmed email or direct contact URL;
+2. the editable Figma screens still need to be imported into Team Project `622631172`.
 
 ## Gate matrix
 
-| Gate | Result | Evidence |
+| Gate | Current result | Evidence |
 | --- | --- | --- |
-| 1. Professor scan | Pass | Home presents identity, one factual practice line, five selected records, direct detail links, a complete ordered index, Profile, Works, and Contact routes. Interaction is not required to find a work. |
-| 2. Project evidence | Pass | Five public records expose title, year when known, medium, status, concept, localized captions and alt text. X.WHEEL contains 11 verified media items; University Coursework contains 14 explicitly assigned items in three sections. Unknown coursework date and unverified roles are not invented. |
-| 3. Interaction recovery | Pass | Home media, Works title bars, and Coursework title bars now support single-click preset movement, drag, keyboard arrows, and Home reset. Works also has Order mode; coarse pointers and reduced motion use source order. Browser verification measured each click from `0,0` to `48,48`; a Home drag from `48,48` to `168,98` did not trigger an additional snap. Reduced motion exposed all five Home layers. |
-| 4. Visual discipline | Pass | Active interface tokens remain `#090a08`, `#f4f0dd`, and `#c6ff00`. Source artwork colour is evidence and returns on hover/focus; it is not an interface token. Pages use one dominant archive, cinematic, or spatial mode and one bounded anomaly. |
-| 5. Multilingual composition | Pass | Live semantic word groups, locale-specific CJK tracking and line breaking, the authored `ESCAPE / PROJECT` break, 320–390px fallbacks, text-spacing guardrails, and reduced-motion layout are tested. |
-| 6. Originality and rights | Pass | Named references are documented as abstract mechanisms; supplied artist files and deployable copies are allowlisted and hashed. No reference-site or game asset, logo, font, dialogue, sound, or source code ships. |
-| 7. Operational parity | Partial | Canonical content, website, generated Figma facts, editable local plugin, sync server, and design-drift contracts agree. The editable Figma file remains in Drafts and the seven website screens have not been imported into Team Project `622631172`. |
+| 1. Professor scan | Partial | Five public records, Profile, Works, Contact routing, and factual project evidence are present. The Contact route currently falls back to Profile and does not expose a confirmed direct address. |
+| 2. Project evidence | Pass | X.WHEEL contains 11 verified media items; Coursework contains 14 assigned items in 10/2/2 sections and five MP4s; Wake Up exposes only its two approved images. Unknown facts remain explicit. |
+| 3. Interaction recovery | Pass pending recheck | Home, Works, and Coursework retain click, drag, keyboard, Home reset, and ordered fallbacks. Works now clamps all visible windows after first layout, visibility changes, image/size changes, reset, and viewport changes. |
+| 4. Visual discipline | Pass pending recheck | Active CIBA CSS contains only `#090a08`, `#f4f0dd`, and `#c6ff00`; mobile Home evidence is now 10% grayscale opacity. A design-drift check enforces the active three-colour boundary and stylesheet order. |
+| 5. Multilingual composition | Pass pending recheck | `ESCAPE / PROJECT` remains authored as two words/lines. Wake Up now exposes semantic `WAKE` / `UP` spans, uses `-0.03em` Latin tracking and zero CJK tracking. The 320px header uses a two-row layout to preserve 44px targets without overflow. |
+| 6. Originality and rights | Partial | Reference mechanisms and exact public-file allowlists/hashes are documented. Final publication rights remain an artist-owned external confirmation, not a technical inference. |
+| 7. Operational parity | Partial | Canonical content, site, Figma facts, local editable plugin, and design-drift checks agree. The target Team Project import is still not complete. |
 
-## Severity findings
+## Open completion requirements
 
-### P2 — Figma Team Project import remains external work
+### Direct contact fact
+
+- Required input: one artist-confirmed email address or direct contact URL.
+- Current safe fallback: `/[lang]/about/#contact` plus existing public archive/GitHub links.
+- The implementation intentionally does not infer an email from Git metadata or invent one.
+
+### Figma Team Project import
 
 - Local editable handoff: `figma-export/`
 - Editable Draft file: `xyINqLy60s9MELHd2HmViK`
 - Target project: `622631172`
-- Constraint: Figma MCP write/read quota is exhausted and Figma Desktop is not installed.
-- Safe fallback: the committed local plugin, sync endpoint, snapshots, and editing guide preserve
-  all editable layers and canonical facts.
-- Resolution: after the artist explicitly approves installing Figma Desktop and accepting Figma's
-  terms, import the local plugin, generate the seven editable screens, and move the file into the
-  target project.
+- Required input: explicit approval to install/open Figma Desktop and accept its terms, phrased
+  `允许安装 Figma Desktop`, or the artist can run the committed local plugin manually.
+- The repository does not describe Drafts or the local plugin as a completed Team Project import.
 
-No P0, P1, or additional unresolved P2 finding remains.
+## Verification status
 
-## Verification evidence
-
-- Home X.WHEEL representatives:
-  `character-full.png`, `character-portrait.png`, `character-sequence.png`,
-  `cartridge-3-title.png`.
-- Browser: all five Coursework MP4 players reported `readyState=4` with no media error.
-- Browser: console contained Vite connection debug messages only; no warning or error.
-- Automated: 42 unit/guardrail tests, Astro diagnostics, canonical design-drift check, the
-  25-route production build, built-site contract, and both Skill package validators passed.
+- Automated source/content suite, Astro diagnostics, design drift, production build, and built-site
+  contract are rerun after each fix.
+- `npm run check:browser` is now a dependency-free headless-Chrome audit covering Home opacity and
+  scroll state, Works initial geometry/recovery, Wake Up tracking, 320/390px three-language
+  overflow, reduced motion, Coursework 10/2/2 grouping, all five MP4s, and console errors.
+- The current Codex sandbox prevents launching local Chrome (`SIGABRT`) and its browser policy
+  blocks `127.0.0.1:4323`, so this session does not claim that new command passed here. Initial
+  reviewers did collect direct browser evidence before that policy block; post-fix review must
+  distinguish source/test evidence from a fresh executable browser run.
+- The attempted post-fix Critic and Evaluator turns both ended in task-level `systemError` before
+  returning an answer. Initial verdicts therefore remain the latest independent verdicts.

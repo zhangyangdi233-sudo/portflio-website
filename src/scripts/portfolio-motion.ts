@@ -1,6 +1,7 @@
 import { artDirection } from "../lib/art-direction";
 import {
   canUseSpatialDrag,
+  clampOffsetWithinBounds,
   getArrowDelta,
   resolveWorkspaceLayout,
   type WorkspaceLayout
@@ -249,6 +250,7 @@ if (workspace) {
   let preferredLayout: WorkspaceLayout = "scatter";
   let effectiveLayout: WorkspaceLayout = "scatter";
   let zCounter = 20;
+  let clampFrame: number | null = null;
 
   const setWindowPosition = (item: HTMLElement, x: number, y: number) => {
     item.dataset.windowDx = String(x);
@@ -263,14 +265,35 @@ if (workspace) {
     const currentY = readNumber(item.dataset.windowDy);
     const itemRect = item.getBoundingClientRect();
     const stageRect = stage.getBoundingClientRect();
-    const minX = currentX + stageRect.left - itemRect.left;
-    const maxX = currentX + stageRect.right - itemRect.right;
-    const minY = currentY + stageRect.top - itemRect.top;
-    const maxY = currentY + stageRect.bottom - itemRect.bottom;
-    return {
-      x: clamp(Math.min(minX, maxX), Math.max(minX, maxX), desiredX),
-      y: clamp(Math.min(minY, maxY), Math.max(minY, maxY), desiredY)
-    };
+    return clampOffsetWithinBounds(
+      itemRect,
+      stageRect,
+      { x: currentX, y: currentY },
+      { x: desiredX, y: desiredY }
+    );
+  };
+
+  const clampVisibleWindows = () => {
+    if (!stage || effectiveLayout !== "scatter" || !canDrag()) return;
+    windows.forEach((item) => {
+      if (item.hidden) return;
+      const next = clampWindowPosition(
+        item,
+        readNumber(item.dataset.windowDx),
+        readNumber(item.dataset.windowDy)
+      );
+      setWindowPosition(item, next.x, next.y);
+    });
+  };
+
+  const queueWorkspaceClamp = () => {
+    if (clampFrame !== null) cancelAnimationFrame(clampFrame);
+    clampFrame = requestAnimationFrame(() => {
+      clampFrame = requestAnimationFrame(() => {
+        clampFrame = null;
+        clampVisibleWindows();
+      });
+    });
   };
 
   const bringToFront = (item: HTMLElement) => {
@@ -308,6 +331,8 @@ if (workspace) {
       const label = status.dataset.visibleLabel ?? "visible";
       status.textContent = `${String(visible).padStart(2, "0")} / ${String(total).padStart(2, "0")} ${label}`;
     }
+
+    queueWorkspaceClamp();
   };
 
   const syncHandles = () => {
@@ -329,6 +354,7 @@ if (workspace) {
       control.setAttribute("aria-pressed", String(control.dataset.layout === effectiveLayout));
     });
     syncHandles();
+    queueWorkspaceClamp();
   };
 
   const minimizeWindow = (item: HTMLElement) => {
@@ -411,7 +437,8 @@ if (workspace) {
       if (event.key === "Home") {
         event.preventDefault();
         item.dataset.pointerSnap = "0";
-        setWindowPosition(item, 0, 0);
+        const next = clampWindowPosition(item, 0, 0);
+        setWindowPosition(item, next.x, next.y);
         return;
       }
 
@@ -479,6 +506,15 @@ if (workspace) {
   const syncResponsiveLayout = () => setLayout(preferredLayout, false);
   desktopPointerQuery.addEventListener("change", syncResponsiveLayout);
   reduceMotionQuery.addEventListener("change", syncResponsiveLayout);
+  window.addEventListener("load", queueWorkspaceClamp, { once: true });
+
+  if (stage && "ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(queueWorkspaceClamp);
+    resizeObserver.observe(stage);
+    windows.forEach((item) => resizeObserver.observe(item));
+  } else {
+    window.addEventListener("resize", queueWorkspaceClamp);
+  }
 
   setLayout("scatter", false);
   syncVisibility();

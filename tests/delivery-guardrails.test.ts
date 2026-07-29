@@ -57,6 +57,7 @@ describe("delivery guardrails", () => {
 
     expect(css).toContain("@media (max-width: 899px)");
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.v3-floating-media \{[\s\S]*?position: relative/);
+    expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.v3-floating-media \{[\s\S]*?opacity: 0\.1/);
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.v3-workspace \.v3-workspace-stage[\s\S]*?grid-template-columns: 1fr/);
     expect(css).toContain("--workspace-height, 760px");
     expect(motion).toContain("resolveWorkspaceLayout(layout, desktopPointerQuery.matches, isReduced())");
@@ -65,6 +66,8 @@ describe("delivery guardrails", () => {
     expect(motion).toContain('event.type === "pointerup" && !drag.moved');
     expect(motion).toContain('event.key === "Enter" || event.key === " "');
     expect(motion).toContain("if (event.detail === 0) cycleWindowPosition()");
+    expect(motion).toContain("const queueWorkspaceClamp");
+    expect(motion).toContain("const resizeObserver = new ResizeObserver(queueWorkspaceClamp)");
     expect(gitignore).toContain("docs/design-references/the-art-of-cinema-*.png");
     expect(gitignore).toContain("docs/design-references/zutomayo-*.png");
     expect(readdirSync(join(root, "figma-export/screenshots")).filter((name) => name.endsWith(".png"))).toEqual([]);
@@ -83,8 +86,23 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.site-nav a \{[\s\S]*?min-width: 44px/);
     expect(css).toMatch(/\.language-link\.is-active \{[\s\S]*?border-color: var\(--ciba-acid\);[\s\S]*?color: var\(--ciba-paper\)/);
     expect(css).toMatch(/\.wake-back \{[\s\S]*?top: calc\(var\(--ciba-header-height\) \+ 0\.75rem\)[\s\S]*?min-width: 44px[\s\S]*?min-height: 44px/);
+    expect(css).toMatch(/@media \(max-width: 360px\)[\s\S]*?--ciba-header-height: 106px[\s\S]*?grid-template-rows: 52px 52px/);
     expect(css).toMatch(/project-page:not\(\.wake-page\) \.project-media img \{[\s\S]*?aspect-ratio: auto[\s\S]*?object-fit: contain/);
     expect(css).toMatch(/\.v3-floating-media \{[\s\S]*?filter: grayscale\(1\)[\s\S]*?opacity: 0\.1/);
     expect(css).toMatch(/\.v3-floating-media:hover,[\s\S]*?filter: grayscale\(0\)[\s\S]*?opacity: 0\.88/);
+  });
+
+  it("ships a dependency-free real-browser audit for the high-risk delivery paths", () => {
+    const packageJson = JSON.parse(read("package.json"));
+    const audit = read("scripts/check-browser.mjs");
+
+    expect(packageJson.scripts["check:browser"]).toBe("node scripts/check-browser.mjs");
+    expect(audit).toContain("--remote-debugging-pipe=JSON");
+    expect(audit).toContain("expectedXWheelSources");
+    expect(audit).toContain("A Works window or its Open action starts outside the stage.");
+    expect(audit).toContain("Wake Up Latin tracking is not the restrained -0.03em contract.");
+    expect(audit).toContain("Coursework media escaped its canonical 10/2/2 grouping.");
+    expect(audit).toContain("One or more Coursework videos failed real browser playback.");
+    expect(audit).toContain("Browser console or runtime errors were recorded.");
   });
 });

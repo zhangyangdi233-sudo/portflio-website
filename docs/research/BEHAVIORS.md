@@ -69,7 +69,7 @@ and independent motion. No game color, image, font, character, dialogue, audio, 
 
 - Global shell: exactly three canonical interface values—near-black, warm paper, and acid green—organized by an asymmetric Internationalist grid.
 - Home: one active rolling project title with enlarged 10%-opacity grayscale evidence images; images reveal source colour on hover/focus and are draggable on a desktop fine pointer.
-- Works desktop (≥900px): four large 410–460px authored draggable project windows in a 760px stage, bring-to-front, minimize/restore, filters, reset, and ordered fallback.
+- Works desktop (≥900px): five large 410–460px authored draggable project windows in a 760px stage, bring-to-front, minimize/restore, filters, reset, and ordered fallback.
 - Works below 900px: ordered semantic window cards; precision drag is removed.
 - Keyboard: focusable title-bar control; Arrow moves, Shift + Arrow moves farther, Home resets transform, Escape minimizes, and dock buttons restore/focus.
 - Motion: state changes use transform/opacity first; reduced motion disables title rolls and forces a linear Home plus ordered Works layout.

@@ -67,3 +67,16 @@ implementation guidance, but they do not become personal taste without explicit 
   interpretation has been explicitly confirmed by the artist.
 - The complete 42-test suite and the Skill Creator validator passed. This measured result changes
   workflow confidence only; it does not infer taste.
+
+## 2026-07-29 — Wake Up and control-tracking correction
+
+- Independent review measured the English Wake Up title at `-0.075em`, outside the restrained
+  display contract, and found no semantic word grouping.
+- The heading now emits separate `WAKE` and `UP` spans, uses `-0.03em` Latin tracking, and keeps
+  Chinese/Japanese tracking at zero with locale-specific line breaking.
+- The Coursework move indicator no longer compresses an essential control glyph with `-0.12em`
+  tracking.
+- The typography guardrail rejects either extreme value and checks both semantic title structure
+  and independent CJK spacing.
+- This correction is an accessibility and implementation outcome. It does not create or promote a
+  permanent typography preference.
