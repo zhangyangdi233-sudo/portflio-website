@@ -140,6 +140,12 @@ for (const lang of languages) {
   check(count(home, "data-v3-cinema-layer") === 5, `${lang} home must render exactly five cinematic work layers`);
   check(count(home, "data-v3-cinema-trigger") === 5, `${lang} home must render exactly five scroll triggers`);
   check(count(home, 'aria-describedby="v3-media-instruction"') >= 5, `${lang} home media must expose keyboard-drag instructions`);
+  for (const source of ["character-full.png", "character-portrait.png", "character-sequence.png", "cartridge-3-title.png"]) {
+    check(home.includes(`/assets/projects/x-wheel/${source}`), `${lang} home is missing X.WHEEL representative ${source}`);
+  }
+  for (const source of ["emi-room.png", "crt-tv.png", "psx-console.png", "poster.png"]) {
+    check(!home.includes(`/assets/projects/x-wheel/${source}`), `${lang} home still renders retired X.WHEEL representative ${source}`);
+  }
   check(count(works, "data-workspace-window") === 5, `${lang} Works must render exactly five project windows`);
   check(count(works, "data-window-handle") === 5, `${lang} Works must render exactly five keyboard drag handles`);
   check(

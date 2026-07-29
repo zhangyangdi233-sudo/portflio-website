@@ -108,6 +108,12 @@
   "handoffFacts": {
     "homeIncludesProjectStage": true,
     "homeProjectCount": 5,
+    "homeXWheelMediaSources": [
+      "/assets/projects/x-wheel/character-full.png",
+      "/assets/projects/x-wheel/character-portrait.png",
+      "/assets/projects/x-wheel/character-sequence.png",
+      "/assets/projects/x-wheel/cartridge-3-title.png"
+    ],
     "worksFilters": ["ALL", "FEATURED", "ARCHIVE"],
     "worksLayouts": ["WINDOWS", "ORDER", "RESET"],
     "worksVisibleCount": "05 / 05",

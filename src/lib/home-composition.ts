@@ -1,8 +1,9 @@
 import { getPublishedProjects } from "./projects";
-import type { Project } from "./types";
+import type { Project, ProjectMedia } from "./types";
 
 export type HomeCompositionRow = Project & {
   indexLabel: string;
+  homeMedia: ProjectMedia[];
 };
 
 export const homeMediaLayouts = [
@@ -12,9 +13,18 @@ export const homeMediaLayouts = [
   { x: "18vw", y: "58svh", w: "32vw", r: 1.8 }
 ] as const;
 
+export function getHomeMedia(project: Project): ProjectMedia[] {
+  const authoredSelection = project.media
+    .filter((media) => media.homeOrder !== undefined)
+    .sort((a, b) => (a.homeOrder ?? 0) - (b.homeOrder ?? 0));
+
+  return (authoredSelection.length > 0 ? authoredSelection : project.media).slice(0, homeMediaLayouts.length);
+}
+
 export function buildHomeComposition(projects: Project[]): HomeCompositionRow[] {
   return getPublishedProjects(projects).map((project, index) => ({
     ...project,
-    indexLabel: String(index + 1).padStart(2, "0")
+    indexLabel: String(index + 1).padStart(2, "0"),
+    homeMedia: getHomeMedia(project)
   }));
 }

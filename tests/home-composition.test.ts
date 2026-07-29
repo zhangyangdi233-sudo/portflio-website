@@ -17,4 +17,15 @@ describe("home composition", () => {
     expect(homeMediaLayouts[0]).toEqual({ x: "-5vw", y: "3svh", w: "72vw", r: -1.4 });
     expect(homeMediaLayouts.every((layout) => layout.w.endsWith("vw"))).toBe(true);
   });
+
+  it("carries each project's explicit Home media selection into the cinematic sequence", () => {
+    const [xWheel] = buildHomeComposition(allProjects);
+
+    expect(xWheel.homeMedia.map((media) => media.src)).toEqual([
+      "/assets/projects/x-wheel/character-full.png",
+      "/assets/projects/x-wheel/character-portrait.png",
+      "/assets/projects/x-wheel/character-sequence.png",
+      "/assets/projects/x-wheel/cartridge-3-title.png"
+    ]);
+  });
 });

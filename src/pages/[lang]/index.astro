@@ -154,7 +154,7 @@ const composeTitleWords = (value: string) => {
 
                   <div class="v3-cinema-layer__media" aria-label={`${localized.title}: ${copy.imageHint}`}>
                     {
-                      project.media.slice(0, homeMediaLayouts.length).map((media, mediaIndex) => {
+                      project.homeMedia.map((media, mediaIndex) => {
                         const position = homeMediaLayouts[mediaIndex];
                         const localizedMedia = getLocalizedMedia(media, lang);
                         return (

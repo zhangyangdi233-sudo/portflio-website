@@ -25,6 +25,12 @@ const workspace = {
 const handoffFacts = {
   homeIncludesProjectStage: true,
   homeProjectCount: 5,
+  homeXWheelMediaSources: [
+    "/assets/projects/x-wheel/character-full.png",
+    "/assets/projects/x-wheel/character-portrait.png",
+    "/assets/projects/x-wheel/character-sequence.png",
+    "/assets/projects/x-wheel/cartridge-3-title.png"
+  ],
   worksFilters: ["ALL", "FEATURED", "ARCHIVE"],
   worksLayouts: ["WINDOWS", "ORDER", "RESET"],
   worksVisibleCount: "05 / 05",
@@ -410,6 +416,7 @@ function addHomeProjectStage(parent, y, w, mobile = false) {
     0.1
   );
   media.setPluginData("interaction", "Drag on desktop; reveal source colour on hover/focus in website");
+  media.setPluginData("sourceMedia", JSON.stringify(handoffFacts.homeXWheelMediaSources));
   text(parent, "Media interaction note", "10% / GRAYSCALE / DRAG / HOVER→SOURCE COLOUR", mobile ? inset + 28 : inset + stageWidth * 0.5, y + (mobile ? 230 : 248), mobile ? stageWidth - 56 : stageWidth * 0.42, mobile ? 9 : 11, bold, colors.oxide);
 
   text(parent, "Home stage concept label", "CONCEPT", inset + 18, y + (mobile ? 500 : 590), 120, 10, bold, colors.oxide);

@@ -10,6 +10,7 @@ const failures = [];
 const canonical = readJson("src/content/art-direction.json");
 const handoff = readJson("figma-export/design-tokens.json");
 const courseworkProject = readJson("src/content/projects/university-coursework.json");
+const xWheelProject = readJson("src/content/projects/x-wheel.json");
 const pluginCode = readFileSync(join(root, "figma-export/figma-plugin/code.js"), "utf8");
 const motionCode = readFileSync(join(root, "src/scripts/portfolio-motion.ts"), "utf8");
 const artCss = readFileSync(join(root, "src/styles/ciba-v3.css"), "utf8");
@@ -105,6 +106,10 @@ if (!same(pluginProjects, canonicalProjects)) {
 const expectedHandoffFacts = {
   homeIncludesProjectStage: true,
   homeProjectCount: canonicalProjects.length,
+  homeXWheelMediaSources: xWheelProject.media
+    .filter((media) => media.homeOrder !== undefined)
+    .sort((a, b) => a.homeOrder - b.homeOrder)
+    .map((media) => media.src),
   worksFilters: ["ALL", "FEATURED", "ARCHIVE"],
   worksLayouts: ["WINDOWS", "ORDER", "RESET"],
   worksVisibleCount: `${String(canonicalProjects.length).padStart(2, "0")} / ${String(canonicalProjects.length).padStart(2, "0")}`,

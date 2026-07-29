@@ -101,3 +101,13 @@ project reasoning, not a confirmed personal-preference rule.
 - Exact feedback:
 
 > 我希望分区是三个大的窗口，每个窗口里面是无数个小的模拟电脑窗口一样的界面，并且在这个大的窗口内，所有展示的作品可以通过鼠标拖拽。这里可以查看并且完全模仿 https://zutomayo.net 这个网站中的窗口。
+
+## TASTE-20260729T064615091716Z-1ed4f14a
+
+- Captured: 2026-07-29 UTC
+- Context: 2026-07-29 首页 X.WHEEL 视觉选择：角色全身、角色近景、角色序列与 Cartridge 3 字形构成取代旧像素 3D 素材。
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 我希望xwheel这个作品在首页的图片是我截图的这几个 而不是像素的3d素材

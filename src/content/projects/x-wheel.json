@@ -77,6 +77,7 @@
     {
       "type": "image",
       "src": "/assets/projects/x-wheel/character-full.png",
+      "homeOrder": 1,
       "alt": {
         "zh": "黑色背景左侧是一名以浅绿和绿色线条绘制的长发人物全身像",
         "en": "A full-length long-haired character drawn in pale and mid green stands on the left of a black field",
@@ -91,6 +92,7 @@
     {
       "type": "image",
       "src": "/assets/projects/x-wheel/character-sequence.png",
+      "homeOrder": 3,
       "alt": {
         "zh": "深蓝色背景中，五个浅绿色人物视图并排重叠，展示头部与身体朝向的变化",
         "en": "Five overlapping pale-green character views on a dark blue field show changes in head and body direction",
@@ -105,6 +107,7 @@
     {
       "type": "image",
       "src": "/assets/projects/x-wheel/cartridge-3-title.png",
+      "homeOrder": 4,
       "alt": {
         "zh": "绿色画面上写有“Cartridge 3”和一行德语文字，中央标题由黑白几何字形组成",
         "en": "A green title card reads Cartridge 3 and a German sentence, with a central title built from black-and-white geometric letterforms",
@@ -133,6 +136,7 @@
     {
       "type": "image",
       "src": "/assets/projects/x-wheel/character-portrait.png",
+      "homeOrder": 2,
       "alt": {
         "zh": "深蓝色背景中的绿色像素风长发人物近景，人物低头看向侧下方",
         "en": "A green pixel-art close-up of a long-haired character looking down to one side on a dark blue field",

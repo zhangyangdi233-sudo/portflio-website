@@ -3,6 +3,7 @@ import { readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
+import { getHomeMedia } from "../src/lib/home-composition";
 import { projects } from "../src/lib/project-data";
 
 const root = join(import.meta.dirname, "..");
@@ -23,7 +24,7 @@ const manifest = JSON.parse(
 };
 
 describe("X.WHEEL supplied media", () => {
-  it("adds exactly seven authorised images after the four established homepage representatives", () => {
+  it("keeps the eleven authorised detail images while selecting the supplied character studies for Home", () => {
     expect(xWheel).toBeDefined();
     expect(xWheel?.media).toHaveLength(11);
     expect(xWheel?.media.slice(0, 4).map((item) => item.src)).toEqual([
@@ -35,6 +36,13 @@ describe("X.WHEEL supplied media", () => {
     expect(xWheel?.media.slice(4).map((item) => item.src)).toEqual(
       manifest.items.map((item) => `/${item.publicPath}`)
     );
+    expect(getHomeMedia(xWheel!).map((item) => item.src)).toEqual([
+      "/assets/projects/x-wheel/character-full.png",
+      "/assets/projects/x-wheel/character-portrait.png",
+      "/assets/projects/x-wheel/character-sequence.png",
+      "/assets/projects/x-wheel/cartridge-3-title.png"
+    ]);
+    expect(getHomeMedia(xWheel!).every((item) => !item.src.includes("emi-room") && !item.src.includes("crt-tv"))).toBe(true);
     expect(manifest.selectionPolicy).toContain("explicitly attached and assigned");
   });
 

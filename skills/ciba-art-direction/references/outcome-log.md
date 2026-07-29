@@ -102,3 +102,24 @@ feedback captured through the taste inbox and confirmed before promotion.
   contracts, exact-file provenance checks, and a zero-error browser console.
 - These outcomes do not promote any pending taste observation; the change records supplied
   project evidence and a measured collision fix only.
+
+## 2026-07-29 — X.WHEEL Home representative revision
+
+- Direct artist feedback superseded the earlier repository-preview selection on Home. X.WHEEL now
+  uses, in order, `character-full.png`, `character-portrait.png`, `character-sequence.png`, and
+  `cartridge-3-title.png` as its four cinematic representatives.
+- The original EMI room, CRT television, console, and poster remain in the eleven-item project
+  record but no longer render in the Home X.WHEEL layer.
+- The selection is authored through content-level `homeOrder` values. Other projects retain their
+  first-four fallback, so Home presentation can change without reordering archival project media.
+- At 1440×900 all four representatives used absolute draggable positions, rested at opacity `0.1`
+  with `grayscale(1)`, and the focused first image settled at opacity `0.88` with `grayscale(0)`;
+  ArrowRight moved it by 16px.
+- At 390×844 and 320×780 the same four sources reflowed to relative source order with zero
+  horizontal overflow. The 320px X.WHEEL heading measured 288px wide with a 288px scroll width.
+- Figma handoff facts now preserve the same ordered four-source identity, and the design-drift
+  contract derives that list from canonical project content.
+- Verification passed 37 tests, Astro diagnostics, design drift, the 25-route static build,
+  built-site source assertions, desktop/mobile browser checks, and a zero-warning/error console.
+- `TASTE-20260729T064615091716Z-1ed4f14a` records the exact feedback but remains pending; this
+  implementation does not infer or promote a broader permanent preference.

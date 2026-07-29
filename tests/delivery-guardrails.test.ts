@@ -41,6 +41,10 @@ describe("delivery guardrails", () => {
     expect(plugin).toContain("CONTACT ROUTE / ADD VERIFIED EMAIL OR URL");
     expect(plugin).toContain("function addHomeProjectStage");
     expect(plugin).toContain("Low-opacity draggable media placeholder / 10%");
+    expect(plugin).toContain('"/assets/projects/x-wheel/character-full.png"');
+    expect(plugin).toContain('"/assets/projects/x-wheel/character-portrait.png"');
+    expect(plugin).toContain('"/assets/projects/x-wheel/character-sequence.png"');
+    expect(plugin).toContain('"/assets/projects/x-wheel/cartridge-3-title.png"');
     expect(plugin).toContain("Filter / FEATURED");
     expect(plugin).toContain("Visible project status");
   });
