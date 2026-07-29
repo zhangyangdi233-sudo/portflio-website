@@ -36,10 +36,17 @@ const allowedPublicFiles = [
   "assets/projects/escape-project/escape-space.webp",
   "assets/projects/wake-up/bed-alarm.png",
   "assets/projects/wake-up/flooded-title.jpg",
+  "assets/projects/x-wheel/cartridge-3-geometry.png",
+  "assets/projects/x-wheel/cartridge-3-title.png",
+  "assets/projects/x-wheel/character-full.png",
+  "assets/projects/x-wheel/character-portrait.png",
+  "assets/projects/x-wheel/character-sequence.png",
   "assets/projects/x-wheel/crt-tv.png",
+  "assets/projects/x-wheel/crt-character-composition.png",
   "assets/projects/x-wheel/emi-room.png",
   "assets/projects/x-wheel/poster.png",
   "assets/projects/x-wheel/psx-console.png",
+  "assets/projects/x-wheel/signal-orb.png",
   ...courseworkManifest.items.map((item) => item.publicPath),
   ...courseworkDerivedFiles
 ].sort();
@@ -246,5 +253,5 @@ if (failures.length > 0) {
   console.error("Built-site contract failed:\n- " + failures.join("\n- "));
   process.exitCode = 1;
 } else {
-  console.log("Built-site contract passed: 25 pages, 3 languages, 5 public works, 14 coursework media items, and 2 Wake Up images.");
+  console.log("Built-site contract passed: 25 pages, 3 languages, 5 public works, 11 X.WHEEL media items, 14 coursework media items, and 2 Wake Up images.");
 }

@@ -39,3 +39,18 @@ implementation guidance, but they do not become personal taste without explicit 
   browser console.
 - These are implementation outcomes only. The pending typography feedback remains unpromoted until
   the artist explicitly confirms its proposed interpretation.
+
+## 2026-07-29 — X.WHEEL media captions and title boundary
+
+- Seven supplied X.WHEEL images now have distinct Chinese, English, and Japanese alternative text
+  and captions. Alternative text describes the visible frame; captions identify the evidence type
+  without inventing narrative intent, dates, briefs, roles, or outcomes.
+- The X.WHEEL summary now names the visible evidence groups—space, object, character, letterform,
+  and interface—rather than describing only the original four repository previews.
+- At 1440×900, reducing the standard project-title maximum to `8vw / 8rem` left approximately
+  10px between the visual edge of `X.WHEEL` and the hero image. At 390px and 320px the title had
+  no overflow.
+- All eleven captions remained visible in the mobile one-column reading order, with no horizontal
+  overflow at either tested mobile width.
+- These are measured implementation outcomes and do not create a new permanent typography
+  preference.

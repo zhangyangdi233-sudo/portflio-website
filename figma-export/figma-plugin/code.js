@@ -40,7 +40,7 @@ const projects = [
     medium: "Godot game prototype, 3D asset and interface study",
     year: "2026",
     status: "In development",
-    summary: "A Godot game in development, currently documented through its room, CRT, console, and poster assets.",
+    summary: "A Godot game in development, documented through spatial, object, character, letterform, and interface studies.",
     color: colors.oxide,
     onColor: colors.night
   },

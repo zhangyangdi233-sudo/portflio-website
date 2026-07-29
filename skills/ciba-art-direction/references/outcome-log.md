@@ -78,3 +78,27 @@ feedback captured through the taste inbox and confirmed before promotion.
   contracts, browser reflow checks, and zero console errors.
 - These outcomes do not promote `TASTE-20260728-EDITORIAL-TYPE-DISTILLATION` or
   `TASTE-20260728-NESTED-DESKTOP-WINDOWS`; both remain pending explicit artist confirmation.
+
+## 2026-07-29 — X.WHEEL expanded evidence set
+
+- The X.WHEEL record now contains eleven media items. Its four established repository previews
+  remain first and continue to supply the Home representatives; seven artist-supplied images are
+  appended only to the project detail.
+- The seven added PNG files remain exact-byte copies totalling 2,447,704 bytes. A dedicated
+  manifest records their explicitly assigned source names, deployable names, hashes, and intrinsic
+  dimensions.
+- Chinese, English, and Japanese each use separate factual alternative text and adjacent captions
+  for the character, letterform, signal-graphic, and CRT-interface evidence. No story, assignment,
+  production role, or intent was inferred from the images.
+- At 1440×900, all eleven media figures had distinct non-intersecting rectangles and the document
+  had no horizontal overflow. All eleven source images loaded at their recorded intrinsic
+  dimensions, and keyboard focus changed the selected image from `grayscale(1)` to `grayscale(0)`.
+- The standard project-title maximum was reduced from `9vw / 9rem` to `8vw / 8rem`. X.WHEEL
+  retained approximately 10px of horizontal clearance from the hero image instead of extending
+  into it.
+- At 390×844 and 320px, the gallery recomposed to one column, all eleven captions remained
+  visible, the title stayed within its column, and neither viewport produced horizontal overflow.
+- Verification passed 36 tests, Astro diagnostics, the 25-route static build, built/design drift
+  contracts, exact-file provenance checks, and a zero-error browser console.
+- These outcomes do not promote any pending taste observation; the change records supplied
+  project evidence and a measured collision fix only.

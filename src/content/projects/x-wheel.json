@@ -73,6 +73,104 @@
         "en": "Poster object preview.",
         "ja": "ポスター・オブジェクトのプレビュー。"
       }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/character-full.png",
+      "alt": {
+        "zh": "黑色背景左侧是一名以浅绿和绿色线条绘制的长发人物全身像",
+        "en": "A full-length long-haired character drawn in pale and mid green stands on the left of a black field",
+        "ja": "黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像"
+      },
+      "caption": {
+        "zh": "X.WHEEL 角色全身造型稿。",
+        "en": "X.WHEEL full-length character study.",
+        "ja": "X.WHEELのキャラクター全身造形スタディ。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/character-sequence.png",
+      "alt": {
+        "zh": "深蓝色背景中，五个浅绿色人物视图并排重叠，展示头部与身体朝向的变化",
+        "en": "Five overlapping pale-green character views on a dark blue field show changes in head and body direction",
+        "ja": "濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している"
+      },
+      "caption": {
+        "zh": "角色方向与表情序列。",
+        "en": "Character direction and expression sequence.",
+        "ja": "キャラクターの方向と表情のシークエンス。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/cartridge-3-title.png",
+      "alt": {
+        "zh": "绿色画面上写有“Cartridge 3”和一行德语文字，中央标题由黑白几何字形组成",
+        "en": "A green title card reads Cartridge 3 and a German sentence, with a central title built from black-and-white geometric letterforms",
+        "ja": "緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている"
+      },
+      "caption": {
+        "zh": "Cartridge 3 标题与字形构成。",
+        "en": "Cartridge 3 title and letterform composition.",
+        "ja": "Cartridge 3のタイトルと字形構成。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/cartridge-3-geometry.png",
+      "alt": {
+        "zh": "绿色画面中，浅绿色正方形、宽圆弧与井号形状相互叠合",
+        "en": "Pale-green square, broad arc, and hash-like forms overlap on a green field",
+        "ja": "緑の画面上で、淡い緑の正方形、太い円弧、ハッシュ記号状の形が重なっている"
+      },
+      "caption": {
+        "zh": "Cartridge 3 几何构成稿。",
+        "en": "Cartridge 3 geometric composition study.",
+        "ja": "Cartridge 3の幾何学構成スタディ。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/character-portrait.png",
+      "alt": {
+        "zh": "深蓝色背景中的绿色像素风长发人物近景，人物低头看向侧下方",
+        "en": "A green pixel-art close-up of a long-haired character looking down to one side on a dark blue field",
+        "ja": "濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ"
+      },
+      "caption": {
+        "zh": "角色像素化近景试验。",
+        "en": "Pixelated character close-up study.",
+        "ja": "キャラクターのピクセル調クローズアップ・スタディ。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/signal-orb.png",
+      "alt": {
+        "zh": "深蓝色背景中央是一颗绿色颗粒球体，两侧分布重复弧线与折线信号图形",
+        "en": "A grainy green sphere sits between repeated arcs and angular signal lines on a dark blue field",
+        "ja": "濃紺の背景の中央に粒子状の緑の球体があり、両側に反復する円弧と折れ線の信号図形がある"
+      },
+      "caption": {
+        "zh": "球体与信号线的图形构成。",
+        "en": "Sphere and signal-line graphic composition.",
+        "ja": "球体と信号線のグラフィック構成。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/crt-character-composition.png",
+      "alt": {
+        "zh": "浅绿色显示器位于画面中央，屏幕内是绿色人物和几何图形，周围环绕球体与波纹线",
+        "en": "A pale-green monitor contains a green character and geometric graphics, surrounded by spheres and wave-like lines",
+        "ja": "淡い緑のモニター内に緑の人物と幾何学図形があり、周囲に球体と波状の線が配置されている"
+      },
+      "caption": {
+        "zh": "角色与 CRT 界面构成。",
+        "en": "Character and CRT interface composition.",
+        "ja": "キャラクターとCRTインターフェースの構成。"
+      }
     }
   ],
   "details": {
@@ -103,31 +201,31 @@
   "i18n": {
     "zh": {
       "title": "X.WHEEL",
-      "summary": "一件正在开发的 Godot 游戏；当前记录展示其房间、CRT 电视、主机与海报等视觉资产。",
+      "summary": "一件正在开发的 Godot 游戏；当前记录展示其空间、物件、角色、字形与界面等视觉研究。",
       "medium": "Godot 游戏原型、3D 素材与界面研究",
       "status": "开发中",
       "body": [
-        "X.WHEEL 的公开仓库包含 Godot 场景、脚本、着色器、声音与三维素材；这里选取仓库中的原始资产预览，作为当前可验证的制作证据。",
+        "X.WHEEL 的公开仓库包含 Godot 场景、脚本、着色器、声音与三维素材。本记录结合仓库中的资产预览与艺术家本次提供的角色、字形、信号图形和界面图像，作为当前可验证的制作证据。",
         "尚未由艺术家确认的剧情、完整玩法与展映规格不会在本页中臆测；后续可直接在内容文件中补充试玩链接与最终项目说明。"
       ]
     },
     "en": {
       "title": "X.WHEEL",
-      "summary": "A Godot game in development, currently documented through its room, CRT, console, and poster assets.",
+      "summary": "A Godot game in development, documented through spatial, object, character, letterform, and interface studies.",
       "medium": "Godot game prototype, 3D asset and interface study",
       "status": "In development",
       "body": [
-        "The public X.WHEEL repository contains Godot scenes, scripts, shaders, audio, and 3D assets. This record uses original asset previews from that repository as its current verifiable production evidence.",
+        "The public X.WHEEL repository contains Godot scenes, scripts, shaders, audio, and 3D assets. This record combines repository asset previews with the artist-supplied character, letterform, signal graphic, and interface images as its current verifiable production evidence.",
         "Story, complete gameplay, and exhibition specifications remain intentionally unstated until the artist confirms them; a playable build and final project text can be added directly to the content file later."
       ]
     },
     "ja": {
       "title": "X.WHEEL",
-      "summary": "Godotで開発中のゲーム。現在は部屋、CRT、ゲーム機、ポスターのアセットを制作記録として公開しています。",
+      "summary": "Godotで開発中のゲーム。空間、オブジェクト、キャラクター、字形、インターフェースの視覚研究を制作記録として公開しています。",
       "medium": "Godotゲームプロトタイプ、3Dアセット、インターフェース研究",
       "status": "開発中",
       "body": [
-        "公開リポジトリにはGodotのシーン、スクリプト、シェーダー、音声、3D素材が含まれています。本ページでは、そのリポジトリにあるオリジナルのアセット・プレビューを、現時点で検証できる制作資料として掲載します。",
+        "公開リポジトリにはGodotのシーン、スクリプト、シェーダー、音声、3D素材が含まれています。本記録では、リポジトリ内のアセット・プレビューと、作家から今回提供されたキャラクター、字形、信号図形、インターフェースの画像を、現時点で検証できる制作資料として掲載します。",
         "作者がまだ確認していない物語、完全なゲームプレイ、展示仕様は推測して記載しません。試遊版と最終テキストは後からコンテンツファイルへ直接追加できます。"
       ]
     }
