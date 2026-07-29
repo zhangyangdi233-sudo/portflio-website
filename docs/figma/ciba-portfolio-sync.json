@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-07-29",
+  "sourceOfTruth": "production website code",
+  "figma": {
+    "fileKey": "xyINqLy60s9MELHd2HmViK",
+    "fileUrl": "https://www.figma.com/design/xyINqLy60s9MELHd2HmViK",
+    "requestedTeamId": "1656239521218102059",
+    "requestedProjectId": "622631172",
+    "requestedProjectUrl": "https://www.figma.com/files/team/1656239521218102059/project/622631172?fuid=1656239519766432224",
+    "actualLocation": "drafts",
+    "moveToProjectRequired": true,
+    "plan": "starter",
+    "seat": "View",
+    "codeConnect": "unavailable",
+    "mcpReadStatus": "six-call monthly allowance exhausted on 2026-07-29",
+    "pages": [
+      {
+        "id": "0:1",
+        "name": "00 Cover",
+        "purpose": "cover and system entry"
+      },
+      {
+        "id": "6:4",
+        "name": "01 Foundations",
+        "purpose": "tokens and typography documentation"
+      },
+      {
+        "id": "6:6",
+        "name": "02 Components",
+        "purpose": "components and editable website frames"
+      }
+    ]
+  },
+  "collections": {
+    "CIBA / Primitives": {
+      "id": "VariableCollectionId:2:2",
+      "variables": {
+        "night/1000": "VariableID:2:6",
+        "paper/1000": "VariableID:2:7",
+        "acid/500": "VariableID:2:8",
+        "paper/42": "VariableID:2:9",
+        "paper/14": "VariableID:2:10",
+        "paper/68": "VariableID:2:11",
+        "paper/72": "VariableID:2:12",
+        "paper/86": "VariableID:2:13"
+      }
+    },
+    "CIBA / Color": {
+      "id": "VariableCollectionId:2:3",
+      "variables": {
+        "color/background/default": "VariableID:2:14",
+        "color/surface/default": "VariableID:2:15",
+        "color/text/default": "VariableID:2:16",
+        "color/text/muted": "VariableID:2:17",
+        "color/text/caption": "VariableID:2:18",
+        "color/accent/default": "VariableID:2:19",
+        "color/border/default": "VariableID:2:20",
+        "color/border/soft": "VariableID:2:21",
+        "color/focus/default": "VariableID:2:22"
+      }
+    },
+    "CIBA / Layout": {
+      "id": "VariableCollectionId:2:4",
+      "variables": {
+        "spacing/xs": "VariableID:2:23",
+        "spacing/sm": "VariableID:2:24",
+        "spacing/md": "VariableID:2:25",
+        "spacing/lg": "VariableID:2:26",
+        "spacing/xl": "VariableID:2:27",
+        "spacing/2xl": "VariableID:2:28",
+        "spacing/3xl": "VariableID:2:29",
+        "size/control-min": "VariableID:2:30",
+        "size/header-desktop": "VariableID:2:31",
+        "size/header-mobile": "VariableID:2:32",
+        "stroke/hairline": "VariableID:2:33",
+        "stroke/window": "VariableID:2:34",
+        "stroke/focus": "VariableID:2:35",
+        "offset/focus": "VariableID:2:36",
+        "radius/none": "VariableID:2:37"
+      }
+    },
+    "CIBA / Motion": {
+      "id": "VariableCollectionId:2:5",
+      "variables": {
+        "duration/micro": "VariableID:2:38",
+        "duration/state": "VariableID:2:39",
+        "duration/title": "VariableID:2:40",
+        "distance/drag-step": "VariableID:2:41",
+        "distance/drag-step-large": "VariableID:2:42"
+      }
+    }
+  },
+  "routes": [
+    {
+      "figmaFrame": "01 Home / Desktop",
+      "url": "/ja/",
+      "source": "src/pages/[lang]/index.astro"
+    },
+    {
+      "figmaFrame": "02 Home / Mobile",
+      "url": "/ja/",
+      "source": "src/pages/[lang]/index.astro"
+    },
+    {
+      "figmaFrame": "03 Works / Draggable Window System",
+      "url": "/ja/works/",
+      "source": "src/pages/[lang]/works/index.astro"
+    },
+    {
+      "figmaFrame": "04 Project Detail / X.WHEEL",
+      "url": "/ja/works/x-wheel/",
+      "source": "src/pages/[lang]/works/[slug].astro"
+    },
+    {
+      "figmaFrame": "05 Wake Up / Two-Image Record",
+      "url": "/ja/works/wake-up/",
+      "source": "src/components/WakeUpReplica.astro"
+    },
+    {
+      "figmaFrame": "06 About / Statement CV Contact",
+      "url": "/ja/about/",
+      "source": "src/pages/[lang]/about.astro"
+    },
+    {
+      "figmaFrame": "07 Coursework / Three Desktop Sections",
+      "url": "/ja/works/university-coursework/",
+      "source": "src/components/CourseworkDesktop.astro"
+    }
+  ],
+  "componentMappings": [
+    {
+      "figmaLayer": "Header",
+      "source": "src/components/Header.astro"
+    },
+    {
+      "figmaLayer": "Language Switcher",
+      "source": "src/components/LanguageSwitcher.astro"
+    },
+    {
+      "figmaLayer": "Work Window",
+      "source": "src/components/WorkDesktopWindow.astro"
+    },
+    {
+      "figmaLayer": "Project Media",
+      "source": "src/components/ProjectMedia.astro"
+    },
+    {
+      "figmaLayer": "Coursework Desktop",
+      "source": "src/components/CourseworkDesktop.astro"
+    }
+  ],
+  "localSync": {
+    "command": "npm run figma:sync",
+    "endpoint": "http://127.0.0.1:4767/snapshot",
+    "pluginCommand": "Export changes to Codex",
+    "latest": "figma-export/sync/latest.json",
+    "previous": "figma-export/sync/previous.json",
+    "history": "figma-export/sync/history/"
+  }
+}

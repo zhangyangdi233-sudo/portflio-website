@@ -40,7 +40,8 @@ describe("delivery guardrails", () => {
     expect(plugin).toContain("BUILD LINK / NOT PUBLISHED");
     expect(plugin).toContain("CONTACT ROUTE / ADD VERIFIED EMAIL OR URL");
     expect(plugin).toContain("function addHomeProjectStage");
-    expect(plugin).toContain("Low-opacity draggable media placeholder / 10%");
+    expect(plugin).toContain("handoffFacts.homeXWheelMediaSources.map");
+    expect(plugin).toContain("Low-opacity draggable media ${String(index + 1).padStart");
     expect(plugin).toContain('"/assets/projects/x-wheel/character-full.png"');
     expect(plugin).toContain('"/assets/projects/x-wheel/character-portrait.png"');
     expect(plugin).toContain('"/assets/projects/x-wheel/character-sequence.png"');

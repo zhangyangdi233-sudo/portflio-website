@@ -211,7 +211,9 @@ for (const group of groupOrder) {
 for (const marker of [
   "function addHomeProjectStage",
   "Home project stage / current work",
-  "Low-opacity draggable media placeholder / 10%",
+  "handoffFacts.homeXWheelMediaSources.map",
+  "Low-opacity draggable media ${String(index + 1).padStart",
+  "return setImageFill(media, src, \"FIT\")",
   "Filter / ALL / active",
   "Filter / FEATURED",
   "Filter / ARCHIVE",
@@ -228,6 +230,22 @@ for (const marker of [
   "Video play control marker"
 ]) {
   if (!pluginCode.includes(marker)) failures.push(`Figma plugin is missing structural marker: ${marker}`);
+}
+
+for (const syncMarker of [
+  'const page = existingPage || figma.currentPage',
+  "await figma.setCurrentPageAsync(page)",
+  'const SYNC_ENDPOINT = "http://127.0.0.1:4767/snapshot"',
+  "frames: generated.map(snapshotNode)",
+  '"x-ciba-sync": "ciba-local-v1"'
+]) {
+  if (!pluginCode.includes(syncMarker)) failures.push(`Figma plugin is missing editable-sync marker: ${syncMarker}`);
+}
+
+for (const unsupportedMutation of ["figma.currentPage = page", "existingPage || figma.createPage()"]) {
+  if (pluginCode.includes(unsupportedMutation)) {
+    failures.push(`Figma plugin still contains unsupported or Starter-unsafe page mutation: ${unsupportedMutation}`);
+  }
 }
 
 for (const removedHomeLabel of ["ARTIST ARCHIVE / TOKYO", "DIGITAL PORTFOLIO / 2026"]) {

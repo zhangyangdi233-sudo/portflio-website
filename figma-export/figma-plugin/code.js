@@ -43,6 +43,7 @@ const projects = [
     slug: "x-wheel",
     index: "01",
     title: "X.WHEEL",
+    cover: "/assets/projects/x-wheel/character-full.png",
     medium: "Godot game prototype, 3D asset and interface study",
     year: "2026",
     status: "In development",
@@ -54,6 +55,7 @@ const projects = [
     slug: "emida",
     index: "02",
     title: "EMIDA",
+    cover: "/assets/projects/emida/emida-doctor.webp",
     medium: "Visual novel game, Ren'Py, Procreate",
     year: "2024",
     status: "In development",
@@ -65,6 +67,7 @@ const projects = [
     slug: "wake-up",
     index: "03",
     title: "Wake Up",
+    cover: "/assets/projects/wake-up/bed-alarm.png",
     medium: "Web-based visual essay, scrolling composition",
     year: "2023",
     status: "Archived work",
@@ -76,6 +79,7 @@ const projects = [
     slug: "escape-project",
     index: "04",
     title: "Escape Project",
+    cover: "/assets/projects/escape-project/escape-space.webp",
     medium: "Web-based visual work, image composition",
     year: "2023",
     status: "Archived work",
@@ -87,6 +91,7 @@ const projects = [
     slug: "university-coursework",
     index: "05",
     title: "University Coursework",
+    cover: "/assets/projects/university-coursework/blender-01-object-study.png",
     medium: "3D practice, motion graphics, video editing",
     year: "—",
     status: "Practice record",
@@ -100,6 +105,8 @@ const regular = { family: "Inter", style: "Regular" };
 const bold = { family: "Inter", style: "Bold" };
 const black = bold;
 const PAGE_NAME = "CIBA / Signal Index / Acid Proof";
+const DEV_SITE_ORIGIN = "http://127.0.0.1:4323";
+const SYNC_ENDPOINT = "http://127.0.0.1:4767/snapshot";
 
 const courseworkSections = [
   {
@@ -321,6 +328,20 @@ function rect(parent, name, x, y, w, h, fill, stroke, opacity = 1) {
   return node;
 }
 
+async function setImageFill(node, src, scaleMode = "FILL") {
+  node.setPluginData("source", src);
+  node.setPluginData("sourceUrl", `${DEV_SITE_ORIGIN}${src}`);
+  try {
+    const image = await figma.createImageAsync(`${DEV_SITE_ORIGIN}${encodeURI(src)}`);
+    node.fills = [{ type: "IMAGE", imageHash: image.hash, scaleMode }];
+    node.setPluginData("imageStatus", "loaded");
+    return true;
+  } catch (error) {
+    node.setPluginData("imageStatus", `placeholder: ${error.message}`);
+    return false;
+  }
+}
+
 function line(parent, name, x1, y1, x2, y2, color = colors.plum) {
   const node = figma.createRectangle();
   node.name = name;
@@ -396,7 +417,7 @@ function addWheelGraphic(parent, x, y, w, h) {
   text(parent, "Media label", "X.WHEEL / SOFT ALARM", x + 18, y + h - 34, 220, 14, bold, colors.ink);
 }
 
-function addHomeProjectStage(parent, y, w, mobile = false) {
+async function addHomeProjectStage(parent, y, w, mobile = false) {
   const inset = mobile ? 16 : 40;
   const stageWidth = w - inset * 2;
   const stageHeight = mobile ? 620 : 780;
@@ -404,20 +425,40 @@ function addHomeProjectStage(parent, y, w, mobile = false) {
   text(parent, "Home stage label", "CURRENT WORK / 01 OF 05", inset + 18, y + 20, mobile ? 210 : 320, mobile ? 10 : 12, bold, colors.oxide);
   text(parent, "Home stage title / clipped roll source", "X.WHEEL", inset + 18, y + (mobile ? 74 : 68), stageWidth - 36, mobile ? 58 : 152, black, colors.ink, 0.82);
 
-  const media = rect(
-    parent,
-    "Low-opacity draggable media placeholder / 10%",
-    mobile ? inset + 18 : inset + stageWidth * 0.48,
-    y + (mobile ? 210 : 228),
-    mobile ? stageWidth - 36 : stageWidth * 0.46,
-    mobile ? 260 : 390,
-    colors.ink,
-    colors.ink,
-    0.1
-  );
-  media.setPluginData("interaction", "Drag on desktop; reveal source colour on hover/focus in website");
-  media.setPluginData("sourceMedia", JSON.stringify(handoffFacts.homeXWheelMediaSources));
-  text(parent, "Media interaction note", "10% / GRAYSCALE / DRAG / HOVER→SOURCE COLOUR", mobile ? inset + 28 : inset + stageWidth * 0.5, y + (mobile ? 230 : 248), mobile ? stageWidth - 56 : stageWidth * 0.42, mobile ? 9 : 11, bold, colors.oxide);
+  const desktopLayouts = [
+    { x: -18, y: 198, w: 720, h: 410, r: -1.4 },
+    { x: 770, y: 338, w: 480, h: 292, r: 2.2 },
+    { x: 1012, y: 142, w: 310, h: 430, r: -3.1 },
+    { x: 282, y: 520, w: 438, h: 224, r: 1.8 }
+  ];
+  const mobileLayouts = [
+    { x: 18, y: 196, w: 300, h: 190, r: -1.4 },
+    { x: 82, y: 338, w: 238, h: 148, r: 2.2 },
+    { x: 205, y: 224, w: 126, h: 206, r: -3.1 },
+    { x: 30, y: 454, w: 258, h: 132, r: 1.8 }
+  ];
+  const mediaLayouts = mobile ? mobileLayouts : desktopLayouts;
+  const imageLoads = handoffFacts.homeXWheelMediaSources.map((src, index) => {
+    const placement = mediaLayouts[index];
+    const media = rect(
+      parent,
+      `Low-opacity draggable media ${String(index + 1).padStart(2, "0")} / 10% / ${src.split("/").pop()}`,
+      inset + placement.x,
+      y + placement.y,
+      placement.w,
+      placement.h,
+      colors.ink,
+      colors.ink,
+      1
+    );
+    media.rotation = placement.r;
+    media.opacity = 0.1;
+    media.setPluginData("interaction", "Drag on desktop; reveal source colour on hover/focus in website");
+    media.setPluginData("homeOrder", String(index + 1));
+    return setImageFill(media, src, "FIT");
+  });
+  await Promise.all(imageLoads);
+  text(parent, "Media interaction note", "4 INDEPENDENT LAYERS / 10% / DRAG / HOVER→SOURCE COLOUR", mobile ? inset + 28 : inset + stageWidth * 0.5, y + (mobile ? 230 : 248), mobile ? stageWidth - 56 : stageWidth * 0.42, mobile ? 9 : 11, bold, colors.oxide);
 
   text(parent, "Home stage concept label", "CONCEPT", inset + 18, y + (mobile ? 500 : 590), 120, 10, bold, colors.oxide);
   text(parent, "Home stage concept", projects[0].summary, inset + 18, y + (mobile ? 526 : 618), mobile ? stageWidth - 36 : stageWidth * 0.42, mobile ? 15 : 20, regular, colors.ink, 1.35);
@@ -437,7 +478,7 @@ function addHomeProjectStage(parent, y, w, mobile = false) {
   );
 }
 
-function homeDesktop() {
+async function homeDesktop() {
   const f = frame("01 Home / Desktop", 0, 0, 1440, 1740);
   addHeader(f, 1440);
   addSwissGrid(f, 1440, 1740);
@@ -447,10 +488,10 @@ function homeDesktop() {
   text(f, "Chapter count", "01\n\n05", 1378, 238, 24, 12, bold, colors.night, 1.4);
   rect(f, "Enter works action", 930, 744, 430, 56, colors.oxide);
   text(f, "Enter works label", "VIEW WORKS                                  ↘", 950, 764, 390, 12, bold, colors.night);
-  addHomeProjectStage(f, 900, 1440);
+  await addHomeProjectStage(f, 900, 1440);
 }
 
-function homeMobile() {
+async function homeMobile() {
   const f = frame("02 Home / Mobile", 1510, 0, 390, 1580);
   addMobileHeader(f, 390);
   addSwissGrid(f, 390, 1580);
@@ -458,7 +499,7 @@ function homeMobile() {
   text(f, "Practice", "GAMES / WEB / MOVING IMAGE", 16, 470, 320, 10, bold, colors.oxide);
   rect(f, "Enter works action", 16, 720, 358, 52, colors.oxide);
   text(f, "Enter works label", "VIEW WORKS                                  ↘", 28, 738, 330, 10, bold, colors.night);
-  addHomeProjectStage(f, 840, 390, true);
+  await addHomeProjectStage(f, 840, 390, true);
 }
 
 function workWindow(parent, project, placement) {
@@ -746,6 +787,114 @@ function courseworkHandoff() {
   });
 }
 
+function snapshotPaint(paint) {
+  if (!paint || typeof paint !== "object") return null;
+  if (paint.type === "SOLID") {
+    return {
+      type: paint.type,
+      color: paint.color,
+      opacity: paint.opacity ?? 1,
+      visible: paint.visible ?? true
+    };
+  }
+  if (paint.type === "IMAGE") {
+    return {
+      type: paint.type,
+      imageHash: paint.imageHash,
+      scaleMode: paint.scaleMode,
+      opacity: paint.opacity ?? 1,
+      visible: paint.visible ?? true
+    };
+  }
+  return { type: paint.type, opacity: paint.opacity ?? 1, visible: paint.visible ?? true };
+}
+
+function snapshotNode(node) {
+  const record = {
+    id: node.id,
+    type: node.type,
+    name: node.name,
+    x: Number(node.x?.toFixed?.(2) ?? 0),
+    y: Number(node.y?.toFixed?.(2) ?? 0),
+    width: Number(node.width?.toFixed?.(2) ?? 0),
+    height: Number(node.height?.toFixed?.(2) ?? 0),
+    rotation: Number(node.rotation?.toFixed?.(2) ?? 0),
+    opacity: node.opacity ?? 1,
+    visible: node.visible,
+    locked: node.locked,
+    source: node.getPluginData?.("source") || undefined,
+    homeOrder: node.getPluginData?.("homeOrder") || undefined,
+    interaction: node.getPluginData?.("interaction") || undefined
+  };
+
+  if ("fills" in node && node.fills !== figma.mixed) {
+    record.fills = node.fills.map(snapshotPaint).filter(Boolean);
+  }
+  if ("strokes" in node && node.strokes !== figma.mixed) {
+    record.strokes = node.strokes.map(snapshotPaint).filter(Boolean);
+    record.strokeWeight = node.strokeWeight;
+  }
+  if (node.type === "TEXT") {
+    record.characters = node.characters;
+    record.fontName = node.fontName === figma.mixed ? "mixed" : node.fontName;
+    record.fontSize = node.fontSize === figma.mixed ? "mixed" : node.fontSize;
+    record.lineHeight = node.lineHeight === figma.mixed ? "mixed" : node.lineHeight;
+    record.letterSpacing = node.letterSpacing === figma.mixed ? "mixed" : node.letterSpacing;
+    record.textAlignHorizontal = node.textAlignHorizontal;
+  }
+  if ("layoutMode" in node) {
+    record.layout = {
+      mode: node.layoutMode,
+      primaryAxisSizingMode: node.primaryAxisSizingMode,
+      counterAxisSizingMode: node.counterAxisSizingMode,
+      itemSpacing: node.itemSpacing,
+      paddingTop: node.paddingTop,
+      paddingRight: node.paddingRight,
+      paddingBottom: node.paddingBottom,
+      paddingLeft: node.paddingLeft
+    };
+  }
+  if ("children" in node) {
+    record.children = node.children.map(snapshotNode);
+  }
+  return record;
+}
+
+async function exportSnapshot() {
+  const generated = figma.currentPage.children.filter(
+    (node) => node.getPluginData("cibaGenerated") === "true"
+  );
+  if (generated.length === 0) {
+    throw new Error(`No generated CIBA frames found on “${figma.currentPage.name}”. Run Import / refresh first.`);
+  }
+
+  const payload = {
+    schemaVersion: 1,
+    exportedAt: new Date().toISOString(),
+    fileKey: figma.fileKey || null,
+    fileName: figma.root.name,
+    page: {
+      id: figma.currentPage.id,
+      name: figma.currentPage.name
+    },
+    selection: figma.currentPage.selection.map((node) => ({ id: node.id, name: node.name, type: node.type })),
+    frames: generated.map(snapshotNode)
+  };
+  const response = await fetch(SYNC_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-ciba-sync": "ciba-local-v1"
+    },
+    body: JSON.stringify(payload)
+  });
+  if (!response.ok) {
+    throw new Error(`Local sync server returned ${response.status}. Run “npm run figma:sync” and try again.`);
+  }
+  const result = await response.json();
+  figma.closePlugin(`CIBA snapshot exported: ${result.relativePath}`);
+}
+
 async function loadFonts() {
   await figma.loadFontAsync(regular);
   await figma.loadFontAsync(bold);
@@ -754,27 +903,27 @@ async function loadFonts() {
 async function main() {
   await loadFonts();
   const existingPage = figma.root.children.find((node) => node.type === "PAGE" && node.name === PAGE_NAME);
-  const page = existingPage || figma.createPage();
+  const page = existingPage || figma.currentPage;
   page.name = PAGE_NAME;
-  figma.currentPage = page;
-  if (existingPage) {
-    page.children
-      .filter((node) => node.getPluginData("cibaGenerated") === "true")
-      .forEach((node) => node.remove());
-  }
-  homeDesktop();
-  homeMobile();
+  await figma.setCurrentPageAsync(page);
+  const generatedFrames = page.children.filter((node) => node.getPluginData("cibaGenerated") === "true");
+  generatedFrames.forEach((node) => node.remove());
+  await homeDesktop();
+  await homeMobile();
   worksSystem();
   projectDetail();
   wakeUpMap();
   aboutPage();
   courseworkHandoff();
   figma.viewport.scrollAndZoomIntoView(page.children);
-  figma.closePlugin(existingPage
+  figma.closePlugin(generatedFrames.length > 0
     ? "CIBA generated frames updated in place; manually added untagged layers were preserved."
-    : "Signal Index / Acid Proof frames created, including five Works windows and three coursework desktops.");
+    : "Signal Index / Acid Proof frames created on the current page, including five Works windows and three coursework desktops.");
 }
 
-main().catch((error) => {
-  figma.closePlugin(`Import failed: ${error.message}`);
+const action = figma.command || "import";
+const task = action === "export" ? exportSnapshot() : main();
+
+task.catch((error) => {
+  figma.closePlugin(`CIBA ${action} failed: ${error.message}`);
 });

@@ -9,7 +9,9 @@ This package translates the portfolio's **Signal Index / Acid Proof** direction 
 3. In the macOS file picker, select the manifest using either relative route:
    - From the `portflio-website` project root: `figma-export/figma-plugin/manifest.json`
    - From this `figma-export` folder: `figma-plugin/manifest.json`
-4. Run `CIBA Portfolio Import` from `Plugins > Development`.
+4. Run
+   `CIBA Portfolio Import > Import / refresh editable portfolio`
+   from `Plugins > Development`.
 
 No user-specific absolute path is required. If Finder opens elsewhere, navigate to your local clone and follow the relative route above.
 
@@ -22,6 +24,12 @@ The plugin creates editable frames for:
 - Wake Up / Replica Map
 - About / Statement CV Contact
 - Coursework / Three Desktop Sections
+
+The Home frames contain four separate X.WHEEL evidence layers in the accepted order: full
+character, portrait, character sequence, and Cartridge 3 title study. Each layer remains
+independently movable and carries its public website source path. When the website dev server is
+running at `http://127.0.0.1:4323`, the plugin loads the real PNG/JPG files into Figma; otherwise
+the same named editable layers remain as placeholders.
 
 The Works frame contains five separate, large project-window frames. Their title bars, media
 placeholders, concepts, metadata, and `OPEN` labels remain editable. Move each whole window frame
@@ -48,10 +56,20 @@ project-list paragraph is removed. The Escape work-window title is authored as l
 text—`ESCAPE` followed by `PROJECT`—rather than simulated with character spacing. University
 Coursework follows the same semantic-break rule in its dedicated frame.
 
-Running the plugin again updates the generated frames on the existing `CIBA / Signal Index / Acid
-Proof` page instead of creating duplicates. Untagged top-level layers that you add manually
+The importer uses the current page on first run and renames it `CIBA / Signal Index / Acid Proof`,
+so it does not exceed the Starter plan's three-page limit. Running the plugin again updates the
+generated frames on that page instead of creating duplicates. Untagged top-level layers that you add manually
 are preserved. Edits made inside a generated frame are replaced on the next run; duplicate or move
 exploratory frames to another page before refreshing if you want to keep them.
+
+## Export edited Figma layers back to Codex
+
+Run `npm run figma:sync` in the website repository, keep the terminal open, then choose
+`CIBA Portfolio Import > Export changes to Codex` in Figma. The plugin writes the generated page
+hierarchy to `sync/latest.json`, preserving `sync/previous.json` and a timestamped history file.
+Codex can then compare editable text, geometry, opacity, fills, strokes, typography, hierarchy,
+media sources, and node IDs without relying on Figma's limited Starter/View MCP read allowance.
+Runtime snapshots remain local and are ignored by Git until reviewed.
 
 ## Website JSON source
 

@@ -3,5 +3,23 @@
   "id": "ciba-portfolio-import",
   "api": "1.0.0",
   "main": "code.js",
-  "editorType": ["figma"]
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "menu": [
+    {
+      "name": "Import / refresh editable portfolio",
+      "command": "import"
+    },
+    {
+      "name": "Export changes to Codex",
+      "command": "export"
+    }
+  ],
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "devAllowedDomains": [
+      "http://127.0.0.1:4323",
+      "http://127.0.0.1:4767"
+    ]
+  }
 }

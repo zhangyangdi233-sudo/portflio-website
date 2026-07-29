@@ -24,14 +24,20 @@ updates remain versioned with the website.
 ## Figma-editable view
 
 Import `figma-export/figma-plugin/manifest.json` in Figma Desktop through
-`Plugins → Development → Import plugin from manifest…`, then run **CIBA Portfolio Import**. It
+`Plugins → Development → Import plugin from manifest…`, then run
+**CIBA Portfolio Import → Import / refresh editable portfolio**. It
 creates editable Home desktop/mobile, Works windows, project detail, WAKE UP map, and About frames.
 Text, shapes, title bars, media placeholders, metadata, and each Works window remain independent
 Figma layers. Website drag/filter/routing behavior stays in code.
 
 The generated page is `CIBA / Signal Index / Acid Proof`. The Works frame mirrors the website's
-four large 410–460px windows, acid title bars, and 760px bounded stage. The Home frames expose the
-monumental CIBA title and the low-opacity draggable image field as editable primitives.
+five large 410–460px windows, acid title bars, and 760px bounded stage. The Home frames expose the
+monumental CIBA title and four accepted low-opacity X.WHEEL images as independent editable layers.
+
+To send Figma edits back to Codex without waiting for Figma MCP read quota, run
+`npm run figma:sync`, then choose **Export changes to Codex** in the same plugin. The local listener
+keeps latest, previous, and timestamped snapshots under `figma-export/sync/`; see
+`docs/figma/README.md` for the file link, node mapping, and sync contract.
 
 After changing website tokens, mirror the values in `figma-export/design-tokens.json` and the
 plugin color block, then run:
