@@ -54,6 +54,7 @@ describe("editable Figma delivery", () => {
 
     expect(plugin).toContain('const SYNC_ENDPOINT = "http://127.0.0.1:4767/snapshot"');
     expect(plugin).toContain('"x-ciba-sync": "ciba-local-v1"');
+    expect(plugin).toContain('snapshotKind: "figma-plugin-export"');
     expect(plugin).toContain("frames: generated.map(snapshotNode)");
     expect(server).toContain('const host = "127.0.0.1"');
     expect(server).toContain("const maxBytes = 10 * 1024 * 1024");

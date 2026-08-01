@@ -871,6 +871,7 @@ async function exportSnapshot() {
 
   const payload = {
     schemaVersion: 1,
+    snapshotKind: "figma-plugin-export",
     exportedAt: new Date().toISOString(),
     fileKey: figma.fileKey || null,
     fileName: figma.root.name,
