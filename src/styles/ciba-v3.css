@@ -1100,6 +1100,7 @@ body.ciba-v3.about-page .page-hero h1 {
   font-family: var(--ciba-sans);
   font-size: clamp(5rem, 15vw, 14rem);
   line-height: 0.78;
+  letter-spacing: 0;
 }
 
 body.ciba-v3.about-page .about-layout {
@@ -1209,6 +1210,10 @@ body.ciba-v3 .wake-kicker {
     grid-template-columns: auto 1fr auto;
     gap: 0.35rem;
     padding: 0 0.65rem;
+  }
+
+  body.ciba-v3 main {
+    overflow: visible;
   }
 
   body.ciba-v3 .brand-mark {
@@ -1368,6 +1373,24 @@ body.ciba-v3 .wake-kicker {
   .v3-works-intro {
     min-height: auto;
     gap: 1.4rem;
+  }
+
+  html:lang(ja) .v3-works-intro h1,
+  html:lang(zh) .v3-works-intro h1 {
+    max-width: 100%;
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+    line-height: 0.9;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  body.ciba-v3.about-page .page-hero h1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 14vw, 7rem);
+    line-height: 0.88;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .v3-workspace-toolbar {

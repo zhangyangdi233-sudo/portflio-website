@@ -16,6 +16,7 @@ describe("delivery guardrails", () => {
 
     expect(layout).toContain('class="skip-link" href="#content"');
     expect(layout).toContain('class:list={["ciba-v3", pageClass]}');
+    expect(layout).toContain('import.meta.env.DEV && <script is:inline src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>');
     expect(header).toContain('aria-current={worksIsCurrent ? "page" : undefined}');
     expect(window).toMatch(/<button[\s\S]*?data-window-handle/);
     expect(window).toContain('aria-keyshortcuts="Enter Space ArrowLeft ArrowRight');
@@ -32,13 +33,17 @@ describe("delivery guardrails", () => {
     expect(projectMedia).toContain('tabindex="0"');
   });
 
-  it("does not invent missing playable or contact actions in the Figma snapshot", () => {
+  it("keeps unpublished builds absent and mirrors the artist-confirmed contact in Figma", () => {
     const plugin = read("figma-export/figma-plugin/code.js");
+    const profile = JSON.parse(read("src/content/site/profile.json"));
 
     expect(plugin).not.toContain("PLAY EXTERNAL BUILD");
     expect(plugin).not.toContain('"Contact button"');
     expect(plugin).toContain("BUILD LINK / NOT PUBLISHED");
-    expect(plugin).toContain("CONTACT ROUTE / ADD VERIFIED EMAIL OR URL");
+    expect(profile.email).toBe("mayonezu332@gmail.com");
+    expect(plugin).toContain(`contactEmail: "${profile.email}"`);
+    expect(plugin).toContain('text(f, "Contact email", handoffFacts.contactEmail');
+    expect(plugin).not.toContain("CONTACT ROUTE / ADD VERIFIED EMAIL OR URL");
     expect(plugin).toContain("function addHomeProjectStage");
     expect(plugin).toContain("handoffFacts.homeXWheelMediaSources.map");
     expect(plugin).toContain("Low-opacity draggable media ${String(index + 1).padStart");
@@ -59,6 +64,8 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.v3-floating-media \{[\s\S]*?position: relative/);
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.v3-floating-media \{[\s\S]*?opacity: 0\.1/);
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.v3-workspace \.v3-workspace-stage[\s\S]*?grid-template-columns: 1fr/);
+    expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?body\.ciba-v3 main \{[\s\S]*?overflow: visible/);
+    expect(css).toMatch(/html:lang\(ja\) \.v3-works-intro h1,[\s\S]*?html:lang\(zh\) \.v3-works-intro h1[\s\S]*?font-size: clamp\(2\.5rem, 12vw, 4\.5rem\)[\s\S]*?word-break: normal/);
     expect(css).toContain("--workspace-height, 760px");
     expect(motion).toContain("resolveWorkspaceLayout(layout, desktopPointerQuery.matches, isReduced())");
     expect(motion).toContain('handle.setAttribute("aria-hidden", canMove ? "false" : "true")');
@@ -86,6 +93,7 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/@media \(max-width: 899px\)[\s\S]*?\.site-nav a \{[\s\S]*?min-width: 44px/);
     expect(css).toMatch(/\.language-link\.is-active \{[\s\S]*?border-color: var\(--ciba-acid\);[\s\S]*?color: var\(--ciba-paper\)/);
     expect(css).toMatch(/\.wake-back \{[\s\S]*?top: calc\(var\(--ciba-header-height\) \+ 0\.75rem\)[\s\S]*?min-width: 44px[\s\S]*?min-height: 44px/);
+    expect(css).toMatch(/about-page \.page-hero h1 \{[\s\S]*?letter-spacing: 0/);
     expect(css).toMatch(/@media \(max-width: 360px\)[\s\S]*?--ciba-header-height: 106px[\s\S]*?grid-template-rows: 52px 52px/);
     expect(css).toMatch(/project-page:not\(\.wake-page\) \.project-media img \{[\s\S]*?aspect-ratio: auto[\s\S]*?object-fit: contain/);
     expect(css).toMatch(/\.v3-floating-media \{[\s\S]*?filter: grayscale\(1\)[\s\S]*?opacity: 0\.1/);
@@ -100,6 +108,8 @@ describe("delivery guardrails", () => {
     expect(audit).toContain("--remote-debugging-pipe=JSON");
     expect(audit).toContain("expectedXWheelSources");
     expect(audit).toContain("A Works window or its Open action starts outside the stage.");
+    expect(audit).toContain("Mobile Works text is clipped rather than reflowed.");
+    expect(audit).toContain("CJK About heading has non-zero tracking.");
     expect(audit).toContain("Wake Up Latin tracking is not the restrained -0.03em contract.");
     expect(audit).toContain("Coursework media escaped its canonical 10/2/2 grouping.");
     expect(audit).toContain("One or more Coursework videos failed real browser playback.");

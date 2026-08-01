@@ -174,3 +174,20 @@ feedback captured through the taste inbox and confirmed before promotion.
   task-level `systemError` without a response. No post-fix independent verdict is inferred.
 - These are implementation and evaluation outcomes only. They do not promote or alter a taste
   observation.
+
+## 2026-08-01 — Real-browser closure and editable Team Project handoff
+
+- The repository browser audit ran in real Chrome and passed all seven evidence groups with zero
+  console warnings or errors. It covers Home focus/movement, Works geometry and recovery,
+  reduced-motion/mobile fallbacks, multilingual Wake typography, coursework grouping, and actual
+  playback advancement for all five MP4 files.
+- The first focus probe sampled a 260ms authored transition after only 30ms and therefore measured
+  an intermediate opacity. The check now waits 320ms and evaluates the settled visual state; the
+  production interaction did not require a design change.
+- Six unique editable website route frames were copied from the reversible Draft into the existing
+  Team Project file `KWJfKNS3PKBhRGCad4V3Ey`. The rejected wide Home duplicate remains only in the
+  Draft backup. The delivery file was renamed, organized into `00 Website Screens` and
+  `01 Foundations`, and given local CIBA color variables without flattening the website.
+- The public contact `mayonezu332@gmail.com` is now one canonical fact across the live site,
+  portable handoff tokens, editable plugin, and design-drift checks.
+- No taste observation is promoted by these delivery results.

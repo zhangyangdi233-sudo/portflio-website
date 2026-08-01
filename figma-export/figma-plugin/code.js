@@ -23,6 +23,7 @@ const workspace = {
 };
 
 const handoffFacts = {
+  contactEmail: "mayonezu332@gmail.com",
   homeIncludesProjectStage: true,
   homeProjectCount: 5,
   homeXWheelMediaSources: [
@@ -651,8 +652,8 @@ function aboutPage() {
   rect(f, "CV column", 840, 150, 430, 560, null, colors.plum);
   text(f, "CV title", "CV", 872, 185, 120, 40, black);
   text(f, "CV items", "2026–  X.WHEEL\n2024–  EMIDA\n2023   Wake Up\n2023   Escape Project\nUniversity Coursework", 872, 255, 360, 18, regular, colors.ink, 1.55);
-  rect(f, "Contact field / unpublished", 72, 570, 340, 48, colors.surface, colors.plum);
-  text(f, "Contact field status", "CONTACT ROUTE / ADD VERIFIED EMAIL OR URL", 92, 586, 300, 11, bold, colors.fog);
+  rect(f, "Contact / verified email", 72, 570, 390, 48, colors.surface, colors.plum);
+  text(f, "Contact email", handoffFacts.contactEmail, 92, 585, 350, 12, bold, colors.fog);
 }
 
 function courseworkMediaWindow(parent, item, stageWidth, stageHeight) {

@@ -2,24 +2,45 @@
 
 ## File
 
-- Editable file: [CIBA Portfolio Editable Website System](https://www.figma.com/design/xyINqLy60s9MELHd2HmViK)
-- Requested Team Project: [622631172](https://www.figma.com/files/team/1656239521218102059/project/622631172?fuid=1656239519766432224)
-- Current location: the authenticated account’s Drafts.
+- Team Project file: [CIBA Portfolio — Editable Website System](https://www.figma.com/design/KWJfKNS3PKBhRGCad4V3Ey/CIBA-Portfolio-%E2%80%94-Editable-Website-System)
+- Team Project: [622631172](https://www.figma.com/files/team/1656239521218102059/project/622631172?fuid=1656239519766432224)
+- Editable capture backup: [CIBA Portfolio Editable Website System](https://www.figma.com/design/xyINqLy60s9MELHd2HmViK)
 
-Direct creation inside Project `622631172` was rejected because the account currently exposes a
-Starter / View seat. Move the completed Draft into that project from Figma’s file browser when the
-project has a free file slot and your account has permission.
+On 2026-08-01 the existing empty `Untitled` Design file in Team Project `622631172` was reused and
+renamed, avoiding a fourth collaborative file on the Starter plan. Its `00 Website Screens` page
+contains the six unique editable website routes, and `01 Foundations` contains the editable 1440×900
+foundation frame (`3:3033`). The color dependencies used by the captured frames were copied into
+the target file as local `CIBA / Color` variables. The Draft remains a reversible capture backup,
+not the delivery location.
 
 The file already contains the CIBA primitive, semantic color, layout, and motion variable
 collections plus editable text and effect styles. Figma represents the website’s system stacks
-with `Inter` for Latin/UI and `Noto Sans JP` for Japanese/multilingual text.
+with `Inter` for Latin/UI and `Noto Sans JP` for Japanese/multilingual text. The About handoff uses
+the artist-confirmed public contact `mayonezu332@gmail.com` rather than a placeholder.
 
-## Editable import
+The Japanese website was first captured into that Draft as editable Figma frames with real text,
+images, and nested layers, then copied into the Team Project file:
 
-The repository also contains a local development plugin that creates the complete editable website
-surface without flattening it into screenshots:
+- `28:2` — Home / desktop;
+- `31:2` — Works / draggable-window index;
+- `32:2` — X.WHEEL detail;
+- `30:2` — Wake Up detail;
+- `29:2` — About / contact;
+- `33:2` — University Coursework;
+- `34:2` — discarded wide Home duplicate retained only in the Draft backup; it was deliberately
+  omitted from the Team Project rather than represented as a mobile design.
 
-1. Install/open Figma Desktop.
+The source foundation is `27:2`; the Team Project copy is `3:3033`. The source layout contains a
+development-only Figma capture bridge; `npm run build && npm run check:built` asserts that this
+bridge is never shipped in production HTML.
+
+## Optional Desktop refresh
+
+The Team Project handoff is already complete in the web editor, so Figma Desktop is not required to
+view or edit it. The repository also contains a local development plugin for a future exact refresh
+without flattening the website into screenshots:
+
+1. Install/open Figma Desktop from Figma’s official download page and accept the applicable terms.
 2. Choose `Plugins → Development → Import plugin from manifest…`.
 3. Select `figma-export/figma-plugin/manifest.json`.
 4. Open the target page and run
@@ -61,11 +82,10 @@ to 10 MB, and does not inspect credentials or unrelated Figma pages.
 
 ## MCP limitation
 
-Figma’s Starter/View MCP allowance is six read calls per month. The allowance was exhausted while
-building this file on 2026-07-29. Write-independent local import/export remains available, but
-automatic remote inspection resumes only when Figma resets the allowance or the seat is upgraded.
-The local snapshot workflow exists so design-to-code iteration does not have to wait for that
-quota.
+Figma’s Starter/View MCP call limit was reached after the live captures on 2026-08-01. The editable
+Team Project transfer and variable import were completed through Figma’s web editor after that
+limit. Automatic remote inspection resumes only when Figma resets the allowance or the seat is
+upgraded; the local snapshot workflow keeps future design-to-code iteration independent of it.
 
 ## Source of truth
 

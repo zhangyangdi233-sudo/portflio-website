@@ -259,7 +259,8 @@ async function auditHome(baseUrl) {
     const frame = document.querySelector('img[src$="${expectedXWheelSources[0]}"]')?.closest("[data-v3-floating-media]");
     if (!(frame instanceof HTMLElement)) return null;
     frame.focus();
-    await new Promise((resolveDelay) => setTimeout(resolveDelay, 30));
+    // The authored reveal is a 260 ms state transition; assert its settled state, not an in-between frame.
+    await new Promise((resolveDelay) => setTimeout(resolveDelay, 320));
     const focused = { opacity: Number.parseFloat(getComputedStyle(frame).opacity), filter: getComputedStyle(frame).filter };
     frame.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
     const moved = Number.parseFloat(frame.dataset.dragX ?? "0");
@@ -354,9 +355,26 @@ async function auditWorks(baseUrl) {
   const mobile = await evaluate(`(() => ({
     listMode: document.querySelector("[data-workspace-root]")?.classList.contains("is-list-mode"),
     disabledHandles: Array.from(document.querySelectorAll("[data-window-handle]")).every((handle) => handle.disabled && handle.tabIndex === -1),
-    overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
+    overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    criticalText: Array.from(document.querySelectorAll(".v3-works-intro h1, .v3-works-intro > div:last-child > p")).map((element) => {
+      const rect = element.getBoundingClientRect();
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      const textRect = range.getBoundingClientRect();
+      return {
+        text: element.textContent?.trim(),
+        elementOverflow: element.scrollWidth - element.clientWidth,
+        insideViewport: rect.left >= -1 && rect.right <= innerWidth + 1,
+        textInsideViewport: textRect.left >= -1 && textRect.right <= innerWidth + 1
+      };
+    })
   }))()`);
   invariant(mobile.listMode && mobile.disabledHandles && mobile.overflow <= 1, "Mobile Works ordered fallback failed.", mobile);
+  invariant(
+    mobile.criticalText.every((item) => item.elementOverflow <= 1 && item.insideViewport && item.textInsideViewport),
+    "Mobile Works text is clipped rather than reflowed.",
+    mobile
+  );
   record("Works reduced-motion and mobile", { reduced, mobile });
 }
 
@@ -371,28 +389,56 @@ async function auditTypographyAndViewports(baseUrl) {
       trackingRatio: Number.parseFloat(style.letterSpacing) / Number.parseFloat(style.fontSize)
     };
   })()`);
-  invariant(latin?.words.join(" / ") === "WAKE / UP", "Wake Up does not expose semantic WAKE / UP word spans.", latin);
+  invariant(
+    latin?.words.map((word) => word?.toUpperCase()).join(" / ") === "WAKE / UP",
+    "Wake Up does not expose semantic WAKE / UP word spans.",
+    latin
+  );
   invariant(Math.abs(latin.trackingRatio - -0.03) < 0.004, "Wake Up Latin tracking is not the restrained -0.03em contract.", latin);
 
   const viewportEvidence = [];
   for (const width of [320, 390]) {
     for (const lang of languages) {
-      for (const path of [`/${lang}/`, `/${lang}/works/`, `/${lang}/works/wake-up/`]) {
+      for (const path of [`/${lang}/`, `/${lang}/works/`, `/${lang}/works/wake-up/`, `/${lang}/about/`]) {
         await navigate(baseUrl, path, width, width === 320 ? 720 : 844);
         const state = await evaluate(`(() => {
           const heading = document.querySelector(".wake-record-intro h1");
+          const aboutHeading = document.querySelector(".about-page .page-hero h1");
+          const worksHeading = document.querySelector(".v3-works-intro h1");
           const header = document.querySelector(".site-header");
+          const critical = [aboutHeading, worksHeading].filter((element) => element instanceof HTMLElement).map((element) => {
+            const rect = element.getBoundingClientRect();
+            const range = document.createRange();
+            range.selectNodeContents(element);
+            const textRect = range.getBoundingClientRect();
+            return {
+              text: element.textContent?.trim(),
+              elementOverflow: element.scrollWidth - element.clientWidth,
+              insideViewport: rect.left >= -1 && rect.right <= innerWidth + 1,
+              textInsideViewport: textRect.left >= -1 && textRect.right <= innerWidth + 1
+            };
+          });
           return {
             lang: document.documentElement.lang,
             path: ${JSON.stringify(path)},
             overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
             headerOverflow: header ? header.scrollWidth - header.clientWidth : 0,
-            wakeTracking: heading ? getComputedStyle(heading).letterSpacing : null
+            wakeTracking: heading ? getComputedStyle(heading).letterSpacing : null,
+            aboutTracking: aboutHeading ? getComputedStyle(aboutHeading).letterSpacing : null,
+            critical
           };
         })()`);
         invariant(state.overflow <= 1 && state.headerOverflow <= 1, "A multilingual narrow viewport has horizontal overflow.", { width, ...state });
+        invariant(
+          state.critical.every((item) => item.elementOverflow <= 1 && item.insideViewport && item.textInsideViewport),
+          "A critical narrow-viewport heading is clipped rather than reflowed.",
+          { width, ...state }
+        );
         if (path.endsWith("/wake-up/") && lang !== "en") {
           invariant(state.wakeTracking === "normal" || Math.abs(Number.parseFloat(state.wakeTracking)) < 0.01, "CJK Wake Up heading has non-zero tracking.", { width, ...state });
+        }
+        if (path.endsWith("/about/") && lang !== "en") {
+          invariant(state.aboutTracking === "normal" || Math.abs(Number.parseFloat(state.aboutTracking)) < 0.01, "CJK About heading has non-zero tracking.", { width, ...state });
         }
         viewportEvidence.push({ width, ...state });
       }

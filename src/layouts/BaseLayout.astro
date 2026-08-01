@@ -31,6 +31,7 @@ const themeStyle = Object.entries({ ...getArtDirectionVars(), ...theme })
     <meta name="description" content={description} />
     <meta name="theme-color" content="#090a08" />
     <title>{title}</title>
+    {import.meta.env.DEV && <script is:inline src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>}
   </head>
   <body class:list={["ciba-v3", pageClass]}>
     <a class="skip-link" href="#content">{skipCopy}</a>

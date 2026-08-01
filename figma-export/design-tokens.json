@@ -106,6 +106,7 @@
     "announcements": "Filters and minimize/restore changes use a polite live region."
   },
   "handoffFacts": {
+    "contactEmail": "mayonezu332@gmail.com",
     "homeIncludesProjectStage": true,
     "homeProjectCount": 5,
     "homeXWheelMediaSources": [

@@ -80,3 +80,13 @@ implementation guidance, but they do not become personal taste without explicit 
   and independent CJK spacing.
 - This correction is an accessibility and implementation outcome. It does not create or promote a
   permanent typography preference.
+
+## 2026-08-01 — Transition-aware and case-independent browser verification
+
+- The real-browser typography audit passed Chinese, English, and Japanese Wake Up routes at 320px
+  and 390px with no horizontal overflow.
+- The Wake title test now verifies the two semantic words independently from CSS
+  `text-transform`, so accessible source structure is not confused with rendered capitalization.
+- Focus-state checks wait for the authored transition to settle before measuring opacity and
+  grayscale. This is a verification correction, not a new visual preference.
+- No typography observation is promoted by these outcomes.

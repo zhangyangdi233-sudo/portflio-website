@@ -1,37 +1,41 @@
 {
   "schemaVersion": 1,
-  "generatedOn": "2026-07-29",
+  "generatedOn": "2026-08-01",
   "sourceOfTruth": "production website code",
   "figma": {
-    "fileKey": "xyINqLy60s9MELHd2HmViK",
-    "fileUrl": "https://www.figma.com/design/xyINqLy60s9MELHd2HmViK",
+    "fileKey": "KWJfKNS3PKBhRGCad4V3Ey",
+    "fileUrl": "https://www.figma.com/design/KWJfKNS3PKBhRGCad4V3Ey/CIBA-Portfolio-%E2%80%94-Editable-Website-System",
     "requestedTeamId": "1656239521218102059",
     "requestedProjectId": "622631172",
     "requestedProjectUrl": "https://www.figma.com/files/team/1656239521218102059/project/622631172?fuid=1656239519766432224",
-    "actualLocation": "drafts",
-    "moveToProjectRequired": true,
+    "actualLocation": "team-project:622631172",
+    "moveToProjectRequired": false,
     "plan": "starter",
     "seat": "View",
     "codeConnect": "unavailable",
-    "mcpReadStatus": "six-call monthly allowance exhausted on 2026-07-29",
+    "mcpReadStatus": "Starter allowance exhausted after live captures on 2026-08-01; web-editor transfer verified",
+    "sourceDraft": {
+      "fileKey": "xyINqLy60s9MELHd2HmViK",
+      "fileUrl": "https://www.figma.com/design/xyINqLy60s9MELHd2HmViK",
+      "purpose": "editable capture backup"
+    },
+    "localVariableCollections": ["CIBA / Color"],
+    "localVariableCount": 11,
     "pages": [
       {
         "id": "0:1",
-        "name": "00 Cover",
-        "purpose": "cover and system entry"
+        "name": "00 Website Screens",
+        "purpose": "six unique editable website route captures",
+        "topLevelNodeCount": 6
       },
       {
-        "id": "6:4",
         "name": "01 Foundations",
-        "purpose": "tokens and typography documentation"
-      },
-      {
-        "id": "6:6",
-        "name": "02 Components",
-        "purpose": "components and editable website frames"
+        "purpose": "tokens, typography, contact, and sync documentation",
+        "topLevelNodeId": "3:3033"
       }
     ]
   },
+  "collectionIdsSourceFileKey": "xyINqLy60s9MELHd2HmViK",
   "collections": {
     "CIBA / Primitives": {
       "id": "VariableCollectionId:2:2",

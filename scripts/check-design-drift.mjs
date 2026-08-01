@@ -11,6 +11,7 @@ const canonical = readJson("src/content/art-direction.json");
 const handoff = readJson("figma-export/design-tokens.json");
 const courseworkProject = readJson("src/content/projects/university-coursework.json");
 const xWheelProject = readJson("src/content/projects/x-wheel.json");
+const siteProfile = readJson("src/content/site/profile.json");
 const pluginCode = readFileSync(join(root, "figma-export/figma-plugin/code.js"), "utf8");
 const motionCode = readFileSync(join(root, "src/scripts/portfolio-motion.ts"), "utf8");
 const artCss = readFileSync(join(root, "src/styles/ciba-v3.css"), "utf8");
@@ -105,6 +106,7 @@ if (!same(pluginProjects, canonicalProjects)) {
 }
 
 const expectedHandoffFacts = {
+  contactEmail: siteProfile.email,
   homeIncludesProjectStage: true,
   homeProjectCount: canonicalProjects.length,
   homeXWheelMediaSources: xWheelProject.media

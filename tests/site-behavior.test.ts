@@ -17,8 +17,13 @@ import {
 } from "../src/lib/projects";
 import { allProjects, projects } from "../src/lib/project-data";
 import { artDirection } from "../src/lib/art-direction";
+import { siteProfile } from "../src/lib/site-data";
 
 describe("localized portfolio behavior", () => {
+  it("publishes the artist-confirmed professor contact route", () => {
+    expect(siteProfile.email).toBe("mayonezu332@gmail.com");
+  });
+
   it("detects supported browser languages and falls back to English", () => {
     expect(detectPreferredLanguage("ja-JP,ja;q=0.9,en;q=0.8")).toBe("ja");
     expect(detectPreferredLanguage("zh-CN,zh;q=0.9,en;q=0.7")).toBe("zh");

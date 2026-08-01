@@ -1,5 +1,8 @@
 # CIBA delivery audit — 2026-07-29
 
+> Historical snapshot. Superseded by `DELIVERY_AUDIT_2026-08-01.md` after the artist supplied a
+> public contact, live browser regression passed, and editable Figma captures were created.
+
 Scope: rendered Chinese, English, and Japanese portfolio; canonical project content; Home,
 Works, University Coursework, X.WHEEL media; Figma handoff; custom art-direction and editorial
 typography Skills.

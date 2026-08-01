@@ -75,6 +75,10 @@ const readBuilt = (...segments) => {
     const ids = [...source.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
     const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
     check(duplicateIds.length === 0, `${segments.join("/")} has duplicate ids: ${[...new Set(duplicateIds)].join(", ")}`);
+    check(
+      !source.includes("mcp.figma.com/mcp/html-to-design/capture.js"),
+      `${segments.join("/")} must not publish the development-only Figma capture bridge`
+    );
 
     for (const image of source.match(/<img\b[^>]*>/g) ?? []) {
       check(/\salt="[^"]*"/.test(image), `${segments.join("/")} contains an image without alt text`);
@@ -133,10 +137,15 @@ check(relativeFiles(join(dist, "downloads")).length === 0, "dist/downloads must 
 for (const lang of languages) {
   const home = readBuilt(lang, "index.html");
   const works = readBuilt(lang, "works", "index.html");
+  const about = readBuilt(lang, "about", "index.html");
 
   check(home.includes('class="ciba-v3 home-page ciba-home-v3"'), `${lang} home is missing the isolated CIBA V3 body`);
   check(home.includes(`<html lang="${lang}"`), `${lang} home has the wrong document language`);
   check(home.includes('class="skip-link" href="#content"'), `${lang} home is missing the skip link`);
+  check(
+    home.includes('href="mailto:mayonezu332@gmail.com"') && about.includes('href="mailto:mayonezu332@gmail.com"'),
+    `${lang} home/About must expose the artist-confirmed public contact`
+  );
   check(count(home, "data-v3-cinema-layer") === 5, `${lang} home must render exactly five cinematic work layers`);
   check(count(home, "data-v3-cinema-trigger") === 5, `${lang} home must render exactly five scroll triggers`);
   check(count(home, 'aria-describedby="v3-media-instruction"') >= 5, `${lang} home media must expose keyboard-drag instructions`);

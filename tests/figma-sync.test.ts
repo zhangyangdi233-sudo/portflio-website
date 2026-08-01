@@ -36,6 +36,16 @@ describe("editable Figma delivery", () => {
     expect(plugin).toContain("media.opacity = 0.1");
   });
 
+  it("keeps the verified contact editable in the About handoff", () => {
+    const profile = JSON.parse(read("src/content/site/profile.json"));
+    const tokens = JSON.parse(read("figma-export/design-tokens.json"));
+    const plugin = read("figma-export/figma-plugin/code.js");
+
+    expect(tokens.handoffFacts.contactEmail).toBe(profile.email);
+    expect(plugin).toContain(`contactEmail: "${profile.email}"`);
+    expect(plugin).toContain('"Contact / verified email"');
+  });
+
   it("exports local-only, reversible snapshots for design-to-code review", () => {
     const plugin = read("figma-export/figma-plugin/code.js");
     const server = read("scripts/figma-sync-server.mjs");
@@ -52,7 +62,10 @@ describe("editable Figma delivery", () => {
     expect(gitignore).toContain("figma-export/sync/latest.json");
     expect(gitignore).toContain("figma-export/sync/previous.json");
     expect(gitignore).toContain("figma-export/sync/history/");
-    expect(mapping.figma.fileKey).toBe("xyINqLy60s9MELHd2HmViK");
+    expect(mapping.figma.fileKey).toBe("KWJfKNS3PKBhRGCad4V3Ey");
+    expect(mapping.figma.actualLocation).toBe("team-project:622631172");
+    expect(mapping.figma.moveToProjectRequired).toBe(false);
+    expect(mapping.figma.pages[0].topLevelNodeCount).toBe(6);
     expect(mapping.localSync.command).toBe("npm run figma:sync");
     expect(mapping.routes).toHaveLength(7);
   });
