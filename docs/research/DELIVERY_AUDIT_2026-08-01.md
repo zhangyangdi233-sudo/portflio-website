@@ -6,13 +6,13 @@ independent Critic and Evaluator review.
 
 ## Current verdict
 
-`WEBSITE PASS / FIGMA TEAM PROJECT PASS / INDEPENDENT REVIEW RUNNING`.
+`WEBSITE PASS / FIGMA TEAM PROJECT PASS / CRITIC PASS / EVALUATOR COMPLETE`.
 
 The public website implementation and its editable Figma workflow are validated. Six unique
 website views are present as editable frames in the authenticated Team Project file. The editable
-foundation and the color variables used by the
-captured screens are local to that file. Independent Critic and Evaluator verdicts are still being
-collected before final publication.
+foundation and the color variables used by the captured screens are local to that file. A fresh
+read-only Critic returned `VERDICT: PASS`, and an independent delivery Evaluator returned
+`COMPLETE` after inspecting the corrected implementation and pushed branch.
 
 ## Closed facts
 
@@ -30,12 +30,23 @@ collected before final publication.
 - Multilingual layout: 320px and 390px Chinese, English, and Japanese Home/Works/Wake routes have
   no horizontal overflow. Wake Up keeps two semantic title spans, restrained `-0.03em` Latin
   tracking, and zero CJK tracking.
+- About uses zero CJK title tracking. Mobile Works exposes visible overflow during testing, uses
+  responsive CJK sizing/wrapping, and passes element-scroll plus text-range boundary checks; hidden
+  clipping can no longer satisfy the audit.
 - Figma Team Project file: `KWJfKNS3PKBhRGCad4V3Ey`, renamed to
   `CIBA Portfolio — Editable Website System` inside Project `622631172`.
 - Figma pages: `00 Website Screens` contains six unique editable route frames; `01 Foundations`
   contains editable foundation node `3:3033`.
 - Source backup: Draft nodes `28:2`, `31:2`, `32:2`, `30:2`, `29:2`, `33:2`, and `34:2`, plus
   foundation `27:2`, remain available for reversible recovery.
+
+## Independent closure
+
+- Final Critic: task `019fbc19-7813-77a1-a42b-8975500118e0` — `VERDICT: PASS`.
+- Final Evaluator: task `019fbc19-7774-75b1-b747-fc32c85b887b` — `COMPLETE`.
+- The earlier reviewers’ stale Figma-location findings were not dismissed: their two genuine CSS
+  findings (About CJK tracking and mobile Works clipping) were fixed and covered by stronger real
+  browser assertions before the fresh final review.
 
 ## Verification
 

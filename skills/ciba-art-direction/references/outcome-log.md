@@ -190,4 +190,7 @@ feedback captured through the taste inbox and confirmed before promotion.
   `01 Foundations`, and given local CIBA color variables without flattening the website.
 - The public contact `mayonezu332@gmail.com` is now one canonical fact across the live site,
   portable handoff tokens, editable plugin, and design-drift checks.
+- After the final CJK tracking and visible-reflow corrections, a fresh read-only Critic returned
+  `VERDICT: PASS` and a separate delivery Evaluator returned `COMPLETE`. Their task IDs and the
+  closed findings are recorded in `docs/research/INDEPENDENT_REVIEW_2026-08-01.md`.
 - No taste observation is promoted by these delivery results.
