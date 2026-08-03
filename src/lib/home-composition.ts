@@ -1,34 +1,30 @@
-import { sortProjects } from "./projects";
-import type { Project } from "./types";
+import { getPublishedProjects } from "./projects";
+import type { Project, ProjectMedia } from "./types";
 
 export type HomeCompositionRow = Project & {
   indexLabel: string;
-  weight: "lead" | "focus" | "standard";
-  align: "start" | "end";
-  solidTone: "vermilion" | "cyan" | "ivory" | "ultramarine" | "charcoal" | "acid";
-  shapeSet: "bars" | "frames" | "circles" | "diagonal" | "grid" | "slabs";
-  motionAxis: "vertical" | "horizontal" | "depth";
+  homeMedia: ProjectMedia[];
 };
 
-const solidTones: HomeCompositionRow["solidTone"][] = [
-  "vermilion",
-  "cyan",
-  "ivory",
-  "ultramarine",
-  "charcoal",
-  "acid"
-];
+export const homeMediaLayouts = [
+  { x: "-5vw", y: "3svh", w: "72vw", r: -1.4 },
+  { x: "42vw", y: "34svh", w: "38vw", r: 2.2 },
+  { x: "66vw", y: "8svh", w: "30vw", r: -3.1 },
+  { x: "18vw", y: "58svh", w: "32vw", r: 1.8 }
+] as const;
 
-const shapeSets: HomeCompositionRow["shapeSet"][] = ["bars", "frames", "circles", "diagonal", "grid", "slabs"];
+export function getHomeMedia(project: Project): ProjectMedia[] {
+  const authoredSelection = project.media
+    .filter((media) => media.homeOrder !== undefined)
+    .sort((a, b) => (a.homeOrder ?? 0) - (b.homeOrder ?? 0));
+
+  return (authoredSelection.length > 0 ? authoredSelection : project.media).slice(0, homeMediaLayouts.length);
+}
 
 export function buildHomeComposition(projects: Project[]): HomeCompositionRow[] {
-  return sortProjects(projects).map((project, index) => ({
+  return getPublishedProjects(projects).map((project, index) => ({
     ...project,
     indexLabel: String(index + 1).padStart(2, "0"),
-    weight: index === 0 ? "lead" : index === 1 ? "focus" : "standard",
-    align: index % 2 === 0 ? "start" : "end",
-    solidTone: solidTones[index % solidTones.length],
-    shapeSet: shapeSets[index % shapeSets.length],
-    motionAxis: index % 3 === 0 ? "horizontal" : index % 3 === 1 ? "depth" : "vertical"
+    homeMedia: getHomeMedia(project)
   }));
 }

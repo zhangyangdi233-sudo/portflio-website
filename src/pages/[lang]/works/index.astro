@@ -1,9 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import ProjectCard from "../../../components/ProjectCard.astro";
+import WorkDesktopWindow from "../../../components/WorkDesktopWindow.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { artDirection, getWorkspacePosition } from "../../../lib/art-direction";
 import { assertLanguage, languages, ui } from "../../../lib/i18n";
-import { sortProjects } from "../../../lib/projects";
+import { getLocalizedProject, getPublishedProjects } from "../../../lib/projects";
 import { getLocalizedProfile, siteProfile } from "../../../lib/site-data";
 import type { Project } from "../../../lib/types";
 
@@ -14,24 +15,118 @@ export function getStaticPaths() {
 const lang = assertLanguage(Astro.params.lang);
 const labels = ui[lang];
 const profile = getLocalizedProfile(lang);
-const projectEntries = await getCollection("projects");
-const projects = sortProjects(projectEntries.map((entry) => entry.data as Project));
+const entries = await getCollection("projects");
+const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
+const projectCount = String(projects.length).padStart(2, "0");
+const copy = {
+  zh: {
+    title: "作品窗口",
+    intro: "五项公开记录以文件窗口显示。标题、年份、媒介、状态、概念与图像均来自各项目记录。",
+    hint: "桌面端可单击标题栏切换预设位置，也可拖动；方向键移动、Esc 收起。移动端与减少动态模式自动按顺序显示。",
+    workspace: "可移动作品窗口工作区",
+    filters: "作品筛选",
+    layouts: "窗口排列",
+    scatter: "窗口",
+    list: "顺序",
+    reset: "复位",
+    dock: "已收起窗口",
+    visible: "显示"
+  },
+  en: {
+    title: "Work windows",
+    intro: "Five public records are presented as file windows. Titles, dates, media, status, concepts, and images come from each project record.",
+    hint: "On desktop, click a title bar to cycle preset positions or drag it; use arrow keys to move and Escape to minimize. Mobile and reduced-motion modes use ordered reading.",
+    workspace: "Movable project-window workspace",
+    filters: "Filter works",
+    layouts: "Arrange windows",
+    scatter: "Windows",
+    list: "Order",
+    reset: "Reset",
+    dock: "Minimized windows",
+    visible: "visible"
+  },
+  ja: {
+    title: "作品ウィンドウ",
+    intro: "5件の公開記録をファイル・ウィンドウとして表示します。題名、年、メディア、状態、コンセプト、画像は各作品記録に基づいています。",
+    hint: "デスクトップではタイトルバーをクリックしてプリセット位置を切り替えるか、ドラッグできます。矢印キーで移動し、Escで最小化できます。モバイルと視差軽減設定では順序表示になります。",
+    workspace: "移動できる作品ウィンドウ",
+    filters: "作品フィルター",
+    layouts: "ウィンドウ配置",
+    scatter: "ウィンドウ",
+    list: "順序",
+    reset: "リセット",
+    dock: "最小化したウィンドウ",
+    visible: "表示"
+  }
+}[lang];
 ---
 
-<BaseLayout lang={lang} title={`${labels.works} | ${siteProfile.artistName}`} description={profile.statement[0]} pageClass="works-page">
-  <section class="page-hero compact">
-    <p class="eyebrow">{labels.index}</p>
-    <h1 class="split-heading">{labels.works}</h1>
-    <p>{profile.statement[1]}</p>
+<BaseLayout
+  lang={lang}
+  title={`${labels.works} | ${siteProfile.artistName}`}
+  description={profile.statement[0]}
+  pageClass="works-page works-workspace-page ciba-works-v3"
+>
+  <section class="v3-works-intro" aria-labelledby="v3-works-title">
+    <div>
+      <p>01 / {projectCount} / INDEX</p>
+      <h1 id="v3-works-title">{copy.title}</h1>
+    </div>
+    <div>
+      <p>{copy.intro}</p>
+      <p class="v3-works-intro__hint" data-workspace-hint>{copy.hint}</p>
+    </div>
   </section>
 
-  <section class="work-controls" aria-label="Work filters">
-    <button class="filter-button is-active" type="button" data-filter="all">{labels.all}</button>
-    <button class="filter-button" type="button" data-filter="featured">{labels.featured}</button>
-    <button class="filter-button" type="button" data-filter="archive">{labels.archive}</button>
-  </section>
+  <section
+    class="v3-workspace"
+    aria-label={copy.workspace}
+    data-workspace-root
+    data-default-layout="scatter"
+    style={`--workspace-height:${artDirection.workspace.stageHeight}px;`}
+  >
+    <div class="v3-workspace-toolbar">
+      <div class="v3-toolbar-group" role="group" aria-label={copy.filters}>
+        <button type="button" data-workspace-filter="all" aria-pressed="true">{labels.all}</button>
+        <button type="button" data-workspace-filter="featured" aria-pressed="false">{labels.featured}</button>
+        <button type="button" data-workspace-filter="archive" aria-pressed="false">{labels.archive}</button>
+      </div>
 
-  <section class="project-grid" data-project-grid>
-    {projects.map((project) => <ProjectCard project={project} lang={lang} />)}
+      <div class="v3-toolbar-group v3-toolbar-group--layout" role="group" aria-label={copy.layouts}>
+        <button type="button" data-layout="scatter" aria-pressed="true">{copy.scatter}</button>
+        <button type="button" data-layout="list" aria-pressed="false">{copy.list}</button>
+        <button type="button" data-workspace-reset>{copy.reset}</button>
+      </div>
+
+      <p class="v3-workspace-status" data-workspace-status data-visible-label={copy.visible} aria-live="polite">
+        {projectCount} / {projectCount} {copy.visible}
+      </p>
+    </div>
+
+    <div class="v3-workspace-stage" data-workspace-stage>
+      {
+        projects.map((project, index) => (
+          <WorkDesktopWindow
+            project={project}
+            lang={lang}
+            index={index}
+            position={getWorkspacePosition(project.slug, index)}
+          />
+        ))
+      }
+    </div>
+
+    <nav class="v3-workspace-dock" aria-label={copy.dock}>
+      {
+        projects.map((project, index) => {
+          const localized = getLocalizedProject(project, lang);
+          return (
+            <button type="button" data-window-restore={project.slug} aria-pressed="true" title={localized.title}>
+              {String(index + 1).padStart(2, "0")} / {localized.title}
+            </button>
+          );
+        })
+      }
+    </nav>
   </section>
 </BaseLayout>

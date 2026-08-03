@@ -1,0 +1,121 @@
+{
+  "slug": "escape-project",
+  "year": "2023",
+  "medium": "Web-based visual work, image composition",
+  "status": "Archived work",
+  "priority": 4,
+  "published": true,
+  "featured": false,
+  "tags": {
+    "zh": ["网页", "视觉作品", "自我意识", "归档"],
+    "en": ["web", "visual work", "self-consciousness", "archive"],
+    "ja": ["ウェブ", "ビジュアル作品", "自己意識", "アーカイブ"]
+  },
+  "palette": {
+    "primary": "#c6ff00",
+    "secondary": "#f4f0dd",
+    "ink": "#f4f0dd",
+    "paper": "#090a08"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/escape-project/escape-space.webp",
+      "alt": {
+        "zh": "紫、粉与浅绿色网格组成的透视房间，内有奔跑人形与方向箭头",
+        "en": "Perspective room made from purple, pink, and pale-green grids with running figures and directional arrows",
+        "ja": "紫、ピンク、淡い緑のグリッドで構成された遠近法的な部屋。走る人物と方向矢印が配置されている"
+      },
+      "caption": {
+        "zh": "Escape Project 归档页面中的空间构成。",
+        "en": "Spatial composition from the archived Escape Project page.",
+        "ja": "Escape Projectのアーカイブページにある空間構成。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/escape-project/escape-gate.webp",
+      "alt": {
+        "zh": "蓝色门槛构图，包含禁止标志、模糊的中央入口与向下移动的人形",
+        "en": "Blue threshold composition with prohibition signs, a blurred central doorway, and figures moving downward",
+        "ja": "禁止標識、ぼやけた中央の入口、下方へ移動する人物を含む青い境界の構図"
+      },
+      "caption": {
+        "zh": "归档网页作品中的门槛研究。",
+        "en": "Threshold study from the archived web work.",
+        "ja": "アーカイブされたウェブ作品の境界スタディ。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/escape-project/escape-loop.webp",
+      "alt": {
+        "zh": "紫色视觉场，中央入口发生故障扭曲，奔跑与坠落符号反复出现",
+        "en": "Purple visual field with a glitched central doorway and repeated running and falling symbols",
+        "ja": "グリッチした中央の入口と、反復する走行／落下記号を含む紫色の視覚フィールド"
+      },
+      "caption": {
+        "zh": "归档网页作品中的循环研究。",
+        "en": "Loop study from the archived web work.",
+        "ja": "アーカイブされたウェブ作品のループ・スタディ。"
+      }
+    }
+  ],
+  "details": {
+    "role": {
+      "zh": "待艺术家补充并核实",
+      "en": "To be supplied and verified by the artist",
+      "ja": "作家による追記・確認待ち"
+    },
+    "scale": {
+      "zh": "网页滚动作品；旧站归档可访问",
+      "en": "Scrolling web work; previous-site archive available",
+      "ja": "スクロール型ウェブ作品。旧サイトのアーカイブあり"
+    },
+    "platform": {
+      "zh": "网页浏览器",
+      "en": "Web browser",
+      "ja": "ウェブブラウザ"
+    },
+    "credits": {
+      "zh": ["协作者与具体分工待艺术家核实"],
+      "en": ["Collaborators and production roles await artist verification"],
+      "ja": ["共同制作者と制作分担は作家による確認待ち"]
+    }
+  },
+  "links": {
+    "archive": "https://readymag.website/u668535135/4450942/project1/"
+  },
+  "i18n": {
+    "zh": {
+      "title": "Escape Project",
+      "summary": "一件围绕自我意识、社会约束与“逃离”命题展开的网页视觉作品。",
+      "medium": "网页视觉作品、图像构成",
+      "status": "归档作品",
+      "body": [
+        "作品把自我意识视为人在社会中形成、又被社会关系约束的结构，并以“逃离是否可能”作为页面推进的问题。",
+        "网格空间、奔跑的人形、箭头和不断出现的门构成一条视觉路径；本页只使用旧站中可验证的原始图像与文字线索。"
+      ]
+    },
+    "en": {
+      "title": "Escape Project",
+      "summary": "A web-based visual work about self-consciousness, social constraint, and the question of escape.",
+      "medium": "Web-based visual work, image composition",
+      "status": "Archived work",
+      "body": [
+        "The work treats self-consciousness as something formed within society and constrained by social relations, then asks whether escape is possible.",
+        "Gridded rooms, running figures, arrows, and recurring thresholds establish its visual path. This record uses only images and textual evidence preserved from the artist's previous site."
+      ]
+    },
+    "ja": {
+      "title": "Escape Project",
+      "summary": "自己意識、社会的制約、そして「逃げる」という問いを扱うウェブ・ビジュアル作品。",
+      "medium": "ウェブ・ビジュアル作品、イメージ構成",
+      "status": "アーカイブ作品",
+      "body": [
+        "自己意識を社会の中で形成され、同時に社会関係によって制約される構造として捉え、「逃げることは可能か」と問いかけます。",
+        "グリッド状の空間、走る人型、矢印、反復する入口が視覚的な経路をつくります。この記録には旧サイトで確認できる作者自身の画像と文章の手掛かりだけを用いています。"
+      ]
+    }
+  }
+}

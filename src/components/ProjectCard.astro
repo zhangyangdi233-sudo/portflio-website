@@ -1,6 +1,6 @@
 ---
 import ProjectMedia from "./ProjectMedia.astro";
-import { getLocalizedProject, getProjectThemeVars } from "../lib/projects";
+import { getLocalizedProject, getLocalizedStringList, getProjectThemeVars } from "../lib/projects";
 import type { Language, Project } from "../lib/types";
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 
 const { project, lang, prominent = false } = Astro.props;
 const localized = getLocalizedProject(project, lang);
+const localizedTags = getLocalizedStringList(project.tags, lang);
 const vars = Object.entries(getProjectThemeVars(project))
   .map(([key, value]) => `${key}:${value}`)
   .join(";");
@@ -21,13 +22,13 @@ const vars = Object.entries(getProjectThemeVars(project))
   style={vars}
   data-project-card
   data-featured={project.featured ? "true" : "false"}
-  data-tags={project.tags.join(" ")}
+  data-tags={localizedTags.join(" ")}
 >
   <a href={`/${lang}/works/${project.slug}/`} aria-label={`${localized.title} project page`}>
-    <ProjectMedia media={project.media[0]} />
+    <ProjectMedia media={project.media[0]} lang={lang} />
     <div class="project-card__body">
       <div class="project-card__meta">
-        <span>{project.year}</span>
+        {project.year !== "—" && <span>{project.year}</span>}
         <span>{project.medium}</span>
       </div>
       <h3>{localized.title}</h3>

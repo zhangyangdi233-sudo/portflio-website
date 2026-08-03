@@ -1,18 +1,26 @@
 ---
 import { getCollection } from "astro:content";
+import CourseworkDesktop from "../../../components/CourseworkDesktop.astro";
 import ProjectMedia from "../../../components/ProjectMedia.astro";
 import WakeUpReplica from "../../../components/WakeUpReplica.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { assertLanguage, languages, ui } from "../../../lib/i18n";
-import { getLocalizedProject, getProjectThemeVars, sortProjects } from "../../../lib/projects";
+import {
+  getLocalizedProject,
+  getLocalizedString,
+  getLocalizedStringList,
+  getProjectThemeVars,
+  getPublishedProjects
+} from "../../../lib/projects";
 import { siteProfile } from "../../../lib/site-data";
 import type { Project } from "../../../lib/types";
 
 export async function getStaticPaths() {
   const entries = await getCollection("projects");
+  const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
   return languages.flatMap((lang) =>
-    entries.map((entry) => ({
-      params: { lang, slug: entry.data.slug }
+    projects.map((project) => ({
+      params: { lang, slug: project.slug }
     }))
   );
 }
@@ -20,65 +28,129 @@ export async function getStaticPaths() {
 const lang = assertLanguage(Astro.params.lang);
 const labels = ui[lang];
 const entries = await getCollection("projects");
-const projects = sortProjects(entries.map((entry) => entry.data as Project));
+const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
 const project = projects.find((item) => item.slug === Astro.params.slug) ?? projects[0];
 const localized = getLocalizedProject(project, lang);
 const theme = getProjectThemeVars(project);
 const nextProject = projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
 const nextLocalized = getLocalizedProject(nextProject, lang);
 const isWakeUpReplica = project.pageMode === "wake-up-replica";
+const isCourseworkDesktop = project.pageMode === "coursework-desktop";
+const localizedTags = getLocalizedStringList(project.tags, lang);
+const localizedDetails = project.details ? {
+  role: getLocalizedString(project.details.role, lang),
+  scale: getLocalizedString(project.details.scale, lang),
+  duration: getLocalizedString(project.details.duration, lang),
+  platform: getLocalizedString(project.details.platform, lang),
+  credits: getLocalizedStringList(project.details.credits, lang)
+} : undefined;
+const detailCopy = {
+  zh: { year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "尺度", duration: "时长", platform: "平台", credits: "协作与署名", archive: "查看档案", gallery: "项目媒体", next: "下一个项目" },
+  en: { year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Scale", duration: "Duration", platform: "Platform", credits: "Credits", archive: "View archive", gallery: "Project media", next: "Next project" },
+  ja: { year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "規模", duration: "時間", platform: "プラットフォーム", credits: "クレジット", archive: "アーカイブを見る", gallery: "作品メディア", next: "次の作品" }
+}[lang];
 ---
 
 <BaseLayout
   lang={lang}
   title={`${localized.title} | ${siteProfile.artistName}`}
   description={localized.summary}
-  pageClass={isWakeUpReplica ? "project-page wake-page" : "project-page"}
+  pageClass={isWakeUpReplica ? "project-page wake-page" : isCourseworkDesktop ? "project-page coursework-page" : "project-page"}
   theme={theme}
-  bare={isWakeUpReplica}
 >
   {
     isWakeUpReplica ? (
       <WakeUpReplica project={project} localized={localized} lang={lang} />
+    ) : isCourseworkDesktop ? (
+      <CourseworkDesktop
+        project={project}
+        localized={localized}
+        lang={lang}
+        nextProject={nextProject}
+        nextLocalized={nextLocalized}
+      />
     ) : (
       <article class="project-detail">
         <header class="project-hero">
           <div class="project-hero__copy">
-            <p class="eyebrow">{project.status}</p>
+            <p class="eyebrow">{localized.status ?? project.status}</p>
             <h1 class="split-heading">{localized.title}</h1>
             <p>{localized.summary}</p>
             <dl class="project-meta">
               <div>
-                <dt>Year</dt>
+                <dt>{detailCopy.year}</dt>
                 <dd>{project.year}</dd>
               </div>
               <div>
-                <dt>Medium</dt>
-                <dd>{project.medium}</dd>
+                <dt>{detailCopy.medium}</dt>
+                <dd>{localized.medium ?? project.medium}</dd>
               </div>
               <div>
-                <dt>Tags</dt>
-                <dd>{project.tags.join(" / ")}</dd>
+                <dt>{detailCopy.tags}</dt>
+                <dd>{localizedTags.join(" / ")}</dd>
               </div>
+              {localizedDetails?.role && (
+                <div>
+                  <dt>{detailCopy.role}</dt>
+                  <dd>{localizedDetails.role}</dd>
+                </div>
+              )}
+              {localizedDetails?.scale && (
+                <div>
+                  <dt>{detailCopy.scale}</dt>
+                  <dd>{localizedDetails.scale}</dd>
+                </div>
+              )}
+              {localizedDetails?.duration && (
+                <div>
+                  <dt>{detailCopy.duration}</dt>
+                  <dd>{localizedDetails.duration}</dd>
+                </div>
+              )}
+              {localizedDetails?.platform && (
+                <div>
+                  <dt>{detailCopy.platform}</dt>
+                  <dd>{localizedDetails.platform}</dd>
+                </div>
+              )}
+              {localizedDetails && localizedDetails.credits.length > 0 && (
+                <div>
+                  <dt>{detailCopy.credits}</dt>
+                  <dd>{localizedDetails.credits.join(" / ")}</dd>
+                </div>
+              )}
             </dl>
-            {
-              project.links.play && (
+            <div class="project-actions">
+              {project.links.play && (
                 <a class="button is-primary" href={project.links.play} target="_blank" rel="noreferrer">
                   {labels.play}
                 </a>
-              )
-            }
+              )}
+              {project.links.archive && (
+                <a class="button is-ghost" href={project.links.archive} target="_blank" rel="noreferrer">
+                  {detailCopy.archive}
+                </a>
+              )}
+            </div>
           </div>
-          <ProjectMedia media={project.media[0]} eager />
+          <ProjectMedia media={project.media[0]} lang={lang} eager />
         </header>
 
         <section class="project-text" data-reveal>
           {localized.body.map((paragraph) => <p>{paragraph}</p>)}
         </section>
 
-        <nav class="next-project" aria-label="Next project">
+        {
+          project.media.length > 1 && (
+            <section class="project-gallery" aria-label={detailCopy.gallery}>
+              {project.media.slice(1).map((media) => <ProjectMedia media={media} lang={lang} />)}
+            </section>
+          )
+        }
+
+        <nav class="next-project" aria-label={detailCopy.next}>
           <a href={`/${lang}/works/${nextProject.slug}/`}>
-            <span>Next</span>
+            <span>{detailCopy.next}</span>
             <strong>{nextLocalized.title}</strong>
           </a>
         </nav>

@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 dist/
 .astro/
 .vercel/
@@ -16,3 +16,13 @@ coverage/
 !.env.example
 .DS_Store
 Thumbs.db
+docs/design-references/the-art-of-cinema-*.png
+docs/design-references/zutomayo-*.png
+docs/design-references/current-*.png
+docs/design-references/final-home-desktop.png
+docs/design-references/final-home-mobile.png
+docs/design-references/final-works-desktop.png
+docs/design-references/final-works-mobile.png
+figma-export/sync/latest.json
+figma-export/sync/previous.json
+figma-export/sync/history/

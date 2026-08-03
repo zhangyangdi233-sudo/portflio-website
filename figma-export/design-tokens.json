@@ -1,34 +1,192 @@
 {
   "name": "CIBA Portfolio",
+  "direction": "Signal Index / Acid Proof",
+  "philosophy": {
+    "statement": "A strict Internationalist index in black and warm paper, interrupted by one acid-green system signal.",
+    "originality": "Combine disciplined grids, multilingual sans-serif hierarchy, cinematic pacing, and semantic desktop windows into an original CIBA system. References are research inputs only; do not copy assets, text, raster chrome, code, or exact compositions.",
+    "principles": [
+      "Use a rational asymmetric grid and whitespace as structure.",
+      "Limit interface color to black, warm paper, and one acid-green signal.",
+      "Prefer explicit metadata and typographic hierarchy over decorative atmosphere.",
+      "Keep project content readable before, during, and after motion."
+    ]
+  },
   "colors": {
-    "paper": "#f3ead6",
-    "ink": "#111111",
-    "muted": "#736b5e",
-    "line": "#cfc3aa",
-    "blue": "#006eb8",
-    "red": "#f04423",
-    "green": "#007a4d",
-    "black": "#050505",
-    "cream": "#fff7ea",
-    "cyan": "#5fe7d1"
+    "night": "#090a08",
+    "surface": "#090a08",
+    "ink": "#f4f0dd",
+    "plum": "#f4f0dd",
+    "oxide": "#c6ff00",
+    "cyan": "#c6ff00",
+    "sodium": "#f4f0dd",
+    "fog": "#f4f0dd",
+    "rule": "#f4f0dd"
+  },
+  "colorProvenance": {
+    "canonicalSource": "../src/content/art-direction.json",
+    "explicitFeedback": "Black and warm off-white plus one high-saturation vivid color; maximum three interface colors.",
+    "researchSources": [
+      "Cooper Hewitt — A Harmony of Contrasts",
+      "Letterform Archive — Legacies of Swiss Style",
+      "W3C Japanese Layout Requirements"
+    ],
+    "sampledOn": "2026-07-17",
+    "note": "The palette is an active user-directed design decision, not a color extraction from any named reference."
   },
   "typography": {
+    "canonical": {
+      "display": "Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP, sans-serif",
+      "editorial": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
+      "ui": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
+      "mono": "SFMono-Regular, Menlo, Consolas, Noto Sans Mono CJK JP, monospace"
+    },
+    "figmaUiApproximation": "Inter",
     "ui": "Inter / Helvetica / Noto Sans",
-    "brand": "Small bold header mark: 糍粑 CIBA",
-    "heroTitle": "Current project name, 100px desktop, 62px mobile",
-    "workTitle": "Project title as main row typography",
-    "body": "Regular, 16-20px, 1.35-1.5 line height"
+    "brand": "Small bold bilingual mark: 糍粑 CIBA",
+    "display": "Live semantic word groups. Latin display tracking starts between normal and -0.03em; Chinese and Japanese remain at 0. ESCAPE / PROJECT and UNIVERSITY / COURSEWORK use authored phrase breaks.",
+    "windowTitle": "11–12px uppercase UI text with approximately 0.08em tracking",
+    "body": "14–20px regular text with 1.35–1.5 line height",
+    "metadata": "10–12px uppercase or tabular UI text; one compact verified record only",
+    "semanticBreaks": {
+      "escape-project": ["ESCAPE", "PROJECT"],
+      "university-coursework": ["UNIVERSITY", "COURSEWORK"]
+    }
   },
   "layout": {
     "desktopFrame": "1440px wide",
     "mobileFrame": "390px wide",
-    "background": "warm paper solid field",
-    "grid": "thin Swiss-style vertical and horizontal guide lines",
-    "hero": "left title and text, right media card",
-    "workRows": "large current project title, right media placeholder, pale oversized index number"
+    "background": "flat black field with warm-paper hairlines",
+    "grid": "disciplined asymmetric Internationalist grid; whitespace is structural",
+    "hero": "monumental CIBA title without redundant archive or edition labels, followed by one scroll-linked work stage with low-opacity draggable evidence images",
+    "works": "five large independent project windows arranged on a desktop window canvas",
+    "coursework": "three large bounded desktop sections containing fourteen smaller editable evidence windows"
   },
-  "animationNotes": {
-    "GSAP": ["SplitText title entrance", "ScrollTrigger row reveal", "Flip hover/filter", "ScrollToPlugin smooth navigation"],
-    "reducedMotion": "Keep all content readable, reduce transform animation"
+  "motion": {
+    "tokens": {
+      "microMs": 180,
+      "stateMs": 260,
+      "enterMs": 460,
+      "titleMs": 440,
+      "dragKeyboardStep": 16,
+      "dragKeyboardStepLarge": 48
+    },
+    "principle": "Controlled instability: motion signals state and editing rhythm, then settles.",
+    "entrance": {
+      "durationMs": "360–520",
+      "properties": [
+        "transform",
+        "opacity"
+      ],
+      "notes": "Use a restrained stagger; keep destination content legible."
+    },
+    "stateChange": {
+      "durationMs": "180–280",
+      "properties": [
+        "transform",
+        "opacity",
+        "color"
+      ]
+    },
+    "worksDrag": {
+      "handle": "title bar only",
+      "bounds": "Works workspace",
+      "feedback": "raise the active window and update its transform immediately",
+      "authoredRotation": "-0.45deg to 0.4deg in window mode; cleared in ordered mode"
+    },
+    "reducedMotion": "Disable scatter entrances, authored rotation, per-letter rolling, and scroll scrubbing. Keep state changes instantaneous or crossfaded under 120ms."
+  },
+  "accessibility": {
+    "contrast": "Use warm paper or acid green only on black; use black on acid green or warm paper. Never set acid green text on warm paper.",
+    "minimumControlSize": "44px × 44px",
+    "focus": "Visible 3px acid-green outline with 3px offset on title bars, controls, filters, dock buttons, and links.",
+    "worksKeyboard": "Focusable title bar; Arrow moves 16px, Shift + Arrow moves 48px, Escape minimizes, and dock buttons restore and focus.",
+    "semanticFallback": "Every project remains reachable through a normal anchor URL; mobile and ordered mode preserve document order.",
+    "motionText": "Hide duplicate motion glyphs from assistive technology and retain one readable heading label.",
+    "media": "Preserve meaningful alt text from the website JSON source.",
+    "announcements": "Filters and minimize/restore changes use a polite live region."
+  },
+  "handoffFacts": {
+    "contactEmail": "mayonezu332@gmail.com",
+    "homeIncludesProjectStage": true,
+    "homeProjectCount": 5,
+    "homeXWheelMediaSources": [
+      "/assets/projects/x-wheel/character-full.png",
+      "/assets/projects/x-wheel/character-portrait.png",
+      "/assets/projects/x-wheel/character-sequence.png",
+      "/assets/projects/x-wheel/cartridge-3-title.png"
+    ],
+    "worksFilters": ["ALL", "FEATURED", "ARCHIVE"],
+    "worksLayouts": ["WINDOWS", "ORDER", "RESET"],
+    "worksVisibleCount": "05 / 05",
+    "mobileHeaderHeight": 62,
+    "focusOutlineWidth": 3
+  },
+  "worksWindowSystem": {
+    "projectCount": 5,
+    "breakpoint": 900,
+    "stageHeight": 760,
+    "positions": {
+      "x-wheel": { "x": 2, "y": 38, "width": 460, "rotation": -0.45, "z": 4 },
+      "emida": { "x": 27, "y": 112, "width": 430, "rotation": 0.35, "z": 3 },
+      "wake-up": { "x": 54, "y": 46, "width": 440, "rotation": -0.3, "z": 2 },
+      "escape-project": { "x": 71, "y": 152, "width": 410, "rotation": 0.4, "z": 1 },
+      "university-coursework": { "x": 18, "y": 344, "width": 455, "rotation": -0.15, "z": 5 }
+    },
+    "windowWidth": "410–460px",
+    "structure": [
+      "editable window frame",
+      "44px minimum title bar / drag handle",
+      "media placeholder or linked figure",
+      "project metadata",
+      "localized summary",
+      "OPEN action"
+    ],
+    "scatter": "Desktop default: absolute authored positions, slight rotations, intentional overlap, bring-to-front, minimize/restore, filters, and reset.",
+    "ordered": "Ordered responsive grid with transforms and rotations cleared; all visible summaries remain readable.",
+    "mobile": "Single-column semantic cards in source order; precision dragging and drag controls are removed.",
+    "windowStyle": {
+      "background": "surface",
+      "border": "2px warm-paper frame; acid title bar and active-state signal",
+      "radius": "0px",
+      "shadow": "12px 12px 0 acid green; active window swaps to warm paper",
+      "mediaAspectRatio": "16 / 10"
+    },
+    "editableHandoff": "The plugin generates five independent overlapping Figma frames. Text, title bars, media placeholders, and OPEN labels remain editable; move whole frames to explore alternate compositions."
+  },
+  "courseworkDesktopSystem": {
+    "canonicalSource": "src/content/projects/university-coursework.json",
+    "snapshotContract": "Each Figma item mirrors the canonical code, English caption, media type, public source path, x/y/w position, and z-order; npm run check:design fails on drift.",
+    "frameName": "07 Coursework / Three Desktop Sections",
+    "sectionCount": 3,
+    "mediaWindowCount": 14,
+    "sections": {
+      "blender": {
+        "label": "Blender",
+        "itemCount": 10,
+        "imageCount": 8,
+        "videoCount": 2
+      },
+      "maya": {
+        "label": "Maya",
+        "itemCount": 2,
+        "imageCount": 1,
+        "videoCount": 1
+      },
+      "ae-pr": {
+        "label": "After Effects / Premiere Pro",
+        "itemCount": 2,
+        "imageCount": 0,
+        "videoCount": 2
+      }
+    },
+    "outerWindow": "One large square-corner chapter window per section, with a black title bar, warm-paper rules, one acid focus/reset signal, and a clipped inner stage.",
+    "innerWindow": "Editable vector/text chrome with a factual item code, media-kind label, abstract media placeholder, and visible caption line. Video windows include play and progress-control markers.",
+    "interaction": {
+      "pointer": "Title-bar drag only; active item rises and remains clamped to its section.",
+      "keyboard": "Arrow 16px; Shift + Arrow 48px; Home resets one item; section RESET restores every authored position.",
+      "compact": "Ordered, non-overlapping source sequence with drag handles removed.",
+      "video": "Native controls remain independent from dragging in the website; Figma represents them as editable control markers."
+    },
+    "originalityBoundary": "Retain independent overlapping-window mechanics only. Exclude ZUTOMAYO purple/pink skin, pixel type, imagery, branding, buttons, code, and proportions."
   }
 }

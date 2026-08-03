@@ -1,4 +1,6 @@
 ---
+import ProjectImage from "./ProjectImage.astro";
+import { getLocalizedMedia, getLocalizedString, getLocalizedStringList } from "../lib/projects";
 import type { Language, LocalizedText, Project, ProjectMedia } from "../lib/types";
 
 interface Props {
@@ -10,135 +12,63 @@ interface Props {
 const { project, localized, lang } = Astro.props;
 const media = (name: string): ProjectMedia =>
   project.media.find((item) => item.src.includes(`/${name}.`)) ?? project.media[0];
-
 const bedAlarm = media("bed-alarm");
-const grid = media("grid");
-const pixelSunset = media("pixel-sunset");
-const runner = media("runner");
-const corridor = media("corridor");
-const halftoneBand = media("halftone-band");
-const intercomPlainA = media("intercom-plain-a");
-const dreamQuestionBlack = media("dream-question-black");
-const dreamQuestionBlackB = media("dream-question-black-b");
-const tvGirl = media("tv-girl");
-const whiteScrollBlank = media("white-scroll-blank");
 const floodedTitle = media("flooded-title");
-const wakeScriptCollage = media("wake-script-collage");
-const glitchGirlCollage = media("glitch-girl-collage");
-const intercomLineArt = media("intercom-line-art");
-const intercomPlainB = media("intercom-plain-b");
-const floodedRoomSquare = media("flooded-room-square");
-const questionColumn = media("question-column");
-const quoteColumn = media("quote-column");
-const sayingColumn = media("saying-column");
-const disappearedColumn = media("disappeared-column");
-const dreamQuestionColumn = media("dream-question-column");
-const logoFlood = media("wake-logo-flood");
-const pointingHandPhoto = media("pointing-hand-photo");
-const pointingHandLine = media("pointing-hand-line");
-const vaporIntercom = media("vapor-intercom");
-const disappearedBlack = media("disappeared-black");
-const intercomPhotoFull = media("intercom-photo-full");
-const statementLarge = media("statement-large");
-const statementWide = media("statement-wide");
-const statementClean = media("statement-clean");
-const bioText = media("bio-text");
-const logoColor = media("wake-logo-color");
-const logoBlue = media("wake-logo-blue");
-const logoYellow = media("wake-logo-yellow");
-const cityStrips = [
-  media("city-strip-night"),
-  media("city-strip-sunset"),
-  media("city-strip-day"),
-  media("city-strip-amber")
-];
-const verticalColumns = [questionColumn, sayingColumn, disappearedColumn, dreamQuestionColumn, quoteColumn];
-const blackTextPanels = [dreamQuestionBlack, disappearedBlack, dreamQuestionBlackB];
+const displayedMedia = [bedAlarm, floodedTitle];
+const titleWords = lang === "en" ? localized.title.trim().split(/\s+/) : [localized.title.trim()];
+const localizedTags = getLocalizedStringList(project.tags, lang);
+const localizedDetails = project.details ? {
+  role: getLocalizedString(project.details.role, lang),
+  scale: getLocalizedString(project.details.scale, lang),
+  platform: getLocalizedString(project.details.platform, lang),
+  credits: getLocalizedStringList(project.details.credits, lang)
+} : undefined;
+const copy = {
+  zh: { back: "返回作品", record: "项目记录", year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "形式", platform: "平台", credits: "协作与署名", descriptions: "图像描述索引", descriptionsIntro: "两张公开图像按页面顺序列出；其他源素材保存在非公开归档中。", archive: "查看旧站档案" },
+  en: { back: "Back to works", record: "Project record", year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Format", platform: "Platform", credits: "Credits", descriptions: "Image description index", descriptionsIntro: "The two public images are listed in page order; other source media is preserved in a non-deployable archive.", archive: "View previous-site archive" },
+  ja: { back: "作品一覧へ戻る", record: "作品記録", year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "形式", platform: "プラットフォーム", credits: "クレジット", descriptions: "画像説明インデックス", descriptionsIntro: "公開する2点をページ順に示します。その他の素材は非公開アーカイブに保存しています。", archive: "旧サイトのアーカイブを見る" }
+}[lang];
 ---
 
 <article class="wake-replica" data-wake-page>
-  <a class="wake-back" href={`/${lang}/works/`} aria-label="Back to works">WORKS</a>
-
-  <section class="wake-panel wake-opening wake-old-cover" data-wake-panel>
-    <img class="wake-cover-image" src={floodedTitle.src} alt={floodedTitle.alt} loading="eager" decoding="async" data-wake-image />
-    <p class="wake-kicker" data-wake-copy>{localized.title} / {project.year}</p>
-  </section>
-
-  <section class="wake-panel wake-black-questions" data-wake-panel>
-    {blackTextPanels.map((panel, index) => <img class:list={["wake-black-copy", `is-${index + 1}`]} src={panel.src} alt={panel.alt} loading="lazy" decoding="async" data-wake-image />)}
-  </section>
+  <header class="wake-record-intro">
+    <a class="wake-back" href={`/${lang}/works/`} aria-label={copy.back}>← WORKS</a>
+    <div class="wake-record-intro__grid">
+      <div>
+        <p class="wake-record-intro__eyebrow">{localized.status ?? project.status} / {copy.record}</p>
+        <h1 aria-label={localized.title}>
+          {titleWords.map((word) => <span class="wake-record-intro__title-word">{word}</span>)}
+        </h1>
+        <p class="wake-record-intro__summary">{localized.summary}</p>
+      </div>
+      <div class="wake-record-intro__record">
+        <dl>
+          <div><dt>{copy.year}</dt><dd>{project.year}</dd></div>
+          <div><dt>{copy.medium}</dt><dd>{localized.medium ?? project.medium}</dd></div>
+          <div><dt>{copy.tags}</dt><dd>{localizedTags.join(" / ")}</dd></div>
+          {localizedDetails?.role && <div><dt>{copy.role}</dt><dd>{localizedDetails.role}</dd></div>}
+          {localizedDetails?.scale && <div><dt>{copy.scale}</dt><dd>{localizedDetails.scale}</dd></div>}
+          {localizedDetails?.platform && <div><dt>{copy.platform}</dt><dd>{localizedDetails.platform}</dd></div>}
+          {localizedDetails && localizedDetails.credits.length > 0 && <div><dt>{copy.credits}</dt><dd>{localizedDetails.credits.join(" / ")}</dd></div>}
+        </dl>
+        {localized.body.map((paragraph) => <p>{paragraph}</p>)}
+        {project.links.archive && <a href={project.links.archive} target="_blank" rel="noreferrer">{copy.archive} ↗</a>}
+      </div>
+    </div>
+    <details class="wake-record-intro__descriptions">
+      <summary>{copy.descriptions}</summary>
+      <p>{copy.descriptionsIntro}</p>
+      <ol>{displayedMedia.map((item) => <li>{getLocalizedMedia(item, lang).alt}</li>)}</ol>
+    </details>
+  </header>
 
   <section class="wake-panel wake-opening wake-bed-panel" data-wake-panel>
-    <img class="wake-bed" src={bedAlarm.src} alt={bedAlarm.alt} loading="lazy" decoding="async" data-wake-image />
+    <ProjectImage class="wake-bed" media={bedAlarm} lang={lang} eager wake sizes="74vw" />
+    <p class="wake-kicker">01 / {localized.title} / {project.year}</p>
   </section>
 
-  <section class="wake-panel wake-grid-panel is-light" data-wake-panel>
-    <img class="wake-grid-bg" src={grid.src} alt={grid.alt} loading="lazy" decoding="async" />
-    <img class="wake-runner is-left" src={runner.src} alt="" loading="lazy" decoding="async" aria-hidden="true" data-wake-image />
-    <img class="wake-intercom-line" src={intercomLineArt.src} alt={intercomLineArt.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-logo is-blue" src={logoBlue.src} alt={logoBlue.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-corridor-panel" data-wake-panel>
-    <img class="wake-corridor" src={corridor.src} alt={corridor.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-flood-square" src={floodedRoomSquare.src} alt={floodedRoomSquare.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-sunset-panel" data-wake-panel>
-    <img class="wake-sunset" src={pixelSunset.src} alt={pixelSunset.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-logo is-yellow" src={logoYellow.src} alt={logoYellow.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-hand-panel" data-wake-panel>
-    <img class="wake-hand-photo" src={pointingHandPhoto.src} alt={pointingHandPhoto.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-hand-line" src={pointingHandLine.src} alt={pointingHandLine.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-columns-panel is-light" data-wake-panel>
-    <img class="wake-blank-scroll" src={whiteScrollBlank.src} alt={whiteScrollBlank.alt} loading="lazy" decoding="async" data-wake-image />
-    <div class="wake-column-grid">
-      {verticalColumns.map((column) => <img src={column.src} alt={column.alt} loading="lazy" decoding="async" data-wake-image />)}
-    </div>
-  </section>
-
-  <section class="wake-panel wake-intercom-panel" data-wake-panel>
-    <img class="wake-intercom-photo is-a" src={intercomPlainA.src} alt={intercomPlainA.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-intercom-photo is-b" src={intercomPlainB.src} alt={intercomPlainB.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-intercom-photo is-c" src={intercomPhotoFull.src} alt={intercomPhotoFull.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-collage-panel" data-wake-panel>
-    <img class="wake-vapor" src={vaporIntercom.src} alt={vaporIntercom.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-tv-girl" src={tvGirl.src} alt={tvGirl.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-script" src={wakeScriptCollage.src} alt={wakeScriptCollage.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-glitch" src={glitchGirlCollage.src} alt={glitchGirlCollage.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-halftone" src={halftoneBand.src} alt={halftoneBand.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-city-panel" data-wake-panel>
-    <div class="wake-city-track" data-wake-city-track>
-      {cityStrips.map((strip) => <img src={strip.src} alt={strip.alt} loading="lazy" decoding="async" data-wake-image />)}
-    </div>
-  </section>
-
-  <section class="wake-panel wake-text-panel is-light" data-wake-panel>
-    <img src={statementWide.src} alt={statementWide.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-text-panel is-light is-large" data-wake-panel>
-    <img src={statementLarge.src} alt={statementLarge.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-text-panel is-light is-clean" data-wake-panel>
-    <img src={statementClean.src} alt={statementClean.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-bio-panel is-light" data-wake-panel>
-    <img src={bioText.src} alt={bioText.alt} loading="lazy" decoding="async" data-wake-image />
-  </section>
-
-  <section class="wake-panel wake-logo-panel" data-wake-panel>
-    <img class="wake-logo-color" src={logoColor.src} alt={logoColor.alt} loading="lazy" decoding="async" data-wake-image />
-    <img class="wake-logo-flood" src={logoFlood.src} alt={logoFlood.alt} loading="lazy" decoding="async" data-wake-image />
+  <section class="wake-panel wake-opening wake-old-cover" data-wake-panel>
+    <ProjectImage class="wake-cover-image" media={floodedTitle} lang={lang} wake sizes="100vw" />
+    <p class="wake-kicker">02 / END</p>
   </section>
 </article>

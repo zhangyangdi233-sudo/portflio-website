@@ -1,16 +1,31 @@
 export type Language = "zh" | "en" | "ja";
 
+export type LocalizedString = string | Record<Language, string>;
+export type LocalizedStringList = string[] | Record<Language, string[]>;
+
 export type LocalizedText = {
   title: string;
   summary: string;
+  medium?: string;
+  status?: string;
   body: string[];
 };
+
+export type CourseworkMediaGroup = "blender" | "maya" | "ae-pr";
 
 export type ProjectMedia = {
   type: "image" | "video";
   src: string;
-  alt: string;
-  caption?: string;
+  alt: LocalizedString;
+  caption?: LocalizedString;
+  homeOrder?: number;
+  group?: CourseworkMediaGroup;
+  window?: {
+    x: number;
+    y: number;
+    w: number;
+    z: number;
+  };
 };
 
 export type Project = {
@@ -19,9 +34,10 @@ export type Project = {
   medium: string;
   status: string;
   priority: number;
+  published: boolean;
   featured: boolean;
-  pageMode?: "standard" | "wake-up-replica";
-  tags: string[];
+  pageMode?: "standard" | "wake-up-replica" | "coursework-desktop";
+  tags: LocalizedStringList;
   palette: {
     primary: string;
     secondary: string;
@@ -29,6 +45,13 @@ export type Project = {
     paper: string;
   };
   media: ProjectMedia[];
+  details?: {
+    role?: LocalizedString;
+    scale?: LocalizedString;
+    duration?: LocalizedString;
+    platform?: LocalizedString;
+    credits?: LocalizedStringList;
+  };
   links: {
     play?: string;
     archive?: string;
@@ -38,9 +61,9 @@ export type Project = {
 
 export type SiteProfile = {
   artistName: string;
-  email: string;
+  email?: string;
   location: string;
-  cvUrl: string;
+  cvUrl?: string;
   socials: Array<{
     label: string;
     href: string;

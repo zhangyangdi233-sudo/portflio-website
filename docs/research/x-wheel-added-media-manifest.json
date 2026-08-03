@@ -1,0 +1,71 @@
+{
+  "recorded": "2026-07-29",
+  "sourceDirectory": "Explicitly named files in the artist's 展示 folder",
+  "selectionPolicy": "Include only the seven filenames explicitly attached and assigned by the artist to X.WHEEL in this task.",
+  "copyPolicy": "Exact-byte deployable copies with descriptive ASCII filenames",
+  "items": [
+    {
+      "sourceName": "未命名作品 2.PNG",
+      "publicPath": "assets/projects/x-wheel/character-full.png",
+      "bytes": 163435,
+      "sha256": "0293e0f5f183162663a71f7a9e23fb67b4ff1030af8b606a3a4bdb66ce01f0e2",
+      "width": 1847,
+      "height": 1662,
+      "kind": "image"
+    },
+    {
+      "sourceName": "未命名作品 3.PNG",
+      "publicPath": "assets/projects/x-wheel/character-sequence.png",
+      "bytes": 67015,
+      "sha256": "0f76ab3e6f1ba5bd8f68d7cfabd189676982ef424770a5298b2bd16f4748374e",
+      "width": 640,
+      "height": 360,
+      "kind": "image"
+    },
+    {
+      "sourceName": "未命名作品.png",
+      "publicPath": "assets/projects/x-wheel/cartridge-3-title.png",
+      "bytes": 166963,
+      "sha256": "e46ba77d325e8750d37c13f7ff5963500e7d7672e28abb5beb74416f6b9a89f4",
+      "width": 2388,
+      "height": 1668,
+      "kind": "image"
+    },
+    {
+      "sourceName": "未命名作品 4.png",
+      "publicPath": "assets/projects/x-wheel/cartridge-3-geometry.png",
+      "bytes": 195095,
+      "sha256": "d6335f98a779010cafc4685589984e69855b0de53633558b01fa8ff1a971a499",
+      "width": 2388,
+      "height": 1668,
+      "kind": "image"
+    },
+    {
+      "sourceName": "IMG_3060.PNG",
+      "publicPath": "assets/projects/x-wheel/character-portrait.png",
+      "bytes": 130328,
+      "sha256": "f9a0c68259422b9b44a4445db69ff7dd03f84af04fdf7cd86f9868d0ce315c61",
+      "width": 2048,
+      "height": 2048,
+      "kind": "image"
+    },
+    {
+      "sourceName": "IMG_3061.PNG",
+      "publicPath": "assets/projects/x-wheel/signal-orb.png",
+      "bytes": 218292,
+      "sha256": "6e7b99bb8f73c040c7f084b8c0350c334c013d1b32d8a9c9325e3402b43af86c",
+      "width": 640,
+      "height": 360,
+      "kind": "image"
+    },
+    {
+      "sourceName": "IMG_3093.PNG",
+      "publicPath": "assets/projects/x-wheel/crt-character-composition.png",
+      "bytes": 1506576,
+      "sha256": "42c54ed3bd3d543e602d42a42eb7de7977193da4ef62717d1918099764ed9eb3",
+      "width": 2388,
+      "height": 1668,
+      "kind": "image"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "slug": "university-coursework",
+  "year": "—",
+  "medium": "3D practice, motion graphics, video editing",
+  "status": "Practice record",
+  "priority": 5,
+  "published": true,
+  "featured": false,
+  "pageMode": "coursework-desktop",
+  "tags": {
+    "zh": ["大学课题", "Blender", "Maya", "AE / PR"],
+    "en": ["university coursework", "Blender", "Maya", "AE / PR"],
+    "ja": ["大学課題", "Blender", "Maya", "AE / PR"]
+  },
+  "palette": {
+    "primary": "#c6ff00",
+    "secondary": "#f4f0dd",
+    "ink": "#f4f0dd",
+    "paper": "#090a08"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-01-object-study.png",
+      "group": "blender",
+      "window": { "x": 2, "y": 4, "w": 38, "z": 10 },
+      "alt": {
+        "zh": "橙色背景中的红色器皿、半透明车辆与猴头模型，后方有蓝色构成图形",
+        "en": "A red vessel, translucent vehicle, and monkey-head model against orange with blue graphic forms",
+        "ja": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面"
+      },
+      "caption": {
+        "zh": "Blender 物体、材质与灯光组合练习。",
+        "en": "Blender object, material, and lighting study.",
+        "ja": "Blenderによるオブジェクト、マテリアル、照明の組み合わせ練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-02-character-render.jpg",
+      "group": "blender",
+      "window": { "x": 43, "y": 5, "w": 34, "z": 9 },
+      "alt": {
+        "zh": "深蓝背景中的角色渲染，人物坐在浅色形体之间，上方有橙色鸭子",
+        "en": "Character render on deep blue with a seated figure among pale forms and an orange duck above",
+        "ja": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー"
+      },
+      "caption": {
+        "zh": "Blender 角色、形体与配色练习。",
+        "en": "Blender character, form, and colour study.",
+        "ja": "Blenderによるキャラクター、形体、配色の練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+      "group": "blender",
+      "window": { "x": 21, "y": 27, "w": 36, "z": 8 },
+      "alt": {
+        "zh": "被红光照亮的积水走廊，空间中长出枯树，右侧有一只橙色鸭子",
+        "en": "A flooded corridor lit red, filled with bare trees, with a small orange duck at right",
+        "ja": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる"
+      },
+      "caption": {
+        "zh": "Blender 环境、反射与红色灯光练习。",
+        "en": "Blender environment, reflection, and red-light study.",
+        "ja": "Blenderによる環境、反射、赤色照明の練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-04-house-study.png",
+      "group": "blender",
+      "window": { "x": 60, "y": 29, "w": 34, "z": 7 },
+      "alt": {
+        "zh": "蓝色背景上的浅蓝与荧光黄色建筑模型，周围叠加黑色树形与手绘箭头",
+        "en": "Pale-blue and fluorescent-yellow architecture on blue with black tree forms and drawn arrows",
+        "ja": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面"
+      },
+      "caption": {
+        "zh": "Blender 建筑形体与图像构成练习。",
+        "en": "Blender architectural-form and image-composition study.",
+        "ja": "Blenderによる建築形体とイメージ構成の練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+      "group": "blender",
+      "window": { "x": 3, "y": 56, "w": 31, "z": 6 },
+      "alt": {
+        "zh": "粉色空间中的低多边形绿色植株，白色花朵与叶片投影落在浅色地面上",
+        "en": "Low-poly green plants with white flowers in a pink space, casting pale leaf shadows",
+        "ja": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面"
+      },
+      "caption": {
+        "zh": "Blender 低多边形植物与投影练习。",
+        "en": "Blender low-poly plant and shadow study.",
+        "ja": "Blenderによる低ポリゴン植物と投影の練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-06-week06-composition.png",
+      "group": "blender",
+      "window": { "x": 35, "y": 57, "w": 38, "z": 5 },
+      "alt": {
+        "zh": "绿色信息图式构图，包含半透明人物、透视网格、圆形轨迹与巨大的数字 42",
+        "en": "Green diagrammatic composition with a translucent figure, perspective grids, orbits, and a large 42",
+        "ja": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成"
+      },
+      "caption": {
+        "zh": "Blender 渲染与平面图式组合练习。",
+        "en": "Blender render combined with a graphic diagram study.",
+        "ja": "Blenderレンダーと平面図式を組み合わせた練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+      "group": "blender",
+      "window": { "x": 69, "y": 58, "w": 28, "z": 4 },
+      "alt": {
+        "zh": "Blender 界面中的红色有机器皿模型，周围延伸灰白色曲线结构",
+        "en": "Blender interface showing a red organic vessel model with pale curved structures",
+        "ja": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造"
+      },
+      "caption": {
+        "zh": "Blender 建模过程画面。",
+        "en": "Blender modelling-process view.",
+        "ja": "Blenderのモデリング工程画面。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+      "group": "blender",
+      "window": { "x": 53, "y": 17, "w": 32, "z": 3 },
+      "alt": {
+        "zh": "Blender 工作区截图，同时显示红色走廊渲染、三维视图与材质节点网络",
+        "en": "Blender workspace showing the red corridor render, 3D viewport, and a material-node network",
+        "ja": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面"
+      },
+      "caption": {
+        "zh": "红色走廊场景的 Blender 节点与工作区记录。",
+        "en": "Blender nodes and workspace record for the red corridor scene.",
+        "ja": "赤い廊下シーンのBlenderノードと作業画面の記録。"
+      }
+    },
+    {
+      "type": "video",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "group": "blender",
+      "window": { "x": 8, "y": 18, "w": 29, "z": 2 },
+      "alt": {
+        "zh": "可播放的 Blender 动画练习，首帧为纯橙色画面",
+        "en": "Playable Blender animation study beginning on a solid orange frame",
+        "ja": "無地のオレンジ色の画面から始まる、再生可能なBlenderアニメーション練習"
+      },
+      "caption": {
+        "zh": "Blender 动画练习 01。",
+        "en": "Blender animation study 01.",
+        "ja": "Blenderアニメーション練習 01。"
+      }
+    },
+    {
+      "type": "video",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "group": "blender",
+      "window": { "x": 67, "y": 4, "w": 30, "z": 1 },
+      "alt": {
+        "zh": "可播放的 Blender 环境动画，画面穿过红色积水走廊与树木",
+        "en": "Playable Blender environment animation moving through a flooded red corridor and trees",
+        "ja": "赤く水没した廊下と樹木の間を進む、再生可能なBlender環境アニメーション"
+      },
+      "caption": {
+        "zh": "红色走廊场景的 Blender 动画练习。",
+        "en": "Blender animation study for the red corridor scene.",
+        "ja": "赤い廊下シーンのBlenderアニメーション練習。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/university-coursework/maya-01-architecture-still.png",
+      "group": "maya",
+      "window": { "x": 4, "y": 8, "w": 48, "z": 2 },
+      "alt": {
+        "zh": "哥特式拱顶与成排柱子的三维建筑内部，深蓝阴影间透出明亮天空",
+        "en": "3D Gothic interior with vaulted arches and rows of columns opening onto a bright sky",
+        "ja": "連続する柱と尖頭アーチを持ち、濃い青の陰影の先に明るい空が見える3Dゴシック建築内部"
+      },
+      "caption": {
+        "zh": "Maya 拱顶、柱体与建筑空间练习。",
+        "en": "Maya vault, column, and architectural-space study.",
+        "ja": "Mayaによるヴォールト、柱、建築空間の練習。"
+      }
+    },
+    {
+      "type": "video",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "group": "maya",
+      "window": { "x": 48, "y": 34, "w": 48, "z": 1 },
+      "alt": {
+        "zh": "可播放的 Maya 环境动画，镜头位于昏暗积水长廊，柱间长有草丛",
+        "en": "Playable Maya environment animation in a dark flooded colonnade with grass between columns",
+        "ja": "柱の間に草が生えた暗い水没回廊を進む、再生可能なMaya環境アニメーション"
+      },
+      "caption": {
+        "zh": "Maya 建筑环境动画练习。",
+        "en": "Maya architectural-environment animation study.",
+        "ja": "Mayaによる建築環境アニメーション練習。"
+      }
+    },
+    {
+      "type": "video",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "group": "ae-pr",
+      "window": { "x": 3, "y": 7, "w": 54, "z": 2 },
+      "alt": {
+        "zh": "可播放的动态图形练习，白色键盘状方块、蓝色圆形与发光球体构成画面",
+        "en": "Playable motion-graphics study with white keyboard-like tiles, blue circles, and glowing spheres",
+        "ja": "白いキーボード状タイル、青い円、発光する球体を組み合わせた再生可能なモーショングラフィックス練習"
+      },
+      "caption": {
+        "zh": "After Effects / Premiere Pro 动态图形与剪辑练习 01。",
+        "en": "After Effects / Premiere Pro motion and editing study 01.",
+        "ja": "After Effects／Premiere Proによるモーションと編集の練習 01。"
+      }
+    },
+    {
+      "type": "video",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "group": "ae-pr",
+      "window": { "x": 43, "y": 42, "w": 54, "z": 1 },
+      "alt": {
+        "zh": "可播放的蓝白动态图形练习，水滴形主体周围分布旋转的点阵环",
+        "en": "Playable blue-and-white motion study with a droplet form surrounded by rotating dotted rings",
+        "ja": "水滴形を中心に回転する点線のリングを配置した、再生可能な青と白のモーション練習"
+      },
+      "caption": {
+        "zh": "After Effects / Premiere Pro 动态图形与剪辑练习 02。",
+        "en": "After Effects / Premiere Pro motion and editing study 02.",
+        "ja": "After Effects／Premiere Proによるモーションと編集の練習 02。"
+      }
+    }
+  ],
+  "details": {
+    "role": {
+      "zh": "具体课程与个人分工待艺术家补充",
+      "en": "Course context and individual role await artist confirmation",
+      "ja": "授業情報と個人の担当は作家による追記待ち"
+    },
+    "scale": {
+      "zh": "三个练习分区；14 项静态与视频素材",
+      "en": "Three practice sections; 14 still and moving-image records",
+      "ja": "3つの演習区分、静止画・映像14点"
+    },
+    "platform": {
+      "zh": "Blender / Maya / After Effects / Premiere Pro",
+      "en": "Blender / Maya / After Effects / Premiere Pro",
+      "ja": "Blender / Maya / After Effects / Premiere Pro"
+    },
+    "credits": {
+      "zh": ["协作与署名信息待艺术家确认"],
+      "en": ["Collaboration and credit information await artist confirmation"],
+      "ja": ["共同制作とクレジット情報は作家による確認待ち"]
+    }
+  },
+  "links": {},
+  "i18n": {
+    "zh": {
+      "title": "大学课题",
+      "summary": "收录 Blender、Maya 与 After Effects / Premiere Pro 练习的课题记录，共 14 项静态与视频素材。",
+      "medium": "三维练习、动态图形、视频剪辑",
+      "status": "练习记录",
+      "body": [
+        "页面按 Blender、Maya 与 After Effects / Premiere Pro 分为三个练习分区。每个窗口对应一项完成图、制作过程或时间影像。",
+        "静态图像记录造型、材质、灯光与环境构成的练习；视频补充镜头运动、运动节奏和剪辑关系。桌面端可重新排列窗口，紧凑屏幕按原始顺序阅读。"
+      ]
+    },
+    "en": {
+      "title": "University Coursework",
+      "summary": "A record of Blender, Maya, and After Effects / Premiere Pro practice, containing 14 still and moving-image items.",
+      "medium": "3D practice, motion graphics, video editing",
+      "status": "Practice record",
+      "body": [
+        "The record is divided into Blender, Maya, and After Effects / Premiere Pro studies. Each window contains a finished view, a process record, or time-based evidence.",
+        "Still images record studies in form, material, lighting, and environmental composition; videos add camera movement, motion rhythm, and editing relationships. Windows can be rearranged on desktop, while compact screens retain the source order."
+      ]
+    },
+    "ja": {
+      "title": "大学課題",
+      "summary": "Blender、Maya、After Effects／Premiere Proの演習を、静止画と再生可能な映像14点で記録するページです。",
+      "medium": "3D演習、モーショングラフィックス、映像編集",
+      "status": "演習記録",
+      "body": [
+        "Blender、Maya、After Effects／Premiere Proの3つの演習区分で構成し、各ウィンドウに完成画面、制作工程、または時間表現の記録を配置しています。",
+        "静止画は形体、マテリアル、照明、環境構成の検討を記録し、映像はカメラ移動、動きのリズム、編集関係を補います。デスクトップでは再配置でき、小さな画面では元の順序で表示します。"
+      ]
+    }
+  }
+}

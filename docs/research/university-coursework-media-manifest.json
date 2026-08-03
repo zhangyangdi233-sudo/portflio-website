@@ -1,0 +1,156 @@
+{
+  "recorded": "2026-07-28",
+  "sourceDirectory": "Explicitly named files in the artist's 展示 folder",
+  "selectionPolicy": "Include only the 14 filenames explicitly attached and assigned by the artist across the Blender, Maya, and AE / PR messages in this task.",
+  "sourceFolderAudit": {
+    "auditedOn": "2026-07-28",
+    "nonHiddenFileCount": 27,
+    "includedExplicitlyAssignedCount": 14,
+    "excludedUnassignedCount": 13,
+    "exclusionReason": "These files were present in the same source folder but were not attached or assigned to any of the three coursework sections. Seven were later assigned to X.WHEEL on 2026-07-29; all remain excluded from University Coursework.",
+    "excludedUnassignedSourceNames": [
+      "20_チョウ　ヨウテキ _02.jpg",
+      "20_チョウ　ヨウテキ_03.jpg",
+      "A25DC573＿チョウヨウテキ＿3DCG＿images1.png",
+      "IMG_2548.PNG",
+      "IMG_3060.PNG",
+      "IMG_3061.PNG",
+      "IMG_3093.PNG",
+      "作品集 2.pdf",
+      "未命名作品 2.PNG",
+      "未命名作品 3.PNG",
+      "未命名作品 4.png",
+      "未命名作品.png",
+      "背景.jpg"
+    ]
+  },
+  "copyPolicy": "Exact-byte deployable copies with ASCII filenames",
+  "derivativePolicy": {
+    "format": "webp",
+    "widths": [480, 960],
+    "quality": 82,
+    "naming": "source-basename-{width}.webp",
+    "resize": "fit-inside-without-enlargement",
+    "descriptorPolicy": "Use each derivative's measured intrinsic width",
+    "sourceFilesRemainCanonical": true
+  },
+  "items": [
+    {
+      "group": "blender",
+      "sourceName": "71.PNG",
+      "publicPath": "assets/projects/university-coursework/blender-01-object-study.png",
+      "bytes": 2778076,
+      "sha256": "dff4be70df48f7e874920a30f47752eee3fdfcd6891288584b2391424c7df6d4",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "44016.JPG",
+      "publicPath": "assets/projects/university-coursework/blender-02-character-render.jpg",
+      "bytes": 144090,
+      "sha256": "a9a5dd48383ef3615dd30546302e016a900e5fe420b2139fd48c446984e49b45",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "44020.JPG",
+      "publicPath": "assets/projects/university-coursework/blender-03-red-corridor.jpg",
+      "bytes": 90339,
+      "sha256": "6c5120314946df8b548ae9d11bdbde5c495af0e6135a8d87c906e1d4719e163e",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "43611.PNG",
+      "publicPath": "assets/projects/university-coursework/blender-04-house-study.png",
+      "bytes": 3350390,
+      "sha256": "858175359913e745414a606be8589d68c9fc8f5bbdc73b131aa08fcb77a99f5d",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "12530.PNG",
+      "publicPath": "assets/projects/university-coursework/blender-05-low-poly-garden.png",
+      "bytes": 2792185,
+      "sha256": "64c47ce4efa052b2987b3ef559c91dd721cedfd35008c962c05b017e43d22110",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "20260517___a25dc573_week06.PNG",
+      "publicPath": "assets/projects/university-coursework/blender-06-week06-composition.png",
+      "bytes": 2880119,
+      "sha256": "c98f466e713317f7d52e373b43a074edadc13194fd369820dd8e0c6ae1e2ccb5",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "13487.JPG",
+      "publicPath": "assets/projects/university-coursework/blender-07-modeling-process.jpg",
+      "bytes": 130019,
+      "sha256": "22a6fb9b77e5cc131eef341a03e8318d1685a7f1f07b5cdeba1d81b2cbb66999",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "44022.JPG",
+      "publicPath": "assets/projects/university-coursework/blender-08-node-workspace.jpg",
+      "bytes": 282168,
+      "sha256": "470627adce50a000cb3b983d0080efe714126b6f5ea38ec74760da6ea455cb1c",
+      "kind": "image"
+    },
+    {
+      "group": "blender",
+      "sourceName": "72.MP4",
+      "publicPath": "assets/projects/university-coursework/blender-09-motion.mp4",
+      "bytes": 424963,
+      "sha256": "19a72deaa634441badc6f611a5e36ff8d9aeb24d8fce4a9cb89842517cb18bed",
+      "kind": "video",
+      "codecEvidence": ["avc1", "moov-before-mdat"]
+    },
+    {
+      "group": "blender",
+      "sourceName": "44021.MP4",
+      "publicPath": "assets/projects/university-coursework/blender-10-motion.mp4",
+      "bytes": 770175,
+      "sha256": "849a0a5c52803798d04cd77f496b14bada011005d997a79fc68ea9a25b92df58",
+      "kind": "video",
+      "codecEvidence": ["avc1", "mp4a", "moov-before-mdat"]
+    },
+    {
+      "group": "maya",
+      "sourceName": "11111111.png",
+      "publicPath": "assets/projects/university-coursework/maya-01-architecture-still.png",
+      "bytes": 564421,
+      "sha256": "60ede8c2c6851aeb41414078693ba971b93f6a8e3b0c1fee49204a3125c29e0e",
+      "kind": "image"
+    },
+    {
+      "group": "maya",
+      "sourceName": "A25DC573_youteki_tyou.mp4",
+      "publicPath": "assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "bytes": 772041,
+      "sha256": "2a08669aa3a1231782deb83ec21ad82af1334373a1a5928fa61f5e64a0779e9c",
+      "kind": "video",
+      "codecEvidence": ["avc1", "moov-before-mdat"]
+    },
+    {
+      "group": "ae-pr",
+      "sourceName": "A25DC573_チョウ　ヨウテキ＿火曜日3−4限目B.mp4",
+      "publicPath": "assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "bytes": 38908432,
+      "sha256": "a76059af1aba8b051392f1cff730d244b03cf10b7837fb7a31f4cec1a11e1a75",
+      "kind": "video",
+      "codecEvidence": ["avc1", "mp4a", "moov-before-mdat"]
+    },
+    {
+      "group": "ae-pr",
+      "sourceName": "A25DC573＿チョウヨウテキ＿火曜日３−４限目.mp4",
+      "publicPath": "assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "bytes": 70455829,
+      "sha256": "7e3ea9240444b58a33db4dc00e22f78faa88faf582b7358098729710354814af",
+      "kind": "video",
+      "codecEvidence": ["avc1", "mp4a", "moov-before-mdat"]
+    }
+  ]
+}

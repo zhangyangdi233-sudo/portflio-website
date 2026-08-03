@@ -24,14 +24,14 @@ const profile = getLocalizedProfile(lang);
       {profile.statement.map((paragraph) => <p>{paragraph}</p>)}
     </div>
 
-    <aside class="about-cv" data-reveal>
+    <aside class="about-cv" id="contact" data-reveal>
       <p class="eyebrow">{labels.cv}</p>
       <ul>
         {profile.cv.map((item) => <li>{item}</li>)}
       </ul>
-      <a class="button is-primary" href={siteProfile.cvUrl}>{labels.downloadCv}</a>
+      {siteProfile.cvUrl && <a class="button is-primary" href={siteProfile.cvUrl}>{labels.downloadCv}</a>}
       <div class="contact-list">
-        <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+        {siteProfile.email && <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>}
         {siteProfile.socials.map((social) => <a href={social.href} target="_blank" rel="noreferrer">{social.label}</a>)}
       </div>
     </aside>

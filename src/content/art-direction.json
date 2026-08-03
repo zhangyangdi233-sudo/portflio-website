@@ -1,0 +1,40 @@
+{
+  "name": "Signal Index / Acid Proof",
+  "intent": "A professor-readable Internationalist index built from a strict grid, black and warm paper, and one acid signal color.",
+  "colors": {
+    "night": "#090a08",
+    "surface": "#090a08",
+    "ink": "#f4f0dd",
+    "muted": "#f4f0dd",
+    "plum": "#f4f0dd",
+    "oxide": "#c6ff00",
+    "cyan": "#c6ff00",
+    "sodium": "#f4f0dd",
+    "rule": "#f4f0dd"
+  },
+  "typography": {
+    "display": "Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP, sans-serif",
+    "editorial": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
+    "ui": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
+    "mono": "SFMono-Regular, Menlo, Consolas, Noto Sans Mono CJK JP, monospace"
+  },
+  "motion": {
+    "microMs": 180,
+    "stateMs": 260,
+    "enterMs": 460,
+    "titleMs": 440,
+    "dragKeyboardStep": 16,
+    "dragKeyboardStepLarge": 48
+  },
+  "workspace": {
+    "breakpoint": 900,
+    "stageHeight": 760,
+    "positions": {
+      "x-wheel": { "x": 2, "y": 38, "width": 460, "rotation": -0.45, "z": 4 },
+      "emida": { "x": 27, "y": 112, "width": 430, "rotation": 0.35, "z": 3 },
+      "wake-up": { "x": 54, "y": 46, "width": 440, "rotation": -0.3, "z": 2 },
+      "escape-project": { "x": 71, "y": 152, "width": 410, "rotation": 0.4, "z": 1 },
+      "university-coursework": { "x": 18, "y": 344, "width": 455, "rotation": -0.15, "z": 5 }
+    }
+  }
+}

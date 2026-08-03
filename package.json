@@ -6,16 +6,22 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check:built": "node scripts/check-built-site.mjs",
+    "check:browser": "node scripts/check-browser.mjs",
     "preview": "astro preview",
     "check": "astro check",
+    "check:design": "node scripts/check-design-drift.mjs",
+    "figma:sync": "node scripts/figma-sync-server.mjs",
     "test": "vitest run"
   },
   "dependencies": {
     "astro": "^6.3.8",
-    "gsap": "^3.13.0"
+    "gsap": "^3.13.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@types/node": "^26.1.1",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   }

@@ -7,13 +7,23 @@ import {
 } from "../src/lib/i18n";
 import {
   getFeaturedProjects,
+  getLocalizedMedia,
   getLocalizedProject,
+  getLocalizedString,
+  getLocalizedStringList,
+  getPublishedProjects,
   getProjectThemeVars,
   sortProjects
 } from "../src/lib/projects";
-import { projects } from "../src/lib/project-data";
+import { allProjects, projects } from "../src/lib/project-data";
+import { artDirection } from "../src/lib/art-direction";
+import { siteProfile } from "../src/lib/site-data";
 
 describe("localized portfolio behavior", () => {
+  it("publishes the artist-confirmed professor contact route", () => {
+    expect(siteProfile.email).toBe("mayonezu332@gmail.com");
+  });
+
   it("detects supported browser languages and falls back to English", () => {
     expect(detectPreferredLanguage("ja-JP,ja;q=0.9,en;q=0.8")).toBe("ja");
     expect(detectPreferredLanguage("zh-CN,zh;q=0.9,en;q=0.7")).toBe("zh");
@@ -30,11 +40,23 @@ describe("localized portfolio behavior", () => {
     expect(ordered.slice(0, 2)).toEqual(["x-wheel", "emida"]);
   });
 
-  it("exposes a focused featured set and the X.WHEEL play link", () => {
+  it("keeps placeholders editable without publishing them as portfolio evidence", () => {
+    expect(allProjects).toHaveLength(9);
+    expect(getPublishedProjects(allProjects).map((project) => project.slug)).toEqual([
+      "x-wheel",
+      "emida",
+      "wake-up",
+      "escape-project",
+      "university-coursework"
+    ]);
+    expect(allProjects.filter((project) => project.published === false)).toHaveLength(4);
+  });
+
+  it("exposes a focused featured set without publishing a placeholder play link", () => {
     const featured = getFeaturedProjects(projects);
     expect(featured).toHaveLength(2);
     expect(featured[0].slug).toBe("x-wheel");
-    expect(featured[0].links.play).toMatch(/^https?:\/\//);
+    expect(featured[0].links.play).toBeUndefined();
   });
 
   it("provides complete translations and page theme variables", () => {
@@ -43,11 +65,23 @@ describe("localized portfolio behavior", () => {
         const localized = getLocalizedProject(project, lang);
         expect(localized.title.length).toBeGreaterThan(0);
         expect(localized.summary.length).toBeGreaterThan(0);
+        expect(getLocalizedStringList(project.tags, lang).length).toBeGreaterThan(0);
+
+        for (const media of project.media) {
+          expect(getLocalizedMedia(media, lang).alt.length).toBeGreaterThan(0);
+          if (media.caption) expect(getLocalizedMedia(media, lang).caption?.length).toBeGreaterThan(0);
+        }
+
+        expect(getLocalizedString(project.details?.role, lang)?.length).toBeGreaterThan(0);
+        expect(getLocalizedString(project.details?.scale, lang)?.length).toBeGreaterThan(0);
+        expect(getLocalizedStringList(project.details?.credits, lang).length).toBeGreaterThan(0);
       }
 
       expect(getProjectThemeVars(project)).toMatchObject({
-        "--project-primary": project.palette.primary,
-        "--project-secondary": project.palette.secondary
+        "--project-primary": artDirection.colors.oxide,
+        "--project-secondary": artDirection.colors.ink,
+        "--project-ink": artDirection.colors.ink,
+        "--project-paper": artDirection.colors.night
       });
     }
   });

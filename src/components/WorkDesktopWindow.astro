@@ -1,0 +1,85 @@
+---
+import ProjectImage from "./ProjectImage.astro";
+import { artDirection } from "../lib/art-direction";
+import { getLocalizedProject } from "../lib/projects";
+import type { Language, Project } from "../lib/types";
+
+interface Props {
+  project: Project;
+  lang: Language;
+  index: number;
+  position: { x: number; y: number; width: number; rotation: number; z: number };
+}
+
+const { project, lang, index, position } = Astro.props;
+const localized = getLocalizedProject(project, lang);
+const keyboardStep = artDirection.motion.dragKeyboardStep;
+const keyboardStepLarge = artDirection.motion.dragKeyboardStepLarge;
+const copy = {
+  zh: { drag: "移动作品窗口", instruction: `单击标题栏切换预设位置，也可拖动。方向键移动${keyboardStep}像素，Shift加方向键移动${keyboardStepLarge}像素，Home返回初始位置，Escape收起窗口。`, minimize: "收起", concept: "概念", year: "年份", medium: "媒介", status: "状态", open: "打开项目记录" },
+  en: { drag: "Move project window", instruction: `Click the title bar to cycle preset positions or drag it. Arrow keys move ${keyboardStep} pixels, Shift plus Arrow moves ${keyboardStepLarge} pixels, Home returns to the initial position, and Escape minimizes the window.`, minimize: "Minimize", concept: "Concept", year: "Year", medium: "Medium", status: "Status", open: "Open project record" },
+  ja: { drag: "作品ウィンドウを移動", instruction: `タイトルバーをクリックしてプリセット位置を切り替えるか、ドラッグします。矢印キーで${keyboardStep}px、Shiftと矢印で${keyboardStepLarge}px移動し、Homeで初期位置、Escapeで最小化します。`, minimize: "最小化", concept: "コンセプト", year: "年", medium: "メディア", status: "状態", open: "作品記録を開く" }
+}[lang];
+const sequence = String(index + 1).padStart(2, "0");
+const titleId = `v3-window-${project.slug}-title`;
+const instructionId = `v3-window-${project.slug}-instruction`;
+const href = `/${lang}/works/${project.slug}/`;
+const windowStyle = [
+  `--window-x:${position.x}%`,
+  `--window-y:${position.y}px`,
+  `--window-width:${position.width}px`,
+  `--window-rotation:${position.rotation}deg`,
+  `--window-z:${position.z}`
+].join(";");
+---
+
+<article
+  class:list={["v3-work-window", { "is-active-window": index === 0 }]}
+  aria-labelledby={titleId}
+  data-workspace-window
+  data-project-card
+  data-slug={project.slug}
+  data-featured={project.featured ? "true" : "false"}
+  style={windowStyle}
+>
+  <h2 class="sr-only" id={titleId}>{localized.title}</h2>
+  <header class="v3-work-window__bar">
+    <button
+      class="v3-work-window__handle"
+      type="button"
+      data-window-handle
+      disabled
+      tabindex="-1"
+      aria-hidden="true"
+      aria-label={`${copy.drag}: ${localized.title}`}
+      aria-describedby={instructionId}
+      aria-keyshortcuts="Enter Space ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home Escape"
+    >
+      <span class="v3-window-mark" aria-hidden="true">■</span>
+      <span>{sequence}</span>
+      <span>{localized.title}</span>
+    </button>
+    <span class="v3-work-window__control" aria-hidden="true">—</span>
+    <button class="v3-work-window__close" type="button" data-window-minimize aria-label={`${copy.minimize}: ${localized.title}`}>×</button>
+  </header>
+  <p class="sr-only" id={instructionId}>{copy.instruction}</p>
+
+  <a class="v3-work-window__media" href={href} aria-label={`${copy.open}: ${localized.title}`}>
+    <ProjectImage media={project.media[0]} lang={lang} eager={index === 0} sizes="(max-width: 899px) calc(100vw - 2rem), 440px" />
+  </a>
+
+  <div class="v3-work-window__body">
+    <div class="v3-work-window__record">
+      <dl>
+        {project.year !== "—" && <div><dt>{copy.year}</dt><dd>{project.year}</dd></div>}
+        <div><dt>{copy.medium}</dt><dd>{localized.medium ?? project.medium}</dd></div>
+        <div><dt>{copy.status}</dt><dd>{localized.status ?? project.status}</dd></div>
+      </dl>
+      <div class="v3-work-window__concept">
+        <p>{copy.concept}</p>
+        <p>{localized.summary}</p>
+      </div>
+    </div>
+    <a class="v3-work-window__open" href={href}><span>{copy.open}</span><span aria-hidden="true">↗</span></a>
+  </div>
+</article>

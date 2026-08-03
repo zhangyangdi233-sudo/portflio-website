@@ -1,0 +1,45 @@
+---
+import { getPublicImageMetadata } from "../lib/public-image-metadata";
+import { getLocalizedMedia } from "../lib/projects";
+import type { Language, ProjectMedia } from "../lib/types";
+
+interface Props {
+  media: ProjectMedia;
+  lang: Language;
+  eager?: boolean;
+  decorative?: boolean;
+  wake?: boolean;
+  class?: string;
+  sizes?: string;
+  srcset?: string;
+}
+
+const {
+  media,
+  lang,
+  eager = false,
+  decorative = false,
+  wake = false,
+  class: className,
+  sizes,
+  srcset
+} = Astro.props;
+const { width, height } = await getPublicImageMetadata(media.src);
+const localized = getLocalizedMedia(media, lang);
+const wakeAttribute = wake ? { "data-wake-image": "" } : {};
+---
+
+<img
+  class={className}
+  src={media.src}
+  alt={decorative ? "" : localized.alt}
+  width={width}
+  height={height}
+  sizes={sizes}
+  srcset={srcset}
+  loading={eager ? "eager" : "lazy"}
+  fetchpriority={eager ? "high" : undefined}
+  decoding="async"
+  aria-hidden={decorative ? "true" : undefined}
+  {...wakeAttribute}
+/>

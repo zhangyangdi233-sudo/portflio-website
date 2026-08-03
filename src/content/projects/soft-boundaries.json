@@ -4,6 +4,7 @@
   "medium": "Moving image, object study",
   "status": "Selected work",
   "priority": 3,
+  "published": false,
   "featured": false,
   "tags": ["video", "object", "threshold"],
   "palette": {
