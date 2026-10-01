@@ -1,0 +1,13 @@
+{
+  "status": "import-and-render-verified",
+  "sourceFingerprint": "73a703110c1ac59924cb4f876428055cdd7521cb88d3623336e0f119ca8ab5d4",
+  "evidence": "../sync/runtime-logs/delivery-verification.json",
+  "mainViews": 48,
+  "stateViews": 12,
+  "missingFonts": 0,
+  "renderFailures": 0,
+  "knownVisualFollowUp": [],
+  "verifiedAt": "2026-09-29T02:27:52.309Z",
+  "scope": "Native import, finalization, text sizing, flow repair and same-size title adaptation executed; full Figma renders saved and representative layouts inspected.",
+  "finalTitleEvidence": "../sync/runtime-logs/2026-09-29-title-final.json"
+}

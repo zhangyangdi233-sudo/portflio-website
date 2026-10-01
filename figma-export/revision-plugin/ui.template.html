@@ -1,0 +1,43 @@
+<!doctype html><meta charset="utf-8"><title>CIBA editable revision</title>
+<style>
+body{font:13px/1.6 system-ui,sans-serif;margin:22px;color:#eee;background:#151614}h1{font-size:20px;margin:0 0 10px}p{margin:8px 0 16px}.muted{color:#aaa}fieldset{border:1px solid #555;margin:16px 0;padding:14px}label{display:block;margin:8px 0}button{font:inherit;padding:8px 13px;border:1px solid #777;color:#eee;background:#252624;cursor:pointer}button.primary{background:#c6ff00;color:#090a08;border-color:#c6ff00}button:disabled{opacity:.5;cursor:default}progress{width:100%;accent-color:#c6ff00;margin:18px 0 8px}pre{white-space:pre-wrap;max-height:180px;overflow:auto;font:11px/1.5 ui-monospace,monospace;color:#bbb}#status{min-height:42px}footer{display:flex;gap:8px;flex-wrap:wrap}
+</style>
+<h1>CIBA · 可编辑改版导入</h1>
+<p>按保存的网页布局生成原生文字、图片、框架及共享组件。已有本轮画板会保留；原七个画板不修改。</p>
+<fieldset><legend>导入范围</legend>
+<label><input type="radio" name="mode" value="six-ja" checked> 补齐既有 6 个日文桌面视图</label>
+<p class="muted">已完成的 About 会自动跳过。</p>
+<label><input type="radio" name="mode" value="all48"> 全部 48 个组件版：三种语言 × 两种尺寸</label>
+<p class="muted">另建组件版，保留原始捕获供比较；已完成的组件版会跳过。</p>
+<label><input type="radio" name="mode" value="states"> 补充首页隐藏章节（仅作品舞台）</label></fieldset>
+<footer><button id="run" class="primary">开始导入</button><button id="stop" disabled>完成当前页后停止</button><button id="download" disabled>下载运行记录</button><button id="review">导出所选范围校对包</button><button id="finalize">整理整站与章节、补全视频封面</button></footer>
+<p><button id="repair">修正文字换行与手机列表间距</button></p>
+<progress id="progress" max="48" value="0"></progress><div id="status">准备就绪。请在目标 CIBA 文件内运行。</div>
+<pre id="log"></pre><p class="muted">48 个初始视图不包含全部交互状态。游戏、视频和网页交互仍由网站执行；Figma 稿用于排版编辑。</p>
+<script>
+const ASSETS=__ASSET_DATA__;
+const status=document.querySelector('#status'),log=document.querySelector('#log'),progress=document.querySelector('#progress'),run=document.querySelector('#run'),stop=document.querySelector('#stop'),download=document.querySelector('#download');
+let lastReport;
+document.querySelector('#finalize').onclick=()=>post({type:'finalize'});
+document.querySelector('#repair').onclick=()=>post({type:'repair-layout'});
+const review=document.querySelector('#review');
+review.onclick=()=>{review.disabled=true;post({type:'review',mode:document.querySelector('[name=mode]:checked').value});};
+const post=message=>parent.postMessage({pluginMessage:message},'*');
+run.onclick=()=>{run.disabled=true;stop.disabled=false;log.textContent='';post({type:'start',mode:document.querySelector('[name=mode]:checked').value});};
+stop.onclick=()=>post({type:'cancel'});
+download.onclick=()=>{const blob=new Blob([JSON.stringify(lastReport,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ciba-figma-import-log.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
+async function prepare(src){
+ const asset=ASSETS[src];if(!asset)throw new Error('没有打包该图片：'+src);
+ const raw=Uint8Array.from(atob(asset.base64),c=>c.charCodeAt(0));
+ if(['image/png','image/jpeg','image/gif'].includes(asset.mime)&&asset.width<=4096&&asset.height<=4096)return raw;
+ const url=URL.createObjectURL(new Blob([raw],{type:asset.mime}));
+ try{const image=new Image();image.src=url;await image.decode();const scale=Math.min(1,4096/image.naturalWidth,4096/image.naturalHeight),canvas=document.createElement('canvas');canvas.width=Math.round(image.naturalWidth*scale);canvas.height=Math.round(image.naturalHeight*scale);canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob)throw new Error('图片格式转换失败：'+src);return new Uint8Array(await blob.arrayBuffer());}finally{URL.revokeObjectURL(url);}
+}
+window.onmessage=async event=>{const m=event.data.pluginMessage;if(!m)return;
+ if(m.type==='review-ready'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(m.review)],{type:'application/json'}));a.download='ciba-figma-review-'+m.review.mode+'.json';a.click();review.disabled=false;status.textContent='校对包已导出，共 '+m.review.views.length+' 个视图。';return;}
+ if(m.type==='prepare-media'){try{const bytes=await prepare(m.src);post({type:'media-ready',id:m.id,bytes});}catch(e){post({type:'media-error',id:m.id,error:e.message});}return;}
+ if(m.type==='progress'){progress.max=m.total;progress.value=m.index;status.textContent=m.message;log.textContent+=m.message+'\n';}
+ if(m.type==='message')status.textContent=m.message;
+ if(m.type==='finished'||m.type==='failed'){lastReport=m.report;run.disabled=false;stop.disabled=true;download.disabled=false;const created=m.report.views.filter(v=>v.status==='created').length,existing=m.report.views.filter(v=>v.status==='skipped-existing'||v.status==='exists').length,warnings=m.report.warnings.concat(m.report.views.flatMap(v=>(v.warnings||[]).map(w=>v.view+': '+w)));status.textContent=m.type==='failed'?'已停止：'+m.message:`本次建立 ${created} 个；保留已有 ${existing} 个。${warnings.length?'有 '+warnings.length+' 条待处理记录。':''}请下载运行记录。`;log.textContent+='\n'+warnings.join('\n');}
+};
+</script>

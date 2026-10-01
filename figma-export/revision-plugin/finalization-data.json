@@ -1,0 +1,272 @@
+{
+  "views": {
+    "about-ja-desktop": "77:38",
+    "home-ja-desktop": "131:42",
+    "university-coursework-ja-desktop": "131:447",
+    "wake-up-ja-desktop": "131:1132",
+    "works-ja-desktop": "131:1319",
+    "x-wheel-ja-desktop": "131:1729",
+    "about-en-desktop": "131:1928",
+    "about-en-mobile": "131:2027",
+    "about-ja-mobile": "131:2126",
+    "about-zh-desktop": "131:2232",
+    "about-zh-mobile": "131:2324",
+    "emida-en-desktop": "131:2417",
+    "emida-en-mobile": "131:2583",
+    "emida-ja-desktop": "131:2748",
+    "emida-ja-mobile": "131:2894",
+    "emida-zh-desktop": "131:3066",
+    "emida-zh-mobile": "131:3232",
+    "escape-project-en-desktop": "131:3397",
+    "escape-project-en-mobile": "131:3551",
+    "escape-project-ja-desktop": "131:3705",
+    "escape-project-ja-mobile": "131:3859",
+    "escape-project-zh-desktop": "131:4013",
+    "escape-project-zh-mobile": "131:4167",
+    "home-en-desktop": "131:4343",
+    "home-en-mobile": "131:5026",
+    "home-ja-mobile": "131:5674",
+    "home-zh-desktop": "131:6261",
+    "home-zh-mobile": "131:6566",
+    "university-coursework-en-desktop": "131:7147",
+    "university-coursework-en-mobile": "131:7828",
+    "university-coursework-ja-mobile": "131:8296",
+    "university-coursework-zh-desktop": "131:8770",
+    "university-coursework-zh-mobile": "131:9447",
+    "wake-up-en-desktop": "131:9899",
+    "wake-up-en-mobile": "131:10075",
+    "wake-up-ja-mobile": "131:10258",
+    "wake-up-zh-desktop": "131:10446",
+    "wake-up-zh-mobile": "131:10622",
+    "works-en-desktop": "131:10808",
+    "works-en-mobile": "131:11213",
+    "works-ja-mobile": "131:11587",
+    "works-zh-desktop": "131:11972",
+    "works-zh-mobile": "131:12310",
+    "x-wheel-en-desktop": "131:12624",
+    "x-wheel-en-mobile": "131:12810",
+    "x-wheel-ja-mobile": "131:12996",
+    "x-wheel-zh-desktop": "131:13182",
+    "x-wheel-zh-mobile": "131:13368",
+    "home-en-chapter-02": "131:13555",
+    "home-en-chapter-03": "131:13705",
+    "home-en-chapter-04": "131:13866",
+    "home-en-chapter-05": "131:14073",
+    "home-ja-chapter-02": "131:14325",
+    "home-ja-chapter-03": "131:14501",
+    "home-ja-chapter-04": "131:14688",
+    "home-ja-chapter-05": "131:14921",
+    "home-zh-chapter-02": "131:15102",
+    "home-zh-chapter-03": "131:15278",
+    "home-zh-chapter-04": "131:15465",
+    "home-zh-chapter-05": "131:15698"
+  },
+  "videoNodes": [
+    {
+      "nodeId": "131:7311",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "view": "university-coursework-en-desktop"
+    },
+    {
+      "nodeId": "131:7275",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "view": "university-coursework-en-desktop"
+    },
+    {
+      "nodeId": "131:7641",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "view": "university-coursework-en-desktop"
+    },
+    {
+      "nodeId": "131:7772",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "view": "university-coursework-en-desktop"
+    },
+    {
+      "nodeId": "131:7736",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "view": "university-coursework-en-desktop"
+    },
+    {
+      "nodeId": "131:8101",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "view": "university-coursework-en-mobile"
+    },
+    {
+      "nodeId": "131:8129",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "view": "university-coursework-en-mobile"
+    },
+    {
+      "nodeId": "131:8191",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "view": "university-coursework-en-mobile"
+    },
+    {
+      "nodeId": "131:8225",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "view": "university-coursework-en-mobile"
+    },
+    {
+      "nodeId": "131:8240",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "view": "university-coursework-en-mobile"
+    },
+    {
+      "nodeId": "131:577",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "view": "university-coursework-ja-desktop"
+    },
+    {
+      "nodeId": "131:541",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "view": "university-coursework-ja-desktop"
+    },
+    {
+      "nodeId": "131:924",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "view": "university-coursework-ja-desktop"
+    },
+    {
+      "nodeId": "131:1055",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "view": "university-coursework-ja-desktop"
+    },
+    {
+      "nodeId": "131:1019",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "view": "university-coursework-ja-desktop"
+    },
+    {
+      "nodeId": "131:8565",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "view": "university-coursework-ja-mobile"
+    },
+    {
+      "nodeId": "131:8593",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "view": "university-coursework-ja-mobile"
+    },
+    {
+      "nodeId": "131:8655",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "view": "university-coursework-ja-mobile"
+    },
+    {
+      "nodeId": "131:8689",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "view": "university-coursework-ja-mobile"
+    },
+    {
+      "nodeId": "131:8704",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "view": "university-coursework-ja-mobile"
+    },
+    {
+      "nodeId": "131:8930",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "view": "university-coursework-zh-desktop"
+    },
+    {
+      "nodeId": "131:8894",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "view": "university-coursework-zh-desktop"
+    },
+    {
+      "nodeId": "131:9260",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "view": "university-coursework-zh-desktop"
+    },
+    {
+      "nodeId": "131:9391",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "view": "university-coursework-zh-desktop"
+    },
+    {
+      "nodeId": "131:9355",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "view": "university-coursework-zh-desktop"
+    },
+    {
+      "nodeId": "131:9716",
+      "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "view": "university-coursework-zh-mobile"
+    },
+    {
+      "nodeId": "131:9744",
+      "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "view": "university-coursework-zh-mobile"
+    },
+    {
+      "nodeId": "131:9793",
+      "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "view": "university-coursework-zh-mobile"
+    },
+    {
+      "nodeId": "131:9827",
+      "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "view": "university-coursework-zh-mobile"
+    },
+    {
+      "nodeId": "131:9842",
+      "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "view": "university-coursework-zh-mobile"
+    }
+  ],
+  "rawCaptureNodeIds": [
+    "68:2",
+    "72:2",
+    "74:2",
+    "70:2",
+    "71:2",
+    "69:2",
+    "75:2",
+    "76:2",
+    "73:2",
+    "79:27",
+    "78:27",
+    "80:27",
+    "81:27",
+    "82:27",
+    "83:27",
+    "84:27",
+    "85:27",
+    "92:27",
+    "88:27",
+    "90:27",
+    "87:27",
+    "89:27",
+    "91:27",
+    "94:27",
+    "93:27",
+    "96:27",
+    "95:27",
+    "97:27",
+    "98:27",
+    "99:27",
+    "100:27",
+    "101:27",
+    "102:27",
+    "104:27",
+    "103:27",
+    "107:27",
+    "105:27",
+    "106:27",
+    "108:27",
+    "109:27",
+    "110:27",
+    "111:27",
+    "114:27",
+    "117:27",
+    "112:27",
+    "118:27",
+    "115:27",
+    "113:27",
+    "116:27",
+    "119:27",
+    "120:27",
+    "121:27",
+    "122:27",
+    "123:27"
+  ]
+}

@@ -1,26 +1,16 @@
-# CIBA Figma sync snapshots
+# CIBA Figma 同步与交付
 
-Run `npm run figma:sync`, keep that terminal open, then choose
-`Plugins → Development → CIBA Portfolio Import → Export changes to Codex` in Figma.
+2026-09-29：整站导入完成。48 个主视图、12 个首页章节，原七个画板及54个浏览器参考稿保留。
 
-The local-only listener writes:
+- [Figma 编辑入口](https://www.figma.com/design/xyINqLy60s9MELHd2HmViK/CIBA-Portfolio-Editable-Website-System?node-id=131-18199)
+- [完整交付说明](/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/sync/FULL_SITE_HANDOFF.md)
+- [实际验证汇总](/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/sync/runtime-logs/delivery-verification.json)
+- [全部节点与状态](/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/sync/revision-state.json)
+- [48 视图映射](/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/sync/full-site-handoff-plan.json)
+- [本轮交付索引](/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/docs/research/DELIVERY_2026-09-28.md)
 
-- `latest.json` — the newest editable Figma hierarchy.
-- `previous.json` — the immediately preceding snapshot.
-- `history/<timestamp>.json` — an append-only checkpoint for each export.
+`dom/` 和 `dom-states/` 保存网页布局依据；`runtime-logs/` 保存原生插件返回记录和实际 Figma 渲染。历史阻塞记录已归档，当前状态见上述汇总。
 
-Runtime snapshots are intentionally ignored by Git. Codex reads `latest.json`, compares it with
-`previous.json` and the website source, then applies only reviewed changes. The listener binds to
-`127.0.0.1`, accepts a maximum payload of 10 MB, and requires the plugin’s local sync header.
+## 已有本地同步协议
 
-The primary collaborative file is the Team Project file `KWJfKNS3PKBhRGCad4V3Ey`. Codex can read
-that file through the Figma connector or the authenticated web editor after the artist edits it.
-When the Starter connector quota is exhausted, an authenticated web inspection may write a local
-`snapshotKind: "figma-web-inspection"` checkpoint; Desktop plugin exports use
-`snapshotKind: "figma-plugin-export"`. This makes a protocol test fixture distinguishable from a
-checkpoint of the actual Team Project.
-
-The snapshot records frame and layer IDs, names, hierarchy, position, size, rotation, opacity,
-visibility, fills, strokes, text content, typography, auto-layout values, media source paths, and
-interaction annotations. It never reads browser credentials, Figma account data, or unrelated
-pages.
+`npm run figma:sync` 启动本地监听；旧 CIBA Portfolio Import 插件的 Export changes to Codex 可写入 `latest.json`、`previous.json` 和 `history/<timestamp>.json`。监听地址为127.0.0.1，载荷上限10MB，并要求本地同步请求头。新版 revision-plugin 的职责是导入与验证，未把旧协议与其混为一项功能。后续网页修改应对照 Figma 实际节点、当前源码和变更记录。

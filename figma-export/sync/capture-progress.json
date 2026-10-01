@@ -1,0 +1,828 @@
+[
+  {
+    "key": "zh:about:390",
+    "captureId": "8ebb9b06-73e4-49f6-b4e9-f3a412e30ec8",
+    "nodeId": "68:2",
+    "status": "completed"
+  },
+  {
+    "key": "zh:home:1440",
+    "routeKey": "home",
+    "route": "/zh/",
+    "lang": "zh",
+    "title": "首页",
+    "frameName": "01 / ZH / Desktop / 首页",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "10e2c209-82bf-4602-ae79-dd9c9f43fe1c",
+    "status": "completed",
+    "nodeId": "72:2"
+  },
+  {
+    "key": "zh:home:390",
+    "routeKey": "home",
+    "route": "/zh/",
+    "lang": "zh",
+    "title": "首页",
+    "frameName": "01 / ZH / Mobile / 首页",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "4a6df800-d27d-4878-817d-2ffb126a4e5b",
+    "status": "completed",
+    "nodeId": "74:2"
+  },
+  {
+    "key": "zh:works:1440",
+    "routeKey": "works",
+    "route": "/zh/works/",
+    "lang": "zh",
+    "title": "作品",
+    "frameName": "02 / ZH / Desktop / 作品",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "e8979f09-657b-4da1-9647-8c72681c6603",
+    "status": "completed",
+    "nodeId": "70:2"
+  },
+  {
+    "key": "zh:works:390",
+    "routeKey": "works",
+    "route": "/zh/works/",
+    "lang": "zh",
+    "title": "作品",
+    "frameName": "02 / ZH / Mobile / 作品",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "e377f4c7-9609-4f01-9104-1e0ae5a84fff",
+    "status": "completed",
+    "nodeId": "71:2"
+  },
+  {
+    "key": "zh:about:1440",
+    "routeKey": "about",
+    "route": "/zh/about/",
+    "lang": "zh",
+    "title": "关于",
+    "frameName": "03 / ZH / Desktop / 关于",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "47e9991b-dadf-4271-8399-ca46478070f7",
+    "status": "completed",
+    "nodeId": "69:2"
+  },
+  {
+    "key": "zh:x-wheel:1440",
+    "routeKey": "x-wheel",
+    "route": "/zh/works/x-wheel/",
+    "lang": "zh",
+    "title": "APHASIA / 失语症",
+    "frameName": "04 / ZH / Desktop / APHASIA / 失语症",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "270e880a-ef22-499f-952c-7b75d24112fb",
+    "status": "completed",
+    "nodeId": "75:2"
+  },
+  {
+    "key": "zh:x-wheel:390",
+    "routeKey": "x-wheel",
+    "route": "/zh/works/x-wheel/",
+    "lang": "zh",
+    "title": "APHASIA / 失语症",
+    "frameName": "04 / ZH / Mobile / APHASIA / 失语症",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "4fd04b93-bcc5-4872-bd0a-0468359aea1e",
+    "status": "completed",
+    "nodeId": "76:2"
+  },
+  {
+    "key": "zh:emida:1440",
+    "routeKey": "emida",
+    "route": "/zh/works/emida/",
+    "lang": "zh",
+    "title": "EMIDA",
+    "frameName": "05 / ZH / Desktop / EMIDA",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "2796f85c-9f6f-4beb-b142-2988781ac3ff",
+    "status": "completed",
+    "nodeId": "73:2"
+  },
+  {
+    "key": "zh:emida:390",
+    "routeKey": "emida",
+    "route": "/zh/works/emida/",
+    "lang": "zh",
+    "title": "EMIDA",
+    "frameName": "05 / ZH / Mobile / EMIDA",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "3f51f500-10f2-43cf-8de2-ad1aaa283c4d",
+    "status": "completed",
+    "nodeId": "79:27"
+  },
+  {
+    "key": "zh:wake-up:1440",
+    "routeKey": "wake-up",
+    "route": "/zh/works/wake-up/",
+    "lang": "zh",
+    "title": "Wake Up",
+    "frameName": "06 / ZH / Desktop / Wake Up",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "0751a94e-b21f-40d9-a42e-3d51ece56104",
+    "status": "completed",
+    "nodeId": "78:27"
+  },
+  {
+    "key": "zh:wake-up:390",
+    "routeKey": "wake-up",
+    "route": "/zh/works/wake-up/",
+    "lang": "zh",
+    "title": "Wake Up",
+    "frameName": "06 / ZH / Mobile / Wake Up",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "c200253a-257f-4bdc-8a46-6a25c89c5920",
+    "status": "completed",
+    "nodeId": "80:27"
+  },
+  {
+    "key": "zh:escape-project:1440",
+    "routeKey": "escape-project",
+    "route": "/zh/works/escape-project/",
+    "lang": "zh",
+    "title": "Escape Project",
+    "frameName": "07 / ZH / Desktop / Escape Project",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "1ecea2be-fa3a-4ac7-a6b7-da80fe10a552",
+    "status": "completed",
+    "nodeId": "81:27"
+  },
+  {
+    "key": "zh:escape-project:390",
+    "routeKey": "escape-project",
+    "route": "/zh/works/escape-project/",
+    "lang": "zh",
+    "title": "Escape Project",
+    "frameName": "07 / ZH / Mobile / Escape Project",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "716fe88a-b269-4fbc-81e7-deaa0080261a",
+    "status": "completed",
+    "nodeId": "82:27"
+  },
+  {
+    "key": "zh:university-coursework:1440",
+    "routeKey": "university-coursework",
+    "route": "/zh/works/university-coursework/",
+    "lang": "zh",
+    "title": "大学课题",
+    "frameName": "08 / ZH / Desktop / 大学课题",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "77fa01bb-33a6-462e-bf95-89757b4ecf91",
+    "status": "completed",
+    "nodeId": "83:27"
+  },
+  {
+    "key": "zh:university-coursework:390",
+    "routeKey": "university-coursework",
+    "route": "/zh/works/university-coursework/",
+    "lang": "zh",
+    "title": "大学课题",
+    "frameName": "08 / ZH / Mobile / 大学课题",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "d0d2eab4-8e80-4c23-9f86-6356ba220431",
+    "status": "completed",
+    "nodeId": "84:27"
+  },
+  {
+    "key": "en:home:1440",
+    "routeKey": "home",
+    "route": "/en/",
+    "lang": "en",
+    "title": "Home",
+    "frameName": "01 / EN / Desktop / Home",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "402d92cb-b066-4e16-a748-6de2d25bb449",
+    "status": "completed",
+    "nodeId": "85:27"
+  },
+  {
+    "key": "en:home:390",
+    "routeKey": "home",
+    "route": "/en/",
+    "lang": "en",
+    "title": "Home",
+    "frameName": "01 / EN / Mobile / Home",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "22f8843f-bf98-4aa0-8e9b-1f07617c7013",
+    "status": "completed",
+    "nodeId": "92:27"
+  },
+  {
+    "key": "en:works:1440",
+    "routeKey": "works",
+    "route": "/en/works/",
+    "lang": "en",
+    "title": "Works",
+    "frameName": "02 / EN / Desktop / Works",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "db2f02ae-f776-4c66-bc9d-146e2d69ca3b",
+    "status": "completed",
+    "nodeId": "88:27"
+  },
+  {
+    "key": "en:works:390",
+    "routeKey": "works",
+    "route": "/en/works/",
+    "lang": "en",
+    "title": "Works",
+    "frameName": "02 / EN / Mobile / Works",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "89c216d9-6ff6-4431-9e1c-14cb865ceeaa",
+    "status": "completed",
+    "nodeId": "90:27"
+  },
+  {
+    "key": "en:about:1440",
+    "routeKey": "about",
+    "route": "/en/about/",
+    "lang": "en",
+    "title": "About",
+    "frameName": "03 / EN / Desktop / About",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "741de033-4870-40df-bece-a144e16ad509",
+    "status": "completed",
+    "nodeId": "87:27"
+  },
+  {
+    "key": "en:about:390",
+    "routeKey": "about",
+    "route": "/en/about/",
+    "lang": "en",
+    "title": "About",
+    "frameName": "03 / EN / Mobile / About",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "0c8adb39-280f-4b8c-9564-bd5917bd031e",
+    "status": "completed",
+    "nodeId": "89:27"
+  },
+  {
+    "key": "en:x-wheel:1440",
+    "routeKey": "x-wheel",
+    "route": "/en/works/x-wheel/",
+    "lang": "en",
+    "title": "APHASIA",
+    "frameName": "04 / EN / Desktop / APHASIA",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "fc9233ac-3ed2-499d-af21-f3a2e2254103",
+    "status": "completed",
+    "nodeId": "91:27"
+  },
+  {
+    "key": "en:x-wheel:390",
+    "routeKey": "x-wheel",
+    "route": "/en/works/x-wheel/",
+    "lang": "en",
+    "title": "APHASIA",
+    "frameName": "04 / EN / Mobile / APHASIA",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "0054148d-afe4-4a06-94ba-8437a091caaa",
+    "status": "completed",
+    "nodeId": "94:27"
+  },
+  {
+    "key": "en:emida:1440",
+    "routeKey": "emida",
+    "route": "/en/works/emida/",
+    "lang": "en",
+    "title": "EMIDA",
+    "frameName": "05 / EN / Desktop / EMIDA",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "8e81d2f3-79e2-4634-9f8b-bfe15afd21d1",
+    "status": "completed",
+    "nodeId": "93:27"
+  },
+  {
+    "key": "en:emida:390",
+    "routeKey": "emida",
+    "route": "/en/works/emida/",
+    "lang": "en",
+    "title": "EMIDA",
+    "frameName": "05 / EN / Mobile / EMIDA",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "c3cb04b6-0d58-4b36-93bd-db9a44aef0cb",
+    "status": "completed",
+    "nodeId": "96:27"
+  },
+  {
+    "key": "en:wake-up:1440",
+    "routeKey": "wake-up",
+    "route": "/en/works/wake-up/",
+    "lang": "en",
+    "title": "Wake Up",
+    "frameName": "06 / EN / Desktop / Wake Up",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "edc56c3d-060e-4e1a-af27-d9b47c96cf82",
+    "status": "completed",
+    "nodeId": "95:27"
+  },
+  {
+    "key": "en:wake-up:390",
+    "routeKey": "wake-up",
+    "route": "/en/works/wake-up/",
+    "lang": "en",
+    "title": "Wake Up",
+    "frameName": "06 / EN / Mobile / Wake Up",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "16516701-245e-4386-ab9b-73d6b90a6499",
+    "status": "completed",
+    "nodeId": "97:27"
+  },
+  {
+    "key": "en:escape-project:1440",
+    "routeKey": "escape-project",
+    "route": "/en/works/escape-project/",
+    "lang": "en",
+    "title": "Escape Project",
+    "frameName": "07 / EN / Desktop / Escape Project",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "bf6d4ffe-78bc-4862-915b-5d1a86d89c94",
+    "status": "completed",
+    "nodeId": "98:27"
+  },
+  {
+    "key": "en:escape-project:390",
+    "routeKey": "escape-project",
+    "route": "/en/works/escape-project/",
+    "lang": "en",
+    "title": "Escape Project",
+    "frameName": "07 / EN / Mobile / Escape Project",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "b2338f0f-f12d-46cc-882c-85d859a0b6b9",
+    "status": "completed",
+    "nodeId": "99:27"
+  },
+  {
+    "key": "en:university-coursework:1440",
+    "routeKey": "university-coursework",
+    "route": "/en/works/university-coursework/",
+    "lang": "en",
+    "title": "University Coursework",
+    "frameName": "08 / EN / Desktop / University Coursework",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "f613c276-c431-4204-923a-86d59ebc971f",
+    "status": "completed",
+    "nodeId": "100:27"
+  },
+  {
+    "key": "en:university-coursework:390",
+    "routeKey": "university-coursework",
+    "route": "/en/works/university-coursework/",
+    "lang": "en",
+    "title": "University Coursework",
+    "frameName": "08 / EN / Mobile / University Coursework",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "550b3e37-93a8-45d1-b70d-b90910480ffc",
+    "status": "completed",
+    "nodeId": "101:27"
+  },
+  {
+    "key": "ja:home:390",
+    "routeKey": "home",
+    "route": "/ja/",
+    "lang": "ja",
+    "title": "ホーム",
+    "frameName": "01 / JA / Mobile / ホーム",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "d2810a7c-6a7d-4bf4-930b-a511d822e685",
+    "status": "completed",
+    "nodeId": "102:27"
+  },
+  {
+    "key": "ja:works:390",
+    "routeKey": "works",
+    "route": "/ja/works/",
+    "lang": "ja",
+    "title": "作品",
+    "frameName": "02 / JA / Mobile / 作品",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "c636bfd6-3b06-4846-932f-18976e6e1ae1",
+    "status": "completed",
+    "nodeId": "104:27"
+  },
+  {
+    "key": "ja:about:390",
+    "routeKey": "about",
+    "route": "/ja/about/",
+    "lang": "ja",
+    "title": "プロフィール",
+    "frameName": "03 / JA / Mobile / プロフィール",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "64782779-d6b1-43ea-92db-5ce5c5f401fb",
+    "status": "completed",
+    "nodeId": "103:27"
+  },
+  {
+    "key": "ja:x-wheel:390",
+    "routeKey": "x-wheel",
+    "route": "/ja/works/x-wheel/",
+    "lang": "ja",
+    "title": "APHASIA / 失語症",
+    "frameName": "04 / JA / Mobile / APHASIA / 失語症",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "e8de643a-21f7-480b-9e7a-0100825f1490",
+    "status": "completed",
+    "nodeId": "107:27"
+  },
+  {
+    "key": "ja:emida:1440",
+    "routeKey": "emida",
+    "route": "/ja/works/emida/",
+    "lang": "ja",
+    "title": "EMIDA",
+    "frameName": "05 / JA / Desktop / EMIDA",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "ec366e07-7cb3-4d16-8dad-d29060675029",
+    "status": "completed",
+    "nodeId": "105:27"
+  },
+  {
+    "key": "ja:emida:390",
+    "routeKey": "emida",
+    "route": "/ja/works/emida/",
+    "lang": "ja",
+    "title": "EMIDA",
+    "frameName": "05 / JA / Mobile / EMIDA",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "20f5cdd2-a44c-480d-962a-e50708eb3967",
+    "status": "completed",
+    "nodeId": "106:27"
+  },
+  {
+    "key": "ja:wake-up:390",
+    "routeKey": "wake-up",
+    "route": "/ja/works/wake-up/",
+    "lang": "ja",
+    "title": "Wake Up",
+    "frameName": "06 / JA / Mobile / Wake Up",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "122826eb-a37a-4f97-93ea-3c852dc598d1",
+    "status": "completed",
+    "nodeId": "108:27"
+  },
+  {
+    "key": "ja:escape-project:1440",
+    "routeKey": "escape-project",
+    "route": "/ja/works/escape-project/",
+    "lang": "ja",
+    "title": "Escape Project",
+    "frameName": "07 / JA / Desktop / Escape Project",
+    "viewport": {
+      "name": "Desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "4cf37f6b-2885-40e4-88ae-8ec202f7112c",
+    "status": "completed",
+    "nodeId": "109:27"
+  },
+  {
+    "key": "ja:escape-project:390",
+    "routeKey": "escape-project",
+    "route": "/ja/works/escape-project/",
+    "lang": "ja",
+    "title": "Escape Project",
+    "frameName": "07 / JA / Mobile / Escape Project",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "bc318e31-6b00-4645-ab53-c8d169cd1688",
+    "status": "completed",
+    "nodeId": "110:27"
+  },
+  {
+    "key": "ja:university-coursework:390",
+    "routeKey": "university-coursework",
+    "route": "/ja/works/university-coursework/",
+    "lang": "ja",
+    "title": "大学課題",
+    "frameName": "08 / JA / Mobile / 大学課題",
+    "viewport": {
+      "name": "Mobile",
+      "width": 390,
+      "height": 844
+    },
+    "heightPolicy": "full-content-height",
+    "existingNodeId": null,
+    "method": "first-capture-then-use_figma",
+    "phase": "prepared-awaiting-visual-checkpoint",
+    "captureId": "7452ff93-39ab-4d32-9b05-e5fb6d84cff7",
+    "status": "completed",
+    "nodeId": "111:27"
+  }
+]

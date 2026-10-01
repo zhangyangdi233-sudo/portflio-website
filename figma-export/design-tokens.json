@@ -1,13 +1,25 @@
 {
   "name": "CIBA Portfolio",
   "direction": "Signal Index / Acid Proof",
+  "projectIdentities": {
+    "x-wheel": {
+      "publicTitles": {
+        "zh": "APHASIA / 失语症",
+        "en": "APHASIA",
+        "ja": "APHASIA / 失語症"
+      },
+      "canonicalSource": "src/content/projects/x-wheel.json",
+      "slugAndMediaPathsUnchanged": true
+    }
+  },
   "philosophy": {
-    "statement": "A strict Internationalist index in black and warm paper, interrupted by one acid-green system signal.",
+    "statement": "A quiet Internationalist index in near-black and warm paper, with flat related surfaces and acid-green state signals.",
     "originality": "Combine disciplined grids, multilingual sans-serif hierarchy, cinematic pacing, and semantic desktop windows into an original CIBA system. References are research inputs only; do not copy assets, text, raster chrome, code, or exact compositions.",
     "principles": [
       "Use a rational asymmetric grid and whitespace as structure.",
       "Limit interface color to black, warm paper, and one acid-green signal.",
-      "Prefer explicit metadata and typographic hierarchy over decorative atmosphere.",
+      "Use related near-black planes, quiet hairlines, and small state signals without hard shadows or visual window rotation.",
+      "Use one multilingual sans-serif family across headings, body, controls, and metadata, with locale-specific SC and JP forms.",
       "Keep project content readable before, during, and after motion."
     ]
   },
@@ -33,20 +45,50 @@
     "sampledOn": "2026-07-17",
     "note": "The palette is an active user-directed design decision, not a color extraction from any named reference."
   },
+  "surfaceTones": {
+    "source": "Derived from the unchanged night, warm-paper, and acid-green palette; no additional interface hue.",
+    "surface": "color-mix(in srgb, #f4f0dd 3%, #090a08)",
+    "surfaceRaised": "color-mix(in srgb, #f4f0dd 4%, #090a08)",
+    "rule": "rgba(244, 240, 221, 0.26)",
+    "ruleSoft": "rgba(244, 240, 221, 0.14)",
+    "activeRule": "rgba(198, 255, 0, 0.6)",
+    "courseworkWindowRule": "rgba(244, 240, 221, 0.22)",
+    "courseworkActiveRule": "color-mix(in srgb, #c6ff00 58%, transparent)"
+  },
   "typography": {
     "canonical": {
-      "display": "Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP, sans-serif",
-      "editorial": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
-      "ui": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
-      "mono": "SFMono-Regular, Menlo, Consolas, Noto Sans Mono CJK JP, monospace"
+      "display": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+      "editorial": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+      "ui": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+      "mono": "Noto Sans SC Variable, Noto Sans SC, sans-serif"
     },
-    "figmaUiApproximation": "Inter",
-    "ui": "Inter / Helvetica / Noto Sans",
+    "figmaUiApproximation": "Noto Sans SC; use Noto Sans JP for Japanese text",
+    "ui": "Noto Sans SC Variable for Chinese and English; Noto Sans JP Variable for Japanese",
+    "localeFonts": {
+      "browserSCJP": {
+        "zh": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+        "en": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+        "ja": "Noto Sans JP Variable, Noto Sans JP, sans-serif"
+      },
+      "FigmaSCJP": {
+        "zh": "Noto Sans SC",
+        "en": "Noto Sans SC",
+        "ja": "Noto Sans JP"
+      },
+      "variableWeightRange": [100, 900],
+      "variableWeightNote": "The browser uses self-hosted variable fonts with a continuous 100–900 weight range. Preserve existing font-size, font-weight, line-height, and letter-spacing values; the legacy mono role now uses the same sans-serif family.",
+      "legacyPlugin": "The English concept plugin uses Noto Sans SC Regular and Bold and preserves its existing black-to-Bold alias so weights do not change. Regular, Bold, and Black are available in Figma; the browser family suffix Variable is not used as the Figma font-family name.",
+      "licenses": {
+        "SC": "/licenses/Noto-Sans-SC-Variable-OFL.txt",
+        "JP": "/licenses/Noto-Sans-JP-Variable-OFL.txt",
+        "license": "SIL Open Font License 1.1; the installed packages' complete license and copyright notices are preserved unchanged."
+      }
+    },
     "brand": "Small bold bilingual mark: 糍粑 CIBA",
     "display": "Live semantic word groups. Latin display tracking starts between normal and -0.03em; Chinese and Japanese remain at 0. ESCAPE / PROJECT and UNIVERSITY / COURSEWORK use authored phrase breaks.",
     "windowTitle": "11–12px uppercase UI text with approximately 0.08em tracking",
     "body": "14–20px regular text with 1.35–1.5 line height",
-    "metadata": "10–12px uppercase or tabular UI text; one compact verified record only",
+    "metadata": "10–12px uppercase or tabular UI text in the same locale-specific sans-serif family; one compact verified record only",
     "semanticBreaks": {
       "escape-project": ["ESCAPE", "PROJECT"],
       "university-coursework": ["UNIVERSITY", "COURSEWORK"]
@@ -55,7 +97,7 @@
   "layout": {
     "desktopFrame": "1440px wide",
     "mobileFrame": "390px wide",
-    "background": "flat black field with warm-paper hairlines",
+    "background": "flat near-black field, related 3% and 4% warm-paper mixed surfaces, and quiet warm-paper hairlines",
     "grid": "disciplined asymmetric Internationalist grid; whitespace is structural",
     "hero": "monumental CIBA title without redundant archive or edition labels, followed by one scroll-linked work stage with low-opacity draggable evidence images",
     "works": "five large independent project windows arranged on a desktop window canvas",
@@ -91,7 +133,7 @@
       "handle": "title bar only",
       "bounds": "Works workspace",
       "feedback": "raise the active window and update its transform immediately",
-      "authoredRotation": "-0.45deg to 0.4deg in window mode; cleared in ordered mode"
+      "authoredRotation": "Stored rotation values remain unchanged in the authored positions; current CSS ignores visual rotation in both window and ordered modes."
     },
     "reducedMotion": "Disable scatter entrances, authored rotation, per-letter rolling, and scroll scrubbing. Keep state changes instantaneous or crossfaded under 120ms."
   },
@@ -141,14 +183,17 @@
       "localized summary",
       "OPEN action"
     ],
-    "scatter": "Desktop default: absolute authored positions, slight rotations, intentional overlap, bring-to-front, minimize/restore, filters, and reset.",
+    "scatter": "Desktop default: absolute authored positions and intentional overlap without visual rotation; bring-to-front, minimize/restore, filters, and reset remain unchanged.",
     "ordered": "Ordered responsive grid with transforms and rotations cleared; all visible summaries remain readable.",
     "mobile": "Single-column semantic cards in source order; precision dragging and drag controls are removed.",
     "windowStyle": {
-      "background": "surface",
-      "border": "2px warm-paper frame; acid title bar and active-state signal",
+      "background": "surfaceTones.surface: 3% warm paper mixed into night; title bar and body share the same flat plane",
+      "border": "1px warm-paper rule at 26% opacity; active window uses a 1px acid-green rule at 60% opacity",
+      "internalRule": "1px warm-paper rule at 14% opacity; repeated control dividers are visually quiet",
+      "state": "Warm-paper controls at rest; acid-green text, fine rules, and a small active-window mark signal interaction without a filled green title bar",
       "radius": "0px",
-      "shadow": "12px 12px 0 acid green; active window swaps to warm paper",
+      "shadow": "none in all layouts and states",
+      "visualRotation": "none; keep stored positions.rotation values unchanged for data parity",
       "mediaAspectRatio": "16 / 10"
     },
     "editableHandoff": "The plugin generates five independent overlapping Figma frames. Text, title bars, media placeholders, and OPEN labels remain editable; move whole frames to explore alternate compositions."
@@ -179,8 +224,8 @@
         "videoCount": 2
       }
     },
-    "outerWindow": "One large square-corner chapter window per section, with a black title bar, warm-paper rules, one acid focus/reset signal, and a clipped inner stage.",
-    "innerWindow": "Editable vector/text chrome with a factual item code, media-kind label, abstract media placeholder, and visible caption line. Video windows include play and progress-control markers.",
+    "outerWindow": "One square-corner chapter region per section; transparent side borders retain geometry while thin top and bottom rules organize the surface. Its title bar shares the 3% warm-paper mixed near-black plane. Reset uses acid text on that plane, and the inner stage remains clipped.",
+    "innerWindow": "Flat windows with 1px warm-paper boundaries at 22% opacity, 14% internal rules, and a 58% acid active outline. Title bar and body share the same surface with no hard shadow or visual rotation. Factual codes and captions use the shared sans-serif family; video windows retain their independent controls.",
     "interaction": {
       "pointer": "Title-bar drag only; active item rises and remains clamped to its section.",
       "keyboard": "Arrow 16px; Shift + Arrow 48px; Home resets one item; section RESET restores every authored position.",

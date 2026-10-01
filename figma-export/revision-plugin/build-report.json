@@ -1,0 +1,32 @@
+{
+  "mainViews": 48,
+  "supplementalStates": 12,
+  "knownReferenceCaptures": 42,
+  "knownComponentizedViews": 1,
+  "all48Policy": "Create parallel componentized frames; preserve raw captures; skip only completed componentized frames.",
+  "imageAssetsEmbedded": 31,
+  "embeddedBytes": 19927596,
+  "missingImageBytes": [],
+  "snapshotWarnings": {},
+  "fontsPending": [],
+  "fontsSeparatelyVerified": {
+    "wake-up-ja-desktop": {
+      "body": true,
+      "status": "loaded",
+      "title": true,
+      "note": "Fresh read immediately after layout snapshot; requested title and Japanese body glyphs loaded. Layout height unchanged."
+    },
+    "wake-up-ja-mobile": {
+      "body": true,
+      "status": "loaded",
+      "title": true,
+      "note": "Fresh read immediately after layout snapshot; requested title and Japanese body glyphs loaded. Layout height unchanged."
+    }
+  },
+  "nativePluginRuntimeVerified": true,
+  "nativeRuntimeEvidence": "../sync/runtime-logs/delivery-verification.json",
+  "sourceFingerprint": "73a703110c1ac59924cb4f876428055cdd7521cb88d3623336e0f119ca8ab5d4",
+  "codeSha256": "f0fd4bfcb48313fa38dd24f3c6287e85d2f5c490e5c2e18e0c7b106d12e7e062",
+  "manifestHasAssignedId": true,
+  "setupRequired": null
+}

@@ -1,0 +1,1624 @@
+{
+  "schemaVersion": 1,
+  "fileKey": "xyINqLy60s9MELHd2HmViK",
+  "pageId": "6:6",
+  "baselineNodeIdsToPreserve": [
+    "28:2",
+    "29:2",
+    "30:2",
+    "31:2",
+    "32:2",
+    "33:2",
+    "34:2"
+  ],
+  "count": 48,
+  "existingViewCount": 6,
+  "firstCaptureViewCount": 42,
+  "contentRouteCount": 24,
+  "rootRedirect": {
+    "path": "/",
+    "fallbackLocale": "en",
+    "separateDesignFrame": false
+  },
+  "routeContent": [
+    {
+      "key": "home",
+      "suffix": "/",
+      "titles": {
+        "zh": "首页",
+        "en": "Home",
+        "ja": "ホーム"
+      }
+    },
+    {
+      "key": "works",
+      "suffix": "/works/",
+      "titles": {
+        "zh": "作品",
+        "en": "Works",
+        "ja": "作品"
+      }
+    },
+    {
+      "key": "about",
+      "suffix": "/about/",
+      "titles": {
+        "zh": "关于",
+        "en": "About",
+        "ja": "プロフィール"
+      }
+    },
+    {
+      "key": "x-wheel",
+      "suffix": "/works/x-wheel/",
+      "titles": {
+        "zh": "APHASIA / 失语症",
+        "en": "APHASIA",
+        "ja": "APHASIA / 失語症"
+      },
+      "mediaCount": 11,
+      "media": [
+        {
+          "src": "/assets/projects/x-wheel/emi-room.png",
+          "type": "image",
+          "alt": {
+            "zh": "等距像素风房间，包含书桌、床、置物架与荧光绿色照明",
+            "en": "Isometric pixel-art room with a desk, bed, shelves, and acid-green lighting",
+            "ja": "机、ベッド、棚、アシッドグリーンの照明を備えたアイソメトリックなピクセル調の部屋"
+          },
+          "caption": {
+            "zh": "APHASIA 项目仓库中的 EMI 房间素材预览。",
+            "en": "EMI room asset preview from the APHASIA project repository.",
+            "ja": "APHASIAのプロジェクト・リポジトリにあるEMIルームのアセット・プレビュー。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/crt-tv.png",
+          "type": "image",
+          "alt": {
+            "zh": "深色背景中的等距像素风 CRT 电视素材",
+            "en": "Isometric pixel-art CRT television asset on a dark field",
+            "ja": "暗い背景に置かれたアイソメトリックなピクセル調CRTテレビのアセット"
+          },
+          "caption": {
+            "zh": "CRT 电视素材预览。",
+            "en": "CRT television asset preview.",
+            "ja": "CRTテレビのアセット・プレビュー。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/psx-console.png",
+          "type": "image",
+          "alt": {
+            "zh": "浅绿色等距像素风游戏主机与手柄",
+            "en": "Isometric pixel-art game console and controller in pale green",
+            "ja": "淡い緑色で描かれたアイソメトリックなピクセル調ゲーム機とコントローラー"
+          },
+          "caption": {
+            "zh": "游戏主机素材预览。",
+            "en": "Console asset preview.",
+            "ja": "ゲーム機のアセット・プレビュー。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/poster.png",
+          "type": "image",
+          "alt": {
+            "zh": "APHASIA 素材库中的等距像素风海报物件",
+            "en": "Isometric pixel-art poster object from the APHASIA asset library",
+            "ja": "APHASIAのアセット・ライブラリにあるアイソメトリックなピクセル調ポスター"
+          },
+          "caption": {
+            "zh": "海报物件预览。",
+            "en": "Poster object preview.",
+            "ja": "ポスター・オブジェクトのプレビュー。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/character-full.png",
+          "type": "image",
+          "alt": {
+            "zh": "黑色背景左侧是一名以浅绿和绿色线条绘制的长发人物全身像",
+            "en": "A full-length long-haired character drawn in pale and mid green stands on the left of a black field",
+            "ja": "黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像"
+          },
+          "caption": {
+            "zh": "APHASIA 角色全身造型稿。",
+            "en": "APHASIA full-length character study.",
+            "ja": "APHASIAのキャラクター全身造形スタディ。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/character-sequence.png",
+          "type": "image",
+          "alt": {
+            "zh": "深蓝色背景中，五个浅绿色人物视图并排重叠，展示头部与身体朝向的变化",
+            "en": "Five overlapping pale-green character views on a dark blue field show changes in head and body direction",
+            "ja": "濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している"
+          },
+          "caption": {
+            "zh": "角色方向与表情序列。",
+            "en": "Character direction and expression sequence.",
+            "ja": "キャラクターの方向と表情のシークエンス。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/cartridge-3-title.png",
+          "type": "image",
+          "alt": {
+            "zh": "绿色画面上写有“Cartridge 3”和一行德语文字，中央标题由黑白几何字形组成",
+            "en": "A green title card reads Cartridge 3 and a German sentence, with a central title built from black-and-white geometric letterforms",
+            "ja": "緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている"
+          },
+          "caption": {
+            "zh": "Cartridge 3 标题与字形构成。",
+            "en": "Cartridge 3 title and letterform composition.",
+            "ja": "Cartridge 3のタイトルと字形構成。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/cartridge-3-geometry.png",
+          "type": "image",
+          "alt": {
+            "zh": "绿色画面中，浅绿色正方形、宽圆弧与井号形状相互叠合",
+            "en": "Pale-green square, broad arc, and hash-like forms overlap on a green field",
+            "ja": "緑の画面上で、淡い緑の正方形、太い円弧、ハッシュ記号状の形が重なっている"
+          },
+          "caption": {
+            "zh": "Cartridge 3 几何构成稿。",
+            "en": "Cartridge 3 geometric composition study.",
+            "ja": "Cartridge 3の幾何学構成スタディ。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/character-portrait.png",
+          "type": "image",
+          "alt": {
+            "zh": "深蓝色背景中的绿色像素风长发人物近景，人物低头看向侧下方",
+            "en": "A green pixel-art close-up of a long-haired character looking down to one side on a dark blue field",
+            "ja": "濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ"
+          },
+          "caption": {
+            "zh": "角色像素化近景试验。",
+            "en": "Pixelated character close-up study.",
+            "ja": "キャラクターのピクセル調クローズアップ・スタディ。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/signal-orb.png",
+          "type": "image",
+          "alt": {
+            "zh": "深蓝色背景中央是一颗绿色颗粒球体，两侧分布重复弧线与折线信号图形",
+            "en": "A grainy green sphere sits between repeated arcs and angular signal lines on a dark blue field",
+            "ja": "濃紺の背景の中央に粒子状の緑の球体があり、両側に反復する円弧と折れ線の信号図形がある"
+          },
+          "caption": {
+            "zh": "球体与信号线的图形构成。",
+            "en": "Sphere and signal-line graphic composition.",
+            "ja": "球体と信号線のグラフィック構成。"
+          }
+        },
+        {
+          "src": "/assets/projects/x-wheel/crt-character-composition.png",
+          "type": "image",
+          "alt": {
+            "zh": "浅绿色显示器位于画面中央，屏幕内是绿色人物和几何图形，周围环绕球体与波纹线",
+            "en": "A pale-green monitor contains a green character and geometric graphics, surrounded by spheres and wave-like lines",
+            "ja": "淡い緑のモニター内に緑の人物と幾何学図形があり、周囲に球体と波状の線が配置されている"
+          },
+          "caption": {
+            "zh": "角色与 CRT 界面构成。",
+            "en": "Character and CRT interface composition.",
+            "ja": "キャラクターとCRTインターフェースの構成。"
+          }
+        }
+      ]
+    },
+    {
+      "key": "emida",
+      "suffix": "/works/emida/",
+      "titles": {
+        "zh": "EMIDA",
+        "en": "EMIDA",
+        "ja": "EMIDA"
+      },
+      "mediaCount": 1,
+      "media": [
+        {
+          "src": "/assets/projects/emida/emida-doctor.webp",
+          "type": "image",
+          "alt": {
+            "zh": "蓝色与橙色绘制的纵向 EMIDA 角色与项目页，包含列车隧道般的场景和日文项目文字",
+            "en": "Tall EMIDA character and project sheet drawn in blue and orange, with a train-like tunnel and Japanese project text",
+            "ja": "青とオレンジで描かれた縦長のEMIDAキャラクター／プロジェクトシート。列車トンネルのような場面と日本語の作品テキストを含む"
+          },
+          "caption": {
+            "zh": "艺术家旧网站保存的 EMIDA_THE_DOCTOR? 项目页。",
+            "en": "EMIDA_THE_DOCTOR? project sheet preserved from the artist's previous site.",
+            "ja": "作家の旧サイトから保存したEMIDA_THE_DOCTOR?のプロジェクトシート。"
+          }
+        }
+      ]
+    },
+    {
+      "key": "wake-up",
+      "suffix": "/works/wake-up/",
+      "titles": {
+        "zh": "Wake Up",
+        "en": "Wake Up",
+        "ja": "Wake Up"
+      },
+      "mediaCount": 2,
+      "media": [
+        {
+          "src": "/assets/projects/wake-up/bed-alarm.png",
+          "type": "image",
+          "alt": {
+            "zh": "黑色画面中，白色人形在床上醒来，旁边的闹钟正在响",
+            "en": "Black field with a white figure waking in bed beside a ringing alarm clock",
+            "ja": "黒い画面の中、鳴っている目覚まし時計の横で白い人物がベッドから目を覚ます"
+          }
+        },
+        {
+          "src": "/assets/projects/wake-up/flooded-title.jpg",
+          "type": "image",
+          "alt": {
+            "zh": "昏暗的积水走廊，扭曲的 Wake Up 标题倒映在水面",
+            "en": "Dark flooded corridor with distorted Wake Up title reflected in water",
+            "ja": "暗く浸水した廊下。歪んだWake Upのタイトルが水面に反射している"
+          }
+        }
+      ]
+    },
+    {
+      "key": "escape-project",
+      "suffix": "/works/escape-project/",
+      "titles": {
+        "zh": "Escape Project",
+        "en": "Escape Project",
+        "ja": "Escape Project"
+      },
+      "mediaCount": 3,
+      "media": [
+        {
+          "src": "/assets/projects/escape-project/escape-space.webp",
+          "type": "image",
+          "alt": {
+            "zh": "紫、粉与浅绿色网格组成的透视房间，内有奔跑人形与方向箭头",
+            "en": "Perspective room made from purple, pink, and pale-green grids with running figures and directional arrows",
+            "ja": "紫、ピンク、淡い緑のグリッドで構成された遠近法的な部屋。走る人物と方向矢印が配置されている"
+          },
+          "caption": {
+            "zh": "Escape Project 归档页面中的空间构成。",
+            "en": "Spatial composition from the archived Escape Project page.",
+            "ja": "Escape Projectのアーカイブページにある空間構成。"
+          }
+        },
+        {
+          "src": "/assets/projects/escape-project/escape-gate.webp",
+          "type": "image",
+          "alt": {
+            "zh": "蓝色门槛构图，包含禁止标志、模糊的中央入口与向下移动的人形",
+            "en": "Blue threshold composition with prohibition signs, a blurred central doorway, and figures moving downward",
+            "ja": "禁止標識、ぼやけた中央の入口、下方へ移動する人物を含む青い境界の構図"
+          },
+          "caption": {
+            "zh": "归档网页作品中的门槛研究。",
+            "en": "Threshold study from the archived web work.",
+            "ja": "アーカイブされたウェブ作品の境界スタディ。"
+          }
+        },
+        {
+          "src": "/assets/projects/escape-project/escape-loop.webp",
+          "type": "image",
+          "alt": {
+            "zh": "紫色视觉场，中央入口发生故障扭曲，奔跑与坠落符号反复出现",
+            "en": "Purple visual field with a glitched central doorway and repeated running and falling symbols",
+            "ja": "グリッチした中央の入口と、反復する走行／落下記号を含む紫色の視覚フィールド"
+          },
+          "caption": {
+            "zh": "归档网页作品中的循环研究。",
+            "en": "Loop study from the archived web work.",
+            "ja": "アーカイブされたウェブ作品のループ・スタディ。"
+          }
+        }
+      ]
+    },
+    {
+      "key": "university-coursework",
+      "suffix": "/works/university-coursework/",
+      "titles": {
+        "zh": "大学课题",
+        "en": "University Coursework",
+        "ja": "大学課題"
+      },
+      "mediaCount": 14,
+      "media": [
+        {
+          "src": "/assets/projects/university-coursework/blender-01-object-study.png",
+          "type": "image",
+          "alt": {
+            "zh": "橙色背景中的红色器皿、半透明车辆与猴头模型，后方有蓝色构成图形",
+            "en": "A red vessel, translucent vehicle, and monkey-head model against orange with blue graphic forms",
+            "ja": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面"
+          },
+          "caption": {
+            "zh": "Blender 物体、材质与灯光组合练习。",
+            "en": "Blender object, material, and lighting study.",
+            "ja": "Blenderによるオブジェクト、マテリアル、照明の組み合わせ練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-02-character-render.jpg",
+          "type": "image",
+          "alt": {
+            "zh": "深蓝背景中的角色渲染，人物坐在浅色形体之间，上方有橙色鸭子",
+            "en": "Character render on deep blue with a seated figure among pale forms and an orange duck above",
+            "ja": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー"
+          },
+          "caption": {
+            "zh": "Blender 角色、形体与配色练习。",
+            "en": "Blender character, form, and colour study.",
+            "ja": "Blenderによるキャラクター、形体、配色の練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+          "type": "image",
+          "alt": {
+            "zh": "被红光照亮的积水走廊，空间中长出枯树，右侧有一只橙色鸭子",
+            "en": "A flooded corridor lit red, filled with bare trees, with a small orange duck at right",
+            "ja": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる"
+          },
+          "caption": {
+            "zh": "Blender 环境、反射与红色灯光练习。",
+            "en": "Blender environment, reflection, and red-light study.",
+            "ja": "Blenderによる環境、反射、赤色照明の練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-04-house-study.png",
+          "type": "image",
+          "alt": {
+            "zh": "蓝色背景上的浅蓝与荧光黄色建筑模型，周围叠加黑色树形与手绘箭头",
+            "en": "Pale-blue and fluorescent-yellow architecture on blue with black tree forms and drawn arrows",
+            "ja": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面"
+          },
+          "caption": {
+            "zh": "Blender 建筑形体与图像构成练习。",
+            "en": "Blender architectural-form and image-composition study.",
+            "ja": "Blenderによる建築形体とイメージ構成の練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+          "type": "image",
+          "alt": {
+            "zh": "粉色空间中的低多边形绿色植株，白色花朵与叶片投影落在浅色地面上",
+            "en": "Low-poly green plants with white flowers in a pink space, casting pale leaf shadows",
+            "ja": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面"
+          },
+          "caption": {
+            "zh": "Blender 低多边形植物与投影练习。",
+            "en": "Blender low-poly plant and shadow study.",
+            "ja": "Blenderによる低ポリゴン植物と投影の練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-06-week06-composition.png",
+          "type": "image",
+          "alt": {
+            "zh": "绿色信息图式构图，包含半透明人物、透视网格、圆形轨迹与巨大的数字 42",
+            "en": "Green diagrammatic composition with a translucent figure, perspective grids, orbits, and a large 42",
+            "ja": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成"
+          },
+          "caption": {
+            "zh": "Blender 渲染与平面图式组合练习。",
+            "en": "Blender render combined with a graphic diagram study.",
+            "ja": "Blenderレンダーと平面図式を組み合わせた練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+          "type": "image",
+          "alt": {
+            "zh": "Blender 界面中的红色有机器皿模型，周围延伸灰白色曲线结构",
+            "en": "Blender interface showing a red organic vessel model with pale curved structures",
+            "ja": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造"
+          },
+          "caption": {
+            "zh": "Blender 建模过程画面。",
+            "en": "Blender modelling-process view.",
+            "ja": "Blenderのモデリング工程画面。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+          "type": "image",
+          "alt": {
+            "zh": "Blender 工作区截图，同时显示红色走廊渲染、三维视图与材质节点网络",
+            "en": "Blender workspace showing the red corridor render, 3D viewport, and a material-node network",
+            "ja": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面"
+          },
+          "caption": {
+            "zh": "红色走廊场景的 Blender 节点与工作区记录。",
+            "en": "Blender nodes and workspace record for the red corridor scene.",
+            "ja": "赤い廊下シーンのBlenderノードと作業画面の記録。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-09-motion.mp4",
+          "type": "video",
+          "alt": {
+            "zh": "可播放的 Blender 动画练习，首帧为纯橙色画面",
+            "en": "Playable Blender animation study beginning on a solid orange frame",
+            "ja": "無地のオレンジ色の画面から始まる、再生可能なBlenderアニメーション練習"
+          },
+          "caption": {
+            "zh": "Blender 动画练习 01。",
+            "en": "Blender animation study 01.",
+            "ja": "Blenderアニメーション練習 01。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/blender-10-motion.mp4",
+          "type": "video",
+          "alt": {
+            "zh": "可播放的 Blender 环境动画，画面穿过红色积水走廊与树木",
+            "en": "Playable Blender environment animation moving through a flooded red corridor and trees",
+            "ja": "赤く水没した廊下と樹木の間を進む、再生可能なBlender環境アニメーション"
+          },
+          "caption": {
+            "zh": "红色走廊场景的 Blender 动画练习。",
+            "en": "Blender animation study for the red corridor scene.",
+            "ja": "赤い廊下シーンのBlenderアニメーション練習。"
+          },
+          "group": "blender"
+        },
+        {
+          "src": "/assets/projects/university-coursework/maya-01-architecture-still.png",
+          "type": "image",
+          "alt": {
+            "zh": "哥特式拱顶与成排柱子的三维建筑内部，深蓝阴影间透出明亮天空",
+            "en": "3D Gothic interior with vaulted arches and rows of columns opening onto a bright sky",
+            "ja": "連続する柱と尖頭アーチを持ち、濃い青の陰影の先に明るい空が見える3Dゴシック建築内部"
+          },
+          "caption": {
+            "zh": "Maya 拱顶、柱体与建筑空间练习。",
+            "en": "Maya vault, column, and architectural-space study.",
+            "ja": "Mayaによるヴォールト、柱、建築空間の練習。"
+          },
+          "group": "maya"
+        },
+        {
+          "src": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+          "type": "video",
+          "alt": {
+            "zh": "可播放的 Maya 环境动画，镜头位于昏暗积水长廊，柱间长有草丛",
+            "en": "Playable Maya environment animation in a dark flooded colonnade with grass between columns",
+            "ja": "柱の間に草が生えた暗い水没回廊を進む、再生可能なMaya環境アニメーション"
+          },
+          "caption": {
+            "zh": "Maya 建筑环境动画练习。",
+            "en": "Maya architectural-environment animation study.",
+            "ja": "Mayaによる建築環境アニメーション練習。"
+          },
+          "group": "maya"
+        },
+        {
+          "src": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+          "type": "video",
+          "alt": {
+            "zh": "可播放的动态图形练习，白色键盘状方块、蓝色圆形与发光球体构成画面",
+            "en": "Playable motion-graphics study with white keyboard-like tiles, blue circles, and glowing spheres",
+            "ja": "白いキーボード状タイル、青い円、発光する球体を組み合わせた再生可能なモーショングラフィックス練習"
+          },
+          "caption": {
+            "zh": "After Effects / Premiere Pro 动态图形与剪辑练习 01。",
+            "en": "After Effects / Premiere Pro motion and editing study 01.",
+            "ja": "After Effects／Premiere Proによるモーションと編集の練習 01。"
+          },
+          "group": "ae-pr"
+        },
+        {
+          "src": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+          "type": "video",
+          "alt": {
+            "zh": "可播放的蓝白动态图形练习，水滴形主体周围分布旋转的点阵环",
+            "en": "Playable blue-and-white motion study with a droplet form surrounded by rotating dotted rings",
+            "ja": "水滴形を中心に回転する点線のリングを配置した、再生可能な青と白のモーション練習"
+          },
+          "caption": {
+            "zh": "After Effects / Premiere Pro 动态图形与剪辑练习 02。",
+            "en": "After Effects / Premiere Pro motion and editing study 02.",
+            "ja": "After Effects／Premiere Proによるモーションと編集の練習 02。"
+          },
+          "group": "ae-pr"
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "key": "zh:home:1440",
+      "routeKey": "home",
+      "route": "/zh/",
+      "lang": "zh",
+      "title": "首页",
+      "frameName": "01 / ZH / Desktop / 首页",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:6261",
+      "captureId": "10e2c209-82bf-4602-ae79-dd9c9f43fe1c",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "72:2"
+    },
+    {
+      "key": "zh:home:390",
+      "routeKey": "home",
+      "route": "/zh/",
+      "lang": "zh",
+      "title": "首页",
+      "frameName": "01 / ZH / Mobile / 首页",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:6566",
+      "captureId": "4a6df800-d27d-4878-817d-2ffb126a4e5b",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "74:2"
+    },
+    {
+      "key": "zh:works:1440",
+      "routeKey": "works",
+      "route": "/zh/works/",
+      "lang": "zh",
+      "title": "作品",
+      "frameName": "02 / ZH / Desktop / 作品",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:11972",
+      "captureId": "e8979f09-657b-4da1-9647-8c72681c6603",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "70:2"
+    },
+    {
+      "key": "zh:works:390",
+      "routeKey": "works",
+      "route": "/zh/works/",
+      "lang": "zh",
+      "title": "作品",
+      "frameName": "02 / ZH / Mobile / 作品",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:12310",
+      "captureId": "e377f4c7-9609-4f01-9104-1e0ae5a84fff",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "71:2"
+    },
+    {
+      "key": "zh:about:1440",
+      "routeKey": "about",
+      "route": "/zh/about/",
+      "lang": "zh",
+      "title": "关于",
+      "frameName": "03 / ZH / Desktop / 关于",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2232",
+      "captureId": "47e9991b-dadf-4271-8399-ca46478070f7",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "69:2"
+    },
+    {
+      "key": "zh:about:390",
+      "routeKey": "about",
+      "route": "/zh/about/",
+      "lang": "zh",
+      "title": "关于",
+      "frameName": "03 / ZH / Mobile / 关于",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2324",
+      "captureId": "8ebb9b06-73e4-49f6-b4e9-f3a412e30ec8",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "68:2"
+    },
+    {
+      "key": "zh:x-wheel:1440",
+      "routeKey": "x-wheel",
+      "route": "/zh/works/x-wheel/",
+      "lang": "zh",
+      "title": "APHASIA / 失语症",
+      "frameName": "04 / ZH / Desktop / APHASIA / 失语症",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:13182",
+      "captureId": "270e880a-ef22-499f-952c-7b75d24112fb",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "75:2"
+    },
+    {
+      "key": "zh:x-wheel:390",
+      "routeKey": "x-wheel",
+      "route": "/zh/works/x-wheel/",
+      "lang": "zh",
+      "title": "APHASIA / 失语症",
+      "frameName": "04 / ZH / Mobile / APHASIA / 失语症",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:13368",
+      "captureId": "4fd04b93-bcc5-4872-bd0a-0468359aea1e",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "76:2"
+    },
+    {
+      "key": "zh:emida:1440",
+      "routeKey": "emida",
+      "route": "/zh/works/emida/",
+      "lang": "zh",
+      "title": "EMIDA",
+      "frameName": "05 / ZH / Desktop / EMIDA",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:3066",
+      "captureId": "2796f85c-9f6f-4beb-b142-2988781ac3ff",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "73:2"
+    },
+    {
+      "key": "zh:emida:390",
+      "routeKey": "emida",
+      "route": "/zh/works/emida/",
+      "lang": "zh",
+      "title": "EMIDA",
+      "frameName": "05 / ZH / Mobile / EMIDA",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:3232",
+      "captureId": "3f51f500-10f2-43cf-8de2-ad1aaa283c4d",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "79:27"
+    },
+    {
+      "key": "zh:wake-up:1440",
+      "routeKey": "wake-up",
+      "route": "/zh/works/wake-up/",
+      "lang": "zh",
+      "title": "Wake Up",
+      "frameName": "06 / ZH / Desktop / Wake Up",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:10446",
+      "captureId": "0751a94e-b21f-40d9-a42e-3d51ece56104",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "78:27"
+    },
+    {
+      "key": "zh:wake-up:390",
+      "routeKey": "wake-up",
+      "route": "/zh/works/wake-up/",
+      "lang": "zh",
+      "title": "Wake Up",
+      "frameName": "06 / ZH / Mobile / Wake Up",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:10622",
+      "captureId": "c200253a-257f-4bdc-8a46-6a25c89c5920",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "80:27"
+    },
+    {
+      "key": "zh:escape-project:1440",
+      "routeKey": "escape-project",
+      "route": "/zh/works/escape-project/",
+      "lang": "zh",
+      "title": "Escape Project",
+      "frameName": "07 / ZH / Desktop / Escape Project",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:4013",
+      "captureId": "1ecea2be-fa3a-4ac7-a6b7-da80fe10a552",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "81:27"
+    },
+    {
+      "key": "zh:escape-project:390",
+      "routeKey": "escape-project",
+      "route": "/zh/works/escape-project/",
+      "lang": "zh",
+      "title": "Escape Project",
+      "frameName": "07 / ZH / Mobile / Escape Project",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:4167",
+      "captureId": "716fe88a-b269-4fbc-81e7-deaa0080261a",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "82:27"
+    },
+    {
+      "key": "zh:university-coursework:1440",
+      "routeKey": "university-coursework",
+      "route": "/zh/works/university-coursework/",
+      "lang": "zh",
+      "title": "大学课题",
+      "frameName": "08 / ZH / Desktop / 大学课题",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:8770",
+      "captureId": "77fa01bb-33a6-462e-bf95-89757b4ecf91",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "83:27"
+    },
+    {
+      "key": "zh:university-coursework:390",
+      "routeKey": "university-coursework",
+      "route": "/zh/works/university-coursework/",
+      "lang": "zh",
+      "title": "大学课题",
+      "frameName": "08 / ZH / Mobile / 大学课题",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:9447",
+      "captureId": "d0d2eab4-8e80-4c23-9f86-6356ba220431",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "84:27"
+    },
+    {
+      "key": "en:home:1440",
+      "routeKey": "home",
+      "route": "/en/",
+      "lang": "en",
+      "title": "Home",
+      "frameName": "01 / EN / Desktop / Home",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:4343",
+      "captureId": "402d92cb-b066-4e16-a748-6de2d25bb449",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "85:27"
+    },
+    {
+      "key": "en:home:390",
+      "routeKey": "home",
+      "route": "/en/",
+      "lang": "en",
+      "title": "Home",
+      "frameName": "01 / EN / Mobile / Home",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:5026",
+      "captureId": "22f8843f-bf98-4aa0-8e9b-1f07617c7013",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "92:27"
+    },
+    {
+      "key": "en:works:1440",
+      "routeKey": "works",
+      "route": "/en/works/",
+      "lang": "en",
+      "title": "Works",
+      "frameName": "02 / EN / Desktop / Works",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:10808",
+      "captureId": "db2f02ae-f776-4c66-bc9d-146e2d69ca3b",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "88:27"
+    },
+    {
+      "key": "en:works:390",
+      "routeKey": "works",
+      "route": "/en/works/",
+      "lang": "en",
+      "title": "Works",
+      "frameName": "02 / EN / Mobile / Works",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:11213",
+      "captureId": "89c216d9-6ff6-4431-9e1c-14cb865ceeaa",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "90:27"
+    },
+    {
+      "key": "en:about:1440",
+      "routeKey": "about",
+      "route": "/en/about/",
+      "lang": "en",
+      "title": "About",
+      "frameName": "03 / EN / Desktop / About",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:1928",
+      "captureId": "741de033-4870-40df-bece-a144e16ad509",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "87:27"
+    },
+    {
+      "key": "en:about:390",
+      "routeKey": "about",
+      "route": "/en/about/",
+      "lang": "en",
+      "title": "About",
+      "frameName": "03 / EN / Mobile / About",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2027",
+      "captureId": "0c8adb39-280f-4b8c-9564-bd5917bd031e",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "89:27"
+    },
+    {
+      "key": "en:x-wheel:1440",
+      "routeKey": "x-wheel",
+      "route": "/en/works/x-wheel/",
+      "lang": "en",
+      "title": "APHASIA",
+      "frameName": "04 / EN / Desktop / APHASIA",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:12624",
+      "captureId": "fc9233ac-3ed2-499d-af21-f3a2e2254103",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "91:27"
+    },
+    {
+      "key": "en:x-wheel:390",
+      "routeKey": "x-wheel",
+      "route": "/en/works/x-wheel/",
+      "lang": "en",
+      "title": "APHASIA",
+      "frameName": "04 / EN / Mobile / APHASIA",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:12810",
+      "captureId": "0054148d-afe4-4a06-94ba-8437a091caaa",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "94:27"
+    },
+    {
+      "key": "en:emida:1440",
+      "routeKey": "emida",
+      "route": "/en/works/emida/",
+      "lang": "en",
+      "title": "EMIDA",
+      "frameName": "05 / EN / Desktop / EMIDA",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2417",
+      "captureId": "8e81d2f3-79e2-4634-9f8b-bfe15afd21d1",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "93:27"
+    },
+    {
+      "key": "en:emida:390",
+      "routeKey": "emida",
+      "route": "/en/works/emida/",
+      "lang": "en",
+      "title": "EMIDA",
+      "frameName": "05 / EN / Mobile / EMIDA",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2583",
+      "captureId": "c3cb04b6-0d58-4b36-93bd-db9a44aef0cb",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "96:27"
+    },
+    {
+      "key": "en:wake-up:1440",
+      "routeKey": "wake-up",
+      "route": "/en/works/wake-up/",
+      "lang": "en",
+      "title": "Wake Up",
+      "frameName": "06 / EN / Desktop / Wake Up",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:9899",
+      "captureId": "edc56c3d-060e-4e1a-af27-d9b47c96cf82",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "95:27"
+    },
+    {
+      "key": "en:wake-up:390",
+      "routeKey": "wake-up",
+      "route": "/en/works/wake-up/",
+      "lang": "en",
+      "title": "Wake Up",
+      "frameName": "06 / EN / Mobile / Wake Up",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:10075",
+      "captureId": "16516701-245e-4386-ab9b-73d6b90a6499",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "97:27"
+    },
+    {
+      "key": "en:escape-project:1440",
+      "routeKey": "escape-project",
+      "route": "/en/works/escape-project/",
+      "lang": "en",
+      "title": "Escape Project",
+      "frameName": "07 / EN / Desktop / Escape Project",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:3397",
+      "captureId": "bf6d4ffe-78bc-4862-915b-5d1a86d89c94",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "98:27"
+    },
+    {
+      "key": "en:escape-project:390",
+      "routeKey": "escape-project",
+      "route": "/en/works/escape-project/",
+      "lang": "en",
+      "title": "Escape Project",
+      "frameName": "07 / EN / Mobile / Escape Project",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:3551",
+      "captureId": "b2338f0f-f12d-46cc-882c-85d859a0b6b9",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "99:27"
+    },
+    {
+      "key": "en:university-coursework:1440",
+      "routeKey": "university-coursework",
+      "route": "/en/works/university-coursework/",
+      "lang": "en",
+      "title": "University Coursework",
+      "frameName": "08 / EN / Desktop / University Coursework",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:7147",
+      "captureId": "f613c276-c431-4204-923a-86d59ebc971f",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "100:27"
+    },
+    {
+      "key": "en:university-coursework:390",
+      "routeKey": "university-coursework",
+      "route": "/en/works/university-coursework/",
+      "lang": "en",
+      "title": "University Coursework",
+      "frameName": "08 / EN / Mobile / University Coursework",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:7828",
+      "captureId": "550b3e37-93a8-45d1-b70d-b90910480ffc",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "101:27"
+    },
+    {
+      "key": "ja:home:1440",
+      "routeKey": "home",
+      "route": "/ja/",
+      "lang": "ja",
+      "title": "ホーム",
+      "frameName": "01 / JA / Desktop / ホーム",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": "28:2",
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:42",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes."
+    },
+    {
+      "key": "ja:home:390",
+      "routeKey": "home",
+      "route": "/ja/",
+      "lang": "ja",
+      "title": "ホーム",
+      "frameName": "01 / JA / Mobile / ホーム",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:5674",
+      "captureId": "d2810a7c-6a7d-4bf4-930b-a511d822e685",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "102:27"
+    },
+    {
+      "key": "ja:works:1440",
+      "routeKey": "works",
+      "route": "/ja/works/",
+      "lang": "ja",
+      "title": "作品",
+      "frameName": "02 / JA / Desktop / 作品",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": "31:2",
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:1319",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes."
+    },
+    {
+      "key": "ja:works:390",
+      "routeKey": "works",
+      "route": "/ja/works/",
+      "lang": "ja",
+      "title": "作品",
+      "frameName": "02 / JA / Mobile / 作品",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:11587",
+      "captureId": "c636bfd6-3b06-4846-932f-18976e6e1ae1",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "104:27"
+    },
+    {
+      "key": "ja:about:1440",
+      "routeKey": "about",
+      "route": "/ja/about/",
+      "lang": "ja",
+      "title": "プロフィール",
+      "frameName": "03 / JA / Desktop / プロフィール",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": "29:2",
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "77:38",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes."
+    },
+    {
+      "key": "ja:about:390",
+      "routeKey": "about",
+      "route": "/ja/about/",
+      "lang": "ja",
+      "title": "プロフィール",
+      "frameName": "03 / JA / Mobile / プロフィール",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2126",
+      "captureId": "64782779-d6b1-43ea-92db-5ce5c5f401fb",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "103:27"
+    },
+    {
+      "key": "ja:x-wheel:1440",
+      "routeKey": "x-wheel",
+      "route": "/ja/works/x-wheel/",
+      "lang": "ja",
+      "title": "APHASIA / 失語症",
+      "frameName": "04 / JA / Desktop / APHASIA / 失語症",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": "32:2",
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:1729",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes."
+    },
+    {
+      "key": "ja:x-wheel:390",
+      "routeKey": "x-wheel",
+      "route": "/ja/works/x-wheel/",
+      "lang": "ja",
+      "title": "APHASIA / 失語症",
+      "frameName": "04 / JA / Mobile / APHASIA / 失語症",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:12996",
+      "captureId": "e8de643a-21f7-480b-9e7a-0100825f1490",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "107:27"
+    },
+    {
+      "key": "ja:emida:1440",
+      "routeKey": "emida",
+      "route": "/ja/works/emida/",
+      "lang": "ja",
+      "title": "EMIDA",
+      "frameName": "05 / JA / Desktop / EMIDA",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2748",
+      "captureId": "ec366e07-7cb3-4d16-8dad-d29060675029",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "105:27"
+    },
+    {
+      "key": "ja:emida:390",
+      "routeKey": "emida",
+      "route": "/ja/works/emida/",
+      "lang": "ja",
+      "title": "EMIDA",
+      "frameName": "05 / JA / Mobile / EMIDA",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:2894",
+      "captureId": "20f5cdd2-a44c-480d-962a-e50708eb3967",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "106:27"
+    },
+    {
+      "key": "ja:wake-up:1440",
+      "routeKey": "wake-up",
+      "route": "/ja/works/wake-up/",
+      "lang": "ja",
+      "title": "Wake Up",
+      "frameName": "06 / JA / Desktop / Wake Up",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": "30:2",
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:1132",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes."
+    },
+    {
+      "key": "ja:wake-up:390",
+      "routeKey": "wake-up",
+      "route": "/ja/works/wake-up/",
+      "lang": "ja",
+      "title": "Wake Up",
+      "frameName": "06 / JA / Mobile / Wake Up",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:10258",
+      "captureId": "122826eb-a37a-4f97-93ea-3c852dc598d1",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "108:27"
+    },
+    {
+      "key": "ja:escape-project:1440",
+      "routeKey": "escape-project",
+      "route": "/ja/works/escape-project/",
+      "lang": "ja",
+      "title": "Escape Project",
+      "frameName": "07 / JA / Desktop / Escape Project",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:3705",
+      "captureId": "4cf37f6b-2885-40e4-88ae-8ec202f7112c",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "109:27"
+    },
+    {
+      "key": "ja:escape-project:390",
+      "routeKey": "escape-project",
+      "route": "/ja/works/escape-project/",
+      "lang": "ja",
+      "title": "Escape Project",
+      "frameName": "07 / JA / Mobile / Escape Project",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:3859",
+      "captureId": "bc318e31-6b00-4645-ab53-c8d169cd1688",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "110:27"
+    },
+    {
+      "key": "ja:university-coursework:1440",
+      "routeKey": "university-coursework",
+      "route": "/ja/works/university-coursework/",
+      "lang": "ja",
+      "title": "大学課題",
+      "frameName": "08 / JA / Desktop / 大学課題",
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": "33:2",
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:447",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes."
+    },
+    {
+      "key": "ja:university-coursework:390",
+      "routeKey": "university-coursework",
+      "route": "/ja/works/university-coursework/",
+      "lang": "ja",
+      "title": "大学課題",
+      "frameName": "08 / JA / Mobile / 大学課題",
+      "viewport": {
+        "name": "Mobile",
+        "width": 390,
+        "height": 844
+      },
+      "heightPolicy": "full-content-height",
+      "existingNodeId": null,
+      "method": "native-Figma-development-plugin",
+      "phase": "complete",
+      "revisionNodeId": "131:8296",
+      "captureId": "7452ff93-39ab-4d32-9b05-e5fb6d84cff7",
+      "verification": "Editable native layers; source dimensions matched; no missing fonts; actual Figma PNG exported after layout fixes.",
+      "rawCaptureNodeId": "111:27"
+    }
+  ],
+  "supplementalStates": {
+    "home": [
+      "five active desktop chapters",
+      "media colour hover/focus",
+      "ordered reduced-motion composition"
+    ],
+    "works": [
+      "all",
+      "featured",
+      "archive",
+      "order",
+      "active window",
+      "minimized and restored",
+      "keyboard focus"
+    ],
+    "wake-up": [
+      "image descriptions collapsed",
+      "image descriptions expanded"
+    ],
+    "university-coursework": [
+      "three spatial stages",
+      "source-order layout",
+      "active media",
+      "reset",
+      "image and video"
+    ]
+  },
+  "remoteFontConstraint": {
+    "checkedOn": "2026-09-28",
+    "historicalBaselineFamilies": [
+      "Helvetica Neue",
+      "Menlo"
+    ],
+    "historicalBaselineRemoteLoadSucceeded": false,
+    "currentStatus": "resolved-with-Noto-selected-to-match-user-font-requirements",
+    "userAuthorizedScope": "Use a unified commercial-use sans-serif system across Chinese, English and Japanese; keep font sizes and interaction mechanisms.",
+    "websiteFamilies": {
+      "zh": "Noto Sans SC Variable",
+      "en": "Noto Sans SC Variable",
+      "ja": "Noto Sans JP Variable"
+    },
+    "figmaFamilies": {
+      "zh": "Noto Sans SC",
+      "en": "Noto Sans SC",
+      "ja": "Noto Sans JP"
+    },
+    "verifiedLoadableStyles": [
+      "Regular",
+      "Medium",
+      "Bold",
+      "Black"
+    ],
+    "currentRemoteLoadSucceeded": true,
+    "fontSizePolicy": "Preserve source font sizes; changed family metrics and documented title line-height/word wrapping fixes are intentional.",
+    "license": "SIL Open Font License 1.1",
+    "fontReport": "../../docs/research/font-recommendation.md",
+    "remainingConstraint": null,
+    "selectionBasis": "Noto Sans SC/JP selected to meet the user request for Chinese, English and Japanese sans-serif fonts with commercial-use permission; the user did not specify or separately approve this family by name."
+  },
+  "originalPageId": "0:1",
+  "phase": "complete",
+  "statusAsOf": "2026-09-29T02:19:12.784Z",
+  "statusSources": [
+    "revision-state.json",
+    "runtime-logs/delivery-verification.json"
+  ],
+  "deliveryStatus": {
+    "mainViewsCompleted": 48,
+    "supplementalViewsCompleted": 12,
+    "originalFramesPreserved": 7,
+    "referenceCapturesPreserved": 54,
+    "missingFonts": 0,
+    "renderFailures": 0,
+    "blocker": null,
+    "localRevisionPlugin": "native-runtime-verified"
+  }
+}

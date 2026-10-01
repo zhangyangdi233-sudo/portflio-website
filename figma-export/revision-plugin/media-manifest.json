@@ -1,0 +1,1850 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-09-28",
+  "purpose": "Local Figma revision-plugin media mapping from recorded DOM snapshots to the existing file image fills.",
+  "baselineFile": "figma-export/sync/baseline-inventory-2026-09-28.json",
+  "domDirectory": "figma-export/sync/dom",
+  "notes": [
+    "No browser or Figma calls were made for this manifest.",
+    "Mapping reuses baseline image hashes by Japanese alt text and canonical src; it does not claim binary equality between originals, responsive derivatives, or old captures.",
+    "Width/height and MIME are read from local files; baseline image dimensions describe Figma nodes and are not used as original pixel dimensions.",
+    "CurrentSrc responsive image derivatives are included as separate keys with canonicalSrc aliases.",
+    "No raster conversion or video extraction was performed."
+  ],
+  "summary": {
+    "snapshots": 48,
+    "canonicalSources": 31,
+    "allSourcePaths": 47,
+    "canonicalMapped": 29,
+    "canonicalUnmapped": 2,
+    "missingFiles": 0,
+    "images": 26,
+    "videos": 5
+  },
+  "sources": {
+    "/assets/projects/emida/emida-doctor.webp": {
+      "hash": "45dc214caf52510acd533a083301901e89b5e0d6",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/emida/emida-doctor.webp",
+      "exists": true,
+      "bytes": 1070288,
+      "width": 1919,
+      "height": 3939,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "青とオレンジで描かれた縦長のEMIDAキャラクター／プロジェクトシート。列車トンネルのような場面と日本語の作品テキストを含む",
+      "localizedAlt": {
+        "en": "Tall EMIDA character and project sheet drawn in blue and orange, with a train-like tunnel and Japanese project text",
+        "ja": "青とオレンジで描かれた縦長のEMIDAキャラクター／プロジェクトシート。列車トンネルのような場面と日本語の作品テキストを含む",
+        "zh": "蓝色与橙色绘制的纵向 EMIDA 角色与项目页，包含列车隧道般的场景和日文项目文字"
+      },
+      "canonicalSrc": "/assets/projects/emida/emida-doctor.webp",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "emida-en-desktop.json",
+        "emida-en-mobile.json",
+        "emida-ja-desktop.json",
+        "emida-ja-mobile.json",
+        "emida-zh-desktop.json",
+        "emida-zh-mobile.json",
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "31:193",
+        "frameId": "31:2",
+        "frameName": "作品 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/escape-project/escape-gate.webp": {
+      "hash": null,
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/escape-project/escape-gate.webp",
+      "exists": true,
+      "bytes": 383812,
+      "width": 1708,
+      "height": 948,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "禁止標識、ぼやけた中央の入口、下方へ移動する人物を含む青い境界の構図",
+      "localizedAlt": {
+        "en": "Blue threshold composition with prohibition signs, a blurred central doorway, and figures moving downward",
+        "ja": "禁止標識、ぼやけた中央の入口、下方へ移動する人物を含む青い境界の構図",
+        "zh": "蓝色门槛构图，包含禁止标志、模糊的中央入口与向下移动的人形"
+      },
+      "canonicalSrc": "/assets/projects/escape-project/escape-gate.webp",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "escape-project-en-desktop.json",
+        "escape-project-en-mobile.json",
+        "escape-project-ja-desktop.json",
+        "escape-project-ja-mobile.json",
+        "escape-project-zh-desktop.json",
+        "escape-project-zh-mobile.json",
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json"
+      ],
+      "hashKind": null,
+      "unmappedReason": "No matching image in the recorded Figma baseline; import this local image.",
+      "importNote": "Convert the local source to PNG if the importer does not support this source format."
+    },
+    "/assets/projects/escape-project/escape-loop.webp": {
+      "hash": null,
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/escape-project/escape-loop.webp",
+      "exists": true,
+      "bytes": 528042,
+      "width": 1705,
+      "height": 959,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "グリッチした中央の入口と、反復する走行／落下記号を含む紫色の視覚フィールド",
+      "localizedAlt": {
+        "en": "Purple visual field with a glitched central doorway and repeated running and falling symbols",
+        "ja": "グリッチした中央の入口と、反復する走行／落下記号を含む紫色の視覚フィールド",
+        "zh": "紫色视觉场，中央入口发生故障扭曲，奔跑与坠落符号反复出现"
+      },
+      "canonicalSrc": "/assets/projects/escape-project/escape-loop.webp",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "escape-project-en-desktop.json",
+        "escape-project-en-mobile.json",
+        "escape-project-ja-desktop.json",
+        "escape-project-ja-mobile.json",
+        "escape-project-zh-desktop.json",
+        "escape-project-zh-mobile.json",
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json"
+      ],
+      "hashKind": null,
+      "unmappedReason": "No matching image in the recorded Figma baseline; import this local image.",
+      "importNote": "Convert the local source to PNG if the importer does not support this source format."
+    },
+    "/assets/projects/escape-project/escape-space.webp": {
+      "hash": "6af10ddd399580f9c86d51556d1f3af050783154",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/escape-project/escape-space.webp",
+      "exists": true,
+      "bytes": 557816,
+      "width": 1508,
+      "height": 1066,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "紫、ピンク、淡い緑のグリッドで構成された遠近法的な部屋。走る人物と方向矢印が配置されている",
+      "localizedAlt": {
+        "en": "Perspective room made from purple, pink, and pale-green grids with running figures and directional arrows",
+        "ja": "紫、ピンク、淡い緑のグリッドで構成された遠近法的な部屋。走る人物と方向矢印が配置されている",
+        "zh": "紫、粉与浅绿色网格组成的透视房间，内有奔跑人形与方向箭头"
+      },
+      "canonicalSrc": "/assets/projects/escape-project/escape-space.webp",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "escape-project-en-desktop.json",
+        "escape-project-en-mobile.json",
+        "escape-project-ja-desktop.json",
+        "escape-project-ja-mobile.json",
+        "escape-project-zh-desktop.json",
+        "escape-project-zh-mobile.json",
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "31:73",
+        "frameId": "31:2",
+        "frameName": "作品 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/ae-pr-01-edit.mp4": {
+      "hash": "103cd38c82b107a3298131809ac7c917918cc817",
+      "kind": "video",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "exists": true,
+      "bytes": 38908432,
+      "width": 1920,
+      "height": 1080,
+      "mime": "video/mp4",
+      "format": "mp4",
+      "alt": "白いキーボード状タイル、青い円、発光する球体を組み合わせた再生可能なモーショングラフィックス練習",
+      "localizedAlt": {
+        "en": "Playable motion-graphics study with white keyboard-like tiles, blue circles, and glowing spheres",
+        "ja": "白いキーボード状タイル、青い円、発光する球体を組み合わせた再生可能なモーショングラフィックス練習",
+        "zh": "可播放的动态图形练习，白色键盘状方块、蓝色圆形与发光球体构成画面"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+      "dimensionSource": "MP4 tkhd track header",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-video-poster-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:423",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped hash, when present, is a static image fill from the baseline video node, not an MP4 hash. Keep the MP4 source to retain playable media separately.",
+      "baselineCaveat": "The baseline assigns this same static image hash to both AE/PR video nodes (33:401 and 33:423). It is recorded faithfully; do not infer that the two MP4 videos or their correct opening frames are identical.",
+      "posterPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/revision-plugin/video-posters/ae-pr-01-edit.png",
+      "posterTimeSeconds": 1
+    },
+    "/assets/projects/university-coursework/ae-pr-02-edit.mp4": {
+      "hash": "103cd38c82b107a3298131809ac7c917918cc817",
+      "kind": "video",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "exists": true,
+      "bytes": 70455829,
+      "width": 1920,
+      "height": 1080,
+      "mime": "video/mp4",
+      "format": "mp4",
+      "alt": "水滴形を中心に回転する点線のリングを配置した、再生可能な青と白のモーション練習",
+      "localizedAlt": {
+        "en": "Playable blue-and-white motion study with a droplet form surrounded by rotating dotted rings",
+        "ja": "水滴形を中心に回転する点線のリングを配置した、再生可能な青と白のモーション練習",
+        "zh": "可播放的蓝白动态图形练习，水滴形主体周围分布旋转的点阵环"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+      "dimensionSource": "MP4 tkhd track header",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-video-poster-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:401",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped hash, when present, is a static image fill from the baseline video node, not an MP4 hash. Keep the MP4 source to retain playable media separately.",
+      "baselineCaveat": "The baseline assigns this same static image hash to both AE/PR video nodes (33:401 and 33:423). It is recorded faithfully; do not infer that the two MP4 videos or their correct opening frames are identical.",
+      "posterPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/revision-plugin/video-posters/ae-pr-02-edit-5s.png",
+      "posterTimeSeconds": 5
+    },
+    "/assets/projects/university-coursework/blender-01-object-study.png": {
+      "hash": "494ea9b69a8c8d03dd79aecc96e365944a7764f8",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-01-object-study.png",
+      "exists": true,
+      "bytes": 2778076,
+      "width": 1920,
+      "height": 1080,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面",
+      "localizedAlt": {
+        "en": "A red vessel, translucent vehicle, and monkey-head model against orange with blue graphic forms",
+        "ja": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面",
+        "zh": "橙色背景中的红色器皿、半透明车辆与猴头模型，后方有蓝色构成图形"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-01-object-study.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json",
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:299",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "alternativeHashes": [
+        {
+          "hash": "bb16611d75128635e34dd120a07e55f268a2aa4f",
+          "nodeId": "31:313",
+          "frameId": "31:2",
+          "note": "Same alt in old overview; the selected hash comes from the project detail frame."
+        }
+      ]
+    },
+    "/assets/projects/university-coursework/blender-01-object-study-480.webp": {
+      "hash": "494ea9b69a8c8d03dd79aecc96e365944a7764f8",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-01-object-study-480.webp",
+      "exists": true,
+      "bytes": 14216,
+      "width": 480,
+      "height": 270,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面",
+      "localizedAlt": {
+        "en": "A red vessel, translucent vehicle, and monkey-head model against orange with blue graphic forms",
+        "ja": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面",
+        "zh": "橙色背景中的红色器皿、半透明车辆与猴头模型，后方有蓝色构成图形"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-01-object-study.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json",
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:299",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "alternativeHashes": [
+        {
+          "hash": "bb16611d75128635e34dd120a07e55f268a2aa4f",
+          "nodeId": "31:313",
+          "frameId": "31:2",
+          "note": "Same alt in old overview; the selected hash comes from the project detail frame."
+        }
+      ],
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-01-object-study-960.webp": {
+      "hash": "494ea9b69a8c8d03dd79aecc96e365944a7764f8",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-01-object-study-960.webp",
+      "exists": true,
+      "bytes": 48382,
+      "width": 960,
+      "height": 540,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面",
+      "localizedAlt": {
+        "en": "A red vessel, translucent vehicle, and monkey-head model against orange with blue graphic forms",
+        "ja": "オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面",
+        "zh": "橙色背景中的红色器皿、半透明车辆与猴头模型，后方有蓝色构成图形"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-01-object-study.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json",
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:299",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "alternativeHashes": [
+        {
+          "hash": "bb16611d75128635e34dd120a07e55f268a2aa4f",
+          "nodeId": "31:313",
+          "frameId": "31:2",
+          "note": "Same alt in old overview; the selected hash comes from the project detail frame."
+        }
+      ],
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-02-character-render.jpg": {
+      "hash": "0bb654ff4faf2e8bf94a1eac012b9a5a791c62f1",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-02-character-render.jpg",
+      "exists": true,
+      "bytes": 144090,
+      "width": 1920,
+      "height": 1080,
+      "mime": "image/jpeg",
+      "format": "jpeg",
+      "alt": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー",
+      "localizedAlt": {
+        "en": "Character render on deep blue with a seated figure among pale forms and an orange duck above",
+        "ja": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー",
+        "zh": "深蓝背景中的角色渲染，人物坐在浅色形体之间，上方有橙色鸭子"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-02-character-render.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:277",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-02-character-render-480.webp": {
+      "hash": "0bb654ff4faf2e8bf94a1eac012b9a5a791c62f1",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-02-character-render-480.webp",
+      "exists": true,
+      "bytes": 10952,
+      "width": 480,
+      "height": 270,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー",
+      "localizedAlt": {
+        "en": "Character render on deep blue with a seated figure among pale forms and an orange duck above",
+        "ja": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー",
+        "zh": "深蓝背景中的角色渲染，人物坐在浅色形体之间，上方有橙色鸭子"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-02-character-render.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:277",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-02-character-render-960.webp": {
+      "hash": "0bb654ff4faf2e8bf94a1eac012b9a5a791c62f1",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-02-character-render-960.webp",
+      "exists": true,
+      "bytes": 32418,
+      "width": 960,
+      "height": 540,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー",
+      "localizedAlt": {
+        "en": "Character render on deep blue with a seated figure among pale forms and an orange duck above",
+        "ja": "濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー",
+        "zh": "深蓝背景中的角色渲染，人物坐在浅色形体之间，上方有橙色鸭子"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-02-character-render.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:277",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-03-red-corridor.jpg": {
+      "hash": "e55bf599bde80edbea6bec5a5a0f486449883a97",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+      "exists": true,
+      "bytes": 90339,
+      "width": 1440,
+      "height": 810,
+      "mime": "image/jpeg",
+      "format": "jpeg",
+      "alt": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる",
+      "localizedAlt": {
+        "en": "A flooded corridor lit red, filled with bare trees, with a small orange duck at right",
+        "ja": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる",
+        "zh": "被红光照亮的积水走廊，空间中长出枯树，右侧有一只橙色鸭子"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:255",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-03-red-corridor-480.webp": {
+      "hash": "e55bf599bde80edbea6bec5a5a0f486449883a97",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-03-red-corridor-480.webp",
+      "exists": true,
+      "bytes": 11730,
+      "width": 480,
+      "height": 270,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる",
+      "localizedAlt": {
+        "en": "A flooded corridor lit red, filled with bare trees, with a small orange duck at right",
+        "ja": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる",
+        "zh": "被红光照亮的积水走廊，空间中长出枯树，右侧有一只橙色鸭子"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:255",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-03-red-corridor-960.webp": {
+      "hash": "e55bf599bde80edbea6bec5a5a0f486449883a97",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-03-red-corridor-960.webp",
+      "exists": true,
+      "bytes": 32864,
+      "width": 960,
+      "height": 540,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる",
+      "localizedAlt": {
+        "en": "A flooded corridor lit red, filled with bare trees, with a small orange duck at right",
+        "ja": "赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる",
+        "zh": "被红光照亮的积水走廊，空间中长出枯树，右侧有一只橙色鸭子"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-03-red-corridor.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:255",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-04-house-study.png": {
+      "hash": "964b9e7b298234d606b5da04591ea573fcd60128",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-04-house-study.png",
+      "exists": true,
+      "bytes": 3350390,
+      "width": 1920,
+      "height": 1080,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面",
+      "localizedAlt": {
+        "en": "Pale-blue and fluorescent-yellow architecture on blue with black tree forms and drawn arrows",
+        "ja": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面",
+        "zh": "蓝色背景上的浅蓝与荧光黄色建筑模型，周围叠加黑色树形与手绘箭头"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-04-house-study.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:233",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-04-house-study-480.webp": {
+      "hash": "964b9e7b298234d606b5da04591ea573fcd60128",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-04-house-study-480.webp",
+      "exists": true,
+      "bytes": 19212,
+      "width": 480,
+      "height": 270,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面",
+      "localizedAlt": {
+        "en": "Pale-blue and fluorescent-yellow architecture on blue with black tree forms and drawn arrows",
+        "ja": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面",
+        "zh": "蓝色背景上的浅蓝与荧光黄色建筑模型，周围叠加黑色树形与手绘箭头"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-04-house-study.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:233",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-04-house-study-960.webp": {
+      "hash": "964b9e7b298234d606b5da04591ea573fcd60128",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-04-house-study-960.webp",
+      "exists": true,
+      "bytes": 53836,
+      "width": 960,
+      "height": 540,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面",
+      "localizedAlt": {
+        "en": "Pale-blue and fluorescent-yellow architecture on blue with black tree forms and drawn arrows",
+        "ja": "青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面",
+        "zh": "蓝色背景上的浅蓝与荧光黄色建筑模型，周围叠加黑色树形与手绘箭头"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-04-house-study.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:233",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-05-low-poly-garden.png": {
+      "hash": "ad6f1d292787d3fffeed7b2b348fa35b4b151097",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+      "exists": true,
+      "bytes": 2792185,
+      "width": 1351,
+      "height": 1174,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面",
+      "localizedAlt": {
+        "en": "Low-poly green plants with white flowers in a pink space, casting pale leaf shadows",
+        "ja": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面",
+        "zh": "粉色空间中的低多边形绿色植株，白色花朵与叶片投影落在浅色地面上"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:211",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-05-low-poly-garden-480.webp": {
+      "hash": "ad6f1d292787d3fffeed7b2b348fa35b4b151097",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-05-low-poly-garden-480.webp",
+      "exists": true,
+      "bytes": 26214,
+      "width": 480,
+      "height": 417,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面",
+      "localizedAlt": {
+        "en": "Low-poly green plants with white flowers in a pink space, casting pale leaf shadows",
+        "ja": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面",
+        "zh": "粉色空间中的低多边形绿色植株，白色花朵与叶片投影落在浅色地面上"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:211",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-05-low-poly-garden-960.webp": {
+      "hash": "ad6f1d292787d3fffeed7b2b348fa35b4b151097",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-05-low-poly-garden-960.webp",
+      "exists": true,
+      "bytes": 92004,
+      "width": 960,
+      "height": 834,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面",
+      "localizedAlt": {
+        "en": "Low-poly green plants with white flowers in a pink space, casting pale leaf shadows",
+        "ja": "ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面",
+        "zh": "粉色空间中的低多边形绿色植株，白色花朵与叶片投影落在浅色地面上"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-05-low-poly-garden.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:211",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-06-week06-composition.png": {
+      "hash": "96c9064ef3515ac025724146d022e84278851cee",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-06-week06-composition.png",
+      "exists": true,
+      "bytes": 2880119,
+      "width": 1759,
+      "height": 1059,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成",
+      "localizedAlt": {
+        "en": "Green diagrammatic composition with a translucent figure, perspective grids, orbits, and a large 42",
+        "ja": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成",
+        "zh": "绿色信息图式构图，包含半透明人物、透视网格、圆形轨迹与巨大的数字 42"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-06-week06-composition.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:189",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-06-week06-composition-480.webp": {
+      "hash": "96c9064ef3515ac025724146d022e84278851cee",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-06-week06-composition-480.webp",
+      "exists": true,
+      "bytes": 20060,
+      "width": 480,
+      "height": 289,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成",
+      "localizedAlt": {
+        "en": "Green diagrammatic composition with a translucent figure, perspective grids, orbits, and a large 42",
+        "ja": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成",
+        "zh": "绿色信息图式构图，包含半透明人物、透视网格、圆形轨迹与巨大的数字 42"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-06-week06-composition.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:189",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-06-week06-composition-960.webp": {
+      "hash": "96c9064ef3515ac025724146d022e84278851cee",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-06-week06-composition-960.webp",
+      "exists": true,
+      "bytes": 68236,
+      "width": 960,
+      "height": 578,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成",
+      "localizedAlt": {
+        "en": "Green diagrammatic composition with a translucent figure, perspective grids, orbits, and a large 42",
+        "ja": "半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成",
+        "zh": "绿色信息图式构图，包含半透明人物、透视网格、圆形轨迹与巨大的数字 42"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-06-week06-composition.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:189",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-07-modeling-process.jpg": {
+      "hash": "e30e5382865038d44ce7933538eaecce71863aef",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+      "exists": true,
+      "bytes": 130019,
+      "width": 800,
+      "height": 632,
+      "mime": "image/jpeg",
+      "format": "jpeg",
+      "alt": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造",
+      "localizedAlt": {
+        "en": "Blender interface showing a red organic vessel model with pale curved structures",
+        "ja": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造",
+        "zh": "Blender 界面中的红色有机器皿模型，周围延伸灰白色曲线结构"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:167",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-07-modeling-process-480.webp": {
+      "hash": "e30e5382865038d44ce7933538eaecce71863aef",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-07-modeling-process-480.webp",
+      "exists": true,
+      "bytes": 23294,
+      "width": 480,
+      "height": 379,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造",
+      "localizedAlt": {
+        "en": "Blender interface showing a red organic vessel model with pale curved structures",
+        "ja": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造",
+        "zh": "Blender 界面中的红色有机器皿模型，周围延伸灰白色曲线结构"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:167",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-07-modeling-process-960.webp": {
+      "hash": "e30e5382865038d44ce7933538eaecce71863aef",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-07-modeling-process-960.webp",
+      "exists": true,
+      "bytes": 54874,
+      "width": 800,
+      "height": 632,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造",
+      "localizedAlt": {
+        "en": "Blender interface showing a red organic vessel model with pale curved structures",
+        "ja": "Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造",
+        "zh": "Blender 界面中的红色有机器皿模型，周围延伸灰白色曲线结构"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-07-modeling-process.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:167",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-08-node-workspace.jpg": {
+      "hash": "562b259080b76f5cd26ff262ce3cb5b4798823ef",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+      "exists": true,
+      "bytes": 282168,
+      "width": 2301,
+      "height": 1280,
+      "mime": "image/jpeg",
+      "format": "jpeg",
+      "alt": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面",
+      "localizedAlt": {
+        "en": "Blender workspace showing the red corridor render, 3D viewport, and a material-node network",
+        "ja": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面",
+        "zh": "Blender 工作区截图，同时显示红色走廊渲染、三维视图与材质节点网络"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:145",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      }
+    },
+    "/assets/projects/university-coursework/blender-08-node-workspace-480.webp": {
+      "hash": "562b259080b76f5cd26ff262ce3cb5b4798823ef",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-08-node-workspace-480.webp",
+      "exists": true,
+      "bytes": 15372,
+      "width": 480,
+      "height": 267,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面",
+      "localizedAlt": {
+        "en": "Blender workspace showing the red corridor render, 3D viewport, and a material-node network",
+        "ja": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面",
+        "zh": "Blender 工作区截图，同时显示红色走廊渲染、三维视图与材质节点网络"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:145",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-08-node-workspace-960.webp": {
+      "hash": "562b259080b76f5cd26ff262ce3cb5b4798823ef",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-08-node-workspace-960.webp",
+      "exists": true,
+      "bytes": 45518,
+      "width": 960,
+      "height": 534,
+      "mime": "image/webp",
+      "format": "webp",
+      "alt": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面",
+      "localizedAlt": {
+        "en": "Blender workspace showing the red corridor render, 3D viewport, and a material-node network",
+        "ja": "赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面",
+        "zh": "Blender 工作区截图，同时显示红色走廊渲染、三维视图与材质节点网络"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-08-node-workspace.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:145",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped existing Figma image hash is reusable; convert the local source to PNG if a fresh raster import is required."
+    },
+    "/assets/projects/university-coursework/blender-09-motion.mp4": {
+      "hash": "7ad9fad97c5de54c301dcd4f7a3e509ea0b2e7f3",
+      "kind": "video",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-09-motion.mp4",
+      "exists": true,
+      "bytes": 424963,
+      "width": 1280,
+      "height": 720,
+      "mime": "video/mp4",
+      "format": "mp4",
+      "alt": "無地のオレンジ色の画面から始まる、再生可能なBlenderアニメーション練習",
+      "localizedAlt": {
+        "en": "Playable Blender animation study beginning on a solid orange frame",
+        "ja": "無地のオレンジ色の画面から始まる、再生可能なBlenderアニメーション練習",
+        "zh": "可播放的 Blender 动画练习，首帧为纯橙色画面"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-09-motion.mp4",
+      "dimensionSource": "MP4 tkhd track header",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-video-poster-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:123",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped hash, when present, is a static image fill from the baseline video node, not an MP4 hash. Keep the MP4 source to retain playable media separately.",
+      "posterPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/revision-plugin/video-posters/blender-09-motion.png",
+      "posterTimeSeconds": 1
+    },
+    "/assets/projects/university-coursework/blender-10-motion.mp4": {
+      "hash": "7e69b80889cd65ea867632489943d11b074b97cd",
+      "kind": "video",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/blender-10-motion.mp4",
+      "exists": true,
+      "bytes": 770175,
+      "width": 960,
+      "height": 544,
+      "mime": "video/mp4",
+      "format": "mp4",
+      "alt": "赤く水没した廊下と樹木の間を進む、再生可能なBlender環境アニメーション",
+      "localizedAlt": {
+        "en": "Playable Blender environment animation moving through a flooded red corridor and trees",
+        "ja": "赤く水没した廊下と樹木の間を進む、再生可能なBlender環境アニメーション",
+        "zh": "可播放的 Blender 环境动画，画面穿过红色积水走廊与树木"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/blender-10-motion.mp4",
+      "dimensionSource": "MP4 tkhd track header",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-video-poster-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:101",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped hash, when present, is a static image fill from the baseline video node, not an MP4 hash. Keep the MP4 source to retain playable media separately.",
+      "posterPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/revision-plugin/video-posters/blender-10-motion.png",
+      "posterTimeSeconds": 1
+    },
+    "/assets/projects/university-coursework/maya-01-architecture-still.png": {
+      "hash": "1fe5ed6b5c4a542349a010e727f61aa76d6d55ad",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/maya-01-architecture-still.png",
+      "exists": true,
+      "bytes": 564421,
+      "width": 960,
+      "height": 540,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "連続する柱と尖頭アーチを持ち、濃い青の陰影の先に明るい空が見える3Dゴシック建築内部",
+      "localizedAlt": {
+        "en": "3D Gothic interior with vaulted arches and rows of columns opening onto a bright sky",
+        "ja": "連続する柱と尖頭アーチを持ち、濃い青の陰影の先に明るい空が見える3Dゴシック建築内部",
+        "zh": "哥特式拱顶与成排柱子的三维建筑内部，深蓝阴影间透出明亮天空"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/maya-01-architecture-still.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:361",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "snapshotNote": "The resource was not fully loaded in 6 recorded snapshot(s); local file dimensions are verified independently."
+    },
+    "/assets/projects/university-coursework/maya-02-architecture-motion.mp4": {
+      "hash": "48f61c7dd21316ec57ef2e38d206909a0f852f39",
+      "kind": "video",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "exists": true,
+      "bytes": 772041,
+      "width": 960,
+      "height": 540,
+      "mime": "video/mp4",
+      "format": "mp4",
+      "alt": "柱の間に草が生えた暗い水没回廊を進む、再生可能なMaya環境アニメーション",
+      "localizedAlt": {
+        "en": "Playable Maya environment animation in a dark flooded colonnade with grass between columns",
+        "ja": "柱の間に草が生えた暗い水没回廊を進む、再生可能なMaya環境アニメーション",
+        "zh": "可播放的 Maya 环境动画，镜头位于昏暗积水长廊，柱间长有草丛"
+      },
+      "canonicalSrc": "/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+      "dimensionSource": "MP4 tkhd track header",
+      "observedIn": [
+        "university-coursework-en-desktop.json",
+        "university-coursework-en-mobile.json",
+        "university-coursework-ja-desktop.json",
+        "university-coursework-ja-mobile.json",
+        "university-coursework-zh-desktop.json",
+        "university-coursework-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-video-poster-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "33:339",
+        "frameId": "33:2",
+        "frameName": "大学課題 | 糍粑"
+      },
+      "importNote": "The mapped hash, when present, is a static image fill from the baseline video node, not an MP4 hash. Keep the MP4 source to retain playable media separately.",
+      "posterPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/figma-export/revision-plugin/video-posters/maya-02-architecture-motion.png",
+      "posterTimeSeconds": 1
+    },
+    "/assets/projects/wake-up/bed-alarm.png": {
+      "hash": "8fff262287c64b0938258280e3611e55ebc57803",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/wake-up/bed-alarm.png",
+      "exists": true,
+      "bytes": 56092,
+      "width": 1024,
+      "height": 1090,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "黒い画面の中、鳴っている目覚まし時計の横で白い人物がベッドから目を覚ます",
+      "localizedAlt": {
+        "en": "Black field with a white figure waking in bed beside a ringing alarm clock",
+        "ja": "黒い画面の中、鳴っている目覚まし時計の横で白い人物がベッドから目を覚ます",
+        "zh": "黑色画面中，白色人形在床上醒来，旁边的闹钟正在响"
+      },
+      "canonicalSrc": "/assets/projects/wake-up/bed-alarm.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "wake-up-en-desktop.json",
+        "wake-up-en-mobile.json",
+        "wake-up-ja-desktop.json",
+        "wake-up-ja-mobile.json",
+        "wake-up-zh-desktop.json",
+        "wake-up-zh-mobile.json",
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "31:133",
+        "frameId": "31:2",
+        "frameName": "作品 | 糍粑"
+      }
+    },
+    "/assets/projects/wake-up/flooded-title.jpg": {
+      "hash": "b97004420832c6753ecbc400dc809da2b138501a",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/wake-up/flooded-title.jpg",
+      "exists": true,
+      "bytes": 636927,
+      "width": 2048,
+      "height": 1448,
+      "mime": "image/jpeg",
+      "format": "jpeg",
+      "alt": "暗く浸水した廊下。歪んだWake Upのタイトルが水面に反射している",
+      "localizedAlt": {
+        "en": "Dark flooded corridor with distorted Wake Up title reflected in water",
+        "ja": "暗く浸水した廊下。歪んだWake Upのタイトルが水面に反射している",
+        "zh": "昏暗的积水走廊，扭曲的 Wake Up 标题倒映在水面"
+      },
+      "canonicalSrc": "/assets/projects/wake-up/flooded-title.jpg",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "wake-up-en-desktop.json",
+        "wake-up-en-mobile.json",
+        "wake-up-ja-desktop.json",
+        "wake-up-ja-mobile.json",
+        "wake-up-zh-desktop.json",
+        "wake-up-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "30:120",
+        "frameId": "30:2",
+        "frameName": "Wake Up | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/cartridge-3-geometry.png": {
+      "hash": "121df5b0c7d133ee836f0a6d8fe8d1f59606ab6e",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/cartridge-3-geometry.png",
+      "exists": true,
+      "bytes": 195095,
+      "width": 2388,
+      "height": 1668,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "緑の画面上で、淡い緑の正方形、太い円弧、ハッシュ記号状の形が重なっている",
+      "localizedAlt": {
+        "en": "Pale-green square, broad arc, and hash-like forms overlap on a green field",
+        "ja": "緑の画面上で、淡い緑の正方形、太い円弧、ハッシュ記号状の形が重なっている",
+        "zh": "绿色画面中，浅绿色正方形、宽圆弧与井号形状相互叠合"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/cartridge-3-geometry.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:133",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/cartridge-3-title.png": {
+      "hash": "6f0bd53b6cb32991aef44e454b7931adc300e63e",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/cartridge-3-title.png",
+      "exists": true,
+      "bytes": 166963,
+      "width": 2388,
+      "height": 1668,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている",
+      "localizedAlt": {
+        "en": "A green title card reads Cartridge 3 and a German sentence, with a central title built from black-and-white geometric letterforms",
+        "ja": "緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている",
+        "zh": "绿色画面上写有“Cartridge 3”和一行德语文字，中央标题由黑白几何字形组成"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/cartridge-3-title.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "34:97",
+        "frameId": "34:2",
+        "frameName": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題"
+      }
+    },
+    "/assets/projects/x-wheel/character-full.png": {
+      "hash": "78d8d68eb1e6ca947f96a7e939149d3206ebdfe0",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/character-full.png",
+      "exists": true,
+      "bytes": 163435,
+      "width": 1847,
+      "height": 1662,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像",
+      "localizedAlt": {
+        "en": "A full-length long-haired character drawn in pale and mid green stands on the left of a black field",
+        "ja": "黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像",
+        "zh": "黑色背景左侧是一名以浅绿和绿色线条绘制的长发人物全身像"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/character-full.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "34:91",
+        "frameId": "34:2",
+        "frameName": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題"
+      }
+    },
+    "/assets/projects/x-wheel/character-portrait.png": {
+      "hash": "5c5ac35e2e93f7dd92dd20883c2644ae98ee2a3c",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/character-portrait.png",
+      "exists": true,
+      "bytes": 130328,
+      "width": 2048,
+      "height": 2048,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ",
+      "localizedAlt": {
+        "en": "A green pixel-art close-up of a long-haired character looking down to one side on a dark blue field",
+        "ja": "濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ",
+        "zh": "深蓝色背景中的绿色像素风长发人物近景，人物低头看向侧下方"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/character-portrait.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "34:93",
+        "frameId": "34:2",
+        "frameName": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題"
+      }
+    },
+    "/assets/projects/x-wheel/character-sequence.png": {
+      "hash": "35f31cc4d751cf4e84d5992bc292bedae974401a",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/character-sequence.png",
+      "exists": true,
+      "bytes": 67015,
+      "width": 640,
+      "height": 360,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している",
+      "localizedAlt": {
+        "en": "Five overlapping pale-green character views on a dark blue field show changes in head and body direction",
+        "ja": "濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している",
+        "zh": "深蓝色背景中，五个浅绿色人物视图并排重叠，展示头部与身体朝向的变化"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/character-sequence.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "home-en-desktop.json",
+        "home-en-mobile.json",
+        "home-ja-desktop.json",
+        "home-ja-mobile.json",
+        "home-zh-desktop.json",
+        "home-zh-mobile.json",
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "34:95",
+        "frameId": "34:2",
+        "frameName": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題"
+      }
+    },
+    "/assets/projects/x-wheel/crt-character-composition.png": {
+      "hash": "5a4002c37e0982f698c98f7cd6f93c9fb079667e",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/crt-character-composition.png",
+      "exists": true,
+      "bytes": 1506576,
+      "width": 2388,
+      "height": 1668,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "淡い緑のモニター内に緑の人物と幾何学図形があり、周囲に球体と波状の線が配置されている",
+      "localizedAlt": {
+        "en": "A pale-green monitor contains a green character and geometric graphics, surrounded by spheres and wave-like lines",
+        "ja": "淡い緑のモニター内に緑の人物と幾何学図形があり、周囲に球体と波状の線が配置されている",
+        "zh": "浅绿色显示器位于画面中央，屏幕内是绿色人物和几何图形，周围环绕球体与波纹线"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/crt-character-composition.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:151",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/crt-tv.png": {
+      "hash": "56a1d2fd625b27e7cb4001f9c32e8fe205b2fabc",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/crt-tv.png",
+      "exists": true,
+      "bytes": 13291,
+      "width": 960,
+      "height": 720,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "暗い背景に置かれたアイソメトリックなピクセル調CRTテレビのアセット",
+      "localizedAlt": {
+        "en": "Isometric pixel-art CRT television asset on a dark field",
+        "ja": "暗い背景に置かれたアイソメトリックなピクセル調CRTテレビのアセット",
+        "zh": "深色背景中的等距像素风 CRT 电视素材"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/crt-tv.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:97",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/emi-room.png": {
+      "hash": "f537612baf80b66e5cd69e03991c33a3478e436c",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/emi-room.png",
+      "exists": true,
+      "bytes": 25749,
+      "width": 960,
+      "height": 720,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "机、ベッド、棚、アシッドグリーンの照明を備えたアイソメトリックなピクセル調の部屋",
+      "localizedAlt": {
+        "en": "Isometric pixel-art room with a desk, bed, shelves, and acid-green lighting",
+        "ja": "机、ベッド、棚、アシッドグリーンの照明を備えたアイソメトリックなピクセル調の部屋",
+        "zh": "等距像素风房间，包含书桌、床、置物架与荧光绿色照明"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/emi-room.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "works-en-desktop.json",
+        "works-en-mobile.json",
+        "works-ja-desktop.json",
+        "works-ja-mobile.json",
+        "works-zh-desktop.json",
+        "works-zh-mobile.json",
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:82",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/poster.png": {
+      "hash": "7dc596fb68b0b889c4703348e8592652b71cabd7",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/poster.png",
+      "exists": true,
+      "bytes": 8006,
+      "width": 960,
+      "height": 720,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "APHASIAのアセット・ライブラリにあるアイソメトリックなピクセル調ポスター",
+      "localizedAlt": {
+        "en": "Isometric pixel-art poster object from the APHASIA asset library",
+        "ja": "APHASIAのアセット・ライブラリにあるアイソメトリックなピクセル調ポスター",
+        "zh": "APHASIA 素材库中的等距像素风海报物件"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/poster.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:109",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/psx-console.png": {
+      "hash": "eba4e29feeca28eb80b097156287153675f785a0",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/psx-console.png",
+      "exists": true,
+      "bytes": 13463,
+      "width": 960,
+      "height": 720,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "淡い緑色で描かれたアイソメトリックなピクセル調ゲーム機とコントローラー",
+      "localizedAlt": {
+        "en": "Isometric pixel-art game console and controller in pale green",
+        "ja": "淡い緑色で描かれたアイソメトリックなピクセル調ゲーム機とコントローラー",
+        "zh": "浅绿色等距像素风游戏主机与手柄"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/psx-console.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:103",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    },
+    "/assets/projects/x-wheel/signal-orb.png": {
+      "hash": "681fe23052ad6c9aa02fafd6c804bf6f9b642dc3",
+      "kind": "image",
+      "localPath": "/Users/zhang/Documents/portflio-webside/portflio-website/.worktrees/ciba-clean-restart/public/assets/projects/x-wheel/signal-orb.png",
+      "exists": true,
+      "bytes": 218292,
+      "width": 640,
+      "height": 360,
+      "mime": "image/png",
+      "format": "png",
+      "alt": "濃紺の背景の中央に粒子状の緑の球体があり、両側に反復する円弧と折れ線の信号図形がある",
+      "localizedAlt": {
+        "en": "A grainy green sphere sits between repeated arcs and angular signal lines on a dark blue field",
+        "ja": "濃紺の背景の中央に粒子状の緑の球体があり、両側に反復する円弧と折れ線の信号図形がある",
+        "zh": "深蓝色背景中央是一颗绿色颗粒球体，两侧分布重复弧线与折线信号图形"
+      },
+      "canonicalSrc": "/assets/projects/x-wheel/signal-orb.png",
+      "dimensionSource": "sharp file metadata",
+      "observedIn": [
+        "x-wheel-en-desktop.json",
+        "x-wheel-en-mobile.json",
+        "x-wheel-ja-desktop.json",
+        "x-wheel-ja-mobile.json",
+        "x-wheel-zh-desktop.json",
+        "x-wheel-zh-mobile.json"
+      ],
+      "hashKind": "existing-figma-image",
+      "match": {
+        "method": "Japanese alt equality after X.WHEEL→APHASIA normalization; shared src links locales",
+        "nodeId": "32:145",
+        "frameId": "32:2",
+        "frameName": "X.WHEEL | 糍粑"
+      }
+    }
+  }
+}

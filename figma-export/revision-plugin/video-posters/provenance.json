@@ -1,0 +1,28 @@
+[
+  {
+    "source": "public/assets/projects/university-coursework/ae-pr-01-edit.mp4",
+    "poster": "figma-export/revision-plugin/video-posters/ae-pr-01-edit.png",
+    "requestedSeconds": 1.0
+  },
+  {
+    "source": "public/assets/projects/university-coursework/ae-pr-02-edit.mp4",
+    "poster": "figma-export/revision-plugin/video-posters/ae-pr-02-edit-5s.png",
+    "requestedSeconds": 5.0,
+    "note": "Selected 5-second source frame; 1-second frame is black and retained as historical extraction."
+  },
+  {
+    "source": "public/assets/projects/university-coursework/blender-09-motion.mp4",
+    "poster": "figma-export/revision-plugin/video-posters/blender-09-motion.png",
+    "requestedSeconds": 1.0
+  },
+  {
+    "source": "public/assets/projects/university-coursework/blender-10-motion.mp4",
+    "poster": "figma-export/revision-plugin/video-posters/blender-10-motion.png",
+    "requestedSeconds": 1.0
+  },
+  {
+    "source": "public/assets/projects/university-coursework/maya-02-architecture-motion.mp4",
+    "poster": "figma-export/revision-plugin/video-posters/maya-02-architecture-motion.png",
+    "requestedSeconds": 1.0
+  }
+]

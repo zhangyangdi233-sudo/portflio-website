@@ -1,0 +1,969 @@
+{
+  "fileKey": "xyINqLy60s9MELHd2HmViK",
+  "pageId": "6:6",
+  "existingViewsContainer": "67:2",
+  "firstCapturesContainer": "67:3",
+  "componentsContainer": "67:4",
+  "createdNodeIds": [
+    "67:2",
+    "67:3",
+    "67:4",
+    "77:38",
+    "77:39",
+    "77:40",
+    "77:41",
+    "77:42",
+    "77:43",
+    "77:44",
+    "77:45",
+    "77:46",
+    "77:47",
+    "77:48",
+    "77:49",
+    "77:50",
+    "77:51",
+    "77:52",
+    "77:53",
+    "77:54",
+    "77:55",
+    "77:56",
+    "77:57",
+    "77:58",
+    "77:59",
+    "77:60",
+    "77:61",
+    "77:62",
+    "77:63",
+    "77:64",
+    "77:65",
+    "77:66",
+    "77:67",
+    "77:68",
+    "77:69",
+    "77:70",
+    "77:71",
+    "77:72",
+    "77:73",
+    "77:74",
+    "77:75",
+    "77:76",
+    "77:77",
+    "77:78",
+    "77:79",
+    "77:80",
+    "77:81",
+    "77:82",
+    "77:83",
+    "77:84",
+    "I77:84;77:78",
+    "I77:84;77:79",
+    "I77:84;77:80",
+    "I77:84;77:81",
+    "I77:84;77:82",
+    "I77:84;77:83",
+    "77:91",
+    "77:92",
+    "77:93",
+    "77:94",
+    "77:95",
+    "77:96",
+    "77:97",
+    "77:98",
+    "77:99",
+    "77:100",
+    "77:101",
+    "77:102",
+    "77:103",
+    "77:104",
+    "77:105",
+    "77:106",
+    "77:107",
+    "77:108",
+    "77:109",
+    "77:110",
+    "77:111",
+    "I77:111;77:92",
+    "I77:111;77:93",
+    "I77:111;77:94",
+    "I77:111;77:95",
+    "I77:111;77:96",
+    "I77:111;77:97",
+    "I77:111;77:98",
+    "I77:111;77:99",
+    "I77:111;77:100",
+    "I77:111;77:101",
+    "I77:111;77:102",
+    "I77:111;77:103",
+    "I77:111;77:104",
+    "I77:111;77:105",
+    "I77:111;77:106",
+    "I77:111;77:107",
+    "I77:111;77:108",
+    "I77:111;77:109",
+    "I77:111;77:110"
+  ],
+  "originalPageId": "0:1",
+  "originalFrameIds": [
+    "28:2",
+    "29:2",
+    "30:2",
+    "31:2",
+    "32:2",
+    "33:2",
+    "34:2"
+  ],
+  "pageLimit": "Starter plan supports three pages; new revision sections are on existing empty Components page without renaming it.",
+  "views": {
+    "about-en-desktop": {
+      "frameId": "131:1928",
+      "width": 1440,
+      "height": 1085,
+      "textCount": 26,
+      "imageCount": 0,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "about-en-mobile": {
+      "frameId": "131:2027",
+      "width": 390,
+      "height": 1407,
+      "textCount": 26,
+      "imageCount": 0,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "about-ja-desktop": {
+      "frameId": "77:38",
+      "width": 1440,
+      "height": 1085,
+      "textCount": 26,
+      "imageCount": 0,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "about-ja-mobile": {
+      "frameId": "131:2126",
+      "width": 390,
+      "height": 1383,
+      "textCount": 26,
+      "imageCount": 0,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "about-zh-desktop": {
+      "frameId": "131:2232",
+      "width": 1440,
+      "height": 1062,
+      "textCount": 26,
+      "imageCount": 0,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "about-zh-mobile": {
+      "frameId": "131:2324",
+      "width": 390,
+      "height": 1299,
+      "textCount": 26,
+      "imageCount": 0,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "emida-en-desktop": {
+      "frameId": "131:2417",
+      "width": 1440,
+      "height": 2257,
+      "textCount": 34,
+      "imageCount": 1,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "emida-en-mobile": {
+      "frameId": "131:2583",
+      "width": 390,
+      "height": 2363,
+      "textCount": 34,
+      "imageCount": 1,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "emida-ja-desktop": {
+      "frameId": "131:2748",
+      "width": 1440,
+      "height": 2257,
+      "textCount": 34,
+      "imageCount": 1,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "emida-ja-mobile": {
+      "frameId": "131:2894",
+      "width": 390,
+      "height": 2295,
+      "textCount": 34,
+      "imageCount": 1,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "emida-zh-desktop": {
+      "frameId": "131:3066",
+      "width": 1440,
+      "height": 2225,
+      "textCount": 34,
+      "imageCount": 1,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "emida-zh-mobile": {
+      "frameId": "131:3232",
+      "width": 390,
+      "height": 2184,
+      "textCount": 34,
+      "imageCount": 1,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "escape-project-en-desktop": {
+      "frameId": "131:3397",
+      "width": 1440,
+      "height": 3005,
+      "textCount": 36,
+      "imageCount": 3,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "escape-project-en-mobile": {
+      "frameId": "131:3551",
+      "width": 390,
+      "height": 2606,
+      "textCount": 36,
+      "imageCount": 3,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "escape-project-ja-desktop": {
+      "frameId": "131:3705",
+      "width": 1440,
+      "height": 3036,
+      "textCount": 36,
+      "imageCount": 3,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "escape-project-ja-mobile": {
+      "frameId": "131:3859",
+      "width": 390,
+      "height": 2516,
+      "textCount": 36,
+      "imageCount": 3,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "escape-project-zh-desktop": {
+      "frameId": "131:4013",
+      "width": 1440,
+      "height": 2912,
+      "textCount": 36,
+      "imageCount": 3,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "escape-project-zh-mobile": {
+      "frameId": "131:4167",
+      "width": 390,
+      "height": 2363,
+      "textCount": 36,
+      "imageCount": 3,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-en-desktop": {
+      "frameId": "131:4343",
+      "width": 1440,
+      "height": 6105,
+      "textCount": 462,
+      "imageCount": 40,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-en-mobile": {
+      "frameId": "131:5026",
+      "width": 390,
+      "height": 8292,
+      "textCount": 201,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-ja-desktop": {
+      "frameId": "131:42",
+      "width": 1440,
+      "height": 6105,
+      "textCount": 341,
+      "imageCount": 30,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-ja-mobile": {
+      "frameId": "131:5674",
+      "width": 390,
+      "height": 8205,
+      "textCount": 175,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-zh-desktop": {
+      "frameId": "131:6261",
+      "width": 1440,
+      "height": 6105,
+      "textCount": 341,
+      "imageCount": 30,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-zh-mobile": {
+      "frameId": "131:6566",
+      "width": 390,
+      "height": 8073,
+      "textCount": 175,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "university-coursework-en-desktop": {
+      "frameId": "131:7147",
+      "width": 1440,
+      "height": 5053,
+      "textCount": 132,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "university-coursework-en-mobile": {
+      "frameId": "131:7828",
+      "width": 390,
+      "height": 6953,
+      "textCount": 101,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "university-coursework-ja-desktop": {
+      "frameId": "131:447",
+      "width": 1440,
+      "height": 5027,
+      "textCount": 131,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "university-coursework-ja-mobile": {
+      "frameId": "131:8296",
+      "width": 390,
+      "height": 6843,
+      "textCount": 100,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "university-coursework-zh-desktop": {
+      "frameId": "131:8770",
+      "width": 1440,
+      "height": 4955,
+      "textCount": 131,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "university-coursework-zh-mobile": {
+      "frameId": "131:9447",
+      "width": 390,
+      "height": 6700,
+      "textCount": 100,
+      "imageCount": 14,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "wake-up-en-desktop": {
+      "frameId": "131:9899",
+      "width": 1440,
+      "height": 2886,
+      "textCount": 39,
+      "imageCount": 2,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "wake-up-en-mobile": {
+      "frameId": "131:10075",
+      "width": 390,
+      "height": 3021,
+      "textCount": 39,
+      "imageCount": 2,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "wake-up-ja-desktop": {
+      "frameId": "131:1132",
+      "width": 1440,
+      "height": 2871,
+      "textCount": 39,
+      "imageCount": 2,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "wake-up-ja-mobile": {
+      "frameId": "131:10258",
+      "width": 390,
+      "height": 2972,
+      "textCount": 39,
+      "imageCount": 2,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "wake-up-zh-desktop": {
+      "frameId": "131:10446",
+      "width": 1440,
+      "height": 2767,
+      "textCount": 39,
+      "imageCount": 2,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "wake-up-zh-mobile": {
+      "frameId": "131:10622",
+      "width": 390,
+      "height": 2869,
+      "textCount": 39,
+      "imageCount": 2,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "works-en-desktop": {
+      "frameId": "131:10808",
+      "width": 1440,
+      "height": 1367,
+      "textCount": 101,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "works-en-mobile": {
+      "frameId": "131:11213",
+      "width": 390,
+      "height": 3228,
+      "textCount": 98,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "works-ja-desktop": {
+      "frameId": "131:1319",
+      "width": 1440,
+      "height": 1326,
+      "textCount": 101,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "works-ja-mobile": {
+      "frameId": "131:11587",
+      "width": 390,
+      "height": 3153,
+      "textCount": 98,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "works-zh-desktop": {
+      "frameId": "131:11972",
+      "width": 1440,
+      "height": 1326,
+      "textCount": 101,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "works-zh-mobile": {
+      "frameId": "131:12310",
+      "width": 390,
+      "height": 3039,
+      "textCount": 98,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "x-wheel-en-desktop": {
+      "frameId": "131:12624",
+      "width": 1440,
+      "height": 7799,
+      "textCount": 44,
+      "imageCount": 11,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "x-wheel-en-mobile": {
+      "frameId": "131:12810",
+      "width": 390,
+      "height": 5373,
+      "textCount": 44,
+      "imageCount": 11,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "x-wheel-ja-desktop": {
+      "frameId": "131:1729",
+      "width": 1440,
+      "height": 7971,
+      "textCount": 44,
+      "imageCount": 11,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "x-wheel-ja-mobile": {
+      "frameId": "131:12996",
+      "width": 390,
+      "height": 5435,
+      "textCount": 44,
+      "imageCount": 11,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "x-wheel-zh-desktop": {
+      "frameId": "131:13182",
+      "width": 1440,
+      "height": 7800,
+      "textCount": 44,
+      "imageCount": 11,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "x-wheel-zh-mobile": {
+      "frameId": "131:13368",
+      "width": 390,
+      "height": 5196,
+      "textCount": 44,
+      "imageCount": 11,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-all48-title-final.json"
+    },
+    "home-en-chapter-02": {
+      "frameId": "131:13555",
+      "width": 1440,
+      "height": 836,
+      "textCount": 49,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-en-chapter-03": {
+      "frameId": "131:13705",
+      "width": 1440,
+      "height": 836,
+      "textCount": 52,
+      "imageCount": 6,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-en-chapter-04": {
+      "frameId": "131:13866",
+      "width": 1440,
+      "height": 836,
+      "textCount": 67,
+      "imageCount": 7,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-en-chapter-05": {
+      "frameId": "131:14073",
+      "width": 1440,
+      "height": 836,
+      "textCount": 81,
+      "imageCount": 8,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-ja-chapter-02": {
+      "frameId": "131:14325",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-ja-chapter-03": {
+      "frameId": "131:14501",
+      "width": 1440,
+      "height": 836,
+      "textCount": 60,
+      "imageCount": 6,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-ja-chapter-04": {
+      "frameId": "131:14688",
+      "width": 1440,
+      "height": 836,
+      "textCount": 75,
+      "imageCount": 7,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-ja-chapter-05": {
+      "frameId": "131:14921",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "imageCount": 8,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-zh-chapter-02": {
+      "frameId": "131:15102",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "imageCount": 5,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-zh-chapter-03": {
+      "frameId": "131:15278",
+      "width": 1440,
+      "height": 836,
+      "textCount": 60,
+      "imageCount": 6,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-zh-chapter-04": {
+      "frameId": "131:15465",
+      "width": 1440,
+      "height": 836,
+      "textCount": 75,
+      "imageCount": 7,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    },
+    "home-zh-chapter-05": {
+      "frameId": "131:15698",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "imageCount": 8,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "status": "native-editable-rendered-verified",
+      "reviewFile": "ciba-figma-review-states-delivery.json"
+    }
+  },
+  "createdStyleIds": [
+    "S:e04b4811ea6765e4ec21b2e6d75d20b4a163361e,",
+    "S:4539ca71c7e8eda8802286189213b4efd31dc056,",
+    "S:8299875ccf42843d92e496ff3820e885f2191b66,",
+    "S:93b81b02bec4a70a0f7cea6ddc5a8a482c7404cd,",
+    "S:33f7fc2df5a7f4b8190fa05ad9a1297be817b77f,",
+    "S:26f62c89dd88e2053ffb77f10d3a376d4cea4a70,",
+    "S:4cbb81d152b7257ebcb361a812e03d5f8044b808,",
+    "S:e3484579c65652ded8302f93b681fc21c7543a4d,",
+    "S:9f387091368062c72b50dcbf8f355afc8519e71e,",
+    "S:212de685605259f0b02b0db5c5b113ad23744f4c,",
+    "S:ab9e60fcf79e7f7516749738c252aea1338727f9,",
+    "S:f5040db5dd16f104b3bb0d8d9ccb94f0d32884c6,"
+  ],
+  "createdVariableIds": [
+    "VariableID:77:4",
+    "VariableID:77:5",
+    "VariableID:77:6",
+    "VariableID:77:7",
+    "VariableID:77:8",
+    "VariableID:77:9",
+    "VariableID:77:10",
+    "VariableID:77:11",
+    "VariableID:77:12",
+    "VariableID:77:13",
+    "VariableID:77:14",
+    "VariableID:77:15",
+    "VariableID:77:16",
+    "VariableID:77:17",
+    "VariableID:77:18",
+    "VariableID:77:19",
+    "VariableID:77:20",
+    "VariableID:77:21",
+    "VariableID:77:22",
+    "VariableID:77:23",
+    "VariableID:77:24",
+    "VariableID:77:25"
+  ],
+  "createdCollectionIds": [
+    "VariableCollectionId:77:2",
+    "VariableCollectionId:77:3"
+  ],
+  "componentIds": [
+    "77:77",
+    "77:91"
+  ],
+  "targetedFix": {
+    "mutatedNodeIds": [
+      "77:100",
+      "77:109"
+    ],
+    "reason": "CSS active bottom borders differ from transparent other edges",
+    "screenshotTaken": true
+  },
+  "blocker": null,
+  "status": "complete",
+  "updatedAt": "2026-09-29T02:27:52.309Z",
+  "guideNodeId": "131:18199",
+  "homeZhNodeId": "131:6261",
+  "completionEvidence": "runtime-logs/delivery-verification.json",
+  "visualFollowUp": [],
+  "figmaTypographyAdaptation": {
+    "view": "home-en-mobile",
+    "nodeIds": [
+      "133:18205",
+      "133:18206"
+    ],
+    "text": "University / Coursework",
+    "fontSize": 70.2,
+    "reason": "Restore source title case and fit tracking within existing two lines; preserve source wording, font family, size and frame dimensions. This is the editable Figma static layout."
+  }
+}

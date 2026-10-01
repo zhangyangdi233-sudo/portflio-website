@@ -1,0 +1,648 @@
+{
+  "readOn": "2026-09-28",
+  "fileKey": "xyINqLy60s9MELHd2HmViK",
+  "page": {
+    "id": "0:1",
+    "name": "00 Cover"
+  },
+  "frames": [
+    {
+      "id": "28:2",
+      "name": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 6105,
+      "nodeCount": 248,
+      "textCount": 81,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Helvetica Neue",
+          "style": "Black"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Extra Bold"
+        },
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Medium"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        }
+      ],
+      "images": [
+        {
+          "nodeId": "28:91",
+          "name": "Image (黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像)",
+          "imageHash": "78d8d68eb1e6ca947f96a7e939149d3206ebdfe0",
+          "width": 1035,
+          "height": 648
+        },
+        {
+          "nodeId": "28:93",
+          "name": "Image (濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ)",
+          "imageHash": "5c5ac35e2e93f7dd92dd20883c2644ae98ee2a3c",
+          "width": 545,
+          "height": 545
+        },
+        {
+          "nodeId": "28:95",
+          "name": "Image (濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している)",
+          "imageHash": "35f31cc4d751cf4e84d5992bc292bedae974401a",
+          "width": 430,
+          "height": 242
+        },
+        {
+          "nodeId": "28:97",
+          "name": "Image (緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている)",
+          "imageHash": "6f0bd53b6cb32991aef44e454b7931adc300e63e",
+          "width": 459,
+          "height": 320
+        }
+      ]
+    },
+    {
+      "id": "29:2",
+      "name": "プロフィール | 糍粑",
+      "x": 1480,
+      "y": 0,
+      "width": 1280,
+      "height": 1074,
+      "nodeCount": 69,
+      "textCount": 27,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Black"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "30:2",
+      "name": "Wake Up | 糍粑",
+      "x": 2800,
+      "y": 0,
+      "width": 1280,
+      "height": 2530,
+      "nodeCount": 116,
+      "textCount": 42,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Black"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Extra Bold"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        }
+      ],
+      "images": [
+        {
+          "nodeId": "30:115",
+          "name": "Image (黒い画面の中、鳴っている目覚まし時計の横で白い人物がベッドから目を覚ます)",
+          "imageHash": "8fff262287c64b0938258280e3611e55ebc57803",
+          "width": 800,
+          "height": 590.3984375
+        },
+        {
+          "nodeId": "30:120",
+          "name": "Image (暗く浸水した廊下。歪んだWake Upのタイトルが水面に反射している)",
+          "imageHash": "b97004420832c6753ecbc400dc809da2b138501a",
+          "width": 1152,
+          "height": 590.3984375
+        }
+      ]
+    },
+    {
+      "id": "31:2",
+      "name": "作品 | 糍粑",
+      "x": 4120,
+      "y": 0,
+      "width": 1280,
+      "height": 1318,
+      "nodeCount": 293,
+      "textCount": 102,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Black"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Extra Bold"
+        },
+        {
+          "family": "Menlo",
+          "style": "Black"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        }
+      ],
+      "images": [
+        {
+          "nodeId": "31:73",
+          "name": "Image (紫、ピンク、淡い緑のグリッドで構成された遠近法的な部屋。走る人物と方向矢印が配置されている)",
+          "imageHash": "6af10ddd399580f9c86d51556d1f3af050783154",
+          "width": 406,
+          "height": 253
+        },
+        {
+          "nodeId": "31:133",
+          "name": "Image (黒い画面の中、鳴っている目覚まし時計の横で白い人物がベッドから目を覚ます)",
+          "imageHash": "8fff262287c64b0938258280e3611e55ebc57803",
+          "width": 436,
+          "height": 272
+        },
+        {
+          "nodeId": "31:193",
+          "name": "Image (青とオレンジで描かれた縦長のEMIDAキャラクター／プロジェクトシート。列車トンネルのような場面と日本語の作品テキストを含む)",
+          "imageHash": "45dc214caf52510acd533a083301901e89b5e0d6",
+          "width": 426,
+          "height": 265
+        },
+        {
+          "nodeId": "31:253",
+          "name": "Image (机、ベッド、棚、アシッドグリーンの照明を備えたアイソメトリックなピクセル調の部屋)",
+          "imageHash": "f537612baf80b66e5cd69e03991c33a3478e436c",
+          "width": 456,
+          "height": 284
+        },
+        {
+          "nodeId": "31:313",
+          "name": "Image (オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面)",
+          "imageHash": "bb16611d75128635e34dd120a07e55f268a2aa4f",
+          "width": 451,
+          "height": 281
+        }
+      ]
+    },
+    {
+      "id": "32:2",
+      "name": "X.WHEEL | 糍粑",
+      "x": 5440,
+      "y": 0,
+      "width": 1280,
+      "height": 7127,
+      "nodeCount": 151,
+      "textCount": 45,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Black"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Hiragino Sans",
+          "style": "Extra Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        }
+      ],
+      "images": [
+        {
+          "nodeId": "32:82",
+          "name": "Image (机、ベッド、棚、アシッドグリーンの照明を備えたアイソメトリックなピクセル調の部屋)",
+          "imageHash": "f537612baf80b66e5cd69e03991c33a3478e436c",
+          "width": 582,
+          "height": 436
+        },
+        {
+          "nodeId": "32:97",
+          "name": "Image (暗い背景に置かれたアイソメトリックなピクセル調CRTテレビのアセット)",
+          "imageHash": "56a1d2fd625b27e7cb4001f9c32e8fe205b2fabc",
+          "width": 1150,
+          "height": 863
+        },
+        {
+          "nodeId": "32:103",
+          "name": "Image (淡い緑色で描かれたアイソメトリックなピクセル調ゲーム機とコントローラー)",
+          "imageHash": "eba4e29feeca28eb80b097156287153675f785a0",
+          "width": 558,
+          "height": 419
+        },
+        {
+          "nodeId": "32:109",
+          "name": "Image (X.WHEELのアセット・ライブラリにあるアイソメトリックなピクセル調ポスター)",
+          "imageHash": "7dc596fb68b0b889c4703348e8592652b71cabd7",
+          "width": 558,
+          "height": 419
+        },
+        {
+          "nodeId": "32:115",
+          "name": "Image (黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像)",
+          "imageHash": "78d8d68eb1e6ca947f96a7e939149d3206ebdfe0",
+          "width": 1150,
+          "height": 1035
+        },
+        {
+          "nodeId": "32:121",
+          "name": "Image (濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している)",
+          "imageHash": "35f31cc4d751cf4e84d5992bc292bedae974401a",
+          "width": 558,
+          "height": 314
+        },
+        {
+          "nodeId": "32:127",
+          "name": "Image (緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている)",
+          "imageHash": "6f0bd53b6cb32991aef44e454b7931adc300e63e",
+          "width": 558,
+          "height": 390
+        },
+        {
+          "nodeId": "32:133",
+          "name": "Image (緑の画面上で、淡い緑の正方形、太い円弧、ハッシュ記号状の形が重なっている)",
+          "imageHash": "121df5b0c7d133ee836f0a6d8fe8d1f59606ab6e",
+          "width": 1150,
+          "height": 803
+        },
+        {
+          "nodeId": "32:139",
+          "name": "Image (濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ)",
+          "imageHash": "5c5ac35e2e93f7dd92dd20883c2644ae98ee2a3c",
+          "width": 558,
+          "height": 558
+        },
+        {
+          "nodeId": "32:145",
+          "name": "Image (濃紺の背景の中央に粒子状の緑の球体があり、両側に反復する円弧と折れ線の信号図形がある)",
+          "imageHash": "681fe23052ad6c9aa02fafd6c804bf6f9b642dc3",
+          "width": 558,
+          "height": 314
+        },
+        {
+          "nodeId": "32:151",
+          "name": "Image (淡い緑のモニター内に緑の人物と幾何学図形があり、周囲に球体と波状の線が配置されている)",
+          "imageHash": "5a4002c37e0982f698c98f7cd6f93c9fb079667e",
+          "width": 1150,
+          "height": 803
+        }
+      ]
+    },
+    {
+      "id": "33:2",
+      "name": "大学課題 | 糍粑",
+      "x": 6760,
+      "y": 0,
+      "width": 1280,
+      "height": 4736,
+      "nodeCount": 370,
+      "textCount": 118,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Hiragino Sans",
+          "style": "Regular"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        },
+        {
+          "family": "Menlo",
+          "style": "Black"
+        }
+      ],
+      "images": [
+        {
+          "nodeId": "33:101",
+          "name": "Video - 赤く水没した廊下と樹木の間を進む、再生可能なBlender環境アニメーション",
+          "imageHash": "7e69b80889cd65ea867632489943d11b074b97cd",
+          "width": 355,
+          "height": 200
+        },
+        {
+          "nodeId": "33:123",
+          "name": "Video - 無地のオレンジ色の画面から始まる、再生可能なBlenderアニメーション練習",
+          "imageHash": "7ad9fad97c5de54c301dcd4f7a3e509ea0b2e7f3",
+          "width": 343,
+          "height": 193
+        },
+        {
+          "nodeId": "33:145",
+          "name": "Image (赤い廊下のレンダー、3Dビュー、マテリアルノードを同時に表示したBlender作業画面)",
+          "imageHash": "562b259080b76f5cd26ff262ce3cb5b4798823ef",
+          "width": 379,
+          "height": 211
+        },
+        {
+          "nodeId": "33:167",
+          "name": "Image (Blender画面上の赤い有機的な器モデルと、その周囲に伸びる淡い曲線構造)",
+          "imageHash": "e30e5382865038d44ce7933538eaecce71863aef",
+          "width": 331,
+          "height": 262
+        },
+        {
+          "nodeId": "33:189",
+          "name": "Image (半透明の人物、遠近グリッド、円軌道、大きな数字42を組み合わせた緑色の図式構成)",
+          "imageHash": "96c9064ef3515ac025724146d022e84278851cee",
+          "width": 451,
+          "height": 271
+        },
+        {
+          "nodeId": "33:211",
+          "name": "Image (ピンクの空間に低ポリゴンの緑の植物と白い花を置き、淡い葉の影を落とした画面)",
+          "imageHash": "ad6f1d292787d3fffeed7b2b348fa35b4b151097",
+          "width": 367,
+          "height": 273.6000061035156
+        },
+        {
+          "nodeId": "33:233",
+          "name": "Image (青い背景に淡い青と蛍光黄色の建築模型を置き、黒い樹形と手描き矢印を重ねた画面)",
+          "imageHash": "964b9e7b298234d606b5da04591ea573fcd60128",
+          "width": 403,
+          "height": 227
+        },
+        {
+          "nodeId": "33:255",
+          "name": "Image (赤い光の水没した廊下に枯れ木が並び、右側にオレンジ色のアヒルがいる)",
+          "imageHash": "e55bf599bde80edbea6bec5a5a0f486449883a97",
+          "width": 427,
+          "height": 240
+        },
+        {
+          "nodeId": "33:277",
+          "name": "Image (濃い青の背景で、淡い形体の間に座る人物と上部のオレンジ色のアヒルを描いたレンダー)",
+          "imageHash": "0bb654ff4faf2e8bf94a1eac012b9a5a791c62f1",
+          "width": 403,
+          "height": 227
+        },
+        {
+          "nodeId": "33:299",
+          "name": "Image (オレンジの背景に赤い器、半透明の車、モンキーヘッドを置き、青い図形を重ねた画面)",
+          "imageHash": "494ea9b69a8c8d03dd79aecc96e365944a7764f8",
+          "width": 451,
+          "height": 253
+        },
+        {
+          "nodeId": "33:339",
+          "name": "Video - 柱の間に草が生えた暗い水没回廊を進む、再生可能なMaya環境アニメーション",
+          "imageHash": "48f61c7dd21316ec57ef2e38d206909a0f852f39",
+          "width": 570,
+          "height": 273.6000061035156
+        },
+        {
+          "nodeId": "33:361",
+          "name": "Image (連続する柱と尖頭アーチを持ち、濃い青の陰影の先に明るい空が見える3Dゴシック建築内部)",
+          "imageHash": "1fe5ed6b5c4a542349a010e727f61aa76d6d55ad",
+          "width": 570,
+          "height": 273.6000061035156
+        },
+        {
+          "nodeId": "33:401",
+          "name": "Video - 水滴形を中心に回転する点線のリングを配置した、再生可能な青と白のモーション練習",
+          "imageHash": "103cd38c82b107a3298131809ac7c917918cc817",
+          "width": 641,
+          "height": 273.6000061035156
+        },
+        {
+          "nodeId": "33:423",
+          "name": "Video - 白いキーボード状タイル、青い円、発光する球体を組み合わせた再生可能なモーショングラフィックス練習",
+          "imageHash": "103cd38c82b107a3298131809ac7c917918cc817",
+          "width": 641,
+          "height": 273.6000061035156
+        }
+      ]
+    },
+    {
+      "id": "34:2",
+      "name": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題",
+      "x": 8080,
+      "y": 0,
+      "width": 1280,
+      "height": 5008,
+      "nodeCount": 248,
+      "textCount": 81,
+      "instanceCount": 0,
+      "fonts": [
+        {
+          "family": "Helvetica Neue",
+          "style": "Black"
+        },
+        {
+          "family": "Menlo",
+          "style": "Regular"
+        },
+        {
+          "family": "Menlo",
+          "style": "Extra Bold"
+        },
+        {
+          "family": "Menlo",
+          "style": "Bold"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Regular"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Medium"
+        },
+        {
+          "family": "Helvetica Neue",
+          "style": "Bold"
+        }
+      ],
+      "images": [
+        {
+          "nodeId": "34:91",
+          "name": "Image (黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像)",
+          "imageHash": "78d8d68eb1e6ca947f96a7e939149d3206ebdfe0",
+          "width": 920,
+          "height": 518
+        },
+        {
+          "nodeId": "34:93",
+          "name": "Image (濃紺の背景に、斜め下を見る長髪の人物を緑で描いたピクセル調のクローズアップ)",
+          "imageHash": "5c5ac35e2e93f7dd92dd20883c2644ae98ee2a3c",
+          "width": 484,
+          "height": 484
+        },
+        {
+          "nodeId": "34:95",
+          "name": "Image (濃紺の背景に淡い緑の人物像が5体重なって並び、頭部と身体の向きの変化を示している)",
+          "imageHash": "35f31cc4d751cf4e84d5992bc292bedae974401a",
+          "width": 382,
+          "height": 215
+        },
+        {
+          "nodeId": "34:97",
+          "name": "Image (緑の画面に「Cartridge 3」とドイツ語の一文があり、中央のタイトルは白黒の幾何学的な字形で構成されている)",
+          "imageHash": "6f0bd53b6cb32991aef44e454b7931adc300e63e",
+          "width": 408,
+          "height": 285
+        }
+      ]
+    }
+  ],
+  "availableProductFonts": [
+    {
+      "family": "Noto Sans JP",
+      "style": "Black"
+    },
+    {
+      "family": "Noto Sans JP",
+      "style": "Bold"
+    },
+    {
+      "family": "Noto Sans JP",
+      "style": "DemiLight"
+    },
+    {
+      "family": "Noto Sans JP",
+      "style": "Light"
+    },
+    {
+      "family": "Noto Sans JP",
+      "style": "Medium"
+    },
+    {
+      "family": "Noto Sans JP",
+      "style": "Regular"
+    },
+    {
+      "family": "Noto Sans JP",
+      "style": "Thin"
+    }
+  ],
+  "collections": [
+    {
+      "id": "VariableCollectionId:2:2",
+      "name": "CIBA / Primitives",
+      "modes": [
+        {
+          "name": "Value",
+          "modeId": "2:0"
+        }
+      ],
+      "variableCount": 8
+    },
+    {
+      "id": "VariableCollectionId:2:3",
+      "name": "CIBA / Color",
+      "modes": [
+        {
+          "name": "Value",
+          "modeId": "2:1"
+        }
+      ],
+      "variableCount": 9
+    },
+    {
+      "id": "VariableCollectionId:2:4",
+      "name": "CIBA / Layout",
+      "modes": [
+        {
+          "name": "Value",
+          "modeId": "2:2"
+        }
+      ],
+      "variableCount": 15
+    },
+    {
+      "id": "VariableCollectionId:2:5",
+      "name": "CIBA / Motion",
+      "modes": [
+        {
+          "name": "Value",
+          "modeId": "2:3"
+        }
+      ],
+      "variableCount": 5
+    }
+  ],
+  "textStyleCount": 10,
+  "effectStyleCount": 2
+}

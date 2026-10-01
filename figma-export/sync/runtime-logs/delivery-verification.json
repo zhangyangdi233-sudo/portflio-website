@@ -1,0 +1,871 @@
+{
+  "status": "passed",
+  "visualFollowUp": [],
+  "verifiedAt": "2026-09-29T02:27:52.309Z",
+  "mainViews": 48,
+  "supplementalViews": 12,
+  "uniqueRootNodeIds": 60,
+  "dimensionMismatches": 0,
+  "missingFonts": 0,
+  "renderFailures": 0,
+  "fonts": [
+    "Noto Sans JP",
+    "Noto Sans SC"
+  ],
+  "textLayers": 4808,
+  "imagePlacements": 436,
+  "componentInstances": 480,
+  "originalFrames": [
+    {
+      "id": "28:2",
+      "name": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題",
+      "width": 1440,
+      "height": 6105,
+      "parentId": "0:1"
+    },
+    {
+      "id": "29:2",
+      "name": "プロフィール | 糍粑",
+      "width": 1280,
+      "height": 1074,
+      "parentId": "0:1"
+    },
+    {
+      "id": "30:2",
+      "name": "Wake Up | 糍粑",
+      "width": 1280,
+      "height": 2530,
+      "parentId": "0:1"
+    },
+    {
+      "id": "31:2",
+      "name": "作品 | 糍粑",
+      "width": 1280,
+      "height": 1318,
+      "parentId": "0:1"
+    },
+    {
+      "id": "32:2",
+      "name": "X.WHEEL | 糍粑",
+      "width": 1280,
+      "height": 7127,
+      "parentId": "0:1"
+    },
+    {
+      "id": "33:2",
+      "name": "大学課題 | 糍粑",
+      "width": 1280,
+      "height": 4736,
+      "parentId": "0:1"
+    },
+    {
+      "id": "34:2",
+      "name": "糍粑 | アーティスト / ゲーム、ウェブ、大学課題",
+      "width": 1280,
+      "height": 5008,
+      "parentId": "0:1"
+    }
+  ],
+  "videoPosterPlacements": 30,
+  "guideNodeId": "131:18199",
+  "homeZhNodeId": "131:6261",
+  "sources": [
+    "ciba-figma-review-all48-title-final.json",
+    "ciba-figma-review-states-delivery.json",
+    "2026-09-29-finalization-completed.json",
+    "2026-09-29-layout-repairs-settled.json",
+    "2026-09-29-title-final.json"
+  ],
+  "views": [
+    {
+      "view": "about-en-desktop",
+      "nodeId": "131:1928",
+      "width": 1440,
+      "height": 1085,
+      "textCount": 26,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 0,
+      "instanceCount": 2
+    },
+    {
+      "view": "about-en-mobile",
+      "nodeId": "131:2027",
+      "width": 390,
+      "height": 1407,
+      "textCount": 26,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 0,
+      "instanceCount": 2
+    },
+    {
+      "view": "about-ja-desktop",
+      "nodeId": "77:38",
+      "width": 1440,
+      "height": 1085,
+      "textCount": 26,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 0,
+      "instanceCount": 2
+    },
+    {
+      "view": "about-ja-mobile",
+      "nodeId": "131:2126",
+      "width": 390,
+      "height": 1383,
+      "textCount": 26,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 0,
+      "instanceCount": 2
+    },
+    {
+      "view": "about-zh-desktop",
+      "nodeId": "131:2232",
+      "width": 1440,
+      "height": 1062,
+      "textCount": 26,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 0,
+      "instanceCount": 2
+    },
+    {
+      "view": "about-zh-mobile",
+      "nodeId": "131:2324",
+      "width": 390,
+      "height": 1299,
+      "textCount": 26,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 0,
+      "instanceCount": 2
+    },
+    {
+      "view": "emida-en-desktop",
+      "nodeId": "131:2417",
+      "width": 1440,
+      "height": 2257,
+      "textCount": 34,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 1,
+      "instanceCount": 3
+    },
+    {
+      "view": "emida-en-mobile",
+      "nodeId": "131:2583",
+      "width": 390,
+      "height": 2363,
+      "textCount": 34,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 1,
+      "instanceCount": 3
+    },
+    {
+      "view": "emida-ja-desktop",
+      "nodeId": "131:2748",
+      "width": 1440,
+      "height": 2257,
+      "textCount": 34,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 1,
+      "instanceCount": 3
+    },
+    {
+      "view": "emida-ja-mobile",
+      "nodeId": "131:2894",
+      "width": 390,
+      "height": 2295,
+      "textCount": 34,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 1,
+      "instanceCount": 3
+    },
+    {
+      "view": "emida-zh-desktop",
+      "nodeId": "131:3066",
+      "width": 1440,
+      "height": 2225,
+      "textCount": 34,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 1,
+      "instanceCount": 3
+    },
+    {
+      "view": "emida-zh-mobile",
+      "nodeId": "131:3232",
+      "width": 390,
+      "height": 2184,
+      "textCount": 34,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 1,
+      "instanceCount": 3
+    },
+    {
+      "view": "escape-project-en-desktop",
+      "nodeId": "131:3397",
+      "width": 1440,
+      "height": 3005,
+      "textCount": 36,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 3,
+      "instanceCount": 3
+    },
+    {
+      "view": "escape-project-en-mobile",
+      "nodeId": "131:3551",
+      "width": 390,
+      "height": 2606,
+      "textCount": 36,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 3,
+      "instanceCount": 3
+    },
+    {
+      "view": "escape-project-ja-desktop",
+      "nodeId": "131:3705",
+      "width": 1440,
+      "height": 3036,
+      "textCount": 36,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 3,
+      "instanceCount": 3
+    },
+    {
+      "view": "escape-project-ja-mobile",
+      "nodeId": "131:3859",
+      "width": 390,
+      "height": 2516,
+      "textCount": 36,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 3,
+      "instanceCount": 3
+    },
+    {
+      "view": "escape-project-zh-desktop",
+      "nodeId": "131:4013",
+      "width": 1440,
+      "height": 2912,
+      "textCount": 36,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 3,
+      "instanceCount": 3
+    },
+    {
+      "view": "escape-project-zh-mobile",
+      "nodeId": "131:4167",
+      "width": 390,
+      "height": 2363,
+      "textCount": 36,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 3,
+      "instanceCount": 3
+    },
+    {
+      "view": "home-en-desktop",
+      "nodeId": "131:4343",
+      "width": 1440,
+      "height": 6105,
+      "textCount": 462,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 40,
+      "instanceCount": 4
+    },
+    {
+      "view": "home-en-mobile",
+      "nodeId": "131:5026",
+      "width": 390,
+      "height": 8292,
+      "textCount": 201,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 4
+    },
+    {
+      "view": "home-ja-desktop",
+      "nodeId": "131:42",
+      "width": 1440,
+      "height": 6105,
+      "textCount": 341,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 30,
+      "instanceCount": 4
+    },
+    {
+      "view": "home-ja-mobile",
+      "nodeId": "131:5674",
+      "width": 390,
+      "height": 8205,
+      "textCount": 175,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 4
+    },
+    {
+      "view": "home-zh-desktop",
+      "nodeId": "131:6261",
+      "width": 1440,
+      "height": 6105,
+      "textCount": 341,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 30,
+      "instanceCount": 4
+    },
+    {
+      "view": "home-zh-mobile",
+      "nodeId": "131:6566",
+      "width": 390,
+      "height": 8073,
+      "textCount": 175,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 4
+    },
+    {
+      "view": "university-coursework-en-desktop",
+      "nodeId": "131:7147",
+      "width": 1440,
+      "height": 5053,
+      "textCount": 132,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 37
+    },
+    {
+      "view": "university-coursework-en-mobile",
+      "nodeId": "131:7828",
+      "width": 390,
+      "height": 6953,
+      "textCount": 101,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 34
+    },
+    {
+      "view": "university-coursework-ja-desktop",
+      "nodeId": "131:447",
+      "width": 1440,
+      "height": 5027,
+      "textCount": 131,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 37
+    },
+    {
+      "view": "university-coursework-ja-mobile",
+      "nodeId": "131:8296",
+      "width": 390,
+      "height": 6843,
+      "textCount": 100,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 34
+    },
+    {
+      "view": "university-coursework-zh-desktop",
+      "nodeId": "131:8770",
+      "width": 1440,
+      "height": 4955,
+      "textCount": 131,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 37
+    },
+    {
+      "view": "university-coursework-zh-mobile",
+      "nodeId": "131:9447",
+      "width": 390,
+      "height": 6700,
+      "textCount": 100,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 14,
+      "instanceCount": 34
+    },
+    {
+      "view": "wake-up-en-desktop",
+      "nodeId": "131:9899",
+      "width": 1440,
+      "height": 2886,
+      "textCount": 39,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 2,
+      "instanceCount": 3
+    },
+    {
+      "view": "wake-up-en-mobile",
+      "nodeId": "131:10075",
+      "width": 390,
+      "height": 3021,
+      "textCount": 39,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 2,
+      "instanceCount": 3
+    },
+    {
+      "view": "wake-up-ja-desktop",
+      "nodeId": "131:1132",
+      "width": 1440,
+      "height": 2871,
+      "textCount": 39,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 2,
+      "instanceCount": 3
+    },
+    {
+      "view": "wake-up-ja-mobile",
+      "nodeId": "131:10258",
+      "width": 390,
+      "height": 2972,
+      "textCount": 39,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 2,
+      "instanceCount": 3
+    },
+    {
+      "view": "wake-up-zh-desktop",
+      "nodeId": "131:10446",
+      "width": 1440,
+      "height": 2767,
+      "textCount": 39,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 2,
+      "instanceCount": 3
+    },
+    {
+      "view": "wake-up-zh-mobile",
+      "nodeId": "131:10622",
+      "width": 390,
+      "height": 2869,
+      "textCount": 39,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 2,
+      "instanceCount": 3
+    },
+    {
+      "view": "works-en-desktop",
+      "nodeId": "131:10808",
+      "width": 1440,
+      "height": 1367,
+      "textCount": 101,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 28
+    },
+    {
+      "view": "works-en-mobile",
+      "nodeId": "131:11213",
+      "width": 390,
+      "height": 3228,
+      "textCount": 98,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 25
+    },
+    {
+      "view": "works-ja-desktop",
+      "nodeId": "131:1319",
+      "width": 1440,
+      "height": 1326,
+      "textCount": 101,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 28
+    },
+    {
+      "view": "works-ja-mobile",
+      "nodeId": "131:11587",
+      "width": 390,
+      "height": 3153,
+      "textCount": 98,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 25
+    },
+    {
+      "view": "works-zh-desktop",
+      "nodeId": "131:11972",
+      "width": 1440,
+      "height": 1326,
+      "textCount": 101,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 28
+    },
+    {
+      "view": "works-zh-mobile",
+      "nodeId": "131:12310",
+      "width": 390,
+      "height": 3039,
+      "textCount": 98,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 25
+    },
+    {
+      "view": "x-wheel-en-desktop",
+      "nodeId": "131:12624",
+      "width": 1440,
+      "height": 7799,
+      "textCount": 44,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 11,
+      "instanceCount": 3
+    },
+    {
+      "view": "x-wheel-en-mobile",
+      "nodeId": "131:12810",
+      "width": 390,
+      "height": 5373,
+      "textCount": 44,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 11,
+      "instanceCount": 3
+    },
+    {
+      "view": "x-wheel-ja-desktop",
+      "nodeId": "131:1729",
+      "width": 1440,
+      "height": 7971,
+      "textCount": 44,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 11,
+      "instanceCount": 3
+    },
+    {
+      "view": "x-wheel-ja-mobile",
+      "nodeId": "131:12996",
+      "width": 390,
+      "height": 5435,
+      "textCount": 44,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 11,
+      "instanceCount": 3
+    },
+    {
+      "view": "x-wheel-zh-desktop",
+      "nodeId": "131:13182",
+      "width": 1440,
+      "height": 7800,
+      "textCount": 44,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 11,
+      "instanceCount": 3
+    },
+    {
+      "view": "x-wheel-zh-mobile",
+      "nodeId": "131:13368",
+      "width": 390,
+      "height": 5196,
+      "textCount": 44,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 11,
+      "instanceCount": 3
+    },
+    {
+      "view": "home-en-chapter-02",
+      "nodeId": "131:13555",
+      "width": 1440,
+      "height": 836,
+      "textCount": 49,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-en-chapter-03",
+      "nodeId": "131:13705",
+      "width": 1440,
+      "height": 836,
+      "textCount": 52,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 6,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-en-chapter-04",
+      "nodeId": "131:13866",
+      "width": 1440,
+      "height": 836,
+      "textCount": 67,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 7,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-en-chapter-05",
+      "nodeId": "131:14073",
+      "width": 1440,
+      "height": 836,
+      "textCount": 81,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 8,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-ja-chapter-02",
+      "nodeId": "131:14325",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-ja-chapter-03",
+      "nodeId": "131:14501",
+      "width": 1440,
+      "height": 836,
+      "textCount": 60,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 6,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-ja-chapter-04",
+      "nodeId": "131:14688",
+      "width": 1440,
+      "height": 836,
+      "textCount": 75,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 7,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-ja-chapter-05",
+      "nodeId": "131:14921",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "fonts": [
+        "Noto Sans JP"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 8,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-zh-chapter-02",
+      "nodeId": "131:15102",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 5,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-zh-chapter-03",
+      "nodeId": "131:15278",
+      "width": 1440,
+      "height": 836,
+      "textCount": 60,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 6,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-zh-chapter-04",
+      "nodeId": "131:15465",
+      "width": 1440,
+      "height": 836,
+      "textCount": 75,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 7,
+      "instanceCount": 0
+    },
+    {
+      "view": "home-zh-chapter-05",
+      "nodeId": "131:15698",
+      "width": 1440,
+      "height": 836,
+      "textCount": 57,
+      "fonts": [
+        "Noto Sans SC"
+      ],
+      "missingFontCount": 0,
+      "imageCount": 8,
+      "instanceCount": 0
+    }
+  ],
+  "figmaTypographyAdaptation": {
+    "view": "home-en-mobile",
+    "nodeIds": [
+      "133:18205",
+      "133:18206"
+    ],
+    "text": "University / Coursework",
+    "fontSize": 70.2,
+    "reason": "Restore source title case and fit tracking within existing two lines; preserve source wording, font family, size and frame dimensions. This is the editable Figma static layout."
+  }
+}

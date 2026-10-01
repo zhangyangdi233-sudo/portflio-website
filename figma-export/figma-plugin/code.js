@@ -43,7 +43,8 @@ const projects = [
   {
     slug: "x-wheel",
     index: "01",
-    title: "X.WHEEL",
+    title: "APHASIA",
+    localizedTitles: { zh: "APHASIA / 失语症", en: "APHASIA", ja: "APHASIA / 失語症" },
     cover: "/assets/projects/x-wheel/character-full.png",
     medium: "Godot game prototype, 3D asset and interface study",
     year: "2026",
@@ -59,8 +60,8 @@ const projects = [
     cover: "/assets/projects/emida/emida-doctor.webp",
     medium: "Visual novel game, Ren'Py, Procreate",
     year: "2024",
-    status: "In development",
-    summary: "A visual novel in development that uses player–character dialogue to examine social rules, oppression, and individuality.",
+    status: "Completed",
+    summary: "A completed visual novel that uses player–character dialogue to examine social rules, oppression, and individuality.",
     color: colors.oxide,
     onColor: colors.night
   },
@@ -102,8 +103,8 @@ const projects = [
   }
 ];
 
-const regular = { family: "Inter", style: "Regular" };
-const bold = { family: "Inter", style: "Bold" };
+const regular = { family: "Noto Sans SC", style: "Regular" };
+const bold = { family: "Noto Sans SC", style: "Bold" };
 const black = bold;
 const PAGE_NAME = "CIBA / Signal Index / Acid Proof";
 const DEV_SITE_ORIGIN = "http://127.0.0.1:4323";
@@ -392,7 +393,7 @@ function addSwissGrid(parent, w, h) {
 }
 
 function addWheelGraphic(parent, x, y, w, h) {
-  rect(parent, "X.WHEEL media field", x, y, w, h, colors.surface, colors.plum);
+  rect(parent, "APHASIA media field", x, y, w, h, colors.surface, colors.plum);
   const c = figma.createEllipse();
   c.name = "Wheel outer orbit";
   c.x = x + w * 0.18;
@@ -415,7 +416,7 @@ function addWheelGraphic(parent, x, y, w, h) {
     parent.appendChild(r);
   }
   text(parent, "Wheel X", "X", x + w * 0.45, y + h * 0.45, w * 0.14, 86, black, colors.oxide, 0.9);
-  text(parent, "Media label", "X.WHEEL / SOFT ALARM", x + 18, y + h - 34, 220, 14, bold, colors.ink);
+  text(parent, "Media label", "APHASIA / SOFT ALARM", x + 18, y + h - 34, 220, 14, bold, colors.ink);
 }
 
 async function addHomeProjectStage(parent, y, w, mobile = false) {
@@ -424,7 +425,7 @@ async function addHomeProjectStage(parent, y, w, mobile = false) {
   const stageHeight = mobile ? 620 : 780;
   rect(parent, "Home project stage / current work", inset, y, stageWidth, stageHeight, colors.night, colors.plum);
   text(parent, "Home stage label", "CURRENT WORK / 01 OF 05", inset + 18, y + 20, mobile ? 210 : 320, mobile ? 10 : 12, bold, colors.oxide);
-  text(parent, "Home stage title / clipped roll source", "X.WHEEL", inset + 18, y + (mobile ? 74 : 68), stageWidth - 36, mobile ? 58 : 152, black, colors.ink, 0.82);
+  text(parent, "Home stage title / clipped roll source", projects[0].title, inset + 18, y + (mobile ? 74 : 68), stageWidth - 36, mobile ? 58 : 152, black, colors.ink, 0.82);
 
   const desktopLayouts = [
     { x: -18, y: 198, w: 720, h: 410, r: -1.4 },
@@ -464,8 +465,8 @@ async function addHomeProjectStage(parent, y, w, mobile = false) {
   text(parent, "Home stage concept label", "CONCEPT", inset + 18, y + (mobile ? 500 : 590), 120, 10, bold, colors.oxide);
   text(parent, "Home stage concept", projects[0].summary, inset + 18, y + (mobile ? 526 : 618), mobile ? stageWidth - 36 : stageWidth * 0.42, mobile ? 15 : 20, regular, colors.ink, 1.35);
   const orderText = mobile
-    ? "01 X.WHEEL   02 EMIDA   03 WAKE UP\n04 ESCAPE / PROJECT   05 COURSEWORK"
-    : "01 X.WHEEL   02 EMIDA   03 WAKE UP   04 ESCAPE / PROJECT   05 UNIVERSITY COURSEWORK";
+    ? "01 APHASIA   02 EMIDA   03 WAKE UP\n04 ESCAPE / PROJECT   05 COURSEWORK"
+    : "01 APHASIA   02 EMIDA   03 WAKE UP   04 ESCAPE / PROJECT   05 UNIVERSITY COURSEWORK";
   text(
     parent,
     "Home stage scroll order",
@@ -608,7 +609,7 @@ function worksSystem() {
 
 function projectDetail() {
   const project = projects[0];
-  const f = frame("04 Project Detail / X.WHEEL", 1510, 1680, 1440, 1100);
+  const f = frame("04 Project Detail / APHASIA", 1510, 1680, 1440, 1100);
   addHeader(f, 1440);
   text(f, "Project index", `${project.index} / ${project.status.toUpperCase()}`, 72, 150, 300, 12, bold, colors.cyan);
   text(f, "Project title", project.title, 72, 188, 620, 112, black);
@@ -647,11 +648,11 @@ function aboutPage() {
   const f = frame("06 About / Statement CV Contact", 1510, 2880, 1440, 980);
   addHeader(f, 1440);
   text(f, "About title", "About", 72, 150, 360, 92, black);
-  text(f, "Statement", "CIBA is an artist currently making games, web-based works, and university coursework in Tokyo. Five public records present current projects and practice evidence.", 72, 290, 680, 28, regular, colors.ink, 1.25);
-  text(f, "Practice note", "The records use rules, dialogue, scrolling pages, image composition, 3D practice, motion graphics, and video editing to document the work directly.", 72, 430, 620, 15, regular, colors.fog, 1.45);
+  text(f, "Statement", "CIBA currently creates media art centred on games and hopes to explore experimental works combining multiple media.", 72, 290, 680, 28, regular, colors.ink, 1.25);
+  text(f, "Practice note", "Currently studying at university, CIBA has a strong interest in music, moving image, animation, and games within media art.", 72, 430, 620, 15, regular, colors.fog, 1.45);
   rect(f, "CV column", 840, 150, 430, 560, null, colors.plum);
   text(f, "CV title", "CV", 872, 185, 120, 40, black);
-  text(f, "CV items", "2026–  X.WHEEL\n2024–  EMIDA\n2023   Wake Up\n2023   Escape Project\nUniversity Coursework", 872, 255, 360, 18, regular, colors.ink, 1.55);
+  text(f, "CV items", "2026–  APHASIA\n2024   EMIDA\n2023   Wake Up\n2023   Escape Project\nUniversity Coursework", 872, 255, 360, 18, regular, colors.ink, 1.55);
   rect(f, "Contact / verified email", 72, 570, 390, 48, colors.surface, colors.plum);
   text(f, "Contact email", handoffFacts.contactEmail, 92, 585, 350, 12, bold, colors.fog);
 }

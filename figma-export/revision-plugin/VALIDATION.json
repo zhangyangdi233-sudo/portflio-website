@@ -1,0 +1,14 @@
+{
+  "mainViews": 48,
+  "stageStates": 12,
+  "nativeRuntime": "Executed in Figma Desktop with real plugin ID 1686577908111522667",
+  "structureVerification": "60 unique root nodes; source dimensions match; no missing Noto SC/JP fonts",
+  "renderVerification": "60 actual Figma PNG exports; no export failures",
+  "knownVisualFollowUp": [],
+  "evidence": "../sync/runtime-logs/delivery-verification.json",
+  "jsSyntax": "passed",
+  "pythonSyntax": "passed",
+  "zipCRC": "verified after build",
+  "finalTitleEvidence": "../sync/runtime-logs/2026-09-29-title-final.json",
+  "verifiedAt": "2026-09-29T02:27:52.309Z"
+}
