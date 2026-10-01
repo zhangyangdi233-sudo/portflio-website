@@ -29,7 +29,7 @@ for (const item of courseworkManifest.items.filter((entry) => entry.kind === "im
   }
   courseworkImageSrcsets.set(`/${item.publicPath}`, candidates.join(", "));
 }
-const allowedPublicFiles = [
+const allowedAssetFiles = [
   "assets/projects/emida/emida-doctor.webp",
   "assets/projects/escape-project/escape-gate.webp",
   "assets/projects/escape-project/escape-loop.webp",
@@ -50,6 +50,11 @@ const allowedPublicFiles = [
   ...courseworkManifest.items.map((item) => item.publicPath),
   ...courseworkDerivedFiles
 ].sort();
+const allowedLicenseFiles = [
+  "licenses/Noto-Sans-JP-Variable-OFL.txt",
+  "licenses/Noto-Sans-SC-Variable-OFL.txt"
+].sort();
+const allowedPublicFiles = [...allowedAssetFiles, ...allowedLicenseFiles].sort();
 const checkedPaths = new Set();
 const publicProjectRecords = publicSlugs.map((slug) =>
   JSON.parse(readFileSync(join(root, "src", "content", "projects", `${slug}.json`), "utf8"))
@@ -124,13 +129,18 @@ check(existsSync(dist), "dist is missing; run npm run build before npm run check
 
 const publicDirectory = join(root, "public");
 const deployedAssetDirectory = join(dist, "assets");
+const deployedLicenseDirectory = join(dist, "licenses");
 check(
   JSON.stringify(relativeFiles(publicDirectory)) === JSON.stringify(allowedPublicFiles),
   `public/ must contain only approved deployable files; received ${relativeFiles(publicDirectory).join(", ")}`
 );
 check(
-  JSON.stringify(relativeFiles(deployedAssetDirectory).map((path) => `assets/${path}`)) === JSON.stringify(allowedPublicFiles),
+  JSON.stringify(relativeFiles(deployedAssetDirectory).map((path) => `assets/${path}`)) === JSON.stringify(allowedAssetFiles),
   `dist/assets must match the approved public allowlist; received ${relativeFiles(deployedAssetDirectory).join(", ")}`
+);
+check(
+  JSON.stringify(relativeFiles(deployedLicenseDirectory).map((path) => `licenses/${path}`)) === JSON.stringify(allowedLicenseFiles),
+  `dist/licenses must contain exactly the approved Noto SC and JP notices; received ${relativeFiles(deployedLicenseDirectory).join(", ")}`
 );
 check(relativeFiles(join(dist, "downloads")).length === 0, "dist/downloads must not publish placeholder documents");
 
@@ -249,6 +259,11 @@ for (const lang of languages) {
   }
 
   const wake = readBuilt(lang, "works", "wake-up", "index.html");
+  const wakeTitleWords = [...wake.matchAll(/class="wake-record-intro__title-word"[^>]*>([^<]+)<\/span>/g)].map((match) => match[1]);
+  check(
+    JSON.stringify(wakeTitleWords) === JSON.stringify(["Wake", "Up"]),
+    `${lang} Wake Up title must break between words so it fits the mobile viewport without reducing its size`
+  );
   const wakeMedia = [...wake.matchAll(/\/assets\/projects\/wake-up\/[^"'\s<]+/g)]
     .map((match) => match[0])
     .filter((value, index, values) => values.indexOf(value) === index)
@@ -268,5 +283,5 @@ if (failures.length > 0) {
   console.error("Built-site contract failed:\n- " + failures.join("\n- "));
   process.exitCode = 1;
 } else {
-  console.log("Built-site contract passed: 25 pages, 3 languages, 5 public works, 11 X.WHEEL media items, 14 coursework media items, and 2 Wake Up images.");
+  console.log("Built-site contract passed: 25 pages, 3 languages, 5 public works, 11 APHASIA media items, 14 coursework media items, and 2 Wake Up images.");
 }

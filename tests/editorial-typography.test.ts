@@ -50,7 +50,6 @@ describe("CIBA editorial typography", () => {
     expect(css).not.toContain("letter-spacing: -0.095em");
     expect(css).not.toContain("letter-spacing: -0.08em");
     expect(css).not.toContain("letter-spacing: -0.07em");
-    expect(wake).toContain('const titleWords = lang === "en"');
     expect(wake).toContain('class="wake-record-intro__title-word"');
     expect(wakeCss).toMatch(/\.wake-record-intro h1 \{[\s\S]*?letter-spacing: -0\.03em/);
     expect(wakeCss).toMatch(

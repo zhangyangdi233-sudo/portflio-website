@@ -2,7 +2,7 @@
   "slug": "emida",
   "year": "2024",
   "medium": "Visual novel game, Ren'Py, Procreate",
-  "status": "In development",
+  "status": "Completed",
   "priority": 2,
   "published": true,
   "featured": true,
@@ -61,31 +61,31 @@
   "i18n": {
     "zh": {
       "title": "EMIDA",
-      "summary": "一件开发中的视觉小说游戏，通过玩家与角色的对话讨论社会规范、压迫与个体性。",
+      "summary": "一件已完成的视觉小说游戏，通过玩家与角色的对话讨论社会规范、压迫与个体性。",
       "medium": "视觉小说游戏、Ren'Py、Procreate",
-      "status": "开发中",
+      "status": "已完成",
       "body": [
-        "EMIDA_THE_DOCTOR? 被旧站记录为一件使用 Ren'Py 与 Procreate 制作、画面规格为 1920 × 1080 的开发中视觉小说。",
+        "EMIDA_THE_DOCTOR? 是一件使用 Ren'Py 与 Procreate 制作、画面规格为 1920 × 1080 的已完成视觉小说。",
         "作品通过玩家与角色的对话，让玩家面对高压社会中的规范与压迫，并围绕“个体性”是否能够改变展开选择。"
       ]
     },
     "en": {
       "title": "EMIDA",
-      "summary": "A visual novel in development that uses player–character dialogue to examine social rules, oppression, and individuality.",
+      "summary": "A completed visual novel that uses player–character dialogue to examine social rules, oppression, and individuality.",
       "medium": "Visual novel game, Ren'Py, Procreate",
-      "status": "In development",
+      "status": "Completed",
       "body": [
-        "The previous site documents EMIDA_THE_DOCTOR? as a 1920 × 1080 visual novel in development, made with Ren'Py and Procreate.",
+        "EMIDA_THE_DOCTOR? is a completed 1920 × 1080 visual novel made with Ren'Py and Procreate.",
         "Through dialogue between the player and a character, the work places social rules and oppression in a high-pressure society against a series of choices about whether individuality can change."
       ]
     },
     "ja": {
       "title": "EMIDA",
-      "summary": "プレイヤーとキャラクターの対話を通して、社会的規範、抑圧、個人性を扱う開発中のビジュアルノベル。",
+      "summary": "プレイヤーとキャラクターの対話を通して、社会的規範、抑圧、個人性を扱う完成済みのビジュアルノベル。",
       "medium": "ビジュアルノベル、Ren'Py、Procreate",
-      "status": "開発中",
+      "status": "完成済み",
       "body": [
-        "旧サイトでは、EMIDA_THE_DOCTOR? はRen'PyとProcreateを用いた、1920 × 1080の開発中ビジュアルノベルとして記録されています。",
+        "EMIDA_THE_DOCTOR? はRen'PyとProcreateで制作した、1920 × 1080の完成済みビジュアルノベルです。",
         "プレイヤーとキャラクターの対話を通して、高圧的な社会における規範と抑圧を体験し、「個人性」が変わり得るのかを選択によって問いかけます。"
       ]
     }

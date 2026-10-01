@@ -8,14 +8,22 @@
   --ciba-night: #090a08;
   --ciba-paper: #f4f0dd;
   --ciba-acid: #c6ff00;
-  --ciba-rule: rgba(244, 240, 221, 0.42);
+  /* Flat reading surfaces derived from the existing paper / night palette. */
+  --ciba-surface: color-mix(in srgb, var(--ciba-paper) 3%, var(--ciba-night));
+  --ciba-surface-raised: color-mix(in srgb, var(--ciba-paper) 4%, var(--ciba-night));
+  --ciba-rule: rgba(244, 240, 221, 0.26);
   --ciba-rule-soft: rgba(244, 240, 221, 0.14);
+  --ciba-signal-rule: rgba(198, 255, 0, 0.6);
   --ciba-muted-soft: rgba(244, 240, 221, 0.68);
   --ciba-muted: rgba(244, 240, 221, 0.72);
   --ciba-caption: rgba(244, 240, 221, 0.86);
   --ciba-header-height: 64px;
-  --ciba-sans: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-  --ciba-mono: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
+  --ciba-sans: "Noto Sans SC Variable", "Noto Sans SC", sans-serif;
+  --ciba-mono: var(--ciba-sans);
+}
+
+html:lang(ja) {
+  --ciba-sans: "Noto Sans JP Variable", "Noto Sans JP", sans-serif;
 }
 
 html {
@@ -36,6 +44,13 @@ body.ciba-v3 [id] {
 body.ciba-v3,
 body.ciba-v3.project-page,
 body.ciba-v3.wake-page {
+  --font-body: var(--ciba-sans);
+  --font-ui: var(--ciba-sans);
+  --font-mono: var(--ciba-sans);
+  --art-font-display: var(--ciba-sans);
+  --art-font-editorial: var(--ciba-sans);
+  --art-font-ui: var(--ciba-sans);
+  --art-font-mono: var(--ciba-sans);
   --bg: var(--ciba-night);
   --fg: var(--ciba-paper);
   --muted: var(--ciba-paper);
@@ -65,11 +80,7 @@ body.ciba-v3 :focus-visible {
 }
 
 body.ciba-v3 .ambient-grid {
-  background-image:
-    linear-gradient(var(--ciba-rule-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--ciba-rule-soft) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(180deg, black, transparent 88%);
+  background-image: none;
 }
 
 body.ciba-v3 .site-header,
@@ -135,7 +146,8 @@ body.ciba-v3 .site-nav a:hover,
 body.ciba-v3 .site-nav a[aria-current="page"],
 body.ciba-v3 .language-link:hover,
 body.ciba-v3 .language-link.is-active {
-  border-color: var(--ciba-acid);
+  border-color: transparent;
+  border-bottom-color: var(--ciba-acid);
   color: var(--ciba-paper);
 }
 
@@ -255,7 +267,7 @@ body.ciba-v3 .site-footer a:hover {
 }
 
 .v3-home-hero__role {
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -270,9 +282,10 @@ body.ciba-v3 .site-footer a:hover {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.7rem 0.9rem;
-  border: 1px solid var(--ciba-acid);
-  background: var(--ciba-acid);
-  color: var(--ciba-night);
+  border: 1px solid transparent;
+  border-bottom-color: var(--ciba-rule-soft);
+  background: transparent;
+  color: var(--ciba-paper);
   font-family: var(--ciba-mono);
   font-size: 0.75rem;
   font-weight: 750;
@@ -283,7 +296,14 @@ body.ciba-v3 .site-footer a:hover {
 .v3-action-link:hover,
 .v3-cinema-layer__open:hover,
 .v3-work-window__open:hover {
-  background: var(--ciba-night);
+  border-bottom-color: var(--ciba-acid);
+  background: var(--ciba-surface-raised);
+  color: var(--ciba-acid);
+}
+
+.v3-action-link > span:last-child,
+.v3-cinema-layer__open > span:last-child,
+.v3-work-window__open > span:last-child {
   color: var(--ciba-acid);
 }
 
@@ -297,8 +317,8 @@ body.ciba-v3 .site-footer a:hover {
   grid-template-rows: auto 1fr auto;
   justify-items: center;
   padding: 0.8rem 0;
-  background: var(--ciba-acid);
-  color: var(--ciba-night);
+  background: transparent;
+  color: var(--ciba-acid);
   font-family: var(--ciba-mono);
   font-size: 0.68rem;
   font-weight: 800;
@@ -309,7 +329,7 @@ body.ciba-v3 .site-footer a:hover {
   width: 1px;
   height: 100%;
   grid-row: 2;
-  background: var(--ciba-night);
+  background: var(--ciba-rule);
 }
 
 .v3-section-heading {
@@ -324,7 +344,7 @@ body.ciba-v3 .site-footer a:hover {
 
 .v3-section-heading > p {
   margin: 0.35rem 0 0;
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -502,7 +522,7 @@ html:lang(zh) .v3-cinema-layer__title {
   filter: grayscale(1) contrast(1.08);
   opacity: 0.1;
   pointer-events: auto;
-  transform: translate3d(var(--drag-x, 0), var(--drag-y, 0), 0) rotate(var(--media-r));
+  transform: translate3d(var(--drag-x, 0), var(--drag-y, 0), 0);
   transform-origin: center;
   transition:
     filter var(--art-motion-state, 260ms) ease,
@@ -559,7 +579,7 @@ html:lang(zh) .v3-cinema-layer__title {
   z-index: 31;
   width: min(31rem, calc(100% - 2rem));
   padding: 0.85rem 0;
-  border-top: 1px solid var(--ciba-acid);
+  border-top: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
 }
 
@@ -569,7 +589,7 @@ html:lang(zh) .v3-cinema-layer__title {
 
 .v3-cinema-layer__concept p:first-child {
   margin-bottom: 0.45rem;
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -634,8 +654,12 @@ html:lang(zh) .v3-cinema-layer__title {
 }
 
 .v3-home-index__list a:hover {
-  background: var(--ciba-acid);
-  color: var(--ciba-night);
+  background: var(--ciba-surface-raised);
+  color: var(--ciba-paper);
+}
+
+.v3-home-index__list a:hover strong {
+  color: var(--ciba-acid);
 }
 
 .v3-home-index__list strong {
@@ -644,7 +668,7 @@ html:lang(zh) .v3-cinema-layer__title {
   font-weight: 750;
 }
 
-/* WORKS — large, unmistakable computer windows. */
+/* WORKS — existing spatial windows with a quiet, flat reading surface. */
 
 body.ciba-v3.ciba-works-v3 {
   background: var(--ciba-night);
@@ -667,7 +691,7 @@ body.ciba-v3.ciba-works-v3 {
 
 .v3-works-intro > div:first-child > p,
 .v3-works-intro__hint {
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-family: var(--ciba-mono);
   font-size: 0.68rem;
   font-weight: 700;
@@ -716,9 +740,10 @@ html:lang(zh) .v3-works-intro h1 {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  margin-bottom: 1rem;
-  padding: 0.45rem;
-  border: 1px solid var(--ciba-rule);
+  margin-bottom: 1.5rem;
+  padding: 0.45rem 0;
+  border: 1px solid transparent;
+  border-bottom-color: var(--ciba-rule-soft);
   background: var(--ciba-night);
   font-family: var(--ciba-mono);
 }
@@ -736,7 +761,7 @@ html:lang(zh) .v3-works-intro h1 {
 .v3-workspace-dock button {
   min-height: 44px;
   padding: 0.6rem 0.8rem;
-  border: 1px solid var(--ciba-rule);
+  border: 1px solid transparent;
   border-radius: 0;
   background: var(--ciba-night);
   color: var(--ciba-paper);
@@ -751,15 +776,15 @@ html:lang(zh) .v3-works-intro h1 {
 .v3-workspace-toolbar button[aria-pressed="true"],
 .v3-workspace-dock button:hover,
 .v3-workspace-dock button[aria-pressed="false"] {
-  border-color: var(--ciba-acid);
-  background: var(--ciba-acid);
-  color: var(--ciba-night);
+  border-bottom-color: var(--ciba-acid);
+  background: var(--ciba-night);
+  color: var(--ciba-acid);
 }
 
 .v3-workspace-status {
   min-width: 8rem;
   margin: 0;
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-size: 0.67rem;
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -769,12 +794,8 @@ html:lang(zh) .v3-works-intro h1 {
   position: relative;
   min-height: var(--workspace-height, 760px);
   overflow: hidden;
-  border: 1px solid var(--ciba-rule);
-  background:
-    linear-gradient(var(--ciba-rule-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--ciba-rule-soft) 1px, transparent 1px),
-    var(--ciba-night);
-  background-size: 56px 56px;
+  border: 1px solid transparent;
+  background: var(--ciba-night);
   isolation: isolate;
 }
 
@@ -796,11 +817,11 @@ html:lang(zh) .v3-works-intro h1 {
   z-index: var(--window-z);
   width: min(var(--window-width), calc(100% - 2rem));
   overflow: hidden;
-  border: 2px solid var(--ciba-paper);
-  background: var(--ciba-night);
+  border: 1px solid var(--ciba-rule);
+  background: var(--ciba-surface);
   color: var(--ciba-paper);
-  box-shadow: 12px 12px 0 var(--ciba-acid);
-  transform: translate3d(var(--window-dx, 0px), var(--window-dy, 0px), 0) rotate(var(--window-rotation));
+  box-shadow: none;
+  transform: translate3d(var(--window-dx, 0px), var(--window-dy, 0px), 0);
   transform-origin: center;
   transition:
     box-shadow var(--art-motion-micro, 180ms) ease,
@@ -814,17 +835,17 @@ html:lang(zh) .v3-works-intro h1 {
 }
 
 .v3-work-window.is-active-window {
-  border-color: var(--ciba-acid);
-  box-shadow: 14px 14px 0 var(--ciba-paper);
+  border-color: var(--ciba-signal-rule);
+  box-shadow: none;
 }
 
 .v3-work-window__bar {
   display: grid;
   min-height: 46px;
   grid-template-columns: minmax(0, 1fr) 46px 46px;
-  border-bottom: 2px solid var(--ciba-paper);
-  background: var(--ciba-acid);
-  color: var(--ciba-night);
+  border-bottom: 1px solid var(--ciba-rule-soft);
+  background: var(--ciba-surface);
+  color: var(--ciba-paper);
   font-family: var(--ciba-mono);
 }
 
@@ -836,7 +857,7 @@ html:lang(zh) .v3-works-intro h1 {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: var(--ciba-night);
+  color: var(--ciba-paper);
   font: inherit;
 }
 
@@ -861,13 +882,18 @@ html:lang(zh) .v3-works-intro h1 {
 
 .v3-window-mark {
   font-size: 0.7rem;
+  color: var(--ciba-caption);
+}
+
+.v3-work-window.is-active-window .v3-window-mark {
+  color: var(--ciba-acid);
 }
 
 .v3-work-window__control,
 .v3-work-window__close {
   display: grid;
   place-items: center;
-  border-left: 2px solid var(--ciba-night);
+  border-left: 1px solid transparent;
   font-size: 1.35rem;
   font-weight: 900;
 }
@@ -931,7 +957,7 @@ html:lang(zh) .v3-works-intro h1 {
 }
 
 .v3-work-window__record dt {
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   text-transform: uppercase;
 }
 
@@ -945,7 +971,7 @@ html:lang(zh) .v3-works-intro h1 {
 
 .v3-work-window__concept p:first-child {
   margin-bottom: 0.25rem;
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-family: var(--ciba-mono);
   font-size: 0.58rem;
   font-weight: 750;
@@ -1028,9 +1054,14 @@ html:lang(zh) body.ciba-v3.project-page:not(.wake-page) .project-hero h1 {
   letter-spacing: 0;
 }
 
+html:lang(ja) body.ciba-v3.project-page:not(.wake-page) .project-hero h1,
+html:lang(zh) body.ciba-v3.project-page:not(.wake-page) .project-hero h1 {
+  line-height: 1;
+}
+
 body.ciba-v3.project-page:not(.wake-page) .eyebrow,
 body.ciba-v3.about-page .eyebrow {
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
   font-family: var(--ciba-mono);
 }
 
@@ -1049,7 +1080,7 @@ body.ciba-v3.about-page .about-cv li {
 }
 
 body.ciba-v3.project-page:not(.wake-page) .project-meta dt {
-  color: var(--ciba-acid);
+  color: var(--ciba-caption);
 }
 
 body.ciba-v3.project-page:not(.wake-page) .project-media img {
@@ -1067,20 +1098,21 @@ body.ciba-v3.project-page:not(.wake-page) .project-media:focus-within img {
 
 body.ciba-v3.project-page:not(.wake-page) .project-text {
   max-width: 68rem;
-  border-color: var(--ciba-acid);
+  border-color: var(--ciba-rule);
 }
 
 body.ciba-v3.project-page:not(.wake-page) .button,
 body.ciba-v3.about-page .button {
-  border-color: var(--ciba-acid);
+  border-color: var(--ciba-rule);
   border-radius: 0;
-  background: var(--ciba-acid);
-  color: var(--ciba-night);
+  background: var(--ciba-surface);
+  color: var(--ciba-paper);
 }
 
 body.ciba-v3.project-page:not(.wake-page) .button:hover,
 body.ciba-v3.about-page .button:hover {
-  background: var(--ciba-night);
+  border-color: var(--ciba-acid);
+  background: var(--ciba-surface-raised);
   color: var(--ciba-acid);
 }
 
@@ -1143,6 +1175,11 @@ body.ciba-v3 .wake-record-intro__record > a {
   color: var(--ciba-acid);
 }
 
+body.ciba-v3 .wake-record-intro__eyebrow,
+body.ciba-v3 .wake-record-intro dt {
+  color: var(--ciba-caption);
+}
+
 body.ciba-v3 .wake-back {
   position: fixed;
   top: calc(var(--ciba-header-height) + 0.75rem);
@@ -1174,6 +1211,10 @@ body.ciba-v3 .wake-record-intro h1 {
   font-family: var(--ciba-sans);
 }
 
+body.ciba-v3 .wake-record-intro__grid > div {
+  min-width: 0;
+}
+
 body.ciba-v3 .wake-record-intro__summary,
 body.ciba-v3 .wake-record-intro__record,
 body.ciba-v3 .wake-record-intro__descriptions {
@@ -1199,6 +1240,10 @@ body.ciba-v3 .wake-kicker {
 }
 
 @media (max-width: 899px) {
+  body.ciba-v3 .wake-record-intro {
+    padding-top: 4.5rem;
+  }
+
   :root {
     --ciba-header-height: 62px;
   }
@@ -1425,7 +1470,7 @@ body.ciba-v3 .wake-kicker {
     top: auto;
     left: auto;
     width: 100%;
-    box-shadow: 6px 6px 0 var(--ciba-acid);
+    box-shadow: none;
     transform: none !important;
   }
 

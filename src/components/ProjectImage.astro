@@ -27,6 +27,8 @@ const {
 const { width, height } = await getPublicImageMetadata(media.src);
 const localized = getLocalizedMedia(media, lang);
 const wakeAttribute = wake ? { "data-wake-image": "" } : {};
+// Local Figma exports need every image ready; published pages retain lazy loading.
+const loadImmediately = eager || import.meta.env.DEV;
 ---
 
 <img
@@ -37,7 +39,7 @@ const wakeAttribute = wake ? { "data-wake-image": "" } : {};
   height={height}
   sizes={sizes}
   srcset={srcset}
-  loading={eager ? "eager" : "lazy"}
+  loading={loadImmediately ? "eager" : "lazy"}
   fetchpriority={eager ? "high" : undefined}
   decoding="async"
   aria-hidden={decorative ? "true" : undefined}

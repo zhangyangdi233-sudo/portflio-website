@@ -13,10 +13,10 @@
     "rule": "#f4f0dd"
   },
   "typography": {
-    "display": "Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP, sans-serif",
-    "editorial": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
-    "ui": "Helvetica Neue, Arial, Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif",
-    "mono": "SFMono-Regular, Menlo, Consolas, Noto Sans Mono CJK JP, monospace"
+    "display": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+    "editorial": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+    "ui": "Noto Sans SC Variable, Noto Sans SC, sans-serif",
+    "mono": "Noto Sans SC Variable, Noto Sans SC, sans-serif"
   },
   "motion": {
     "microMs": 180,

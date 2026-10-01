@@ -26,3 +26,20 @@ docs/design-references/final-works-mobile.png
 figma-export/sync/latest.json
 figma-export/sync/previous.json
 figma-export/sync/history/
+
+# Figma revision build outputs and local registration workspace.
+# Source files, DOM snapshots, delivery metadata, and the compact verification
+# summary remain versioned so the editable handoff can be rebuilt.
+figma-export/revision-plugin/code.js
+figma-export/revision-plugin/ui.html
+figma-export/revision-plugin/view-data.json
+figma-export/revision-plugin/CIBA-Swiss-Revision-Plugin.zip
+figma-export/revision-plugin/registration/
+figma-export/sync/runtime-logs/*
+!figma-export/sync/runtime-logs/delivery-verification.json
+figma-export/sync/*.generated.js
+figma-export/sync/about-*-result.json
+figma-export/sync/capture-dimensions-*.json
+figma-export/sync/capture-tabs.json
+figma-export/sync/supplemental-captures.json
+figma-export/sync/supplemental-tabs.json

@@ -15,7 +15,7 @@ const media = (name: string): ProjectMedia =>
 const bedAlarm = media("bed-alarm");
 const floodedTitle = media("flooded-title");
 const displayedMedia = [bedAlarm, floodedTitle];
-const titleWords = lang === "en" ? localized.title.trim().split(/\s+/) : [localized.title.trim()];
+const titleWords = localized.title.trim().split(/\s+/);
 const localizedTags = getLocalizedStringList(project.tags, lang);
 const localizedDetails = project.details ? {
   role: getLocalizedString(project.details.role, lang),

@@ -2,7 +2,10 @@
   --coursework-night: var(--ciba-night, #090a08);
   --coursework-paper: var(--ciba-paper, #f4f0dd);
   --coursework-acid: var(--ciba-acid, #c6ff00);
-  --coursework-rule: var(--ciba-rule, rgba(244, 240, 221, 0.42));
+  /* Related planes and quiet rules keep the movable windows legible and flat. */
+  --coursework-surface: var(--ciba-surface, color-mix(in srgb, var(--coursework-paper) 3%, var(--coursework-night)));
+  --coursework-window-rule: rgba(244, 240, 221, 0.22);
+  --coursework-rule: var(--ciba-rule, rgba(244, 240, 221, 0.26));
   --coursework-rule-soft: var(--ciba-rule-soft, rgba(244, 240, 221, 0.14));
   --coursework-muted-soft: var(--ciba-muted-soft, rgba(244, 240, 221, 0.68));
   --coursework-muted: var(--ciba-muted, rgba(244, 240, 221, 0.72));
@@ -98,7 +101,7 @@
   gap: 0.75rem;
   align-items: center;
   padding: 0.6rem 0.8rem;
-  border-right: 1px solid var(--coursework-rule);
+  border-right: 1px solid var(--coursework-rule-soft);
 }
 
 .coursework-record__meta > div:last-child {
@@ -111,7 +114,7 @@
 
 .coursework-record__meta dd {
   margin: 0;
-  color: var(--coursework-acid);
+  color: var(--coursework-paper);
   font-weight: 700;
 }
 
@@ -158,7 +161,7 @@
 }
 
 .coursework-index__number {
-  color: var(--coursework-acid);
+  color: var(--coursework-caption);
 }
 
 .coursework-index__count {
@@ -173,8 +176,10 @@
 
 .coursework-section {
   min-width: 0;
-  border: 1px solid var(--coursework-rule);
-  background: var(--coursework-night);
+  border: 1px solid transparent;
+  border-top-color: var(--coursework-rule);
+  border-bottom-color: var(--coursework-rule);
+  background: var(--coursework-surface);
 }
 
 .coursework-section__bar {
@@ -182,7 +187,8 @@
   min-height: 58px;
   grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: stretch;
-  border-bottom: 1px solid var(--coursework-rule);
+  border-bottom: 1px solid var(--coursework-rule-soft);
+  background: var(--coursework-surface);
 }
 
 .coursework-section__number,
@@ -201,8 +207,8 @@
 }
 
 .coursework-section__number {
-  border-right: 1px solid var(--coursework-rule);
-  color: var(--coursework-acid);
+  border-right: 1px solid transparent;
+  color: var(--coursework-caption);
   font-weight: 700;
 }
 
@@ -225,7 +231,7 @@
 }
 
 .coursework-section__count {
-  border-left: 1px solid var(--coursework-rule);
+  border-left: 1px solid transparent;
   color: var(--coursework-muted);
 }
 
@@ -234,24 +240,24 @@
   min-height: 44px;
   padding: 0.75rem 1rem;
   border: 0;
-  border-left: 1px solid var(--coursework-rule);
+  border-left: 1px solid var(--coursework-rule-soft);
   border-radius: 0;
-  background: var(--coursework-night);
+  background: var(--coursework-surface);
   color: var(--coursework-paper);
   cursor: pointer;
 }
 
 .coursework-section__reset:hover,
 .coursework-section__reset:focus-visible {
-  background: var(--coursework-acid);
-  color: var(--coursework-night);
+  background: var(--coursework-surface);
+  color: var(--coursework-acid);
 }
 
 .coursework-section__description {
   max-width: 78ch;
   margin: 0;
   padding: clamp(1rem, 2vw, 1.5rem);
-  border-bottom: 1px solid var(--coursework-rule);
+  border-bottom: 1px solid var(--coursework-rule-soft);
   color: var(--coursework-muted);
   font-size: clamp(0.82rem, 1vw, 0.96rem);
   line-height: 1.62;
@@ -267,8 +273,8 @@
 .coursework-media-window {
   min-width: 0;
   margin: 0;
-  border: 1px solid var(--coursework-paper);
-  background: var(--coursework-night);
+  border: 1px solid var(--coursework-window-rule);
+  background: var(--coursework-surface);
   color: var(--coursework-paper);
   transition:
     border-color 180ms ease-out,
@@ -276,13 +282,13 @@
 }
 
 .coursework-media-window.is-active-window {
-  border-color: var(--coursework-acid);
+  border-color: color-mix(in srgb, var(--coursework-acid) 58%, transparent);
 }
 
 .coursework-media-window__bar {
   min-height: 44px;
-  border-bottom: 1px solid var(--coursework-rule);
-  background: var(--coursework-night);
+  border-bottom: 1px solid var(--coursework-rule-soft);
+  background: var(--coursework-surface);
 }
 
 .coursework-media-window__handle {
@@ -295,7 +301,7 @@
   padding: 0.55rem 0.7rem;
   border: 0;
   border-radius: 0;
-  background: var(--coursework-night);
+  background: var(--coursework-surface);
   color: var(--coursework-paper);
   font-family: var(--ciba-mono, ui-monospace, monospace);
   font-size: 0.68rem;
@@ -334,7 +340,7 @@
 }
 
 .coursework-media-window__code {
-  color: var(--coursework-acid);
+  color: var(--coursework-caption);
   font-weight: 700;
 }
 
@@ -378,14 +384,15 @@
   gap: 0.8rem;
   align-items: start;
   padding: 0.72rem;
-  border-top: 1px solid var(--coursework-rule);
+  border-top: 1px solid var(--coursework-rule-soft);
+  background: var(--coursework-surface);
   color: var(--coursework-caption);
   font-size: clamp(0.72rem, 0.82vw, 0.8rem);
   line-height: 1.45;
 }
 
 .coursework-media-window figcaption > span:first-child {
-  color: var(--coursework-acid);
+  color: var(--coursework-caption);
   font-family: var(--ciba-mono, ui-monospace, monospace);
   font-weight: 700;
 }
@@ -408,7 +415,7 @@
 }
 
 .coursework-record-note h2 {
-  color: var(--coursework-acid);
+  color: var(--coursework-caption);
   font-family: var(--ciba-mono, ui-monospace, monospace);
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -448,8 +455,8 @@
 
 .coursework-next a:hover,
 .coursework-next a:focus-visible {
-  background: var(--coursework-acid);
-  color: var(--coursework-night);
+  background: var(--coursework-surface);
+  color: var(--coursework-acid);
 }
 
 [data-coursework-layout="static"] .coursework-stage {
@@ -504,7 +511,7 @@
 
 .coursework-desktop:lang(zh) .coursework-record h1,
 .coursework-desktop:lang(ja) .coursework-record h1 {
-  font-family: "Hiragino Sans", "Yu Gothic", "PingFang SC", "Noto Sans CJK JP", "Noto Sans CJK SC", sans-serif;
+  font-family: var(--ciba-sans);
   font-size: clamp(3.1rem, 7.2vw, 7rem);
   font-weight: 760;
   letter-spacing: 0;
@@ -575,7 +582,7 @@ html[data-motion="reduce"] .coursework-media-window {
   }
 
   .coursework-section__count {
-    border-left: 1px solid var(--coursework-rule);
+    border-left: 1px solid transparent;
   }
 
   .coursework-section__reset {

@@ -27,9 +27,9 @@
         "ja": "机、ベッド、棚、アシッドグリーンの照明を備えたアイソメトリックなピクセル調の部屋"
       },
       "caption": {
-        "zh": "X.WHEEL 项目仓库中的 EMI 房间素材预览。",
-        "en": "EMI room asset preview from the X.WHEEL project repository.",
-        "ja": "X.WHEELのプロジェクト・リポジトリにあるEMIルームのアセット・プレビュー。"
+        "zh": "APHASIA 项目仓库中的 EMI 房间素材预览。",
+        "en": "EMI room asset preview from the APHASIA project repository.",
+        "ja": "APHASIAのプロジェクト・リポジトリにあるEMIルームのアセット・プレビュー。"
       }
     },
     {
@@ -64,9 +64,9 @@
       "type": "image",
       "src": "/assets/projects/x-wheel/poster.png",
       "alt": {
-        "zh": "X.WHEEL 素材库中的等距像素风海报物件",
-        "en": "Isometric pixel-art poster object from the X.WHEEL asset library",
-        "ja": "X.WHEELのアセット・ライブラリにあるアイソメトリックなピクセル調ポスター"
+        "zh": "APHASIA 素材库中的等距像素风海报物件",
+        "en": "Isometric pixel-art poster object from the APHASIA asset library",
+        "ja": "APHASIAのアセット・ライブラリにあるアイソメトリックなピクセル調ポスター"
       },
       "caption": {
         "zh": "海报物件预览。",
@@ -84,9 +84,9 @@
         "ja": "黒い画面の左側に、淡い緑と緑の線で描かれた長髪の人物の全身像"
       },
       "caption": {
-        "zh": "X.WHEEL 角色全身造型稿。",
-        "en": "X.WHEEL full-length character study.",
-        "ja": "X.WHEELのキャラクター全身造形スタディ。"
+        "zh": "APHASIA 角色全身造型稿。",
+        "en": "APHASIA full-length character study.",
+        "ja": "APHASIAのキャラクター全身造形スタディ。"
       }
     },
     {
@@ -204,27 +204,27 @@
   },
   "i18n": {
     "zh": {
-      "title": "X.WHEEL",
+      "title": "APHASIA / 失语症",
       "summary": "一件正在开发的 Godot 游戏；当前记录展示其空间、物件、角色、字形与界面等视觉研究。",
       "medium": "Godot 游戏原型、3D 素材与界面研究",
       "status": "开发中",
       "body": [
-        "X.WHEEL 的公开仓库包含 Godot 场景、脚本、着色器、声音与三维素材。本记录结合仓库中的资产预览与艺术家本次提供的角色、字形、信号图形和界面图像，作为当前可验证的制作证据。",
+        "APHASIA 的公开仓库包含 Godot 场景、脚本、着色器、声音与三维素材。本记录结合仓库中的资产预览与艺术家本次提供的角色、字形、信号图形和界面图像，作为当前可验证的制作证据。",
         "尚未由艺术家确认的剧情、完整玩法与展映规格不会在本页中臆测；后续可直接在内容文件中补充试玩链接与最终项目说明。"
       ]
     },
     "en": {
-      "title": "X.WHEEL",
+      "title": "APHASIA",
       "summary": "A Godot game in development, documented through spatial, object, character, letterform, and interface studies.",
       "medium": "Godot game prototype, 3D asset and interface study",
       "status": "In development",
       "body": [
-        "The public X.WHEEL repository contains Godot scenes, scripts, shaders, audio, and 3D assets. This record combines repository asset previews with the artist-supplied character, letterform, signal graphic, and interface images as its current verifiable production evidence.",
+        "The public APHASIA repository contains Godot scenes, scripts, shaders, audio, and 3D assets. This record combines repository asset previews with the artist-supplied character, letterform, signal graphic, and interface images as its current verifiable production evidence.",
         "Story, complete gameplay, and exhibition specifications remain intentionally unstated until the artist confirms them; a playable build and final project text can be added directly to the content file later."
       ]
     },
     "ja": {
-      "title": "X.WHEEL",
+      "title": "APHASIA / 失語症",
       "summary": "Godotで開発中のゲーム。空間、オブジェクト、キャラクター、字形、インターフェースの視覚研究を制作記録として公開しています。",
       "medium": "Godotゲームプロトタイプ、3Dアセット、インターフェース研究",
       "status": "開発中",
