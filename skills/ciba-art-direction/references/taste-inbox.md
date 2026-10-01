@@ -121,3 +121,18 @@ project reasoning, not a confirmed personal-preference rule.
 - Exact feedback:
 
 > 我希望鼠标hover时变换背景颜色为肩头的颜色 hover时箭头颜色变为黑色；同样hover时背景颜色变化并且箭头颜色变化
+
+## TASTE-20261001T165157874586Z-3c49e6eb
+
+- Captured: 2026-10-01 UTC
+- Context: 2026-10-02 已发布中文首页：主行动、简介段落、标题垂直定位、角色文案顺序与作品提示安全边界复查
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 太小了我希望是和网页的宽是一样长的
+> 字体太紧凑了并且最后一行出现了空白 我希望尽量保证文本属于一个长方形的整齐度
+> 简介二字偏上了往下移动 在上下两条白色细线距离的中间位置
+> 这个在向下滑动了解作品的上面
+> 超出出血线了
+> 我需要你将所有这些文本 遵循设计的基本原则 保证不超出出血线 并且对齐 相互之间的距离是可测量的 这些需要你先搜索一下设计的基本原则

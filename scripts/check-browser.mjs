@@ -321,6 +321,102 @@ async function auditHome(baseUrl) {
   );
   record("Home desktop", { desktop, homeInteraction, heroActionHover, projectActionHover });
 
+  const safeGridEvidence = [];
+  for (const lang of languages) {
+    await navigate(baseUrl, `/${lang}/`, 1100, 712);
+    const geometry = await evaluate(`(() => {
+      const action = document.querySelector(".v3-home-hero .v3-action-link");
+      const role = document.querySelector(".v3-home-hero__role");
+      const section = document.querySelector(".v3-section-heading");
+      const title = document.querySelector(".v3-section-heading h2");
+      const note = document.querySelector(".v3-section-heading > p:last-child");
+      const hint = document.querySelector(".v3-cinema__hint");
+      if (![action, role, section, title, note, hint].every((item) => item instanceof HTMLElement)) return null;
+      const rect = (element) => {
+        const box = element.getBoundingClientRect();
+        return { left: box.left, right: box.right, top: box.top, bottom: box.bottom, width: box.width, height: box.height };
+      };
+      const lineWidths = (element) => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const lines = new Map();
+        for (const box of range.getClientRects()) {
+          if (box.width <= 0 || box.height <= 0) continue;
+          const key = Math.round(box.top * 2) / 2;
+          const current = lines.get(key) ?? { left: box.left, right: box.right };
+          current.left = Math.min(current.left, box.left);
+          current.right = Math.max(current.right, box.right);
+          lines.set(key, current);
+        }
+        return Array.from(lines.entries()).sort(([a], [b]) => a - b).map(([, line]) => line.right - line.left);
+      };
+      const rootStyle = getComputedStyle(document.documentElement);
+      const gutterValue = rootStyle.getPropertyValue("--ciba-page-gutter").trim();
+      const gutter = gutterValue.endsWith("rem")
+        ? Number.parseFloat(gutterValue) * Number.parseFloat(rootStyle.fontSize)
+        : Number.parseFloat(gutterValue);
+      const actionRect = rect(action);
+      const roleRect = rect(role);
+      const sectionRect = rect(section);
+      const titleRect = rect(title);
+      const noteRect = rect(note);
+      const hintRect = rect(hint);
+      const widths = lineWidths(note);
+      return {
+        viewport: innerWidth,
+        gutter,
+        safeLeft: gutter,
+        safeRight: innerWidth - gutter,
+        action: actionRect,
+        role: roleRect,
+        roleActionGap: actionRect.top - roleRect.bottom,
+        section: sectionRect,
+        title: titleRect,
+        titleCenterDelta: (titleRect.top + titleRect.height / 2) - (sectionRect.top + sectionRect.height / 2),
+        note: noteRect,
+        noteLineWidths: widths,
+        finalLineRatio: widths.length ? widths.at(-1) / Math.max(...widths) : 0,
+        hint: hintRect,
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
+      };
+    })()`);
+    invariant(
+      geometry
+        && Math.abs(geometry.action.left - geometry.safeLeft) <= 1
+        && Math.abs(geometry.action.right - geometry.safeRight) <= 1,
+      "Home action does not span the shared safe grid.",
+      { lang, geometry }
+    );
+    invariant(
+      geometry.role.bottom <= geometry.action.top && Math.abs(geometry.roleActionGap - 16) <= 1,
+      "Home role is not placed 16px above the action.",
+      { lang, geometry }
+    );
+    invariant(
+      Math.abs(geometry.titleCenterDelta) <= 2,
+      "Home introduction title is not vertically centered.",
+      { lang, geometry }
+    );
+    invariant(
+      geometry.note.left >= geometry.safeLeft - 1 && geometry.note.right <= geometry.safeRight + 1,
+      "Home supporting text crossed the shared safe grid.",
+      { lang, geometry }
+    );
+    invariant(
+      geometry.noteLineWidths.length > 1 && geometry.finalLineRatio >= 0.45,
+      "Home supporting text has a short orphaned final line.",
+      { lang, geometry }
+    );
+    invariant(
+      geometry.hint.left >= geometry.safeLeft - 1 && geometry.hint.right <= geometry.safeRight + 1,
+      "Home instruction text crossed the shared safe grid.",
+      { lang, geometry }
+    );
+    invariant(geometry.overflow <= 1, "Home safe-grid changes introduced horizontal overflow.", { lang, geometry });
+    safeGridEvidence.push({ lang, geometry });
+  }
+  record("Home multilingual safe-grid geometry", safeGridEvidence);
+
   await navigate(baseUrl, "/en/", 390, 844);
   const mobileOpacity = await evaluate(`(() => ${JSON.stringify(expectedXWheelSources)}.map((src) => {
     const frame = document.querySelector(\`img[src$="\${src}"]\`)?.closest("[data-v3-floating-media]");

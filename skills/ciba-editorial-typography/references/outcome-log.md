@@ -106,3 +106,18 @@ implementation guidance, but they do not become personal taste without explicit 
   built-site contracts, and eight real-browser evidence groups.
 - `TYPE-20261001T161241136283Z-9db944cd` remains pending and was not promoted without explicit
   artist confirmation.
+
+## 2026-10-02 — Balanced multilingual Home introduction
+
+- The introduction deck now uses a 12-column desktop grid, a `30ic` maximum line length,
+  16–18px type, 1.6 line-height, and balanced wrapping. Chinese and Japanese retain strict
+  punctuation-aware line breaking with normal word-break behavior.
+- At 1100px, real Chrome measured Chinese line widths of `379.7 / 414.3 / 400px` (final-line ratio
+  0.966), English at `417.5 / 407.1 / 387.2 / 406.3px` (0.973), and Japanese at
+  `358.3 / 387.5 / 381.5 / 381.3px` (0.984). Each final line therefore substantially exceeds the
+  0.45 anti-orphan acceptance threshold.
+- The artist line and primary action are direct siblings, making the requested reading order
+  structural rather than dependent on absolute positioning. All three languages retain zero
+  horizontal overflow at 320px and 390px.
+- `TYPE-20261001T165157903322Z-fddc8ad5` remains pending and was not promoted without explicit
+  artist confirmation.

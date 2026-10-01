@@ -109,6 +109,20 @@ describe("delivery guardrails", () => {
     );
   });
 
+  it("keeps Home text on one measurable responsive safe grid", () => {
+    const css = read("src/styles/ciba-v3.css");
+    const home = read("src/pages/[lang]/index.astro");
+
+    expect(css).toContain("--ciba-page-gutter: 1rem");
+    expect(css).toMatch(/@media \(min-width: 640px\)[\s\S]*?--ciba-page-gutter: 1\.5rem/);
+    expect(css).toMatch(/@media \(min-width: 1024px\)[\s\S]*?--ciba-page-gutter: 2rem/);
+    expect(css).toMatch(/\.v3-home-hero \.v3-action-link \{[\s\S]*?inline-size: 100%[\s\S]*?min-height: var\(--ciba-space-8\)/);
+    expect(css).toMatch(/\.v3-section-heading \{[\s\S]*?min-block-size: 12rem[\s\S]*?grid-template-columns: repeat\(12, minmax\(0, 1fr\)\)[\s\S]*?align-items: center/);
+    expect(css).toMatch(/\.v3-section-heading > p:last-child \{[\s\S]*?max-inline-size: min\(100%, 30ic\)[\s\S]*?line-height: 1\.6[\s\S]*?text-wrap: balance/);
+    expect(css).toMatch(/\.v3-cinema__hint \{[\s\S]*?right: var\(--ciba-page-gutter\)[\s\S]*?max-inline-size: min\(25rem/);
+    expect(home).toMatch(/<div class="v3-home-hero__footer">\s*<p class="v3-home-hero__role">[\s\S]*?<a class="v3-action-link"/);
+  });
+
   it("ships a dependency-free real-browser audit for the high-risk delivery paths", () => {
     const packageJson = JSON.parse(read("package.json"));
     const audit = read("scripts/check-browser.mjs");
@@ -121,6 +135,10 @@ describe("delivery guardrails", () => {
     expect(audit).toContain("did not resolve to an acid-green field with black text and arrow on hover.");
     expect(audit).toContain("A Home project medium exceeds three lines at 320px.");
     expect(audit).toContain("Home status visibility does not match the requested per-project omissions.");
+    expect(audit).toContain("Home action does not span the shared safe grid.");
+    expect(audit).toContain("Home introduction title is not vertically centered.");
+    expect(audit).toContain("Home supporting text has a short orphaned final line.");
+    expect(audit).toContain("Home instruction text crossed the shared safe grid.");
     expect(audit).toContain("CJK About heading has non-zero tracking.");
     expect(audit).toContain("Wake Up Latin tracking is not the restrained -0.03em contract.");
     expect(audit).toContain("Coursework media escaped its canonical 10/2/2 grouping.");

@@ -18,8 +18,27 @@
   --ciba-muted: rgba(244, 240, 221, 0.72);
   --ciba-caption: rgba(244, 240, 221, 0.86);
   --ciba-header-height: 64px;
+  --ciba-space-1: 0.5rem;
+  --ciba-space-2: 1rem;
+  --ciba-space-3: 1.5rem;
+  --ciba-space-4: 2rem;
+  --ciba-space-6: 3rem;
+  --ciba-space-8: 4rem;
+  --ciba-page-gutter: 1rem;
   --ciba-sans: "Noto Sans SC Variable", "Noto Sans SC", sans-serif;
   --ciba-mono: var(--ciba-sans);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --ciba-page-gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --ciba-page-gutter: 2rem;
+  }
 }
 
 html:lang(ja) {
@@ -95,7 +114,7 @@ body.ciba-v3.works-workspace-page .site-header {
   min-height: var(--ciba-header-height);
   gap: 1rem;
   align-items: center;
-  padding: 0 clamp(1rem, 2.8vw, 2.5rem);
+  padding: 0 var(--ciba-page-gutter);
   border: 0;
   border-bottom: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
@@ -168,7 +187,7 @@ body.ciba-v3.works-workspace-page .site-footer {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
-  padding: 1.5rem clamp(1rem, 2.8vw, 2.5rem);
+  padding: 1.5rem var(--ciba-page-gutter);
   border-top: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
   color: var(--ciba-paper);
@@ -193,7 +212,7 @@ body.ciba-v3 .site-footer a:hover {
   min-height: calc(100svh - var(--ciba-header-height));
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 1rem;
-  padding: 1.2rem clamp(1rem, 2.8vw, 2.5rem) 1.5rem;
+  padding: 1.2rem var(--ciba-page-gutter) 1.5rem;
   overflow: hidden;
   border-bottom: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
@@ -202,7 +221,7 @@ body.ciba-v3 .site-footer a:hover {
 .v3-home-hero__eyebrow {
   position: absolute;
   top: 1.2rem;
-  left: clamp(1rem, 2.8vw, 2.5rem);
+  left: var(--ciba-page-gutter);
   z-index: 1;
   margin: 0;
   color: var(--ciba-acid);
@@ -274,10 +293,13 @@ body.ciba-v3 .site-footer a:hover {
 
 .v3-home-hero__footer {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 28rem);
-  gap: clamp(2rem, 7vw, 8rem);
-  align-items: end;
-  padding-right: clamp(0rem, 8vw, 8rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ciba-space-2);
+  align-items: stretch;
+}
+
+.v3-home-hero__footer > * {
+  min-inline-size: 0;
 }
 
 .v3-home-hero__role {
@@ -305,6 +327,12 @@ body.ciba-v3 .site-footer a:hover {
   font-weight: 750;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.v3-home-hero .v3-action-link {
+  inline-size: 100%;
+  min-height: var(--ciba-space-8);
+  padding-inline: var(--ciba-space-2);
 }
 
 .v3-work-window__open:hover {
@@ -341,7 +369,7 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
 .v3-home-hero__signal {
   position: absolute;
   top: 25%;
-  right: 0;
+  right: var(--ciba-page-gutter);
   display: grid;
   width: clamp(2.4rem, 4vw, 4rem);
   height: 46%;
@@ -365,16 +393,19 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
 
 .v3-section-heading {
   display: grid;
-  grid-template-columns: minmax(5rem, 0.35fr) minmax(0, 1.6fr) minmax(16rem, 0.65fr);
-  gap: clamp(1rem, 3vw, 3rem);
-  align-items: start;
-  padding: 2rem clamp(1rem, 2.8vw, 2.5rem);
+  min-block-size: 12rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--ciba-space-3);
+  row-gap: var(--ciba-space-2);
+  align-items: center;
+  padding: var(--ciba-space-4) var(--ciba-page-gutter);
   border-bottom: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
 }
 
 .v3-section-heading > p {
-  margin: 0.35rem 0 0;
+  min-inline-size: 0;
+  margin: 0;
   color: var(--ciba-caption);
   font-size: 0.72rem;
   font-weight: 700;
@@ -382,23 +413,36 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
   text-transform: uppercase;
 }
 
+.v3-section-heading > p:first-child {
+  grid-column: 1 / span 2;
+}
+
 .v3-section-heading > p:last-child {
+  grid-column: 8 / -1;
+  inline-size: 100%;
+  max-inline-size: min(100%, 30ic);
+  justify-self: end;
   color: var(--ciba-paper);
   font-family: var(--ciba-sans);
-  font-size: 0.86rem;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 1.5;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
   text-transform: none;
+  text-wrap: balance;
 }
 
 .v3-section-heading h2 {
+  grid-column: 3 / span 5;
+  min-inline-size: 0;
+  align-self: center;
   margin: 0;
   color: var(--ciba-paper);
   font-family: var(--ciba-sans);
   font-size: clamp(2.6rem, 6vw, 6.5rem);
   font-weight: 850;
-  line-height: 0.86;
+  line-height: 0.95;
   letter-spacing: -0.03em;
   text-wrap: balance;
 }
@@ -460,21 +504,24 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
 
 .v3-cinema__hint {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  right: var(--ciba-page-gutter);
+  bottom: var(--ciba-space-2);
   z-index: 45;
-  max-width: 25rem;
+  min-inline-size: 0;
+  max-inline-size: min(25rem, calc(100% - var(--ciba-page-gutter) - var(--ciba-page-gutter)));
   margin: 0;
   color: var(--ciba-paper);
   font-size: 0.65rem;
   letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
+  text-align: end;
   text-transform: uppercase;
 }
 
 .v3-cinema-layer__meta {
   position: absolute;
   top: 1.2rem;
-  left: clamp(1rem, 2.8vw, 2.5rem);
+  left: var(--ciba-page-gutter);
   z-index: 30;
   display: grid;
   width: min(56rem, calc(100% - 6rem));
@@ -509,7 +556,7 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
 .v3-cinema-layer__title {
   position: absolute;
   top: 12%;
-  left: clamp(1rem, 2.8vw, 2.5rem);
+  left: var(--ciba-page-gutter);
   z-index: 30;
   display: flex;
   width: min(94vw, 16ch);
@@ -622,7 +669,7 @@ html:lang(zh) .v3-cinema-layer__title {
 .v3-cinema-layer__concept {
   position: absolute;
   bottom: 2rem;
-  left: clamp(1rem, 2.8vw, 2.5rem);
+  left: var(--ciba-page-gutter);
   z-index: 31;
   width: min(31rem, calc(100% - 2rem));
   padding: 0.85rem 0;
@@ -650,7 +697,7 @@ html:lang(zh) .v3-cinema-layer__title {
 
 .v3-cinema-layer__open {
   position: absolute;
-  right: clamp(1rem, 2.8vw, 2.5rem);
+  right: var(--ciba-page-gutter);
   bottom: 3.1rem;
   z-index: 32;
   width: min(24rem, 34vw);
@@ -658,7 +705,7 @@ html:lang(zh) .v3-cinema-layer__title {
 
 .v3-cinema__counter {
   position: absolute;
-  right: clamp(1rem, 2.8vw, 2.5rem);
+  right: var(--ciba-page-gutter);
   top: 1.25rem;
   z-index: 40;
   display: flex;
@@ -694,7 +741,7 @@ html:lang(zh) .v3-cinema-layer__title {
   grid-template-columns: 4rem minmax(10rem, 1.1fr) 6rem minmax(14rem, 1fr) minmax(8rem, 0.55fr);
   gap: 1rem;
   align-items: center;
-  padding: 0.8rem clamp(1rem, 2.8vw, 2.5rem);
+  padding: 0.8rem var(--ciba-page-gutter);
   border-bottom: 1px solid var(--ciba-rule);
   color: var(--ciba-paper);
   font-size: 0.7rem;
@@ -727,7 +774,7 @@ body.ciba-v3.ciba-works-v3 {
   grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
   gap: clamp(2rem, 8vw, 9rem);
   align-items: end;
-  padding: 2.5rem clamp(1rem, 2.8vw, 2.5rem) 2rem;
+  padding: 2.5rem var(--ciba-page-gutter) 2rem;
   border-bottom: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
 }
@@ -776,7 +823,7 @@ html:lang(zh) .v3-works-intro h1 {
 }
 
 .v3-workspace {
-  padding: 1rem clamp(1rem, 2.8vw, 2.5rem) 2rem;
+  padding: 1rem var(--ciba-page-gutter) 2rem;
   background: var(--ciba-night);
 }
 
@@ -1101,6 +1148,18 @@ html:lang(zh) body.ciba-v3.project-page:not(.wake-page) .project-hero h1 {
   letter-spacing: 0;
 }
 
+html:lang(ja) .v3-section-heading h2,
+html:lang(zh) .v3-section-heading h2 {
+  line-height: 1;
+}
+
+html:lang(ja) .v3-section-heading > p:last-child,
+html:lang(zh) .v3-section-heading > p:last-child {
+  letter-spacing: 0;
+  line-break: strict;
+  word-break: normal;
+}
+
 html:lang(ja) body.ciba-v3.project-page:not(.wake-page) .project-hero h1,
 html:lang(zh) body.ciba-v3.project-page:not(.wake-page) .project-hero h1 {
   line-height: 1;
@@ -1301,7 +1360,7 @@ body.ciba-v3 .wake-kicker {
   body.ciba-v3.works-workspace-page .site-header {
     grid-template-columns: auto 1fr auto;
     gap: 0.35rem;
-    padding: 0 0.65rem;
+    padding: 0 var(--ciba-page-gutter);
   }
 
   body.ciba-v3 main {
@@ -1349,8 +1408,7 @@ body.ciba-v3 .wake-kicker {
   }
 
   .v3-home-hero__footer {
-    gap: 1.25rem;
-    padding-right: 3rem;
+    gap: var(--ciba-space-2);
   }
 
   .v3-home-hero__signal {
@@ -1359,7 +1417,21 @@ body.ciba-v3 .wake-kicker {
   }
 
   .v3-section-heading {
-    gap: 0.65rem;
+    min-block-size: 0;
+    gap: var(--ciba-space-2);
+    align-items: start;
+    padding-block: var(--ciba-space-4);
+  }
+
+  .v3-section-heading > p:first-child,
+  .v3-section-heading h2,
+  .v3-section-heading > p:last-child {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .v3-section-heading > p:last-child {
+    max-inline-size: min(100%, 30ic);
   }
 
   .v3-section-heading h2 {

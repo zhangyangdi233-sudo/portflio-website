@@ -214,3 +214,22 @@ feedback captured through the taste inbox and confirmed before promotion.
   25.00 MiB probe reproduced the expected failure, and the clean build then passed after cleanup.
 - `TASTE-20261001T161241136282Z-93fe0627` remains a pending observation; these measured outcomes
   do not promote it into a permanent taste rule.
+
+## 2026-10-02 — Shared Home safe grid and measured spacing
+
+- Home now uses one responsive content boundary: 16px below 640px, 24px from 640px, and 32px
+  from 1024px. The same token aligns the header, hero, primary action, introduction, cinematic
+  metadata, project action, counter, instruction, index, and footer.
+- At the reported 1100×712 viewport, real Chrome measured the Chinese, English, and Japanese
+  primary actions at `x=32–1068`, exactly 1036px wide. The artist line precedes the action in both
+  source and visual order, with a measured 16px gap.
+- The introduction band measured 192px high in all three languages. Each title center was 0.5px
+  above the band's geometric center, inside the 2px tolerance and without a manual positional
+  offset.
+- The cinematic instruction measured `x=668–1068` and therefore terminates on the same right safe
+  line as the action and supporting paragraph. All three Home routes had zero horizontal overflow.
+- The production browser audit passed nine evidence groups, including the new multilingual safe
+  grid, existing hover/focus behavior, 320/390px reflow, Works recovery, five-video playback, and
+  zero browser console warnings or errors.
+- `TASTE-20261001T165157874586Z-3c49e6eb` remains a pending observation. These measured outcomes do
+  not promote it into the permanent taste ledger.

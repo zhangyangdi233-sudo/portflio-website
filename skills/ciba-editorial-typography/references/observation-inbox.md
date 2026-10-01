@@ -65,3 +65,18 @@ the user confirms the proposed keep / avoid / implementation interpretation.
 - Exact feedback:
 
 > 改为介绍有哪些作品和学校课题都用过哪些 未来会继续做除游戏以外的其他媒介的实验作品的尝试；概念改成通过语言污染为线索探究“疯子”的定义；不需要已完成；从心理医生的视角重新思考边缘群体的存在以及福柯的“权力”的由来；不需要归档作品这个字；尽量不超过3行；同样在英文和日文界面中也更改一下
+
+## TYPE-20261001T165157903322Z-fddc8ad5
+
+- Captured: 2026-10-01 UTC
+- Context: 2026-10-02 已发布中文首页：主行动、简介段落、标题垂直定位、角色文案顺序与作品提示安全边界复查
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 太小了我希望是和网页的宽是一样长的
+> 字体太紧凑了并且最后一行出现了空白 我希望尽量保证文本属于一个长方形的整齐度
+> 简介二字偏上了往下移动 在上下两条白色细线距离的中间位置
+> 这个在向下滑动了解作品的上面
+> 超出出血线了
+> 我需要你将所有这些文本 遵循设计的基本原则 保证不超出出血线 并且对齐 相互之间的距离是可测量的 这些需要你先搜索一下设计的基本原则
