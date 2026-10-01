@@ -121,3 +121,19 @@ implementation guidance, but they do not become personal taste without explicit 
   horizontal overflow at 320px and 390px.
 - `TYPE-20261001T165157903322Z-fddc8ad5` remains pending and was not promoted without explicit
   artist confirmation.
+
+## 2026-10-02 — Shared cinematic control measure
+
+- The desktop instruction and project-record action now use the same responsive measure and
+  inline inset, so the instruction's first character aligns with the action label rather than the
+  action's outer edge.
+- At 1100×712, all three locales used identical `x=694–1068` outer boxes. Every instruction line
+  began at `x=708.4`, within 1px of the bordered action label at `x=709.4`, and no line extended
+  beyond the action's `x=1068` hover boundary.
+- Chinese composed into two lines; English and Japanese into three. At 390×844 the desktop hint
+  was hidden and each locale retained zero horizontal overflow.
+- Verification passed 49 tests, Astro diagnostics, design drift, and the 25-route production
+  build. The standalone CDP audit failed while creating its Chrome target, before any page
+  assertion; active-browser DOM measurements supplied the geometry evidence above.
+- `TYPE-20261001T180459963139Z-874049e6` remains pending and was not promoted without explicit
+  artist confirmation.

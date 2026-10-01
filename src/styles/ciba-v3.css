@@ -458,6 +458,8 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
 }
 
 .v3-cinema__sticky {
+  --v3-cinema-action-width: min(24rem, 34vw);
+  --v3-cinema-action-padding-inline: 0.9rem;
   position: sticky;
   top: var(--ciba-header-height);
   z-index: 2;
@@ -507,14 +509,17 @@ body.ciba-v3 .v3-cinema-layer__open:focus-visible {
   right: var(--ciba-page-gutter);
   bottom: var(--ciba-space-2);
   z-index: 45;
+  inline-size: var(--v3-cinema-action-width);
   min-inline-size: 0;
-  max-inline-size: min(25rem, calc(100% - var(--ciba-page-gutter) - var(--ciba-page-gutter)));
+  max-inline-size: calc(100% - var(--ciba-page-gutter) - var(--ciba-page-gutter));
   margin: 0;
+  padding-inline: var(--v3-cinema-action-padding-inline);
   color: var(--ciba-paper);
   font-size: 0.65rem;
+  line-height: 1.45;
   letter-spacing: 0.06em;
   overflow-wrap: anywhere;
-  text-align: end;
+  text-align: start;
   text-transform: uppercase;
 }
 
@@ -700,7 +705,8 @@ html:lang(zh) .v3-cinema-layer__title {
   right: var(--ciba-page-gutter);
   bottom: 3.1rem;
   z-index: 32;
-  width: min(24rem, 34vw);
+  width: var(--v3-cinema-action-width);
+  padding-inline: var(--v3-cinema-action-padding-inline);
 }
 
 .v3-cinema__counter {

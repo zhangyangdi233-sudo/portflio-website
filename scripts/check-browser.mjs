@@ -331,7 +331,9 @@ async function auditHome(baseUrl) {
       const title = document.querySelector(".v3-section-heading h2");
       const note = document.querySelector(".v3-section-heading > p:last-child");
       const hint = document.querySelector(".v3-cinema__hint");
-      if (![action, role, section, title, note, hint].every((item) => item instanceof HTMLElement)) return null;
+      const projectAction = document.querySelector(".v3-cinema-layer.is-active .v3-cinema-layer__open");
+      const projectActionLabel = projectAction?.querySelector(":scope > span:first-child");
+      if (![action, role, section, title, note, hint, projectAction, projectActionLabel].every((item) => item instanceof HTMLElement)) return null;
       const rect = (element) => {
         const box = element.getBoundingClientRect();
         return { left: box.left, right: box.right, top: box.top, bottom: box.bottom, width: box.width, height: box.height };
@@ -350,6 +352,13 @@ async function auditHome(baseUrl) {
         }
         return Array.from(lines.entries()).sort(([a], [b]) => a - b).map(([, line]) => line.right - line.left);
       };
+      const lineRects = (element) => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        return Array.from(range.getClientRects())
+          .filter((box) => box.width > 0 && box.height > 0)
+          .map((box) => ({ left: box.left, right: box.right, top: box.top, bottom: box.bottom }));
+      };
       const rootStyle = getComputedStyle(document.documentElement);
       const gutterValue = rootStyle.getPropertyValue("--ciba-page-gutter").trim();
       const gutter = gutterValue.endsWith("rem")
@@ -361,6 +370,8 @@ async function auditHome(baseUrl) {
       const titleRect = rect(title);
       const noteRect = rect(note);
       const hintRect = rect(hint);
+      const projectActionRect = rect(projectAction);
+      const projectActionLabelRect = rect(projectActionLabel);
       const widths = lineWidths(note);
       return {
         viewport: innerWidth,
@@ -377,6 +388,9 @@ async function auditHome(baseUrl) {
         noteLineWidths: widths,
         finalLineRatio: widths.length ? widths.at(-1) / Math.max(...widths) : 0,
         hint: hintRect,
+        hintLines: lineRects(hint),
+        projectAction: projectActionRect,
+        projectActionLabel: projectActionLabelRect,
         overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
       };
     })()`);
@@ -410,6 +424,17 @@ async function auditHome(baseUrl) {
     invariant(
       geometry.hint.left >= geometry.safeLeft - 1 && geometry.hint.right <= geometry.safeRight + 1,
       "Home instruction text crossed the shared safe grid.",
+      { lang, geometry }
+    );
+    invariant(
+      Math.abs(geometry.hint.left - geometry.projectAction.left) <= 1
+        && Math.abs(geometry.hint.right - geometry.projectAction.right) <= 1
+        && geometry.hintLines.length > 0
+        && geometry.hintLines.every((line) =>
+          Math.abs(line.left - geometry.projectActionLabel.left) <= 1
+          && line.right <= geometry.projectAction.right + 1
+        ),
+      "Home instruction text is not aligned to the project-record action.",
       { lang, geometry }
     );
     invariant(geometry.overflow <= 1, "Home safe-grid changes introduced horizontal overflow.", { lang, geometry });

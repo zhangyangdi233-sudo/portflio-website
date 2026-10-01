@@ -119,7 +119,9 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/\.v3-home-hero \.v3-action-link \{[\s\S]*?inline-size: 100%[\s\S]*?min-height: var\(--ciba-space-8\)/);
     expect(css).toMatch(/\.v3-section-heading \{[\s\S]*?min-block-size: 12rem[\s\S]*?grid-template-columns: repeat\(12, minmax\(0, 1fr\)\)[\s\S]*?align-items: center/);
     expect(css).toMatch(/\.v3-section-heading > p:last-child \{[\s\S]*?max-inline-size: min\(100%, 30ic\)[\s\S]*?line-height: 1\.6[\s\S]*?text-wrap: balance/);
-    expect(css).toMatch(/\.v3-cinema__hint \{[\s\S]*?right: var\(--ciba-page-gutter\)[\s\S]*?max-inline-size: min\(25rem/);
+    expect(css).toMatch(/\.v3-cinema__sticky \{[\s\S]*?--v3-cinema-action-width: min\(24rem, 34vw\)[\s\S]*?--v3-cinema-action-padding-inline: 0\.9rem/);
+    expect(css).toMatch(/\.v3-cinema__hint \{[\s\S]*?right: var\(--ciba-page-gutter\)[\s\S]*?inline-size: var\(--v3-cinema-action-width\)[\s\S]*?padding-inline: var\(--v3-cinema-action-padding-inline\)[\s\S]*?text-align: start/);
+    expect(css).toMatch(/\.v3-cinema-layer__open \{[\s\S]*?width: var\(--v3-cinema-action-width\)[\s\S]*?padding-inline: var\(--v3-cinema-action-padding-inline\)/);
     expect(home).toMatch(/<div class="v3-home-hero__footer">\s*<p class="v3-home-hero__role">[\s\S]*?<a class="v3-action-link"/);
   });
 
@@ -139,6 +141,7 @@ describe("delivery guardrails", () => {
     expect(audit).toContain("Home introduction title is not vertically centered.");
     expect(audit).toContain("Home supporting text has a short orphaned final line.");
     expect(audit).toContain("Home instruction text crossed the shared safe grid.");
+    expect(audit).toContain("Home instruction text is not aligned to the project-record action.");
     expect(audit).toContain("CJK About heading has non-zero tracking.");
     expect(audit).toContain("Wake Up Latin tracking is not the restrained -0.03em contract.");
     expect(audit).toContain("Coursework media escaped its canonical 10/2/2 grouping.");

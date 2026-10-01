@@ -80,3 +80,13 @@ the user confirms the proposed keep / avoid / implementation interpretation.
 > 这个在向下滑动了解作品的上面
 > 超出出血线了
 > 我需要你将所有这些文本 遵循设计的基本原则 保证不超出出血线 并且对齐 相互之间的距离是可测量的 这些需要你先搜索一下设计的基本原则
+
+## TYPE-20261001T180459963139Z-874049e6
+
+- Captured: 2026-10-01 UTC
+- Context: 2026-10-02 已发布首页作品浏览：桌面端操作提示与打开项目记录按钮对齐复查
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 还是没有对齐 我希望和上面的打开项目记录的文本对齐 结尾不超出上面打开项目记录hover时的长方形

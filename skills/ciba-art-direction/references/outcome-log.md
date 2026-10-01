@@ -233,3 +233,22 @@ feedback captured through the taste inbox and confirmed before promotion.
   zero browser console warnings or errors.
 - `TASTE-20261001T165157874586Z-3c49e6eb` remains a pending observation. These measured outcomes do
   not promote it into the permanent taste ledger.
+
+## 2026-10-02 — Cinematic instruction and project-action alignment
+
+- The desktop interaction hint and project-record action now share one responsive width
+  (`min(24rem, 34vw)`), one right safe-grid anchor, and one `0.9rem` inline inset. The hint uses
+  start alignment instead of composing backward from the right edge.
+- At 1100×712, the Chinese, English, and Japanese hint and action boxes each measured
+  `x=694–1068` and 374px wide. Hint lines began at `x=708.4`; the action label began at
+  `x=709.4`, the expected 1px difference created by the action border.
+- The furthest hint-line endpoints measured `x=1052.4` in Chinese, `x=1050.5` in English, and
+  `x=1046.5` in Japanese, all inside the action hover rectangle ending at `x=1068`.
+- At 390×844, the desktop-only hint remained hidden and all three Home routes measured zero
+  horizontal overflow.
+- Verification passed 49 tests, Astro diagnostics, design drift, and the 25-route production
+  build. The repository CDP audit could not create its headless Chrome target in this environment
+  and stopped before page assertions; the same three-language geometry was measured in the active
+  browser instead.
+- `TASTE-20261001T180459761160Z-8fc40dd8` remains pending and is not promoted into a permanent
+  taste rule by this measured result.
