@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
@@ -9,6 +9,7 @@ const failures = [];
 const languages = ["zh", "en", "ja"];
 const publicSlugs = ["x-wheel", "emida", "wake-up", "escape-project", "university-coursework"];
 const privateSlugs = ["soft-boundaries", "residual-garden", "signal-room", "threshold-archive"];
+const EDGEONE_MAX_SINGLE_FILE_BYTES = 25 * 1024 * 1024;
 const courseworkManifest = JSON.parse(
   readFileSync(join(root, "docs", "research", "university-coursework-media-manifest.json"), "utf8")
 );
@@ -54,7 +55,7 @@ const allowedLicenseFiles = [
   "licenses/Noto-Sans-JP-Variable-OFL.txt",
   "licenses/Noto-Sans-SC-Variable-OFL.txt"
 ].sort();
-const allowedPublicFiles = [...allowedAssetFiles, ...allowedLicenseFiles].sort();
+const allowedPublicFiles = [...allowedAssetFiles, ...allowedLicenseFiles, "favicon.svg"].sort();
 const checkedPaths = new Set();
 const publicProjectRecords = publicSlugs.map((slug) =>
   JSON.parse(readFileSync(join(root, "src", "content", "projects", `${slug}.json`), "utf8"))
@@ -125,11 +126,24 @@ const relativeFiles = (directory) =>
     .map((path) => relative(directory, path).split("\\").join("/"))
     .sort();
 
+const checkEdgeOneFileBudget = (directory, label) => {
+  for (const path of listFiles(directory)) {
+    const size = statSync(path).size;
+    check(
+      size < EDGEONE_MAX_SINGLE_FILE_BYTES,
+      `${label}/${relative(directory, path).split("\\").join("/")} is ${(size / 1024 / 1024).toFixed(2)} MiB; EdgeOne requires every file to be below 25 MiB`
+    );
+  }
+};
+
 check(existsSync(dist), "dist is missing; run npm run build before npm run check:built");
+check(existsSync(join(dist, "favicon.svg")), "dist is missing the approved CIBA favicon");
 
 const publicDirectory = join(root, "public");
 const deployedAssetDirectory = join(dist, "assets");
 const deployedLicenseDirectory = join(dist, "licenses");
+checkEdgeOneFileBudget(publicDirectory, "public");
+checkEdgeOneFileBudget(dist, "dist");
 check(
   JSON.stringify(relativeFiles(publicDirectory)) === JSON.stringify(allowedPublicFiles),
   `public/ must contain only approved deployable files; received ${relativeFiles(publicDirectory).join(", ")}`

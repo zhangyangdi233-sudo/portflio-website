@@ -138,8 +138,8 @@
       "group": "ae-pr",
       "sourceName": "A25DC573_チョウ　ヨウテキ＿火曜日3−4限目B.mp4",
       "publicPath": "assets/projects/university-coursework/ae-pr-01-edit.mp4",
-      "bytes": 38908432,
-      "sha256": "a76059af1aba8b051392f1cff730d244b03cf10b7837fb7a31f4cec1a11e1a75",
+      "bytes": 21583131,
+      "sha256": "236047e50dd253b74b2cc66b0204914cae558db5daaf584a4bab71b1b6fa9021",
       "kind": "video",
       "codecEvidence": ["avc1", "mp4a", "moov-before-mdat"]
     },
@@ -147,8 +147,8 @@
       "group": "ae-pr",
       "sourceName": "A25DC573＿チョウヨウテキ＿火曜日３−４限目.mp4",
       "publicPath": "assets/projects/university-coursework/ae-pr-02-edit.mp4",
-      "bytes": 70455829,
-      "sha256": "7e3ea9240444b58a33db4dc00e22f78faa88faf582b7358098729710354814af",
+      "bytes": 21493379,
+      "sha256": "50ee142769478d7369eb24866fc63b98167a672b82bcdc93cad5fed6a5848471",
       "kind": "video",
       "codecEvidence": ["avc1", "mp4a", "moov-before-mdat"]
     }

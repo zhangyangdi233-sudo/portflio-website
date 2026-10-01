@@ -90,3 +90,19 @@ implementation guidance, but they do not become personal taste without explicit 
 - Focus-state checks wait for the authored transition to settle before measuring opacity and
   grayscale. This is a verification correction, not a new visual preference.
 - No typography observation is promoted by these outcomes.
+
+## 2026-10-02 — Multilingual Home concepts and compact metadata
+
+- Chinese, English, and Japanese Home introductions now identify the two games, two 2023 web
+  works, Blender/Maya/After Effects/Premiere Pro coursework, and the intention to continue
+  experimenting beyond games.
+- APHASIA and EMIDA use separately composed, equivalent concept summaries in all three languages;
+  Chinese and Japanese punctuation follows each locale rather than reusing English typography.
+- Home completed/archive labels were removed from EMIDA, Wake Up, and Escape Project in the
+  cinematic metadata and compact index; APHASIA and Coursework retain their distinct status.
+- At 320px, every Chinese, English, and Japanese Home medium measured at three lines or fewer;
+  University Coursework measured at two lines in all three locales, with zero horizontal overflow.
+- Verification passed 48 tests, Astro diagnostics, design drift, the 25-route static build,
+  built-site contracts, and eight real-browser evidence groups.
+- `TYPE-20261001T161241136283Z-9db944cd` remains pending and was not promoted without explicit
+  artist confirmation.

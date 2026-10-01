@@ -23,7 +23,7 @@ const copy = {
     role: "张扬笛 / 糍粑的个人作品集网站。",
     enter: "向下滑动了解作品",
     selected: "简介",
-    selectedNote: "五项公开记录：两件游戏作品、两件 2023 年网页作品，以及一组大学课题练习。",
+    selectedNote: "作品包括两件游戏、两件 2023 年网页作品，以及使用 Blender、Maya、After Effects 与 Premiere Pro 开展的大学课题。未来也会继续尝试游戏之外的多媒介实验作品。",
     concept: "概念 / CONCEPT",
     record: "打开项目记录",
     imageHint: "桌面端单击图像切换预设位置，也可拖动；方向键移动，Home 复位。悬浮或键盘聚焦时显示彩色。",
@@ -35,7 +35,7 @@ const copy = {
     role: "The personal portfolio website of Zhang Yangdi / CIBA.",
     enter: "Scroll down to explore the works",
     selected: "Introduction",
-    selectedNote: "Five records are public: two games, two web-based works from 2023, and one university coursework archive.",
+    selectedNote: "The portfolio includes two games, two web works from 2023, and university coursework using Blender, Maya, After Effects, and Premiere Pro. Future projects will continue experimenting across media beyond games.",
     concept: "CONCEPT",
     record: "Open project record",
     imageHint: "On desktop, click an image to cycle preset positions or drag it; use arrow keys to move and Home to reset. Hover or focus reveals colour.",
@@ -47,7 +47,7 @@ const copy = {
     role: "張揚笛 / 糍粑の個人ポートフォリオサイト。",
     enter: "下へスクロールして作品を見る",
     selected: "紹介",
-    selectedNote: "ゲーム作品2点、2023年のウェブ作品2点、大学課題の記録1点を公開しています。",
+    selectedNote: "ゲーム作品2点と2023年のウェブ作品2点に加え、Blender、Maya、After Effects、Premiere Proを用いた大学課題を紹介しています。今後もゲームに限らない多様なメディアでの実験的な作品制作を続けます。",
     concept: "コンセプト",
     record: "作品記録を開く",
     imageHint: "デスクトップでは画像をクリックしてプリセット位置を切り替えるか、ドラッグできます。矢印キーで移動し、Homeで復位します。ホバーまたはフォーカスでカラー表示になります。",
@@ -55,6 +55,8 @@ const copy = {
     indexNote: "題名 / 年 / メディア / 状態"
   }
 }[lang];
+
+const hiddenHomeStatusSlugs = new Set(["emida", "wake-up", "escape-project"]);
 
 const letters = (value: string) => Array.from(value);
 const composeTitleWords = (value: string) => {
@@ -113,6 +115,7 @@ const composeTitleWords = (value: string) => {
             projects.map((project, index) => {
               const localized = getLocalizedProject(project, lang);
               const number = String(index + 1).padStart(2, "0");
+              const showHomeStatus = !hiddenHomeStatusSlugs.has(project.slug);
               const titleWords = composeTitleWords(localized.title.toUpperCase());
               const hasEditorialBreak =
                 titleWords.length > 1 &&
@@ -124,11 +127,11 @@ const composeTitleWords = (value: string) => {
                   data-work-index={index}
                   aria-hidden={index === 0 ? "false" : "true"}
                 >
-                  <div class="v3-cinema-layer__meta">
-                    <span>{number} / {projectCount}</span>
-                    {project.year !== "—" && <span>{project.year}</span>}
-                    <span>{localized.medium ?? project.medium}</span>
-                    <span>{localized.status ?? project.status}</span>
+                  <div class:list={["v3-cinema-layer__meta", { "has-status": showHomeStatus }]}>
+                    <span class="v3-cinema-layer__count">{number} / {projectCount}</span>
+                    <span class="v3-cinema-layer__year">{project.year === "—" ? "" : project.year}</span>
+                    <span class="v3-cinema-layer__medium">{localized.medium ?? project.medium}</span>
+                    {showHomeStatus && <span class="v3-cinema-layer__status">{localized.status ?? project.status}</span>}
                   </div>
 
                   <h3
@@ -220,13 +223,14 @@ const composeTitleWords = (value: string) => {
       {
         projects.map((project, index) => {
           const localized = getLocalizedProject(project, lang);
+          const showHomeStatus = !hiddenHomeStatusSlugs.has(project.slug);
           return (
             <a href={`/${lang}/works/${project.slug}/`}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{localized.title}</strong>
               <span>{project.year === "—" ? "" : project.year}</span>
               <span>{localized.medium ?? project.medium}</span>
-              <span>{localized.status ?? project.status}</span>
+              {showHomeStatus && <span>{localized.status ?? project.status}</span>}
             </a>
           );
         })

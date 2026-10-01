@@ -98,6 +98,15 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/project-page:not\(\.wake-page\) \.project-media img \{[\s\S]*?aspect-ratio: auto[\s\S]*?object-fit: contain/);
     expect(css).toMatch(/\.v3-floating-media \{[\s\S]*?filter: grayscale\(1\)[\s\S]*?opacity: 0\.1/);
     expect(css).toMatch(/\.v3-floating-media:hover,[\s\S]*?filter: grayscale\(0\)[\s\S]*?opacity: 0\.88/);
+    expect(css).toMatch(
+      /\.v3-action-link:hover,[\s\S]*?\.v3-cinema-layer__open:focus-visible \{[\s\S]*?background: var\(--ciba-acid\);[\s\S]*?color: var\(--ciba-night\)/
+    );
+    expect(css).toMatch(
+      /\.v3-action-link:is\(:hover, :focus-visible\) > span:last-child,[\s\S]*?color: var\(--ciba-night\)/
+    );
+    expect(css).toMatch(
+      /@media \(max-width: 899px\)[\s\S]*?\.v3-cinema-layer__meta \{[\s\S]*?grid-template-columns: minmax\(3\.5rem, max-content\) minmax\(0, 1fr\)/
+    );
   });
 
   it("ships a dependency-free real-browser audit for the high-risk delivery paths", () => {
@@ -109,10 +118,24 @@ describe("delivery guardrails", () => {
     expect(audit).toContain("expectedXWheelSources");
     expect(audit).toContain("A Works window or its Open action starts outside the stage.");
     expect(audit).toContain("Mobile Works text is clipped rather than reflowed.");
+    expect(audit).toContain("did not resolve to an acid-green field with black text and arrow on hover.");
+    expect(audit).toContain("A Home project medium exceeds three lines at 320px.");
+    expect(audit).toContain("Home status visibility does not match the requested per-project omissions.");
     expect(audit).toContain("CJK About heading has non-zero tracking.");
     expect(audit).toContain("Wake Up Latin tracking is not the restrained -0.03em contract.");
     expect(audit).toContain("Coursework media escaped its canonical 10/2/2 grouping.");
     expect(audit).toContain("One or more Coursework videos failed real browser playback.");
     expect(audit).toContain("Browser console or runtime errors were recorded.");
+  });
+
+  it("fails the production build before EdgeOne sees an oversized file", () => {
+    const packageJson = JSON.parse(read("package.json"));
+    const builtSiteAudit = read("scripts/check-built-site.mjs");
+
+    expect(packageJson.scripts.build).toBe("astro build && node scripts/check-built-site.mjs");
+    expect(builtSiteAudit).toContain("const EDGEONE_MAX_SINGLE_FILE_BYTES = 25 * 1024 * 1024");
+    expect(builtSiteAudit).toContain("checkEdgeOneFileBudget(publicDirectory, \"public\")");
+    expect(builtSiteAudit).toContain("checkEdgeOneFileBudget(dist, \"dist\")");
+    expect(builtSiteAudit).toContain("EdgeOne requires every file to be below 25 MiB");
   });
 });

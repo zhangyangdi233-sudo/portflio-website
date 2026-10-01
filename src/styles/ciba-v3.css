@@ -307,18 +307,35 @@ body.ciba-v3 .site-footer a:hover {
   text-transform: uppercase;
 }
 
-.v3-action-link:hover,
-.v3-cinema-layer__open:hover,
 .v3-work-window__open:hover {
   border-bottom-color: var(--ciba-acid);
   background: var(--ciba-surface-raised);
   color: var(--ciba-acid);
 }
 
+.v3-action-link:hover,
+.v3-action-link:focus-visible,
+.v3-cinema-layer__open:hover,
+.v3-cinema-layer__open:focus-visible {
+  border-color: var(--ciba-acid);
+  background: var(--ciba-acid);
+  color: var(--ciba-night);
+}
+
+body.ciba-v3 .v3-action-link:focus-visible,
+body.ciba-v3 .v3-cinema-layer__open:focus-visible {
+  outline-color: var(--ciba-paper);
+}
+
 .v3-action-link > span:last-child,
 .v3-cinema-layer__open > span:last-child,
 .v3-work-window__open > span:last-child {
   color: var(--ciba-acid);
+}
+
+.v3-action-link:is(:hover, :focus-visible) > span:last-child,
+.v3-cinema-layer__open:is(:hover, :focus-visible) > span:last-child {
+  color: var(--ciba-night);
 }
 
 .v3-home-hero__signal {
@@ -471,6 +488,22 @@ body.ciba-v3 .site-footer a:hover {
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
   text-transform: uppercase;
+}
+
+.v3-cinema-layer__count {
+  grid-column: 1;
+}
+
+.v3-cinema-layer__year {
+  grid-column: 2;
+}
+
+.v3-cinema-layer__medium {
+  grid-column: 3;
+}
+
+.v3-cinema-layer__status {
+  grid-column: 4;
 }
 
 .v3-cinema-layer__title {
@@ -1372,12 +1405,42 @@ body.ciba-v3 .wake-kicker {
 
   .v3-cinema-layer__meta {
     grid-area: meta;
-    grid-template-columns: 3rem 3.5rem 1fr;
+    min-width: 0;
+    grid-template-columns: minmax(3.5rem, max-content) minmax(0, 1fr);
+    column-gap: clamp(0.75rem, 4vw, 1.25rem);
+    row-gap: 0.3rem;
     margin: 1rem;
+    line-height: 1.4;
   }
 
-  .v3-cinema-layer__meta span:last-child {
-    grid-column: 3;
+  .v3-cinema-layer__meta span {
+    min-width: 0;
+  }
+
+  .v3-cinema-layer__count {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .v3-cinema-layer__year {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .v3-cinema-layer__medium {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .v3-cinema-layer__meta.has-status .v3-cinema-layer__medium {
+    grid-row: 1;
+  }
+
+  .v3-cinema-layer__status {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .v3-cinema-layer__title {

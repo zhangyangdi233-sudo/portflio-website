@@ -24,9 +24,27 @@ describe("CIBA editorial typography", () => {
     expect(home).toContain('selected: "简介"');
     expect(home).toContain('selected: "Introduction"');
     expect(home).toContain('selected: "紹介"');
-    expect(home).toContain("五项公开记录");
-    expect(home).toContain("Five records are public");
-    expect(home).toContain("大学課題の記録1点");
+    expect(home).toContain("作品包括两件游戏、两件 2023 年网页作品");
+    expect(home).toContain("未来也会继续尝试游戏之外的多媒介实验作品");
+    expect(home).toContain("The portfolio includes two games, two web works from 2023");
+    expect(home).toContain("Future projects will continue experimenting across media beyond games");
+    expect(home).toContain("ゲーム作品2点と2023年のウェブ作品2点");
+    expect(home).toContain("ゲームに限らない多様なメディアでの実験的な作品制作");
+    expect(home).toContain('const hiddenHomeStatusSlugs = new Set(["emida", "wake-up", "escape-project"])');
+    expect(home).toContain("!hiddenHomeStatusSlugs.has(project.slug)");
+    expect(home).toContain("localized.status ?? project.status");
+  });
+
+  it("keeps the revised project concepts equivalent across locales", () => {
+    const aphasia = JSON.parse(read("src/content/projects/x-wheel.json"));
+    const emida = JSON.parse(read("src/content/projects/emida.json"));
+
+    expect(aphasia.i18n.zh.summary).toContain("“疯子”");
+    expect(aphasia.i18n.en.summary).toContain("“mad person”");
+    expect(aphasia.i18n.ja.summary).toContain("「狂人」");
+    expect(emida.i18n.zh.summary).toContain("福柯所讨论的“权力”");
+    expect(emida.i18n.en.summary).toContain("the “power” discussed by Foucault");
+    expect(emida.i18n.ja.summary).toContain("フーコーが論じた「権力」");
   });
 
   it("composes display titles as words and forces the Escape break", () => {

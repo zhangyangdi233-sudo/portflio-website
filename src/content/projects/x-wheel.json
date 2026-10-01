@@ -205,7 +205,7 @@
   "i18n": {
     "zh": {
       "title": "APHASIA / 失语症",
-      "summary": "一件正在开发的 Godot 游戏；当前记录展示其空间、物件、角色、字形与界面等视觉研究。",
+      "summary": "以语言污染为线索，探究“疯子”这一称谓如何被定义。",
       "medium": "Godot 游戏原型、3D 素材与界面研究",
       "status": "开发中",
       "body": [
@@ -215,7 +215,7 @@
     },
     "en": {
       "title": "APHASIA",
-      "summary": "A Godot game in development, documented through spatial, object, character, letterform, and interface studies.",
+      "summary": "Taking linguistic contamination as its point of departure, the work examines how the term “mad person” is defined.",
       "medium": "Godot game prototype, 3D asset and interface study",
       "status": "In development",
       "body": [
@@ -225,7 +225,7 @@
     },
     "ja": {
       "title": "APHASIA / 失語症",
-      "summary": "Godotで開発中のゲーム。空間、オブジェクト、キャラクター、字形、インターフェースの視覚研究を制作記録として公開しています。",
+      "summary": "言語汚染を手がかりに、「狂人」という呼称がどのように定義されるのかを探る。",
       "medium": "Godotゲームプロトタイプ、3Dアセット、インターフェース研究",
       "status": "開発中",
       "body": [

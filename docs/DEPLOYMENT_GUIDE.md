@@ -19,6 +19,10 @@
 - [添加自定义域名](https://pages.edgeone.ai/zh/document/custom-domain)
 - [申请免费证书](https://pages.edgeone.ai/zh/document/apply-for-free-certificate)
 - [腾讯云注册域名及微信支付](https://cloud.tencent.com/document/product/242/9595)
+- [触发部署](https://cloud.tencent.com/document/product/1552/127395)
+- [构建与环境管理](https://cloud.tencent.com/document/product/1552/127392)
+- [重新部署](https://cloud.tencent.com/document/product/1552/119338)
+- [25 MiB 单文件限制排障](https://edgeone.cloud.tencent.com/pages/document/176994654809202688)
 
 ## 第一次发布
 
@@ -81,6 +85,30 @@
 3. 修改中的版本先推送到独立分支，EdgeOne 会生成 Preview 部署。
 4. 检查无误后合并到 `main`。
 5. EdgeOne 侦测到 `main` 的新提交后会自动重新构建并更新正式网址，无须重新上传文件。
+
+## 修复后如何重新部署
+
+本项目的生产分支是 `main`。只要生产环境的“自动部署”已开启，新的 GitHub 提交会自动创建一条新的生产部署；不需要重复导入仓库。
+
+1. 等待已修复的提交推送到 GitHub `main`。
+2. 打开腾讯云控制台 → EdgeOne → Makers → `portflio-website` →“构建部署”。
+3. 找到刚出现的新部署记录，核对：
+   - 环境为“生产”；
+   - 分支为 `main`；
+   - 提交信息和提交哈希对应最新修复。
+4. 等待“安装依赖 → 构建 → 检查输出 → 部署”依次完成，最终状态应为“成功”。
+5. 点击新记录的“预览”，检查中文、英文、日文首页和大学课题中的两个视频。
+6. 生产部署成功后，平台项目域名及已绑定的自定义域名会自动指向新版本。
+
+如果推送后 1–2 分钟仍没有新记录：
+
+1. 进入“项目设置” →“环境管理” →“生产” →“编辑”。
+2. 确认生产分支为 `main`，并开启“自动部署”。
+3. 保存后再推送一个新提交以触发部署。
+
+不要直接在旧的失败记录上点“重新部署”：旧记录可能继续使用包含超限视频的旧提交。若必须手动重试，应先确认界面显示的是压缩视频后的最新 Git 提交。
+
+EdgeOne 要求每个输出文件严格小于 25 MiB。本项目的 `npm run build` 已包含同一限制的本地检查，后续加入过大的图片、视频或下载文件时会在推送前直接失败并给出文件路径。
 
 ## 当前项目的边界
 

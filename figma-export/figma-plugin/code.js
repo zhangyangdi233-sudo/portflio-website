@@ -49,7 +49,7 @@ const projects = [
     medium: "Godot game prototype, 3D asset and interface study",
     year: "2026",
     status: "In development",
-    summary: "A Godot game in development, documented through spatial, object, character, letterform, and interface studies.",
+    summary: "Taking linguistic contamination as its point of departure, the work examines how the term “mad person” is defined.",
     color: colors.oxide,
     onColor: colors.night
   },
@@ -61,7 +61,7 @@ const projects = [
     medium: "Visual novel game, Ren'Py, Procreate",
     year: "2024",
     status: "Completed",
-    summary: "A completed visual novel that uses player–character dialogue to examine social rules, oppression, and individuality.",
+    summary: "From a psychiatrist’s perspective, the work reconsiders the existence of marginalized groups and how the “power” discussed by Foucault takes shape.",
     color: colors.oxide,
     onColor: colors.night
   },

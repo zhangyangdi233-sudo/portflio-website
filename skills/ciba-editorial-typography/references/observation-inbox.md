@@ -55,3 +55,13 @@ the user confirms the proposed keep / avoid / implementation interpretation.
 - Avoid: listing every project inside the hero or explaining what the portfolio already shows.
 - Current implementation decision: remove the hero paragraph; retain only
   `游戏 / 网页 / 影像`, its English/Japanese equivalents, and a shortened View Works action.
+
+## TYPE-20261001T161241136283Z-9db944cd
+
+- Captured: 2026-10-01 UTC
+- Context: 2026-10-02 三语首页简介、项目概念与元数据密度复查
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 改为介绍有哪些作品和学校课题都用过哪些 未来会继续做除游戏以外的其他媒介的实验作品的尝试；概念改成通过语言污染为线索探究“疯子”的定义；不需要已完成；从心理医生的视角重新思考边缘群体的存在以及福柯的“权力”的由来；不需要归档作品这个字；尽量不超过3行；同样在英文和日文界面中也更改一下

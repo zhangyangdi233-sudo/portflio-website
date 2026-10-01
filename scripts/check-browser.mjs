@@ -222,8 +222,45 @@ async function navigate(baseUrl, path, width, height, reducedMotion = false) {
   })()`);
 }
 
+async function auditAcidHover(selector, label) {
+  const point = await evaluate(`(() => {
+    const element = document.querySelector(${JSON.stringify(selector)});
+    if (!(element instanceof HTMLElement)) return null;
+    const rect = element.getBoundingClientRect();
+    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2, rect: { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom } };
+  })()`);
+  invariant(
+    point && point.x >= 0 && point.x <= 1440 && point.y >= 0 && point.y <= 900,
+    `${label} is outside the desktop viewport.`,
+    point
+  );
+  await cdp.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: point.x, y: point.y });
+  await delay(80);
+  const state = await evaluate(`(() => {
+    const element = document.querySelector(${JSON.stringify(selector)});
+    const arrow = element?.querySelector("span:last-child");
+    if (!(element instanceof HTMLElement) || !(arrow instanceof HTMLElement)) return null;
+    const style = getComputedStyle(element);
+    return {
+      background: style.backgroundColor,
+      text: style.color,
+      arrow: getComputedStyle(arrow).color
+    };
+  })()`);
+  invariant(
+    state?.background === "rgb(198, 255, 0)"
+      && state.text === "rgb(9, 10, 8)"
+      && state.arrow === "rgb(9, 10, 8)",
+    `${label} did not resolve to an acid-green field with black text and arrow on hover.`,
+    state
+  );
+  return state;
+}
+
 async function auditHome(baseUrl) {
   await navigate(baseUrl, "/en/", 1440, 900);
+  const heroActionHover = await auditAcidHover(".v3-action-link", "Home introduction action");
+  await cdp.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: 1, y: 1 });
   const desktop = await evaluate(`(() => {
     const expected = ${JSON.stringify(expectedXWheelSources)};
     const media = expected.map((src) => {
@@ -278,7 +315,11 @@ async function auditHome(baseUrl) {
   invariant(homeInteraction?.focused.filter.includes("grayscale(0)"), "Focused Home evidence did not return to colour.", homeInteraction);
   invariant(homeInteraction?.moved === 16 && homeInteraction?.reset === 0, "Home keyboard movement or Home reset failed.", homeInteraction);
   invariant(homeInteraction?.activeTitle === "emida", "Scroll-linked Home title did not advance to EMIDA.", homeInteraction);
-  record("Home desktop", { desktop, homeInteraction });
+  const projectActionHover = await auditAcidHover(
+    ".v3-cinema-layer.is-active .v3-cinema-layer__open",
+    "Home project-record action"
+  );
+  record("Home desktop", { desktop, homeInteraction, heroActionHover, projectActionHover });
 
   await navigate(baseUrl, "/en/", 390, 844);
   const mobileOpacity = await evaluate(`(() => ${JSON.stringify(expectedXWheelSources)}.map((src) => {
@@ -287,6 +328,33 @@ async function auditHome(baseUrl) {
   }))()`);
   invariant(mobileOpacity.every((opacity) => Math.abs(opacity - 0.1) < 0.011), "Mobile Home evidence is not approximately 10% opaque.", mobileOpacity);
   record("Home mobile opacity", mobileOpacity);
+
+  const metadataEvidence = [];
+  for (const lang of languages) {
+    await navigate(baseUrl, `/${lang}/`, 320, 780);
+    const metadata = await evaluate(`(() => Array.from(document.querySelectorAll(".v3-cinema-layer__meta")).map((meta) => {
+      const medium = meta.querySelector(".v3-cinema-layer__medium");
+      if (!(medium instanceof HTMLElement)) return null;
+      const style = getComputedStyle(medium);
+      const lineHeight = Number.parseFloat(style.lineHeight);
+      return {
+        slug: meta.closest("[data-v3-cinema-layer]")?.querySelector("[data-title-slug]")?.dataset.titleSlug,
+        text: medium.textContent?.trim(),
+        lineCount: Number.isFinite(lineHeight) && lineHeight > 0 ? Math.ceil(medium.getBoundingClientRect().height / lineHeight) : null,
+        status: meta.querySelector(".v3-cinema-layer__status")?.textContent?.trim() ?? null
+      };
+    }))()`);
+    invariant(metadata.every((item) => item && item.lineCount <= 3), "A Home project medium exceeds three lines at 320px.", { lang, metadata });
+    const statusBySlug = Object.fromEntries(metadata.map((item) => [item.slug, item.status]));
+    invariant(
+      statusBySlug["x-wheel"] && statusBySlug["university-coursework"]
+        && !statusBySlug.emida && !statusBySlug["wake-up"] && !statusBySlug["escape-project"],
+      "Home status visibility does not match the requested per-project omissions.",
+      { lang, statusBySlug }
+    );
+    metadataEvidence.push({ lang, metadata });
+  }
+  record("Home multilingual mobile metadata", metadataEvidence);
 }
 
 async function auditWorks(baseUrl) {

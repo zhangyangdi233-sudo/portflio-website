@@ -61,7 +61,7 @@
   "i18n": {
     "zh": {
       "title": "EMIDA",
-      "summary": "一件已完成的视觉小说游戏，通过玩家与角色的对话讨论社会规范、压迫与个体性。",
+      "summary": "从心理医生的视角，重新思考边缘群体的存在，以及福柯所讨论的“权力”如何形成。",
       "medium": "视觉小说游戏、Ren'Py、Procreate",
       "status": "已完成",
       "body": [
@@ -71,7 +71,7 @@
     },
     "en": {
       "title": "EMIDA",
-      "summary": "A completed visual novel that uses player–character dialogue to examine social rules, oppression, and individuality.",
+      "summary": "From a psychiatrist’s perspective, the work reconsiders the existence of marginalized groups and how the “power” discussed by Foucault takes shape.",
       "medium": "Visual novel game, Ren'Py, Procreate",
       "status": "Completed",
       "body": [
@@ -81,7 +81,7 @@
     },
     "ja": {
       "title": "EMIDA",
-      "summary": "プレイヤーとキャラクターの対話を通して、社会的規範、抑圧、個人性を扱う完成済みのビジュアルノベル。",
+      "summary": "精神科医の視点から、周縁化された人々の存在と、フーコーが論じた「権力」がどのように形成されるのかを捉え直す。",
       "medium": "ビジュアルノベル、Ren'Py、Procreate",
       "status": "完成済み",
       "body": [

@@ -111,3 +111,13 @@ project reasoning, not a confirmed personal-preference rule.
 - Exact feedback:
 
 > 我希望xwheel这个作品在首页的图片是我截图的这几个 而不是像素的3d素材
+
+## TASTE-20261001T161241136282Z-93fe0627
+
+- Captured: 2026-10-01 UTC
+- Context: 2026-10-02 首页向下滑动按钮与项目记录按钮 hover 复查
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 我希望鼠标hover时变换背景颜色为肩头的颜色 hover时箭头颜色变为黑色；同样hover时背景颜色变化并且箭头颜色变化

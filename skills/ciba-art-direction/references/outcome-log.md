@@ -194,3 +194,23 @@ feedback captured through the taste inbox and confirmed before promotion.
   `VERDICT: PASS` and a separate delivery Evaluator returned `COMPLETE`. Their task IDs and the
   closed findings are recorded in `docs/research/INDEPENDENT_REVIEW_2026-08-01.md`.
 - No taste observation is promoted by these delivery results.
+
+## 2026-10-02 — Home action and project-metadata refinement
+
+- The Home introduction action and each cinematic project-record action now resolve to the
+  canonical acid-green field on hover and keyboard focus, with near-black text and arrow.
+- Real Chrome measured both hover states at `rgb(198, 255, 0)` over
+  `rgb(9, 10, 8)`; the browser console reported zero warnings or errors.
+- Home presentation omits the requested completed/archive labels for EMIDA, Wake Up, and Escape
+  Project while retaining the useful development/practice labels for APHASIA and Coursework.
+- The Figma plugin snapshot now mirrors the revised APHASIA and EMIDA English concepts, and the
+  design-drift contract passes against canonical project content.
+- Verification passed 48 tests, Astro diagnostics, design drift, the 25-route static build,
+  built-site contracts, and eight real-browser evidence groups.
+- Two Coursework MP4 files that exceeded EdgeOne's 25 MiB deployment ceiling were converted to
+  1280×720 H.264 High/AAC fast-start files at 21,583,131 and 21,493,379 bytes. Full decoding,
+  representative-frame review, and real-browser playback of all five Coursework videos passed.
+- The production build now rejects any `public` or `dist` file at or above 25 MiB. A temporary
+  25.00 MiB probe reproduced the expected failure, and the clean build then passed after cleanup.
+- `TASTE-20261001T161241136282Z-93fe0627` remains a pending observation; these measured outcomes
+  do not promote it into a permanent taste rule.
