@@ -62,7 +62,6 @@ export type Project = {
 export type SiteProfile = {
   artistName: string;
   email?: string;
-  location: string;
   cvUrl?: string;
   socials: Array<{
     label: string;

@@ -6,7 +6,7 @@ const root = join(import.meta.dirname, "..");
 const read = (path: string) => readFileSync(join(root, path), "utf8");
 
 describe("CIBA editorial typography", () => {
-  it("removes redundant hero metadata and reduces the opening to one practice line", () => {
+  it("keeps the requested portfolio introduction in all three languages", () => {
     const home = read("src/pages/[lang]/index.astro");
 
     expect(home).not.toContain("v3-home-hero__meta");
@@ -14,9 +14,16 @@ describe("CIBA editorial typography", () => {
     expect(home).not.toContain("ARTIST ARCHIVE / TOKYO");
     expect(home).not.toContain("DIGITAL PORTFOLIO / 2026");
     expect(home).not.toContain("アーティスト・アーカイブ / 東京");
-    expect(home).toContain("游戏 / 网页 / 影像");
-    expect(home).toContain("Games / Web / Moving image");
-    expect(home).toContain("ゲーム / ウェブ / 映像");
+    expect(home).toContain('eyebrow: "PORTFOLIO"');
+    expect(home).toContain("张扬笛 / 糍粑的个人作品集网站。");
+    expect(home).toContain("The personal portfolio website of Zhang Yangdi / CIBA.");
+    expect(home).toContain("張揚笛 / 糍粑の個人ポートフォリオサイト。");
+    expect(home).toContain("向下滑动了解作品");
+    expect(home).toContain("Scroll down to explore the works");
+    expect(home).toContain("下へスクロールして作品を見る");
+    expect(home).toContain('selected: "简介"');
+    expect(home).toContain('selected: "Introduction"');
+    expect(home).toContain('selected: "紹介"');
     expect(home).toContain("五项公开记录");
     expect(home).toContain("Five records are public");
     expect(home).toContain("大学課題の記録1点");

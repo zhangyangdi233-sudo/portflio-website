@@ -22,6 +22,7 @@ import { siteProfile } from "../src/lib/site-data";
 describe("localized portfolio behavior", () => {
   it("publishes the artist-confirmed professor contact route", () => {
     expect(siteProfile.email).toBe("mayonezu332@gmail.com");
+    expect(siteProfile).not.toHaveProperty("location");
   });
 
   it("detects supported browser languages and falls back to English", () => {

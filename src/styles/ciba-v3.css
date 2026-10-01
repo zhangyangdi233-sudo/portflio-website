@@ -166,7 +166,7 @@ body.ciba-v3.project-page .site-footer,
 body.ciba-v3.about-page .site-footer,
 body.ciba-v3.works-workspace-page .site-footer {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto;
   gap: 1rem;
   padding: 1.5rem clamp(1rem, 2.8vw, 2.5rem);
   border-top: 1px solid var(--ciba-rule);
@@ -197,6 +197,20 @@ body.ciba-v3 .site-footer a:hover {
   overflow: hidden;
   border-bottom: 1px solid var(--ciba-rule);
   background: var(--ciba-night);
+}
+
+.v3-home-hero__eyebrow {
+  position: absolute;
+  top: 1.2rem;
+  left: clamp(1rem, 2.8vw, 2.5rem);
+  z-index: 1;
+  margin: 0;
+  color: var(--ciba-acid);
+  font-family: var(--ciba-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .v3-home-hero__footer,

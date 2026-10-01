@@ -82,7 +82,6 @@ const site = defineCollection({
   schema: z.object({
     artistName: z.string(),
     email: z.email().optional(),
-    location: z.string(),
     cvUrl: z.string().optional(),
     socials: z.array(
       z.object({

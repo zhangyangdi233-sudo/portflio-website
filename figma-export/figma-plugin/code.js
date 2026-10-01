@@ -484,12 +484,13 @@ async function homeDesktop() {
   const f = frame("01 Home / Desktop", 0, 0, 1440, 1740);
   addHeader(f, 1440);
   addSwissGrid(f, 1440, 1740);
+  text(f, "Portfolio eyebrow", "PORTFOLIO", 40, 102, 220, 12, bold, colors.oxide);
   text(f, "Hero title", "CIBA", 40, 142, 1050, 260, black, colors.ink, 0.8);
-  text(f, "Practice", "GAMES / WEB / MOVING IMAGE", 40, 614, 420, 12, bold, colors.oxide);
+  text(f, "Portfolio description", "THE PERSONAL PORTFOLIO WEBSITE OF ZHANG YANGDI / CIBA.", 40, 614, 620, 12, bold, colors.oxide);
   rect(f, "Acid chapter signal", 1366, 220, 42, 360, colors.oxide);
   text(f, "Chapter count", "01\n\n05", 1378, 238, 24, 12, bold, colors.night, 1.4);
   rect(f, "Enter works action", 930, 744, 430, 56, colors.oxide);
-  text(f, "Enter works label", "VIEW WORKS                                  ↘", 950, 764, 390, 12, bold, colors.night);
+  text(f, "Enter works label", "SCROLL DOWN TO EXPLORE THE WORKS             ↘", 950, 764, 390, 12, bold, colors.night);
   await addHomeProjectStage(f, 900, 1440);
 }
 
@@ -497,10 +498,11 @@ async function homeMobile() {
   const f = frame("02 Home / Mobile", 1510, 0, 390, 1580);
   addMobileHeader(f, 390);
   addSwissGrid(f, 390, 1580);
+  text(f, "Portfolio eyebrow", "PORTFOLIO", 16, 128, 180, 10, bold, colors.oxide);
   text(f, "Hero title", "CIBA", 16, 174, 350, 78, black, colors.ink, 0.82);
-  text(f, "Practice", "GAMES / WEB / MOVING IMAGE", 16, 470, 320, 10, bold, colors.oxide);
+  text(f, "Portfolio description", "THE PERSONAL PORTFOLIO WEBSITE OF\nZHANG YANGDI / CIBA.", 16, 470, 340, 10, bold, colors.oxide, 1.35);
   rect(f, "Enter works action", 16, 720, 358, 52, colors.oxide);
-  text(f, "Enter works label", "VIEW WORKS                                  ↘", 28, 738, 330, 10, bold, colors.night);
+  text(f, "Enter works label", "SCROLL DOWN TO EXPLORE THE WORKS       ↘", 28, 738, 330, 10, bold, colors.night);
   await addHomeProjectStage(f, 840, 390, true);
 }
 

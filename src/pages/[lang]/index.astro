@@ -19,9 +19,10 @@ const projects = buildHomeComposition(entries.map((entry) => entry.data as Proje
 const projectCount = String(projects.length).padStart(2, "0");
 const copy = {
   zh: {
-    role: "游戏 / 网页 / 影像",
-    enter: "查看作品",
-    selected: "作品",
+    eyebrow: "PORTFOLIO",
+    role: "张扬笛 / 糍粑的个人作品集网站。",
+    enter: "向下滑动了解作品",
+    selected: "简介",
     selectedNote: "五项公开记录：两件游戏作品、两件 2023 年网页作品，以及一组大学课题练习。",
     concept: "概念 / CONCEPT",
     record: "打开项目记录",
@@ -30,9 +31,10 @@ const copy = {
     indexNote: "标题 / 年份 / 媒介 / 状态"
   },
   en: {
-    role: "Games / Web / Moving image",
-    enter: "View works",
-    selected: "Works",
+    eyebrow: "PORTFOLIO",
+    role: "The personal portfolio website of Zhang Yangdi / CIBA.",
+    enter: "Scroll down to explore the works",
+    selected: "Introduction",
     selectedNote: "Five records are public: two games, two web-based works from 2023, and one university coursework archive.",
     concept: "CONCEPT",
     record: "Open project record",
@@ -41,9 +43,10 @@ const copy = {
     indexNote: "Title / year / medium / status"
   },
   ja: {
-    role: "ゲーム / ウェブ / 映像",
-    enter: "作品を見る",
-    selected: "作品",
+    eyebrow: "PORTFOLIO",
+    role: "張揚笛 / 糍粑の個人ポートフォリオサイト。",
+    enter: "下へスクロールして作品を見る",
+    selected: "紹介",
     selectedNote: "ゲーム作品2点、2023年のウェブ作品2点、大学課題の記録1点を公開しています。",
     concept: "コンセプト",
     record: "作品記録を開く",
@@ -70,6 +73,8 @@ const composeTitleWords = (value: string) => {
   pageClass="home-page ciba-home-v3"
 >
   <section class="v3-home-hero" aria-labelledby="v3-home-title" data-v3-hero>
+    <p class="v3-home-hero__eyebrow">{copy.eyebrow}</p>
+
     <h1 class="v3-monument" id="v3-home-title" aria-label="CIBA" data-v3-letter-title>
       {
         letters("CIBA").map((letter, index) => (
@@ -84,7 +89,7 @@ const composeTitleWords = (value: string) => {
       <div>
         <p class="v3-home-hero__role">{copy.role}</p>
       </div>
-      <a class="v3-action-link" href={`/${lang}/works/`}>
+      <a class="v3-action-link" href="#selected-works">
         <span>{copy.enter}</span><span aria-hidden="true">↘</span>
       </a>
     </div>
@@ -92,7 +97,7 @@ const composeTitleWords = (value: string) => {
     <div class="v3-home-hero__signal" aria-hidden="true"><span>01</span><span>{projectCount}</span></div>
   </section>
 
-  <section class="v3-cinema" aria-labelledby="v3-selected-title" data-v3-cinema>
+  <section id="selected-works" class="v3-cinema" aria-labelledby="v3-selected-title" data-v3-cinema>
     <header class="v3-section-heading">
       <p>01—{projectCount}</p>
       <h2 id="v3-selected-title">{copy.selected}</h2>
