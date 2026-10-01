@@ -73,8 +73,8 @@ body.project-page {
 }
 
 body.wake-page {
-  background: #000;
-  color: #fff;
+  background: var(--art-night);
+  color: var(--art-ink);
   color-scheme: dark;
 }
 
@@ -826,24 +826,24 @@ p {
 
 .wake-replica {
   min-height: 100vh;
-  background: #000;
-  color: #fff;
+  background: var(--art-night);
+  color: var(--art-ink);
   font-family:
     "Courier New", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .wake-back {
   position: fixed;
-  top: 1rem;
+  top: calc(var(--ciba-header-height, 56px) + 1rem);
   left: 1rem;
   z-index: 30;
   display: inline-flex;
   min-height: 2.25rem;
   align-items: center;
   padding: 0.4rem 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.44);
-  background: rgba(0, 0, 0, 0.52);
-  color: #fff;
+  border: 1px solid color-mix(in srgb, var(--art-ink) 44%, transparent);
+  background: color-mix(in srgb, var(--art-night) 72%, transparent);
+  color: var(--art-ink);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -857,12 +857,12 @@ p {
   place-items: center;
   padding: clamp(2rem, 7vw, 7rem);
   overflow: clip;
-  background: #000;
+  background: var(--art-night);
 }
 
 .wake-panel.is-light {
-  background: #fff;
-  color: #000;
+  background: var(--art-ink);
+  color: var(--art-night);
 }
 
 .wake-opening {
@@ -1851,8 +1851,8 @@ p {
 }
 
 .wake-replica {
-  background: #000;
-  color: #fff;
+  background: var(--art-night);
+  color: var(--art-ink);
   font-family: var(--font-body);
 }
 

@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 import ProjectImage from "../../components/ProjectImage.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { buildHomeComposition } from "../../lib/home-composition";
-import { assertLanguage, languageLabels, languages, ui } from "../../lib/i18n";
-import { getLocalizedProject, sortProjects } from "../../lib/projects";
+import { assertLanguage, languages, ui } from "../../lib/i18n";
+import { getLocalizedProject, getPublishedProjects } from "../../lib/projects";
 import { getLocalizedProfile, siteProfile } from "../../lib/site-data";
 import type { Project } from "../../lib/types";
 
@@ -16,218 +16,263 @@ const lang = assertLanguage(Astro.params.lang);
 const labels = ui[lang];
 const profile = getLocalizedProfile(lang);
 const projectEntries = await getCollection("projects");
-const projects = sortProjects(projectEntries.map((entry) => entry.data as Project));
+const projects = getPublishedProjects(projectEntries.map((entry) => entry.data as Project));
 const compositionRows = buildHomeComposition(projects);
+const selectedProjects = [
+  ...compositionRows.filter((project) => project.featured),
+  ...compositionRows.filter((project) => !project.featured)
+].slice(0, 4);
 const title = `${siteProfile.artistName} | ${profile.role}`;
 const projectCount = String(projects.length).padStart(2, "0");
-const featuredProjects = compositionRows.slice(0, Math.min(6, compositionRows.length));
+const selectedCount = String(selectedProjects.length).padStart(2, "0");
+
 const homeCopy = {
   zh: {
-    navigation: "首页导航",
-    languages: "语言切换",
-    sideNote: "精选作品像重新浮上水面的文件：被提取、错放，并在滚动中重新显现。",
-    mediaField: "可滚动的精选作品",
-    extractedTitle: "提取作品 / EXTRACTED WORKS",
-    extractedBody: "由文件、研究、游戏与图像系统构成的克制索引。滚动抽出每件作品，再打开项目页面阅读完整记录。",
-    fileStack: "项目文件堆叠",
-    portfolioTitle: "作品档案 / CIBA"
+    portfolioLabel: "个人艺术家作品集 / 东京",
+    openingIntro: "游戏、界面、影像与装置之间的个人艺术实践档案。",
+    scrollCue: "向下阅读选作",
+    prefaceKicker: "01 / 阅读方式",
+    prefaceTitle: "作品先作为证据出现，再作为氛围展开。",
+    preface: [
+      `这里不是缩略图的竞赛。${projects.length} 件可验证作品按项目问题、媒介与状态进入同一条连续阅读路径。`,
+      "先读标题、摘要和作品图像，再打开项目页面查看完整记录；完整索引始终保留在页面末端。"
+    ],
+    sequenceKicker: "02 / SELECTED WORKS",
+    sequenceTitle: `${projects.length} 件选作`,
+    sequenceIntro: "按滚动顺序阅读；每一章都可直接进入项目详情。",
+    selectedWork: "选作",
+    openWork: "打开项目记录",
+    statementKicker: "03 / POSITION",
+    statementTitle: "艺术家立场",
+    indexKicker: "04 / COMPLETE INDEX",
+    indexTitle: "完整作品索引",
+    indexIntro: "全部项目保持可达，并以有序档案的形式列出。",
+    year: "年份",
+    medium: "媒介",
+    status: "状态"
   },
   en: {
-    navigation: "Homepage navigation",
-    languages: "Language switcher",
-    sideNote: "Selected works are treated as files returning to the surface: extracted, misplaced, and made visible through scroll.",
-    mediaField: "Scrollable featured works",
-    extractedTitle: "EXTRACTED WORKS",
-    extractedBody: "A restrained index of files, studies, games, and image systems. Scroll to pull each work out of the archive, then open the project page for the full record.",
-    fileStack: "Project file stack",
-    portfolioTitle: "PORTFOLIO / CIBA"
+    portfolioLabel: "PERSONAL ARTIST PORTFOLIO / TOKYO",
+    openingIntro: "A personal archive of work across games, interfaces, moving image, and installation.",
+    scrollCue: "Scroll to selected works",
+    prefaceKicker: "01 / READING PATH",
+    prefaceTitle: "The work appears first as evidence, then opens into atmosphere.",
+    preface: [
+      `This is not a competition between thumbnails. ${projects.length} verified works enter one continuous reading path through their questions, media, and current status.`,
+      "Read each title, summary, and image before opening the full project record; the complete index remains available at the end of the page."
+    ],
+    sequenceKicker: "02 / SELECTED WORKS",
+    sequenceTitle: `${projects.length} selected works`,
+    sequenceIntro: "Read in scroll order; every chapter links directly to its full project page.",
+    selectedWork: "Selected work",
+    openWork: "Open project record",
+    statementKicker: "03 / POSITION",
+    statementTitle: "Artist position",
+    indexKicker: "04 / COMPLETE INDEX",
+    indexTitle: "Complete works index",
+    indexIntro: "Every project remains reachable as part of an ordered archive.",
+    year: "Year",
+    medium: "Medium",
+    status: "Status"
   },
   ja: {
-    navigation: "ホームページのナビゲーション",
-    languages: "言語切り替え",
-    sideNote: "選ばれた作品は、水面へ戻るファイルのように、抽出され、置き違えられ、スクロールによって再び見えるものとして扱います。",
-    mediaField: "スクロールできる選抜作品",
-    extractedTitle: "抽出作品 / EXTRACTED WORKS",
-    extractedBody: "ファイル、スタディ、ゲーム、イメージ・システムを抑制された索引としてまとめています。スクロールで作品をアーカイブから引き出し、各ページで完全な記録を開きます。",
-    fileStack: "作品ファイルのスタック",
-    portfolioTitle: "作品アーカイブ / CIBA"
+    portfolioLabel: "個人アーティスト・ポートフォリオ / 東京",
+    openingIntro: "ゲーム、インターフェース、映像、インスタレーションを横断する個人制作のアーカイブ。",
+    scrollCue: "選抜作品へスクロール",
+    prefaceKicker: "01 / 読み方",
+    prefaceTitle: "作品はまず証拠として現れ、その後に空気をひらく。",
+    preface: [
+      `これはサムネイル同士の競争ではありません。検証できる${projects.length}件の作品を、問い、メディア、現在の状態から一つの連続した読解経路へ配置します。`,
+      "タイトル、概要、イメージを読み、各プロジェクトの記録を開いてください。完全な索引はページ末尾に常に残ります。"
+    ],
+    sequenceKicker: "02 / SELECTED WORKS",
+    sequenceTitle: `${projects.length}件の選抜作品`,
+    sequenceIntro: "スクロール順に読み、各章からプロジェクト詳細へ直接移動できます。",
+    selectedWork: "選抜作品",
+    openWork: "プロジェクト記録を開く",
+    statementKicker: "03 / POSITION",
+    statementTitle: "アーティストの立場",
+    indexKicker: "04 / COMPLETE INDEX",
+    indexTitle: "全作品索引",
+    indexIntro: "すべてのプロジェクトを、順序のあるアーカイブとして閲覧できます。",
+    year: "年",
+    medium: "メディア",
+    status: "状態"
   }
 }[lang];
 
-const scatterPositions = [
-  ["-30vw", "20vh", -15],
-  ["4vw", "12vh", 7],
-  ["34vw", "27vh", -9],
-  ["58vw", "6vh", 13],
-  ["86vw", "25vh", -18],
-  ["110vw", "13vh", 9],
-  ["138vw", "31vh", -6],
-  ["164vw", "8vh", 18],
-  ["190vw", "23vh", -12],
-  ["216vw", "14vh", 10],
-  ["244vw", "30vh", -16],
-  ["270vw", "7vh", 15],
-  ["300vw", "24vh", -8],
-  ["328vw", "15vh", 11]
-] as const;
+const getChapterMedia = (project: Project) => {
+  if (project.slug !== "wake-up") return project.media.slice(0, 2);
 
-const mediaPool = featuredProjects
-  .flatMap((project, projectIndex) => {
-    const localized = getLocalizedProject(project, lang);
-    const mediaItems = project.slug === "wake-up" ? project.media.slice(0, 4) : project.media.slice(0, 2);
+  const preferredMedia = ["bed-alarm", "flooded-title"].flatMap((token) => {
+    const media = project.media.find((item) => item.src.includes(token));
+    return media ? [media] : [];
+  });
 
-    return mediaItems.map((media, mediaIndex) => ({
-      project,
-      projectIndex,
-      media,
-      mediaIndex,
-      localized
-    }));
-  })
-  .slice(0, scatterPositions.length);
+  if (preferredMedia.length > 0) return preferredMedia.slice(0, 2);
+
+  return project.media
+    .filter((media) => !/(grid|runner|statement|logo|hand|corridor)/i.test(media.src))
+    .slice(0, 2);
+};
 ---
 
-<BaseLayout lang={lang} title={title} description={profile.statement[0]} pageClass="home-page composition-home">
-  <nav class="cinema-nav" aria-label={homeCopy.navigation} data-cinema-nav>
-    <a href={`/${lang}/works/`}>PORTFOLIO</a>
-    <a href={`/${lang}/about/`}>CIBA</a>
-  </nav>
+<BaseLayout lang={lang} title={title} description={profile.statement[0]} pageClass="home-page composition-home cinema-home">
+  <section class="cinema-opening" aria-labelledby="cinema-opening-title">
+    <p class="cinema-opening__kicker">{homeCopy.portfolioLabel}</p>
 
-  <div class="cinema-language" aria-label={homeCopy.languages}>
-    {
-      languages.map((targetLang) => (
-        <a class:list={{ "is-active": targetLang === lang }} href={`/${targetLang}/`}>
-          {languageLabels[targetLang]}
-        </a>
-      ))
-    }
-  </div>
+    <h1 id="cinema-opening-title" class="cinema-opening__title">
+      <span class="cinema-opening__title-mask">
+        <span class="cinema-opening__title-track">
+          <span>CIBA</span>
+          <span aria-hidden="true">CIBA</span>
+        </span>
+      </span>
+    </h1>
 
-  <section class="cinema-scroll" data-cinema-scroll>
-    <div class="cinema-stage">
-      <div class="cinema-copy-grid">
-        <div class="cinema-title-stack" aria-live="polite">
-          {
-            featuredProjects.map((project, index) => {
-              const localized = getLocalizedProject(project, lang);
-              const words = localized.title.toUpperCase().split(" ");
-
-              return (
-                <h1
-                  class:list={["cinema-title", { "is-active": index === 0 }]}
-                  aria-label={localized.title}
-                  data-cinema-title
-                  data-work-index={index}
-                >
-                  {words.map((word) => (
-                    <span class="cinema-word">
-                      {Array.from(word).map((letter) => (
-                        <span class="cinema-letter-mask">
-                          <span class="cinema-letter-roll">
-                            <span>{letter}</span>
-                            <span aria-hidden="true">{letter}</span>
-                          </span>
-                        </span>
-                      ))}
-                    </span>
-                  ))}
-                </h1>
-              );
-            })
-          }
-        </div>
-
-        <div class="cinema-description-stack">
-          {
-            featuredProjects.map((project, index) => {
-              const localized = getLocalizedProject(project, lang);
-
-              return (
-                <p class:list={["cinema-description", { "is-active": index === 0 }]} data-cinema-description data-work-index={index}>
-                  {localized.summary}
-                </p>
-              );
-            })
-          }
-        </div>
-
-        <p class="cinema-side-note">
-          {homeCopy.sideNote}
-        </p>
+    <div class="cinema-opening__ledger">
+      <div class="cinema-opening__position">
+        <p>{profile.role}</p>
+        <p>{homeCopy.openingIntro}</p>
       </div>
 
-      <div class="cinema-media-field" aria-label={homeCopy.mediaField}>
-        {
-          mediaPool.map((item, index) => {
-            const [x, y, rotation] = scatterPositions[index];
+      <p class="cinema-opening__count">
+        <span>{projectCount}</span>
+        <span>{labels.works}</span>
+      </p>
 
-            return (
-              <a
-                class="cinema-media"
-                href={`/${lang}/works/${item.project.slug}/`}
-                data-cinema-media
-                data-work-index={item.projectIndex}
-                style={`--scatter-x:${x};--scatter-y:${y};--scatter-r:${rotation}deg;--media-order:${index};`}
-              >
-                {
-                  item.media.type === "image" ? (
-                    <ProjectImage
-                      media={item.media}
-                      eager={item.projectIndex === 0 && item.mediaIndex === 0}
-                      sizes="(max-width: 899px) calc(100vw - 2rem), 14vw"
-                    />
-                  ) : (
-                    <video src={item.media.src} muted playsinline controls preload="metadata" aria-label={item.media.alt} />
-                  )
-                }
-                <span>{String(item.projectIndex + 1).padStart(2, "0")} / {item.localized.title}</span>
-              </a>
-            );
-          })
-        }
-      </div>
+      <a class="cinema-opening__scroll-cue" href="#selected-works">
+        <span>{homeCopy.scrollCue}</span>
+        <span aria-hidden="true">↓</span>
+      </a>
     </div>
   </section>
 
-  <section class="cinema-statement" data-reveal>
-    <p>{profile.statement[1]}</p>
+  <section class="cinema-preface" aria-labelledby="cinema-preface-title">
+    <div class="cinema-preface__heading">
+      <p class="cinema-preface__kicker">{homeCopy.prefaceKicker}</p>
+      <h2 id="cinema-preface-title">{homeCopy.prefaceTitle}</h2>
+    </div>
+
+    <div class="cinema-preface__body">
+      {homeCopy.preface.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
   </section>
 
-  <section class="file-extract" aria-labelledby="file-extract-title" data-file-extract>
-    <div class="file-extract__sticky">
-      <div class="file-extract__copy" data-reveal>
-        <p class="file-extract__meta">02 / {projectCount} {labels.works}</p>
-        <h2 id="file-extract-title">{homeCopy.extractedTitle}</h2>
-        <p>{homeCopy.extractedBody}</p>
-      </div>
+  <section
+    id="selected-works"
+    class="cinema-sequence"
+    aria-labelledby="cinema-sequence-title"
+    data-cinematic-sequence
+    data-cinema-scroll
+  >
+    <header class="cinema-sequence__header">
+      <p class="cinema-sequence__kicker">{homeCopy.sequenceKicker} / {selectedCount}</p>
+      <h2 id="cinema-sequence-title">{homeCopy.sequenceTitle}</h2>
+      <p>{homeCopy.sequenceIntro}</p>
+    </header>
 
-      <div class="file-stack" aria-label={homeCopy.fileStack}>
+    <div class="cinema-stage cinema-sequence__stage" data-cinema-stage>
+      <div class="cinema-media-field cinema-sequence__chapters">
         {
-          featuredProjects.map((project, index) => {
+          selectedProjects.map((project, index) => {
             const localized = getLocalizedProject(project, lang);
+            const chapterMedia = getChapterMedia(project);
+            const indexLabel = String(index + 1).padStart(2, "0");
+            const titleWords = localized.title.toUpperCase().split(/\s+/);
 
             return (
-              <a
-                class="file-card"
-                href={`/${lang}/works/${project.slug}/`}
-                data-file-card
-                style={`--file-index:${index};--project-color:${project.palette.primary};`}
+              <article
+                class:list={["cinema-chapter", { "is-active": index === 0 }]}
+                data-cinematic-chapter
+                data-work-index={index}
               >
-                <div class="file-card__header">
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{localized.title}</strong>
+                <div class="cinema-chapter__copy">
+                  <p class="cinema-chapter__sequence">
+                    {homeCopy.selectedWork} {indexLabel} / {selectedCount}
+                  </p>
+
+                  <h3
+                    class:list={["cinema-chapter__title", "cinema-title", { "is-active": index === 0 }]}
+                    data-cinema-title
+                    data-work-index={index}
+                  >
+                    <a href={`/${lang}/works/${project.slug}/`}>
+                      {titleWords.map((word, wordIndex) => (
+                        <>
+                          {wordIndex > 0 && " "}
+                          <span class="cinema-chapter__word cinema-word">
+                            {Array.from(word).map((glyph) => (
+                              <span class="cinema-chapter__glyph-mask cinema-letter-mask">
+                                <span class="cinema-chapter__glyph-track cinema-letter-roll">
+                                  <span>{glyph}</span>
+                                  <span aria-hidden="true">{glyph}</span>
+                                </span>
+                              </span>
+                            ))}
+                          </span>
+                        </>
+                      ))}
+                    </a>
+                  </h3>
+
+                  <dl class="cinema-chapter__metadata">
+                    <div>
+                      <dt>{homeCopy.year}</dt>
+                      <dd>{project.year}</dd>
+                    </div>
+                    <div>
+                      <dt>{homeCopy.medium}</dt>
+                      <dd>{localized.medium ?? project.medium}</dd>
+                    </div>
+                    <div>
+                      <dt>{homeCopy.status}</dt>
+                      <dd>{localized.status ?? project.status}</dd>
+                    </div>
+                  </dl>
+
+                  <p
+                    class:list={["cinema-chapter__summary", "cinema-description", { "is-active": index === 0 }]}
+                    data-cinema-description
+                    data-work-index={index}
+                  >
+                    {localized.summary}
+                  </p>
+
+                  <a class="cinema-chapter__open" href={`/${lang}/works/${project.slug}/`}>
+                    <span>{homeCopy.openWork}</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
                 </div>
-                <p>{localized.summary}</p>
-                <figure>
+
+                <div class="cinema-chapter__media">
                   {
-                    project.media[0].type === "image" ? (
-                      <ProjectImage media={project.media[0]} sizes="(max-width: 899px) calc(100vw - 3rem), 32vw" />
-                    ) : (
-                      <video src={project.media[0].src} muted playsinline controls preload="metadata" aria-label={project.media[0].alt} />
-                    )
+                    chapterMedia.map((media, mediaIndex) => (
+                      <figure
+                        class="cinema-chapter__figure cinema-media"
+                        data-cinema-media
+                        data-work-index={index}
+                      >
+                        {media.type === "image" ? (
+                          <a href={`/${lang}/works/${project.slug}/`}>
+                            <ProjectImage
+                              media={media}
+                              eager={index === 0 && mediaIndex === 0}
+                              sizes="(max-width: 899px) calc(100vw - 2rem), 28vw"
+                            />
+                          </a>
+                        ) : (
+                          <video src={media.src} muted playsinline controls preload="metadata" aria-label={media.alt} />
+                        )}
+                        <figcaption>
+                          <span>{indexLabel}.{String(mediaIndex + 1).padStart(2, "0")}</span>
+                          <span>{media.caption ?? media.alt}</span>
+                        </figcaption>
+                      </figure>
+                    ))
                   }
-                </figure>
-              </a>
+                </div>
+              </article>
             );
           })
         }
@@ -235,23 +280,44 @@ const mediaPool = featuredProjects
     </div>
   </section>
 
-  <section class="minimal-index" aria-labelledby="minimal-index-title">
-    <p class="file-extract__meta">{labels.index}</p>
-    <h2 id="minimal-index-title">{homeCopy.portfolioTitle}</h2>
-    <div class="minimal-index__list">
+  <section class="cinema-statement" aria-labelledby="cinema-statement-title" data-reveal>
+    <div class="cinema-statement__heading">
+      <p class="cinema-statement__kicker">{homeCopy.statementKicker}</p>
+      <h2 id="cinema-statement-title">{homeCopy.statementTitle}</h2>
+    </div>
+
+    <div class="cinema-statement__body">
+      {profile.statement.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </section>
+
+  <section class="cinema-index" aria-labelledby="cinema-index-title">
+    <header class="cinema-index__header">
+      <p class="cinema-index__kicker">{homeCopy.indexKicker} / {projectCount}</p>
+      <h2 id="cinema-index-title">{homeCopy.indexTitle}</h2>
+      <p>{homeCopy.indexIntro}</p>
+    </header>
+
+    <ol class="cinema-index__list">
       {
         compositionRows.map((project, index) => {
           const localized = getLocalizedProject(project, lang);
 
           return (
-            <a href={`/${lang}/works/${project.slug}/`} data-reveal>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{localized.title}</strong>
-              <span>{project.year}</span>
-            </a>
+            <li class="cinema-index__item">
+              <a href={`/${lang}/works/${project.slug}/`} data-reveal>
+                <span class="cinema-index__number">{String(index + 1).padStart(2, "0")}</span>
+                <strong class="cinema-index__title">{localized.title}</strong>
+                <span class="cinema-index__metadata">
+                  <span>{homeCopy.year} {project.year}</span>
+                  <span>{homeCopy.medium} {localized.medium ?? project.medium}</span>
+                  <span>{homeCopy.status} {localized.status ?? project.status}</span>
+                </span>
+              </a>
+            </li>
           );
         })
       }
-    </div>
+    </ol>
   </section>
 </BaseLayout>

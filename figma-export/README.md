@@ -19,10 +19,10 @@ The plugin creates editable frames for:
 - Home / Mobile
 - Works / Draggable Window System
 - Project Detail / X.WHEEL
-- Wake Up / Replica Map
+- Wake Up / Edited Sequence
 - About / Statement CV Contact
 
-The Works frame contains seven separate project-window frames. Their title bars, media placeholders, summaries, metadata, and `OPEN` labels remain editable. Move each whole window frame in Figma to test alternate overlaps; the authored overlap is intentional and mirrors the website's desktop Scatter mode. The drawn controls document interface states but are not interactive inside the Figma canvas.
+The Works frame contains four separate verified project-window frames. Their title bars, media placeholders, summaries, metadata, and `OPEN` labels remain editable. Move each whole window frame in Figma to test alternate overlaps; the authored overlap is intentional and mirrors the website's desktop Scatter mode. The drawn controls document interface states but are not interactive inside the Figma canvas.
 
 Running the plugin again updates the generated frames on the existing `CIBA / Signal Index / Acid
 Proof` page instead of creating duplicates. Untagged top-level layers that you add manually
@@ -34,7 +34,7 @@ exploratory frames to another page before refreshing if you want to keep them.
 The website project records are the canonical source at `../src/content/projects/*.json`, relative
 to this README; the website reads them through `../src/lib/projects.ts`. Canonical visual tokens
 live in `../src/content/art-direction.json`. The plugin's project array is a generated-handoff
-snapshot. Update it when records change; the drift check below verifies every project title,
+snapshot of published records. Update it when records change; the drift check below verifies every published project title,
 summary, medium, year, status, order, and slug before delivery.
 
 ## Tokens and screenshots

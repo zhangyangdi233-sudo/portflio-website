@@ -4,15 +4,16 @@ import ProjectMedia from "../../../components/ProjectMedia.astro";
 import WakeUpReplica from "../../../components/WakeUpReplica.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { assertLanguage, languages, ui } from "../../../lib/i18n";
-import { getLocalizedProject, getProjectThemeVars, sortProjects } from "../../../lib/projects";
+import { getLocalizedProject, getProjectThemeVars, getPublishedProjects } from "../../../lib/projects";
 import { siteProfile } from "../../../lib/site-data";
 import type { Project } from "../../../lib/types";
 
 export async function getStaticPaths() {
   const entries = await getCollection("projects");
+  const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
   return languages.flatMap((lang) =>
-    entries.map((entry) => ({
-      params: { lang, slug: entry.data.slug }
+    projects.map((project) => ({
+      params: { lang, slug: project.slug }
     }))
   );
 }
@@ -20,7 +21,7 @@ export async function getStaticPaths() {
 const lang = assertLanguage(Astro.params.lang);
 const labels = ui[lang];
 const entries = await getCollection("projects");
-const projects = sortProjects(entries.map((entry) => entry.data as Project));
+const projects = getPublishedProjects(entries.map((entry) => entry.data as Project));
 const project = projects.find((item) => item.slug === Astro.params.slug) ?? projects[0];
 const localized = getLocalizedProject(project, lang);
 const theme = getProjectThemeVars(project);
@@ -40,7 +41,6 @@ const detailCopy = {
   description={localized.summary}
   pageClass={isWakeUpReplica ? "project-page wake-page" : "project-page"}
   theme={theme}
-  bare={isWakeUpReplica}
 >
   {
     isWakeUpReplica ? (
@@ -49,7 +49,7 @@ const detailCopy = {
       <article class="project-detail">
         <header class="project-hero">
           <div class="project-hero__copy">
-            <p class="eyebrow">{project.status}</p>
+            <p class="eyebrow">{localized.status ?? project.status}</p>
             <h1 class="split-heading">{localized.title}</h1>
             <p>{localized.summary}</p>
             <dl class="project-meta">
@@ -59,7 +59,7 @@ const detailCopy = {
               </div>
               <div>
                 <dt>{detailCopy.medium}</dt>
-                <dd>{project.medium}</dd>
+                <dd>{localized.medium ?? project.medium}</dd>
               </div>
               <div>
                 <dt>{detailCopy.tags}</dt>

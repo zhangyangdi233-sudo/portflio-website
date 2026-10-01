@@ -4,6 +4,7 @@
   "medium": "Soundless interface, screen study",
   "status": "Selected work",
   "priority": 5,
+  "published": false,
   "featured": false,
   "tags": ["screen", "signal", "interface"],
   "palette": {

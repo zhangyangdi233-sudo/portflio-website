@@ -12,7 +12,6 @@ gsap.registerPlugin(CustomEase, Draggable, Flip, ScrollToPlugin, ScrollTrigger, 
 CustomEase.create("cibaEase", "M0,0 C0.2,0 0.05,1 1,1");
 const motionTokens = artDirection.motion;
 const workspaceTokens = artDirection.workspace;
-const microSeconds = motionTokens.microMs / 1000;
 const stateSeconds = motionTokens.stateMs / 1000;
 const enterSeconds = motionTokens.enterMs / 1000;
 const titleSeconds = motionTokens.titleMs / 1000;
@@ -113,95 +112,89 @@ motion.add(
       }
     }
 
-    const cinemaScroll = document.querySelector<HTMLElement>("[data-cinema-scroll]");
-    if (cinemaScroll) {
-      const stage = cinemaScroll.querySelector<HTMLElement>(".cinema-stage");
-      const mediaField = cinemaScroll.querySelector<HTMLElement>(".cinema-media-field");
-      const medias = gsap.utils.toArray<HTMLElement>(cinemaScroll.querySelectorAll("[data-cinema-media]"));
-      const titles = gsap.utils.toArray<HTMLElement>(cinemaScroll.querySelectorAll("[data-cinema-title]"));
-      const descriptions = gsap.utils.toArray<HTMLElement>(cinemaScroll.querySelectorAll("[data-cinema-description]"));
-      let activeTitleIndex = -1;
+    const openingTitleTrack = document.querySelector<HTMLElement>(".cinema-opening__title-track");
+    if (openingTitleTrack) {
+      gsap.fromTo(
+        openingTitleTrack,
+        { yPercent: -50 },
+        { yPercent: 0, duration: titleSeconds * 1.8, delay: 0.08 }
+      );
+    }
 
-      const activateTitle = (index: number) => {
-        if (activeTitleIndex === index || !titles[index]) return;
+    const cinemaSequence = document.querySelector<HTMLElement>("[data-cinematic-sequence]");
+    if (cinemaSequence) {
+      const stage = cinemaSequence.querySelector<HTMLElement>("[data-cinema-stage]");
+      const chapters = gsap.utils.toArray<HTMLElement>(cinemaSequence.querySelectorAll("[data-cinematic-chapter]"));
 
-        const previousTitle = activeTitleIndex >= 0 ? titles[activeTitleIndex] : undefined;
-        const previousDescription = activeTitleIndex >= 0 ? descriptions[activeTitleIndex] : undefined;
-        const nextTitle = titles[index];
-        const nextDescription = descriptions[index];
+      if (isDesktop && stage && chapters.length > 0) {
+        cinemaSequence.classList.add("is-enhanced");
+        let activeChapterIndex = 0;
 
-        if (previousTitle) {
-          gsap.to(previousTitle.querySelectorAll(".cinema-letter-roll"), {
-            yPercent: -100,
-            duration: stateSeconds,
-            stagger: { amount: 0.08, from: "start" }
-          });
-          gsap.to(previousTitle, { autoAlpha: 0, duration: microSeconds, delay: 0.08 });
-        }
+        gsap.set(chapters, { autoAlpha: 0, pointerEvents: "none" });
+        chapters.forEach((chapter, index) => {
+          chapter.classList.toggle("is-active", index === 0);
+          chapter.setAttribute("aria-hidden", String(index !== 0));
+        });
+        gsap.set(chapters[0], { autoAlpha: 1, pointerEvents: "auto" });
 
-        if (previousDescription) {
-          gsap.to(previousDescription, { y: -14, autoAlpha: 0, duration: stateSeconds });
-        }
+        const activateChapter = (index: number) => {
+          if (index === activeChapterIndex || !chapters[index]) return;
 
-        gsap.set(nextTitle, { autoAlpha: 1 });
-        gsap.fromTo(
-          nextTitle.querySelectorAll(".cinema-letter-roll"),
-          { yPercent: 100 },
-          { yPercent: 0, duration: titleSeconds, stagger: { amount: 0.22, from: "start" } }
-        );
+          const previous = chapters[activeChapterIndex];
+          const next = chapters[index];
+          const previousGlyphs = previous?.querySelectorAll(".cinema-chapter__glyph-track");
+          const nextGlyphs = next.querySelectorAll(".cinema-chapter__glyph-track");
+          const nextMedia = next.querySelectorAll("[data-cinema-media]");
 
-        if (nextDescription) {
-          gsap.fromTo(nextDescription, { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: titleSeconds, delay: 0.08 });
-        }
+          if (previous) {
+            previous.classList.remove("is-active");
+            previous.setAttribute("aria-hidden", "true");
+            gsap.set(previous, { visibility: "visible" });
+            gsap.to(previousGlyphs, {
+              yPercent: -50,
+              duration: stateSeconds,
+              stagger: { amount: 0.08, from: "start" }
+            });
+            gsap.to(previous, {
+              autoAlpha: 0,
+              pointerEvents: "none",
+              duration: stateSeconds
+            });
+          }
 
-        activeTitleIndex = index;
-      };
+          next.classList.add("is-active");
+          next.setAttribute("aria-hidden", "false");
+          gsap.fromTo(
+            next,
+            { autoAlpha: 0 },
+            { autoAlpha: 1, pointerEvents: "auto", duration: titleSeconds }
+          );
+          gsap.fromTo(
+            nextGlyphs,
+            { yPercent: 50 },
+            { yPercent: 0, duration: titleSeconds, stagger: { amount: 0.18, from: "start" } }
+          );
+          gsap.fromTo(
+            nextMedia,
+            { x: (mediaIndex) => (mediaIndex % 2 === 0 ? 90 : -70), y: 34, rotation: (mediaIndex) => (mediaIndex % 2 === 0 ? 2 : -2) },
+            { x: 0, y: 0, rotation: 0, duration: titleSeconds * 1.25, stagger: 0.08 }
+          );
 
-      gsap.set(titles, { autoAlpha: 0 });
-      gsap.set(descriptions, { autoAlpha: 0 });
-      activateTitle(0);
+          activeChapterIndex = index;
+        };
 
-      gsap.from(".cinema-nav a", {
-        y: -18,
-        autoAlpha: 0,
-        stagger: 0.08,
-        duration: 0.58
-      });
-
-      if (isDesktop && stage && mediaField && medias.length > 0) {
-        const scrollDistance = Math.max(3600, titles.length * 820);
-
-        const cinemaTimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: cinemaScroll,
-            start: "top top",
-            end: `+=${scrollDistance}`,
-            pin: stage,
-            scrub: 1,
-            anticipatePin: 1,
-            onUpdate: (self) => {
-              const nextIndex = Math.min(titles.length - 1, Math.floor(self.progress * titles.length));
-              activateTitle(nextIndex);
-            }
+        ScrollTrigger.create({
+          trigger: stage,
+          start: "top top",
+          end: `+=${Math.max(3600, chapters.length * 860)}`,
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const nextIndex = Math.min(chapters.length - 1, Math.floor(self.progress * chapters.length));
+            activateChapter(nextIndex);
           }
         });
-
-        cinemaTimeline
-          .to(document.body, { "--cinema-green-alpha": 0, ease: "none", duration: 0.36 }, 0)
-          .to(mediaField, { xPercent: -58, ease: "none", duration: 1 }, 0)
-          .to(
-            medias,
-            {
-              rotation: (index) => (index % 2 === 0 ? -2 : 2),
-              y: (index) => (index % 3 === 0 ? -38 : index % 3 === 1 ? 22 : -10),
-              ease: "none",
-              duration: 1
-            },
-            0
-          );
-      } else if (mediaField && medias.length > 0) {
-        gsap.set(document.body, { "--cinema-green-alpha": 0.52 });
-        gsap.set(medias, { clearProps: "transform" });
       }
     }
 

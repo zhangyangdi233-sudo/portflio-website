@@ -5,6 +5,8 @@ import { z } from "astro/zod";
 const localizedText = z.object({
   title: z.string(),
   summary: z.string(),
+  medium: z.string().optional(),
+  status: z.string().optional(),
   body: z.array(z.string()).min(1)
 });
 
@@ -16,6 +18,7 @@ const projects = defineCollection({
     medium: z.string(),
     status: z.string(),
     priority: z.number(),
+    published: z.boolean().default(true),
     featured: z.boolean().default(false),
     pageMode: z.enum(["standard", "wake-up-replica"]).default("standard"),
     tags: z.array(z.string()),

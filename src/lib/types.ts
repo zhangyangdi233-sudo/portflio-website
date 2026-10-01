@@ -3,6 +3,8 @@ export type Language = "zh" | "en" | "ja";
 export type LocalizedText = {
   title: string;
   summary: string;
+  medium?: string;
+  status?: string;
   body: string[];
 };
 
@@ -19,6 +21,7 @@ export type Project = {
   medium: string;
   status: string;
   priority: number;
+  published: boolean;
   featured: boolean;
   pageMode?: "standard" | "wake-up-replica";
   tags: string[];

@@ -9,6 +9,7 @@ Use these as evidence anchors, then prefer current primary or institutional sour
 - Yale School of Art graduate portfolio requirements: https://www.art.yale.edu/apply/graduate-admission/portfolio-requirements
 - RISD graduate application guidance: https://www.risd.edu/admissions/graduate/apply-risd
 - WCAG 2.2: https://www.w3.org/TR/WCAG22/
+- W3C What's New in WCAG 2.2: https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
 - W3C Japanese Layout Requirements: https://www.w3.org/TR/jlreq/
 - W3C Understanding Use of Color: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color
 - W3C image accessibility: https://www.w3.org/WAI/tutorials/images/
@@ -22,6 +23,7 @@ Use these as evidence anchors, then prefer current primary or institutional sour
 - Bauhaus typography: https://www.bauhaus.de/en/research/publications/bauhaus-typography/
 - MoMA, Constructivist Book Design: https://www.moma.org/interactives/exhibitions/2002/russian/5_pdfs/rowell.pdf
 - Vitsœ, Dieter Rams's ten principles: https://www.vitsoe.com/eu/about/good-design
+- Vitsœ, Dieter Rams “Design by Vitsœ” speech: https://www.vitsoe.com/files/assets/1000/17/VITSOE_Dieter_Rams_speech.pdf
 - Gary Hustwit, Rams: https://www.hustwit.com/rams/
 - Kodak, Asteroid City cinematography: https://www.kodak.com/en/motion/blog-post/asteroid-city/
 

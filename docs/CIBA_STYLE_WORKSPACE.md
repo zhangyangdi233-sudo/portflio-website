@@ -25,13 +25,14 @@ updates remain versioned with the website.
 
 Import `figma-export/figma-plugin/manifest.json` in Figma Desktop through
 `Plugins → Development → Import plugin from manifest…`, then run **CIBA Portfolio Import**. It
-creates editable Home desktop/mobile, Works windows, project detail, WAKE UP map, and About frames.
+creates editable Home desktop/mobile, Works windows, project detail, WAKE UP edited-sequence, and About frames.
 Text, shapes, title bars, media placeholders, metadata, and each Works window remain independent
 Figma layers. Website drag/filter/routing behavior stays in code.
 
-The generated page is `CIBA / Signal Index / Acid Proof`. In the Works frame, only the selected
-window uses acid green; inactive window bars use warm paper with black text. This mirrors the
-website's compact 252–305px desktop windows and 980px bounded stage.
+The generated page is `CIBA / Signal Index / Acid Proof`. Works windows use acid title bars,
+warm-paper evidence bodies, black structural borders and an acid hard shadow; active state is also
+shown by focus/z-order and a larger shadow. This mirrors the website's 320–390px desktop windows
+and 760px bounded stage. Mobile and the desktop List control preserve semantic reading order.
 
 After changing website tokens, mirror the values in `figma-export/design-tokens.json` and the
 plugin color block, then run:

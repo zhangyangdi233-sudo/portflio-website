@@ -19,9 +19,42 @@ interface Props {
 const { project, lang, index, position } = Astro.props;
 const localized = getLocalizedProject(project, lang);
 const copy = {
-  zh: { drag: "拖动作品窗口", instruction: "桌面端可拖动标题栏。方向键移动 16 像素，按住 Shift 移动 48 像素，Home 返回起点，Escape 最小化。", status: "状态", minimize: "最小化", view: "查看", year: "年份", medium: "媒介", tags: "项目标签", open: "打开项目" },
-  en: { drag: "Move project window", instruction: "On desktop, drag the title bar. Arrow keys move 16 pixels, Shift plus Arrow moves 48 pixels, Home returns to origin, and Escape minimizes.", status: "Status", minimize: "Minimize", view: "View", year: "Year", medium: "Medium", tags: "Project tags", open: "Open project" },
-  ja: { drag: "作品ウィンドウを移動", instruction: "デスクトップではタイトルバーをドラッグできます。矢印キーで16px、Shiftと矢印で48px移動し、Homeで原点、Escapeで最小化します。", status: "状態", minimize: "最小化", view: "見る", year: "年", medium: "メディア", tags: "作品タグ", open: "作品を開く" }
+  zh: {
+    drag: "拖动作品窗口",
+    instruction:
+      "桌面端可拖动标题栏。方向键移动 16 像素，按住 Shift 移动 48 像素，Home 返回起点，Escape 最小化到恢复栏。",
+    status: "状态",
+    minimize: "最小化到恢复栏",
+    view: "查看作品",
+    year: "年份",
+    medium: "媒介",
+    tags: "项目标签",
+    open: "打开作品"
+  },
+  en: {
+    drag: "Move project window",
+    instruction:
+      "On desktop, drag the title bar. Arrow keys move 16 pixels, Shift plus Arrow moves 48 pixels, Home returns to origin, and Escape minimizes to the dock.",
+    status: "Status",
+    minimize: "Minimize to dock",
+    view: "View project",
+    year: "Year",
+    medium: "Medium",
+    tags: "Project tags",
+    open: "OPEN PROJECT"
+  },
+  ja: {
+    drag: "作品ウィンドウを移動",
+    instruction:
+      "デスクトップではタイトルバーをドラッグできます。矢印キーで16px、Shiftと矢印で48px移動し、Homeで原点、Escapeで復元バーに最小化します。",
+    status: "状態",
+    minimize: "復元バーに最小化",
+    view: "作品を見る",
+    year: "年",
+    medium: "メディア",
+    tags: "作品タグ",
+    open: "作品を開く"
+  }
 }[lang];
 const sequence = String(index + 1).padStart(2, "0");
 const titleId = `work-desktop-window-${project.slug}-${index}-title`;
@@ -44,7 +77,13 @@ const windowStyle = [
   data-work-window
   data-slug={project.slug}
   data-featured={project.featured ? "true" : "false"}
+  data-status={project.status}
   data-tags={project.tags.join(" ")}
+  data-window-x={position.x}
+  data-window-y={position.y}
+  data-window-width={position.width}
+  data-window-rotation={position.rotation}
+  data-window-z={position.z}
   style={windowStyle}
 >
   <header class="work-desktop-window__bar">
@@ -56,26 +95,26 @@ const windowStyle = [
       aria-describedby={instructionId}
       aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Home Escape"
     ></button>
+    <span class="work-desktop-window__status-mark" aria-hidden="true"></span>
     <span class="work-desktop-window__index">{sequence}</span>
     <h3 class="work-desktop-window__title" id={titleId}>{localized.title}</h3>
-    <span class="work-desktop-window__status" aria-label={`${copy.status}: ${project.status}`}>
-      {project.status}
-    </span>
     <button
-      class="work-desktop-window__minimize"
+      class="work-desktop-window__minimize work-desktop-window__close"
       type="button"
       data-window-minimize
-      aria-label={`${copy.minimize} ${localized.title}`}
+      aria-label={`${copy.minimize}: ${localized.title}`}
+      title={`${copy.minimize}: ${localized.title}`}
     >
-      <span aria-hidden="true">&minus;</span>
+      <span class="work-desktop-window__close-icon" aria-hidden="true"></span>
     </button>
   </header>
   <p class="sr-only" id={instructionId}>{copy.instruction}</p>
+  <p class="sr-only" aria-live="polite" data-window-announcer></p>
 
   <a
     class="work-desktop-window__media-link"
     href={projectHref}
-    aria-label={`${copy.view} ${localized.title}`}
+    aria-label={`${copy.view}: ${localized.title}`}
   >
     <ProjectMedia media={project.media[0]} />
   </a>
@@ -88,7 +127,11 @@ const windowStyle = [
       </div>
       <div>
         <dt>{copy.medium}</dt>
-        <dd>{project.medium}</dd>
+        <dd>{localized.medium ?? project.medium}</dd>
+      </div>
+      <div>
+        <dt>{copy.status}</dt>
+        <dd>{localized.status ?? project.status}</dd>
       </div>
     </dl>
 
@@ -98,8 +141,13 @@ const windowStyle = [
       {project.tags.map((tag) => <li>{tag}</li>)}
     </ul>
 
-    <a class="work-desktop-window__open" href={projectHref}>
-      {copy.open} <span class="sr-only">{localized.title}</span>
+    <a
+      class="work-desktop-window__open"
+      href={projectHref}
+      aria-label={`${copy.open}: ${localized.title}`}
+    >
+      <span class="work-desktop-window__open-label">{copy.open}</span>
+      <span class="sr-only">: {localized.title}</span>
     </a>
   </div>
 </article>

@@ -54,7 +54,7 @@
     "background": "flat black field with warm-paper hairlines",
     "grid": "disciplined asymmetric Internationalist grid; whitespace is structural",
     "hero": "compact readable title and summary separated by a single acid signal rule",
-    "works": "seven independent project windows arranged on a desktop Scatter canvas"
+    "works": "four verified project windows arranged on a desktop Scatter canvas"
   },
   "motion": {
     "tokens": {
@@ -86,7 +86,7 @@
       "handle": "title bar only",
       "bounds": "Works workspace",
       "feedback": "raise the active window and update its transform immediately",
-      "authoredRotation": "-0.4deg to 0.3deg in Scatter mode; cleared in Scan mode"
+      "authoredRotation": "-0.45deg to 0.46deg in Scatter mode; cleared in List mode"
     },
     "reducedMotion": "Disable scatter entrances, authored rotation, per-letter rolling, and scroll scrubbing. Keep state changes instantaneous or crossfaded under 120ms."
   },
@@ -95,43 +95,40 @@
     "minimumControlSize": "44px × 44px",
     "focus": "Visible 2px acid-green outline with 2px offset on title bars, controls, filters, dock buttons, and links.",
     "worksKeyboard": "Focusable title bar; Arrow moves 16px, Shift + Arrow moves 48px, Escape minimizes, and dock buttons restore and focus.",
-    "semanticFallback": "Every project remains reachable through a normal anchor URL; mobile and Scan mode preserve document order.",
+    "semanticFallback": "Every project remains reachable through a normal anchor URL; mobile and List mode preserve document order.",
     "motionText": "Hide duplicate motion glyphs from assistive technology and retain one readable heading label.",
     "media": "Preserve meaningful alt text from the website JSON source.",
     "announcements": "Filters and minimize/restore changes use a polite live region."
   },
   "worksWindowSystem": {
-    "projectCount": 7,
+    "projectCount": 4,
     "breakpoint": 900,
-    "stageHeight": 980,
+    "stageHeight": 760,
     "positions": {
-      "x-wheel": { "x": 3, "y": 72, "width": 300, "rotation": -0.4, "z": 7 },
-      "emida": { "x": 28, "y": 42, "width": 286, "rotation": 0.3, "z": 6 },
-      "soft-boundaries": { "x": 53, "y": 86, "width": 292, "rotation": -0.25, "z": 5 },
-      "wake-up": { "x": 8, "y": 485, "width": 305, "rotation": 0.2, "z": 4 },
-      "residual-garden": { "x": 34, "y": 445, "width": 278, "rotation": -0.35, "z": 3 },
-      "signal-room": { "x": 59, "y": 492, "width": 292, "rotation": 0.3, "z": 2 },
-      "threshold-archive": { "x": 76, "y": 298, "width": 252, "rotation": -0.2, "z": 1 }
+      "x-wheel": { "x": 2, "y": 28, "width": 390, "rotation": -0.45, "z": 4 },
+      "emida": { "x": 27, "y": 72, "width": 360, "rotation": 0.4, "z": 3 },
+      "wake-up": { "x": 51, "y": 38, "width": 374, "rotation": -0.32, "z": 2 },
+      "escape-project": { "x": 73, "y": 88, "width": 354, "rotation": 0.46, "z": 1 }
     },
-    "windowWidth": "252–305px",
+    "windowWidth": "320–390px",
     "structure": [
       "editable window frame",
-      "44px minimum title bar / drag handle",
+      "46px title bar / drag handle",
       "media placeholder or linked figure",
       "project metadata",
       "localized summary",
       "OPEN action"
     ],
     "scatter": "Desktop default: absolute authored positions, slight rotations, intentional overlap, bring-to-front, minimize/restore, filters, and reset.",
-    "scan": "Ordered responsive grid with transforms and rotations cleared; all visible summaries remain readable.",
+    "scan": "List: ordered responsive grid with transforms and rotations cleared; all visible summaries remain readable.",
     "mobile": "Single-column semantic cards in source order; precision dragging and drag controls are removed.",
     "windowStyle": {
-      "background": "surface",
-      "border": "1px warm-paper hairline; acid only for active state",
+      "background": "warm-paper evidence body with acid title bar",
+      "border": "2px near-black structure plus warm-paper outer keyline",
       "radius": "0px",
-      "shadow": "8px 8px 0 rgba(0, 0, 0, 0.34)",
-      "mediaAspectRatio": "16 / 9"
+      "shadow": "8px 8px 0 acid green; 12px active state",
+      "mediaAspectRatio": "4 / 3"
     },
-    "editableHandoff": "The plugin generates seven independent overlapping Figma frames. Text, title bars, media placeholders, and OPEN labels remain editable; move the whole frames to explore alternate Scatter compositions."
+    "editableHandoff": "The plugin generates four independent overlapping Figma frames for verified works. Text, title bars, media placeholders, and OPEN labels remain editable; move the whole frames to explore alternate Scatter compositions."
   }
 }

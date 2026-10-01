@@ -1,0 +1,74 @@
+{
+  "slug": "escape-project",
+  "year": "2023",
+  "medium": "Web-based visual work, image composition",
+  "status": "Archived work",
+  "priority": 4,
+  "published": true,
+  "featured": false,
+  "tags": ["web", "visual-essay", "self-consciousness", "archive"],
+  "palette": {
+    "primary": "#5a39e8",
+    "secondary": "#d8f1a6",
+    "ink": "#080808",
+    "paper": "#f3edf8"
+  },
+  "media": [
+    {
+      "type": "image",
+      "src": "/assets/projects/escape-project/escape-space.webp",
+      "alt": "Perspective room made from purple, pink, and pale-green grids with running figures and directional arrows",
+      "caption": "Spatial composition from the archived Escape Project page."
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/escape-project/escape-gate.webp",
+      "alt": "Blue threshold composition with prohibition signs, a blurred central doorway, and figures moving downward",
+      "caption": "Threshold study from the archived web work."
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/escape-project/escape-loop.webp",
+      "alt": "Purple visual field with a glitched central doorway and repeated running and falling symbols",
+      "caption": "Loop study from the archived web work."
+    }
+  ],
+  "details": {
+    "platform": "Web"
+  },
+  "links": {
+    "archive": "https://readymag.website/u668535135/4450942/project1/"
+  },
+  "i18n": {
+    "zh": {
+      "title": "Escape Project",
+      "summary": "一件围绕自我意识、社会约束与“逃离”命题展开的网页视觉作品。",
+      "medium": "网页视觉作品、图像构成",
+      "status": "归档作品",
+      "body": [
+        "作品把自我意识视为人在社会中形成、又被社会关系约束的结构，并以“逃离是否可能”作为页面推进的问题。",
+        "网格空间、奔跑的人形、箭头和不断出现的门构成一条视觉路径；本页只使用旧站中可验证的原始图像与文字线索。"
+      ]
+    },
+    "en": {
+      "title": "Escape Project",
+      "summary": "A web-based visual work about self-consciousness, social constraint, and the question of escape.",
+      "medium": "Web-based visual work, image composition",
+      "status": "Archived work",
+      "body": [
+        "The work treats self-consciousness as something formed within society and constrained by social relations, then asks whether escape is possible.",
+        "Gridded rooms, running figures, arrows, and recurring thresholds establish its visual path. This record uses only images and textual evidence preserved from the artist's previous site."
+      ]
+    },
+    "ja": {
+      "title": "Escape Project",
+      "summary": "自己意識、社会的制約、そして「逃げる」という問いを扱うウェブ・ビジュアル作品。",
+      "medium": "ウェブ・ビジュアル作品、イメージ構成",
+      "status": "アーカイブ作品",
+      "body": [
+        "自己意識を社会の中で形成され、同時に社会関係によって制約される構造として捉え、「逃げることは可能か」と問いかけます。",
+        "グリッド状の空間、走る人型、矢印、反復する入口が視覚的な経路をつくります。この記録には旧サイトで確認できる作者自身の画像と文章の手掛かりだけを用いています。"
+      ]
+    }
+  }
+}

@@ -1,49 +1,37 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { projects } from "../src/lib/project-data";
 
-describe("Wake Up replica project", () => {
-  it("is available as a custom old-site replica with the complete source asset set", () => {
+describe("Wake Up edited project", () => {
+  it("keeps removed legacy studies out of the public sequence while preserving their source files", () => {
     const wakeUp = projects.find((project) => project.slug === "wake-up");
-    const expectedAssets = [
-      "bed-alarm.jpg",
+    const removedAssets = [
       "grid.jpg",
-      "pixel-sunset.png",
+      "runner.png",
       "corridor.png",
+      "statement-large.png",
       "statement-wide.png",
-      "wake-logo-color.png",
-      "intercom-plain-a.jpg",
-      "dream-question-black.jpg",
-      "tv-girl.png",
-      "white-scroll-blank.png",
-      "flooded-title.jpg",
-      "wake-script-collage.png",
-      "glitch-girl-collage.png",
-      "intercom-line-art.png",
-      "intercom-plain-b.png",
+      "statement-clean.png",
+      "bio-text.png",
+      "wake-logo-blue.png",
+      "wake-logo-yellow.png",
       "flooded-room-square.jpeg",
-      "question-column.png",
-      "quote-column.png",
-      "saying-column.png",
-      "disappeared-column.png",
-      "dream-question-column.png",
-      "wake-logo-flood.png",
       "pointing-hand-photo.png",
-      "pointing-hand-line.png",
-      "dream-question-black-b.jpg",
-      "vapor-intercom.png",
-      "disappeared-black.jpg",
-      "intercom-photo-full.png"
+      "pointing-hand-line.png"
     ];
 
     expect(wakeUp).toBeDefined();
     expect(wakeUp?.pageMode).toBe("wake-up-replica");
-    expect(wakeUp?.tags).toContain("old-site-replica");
-    expect(wakeUp?.media.length).toBeGreaterThanOrEqual(28);
-    expect(wakeUp?.media.map((item) => item.src.split("/").at(-1))).toEqual(expect.arrayContaining(expectedAssets));
+    expect(wakeUp?.tags).not.toContain("old-site-replica");
+    expect(wakeUp?.media.length).toBeGreaterThanOrEqual(20);
+    const runtimeAssets = wakeUp?.media.map((item) => item.src.split("/").at(-1));
+    removedAssets.forEach((asset) => {
+      expect(runtimeAssets).not.toContain(asset);
+      expect(existsSync(new URL(`../public/assets/projects/wake-up/${asset}`, import.meta.url))).toBe(true);
+    });
   });
 
-  it("keeps removed legacy panels in the source archive without rendering them", () => {
+  it("renders only the two retained image panels", () => {
     const component = readFileSync(new URL("../src/components/WakeUpReplica.astro", import.meta.url), "utf8");
 
     [
@@ -56,8 +44,22 @@ describe("Wake Up replica project", () => {
       "wake-logo-panel"
     ].forEach((className) => expect(component).not.toContain(`class=\"wake-panel ${className}`));
 
-    expect(component).toContain("wake-columns-panel");
-    expect(component).toContain("wake-city-panel");
+    expect(component).toContain("const displayedMedia = [bedAlarm, floodedTitle]");
+    expect(component).toContain("wake-bed-panel");
+    expect(component).toContain("wake-old-cover");
     expect(component).toContain("displayedMedia.map");
+    [
+      "wake-columns-panel",
+      "wake-city-panel",
+      "wake-intercom-panel",
+      "wake-collage-panel",
+      "statement-large",
+      "statement-wide",
+      "statement-clean",
+      "wake-logo-yellow",
+      "pointing-hand"
+    ].forEach((token) =>
+      expect(component).not.toContain(token)
+    );
   });
 });

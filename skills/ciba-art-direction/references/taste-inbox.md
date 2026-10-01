@@ -44,3 +44,19 @@ project reasoning, not a confirmed personal-preference rule.
 - Exact feedback:
 
 > 整体风格我不喜欢并且日文版有字体颜色问题 作品窗口变大问题 我一开始的米白加荧光绿其实也挺好看的 或者再继续deep research一下 我希望是简单最多三种颜色 国际主义 黑白色加一个高饱和、高艳度的色彩
+
+## TASTE-20260718-WAKEUP-REMOVAL
+
+- Captured: 2026-07-18
+- Context: Wake Up project-detail screenshot review
+- Source: direct user feedback
+- Status: implementation-specific removal; not a long-term aesthetic rule
+- Exact feedback:
+
+> 图片中的这几个都可以删除掉 图1以及图1下面的所有都可以删除掉
+
+### Applied scope
+
+The runtime no longer references the supplied statement, biography, grid/runner, blue/yellow logo,
+corridor/flooded-square or pointing-hand studies. Source files remain preserved for rollback. This
+is a content-editing instruction, so it is not eligible for promotion into the taste ledger.

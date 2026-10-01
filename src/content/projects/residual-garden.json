@@ -4,6 +4,7 @@
   "medium": "Digital garden, generative image notes",
   "status": "Selected work",
   "priority": 4,
+  "published": false,
   "featured": false,
   "tags": ["generative", "drawing", "ecology"],
   "palette": {

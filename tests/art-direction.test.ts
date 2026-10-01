@@ -3,17 +3,26 @@ import { artDirection, getArtDirectionVars, getWorkspacePosition } from "../src/
 
 describe("art direction configuration", () => {
   it("provides a configured workspace position for every current project", () => {
-    const slugs = ["x-wheel", "emida", "soft-boundaries", "wake-up", "residual-garden", "signal-room", "threshold-archive"];
+    const slugs = ["x-wheel", "emida", "wake-up", "escape-project"];
 
     expect(Object.keys(artDirection.workspace.positions).sort()).toEqual([...slugs].sort());
     slugs.forEach((slug, index) => {
       const position = getWorkspacePosition(slug, index);
-      expect(position.width).toBeGreaterThanOrEqual(240);
-      expect(position.width).toBeLessThanOrEqual(320);
+      expect(position.width).toBeGreaterThanOrEqual(320);
+      expect(position.width).toBeLessThanOrEqual(390);
       expect(position.x).toBeGreaterThanOrEqual(0);
       expect(position.x).toBeLessThan(100);
       expect(position.y).toBeGreaterThanOrEqual(0);
     });
+  });
+
+  it("keeps large project windows in a bounded first-view desktop stage", () => {
+    expect(artDirection.workspace.stageHeight).toBe(760);
+    const firstRow = ["x-wheel", "emida", "wake-up", "escape-project"].map((slug, index) =>
+      getWorkspacePosition(slug, index)
+    );
+
+    expect(firstRow.every((position) => position.y < 100)).toBe(true);
   });
 
   it("maps design values to CSS custom properties", () => {

@@ -8,9 +8,10 @@ interface Props {
 
 const { lang } = Astro.props;
 const currentPath = Astro.url.pathname;
+const label = { zh: "语言切换", en: "Language switcher", ja: "言語切り替え" }[lang];
 ---
 
-<div class="language-switcher" aria-label="Language switcher">
+<div class="language-switcher" aria-label={label}>
   {
     languages.map((candidate) => (
       <a

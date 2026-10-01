@@ -8,10 +8,11 @@ import {
 import {
   getFeaturedProjects,
   getLocalizedProject,
+  getPublishedProjects,
   getProjectThemeVars,
   sortProjects
 } from "../src/lib/projects";
-import { projects } from "../src/lib/project-data";
+import { allProjects, projects } from "../src/lib/project-data";
 import { artDirection } from "../src/lib/art-direction";
 
 describe("localized portfolio behavior", () => {
@@ -31,6 +32,17 @@ describe("localized portfolio behavior", () => {
     expect(ordered.slice(0, 2)).toEqual(["x-wheel", "emida"]);
   });
 
+  it("publishes only verified works while retaining draft records for rollback", () => {
+    expect(projects.map((project) => project.slug)).toEqual([
+      "x-wheel",
+      "emida",
+      "wake-up",
+      "escape-project"
+    ]);
+    expect(getPublishedProjects(allProjects)).toEqual(projects);
+    expect(allProjects.filter((project) => project.published === false)).toHaveLength(4);
+  });
+
   it("exposes a focused featured set without publishing a placeholder play link", () => {
     const featured = getFeaturedProjects(projects);
     expect(featured).toHaveLength(2);
@@ -44,6 +56,8 @@ describe("localized portfolio behavior", () => {
         const localized = getLocalizedProject(project, lang);
         expect(localized.title.length).toBeGreaterThan(0);
         expect(localized.summary.length).toBeGreaterThan(0);
+        expect(localized.medium?.length).toBeGreaterThan(0);
+        expect(localized.status?.length).toBeGreaterThan(0);
       }
 
       expect(getProjectThemeVars(project)).toMatchObject({

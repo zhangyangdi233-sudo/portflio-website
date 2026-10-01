@@ -1,11 +1,12 @@
 {
   "slug": "x-wheel",
   "year": "2026",
-  "medium": "Interactive game, interface study, moving image",
-  "status": "Primary work",
+  "medium": "Godot game prototype, 3D asset and interface study",
+  "status": "In development",
   "priority": 1,
+  "published": true,
   "featured": true,
-  "tags": ["game", "interactive", "system", "body"],
+  "tags": ["game", "godot", "3d", "interface"],
   "palette": {
     "primary": "#fb4d3d",
     "secondary": "#5fe7d1",
@@ -15,35 +16,64 @@
   "media": [
     {
       "type": "image",
-      "src": "/assets/projects/x-wheel.svg",
-      "alt": "Abstract placeholder poster for X.WHEEL with a rotating wheel interface",
-      "caption": "Rotating interface study for the playable build."
+      "src": "/assets/projects/x-wheel/emi-room.png",
+      "alt": "Isometric pixel-art room with a desk, bed, shelves, and acid-green lighting",
+      "caption": "EMI room asset preview from the X.WHEEL project repository."
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/crt-tv.png",
+      "alt": "Isometric pixel-art CRT television asset on a dark field",
+      "caption": "CRT television asset preview."
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/psx-console.png",
+      "alt": "Isometric pixel-art game console and controller in pale green",
+      "caption": "Console asset preview."
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/x-wheel/poster.png",
+      "alt": "Isometric pixel-art poster object from the X.WHEEL asset library",
+      "caption": "Poster object preview."
     }
   ],
-  "links": {},
+  "details": {
+    "platform": "Godot / desktop prototype"
+  },
+  "links": {
+    "archive": "https://github.com/zhangyangdi233-sudo/X.-WHEEL"
+  },
   "i18n": {
     "zh": {
       "title": "X.WHEEL",
-      "summary": "一个围绕循环、身体反应与规则错位展开的互动游戏作品。",
+      "summary": "一件正在开发的 Godot 游戏；当前记录展示其房间、CRT 电视、主机与海报等视觉资产。",
+      "medium": "Godot 游戏原型、3D 素材与界面研究",
+      "status": "开发中",
       "body": [
-        "X.WHEEL 被设置为一个可以试玩的重点项目。它不是把游戏当作展示物，而是把玩家的迟疑、重复和误操作变成作品的一部分。",
-        "页面保留清晰的作品信息、视频/截图区域和制作语境，方便教授与策展人快速理解作品的机制和艺术意图；正式试玩链接可在构建完成后直接写入项目 JSON。"
+        "X.WHEEL 的公开仓库包含 Godot 场景、脚本、着色器、声音与三维素材；这里选取仓库中的原始资产预览，作为当前可验证的制作证据。",
+        "尚未由艺术家确认的剧情、完整玩法与展映规格不会在本页中臆测；后续可直接在内容文件中补充试玩链接与最终项目说明。"
       ]
     },
     "en": {
       "title": "X.WHEEL",
-      "summary": "An interactive game work about loops, bodily response, and rules that never quite stay still.",
+      "summary": "A Godot game in development, currently documented through its room, CRT, console, and poster assets.",
+      "medium": "Godot game prototype, 3D asset and interface study",
+      "status": "In development",
       "body": [
-        "X.WHEEL is treated as the primary work of the portfolio. The game is not framed as a passive object; hesitation, repetition, and misreading become part of the piece.",
-        "The page keeps project information, media, and production context readable for professors and curators; a playable-build URL can be added directly to the project JSON when it is ready."
+        "The public X.WHEEL repository contains Godot scenes, scripts, shaders, audio, and 3D assets. This record uses original asset previews from that repository as its current verifiable production evidence.",
+        "Story, complete gameplay, and exhibition specifications remain intentionally unstated until the artist confirms them; a playable build and final project text can be added directly to the content file later."
       ]
     },
     "ja": {
       "title": "X.WHEEL",
-      "summary": "循環、身体反応、ずれ続けるルールを扱うインタラクティブなゲーム作品。",
+      "summary": "Godotで開発中のゲーム。現在は部屋、CRT、ゲーム機、ポスターのアセットを制作記録として公開しています。",
+      "medium": "Godotゲームプロトタイプ、3Dアセット、インターフェース研究",
+      "status": "開発中",
       "body": [
-        "X.WHEEL はこのポートフォリオの中心作品として扱います。ゲームを単なる展示物ではなく、ためらい、反復、読み違いそのものを作品の一部として提示します。",
-        "教授やキュレーターが仕組みと制作意図を読み取れるように、作品情報、メディア、制作背景を整理しています。試遊版が完成したら、プロジェクト JSON にリンクを追加できます。"
+        "公開リポジトリにはGodotのシーン、スクリプト、シェーダー、音声、3D素材が含まれています。本ページでは、そのリポジトリにあるオリジナルのアセット・プレビューを、現時点で検証できる制作資料として掲載します。",
+        "作者がまだ確認していない物語、完全なゲームプレイ、展示仕様は推測して記載しません。試遊版と最終テキストは後からコンテンツファイルへ直接追加できます。"
       ]
     }
   }

@@ -77,6 +77,7 @@ const projectDirectory = join(root, "src/content/projects");
 const canonicalProjects = readdirSync(projectDirectory)
   .filter((name) => name.endsWith(".json"))
   .map((name) => JSON.parse(readFileSync(join(projectDirectory, name), "utf8")))
+  .filter((project) => project.published !== false)
   .sort((a, b) => a.priority - b.priority || a.year.localeCompare(b.year))
   .map((project, index) => ({
     slug: project.slug,

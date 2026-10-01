@@ -12,10 +12,9 @@ interface Props {
   description: string;
   pageClass?: string;
   theme?: Record<string, string>;
-  bare?: boolean;
 }
 
-const { lang, title, description, pageClass = "", theme = {}, bare = false } = Astro.props;
+const { lang, title, description, pageClass = "", theme = {} } = Astro.props;
 const skipCopy = { zh: "跳到主要内容", en: "Skip to main content", ja: "本文へ移動" }[lang];
 const themeStyle = Object.entries({ ...getArtDirectionVars(), ...theme })
   .map(([key, value]) => `${key}:${value}`)
@@ -33,26 +32,22 @@ const themeStyle = Object.entries({ ...getArtDirectionVars(), ...theme })
   </head>
   <body class={pageClass}>
     <a class="skip-link" href="#content">{skipCopy}</a>
-    {!bare && <div class="ambient-grid" aria-hidden="true"></div>}
-    {!bare && <Header lang={lang} />}
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <Header lang={lang} />
     <main id="content">
       <slot />
     </main>
-    {
-      !bare && (
-        <footer class="site-footer">
-          <span>{siteProfile.artistName}</span>
-          {
-            siteProfile.email ? (
-              <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
-            ) : siteProfile.socials[0] ? (
-              <a href={siteProfile.socials[0].href} target="_blank" rel="noreferrer">{siteProfile.socials[0].label}</a>
-            ) : null
-          }
-          <span>{siteProfile.location}</span>
-        </footer>
-      )
-    }
+    <footer class="site-footer">
+      <span>{siteProfile.artistName}</span>
+      {
+        siteProfile.email ? (
+          <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+        ) : siteProfile.socials[0] ? (
+          <a href={siteProfile.socials[0].href} target="_blank" rel="noreferrer">{siteProfile.socials[0].label}</a>
+        ) : null
+      }
+      <span>{siteProfile.location}</span>
+    </footer>
     <script>
       import "../scripts/portfolio-motion";
     </script>
