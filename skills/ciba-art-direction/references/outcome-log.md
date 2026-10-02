@@ -252,3 +252,18 @@ feedback captured through the taste inbox and confirmed before promotion.
   browser instead.
 - `TASTE-20261001T180459761160Z-8fc40dd8` remains pending and is not promoted into a permanent
   taste rule by this measured result.
+
+## 2026-10-02 — Transparent cinematic concept panels
+
+- The five Home concept panels now keep their existing rule, copy, and warm-paper text while their
+  panel background is fully transparent in the shared Chinese, English, and Japanese structure.
+- The active browser measured all 15 localized panels at `rgba(0, 0, 0, 0)` with paper text at
+  `rgb(244, 240, 221)`, full opacity, and two non-empty paragraphs per panel.
+- Visual review at 1100×712 confirmed that the concept copy remains above the low-opacity evidence
+  field and inside the cinematic stage; mobile inherits the same transparency without a competing
+  override.
+- Verification passed 49 tests, Astro diagnostics, design drift, the 25-route production build,
+  and `git diff --check`. The repository CDP audit again stopped at Chrome target creation before
+  page assertions, so the new computed-style contract was verified in the active browser instead.
+- `TASTE-20261002T064954565894Z-c500d5b2` remains pending and is not promoted into a permanent
+  taste rule by this measured result.

@@ -275,15 +275,26 @@ async function auditHome(baseUrl) {
     });
     const escapeWords = Array.from(document.querySelectorAll('[data-title-slug="escape-project"] [data-title-word]'))
       .map((word) => ({ word: word.dataset.word, top: Math.round(word.getBoundingClientRect().top) }));
+    const concepts = Array.from(document.querySelectorAll(".v3-cinema-layer__concept")).map((concept) => ({
+      background: getComputedStyle(concept).backgroundColor,
+      text: concept.textContent?.trim() ?? ""
+    }));
     return {
       media,
       escapeWords,
+      concepts,
       overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
     };
   })()`);
   invariant(desktop.media.every((item) => item.found), "Home does not contain exactly the four approved X.WHEEL representatives.", desktop);
   invariant(desktop.media.every((item) => Math.abs(item.opacity - 0.1) < 0.011), "Desktop Home evidence is not approximately 10% opaque.", desktop);
   invariant(desktop.media.every((item) => item.filter.includes("grayscale(1)")), "Desktop Home evidence is not grayscale by default.", desktop);
+  invariant(
+    desktop.concepts.length === 5
+      && desktop.concepts.every((concept) => concept.background === "rgba(0, 0, 0, 0)" && concept.text.length > 0),
+    "Home concept panels are not transparent or lost their text.",
+    desktop.concepts
+  );
   invariant(
     desktop.escapeWords.length === 2
       && desktop.escapeWords.map((item) => item.word).join(" / ") === "ESCAPE / PROJECT"

@@ -146,3 +146,13 @@ project reasoning, not a confirmed personal-preference rule.
 - Exact feedback:
 
 > 还是没有对齐 我希望和上面的打开项目记录的文本对齐 结尾不超出上面打开项目记录hover时的长方形
+
+## TASTE-20261002T064954565894Z-c500d5b2
+
+- Captured: 2026-10-02 UTC
+- Context: 2026-10-02 已发布首页全部作品概念底部区域透明化反馈
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 让所有的这个底部背景透明保留文字

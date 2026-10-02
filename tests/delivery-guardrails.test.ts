@@ -99,6 +99,9 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/\.v3-floating-media \{[\s\S]*?filter: grayscale\(1\)[\s\S]*?opacity: 0\.1/);
     expect(css).toMatch(/\.v3-floating-media:hover,[\s\S]*?filter: grayscale\(0\)[\s\S]*?opacity: 0\.88/);
     expect(css).toMatch(
+      /\.v3-cinema-layer__concept \{[\s\S]*?background: transparent;[\s\S]*?color: var\(--ciba-paper\)/
+    );
+    expect(css).toMatch(
       /\.v3-action-link:hover,[\s\S]*?\.v3-cinema-layer__open:focus-visible \{[\s\S]*?background: var\(--ciba-acid\);[\s\S]*?color: var\(--ciba-night\)/
     );
     expect(css).toMatch(
@@ -142,6 +145,7 @@ describe("delivery guardrails", () => {
     expect(audit).toContain("Home supporting text has a short orphaned final line.");
     expect(audit).toContain("Home instruction text crossed the shared safe grid.");
     expect(audit).toContain("Home instruction text is not aligned to the project-record action.");
+    expect(audit).toContain("Home concept panels are not transparent or lost their text.");
     expect(audit).toContain("CJK About heading has non-zero tracking.");
     expect(audit).toContain("Wake Up Latin tracking is not the restrained -0.03em contract.");
     expect(audit).toContain("Coursework media escaped its canonical 10/2/2 grouping.");

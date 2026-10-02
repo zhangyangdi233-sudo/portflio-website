@@ -679,7 +679,8 @@ html:lang(zh) .v3-cinema-layer__title {
   width: min(31rem, calc(100% - 2rem));
   padding: 0.85rem 0;
   border-top: 1px solid var(--ciba-rule);
-  background: var(--ciba-night);
+  background: transparent;
+  color: var(--ciba-paper);
 }
 
 .v3-cinema-layer__concept p {
