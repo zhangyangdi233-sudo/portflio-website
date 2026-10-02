@@ -46,7 +46,7 @@ const projects = [
     title: "APHASIA",
     localizedTitles: { zh: "APHASIA / 失语症", en: "APHASIA", ja: "APHASIA / 失語症" },
     cover: "/assets/projects/x-wheel/character-full.png",
-    medium: "Godot game prototype, 3D asset and interface study",
+    medium: "Godot v4.6.3, Procreate",
     year: "2026",
     status: "In development",
     summary: "Taking linguistic contamination as its point of departure, the work examines how the term “mad person” is defined.",

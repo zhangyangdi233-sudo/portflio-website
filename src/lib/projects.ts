@@ -34,6 +34,16 @@ export function getLocalizedMedia(media: ProjectMedia, lang: Language) {
   };
 }
 
+export function getDetailMedia(project: Project): ProjectMedia[] {
+  return project.media
+    .map((media, sourceIndex) => ({ media, sourceIndex }))
+    .sort((a, b) =>
+      (a.media.detailOrder ?? a.sourceIndex) - (b.media.detailOrder ?? b.sourceIndex) ||
+      a.sourceIndex - b.sourceIndex
+    )
+    .map(({ media }) => media);
+}
+
 export function getProjectThemeVars(_project: Project): Record<string, string> {
   return {
     "--project-primary": artDirection.colors.oxide,

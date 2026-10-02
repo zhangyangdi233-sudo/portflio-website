@@ -31,12 +31,23 @@ for (const item of courseworkManifest.items.filter((entry) => entry.kind === "im
   courseworkImageSrcsets.set(`/${item.publicPath}`, candidates.join(", "));
 }
 const allowedAssetFiles = [
+  "assets/projects/emida/emida-board-cover.png",
+  "assets/projects/emida/emida-board-endings.png",
+  "assets/projects/emida/emida-board-gameplay.png",
+  "assets/projects/emida/emida-board-system.png",
   "assets/projects/emida/emida-doctor.webp",
   "assets/projects/escape-project/escape-gate.webp",
   "assets/projects/escape-project/escape-loop.webp",
   "assets/projects/escape-project/escape-space.webp",
   "assets/projects/wake-up/bed-alarm.png",
   "assets/projects/wake-up/flooded-title.jpg",
+  "assets/projects/x-wheel/aphasia-npc-01.png",
+  "assets/projects/x-wheel/aphasia-npc-02.png",
+  "assets/projects/x-wheel/aphasia-npc-03.png",
+  "assets/projects/x-wheel/aphasia-npc-04.png",
+  "assets/projects/x-wheel/aphasia-npc-05.png",
+  "assets/projects/x-wheel/aphasia-plush.png",
+  "assets/projects/x-wheel/aphasia-protagonist.png",
   "assets/projects/x-wheel/cartridge-3-geometry.png",
   "assets/projects/x-wheel/cartridge-3-title.png",
   "assets/projects/x-wheel/character-full.png",
@@ -297,5 +308,5 @@ if (failures.length > 0) {
   console.error("Built-site contract failed:\n- " + failures.join("\n- "));
   process.exitCode = 1;
 } else {
-  console.log("Built-site contract passed: 25 pages, 3 languages, 5 public works, 11 APHASIA media items, 14 coursework media items, and 2 Wake Up images.");
+  console.log("Built-site contract passed: 25 pages, 3 languages, 5 public works, 18 APHASIA media items, 5 EMIDA media items, 14 coursework media items, and 2 Wake Up images.");
 }

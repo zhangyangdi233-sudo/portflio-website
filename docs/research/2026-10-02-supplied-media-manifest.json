@@ -1,0 +1,117 @@
+{
+  "recorded": "2026-10-02",
+  "selectionPolicy": "Publish the five explicitly supplied APHASIA NPC sheets as the first detail-gallery row, the supplied protagonist and plush as supporting evidence, and all four explicitly identified EMIDA boards.",
+  "copyPolicy": "Exact-byte deployable copies with descriptive ASCII filenames; source images remain outside the repository.",
+  "items": [
+    {
+      "project": "x-wheel",
+      "sourceName": "NPC/npc_1_uc.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-npc-01.png",
+      "bytes": 405457,
+      "sha256": "801ac3f15392ae5f87e96cdb04d38bd3b1534eed6097453afb5d36b0d2b56efb",
+      "width": 1668,
+      "height": 2388,
+      "kind": "image"
+    },
+    {
+      "project": "x-wheel",
+      "sourceName": "NPC/npc_2_uc.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-npc-02.png",
+      "bytes": 366236,
+      "sha256": "3e5f75dc5cbcea06a1a28e5554a56e79136fc1b967b1a2563c64a2ea99ede44d",
+      "width": 1668,
+      "height": 2388,
+      "kind": "image"
+    },
+    {
+      "project": "x-wheel",
+      "sourceName": "NPC/npc_3_uc.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-npc-03.png",
+      "bytes": 367288,
+      "sha256": "e9bf579771cc275c8f72105982c816e7444bf6fe0d9ffa13dceb1333f82a5330",
+      "width": 1668,
+      "height": 2388,
+      "kind": "image"
+    },
+    {
+      "project": "x-wheel",
+      "sourceName": "NPC/npc_4_uc.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-npc-04.png",
+      "bytes": 366789,
+      "sha256": "ee5fd7ad1bcc109299228271242eda4aa227613fbf00d542702911fe18ca210c",
+      "width": 1668,
+      "height": 2388,
+      "kind": "image"
+    },
+    {
+      "project": "x-wheel",
+      "sourceName": "NPC/npc_5_uc.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-npc-05.png",
+      "bytes": 288075,
+      "sha256": "76c9b88370788486cc88bbe31a25cf0e78af288ae7c4299ac7a9befc8b9e95f1",
+      "width": 1668,
+      "height": 2388,
+      "kind": "image"
+    },
+    {
+      "project": "x-wheel",
+      "sourceName": "NPC/npc_sp_uc.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-protagonist.png",
+      "bytes": 371793,
+      "sha256": "35b8be296427f4e5bfc90d3358b59160bcd0e2f14f5ce05b5df7552f059471e4",
+      "width": 1668,
+      "height": 2388,
+      "kind": "image"
+    },
+    {
+      "project": "x-wheel",
+      "sourceName": "未命名作品.png",
+      "publicPath": "assets/projects/x-wheel/aphasia-plush.png",
+      "bytes": 330910,
+      "sha256": "4448fb540ac2dd7e351f85321b399a228d90884af0b6d9c66e2e8d4c7407d68b",
+      "width": 1847,
+      "height": 1662,
+      "kind": "image"
+    },
+    {
+      "project": "emida",
+      "sourceName": "截屏2026-02-06 11.03.18.png",
+      "publicPath": "assets/projects/emida/emida-board-cover.png",
+      "bytes": 2954930,
+      "sha256": "5299580866d5db33cc778301bae64742936fc8d44afd128712a46e55866606d6",
+      "width": 1074,
+      "height": 1520,
+      "kind": "image"
+    },
+    {
+      "project": "emida",
+      "sourceName": "截屏2026-02-06 11.03.53.png",
+      "publicPath": "assets/projects/emida/emida-board-endings.png",
+      "bytes": 1646951,
+      "sha256": "b70ca71d7cbf92484283228db42708e3c5a9ada08a98b4520b4f4fd4a1564678",
+      "width": 1074,
+      "height": 1520,
+      "kind": "image"
+    },
+    {
+      "project": "emida",
+      "sourceName": "截屏2026-02-06 11.04.52.png",
+      "publicPath": "assets/projects/emida/emida-board-gameplay.png",
+      "bytes": 1364593,
+      "sha256": "dab0f8d7e11c1d88baf1dea59fcb6999ff7ed4d3cd03dece47a8d1520d397958",
+      "width": 1074,
+      "height": 1520,
+      "kind": "image"
+    },
+    {
+      "project": "emida",
+      "sourceName": "截屏2026-02-06 11.04.58.png",
+      "publicPath": "assets/projects/emida/emida-board-system.png",
+      "bytes": 2031654,
+      "sha256": "363c18ca4e8b49205359140a5947663841fdd9bad1f6ecfeb825255621e47f6d",
+      "width": 1074,
+      "height": 1520,
+      "kind": "image"
+    }
+  ]
+}

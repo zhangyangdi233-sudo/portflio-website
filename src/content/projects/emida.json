@@ -21,6 +21,7 @@
     {
       "type": "image",
       "src": "/assets/projects/emida/emida-doctor.webp",
+      "detailOrder": 0,
       "alt": {
         "zh": "蓝色与橙色绘制的纵向 EMIDA 角色与项目页，包含列车隧道般的场景和日文项目文字",
         "en": "Tall EMIDA character and project sheet drawn in blue and orange, with a train-like tunnel and Japanese project text",
@@ -31,13 +32,73 @@
         "en": "EMIDA_THE_DOCTOR? project sheet preserved from the artist's previous site.",
         "ja": "作家の旧サイトから保存したEMIDA_THE_DOCTOR?のプロジェクトシート。"
       }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/emida/emida-board-cover.png",
+      "detailOrder": 1,
+      "alt": {
+        "zh": "橙色竖版主视觉，上方排有 Société des medias 字样，下方是蓝色人物与变形空间",
+        "en": "Orange vertical key visual with the words Société des medias above a blue figure in a distorted interior",
+        "ja": "上部にSociété des mediasの文字、下部に歪んだ空間と青い人物を配したオレンジ色の縦型キービジュアル"
+      },
+      "caption": {
+        "zh": "EMIDA 项目主视觉展示板。",
+        "en": "EMIDA project key-visual board.",
+        "ja": "EMIDAプロジェクトのキービジュアル・ボード。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/emida/emida-board-endings.png",
+      "detailOrder": 2,
+      "alt": {
+        "zh": "深蓝色竖版展示板，上半部对照两种结局设定，下半部排列主人公全身造型、表情与初期设定",
+        "en": "Dark-blue vertical board comparing two ending concepts above full-length protagonist studies, facial expressions, and an early design",
+        "ja": "上部で2種類のエンディング案を比較し、下部に主人公の全身造形、表情、初期設定を並べた濃紺の縦型ボード"
+      },
+      "caption": {
+        "zh": "结局设定与角色设计展示板。",
+        "en": "Ending concepts and character-design board.",
+        "ja": "エンディング設定とキャラクターデザインのボード。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/emida/emida-board-gameplay.png",
+      "detailOrder": 3,
+      "alt": {
+        "zh": "深蓝色竖版玩法展示板，中央是对话界面，周围标注计时、重置、诊断书与情绪动画机制",
+        "en": "Dark-blue vertical gameplay board centred on a dialogue interface, with notes on timing, reset, diagnosis-sheet, and emotion-animation mechanics",
+        "ja": "会話インターフェースを中央に置き、時間、リセット、診断書、感情アニメーションの仕組みを示す濃紺の縦型ゲームプレイ・ボード"
+      },
+      "caption": {
+        "zh": "玩法、计时与界面机制展示板。",
+        "en": "Gameplay, timing, and interface-mechanics board.",
+        "ja": "ゲームプレイ、時間、インターフェース機構のボード。"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/assets/projects/emida/emida-board-system.png",
+      "detailOrder": 4,
+      "alt": {
+        "zh": "深蓝色竖版系统展示板，上方排列四张心理状态画面，下方是两张手绘对话分支流程图",
+        "en": "Dark-blue vertical system board with four psychological-state images above two hand-drawn dialogue-branch diagrams",
+        "ja": "上部に4点の心理状態イメージ、下部に2枚の手描き会話分岐図を配置した濃紺の縦型システム・ボード"
+      },
+      "caption": {
+        "zh": "心理反馈、对话分支与结局逻辑展示板。",
+        "en": "Psychological feedback, dialogue branches, and ending-logic board.",
+        "ja": "心理フィードバック、会話分岐、エンディングロジックのボード。"
+      }
     }
   ],
   "details": {
     "role": {
-      "zh": "待艺术家补充并核实",
-      "en": "To be supplied and verified by the artist",
-      "ja": "作家による追記・確認待ち"
+      "zh": "埃弥亣",
+      "en": "Emida",
+      "ja": "埃弥亣"
     },
     "scale": {
       "zh": "1920 × 1080 视觉小说画面",
@@ -50,9 +111,9 @@
       "ja": "Ren'Py"
     },
     "credits": {
-      "zh": ["协作者与具体分工待艺术家核实"],
-      "en": ["Collaborators and production roles await artist verification"],
-      "ja": ["共同制作者と制作分担は作家による確認待ち"]
+      "zh": ["张扬笛（CIBA）：策划、美术、剧本、音乐；黑凤梨A4：程序"],
+      "en": ["Zhang Yangdi (CIBA): planning, art, writing, and music; 黑凤梨A4: programming"],
+      "ja": ["張揚笛（CIBA）：企画、美術、脚本、音楽；黑凤梨A4：プログラム"]
     }
   },
   "links": {

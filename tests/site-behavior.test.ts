@@ -73,8 +73,15 @@ describe("localized portfolio behavior", () => {
           if (media.caption) expect(getLocalizedMedia(media, lang).caption?.length).toBeGreaterThan(0);
         }
 
-        expect(getLocalizedString(project.details?.role, lang)?.length).toBeGreaterThan(0);
-        expect(getLocalizedString(project.details?.scale, lang)?.length).toBeGreaterThan(0);
+        const role = getLocalizedString(project.details?.role, lang);
+        const scale = getLocalizedString(project.details?.scale, lang);
+        if (project.slug === "x-wheel") {
+          expect(role).toBeUndefined();
+          expect(scale).toBeUndefined();
+        } else {
+          expect(role?.length).toBeGreaterThan(0);
+          expect(scale?.length).toBeGreaterThan(0);
+        }
         expect(getLocalizedStringList(project.details?.credits, lang).length).toBeGreaterThan(0);
       }
 

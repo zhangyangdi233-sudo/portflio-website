@@ -1198,7 +1198,7 @@ body.ciba-v3.project-page:not(.wake-page) .project-meta dt {
 
 body.ciba-v3.project-page:not(.wake-page) .project-media img {
   height: auto;
-  aspect-ratio: auto;
+  aspect-ratio: var(--media-aspect-ratio);
   object-fit: contain;
   filter: grayscale(1);
   transition: filter var(--art-motion-micro, 180ms) ease;
@@ -1212,6 +1212,41 @@ body.ciba-v3.project-page:not(.wake-page) .project-media:focus-within img {
 body.ciba-v3.project-page:not(.wake-page) .project-text {
   max-width: 68rem;
   border-color: var(--ciba-rule);
+}
+
+@media (min-width: 900px) {
+  body.ciba-v3.project-page:not(.wake-page) [data-project-slug="escape-project"] .project-hero > .project-media {
+    align-self: center;
+    margin-block-start: clamp(2.5rem, 8vh, 4.5rem);
+  }
+
+  body.ciba-v3.project-page:not(.wake-page) .project-gallery--x-wheel {
+    max-width: 92rem;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  body.ciba-v3.project-page:not(.wake-page) .project-gallery--x-wheel > .project-media {
+    grid-column: span 5;
+  }
+
+  body.ciba-v3.project-page:not(.wake-page) .project-gallery--x-wheel > .project-media:nth-child(-n + 5) {
+    grid-column: span 2;
+  }
+
+  body.ciba-v3.project-page:not(.wake-page) .project-gallery--emida {
+    max-width: 90rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  body.ciba-v3.project-page:not(.wake-page) .project-gallery--emida > .project-media:nth-child(odd) {
+    grid-column: span 5;
+  }
+
+  body.ciba-v3.project-page:not(.wake-page) .project-gallery--emida > .project-media:nth-child(even) {
+    grid-column: span 7;
+  }
 }
 
 body.ciba-v3.project-page:not(.wake-page) .button,
@@ -1350,6 +1385,33 @@ body.ciba-v3 .wake-cover-image {
 body.ciba-v3 .wake-kicker {
   color: var(--ciba-acid);
   font-family: var(--ciba-mono);
+}
+
+body.ciba-v3 .wake-next-project {
+  max-width: none;
+  margin: 0;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 4rem);
+  border-top: 1px solid var(--ciba-rule);
+  background: var(--ciba-night);
+}
+
+body.ciba-v3 .wake-next-project a {
+  min-height: 4rem;
+  align-items: center;
+  color: var(--ciba-paper);
+  font-family: var(--ciba-mono);
+}
+
+body.ciba-v3 .wake-next-project span {
+  color: var(--ciba-acid);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.ciba-v3 .wake-next-project a:hover,
+body.ciba-v3 .wake-next-project a:focus-visible {
+  color: var(--ciba-acid);
 }
 
 @media (max-width: 899px) {

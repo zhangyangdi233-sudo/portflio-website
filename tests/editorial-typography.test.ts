@@ -30,6 +30,10 @@ describe("CIBA editorial typography", () => {
     expect(home).toContain("Future projects will continue experimenting across media beyond games");
     expect(home).toContain("ゲーム作品2点と2023年のウェブ作品2点");
     expect(home).toContain("ゲームに限らない多様なメディアでの実験的な作品制作");
+    expect(home).toContain("鼠标悬停图片时聚焦当前图片；拖拽图片可移动位置。");
+    expect(home).toContain("Hover an image to focus it; drag it to reposition.");
+    expect(home).toContain("画像にマウスを重ねるとその画像にフォーカスし、ドラッグで位置を移動できます。");
+    expect(home).toContain('{copy.imageInstruction}</p>');
     expect(home).toMatch(/<div class="v3-home-hero__footer">\s*<p class="v3-home-hero__role">[\s\S]*?<a class="v3-action-link"/);
     expect(home).toContain('const hiddenHomeStatusSlugs = new Set(["emida", "wake-up", "escape-project"])');
     expect(home).toContain("!hiddenHomeStatusSlugs.has(project.slug)");

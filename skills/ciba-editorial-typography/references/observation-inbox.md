@@ -90,3 +90,13 @@ the user confirms the proposed keep / avoid / implementation interpretation.
 - Exact feedback:
 
 > 还是没有对齐 我希望和上面的打开项目记录的文本对齐 结尾不超出上面打开项目记录hover时的长方形
+
+## TYPE-20261002T110328576731Z-cd440ac6
+
+- Captured: 2026-10-02 UTC
+- Context: 2026-10-02 首页三语作品图像操作提示修订
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 这里的解释有点生硬 直接说鼠标悬停图片是聚焦当前图片 鼠标拖拽移动位置 其他的也是这么改并且英文日文界面也要改

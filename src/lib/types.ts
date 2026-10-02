@@ -19,6 +19,7 @@ export type ProjectMedia = {
   alt: LocalizedString;
   caption?: LocalizedString;
   homeOrder?: number;
+  detailOrder?: number;
   group?: CourseworkMediaGroup;
   window?: {
     x: number;

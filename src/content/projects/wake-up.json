@@ -40,14 +40,14 @@
   ],
   "details": {
     "role": {
-      "zh": "待艺术家补充并核实",
-      "en": "To be supplied and verified by the artist",
-      "ja": "作家による追記・確認待ち"
+      "zh": "无",
+      "en": "None",
+      "ja": "なし"
     },
     "scale": {
-      "zh": "网页滚动作品；旧站归档可访问",
-      "en": "Scrolling web work; previous-site archive available",
-      "ja": "スクロール型ウェブ作品。旧サイトのアーカイブあり"
+      "zh": "网页滚动作品",
+      "en": "Scrolling web work",
+      "ja": "スクロール型ウェブ作品"
     },
     "platform": {
       "zh": "网页浏览器",
@@ -55,9 +55,9 @@
       "ja": "ウェブブラウザ"
     },
     "credits": {
-      "zh": ["协作者与具体分工待艺术家核实"],
-      "en": ["Collaborators and production roles await artist verification"],
-      "ja": ["共同制作者と制作分担は作家による確認待ち"]
+      "zh": ["张扬笛 / CIBA 制作"],
+      "en": ["Created by Zhang Yangdi / CIBA"],
+      "ja": ["張揚笛 / CIBA 制作"]
     }
   },
   "links": {
@@ -71,7 +71,7 @@
       "status": "归档作品",
       "body": [
         "Wake Up 以床铺与闹钟的开场图像进入清醒时刻，再以被水淹没的走廊和扭曲标题收束成一条精简的网页路径。",
-        "按照本次内容编辑要求，其余旧段落不再出现在公开页面；源素材保存在非部署归档中，便于之后回溯。"
+        "可查看旧站档案获取更好体验。"
       ]
     },
     "en": {
@@ -81,7 +81,7 @@
       "status": "Archived work",
       "body": [
         "Wake Up begins with a bed and ringing alarm, then closes its shortened web path with a flooded corridor and distorted title.",
-        "Following the current content edit, the remaining legacy sections no longer appear on the public page. Their source files stay preserved in a non-deployable archive for rollback."
+        "View the previous-site archive for a fuller experience."
       ]
     },
     "ja": {
@@ -91,7 +91,7 @@
       "status": "アーカイブ作品",
       "body": [
         "Wake Up はベッドと鳴る目覚まし時計から始まり、水に沈んだ廊下と歪んだタイトルで、短く整理したウェブの経路を閉じます。",
-        "今回の内容編集に従い、その他の旧セクションは公開ページに表示しません。元ファイルはロールバック用の非公開アーカイブに保存しています。"
+        "より充実した体験は、旧サイトのアーカイブでご覧いただけます。"
       ]
     }
   }

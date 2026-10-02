@@ -37,6 +37,7 @@ const loadImmediately = eager || import.meta.env.DEV;
   alt={decorative ? "" : localized.alt}
   width={width}
   height={height}
+  style={`--media-aspect-ratio: ${width} / ${height}`}
   sizes={sizes}
   srcset={srcset}
   loading={loadImmediately ? "eager" : "lazy"}

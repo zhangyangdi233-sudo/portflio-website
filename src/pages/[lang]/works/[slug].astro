@@ -9,6 +9,7 @@ import {
   getLocalizedProject,
   getLocalizedString,
   getLocalizedStringList,
+  getDetailMedia,
   getProjectThemeVars,
   getPublishedProjects
 } from "../../../lib/projects";
@@ -37,6 +38,7 @@ const nextLocalized = getLocalizedProject(nextProject, lang);
 const isWakeUpReplica = project.pageMode === "wake-up-replica";
 const isCourseworkDesktop = project.pageMode === "coursework-desktop";
 const localizedTags = getLocalizedStringList(project.tags, lang);
+const detailMedia = getDetailMedia(project);
 const localizedDetails = project.details ? {
   role: getLocalizedString(project.details.role, lang),
   scale: getLocalizedString(project.details.scale, lang),
@@ -49,6 +51,12 @@ const detailCopy = {
   en: { year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Scale", duration: "Duration", platform: "Platform", credits: "Credits", archive: "View archive", gallery: "Project media", next: "Next project" },
   ja: { year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "規模", duration: "時間", platform: "プラットフォーム", credits: "クレジット", archive: "アーカイブを見る", gallery: "作品メディア", next: "次の作品" }
 }[lang];
+const scaleLabel = project.slug === "emida"
+  ? { zh: "尺寸", en: "Dimensions", ja: "サイズ" }[lang]
+  : detailCopy.scale;
+const archiveLabel = project.slug === "x-wheel"
+  ? { zh: "查看仓库", en: "View repository", ja: "リポジトリを見る" }[lang]
+  : detailCopy.archive;
 ---
 
 <BaseLayout
@@ -60,7 +68,13 @@ const detailCopy = {
 >
   {
     isWakeUpReplica ? (
-      <WakeUpReplica project={project} localized={localized} lang={lang} />
+      <WakeUpReplica
+        project={project}
+        localized={localized}
+        lang={lang}
+        nextProject={nextProject}
+        nextLocalized={nextLocalized}
+      />
     ) : isCourseworkDesktop ? (
       <CourseworkDesktop
         project={project}
@@ -70,7 +84,7 @@ const detailCopy = {
         nextLocalized={nextLocalized}
       />
     ) : (
-      <article class="project-detail">
+      <article class="project-detail" data-project-slug={project.slug}>
         <header class="project-hero">
           <div class="project-hero__copy">
             <p class="eyebrow">{localized.status ?? project.status}</p>
@@ -97,7 +111,7 @@ const detailCopy = {
               )}
               {localizedDetails?.scale && (
                 <div>
-                  <dt>{detailCopy.scale}</dt>
+                  <dt>{scaleLabel}</dt>
                   <dd>{localizedDetails.scale}</dd>
                 </div>
               )}
@@ -128,12 +142,12 @@ const detailCopy = {
               )}
               {project.links.archive && (
                 <a class="button is-ghost" href={project.links.archive} target="_blank" rel="noreferrer">
-                  {detailCopy.archive}
+                  {archiveLabel}
                 </a>
               )}
             </div>
           </div>
-          <ProjectMedia media={project.media[0]} lang={lang} eager />
+          <ProjectMedia media={detailMedia[0]} lang={lang} eager />
         </header>
 
         <section class="project-text" data-reveal>
@@ -141,9 +155,13 @@ const detailCopy = {
         </section>
 
         {
-          project.media.length > 1 && (
-            <section class="project-gallery" aria-label={detailCopy.gallery}>
-              {project.media.slice(1).map((media) => <ProjectMedia media={media} lang={lang} />)}
+          detailMedia.length > 1 && (
+            <section
+              class:list={["project-gallery", `project-gallery--${project.slug}`]}
+              data-project-gallery={project.slug}
+              aria-label={detailCopy.gallery}
+            >
+              {detailMedia.slice(1).map((media) => <ProjectMedia media={media} lang={lang} />)}
             </section>
           )
         }

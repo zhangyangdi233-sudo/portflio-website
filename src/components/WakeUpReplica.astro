@@ -7,9 +7,11 @@ interface Props {
   project: Project;
   localized: LocalizedText;
   lang: Language;
+  nextProject: Project;
+  nextLocalized: LocalizedText;
 }
 
-const { project, localized, lang } = Astro.props;
+const { project, localized, lang, nextProject, nextLocalized } = Astro.props;
 const media = (name: string): ProjectMedia =>
   project.media.find((item) => item.src.includes(`/${name}.`)) ?? project.media[0];
 const bedAlarm = media("bed-alarm");
@@ -24,9 +26,9 @@ const localizedDetails = project.details ? {
   credits: getLocalizedStringList(project.details.credits, lang)
 } : undefined;
 const copy = {
-  zh: { back: "返回作品", record: "项目记录", year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "形式", platform: "平台", credits: "协作与署名", descriptions: "图像描述索引", descriptionsIntro: "两张公开图像按页面顺序列出；其他源素材保存在非公开归档中。", archive: "查看旧站档案" },
-  en: { back: "Back to works", record: "Project record", year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Format", platform: "Platform", credits: "Credits", descriptions: "Image description index", descriptionsIntro: "The two public images are listed in page order; other source media is preserved in a non-deployable archive.", archive: "View previous-site archive" },
-  ja: { back: "作品一覧へ戻る", record: "作品記録", year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "形式", platform: "プラットフォーム", credits: "クレジット", descriptions: "画像説明インデックス", descriptionsIntro: "公開する2点をページ順に示します。その他の素材は非公開アーカイブに保存しています。", archive: "旧サイトのアーカイブを見る" }
+  zh: { back: "返回作品", record: "项目记录", year: "年份", medium: "媒介", tags: "标签", role: "角色", scale: "形式", platform: "平台", credits: "协作与署名", descriptions: "图像描述索引", descriptionsIntro: "两张公开图像按页面顺序列出；其他源素材保存在非公开归档中。", archive: "查看旧站档案", next: "下一个项目" },
+  en: { back: "Back to works", record: "Project record", year: "Year", medium: "Medium", tags: "Tags", role: "Role", scale: "Format", platform: "Platform", credits: "Credits", descriptions: "Image description index", descriptionsIntro: "The two public images are listed in page order; other source media is preserved in a non-deployable archive.", archive: "View previous-site archive", next: "Next project" },
+  ja: { back: "作品一覧へ戻る", record: "作品記録", year: "年", medium: "メディア", tags: "タグ", role: "役割", scale: "形式", platform: "プラットフォーム", credits: "クレジット", descriptions: "画像説明インデックス", descriptionsIntro: "公開する2点をページ順に示します。その他の素材は非公開アーカイブに保存しています。", archive: "旧サイトのアーカイブを見る", next: "次の作品" }
 }[lang];
 ---
 
@@ -71,4 +73,11 @@ const copy = {
     <ProjectImage class="wake-cover-image" media={floodedTitle} lang={lang} wake sizes="100vw" />
     <p class="wake-kicker">02 / END</p>
   </section>
+
+  <nav class="next-project wake-next-project" aria-label={copy.next}>
+    <a href={`/${lang}/works/${nextProject.slug}/`}>
+      <span>{copy.next}</span>
+      <strong>{nextLocalized.title}</strong>
+    </a>
+  </nav>
 </article>

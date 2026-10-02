@@ -267,3 +267,21 @@ feedback captured through the taste inbox and confirmed before promotion.
   page assertions, so the new computed-style contract was verified in the active browser instead.
 - `TASTE-20261002T064954565894Z-c500d5b2` remains pending and is not promoted into a permanent
   taste rule by this measured result.
+
+## 2026-10-02 — Supplied APHASIA and EMIDA evidence expansion
+
+- APHASIA now publishes 18 verified media items. At desktop size, the five supplied NPC sheets
+  occupy one equal-width opening row; character, title, interface, and object studies follow, and
+  the four existing room/CRT/console/poster 3D previews are the final four items.
+- EMIDA keeps its existing hero and adds the four supplied boards in the evidence order cover,
+  endings/character, gameplay, and system/logic. The desktop gallery uses a measured 5/7-column
+  asymmetric rhythm and the mobile route returns to source-order reading without overflow.
+- Wake Up ends with a visible next-project link to Escape Project. Escape Project's hero was moved
+  down by 72px at 1440px while the mobile layout remains a single column.
+- Every project image now reserves its verified intrinsic ratio before lazy loading, preventing
+  the long APHASIA and EMIDA galleries from collapsing before image decode.
+- The independent visual/content critic reported no P0/P1 blocker. Verification passed 55 tests,
+  Astro diagnostics, design drift, the 25-route production build, and nine real-Chrome evidence
+  groups with zero console warning or error.
+- `TASTE-20261002T110328576722Z-269c8d84` remains pending and is not promoted into a permanent
+  taste rule by these implementation outcomes.

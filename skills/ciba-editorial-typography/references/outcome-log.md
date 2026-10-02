@@ -137,3 +137,19 @@ implementation guidance, but they do not become personal taste without explicit 
   assertion; active-browser DOM measurements supplied the geometry evidence above.
 - `TYPE-20261001T180459963139Z-874049e6` remains pending and was not promoted without explicit
   artist confirmation.
+
+## 2026-10-02 — Direct interaction copy and evidence-led project records
+
+- The visible Home instruction is now a direct two-action sentence in each locale: hover focuses
+  the current image and drag repositions it. Keyboard movement and reset instructions remain in
+  the screen-reader-only description instead of burdening the visible caption.
+- At 1100×712, the revised Chinese, English, and Japanese instruction boxes all measured
+  `x=694–1068`, exactly matching the project-record hover rectangle. Chinese and English fit on
+  one line; Japanese uses two lines, both ending inside the shared right boundary.
+- APHASIA's public record now uses the supplied medium, tags, platforms, credits, repository, and
+  three evidence-based introductory paragraphs. EMIDA, Wake Up, and Escape Project labels and
+  prose were revised without retaining placeholder or source-audit wording.
+- Real-Chrome checks found zero horizontal overflow at 320px and 390px across the three languages;
+  the independent critic reported no title clipping or CJK tracking regression.
+- `TYPE-20261002T110328576731Z-cd440ac6` remains pending and is not promoted without explicit
+  artist confirmation.

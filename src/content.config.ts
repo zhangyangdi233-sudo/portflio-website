@@ -49,6 +49,7 @@ const projects = defineCollection({
         alt: localizedString,
         caption: localizedString.optional(),
         homeOrder: z.number().int().min(1).max(4).optional(),
+        detailOrder: z.number().int().min(0).optional(),
         group: z.enum(["blender", "maya", "ae-pr"]).optional(),
         window: z.object({
           x: z.number().min(0).max(100),

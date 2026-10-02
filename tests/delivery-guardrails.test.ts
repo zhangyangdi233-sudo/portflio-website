@@ -95,7 +95,8 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/\.wake-back \{[\s\S]*?top: calc\(var\(--ciba-header-height\) \+ 0\.75rem\)[\s\S]*?min-width: 44px[\s\S]*?min-height: 44px/);
     expect(css).toMatch(/about-page \.page-hero h1 \{[\s\S]*?letter-spacing: 0/);
     expect(css).toMatch(/@media \(max-width: 360px\)[\s\S]*?--ciba-header-height: 106px[\s\S]*?grid-template-rows: 52px 52px/);
-    expect(css).toMatch(/project-page:not\(\.wake-page\) \.project-media img \{[\s\S]*?aspect-ratio: auto[\s\S]*?object-fit: contain/);
+    expect(css).toMatch(/project-page:not\(\.wake-page\) \.project-media img \{[\s\S]*?aspect-ratio: var\(--media-aspect-ratio\)[\s\S]*?object-fit: contain/);
+    expect(read("src/components/ProjectImage.astro")).toContain("--media-aspect-ratio: ${width} / ${height}");
     expect(css).toMatch(/\.v3-floating-media \{[\s\S]*?filter: grayscale\(1\)[\s\S]*?opacity: 0\.1/);
     expect(css).toMatch(/\.v3-floating-media:hover,[\s\S]*?filter: grayscale\(0\)[\s\S]*?opacity: 0\.88/);
     expect(css).toMatch(
@@ -126,6 +127,25 @@ describe("delivery guardrails", () => {
     expect(css).toMatch(/\.v3-cinema__hint \{[\s\S]*?right: var\(--ciba-page-gutter\)[\s\S]*?inline-size: var\(--v3-cinema-action-width\)[\s\S]*?padding-inline: var\(--v3-cinema-action-padding-inline\)[\s\S]*?text-align: start/);
     expect(css).toMatch(/\.v3-cinema-layer__open \{[\s\S]*?width: var\(--v3-cinema-action-width\)[\s\S]*?padding-inline: var\(--v3-cinema-action-padding-inline\)/);
     expect(home).toMatch(/<div class="v3-home-hero__footer">\s*<p class="v3-home-hero__role">[\s\S]*?<a class="v3-action-link"/);
+  });
+
+  it("keeps the revised project evidence in explicit, recoverable layouts", () => {
+    const detail = read("src/pages/[lang]/works/[slug].astro");
+    const wake = read("src/components/WakeUpReplica.astro");
+    const css = read("src/styles/ciba-v3.css");
+    const escapeProject = JSON.parse(read("src/content/projects/escape-project.json"));
+
+    expect(detail).toContain('data-project-slug={project.slug}');
+    expect(detail).toContain('data-project-gallery={project.slug}');
+    expect(detail).toContain("getDetailMedia(project)");
+    expect(css).toMatch(/data-project-slug="escape-project"[\s\S]*?margin-block-start: clamp\(2\.5rem, 8vh, 4\.5rem\)/);
+    expect(css).toMatch(/project-gallery--x-wheel[\s\S]*?grid-template-columns: repeat\(10/);
+    expect(css).toMatch(/project-gallery--x-wheel > \.project-media:nth-child\(-n \+ 5\)[\s\S]*?grid-column: span 2/);
+    expect(css).toMatch(/project-gallery--emida[\s\S]*?grid-template-columns: repeat\(12/);
+    expect(wake).toContain('class="next-project wake-next-project"');
+    expect(escapeProject.i18n.zh.body.at(-1)).toBe("网格空间、奔跑的人形、箭头和不断出现的门构成一条视觉路径。");
+    expect(escapeProject.i18n.en.body.at(-1)).not.toContain("previous site");
+    expect(escapeProject.i18n.ja.body.at(-1)).not.toContain("旧サイト");
   });
 
   it("ships a dependency-free real-browser audit for the high-risk delivery paths", () => {

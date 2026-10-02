@@ -156,3 +156,13 @@ project reasoning, not a confirmed personal-preference rule.
 - Exact feedback:
 
 > 让所有的这个底部背景透明保留文字
+
+## TASTE-20261002T110328576722Z-269c8d84
+
+- Captured: 2026-10-02 UTC
+- Context: 2026-10-02 APHASIA 与 EMIDA 详情页新增素材及第一排编排反馈
+- Source: direct user feedback
+- Status: pending interpretation and explicit confirmation
+- Exact feedback:
+
+> 我放几个最近制作的素材放上去 npc有5个你看模仿者大学课题那种样子放在这里的第一排
